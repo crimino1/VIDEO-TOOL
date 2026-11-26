@@ -1,0 +1,146 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="125.560" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v1" class="clip vid" src="assets/clips/pxe_london_65596b63.mp4" muted playsinline data-start="0.000" data-duration="2.490" data-track-index="1" style="z-index:11;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s4" class="clip scene" data-start="0.000" data-duration="2.490" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="c3" class="scene"><div id="pl2" class="place" style="top:850px"><div class="ru"></div><div class="l1">LONDON</div><div class="l2">2014</div></div></div></div>
+<video id="v5" class="clip vid" src="assets/clips/pxe_lab_51cff065.mp4" muted playsinline data-start="2.490" data-duration="3.550" data-track-index="1" style="z-index:14;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s10" class="clip scene" data-start="2.490" data-duration="3.550" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="c9" class="scene"><div id="k6" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w7" style="opacity:0">15</span> <span id="w8" style="opacity:0">mathematicians</span></div></div></div>
+<div id="s19" class="clip scene" data-start="6.040" data-duration="4.680" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="c18" class="scene"><div id="k11" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w12" style="opacity:0">60</span> <span id="w13" style="opacity:0">equations,</span> <span id="w14" style="opacity:0">from</span> <span id="w15" style="opacity:0">ugly</span> <span id="w16" style="opacity:0">to</span> <span id="w17" style="opacity:0">beautiful</span></div></div></div>
+<div id="s22" class="clip scene" data-start="12.860" data-duration="3.220" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="c21" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:210px;top:197px;width:1500px;height:606px"><img id="ph20" src="assets/gen/zeki2014_fig1_150740.jpg" alt="zeki2014_fig1"></div><div class="credit">Zeki et al. 2014, Front. Hum. Neurosci., CC BY</div></div></div>
+<video id="v23" class="clip vid" src="assets/clips/mn_Equations_290eebcc.mp4" muted playsinline data-start="16.080" data-duration="9.860" data-track-index="1" style="z-index:19;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s26" class="clip scene" data-start="28.300" data-duration="1.920" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="c25" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:180px;top:165px;width:1560px;height:671px"><img id="ph24" src="assets/gen/ss_zeki_fig_2fae40.jpg" alt="ss_zeki_fig"></div><div class="credit">Zeki et al. 2014, Front. Hum. Neurosci., CC BY</div></div></div>
+<video id="v27" class="clip vid" src="assets/clips/mn_Ramanujan_e0d3a339.mp4" muted playsinline data-start="35.220" data-duration="7.140" data-track-index="1" style="z-index:22;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s32" class="clip scene" data-start="35.220" data-duration="7.140" data-track-index="2" style="z-index:24" data-layout-allow-overflow data-layout-allow-overlap><div id="c31" class="scene"><div id="pf29" class="portrait" style="left:80px;top:220px;width:440px;height:560px;opacity:0"><img id="pt28" src="assets/gen/ramanujan_ba7d0e.jpg" alt="ramanujan"></div><div id="tg30" class="tag" style="left:80px;top:840px;opacity:0"><div class="n">Srinivasa Ramanujan</div><div class="r">Mathematician</div></div></div></div>
+<div id="s36" class="clip scene" data-start="42.360" data-duration="1.980" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="c35" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:310px;top:180px;width:1300px;height:681px"><div id="ss33" class="ssin"><img src="assets/gen/ss_zeki2014_results_euler_ramanujan_8d307a.jpg" alt="ss_zeki2014_results_euler_ramanujan"><div id="hl34" class="hl" style="left:5.0%;top:6.0%;width:85.0%;height:12.0%;opacity:0"></div></div></div><div class="credit">Zeki et al. 2014, Front. Hum. Neurosci., CC BY</div></div></div>
+<video id="v37" class="clip vid" src="assets/clips/mn_Winner_b581d0c5.mp4" muted playsinline data-start="44.340" data-duration="5.560" data-track-index="1" style="z-index:26;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s42" class="clip scene" data-start="49.900" data-duration="3.800" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="c41" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf39" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt38" src="assets/gen/feynman_4773ce.jpg" alt="feynman"></div><div id="tg40" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Richard Feynman</div><div class="r">Physicist</div></div></div></div>
+<div id="s51" class="clip scene" data-start="53.700" data-duration="5.900" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="c50" class="scene"><div id="k43" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:50px;line-height:1.08;color:#fff"><span id="w44" style="opacity:0">“the</span> <span id="w45" style="opacity:0">most</span> <span id="w46" style="opacity:0">remarkable</span> <span id="w47" style="opacity:0">formula</span> <span id="w48" style="opacity:0">in</span> <span id="w49" style="opacity:0">math”</span></div></div></div>
+<video id="v52" class="clip vid" src="assets/clips/mn_Puzzle_5892668d.mp4" muted playsinline data-start="59.600" data-duration="10.800" data-track-index="1" style="z-index:30;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v53" class="clip vid" src="assets/clips/pxe_chalk_a3ea0f47.mp4" muted playsinline data-start="70.400" data-duration="2.250" data-track-index="1" style="z-index:32;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s57" class="clip scene" data-start="70.400" data-duration="2.250" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="c56" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch54" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; ONE</div><div class="ti">The cast</div><div id="ru55" class="rule"></div></div></div></div>
+<video id="v58" class="clip vid" src="assets/clips/mn_Cast_be163ca2.mp4" muted playsinline data-start="72.650" data-duration="12.070" data-track-index="1" style="z-index:35;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s61" class="clip scene" data-start="84.720" data-duration="9.280" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="c60" class="scene"><div id="pl59" class="place" style="top:850px"><div class="ru"></div><div class="l1">INDIA</div><div class="l2">628</div></div></div></div>
+<video id="v62" class="clip vid" src="assets/clips/pxe_phone_046018ce.mp4" muted playsinline data-start="94.000" data-duration="2.240" data-track-index="1" style="z-index:38;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s64" class="clip scene" data-start="94.000" data-duration="2.240" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c63" class="scene"></div></div>
+<video id="v65" class="clip vid" src="assets/clips/mn_One_f476fcaf.mp4" muted playsinline data-start="96.240" data-duration="7.580" data-track-index="1" style="z-index:41;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v66" class="clip vid" src="assets/clips/mn_Pi_b701078b.mp4" muted playsinline data-start="103.820" data-duration="21.740" data-track-index="1" style="z-index:43;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[6.04, 10.72, "rating", {"sort": 0.46, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [10.72, 12.86, "scanner", {"slide": 0.3, "signal": 99, "light": 99, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [12.86, 16.08, "scanner", {"slide": -9, "signal": 99, "light": 99, "tin": "fade", "tout": "fade"}], [25.94, 28.3, "scanner", {"slide": -9, "signal": 0.42, "light": 3.32, "cam": {"z": [1.05, 1.15]}, "tin": "zoom", "tout": "zoom"}], [28.3, 30.22, "scanner", {"slide": -9, "signal": 99, "light": -9, "tin": "fade", "tout": "fade"}], [30.22, 35.22, "gallery", {"paint": 0.3, "song": 3.06, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [42.36, 44.34, "rating", {"sort": -9, "tin": "fade", "tout": "fade"}], [49.9, 53.7, "notebook", {"write": 99, "big": 99, "tin": "fade", "tout": "fade"}], [53.7, 59.6, "notebook", {"write": 0.2, "big": 1.58, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [84.72, 94.0, "brahmagupta", {"zero": 6.26, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dread.js"></script>
+<script src="assets/js/scenes/history.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/story.js"></script>
+<script src="assets/js/scenes/world.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1",{scale:1.0},{scale:1.08,duration:2.49,ease:"none"},0.000);
+tl.fromTo("#pl2",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},0.500);
+tl.fromTo("#v5",{scale:1.0},{scale:1.06,duration:3.55,ease:"none"},2.490);
+tl.set("#w7",{opacity:1},2.940);
+tl.set("#w8",{opacity:1},3.400);
+tl.set("#w12",{opacity:1},6.880);
+tl.set("#w13",{opacity:1},7.220);
+tl.set("#w14",{opacity:1},8.660);
+tl.set("#w15",{opacity:1},9.140);
+tl.set("#w16",{opacity:1},9.560);
+tl.set("#w17",{opacity:1},9.740);
+tl.fromTo("#ph20",{scale:1.0},{scale:1.05,duration:3.22,ease:"none"},12.860);
+tl.fromTo("#ph24",{scale:1.0},{scale:1.05,duration:1.92,ease:"none"},28.300);
+tl.fromTo("#pt28",{scale:1.0},{scale:1.04,duration:7.14,ease:"none"},35.220);
+tl.fromTo("#pf29",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},35.220);
+tl.fromTo("#tg30",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},37.800);
+tl.fromTo("#ss33",{scale:1.0},{scale:1.04,duration:1.98,ease:"none"},42.360);
+tl.set("#hl34",{opacity:1},42.700);
+tl.fromTo("#pt38",{scale:1.0},{scale:1.04,duration:3.8,ease:"none"},49.900);
+tl.fromTo("#pf39",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},49.900);
+tl.fromTo("#tg40",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},50.220);
+tl.set("#w44",{opacity:1},57.360);
+tl.set("#w45",{opacity:1},57.460);
+tl.set("#w46",{opacity:1},57.660);
+tl.set("#w47",{opacity:1},58.120);
+tl.set("#w48",{opacity:1},58.720);
+tl.set("#w49",{opacity:1},58.940);
+tl.fromTo("#v53",{scale:1.0},{scale:1.06,duration:2.25,ease:"none"},70.400);
+tl.fromTo("#ch54",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},70.550);
+tl.fromTo("#ru55",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},70.900);
+tl.fromTo("#pl59",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},85.840);
+tl.fromTo("#v62",{scale:1.0},{scale:1.06,duration:2.24,ease:"none"},94.000);
+tl.set({}, {}, 125.560);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

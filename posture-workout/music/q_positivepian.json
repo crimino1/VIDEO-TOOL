@@ -1,0 +1,176 @@
+{
+ "result_count": 2,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "87b4eb06-fb4a-45b2-8bcf-44d2a3b6c7cf",
+   "title": "Positive Backgroundl",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1671032",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1671032&format=mp32",
+   "creator": "Soundrider/Dope",
+   "creator_url": "https://www.jamendo.com/artist/520047/DOPE_Music",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "corporate"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "comedy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "commercial",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Positive Backgroundl\" by Soundrider/Dope is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Upbeat Music",
+    "foreign_landing_url": "https://www.jamendo.com/album/186410/upbeat-music",
+    "creator": "Soundrider/Dope",
+    "creator_url": "https://www.jamendo.com/artist/520047/DOPE_Music",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 232000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/87b4eb06-fb4a-45b2-8bcf-44d2a3b6c7cf/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/87b4eb06-fb4a-45b2-8bcf-44d2a3b6c7cf/",
+   "related_url": "https://api.openverse.org/v1/audio/87b4eb06-fb4a-45b2-8bcf-44d2a3b6c7cf/related/",
+   "waveform": "https://api.openverse.org/v1/audio/87b4eb06-fb4a-45b2-8bcf-44d2a3b6c7cf/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a4dbdd23-d72b-47ab-b0d1-b83cc6d4890a",
+   "title": "Ruslan Latypov - Positive Whistling",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1693135",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1693135&format=mp32",
+   "creator": "Ruslan Latypov",
+   "creator_url": "https://www.jamendo.com/artist/499637/Ruslan_Latypov",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "corporate"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "advertising",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "comedy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "whistling",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ruslan Latypov - Positive Whistling\" by Ruslan Latypov is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Theme of positive",
+    "foreign_landing_url": "https://www.jamendo.com/album/188310/theme-of-positive",
+    "creator": "Ruslan Latypov",
+    "creator_url": "https://www.jamendo.com/artist/499637/Ruslan_Latypov",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 107000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a4dbdd23-d72b-47ab-b0d1-b83cc6d4890a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a4dbdd23-d72b-47ab-b0d1-b83cc6d4890a/",
+   "related_url": "https://api.openverse.org/v1/audio/a4dbdd23-d72b-47ab-b0d1-b83cc6d4890a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a4dbdd23-d72b-47ab-b0d1-b83cc6d4890a/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

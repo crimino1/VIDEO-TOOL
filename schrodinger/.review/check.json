@@ -1,0 +1,822 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 43,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 3 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 2 has 38 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_phone\"> is a timeline element that contains nested <div id=\"k_phone\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_phone",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_phone\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_sun1\"> is a timeline element that contains nested <div id=\"k_sun1\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_sun1",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_sun1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_neon\"> is a timeline element that contains nested <div id=\"k_neon\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_neon",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_neon\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_lecture\"> is a timeline element that contains nested <div id=\"k_lecture\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_lecture",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_lecture\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_solvay1911\"> is a timeline element that contains nested <div id=\"k_solvay1911\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_solvay1911",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_solvay1911\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_newton\"> is a timeline element that contains nested <div id=\"k_newton\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_newton",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_newton\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_maxwell\"> is a timeline element that contains nested <div id=\"k_maxwell\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_maxwell",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_maxwell\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_h_tube\"> is a timeline element that contains nested <div id=\"k_h_tube\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_h_tube",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_h_tube\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_uv\"> is a timeline element that contains nested <div id=\"k_uv\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_uv",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_uv\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_radio\"> is a timeline element that contains nested <div id=\"k_radio\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_radio",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_radio\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_debroglie\"> is a timeline element that contains nested <div id=\"k_debroglie\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_debroglie",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_debroglie\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_ripples\"> is a timeline element that contains nested <div id=\"k_ripples\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_ripples",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_ripples\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_eth\"> is a timeline element that contains nested <div id=\"k_eth\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_eth",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_eth\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_debye1\"> is a timeline element that contains nested <div id=\"k_debye1\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_debye1",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_debye1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_schrod1\"> is a timeline element that contains nested <div id=\"k_schrod1\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_schrod1",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_schrod1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_debye2\"> is a timeline element that contains nested <div id=\"k_debye2\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_debye2",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_debye2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_schrod2\"> is a timeline element that contains nested <div id=\"k_schrod2\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_schrod2",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_schrod2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_arosa\"> is a timeline element that contains nested <div id=\"k_arosa\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_arosa",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_arosa\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_city\"> is a timeline element that contains nested <div id=\"k_city\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_city",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_city\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_water\"> is a timeline element that contains nested <div id=\"k_water\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_water",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_water\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_born1\"> is a timeline element that contains nested <div id=\"k_born1\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_born1",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_born1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_einstein\"> is a timeline element that contains nested <div id=\"k_einstein\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_einstein",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_einstein\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_born2\"> is a timeline element that contains nested <div id=\"k_born2\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_born2",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_born2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_schrod3\"> is a timeline element that contains nested <div id=\"k_schrod3\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_schrod3",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_schrod3\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_solvay1927\"> is a timeline element that contains nested <div id=\"k_solvay1927\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_solvay1927",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_solvay1927\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_guitar\"> is a timeline element that contains nested <div id=\"k_guitar\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_guitar",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_guitar\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_sun2\"> is a timeline element that contains nested <div id=\"k_sun2\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_sun2",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_sun2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_chip\"> is a timeline element that contains nested <div id=\"k_chip\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_chip",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_chip\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_laser\"> is a timeline element that contains nested <div id=\"k_laser\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_laser",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_laser\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_led\"> is a timeline element that contains nested <div id=\"k_led\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_led",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_led\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_mri\"> is a timeline element that contains nested <div id=\"k_mri\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_mri",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_mri\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_solar\"> is a timeline element that contains nested <div id=\"k_solar\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_solar",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_solar\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_chem\"> is a timeline element that contains nested <div id=\"k_chem\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_chem",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_chem\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_waterbend\"> is a timeline element that contains nested <div id=\"k_waterbend\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_waterbend",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_waterbend\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_gold\"> is a timeline element that contains nested <div id=\"k_gold\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_gold",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_gold\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_wire\"> is a timeline element that contains nested <div id=\"k_wire\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_wire",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_wire\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_arosa2\"> is a timeline element that contains nested <div id=\"k_arosa2\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_arosa2",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_arosa2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"p_you\"> is a timeline element that contains nested <div id=\"k_you\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#p_you",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"p_you\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 11 overlap (assets/music/LongNoteFour.mp3 at 0-601.5s, assets/music/LongNoteFour.mp3 at 600-831.63s). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 12 overlap (assets/sfx/pop.mp3 at 667.6-668.32s, assets/sfx/pop.mp3 at 668.25-668.97s). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"m0\" is 600.06s but its slot (data-duration) is 601.50s — the slot is shortened to the media length when rendered. Set data-duration to ~600.06s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "831.63",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 831.63,
+    "samples": [
+      46.202,
+      138.605,
+      231.008,
+      323.412,
+      415.815,
+      508.218,
+      600.622,
+      693.025,
+      785.428
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      46.202,
+      231.008,
+      415.815,
+      600.622,
+      785.428
+    ],
+    "checked": 0,
+    "passed": 0
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 1.3880000000000337,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "7bd4b83a-d057-42ca-ac7c-285510638e14",
+    "revision": "30266819-fcca-4d47-964a-106e17eeeb59",
+    "report": "C:\\Users\\daggu222105\\VIDEO-TOOL\\schrodinger\\.hyperframes\\artifacts\\checks\\7bd4b83a-d057-42ca-ac7c-285510638e14.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.16",
+    "latestVersion": "0.9.19",
+    "updateAvailable": true,
+    "checkedAt": "2026-11-06T20:30:02.379Z",
+    "skillsOutdated": 0,
+    "skillsMissing": 0
+  }
+}

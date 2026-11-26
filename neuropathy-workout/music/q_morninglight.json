@@ -1,0 +1,378 @@
+{
+ "result_count": 5,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "c87e2970-eb77-4581-a574-b32bd4eb5033",
+   "title": "MORNING LIGHTS",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1533788",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1533788&format=mp32",
+   "creator": "Petite Viking",
+   "creator_url": "https://www.jamendo.com/artist/355549/petite_viking",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cello",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"MORNING LIGHTS\" by Petite Viking is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TRILLS",
+    "foreign_landing_url": "https://www.jamendo.com/album/175669/trills",
+    "creator": "Petite Viking",
+    "creator_url": "https://www.jamendo.com/artist/355549/petite_viking",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 238000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c87e2970-eb77-4581-a574-b32bd4eb5033/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c87e2970-eb77-4581-a574-b32bd4eb5033/",
+   "related_url": "https://api.openverse.org/v1/audio/c87e2970-eb77-4581-a574-b32bd4eb5033/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c87e2970-eb77-4581-a574-b32bd4eb5033/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6b9dce84-6533-489b-9104-da99d16b3422",
+   "title": "Memories in the Morning Light",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/850195",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=850195&format=mp32",
+   "creator": "Stefano Giardiniere",
+   "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chamber",
+    "classical",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cello",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "glockenspiel",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitarmusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Memories in the Morning Light\" by Stefano Giardiniere is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Return to Dreamland",
+    "foreign_landing_url": "https://www.jamendo.com/album/99330/return-to-dreamland",
+    "creator": "Stefano Giardiniere",
+    "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 402000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6b9dce84-6533-489b-9104-da99d16b3422/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6b9dce84-6533-489b-9104-da99d16b3422/",
+   "related_url": "https://api.openverse.org/v1/audio/6b9dce84-6533-489b-9104-da99d16b3422/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6b9dce84-6533-489b-9104-da99d16b3422/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c9bbe751-9134-49d1-be83-9a2680994105",
+   "title": "In The Morning Light",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1270226",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1270226&format=mp32",
+   "creator": "Stefano Giardiniere",
+   "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dramatic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "klassisch",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"In The Morning Light\" by Stefano Giardiniere is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Light &amp; Shadows",
+    "foreign_landing_url": "https://www.jamendo.com/album/151728/light-and-shadows",
+    "creator": "Stefano Giardiniere",
+    "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 199000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c9bbe751-9134-49d1-be83-9a2680994105/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c9bbe751-9134-49d1-be83-9a2680994105/",
+   "related_url": "https://api.openverse.org/v1/audio/c9bbe751-9134-49d1-be83-9a2680994105/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c9bbe751-9134-49d1-be83-9a2680994105/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c83eab73-698e-4d81-8c4c-a86f6538fe4a",
+   "title": "Morning Light in My Kitchen",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2327677",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2327677&format=mp32",
+   "creator": "Helen Langfort",
+   "creator_url": "https://www.jamendo.com/artist/605823/Helen_Langfort",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "neoclassical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Morning Light in My Kitchen\" by Helen Langfort is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Walking and Smiling",
+    "foreign_landing_url": "https://www.jamendo.com/album/638965/walking-and-smiling",
+    "creator": "Helen Langfort",
+    "creator_url": "https://www.jamendo.com/artist/605823/Helen_Langfort",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 124000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c83eab73-698e-4d81-8c4c-a86f6538fe4a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c83eab73-698e-4d81-8c4c-a86f6538fe4a/",
+   "related_url": "https://api.openverse.org/v1/audio/c83eab73-698e-4d81-8c4c-a86f6538fe4a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c83eab73-698e-4d81-8c4c-a86f6538fe4a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "550efd9f-28b9-4461-b2ab-8b2a74674a23",
+   "title": "the morning warm light",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1320263",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1320263&format=mp32",
+   "creator": "Giocol",
+   "creator_url": "https://www.jamendo.com/artist/485021/Giocol_(3)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "alternatives",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"the morning warm light\" by Giocol is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "the morning warm light",
+    "foreign_landing_url": "https://www.jamendo.com/album/156547/the-morning-warm-light",
+    "creator": "Giocol",
+    "creator_url": "https://www.jamendo.com/artist/485021/Giocol_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 294000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/550efd9f-28b9-4461-b2ab-8b2a74674a23/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/550efd9f-28b9-4461-b2ab-8b2a74674a23/",
+   "related_url": "https://api.openverse.org/v1/audio/550efd9f-28b9-4461-b2ab-8b2a74674a23/related/",
+   "waveform": "https://api.openverse.org/v1/audio/550efd9f-28b9-4461-b2ab-8b2a74674a23/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

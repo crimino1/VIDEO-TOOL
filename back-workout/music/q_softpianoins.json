@@ -1,0 +1,1587 @@
+{
+ "result_count": 164,
+ "page_count": 9,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "33991fa8-2230-4494-9b6c-8b595010daf9",
+   "title": "Wellness Oase - Leon Ard",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1739321",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1739321&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Wellness Oase - Leon Ard\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Winterblues - Leon Ard",
+    "foreign_landing_url": "https://www.jamendo.com/album/191780/winterblues-leon-ard",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 303000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/33991fa8-2230-4494-9b6c-8b595010daf9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/33991fa8-2230-4494-9b6c-8b595010daf9/",
+   "related_url": "https://api.openverse.org/v1/audio/33991fa8-2230-4494-9b6c-8b595010daf9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/33991fa8-2230-4494-9b6c-8b595010daf9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7a21cbce-adc3-4910-9a54-9f6d275891a8",
+   "title": "Goodbyes",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1169860",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1169860&format=mp32",
+   "creator": "TheDICE",
+   "creator_url": "https://www.jamendo.com/artist/456948/TheDICE_(3)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "easy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Goodbyes\" by TheDICE is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Elusive Happiness and Goodbyes",
+    "foreign_landing_url": "https://www.jamendo.com/album/140763/elusive-happiness-and-goodbyes",
+    "creator": "TheDICE",
+    "creator_url": "https://www.jamendo.com/artist/456948/TheDICE_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 28000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7a21cbce-adc3-4910-9a54-9f6d275891a8/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7a21cbce-adc3-4910-9a54-9f6d275891a8/",
+   "related_url": "https://api.openverse.org/v1/audio/7a21cbce-adc3-4910-9a54-9f6d275891a8/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7a21cbce-adc3-4910-9a54-9f6d275891a8/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "904f98a7-ad5f-46e7-b4aa-5285293d701f",
+   "title": "Silence",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1243383",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1243383&format=mp32",
+   "creator": "LW\u00a7LH",
+   "creator_url": "https://www.jamendo.com/artist/467377/LWSLH",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sentimental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Silence\" by LW\u00a7LH is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Inner",
+    "foreign_landing_url": "https://www.jamendo.com/album/149015/inner",
+    "creator": "LW\u00a7LH",
+    "creator_url": "https://www.jamendo.com/artist/467377/LWSLH",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 147000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/904f98a7-ad5f-46e7-b4aa-5285293d701f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/904f98a7-ad5f-46e7-b4aa-5285293d701f/",
+   "related_url": "https://api.openverse.org/v1/audio/904f98a7-ad5f-46e7-b4aa-5285293d701f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/904f98a7-ad5f-46e7-b4aa-5285293d701f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "aa1fbd54-3291-4650-ab0a-a3cf90f97cf3",
+   "title": "L'amiti\u00e9",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/664366",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=664366&format=mp32",
+   "creator": "YMERE",
+   "creator_url": "https://www.jamendo.com/artist/361616/Jeremy_(8)",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"L'amiti\u00e9\" by YMERE is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/fr/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Premiers morceaux",
+    "foreign_landing_url": "https://www.jamendo.com/album/77077/premiers-morceaux",
+    "creator": "YMERE",
+    "creator_url": "https://www.jamendo.com/artist/361616/Jeremy_(8)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 194000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/aa1fbd54-3291-4650-ab0a-a3cf90f97cf3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/aa1fbd54-3291-4650-ab0a-a3cf90f97cf3/",
+   "related_url": "https://api.openverse.org/v1/audio/aa1fbd54-3291-4650-ab0a-a3cf90f97cf3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/aa1fbd54-3291-4650-ab0a-a3cf90f97cf3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c",
+   "title": "At last, calm",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/341547",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=341547&format=mp32",
+   "creator": "Tymphony",
+   "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"At last, calm\" by Tymphony is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm",
+    "foreign_landing_url": "https://www.jamendo.com/album/45082/calm",
+    "creator": "Tymphony",
+    "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 179000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/",
+   "related_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cdc68c5a-22b3-4b39-8330-49a543e51ddc",
+   "title": "Les grandes marches",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1687400",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1687400&format=mp32",
+   "creator": "Ehma",
+   "creator_url": "https://www.jamendo.com/artist/18/ehma",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Les grandes marches\" by Ehma is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Les adieux \u00e0 Bl\u00e2ne-Est",
+    "foreign_landing_url": "https://www.jamendo.com/album/187871/les-adieux-a-blane-est",
+    "creator": "Ehma",
+    "creator_url": "https://www.jamendo.com/artist/18/ehma",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 127000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cdc68c5a-22b3-4b39-8330-49a543e51ddc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cdc68c5a-22b3-4b39-8330-49a543e51ddc/",
+   "related_url": "https://api.openverse.org/v1/audio/cdc68c5a-22b3-4b39-8330-49a543e51ddc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cdc68c5a-22b3-4b39-8330-49a543e51ddc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "94fd1ed1-b1a8-4f0d-b170-5fed84038d07",
+   "title": "Pr\u00e9lude",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1687390",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1687390&format=mp32",
+   "creator": "Ehma",
+   "creator_url": "https://www.jamendo.com/artist/18/ehma",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "neoclassical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Pr\u00e9lude\" by Ehma is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Opus Solemnis",
+    "foreign_landing_url": "https://www.jamendo.com/album/187869/opus-solemnis",
+    "creator": "Ehma",
+    "creator_url": "https://www.jamendo.com/artist/18/ehma",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 165000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/94fd1ed1-b1a8-4f0d-b170-5fed84038d07/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/94fd1ed1-b1a8-4f0d-b170-5fed84038d07/",
+   "related_url": "https://api.openverse.org/v1/audio/94fd1ed1-b1a8-4f0d-b170-5fed84038d07/related/",
+   "waveform": "https://api.openverse.org/v1/audio/94fd1ed1-b1a8-4f0d-b170-5fed84038d07/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "150e8d3f-5e77-4108-8dd6-69321873e025",
+   "title": "Un petit po\u00e8me",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/341396",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=341396&format=mp32",
+   "creator": "Lena Selyanina",
+   "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "poetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Un petit po\u00e8me\" by Lena Selyanina is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Piano Poetry",
+    "foreign_landing_url": "https://www.jamendo.com/album/45056/piano-poetry",
+    "creator": "Lena Selyanina",
+    "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 283000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/150e8d3f-5e77-4108-8dd6-69321873e025/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/150e8d3f-5e77-4108-8dd6-69321873e025/",
+   "related_url": "https://api.openverse.org/v1/audio/150e8d3f-5e77-4108-8dd6-69321873e025/related/",
+   "waveform": "https://api.openverse.org/v1/audio/150e8d3f-5e77-4108-8dd6-69321873e025/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "efb594bf-bc87-42b6-906a-660a413cdf9e",
+   "title": "Lady Ravenstein",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1687398",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1687398&format=mp32",
+   "creator": "Ehma",
+   "creator_url": "https://www.jamendo.com/artist/18/ehma",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "neoclassical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lady Ravenstein\" by Ehma is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Les adieux \u00e0 Bl\u00e2ne-Est",
+    "foreign_landing_url": "https://www.jamendo.com/album/187871/les-adieux-a-blane-est",
+    "creator": "Ehma",
+    "creator_url": "https://www.jamendo.com/artist/18/ehma",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 124000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/efb594bf-bc87-42b6-906a-660a413cdf9e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/efb594bf-bc87-42b6-906a-660a413cdf9e/",
+   "related_url": "https://api.openverse.org/v1/audio/efb594bf-bc87-42b6-906a-660a413cdf9e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/efb594bf-bc87-42b6-906a-660a413cdf9e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "499f6195-1b58-400f-a5a7-8e49af49ca71",
+   "title": "Les adieux \u00e0 Bl\u00e2ne-Est",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1687397",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1687397&format=mp32",
+   "creator": "Ehma",
+   "creator_url": "https://www.jamendo.com/artist/18/ehma",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "neoclassical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Les adieux \u00e0 Bl\u00e2ne-Est\" by Ehma is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Les adieux \u00e0 Bl\u00e2ne-Est",
+    "foreign_landing_url": "https://www.jamendo.com/album/187871/les-adieux-a-blane-est",
+    "creator": "Ehma",
+    "creator_url": "https://www.jamendo.com/artist/18/ehma",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 200000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/499f6195-1b58-400f-a5a7-8e49af49ca71/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/499f6195-1b58-400f-a5a7-8e49af49ca71/",
+   "related_url": "https://api.openverse.org/v1/audio/499f6195-1b58-400f-a5a7-8e49af49ca71/related/",
+   "waveform": "https://api.openverse.org/v1/audio/499f6195-1b58-400f-a5a7-8e49af49ca71/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b4e69473-2de0-48ff-801c-a198d9790183",
+   "title": "Bad dreams",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/78963",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=78963&format=mp32",
+   "creator": "Mister M",
+   "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dreamy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "minimal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bad dreams\" by Mister M is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Rezolution",
+    "foreign_landing_url": "https://www.jamendo.com/album/7194/rezolution",
+    "creator": "Mister M",
+    "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 193000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b4e69473-2de0-48ff-801c-a198d9790183/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b4e69473-2de0-48ff-801c-a198d9790183/",
+   "related_url": "https://api.openverse.org/v1/audio/b4e69473-2de0-48ff-801c-a198d9790183/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b4e69473-2de0-48ff-801c-a198d9790183/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6d6cd8a0-28f4-490e-9810-3d76e5c10068",
+   "title": "Engel",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1064756",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1064756&format=mp32",
+   "creator": "Delano",
+   "creator_url": "https://www.jamendo.com/artist/367247/Delano",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "soul"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ballad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "saxophone",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Engel\" by Delano is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tranquilidade",
+    "foreign_landing_url": "https://www.jamendo.com/album/125783/tranquilidade",
+    "creator": "Delano",
+    "creator_url": "https://www.jamendo.com/artist/367247/Delano",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 283000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6d6cd8a0-28f4-490e-9810-3d76e5c10068/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6d6cd8a0-28f4-490e-9810-3d76e5c10068/",
+   "related_url": "https://api.openverse.org/v1/audio/6d6cd8a0-28f4-490e-9810-3d76e5c10068/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6d6cd8a0-28f4-490e-9810-3d76e5c10068/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2e034bd5-229b-46c1-84bd-fb8ddeb1833c",
+   "title": "Bon Voyage, Mama",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/341399",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=341399&format=mp32",
+   "creator": "Lena Selyanina",
+   "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "melancholic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bon Voyage, Mama\" by Lena Selyanina is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Piano Poetry",
+    "foreign_landing_url": "https://www.jamendo.com/album/45056/piano-poetry",
+    "creator": "Lena Selyanina",
+    "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 130000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2e034bd5-229b-46c1-84bd-fb8ddeb1833c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2e034bd5-229b-46c1-84bd-fb8ddeb1833c/",
+   "related_url": "https://api.openverse.org/v1/audio/2e034bd5-229b-46c1-84bd-fb8ddeb1833c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2e034bd5-229b-46c1-84bd-fb8ddeb1833c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "79ad6fce-e669-4952-83ed-bec634162e28",
+   "title": "Elusive Happiness",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1169857",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1169857&format=mp32",
+   "creator": "TheDICE",
+   "creator_url": "https://www.jamendo.com/artist/456948/TheDICE_(3)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Elusive Happiness\" by TheDICE is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Elusive Happiness and Goodbyes",
+    "foreign_landing_url": "https://www.jamendo.com/album/140763/elusive-happiness-and-goodbyes",
+    "creator": "TheDICE",
+    "creator_url": "https://www.jamendo.com/artist/456948/TheDICE_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 77000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/79ad6fce-e669-4952-83ed-bec634162e28/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/79ad6fce-e669-4952-83ed-bec634162e28/",
+   "related_url": "https://api.openverse.org/v1/audio/79ad6fce-e669-4952-83ed-bec634162e28/related/",
+   "waveform": "https://api.openverse.org/v1/audio/79ad6fce-e669-4952-83ed-bec634162e28/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "baacad75-a1d4-48c2-9062-b962610311d3",
+   "title": "Drum'n'Bass",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1036151",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1036151&format=mp32",
+   "creator": "Flex Blur",
+   "creator_url": "https://www.jamendo.com/artist/4625/flex.blur",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cymbals",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Drum'n'Bass\" by Flex Blur is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Empty",
+    "foreign_landing_url": "https://www.jamendo.com/album/121997/empty",
+    "creator": "Flex Blur",
+    "creator_url": "https://www.jamendo.com/artist/4625/flex.blur",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 190000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/baacad75-a1d4-48c2-9062-b962610311d3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/baacad75-a1d4-48c2-9062-b962610311d3/",
+   "related_url": "https://api.openverse.org/v1/audio/baacad75-a1d4-48c2-9062-b962610311d3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/baacad75-a1d4-48c2-9062-b962610311d3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a2368cad-36e7-414f-a3a9-a0497b1636ce",
+   "title": "Softe",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/151094",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=151094&format=mp32",
+   "creator": "Torley on Piano",
+   "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Softe\" by Torley on Piano is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "solo piano 7: Improvisations for a New Age",
+    "foreign_landing_url": "https://www.jamendo.com/album/21576/solo-piano-7-improvisations-for-a-new-age",
+    "creator": "Torley on Piano",
+    "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 69000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a2368cad-36e7-414f-a3a9-a0497b1636ce/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a2368cad-36e7-414f-a3a9-a0497b1636ce/",
+   "related_url": "https://api.openverse.org/v1/audio/a2368cad-36e7-414f-a3a9-a0497b1636ce/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a2368cad-36e7-414f-a3a9-a0497b1636ce/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b3de9904-378f-4b9c-8d82-d525ff7900bb",
+   "title": "Swing Train",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1107695",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1107695&format=mp32",
+   "creator": "Naturalbodyartist",
+   "creator_url": "https://www.jamendo.com/artist/430126/naturalbody2",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "jazz"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Swing Train\" by Naturalbodyartist is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "best of vol.3",
+    "foreign_landing_url": "https://www.jamendo.com/album/132294/best-of-vol-3",
+    "creator": "Naturalbodyartist",
+    "creator_url": "https://www.jamendo.com/artist/430126/naturalbody2",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 160000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b3de9904-378f-4b9c-8d82-d525ff7900bb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b3de9904-378f-4b9c-8d82-d525ff7900bb/",
+   "related_url": "https://api.openverse.org/v1/audio/b3de9904-378f-4b9c-8d82-d525ff7900bb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b3de9904-378f-4b9c-8d82-d525ff7900bb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e7ca2084-eb6b-4b84-8207-f7585d9ad79d",
+   "title": "Our journey",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/95641",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=95641&format=mp32",
+   "creator": "Renich",
+   "creator_url": "https://www.jamendo.com/artist/336764/Renich",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "misterious",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "videogame",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Our journey\" by Renich is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Nocturnal Overtures",
+    "foreign_landing_url": "https://www.jamendo.com/album/9831/nocturnal-overtures",
+    "creator": "Renich",
+    "creator_url": "https://www.jamendo.com/artist/336764/Renich",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 166000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e7ca2084-eb6b-4b84-8207-f7585d9ad79d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e7ca2084-eb6b-4b84-8207-f7585d9ad79d/",
+   "related_url": "https://api.openverse.org/v1/audio/e7ca2084-eb6b-4b84-8207-f7585d9ad79d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e7ca2084-eb6b-4b84-8207-f7585d9ad79d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1078850a-e311-4e4f-848f-8a738ffec6de",
+   "title": "Lovers Prayer",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1085948",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1085948&format=mp32",
+   "creator": "GingerTom",
+   "creator_url": "https://www.jamendo.com/artist/370789/GingerTom",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "carol",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "orchestra",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "religious",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lovers Prayer\" by GingerTom is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "LOVERS Specials",
+    "foreign_landing_url": "https://www.jamendo.com/album/129437/lovers-specials",
+    "creator": "GingerTom",
+    "creator_url": "https://www.jamendo.com/artist/370789/GingerTom",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 253000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1078850a-e311-4e4f-848f-8a738ffec6de/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1078850a-e311-4e4f-848f-8a738ffec6de/",
+   "related_url": "https://api.openverse.org/v1/audio/1078850a-e311-4e4f-848f-8a738ffec6de/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1078850a-e311-4e4f-848f-8a738ffec6de/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6a363189-6db8-42d1-a717-52119eedba44",
+   "title": "Everything",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/78962",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=78962&format=mp32",
+   "creator": "Mister M",
+   "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dark",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "deprimant",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "minimal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Everything\" by Mister M is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Rezolution",
+    "foreign_landing_url": "https://www.jamendo.com/album/7194/rezolution",
+    "creator": "Mister M",
+    "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 127000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6a363189-6db8-42d1-a717-52119eedba44/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6a363189-6db8-42d1-a717-52119eedba44/",
+   "related_url": "https://api.openverse.org/v1/audio/6a363189-6db8-42d1-a717-52119eedba44/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6a363189-6db8-42d1-a717-52119eedba44/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

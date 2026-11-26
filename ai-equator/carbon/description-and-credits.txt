@@ -1,0 +1,30 @@
+Gemini 4 Carbon is finally public. Google's new frontier model can work for hours, rebuilt a historic fort in 3D over 20 hours, and found real zero-days in under two hours. Here's what it is, the benchmarks, how it compares with Claude and GPT, what people built, the reviews, and the problems nobody puts in their thumbnails. Test it before December 1, when the price doubles.
+
+Google's benchmark numbers are company-reported; the cyber numbers were run without guardrails.
+
+OFFICIAL
+Google, "Gemini 4 Carbon: our next frontier model" (Oct 28, 2026): https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
+Google, "Gemini 4 Carbon is now available" (Nov 10, 2026): https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+Google for Developers guide: https://x.com/googledevs/status/2120261599500161276
+
+BENCHMARKS AND INDEPENDENT TESTS
+OfficeChai benchmark breakdown: https://officechai.com/ai/gemini-4-carbon-benchmarks/
+Artificial Analysis, Carbon #1 at launch: https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1 · https://x.com/ArtificialAnlys/status/2115494553780367384 · https://x.com/ArtificialAnlys/status/2115494556548599953
+Artificial Analysis, Fable 5.2 takes #1: https://x.com/ArtificialAnlys/status/2119878995386982508
+VentureBeat (hallucination 4% → 11%): https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited
+Vals AI: https://x.com/ValsAI/status/2119869713782378658
+ARC Prize leaderboard: https://arcprize.org/leaderboard
+dev.to review (price change, speed, HN quotes): https://dev.to/hamzaahmadaslam/gemini-4-carbon-review-googles-claims-independent-results-and-what-testers-found-45lb
+The Decoder (Wiz zero-days, prompt injection, honesty test): https://the-decoder.com/gemini-4-carbon-arrives-just-in-time-to-feel-like-yesterdays-news-in-the-fastest-model-cycle-yet/
+Hacker News comment: https://news.ycombinator.com/item?id=50444914
+
+WHAT PEOPLE BUILT
+Paweł Huryn, 105-bug test: https://x.com/PawelHuryn/status/2120283296550547618
+Dan Shipper / Every vibe check: https://x.com/danshipper/status/2120187507396530309 · https://every.to/vibe-check/vibe-check-gemini-4-carbon-doesn-t-know-when-to-stop
+Stefan 3D AI, Carbon vs Argon: https://x.com/Stefan_3D_AI/status/2120408024678629622
+Chetaslua, Greek world in Three.js: https://x.com/chetaslua/status/2116082604151914668
+Pankaj Kumar: https://x.com/pankajkumar_dev/status/2118058662350766542 · https://x.com/pankajkumar_dev/status/2113262416041558041
+Lumina, 3D helicopter vs Opus 5.5: https://x.com/LuminaBench/status/2113963313591705768
+Prompt Engineering (fort, galaxies, robot, jet engine, Breakout): https://www.youtube.com/watch?v=lQ6wwLHqDAg
+Geeky Gadgets: https://www.geeky-gadgets.com/gemini-carbon-2/ · https://www.geeky-gadgets.com/gemini-carbon/
+MindStudio overview (macOS Pomodoro app): https://www.mindstudio.ai/blog/gemini-4-carbon-overview

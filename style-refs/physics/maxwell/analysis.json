@@ -1,0 +1,54 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/vidssave.com Nobody Explained Maxwell's Equations Like THIS! 360P.mp4",
+  "duration": 1166.133333,
+  "width": 640,
+  "height": 360,
+  "fps": 30.0,
+  "has_audio": true,
+  "shots": 8,
+  "avg_shot_sec": 145.77,
+  "median_shot_sec": 24.13,
+  "shortest_shot_sec": 2.1,
+  "longest_shot_sec": 715.23,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 2.0,
+    "after 5m": 0.1
+  },
+  "loudness": {
+    "integrated_lufs": -19.3,
+    "range_lu": 3.5
+  },
+  "cuts": [
+    137.466667,
+    140.9,
+    144.9,
+    147.0,
+    162.766667,
+    195.266667,
+    910.5
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 24.3
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 388.7,
+      "sec_between_frames": 24.3
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 777.4,
+      "sec_between_frames": 24.3
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+[0:00.00] Hey everyone, welcome back.
+[0:02.00] Today, we're going to learn calculus.
+[0:04.64] Yes, calculus.
+[0:06.56] And I promise you, by the end of this video, even if you're in sixth grade, you'll understand what it is and how it works.
+[0:14.20] I know.
+[0:15.22] The word calculus sounds scary.
+[0:17.50] It sounds like something only geniuses in white lab coats understand.
+[0:21.52] But here's the truth.
+[0:23.24] Calculus is built on two very simple ideas, and you already use both of them in your everyday life.
+[0:29.04] You just don't know their names yet.
+[0:31.50] So let's find out what they are.
+[0:33.74] First, what is calculus about?
+[0:36.36] In one sentence, calculus is the math of change.
+[0:40.16] So regular math, the kind you already know, is great for things that stay still.
+[0:45.70] How many apples are in the basket?
+[0:47.72] How long is this table?
+[0:49.30] What is five times seven?
+[0:51.30] But the world doesn't stay still.
+[0:53.46] Cars speed up and slow down.
+[0:55.70] Balloons get bigger.
+[0:57.06] Water fills up a bathtub.
+[0:59.14] Your height changes as you grow.
+[1:01.22] Prices go up and down every day.
+[1:03.82] Calculus is the tool that lets us understand things that are moving and changing.
+[1:08.40] That's why scientists, engineers, game designers, doctors, and even people who launch rockets to space use it every single day.
+[1:17.68] Now, calculus has two big ideas.
+[1:21.02] The first one is called the derivative.
+[1:23.04] The second one is called the integral.
+[1:25.32] Let's take them one at a time.
+[1:27.34] Big idea number one, the derivative.
+[1:30.34] How fast is something changing?
+[1:32.48] Imagine you're riding in a car with your family.
+[1:35.24] You look at the speedometer, and it says 60 kilometers per hour.
+[1:39.52] Now think about what that number means.
+[1:41.78] It doesn't tell you how far you've traveled.
+[1:44.26] It tells you how fast your distance is changing right now, at this exact moment.
+[1:49.54] That number on the speedometer?
+[1:51.32] That's a derivative.
+[1:53.22] A derivative simply answers the question, how fast is something changing at this exact moment?
+[1:59.70] Let's see it with a simple example.
+[2:02.16] Say you walk to your friend's house.
+[2:04.22] After one minute, you've walked 50 meters.
+[2:10.52] After three minutes, 150 meters.
+[2:13.92] How fast are you walking?
+[2:15.70] Easy.
+[2:16.52] Every minute, you go 50 more meters.
+[2:18.86] Your speed is 50 meters per minute.
+[2:21.06] Always the same.
+[2:22.60] If you draw this on a graph, with time going across and distance going up, you get a perfectly straight line.
+[2:28.96] And how steep that line is tells you your speed.
+[2:32.16] A steeper line means faster.
+[2:34.34] A flatter line means slower.
+[2:36.62] Mathematicians call this steepness the slope.
+[2:39.78] So far, no calculus needed.
+[2:42.34] Straight lines are easy.
+[2:44.02] But now here's the problem.
+[2:46.04] What if you're on a bicycle going down a hill?
+[2:48.62] You start slow, then you go faster, and faster, and faster.
+[2:53.04] Your speed keeps changing every second.
+[2:55.52] Now if you draw the graph, it's not a straight line anymore.
+[2:58.74] It's a curve that keeps bending upward.
+[3:01.34] And a curve is tricky.
+[3:03.08] Its steepness is different at every point.
+[3:05.52] So how do you find the speed at one exact moment, like exactly three seconds into the ride?
+[3:11.22] Here's the genius trick of calculus.
+[3:13.64] Zoom in.
+[3:14.72] Imagine you have a magic magnifying glass, and you zoom into one tiny spot on that curve.
+[3:20.56] Zoom in a little, and the curve looks less curvy.
+[3:23.68] Zoom in more, and it looks even straighter.
+[3:26.44] Zoom in super, super close, and that tiny piece of the curve looks exactly like a straight line.
+[3:32.46] And we already know how to find the steepness of a straight line.
+[3:36.62] That's the whole secret of the derivative.
+[3:39.00] Zoom in on a curve until it looks straight, and then measure its steepness.
+[3:43.32] That steepness is how fast things are changing at that exact moment.
+[3:47.32] Think of the Earth.
+[3:48.50] When you stand outside, the ground looks flat, right?
+[3:51.54] But the Earth is actually a giant ball.
+[3:54.04] It only looks flat because you're so tiny compared to it.
+[3:57.30] You're seeing a super zoomed -in piece of a curve.
+[4:00.10] Calculus uses that same idea.
+[4:02.64] This idea of zooming in closer and closer, getting nearer and nearer to something without quite reaching it, has a name.
+[4:10.08] It's called a limit.
+[4:11.54] Limits are the foundation that holds all of calculus together.
+[4:15.32] Here's a fun way to picture a limit.
+[4:17.58] Imagine you walk toward a wall.
+[4:19.52] Each step, you walk half of the distance that's left.
+[4:22.98] Half, then half of that, then half of that.
+[4:25.84] You get closer and closer and closer.
+[4:30.52] Your steps get tiny, tiny, tiny.
+[4:33.18] You're heading straight for the wall.
+[4:34.96] That wall is the limit.
+[4:37.00] Now, let me show you one tiny piece of real calculus.
+[4:40.92] Don't worry, it's easier than it looks.
+[4:43.94] Imagine a square.
+[4:45.62] If each side is x, the area of the square is x times x.
+[4:50.62] We write that as x squared.
+[4:52.94] Now what if we make the square just a little bit bigger?
+[4:55.84] How fast does the area grow?
+[4:58.42] Picture it.
+[4:59.56] When you stretch the square a tiny bit, you add a thin strip along the top and a thin strip along the side.
+[5:05.96] Each strip is about x long.
+[5:08.68] So together, that's two strips of length x.
+[5:11.90] Two x.
+[5:12.90] There's also a teeny tiny corner piece, but it's so small that it basically disappears when we zoom in.
+[5:18.96] So the area grows at a speed of two x.
+[5:21.74] In calculus language, we say the derivative of x squared is 2x.
+[5:26.80] And here's the cool pattern.
+[5:29.20] Mathematicians found a shortcut.
+[5:31.10] Take the little number on top, the power, bring it down to the front, and then make the power one smaller.
+[5:37.74] x squared.
+[5:38.96] Bring the two down.
+[5:40.42] Make the power one less.
+[5:42.48] 2x.
+[5:43.50] x cubed.
+[5:44.64] Bring the three down.
+[5:46.62] Power becomes 2.
+[5:48.42] 3x squared.
+[5:49.82] That's called the power rule.
+[5:51.60] And believe it or not, that's real calculus.
+[5:54.80] You just did it.
+[5:56.16] Quick note before we go to the second big idea.
+[5:58.94] This video is just the beginning.
+[6:01.28] If you want the full, detailed calculus course, with every rule, every trick, and lots of practice questions explained step by step, make sure you subscribe to the channel and hit
+[6:12.08] the bell so you don't miss it.
+[6:14.22] It's coming soon.
+[6:15.60] Big idea number two.
+[6:18.02] The integral.
+[6:19.22] Adding up tiny pieces.
+[6:21.24] The derivative breaks things into tiny moments.
+[6:24.22] The integral does the opposite.
+[6:26.30] It takes lots of tiny pieces and adds them all together to find the total.
+[6:30.98] Let's go back to the car.
+[6:32.88] Suppose you're driving at a steady 60 kilometers per hour for two hours.
+[6:36.94] How far did you go?
+[6:38.70] Easy.
+[6:39.62] 60 times 2, 120 kilometers.
+[6:43.24] But what if your speed was changing the whole time?
+[6:46.14] Sometimes 30, sometimes 80, sometimes stuck in traffic at zero.
+[6:50.92] Now you can't just multiply.
+[6:52.74] So how do you find the total distance?
+[6:55.28] Here's the integral trick.
+[6:57.26] Chop the trip into tiny little moments.
+[6:59.84] In each tiny moment, your speed hardly changes.
+[7:03.24] So for each moment, you multiply speed by time to get a small distance.
+[7:07.92] Then you add up all those small distances.
+[7:10.64] And the smaller the moments, the more exact your answer.
+[7:14.32] Now let's picture it on a graph.
+[7:16.52] Imagine a curvy line, like a hill, and you want to find the area under that hill, the space between the curve and the ground.
+[7:24.16] Curvy shapes are hard to measure.
+[7:26.12] There's no simple formula for them.
+[7:28.40] But rectangles are super easy.
+[7:30.62] Area of a rectangle is just width times height.
+[7:33.84] So here's what we do.
+[7:35.30] We fill the space under the curve with skinny rectangles, standing side by side like books on a shelf.
+[7:41.70] Find the area of each rectangle.
+[7:43.94] Add them all up.
+[7:45.44] At first, with a few fat rectangles, the answer is a bit rough.
+[7:50.26] Some pieces stick out, some gaps are left, but use thinner rectangles, and the fit gets better.
+[7:56.66] Use thousands, millions, endless super skinny rectangles, and the answer becomes perfect.
+[8:03.22] Do you notice what just happened?
+[8:05.20] That's our friend the limit again, getting closer and closer to the perfect answer.
+[8:09.68] That's an integral.
+[8:11.42] Slice something into countless tiny pieces and add them all up.
+[8:15.62] Think about pizza.
+[8:17.10] If you want to know how much pizza you ate, you don't measure the whole pizza at once.
+[8:21.82] You add up the slices, or think about filling a bucket with rain.
+[8:26.22] Each tiny raindrop adds a little bit, and the integral is the total water at the end.
+[8:31.59] And now, here's the most amazing part of all.
+[8:35.38] The derivative asks, how fast is something changing?
+[8:39.28] The integral asks, how much has piled up in total?
+[8:43.42] It turns out, these two ideas are exact opposites, like tying and untying a knot, like going up the stairs and coming back down.
+[8:52.60] If you take a derivative and then take an integral, you end up right back where you started.
+[8:58.04] This discovery is so important, it's called the fundamental theorem of calculus.
+[9:03.86] It connects the two big ideas into one beautiful system, and that's what makes calculus so powerful.
+[9:11.06] Who came up with all this?
+[9:13.02] Over 300 years ago, two brilliant people figured out calculus at almost the same time.
+[9:19.14] Isaac Newton in England, the same guy famous for gravity and the apple, and Gottfried Leibniz in Germany, and they had a huge argument about who invented it first.
+[9:30.08] It turned into one of the biggest fights in the history of science.
+[9:33.54] In the end, both of them get the credit.
+[9:36.24] And actually, the symbols we still use today mostly come from Leibniz.
+[9:41.04] So where is calculus used in real life?
+[9:44.22] Pretty much everywhere.
+[9:45.64] Rockets and space travel.
+[9:47.66] To get a spacecraft to the moon, engineers need to know exactly how its speed and position change every second.
+[9:54.82] Video games.
+[9:56.20] When a character jumps and falls in a smooth arc or a ball bounces realistically, calculus is working behind the scenes.
+[10:03.94] Medicine.
+[10:05.08] Doctors use it to figure out how fast medicine spreads through the body.
+[10:09.42] Weather.
+[10:10.36] Forecasters use it to predict how storms will move.
+[10:13.58] Even artificial intelligence, the technology behind smart apps and chatbots, learns using derivatives.
+[10:20.32] It checks which direction makes its answers a tiny bit better, and takes a small step that way.
+[10:25.76] Again and again.
+[10:27.56] Okay!
+[10:28.54] Quick quiz time!
+[10:30.58] Let's see if you were paying attention.
+[10:32.96] Pause the video if you need a moment.
+[10:35.64] Question 1.
+[10:36.92] Calculus is the math of what?
+[10:39.34] Change.
+[10:40.22] Calculus is the math of change.
+[10:42.74] Question 2.
+[10:43.98] Which big idea tells you how fast something is changing at one exact moment?
+[10:48.96] The derivative, like a speedometer.
+[10:51.80] Question 3.
+[10:53.28] Which big idea adds up tiny pieces to find a total, like the area under a curve?
+[10:58.96] The integral, like adding up skinny rectangles.
+[11:02.34] Question 4.
+[11:04.08] Using the power rule, what is the derivative of x squared?
+[11:08.74] 2x, bring the 2 down, and make the power 1 less.
+[11:13.62] If you got all 4 right, congratulations!
+[11:16.72] You now understand calculus better than most adults on the planet.
+[11:20.64] So, let's quickly sum it up.
+[11:23.24] Calculus is the math of change.
+[11:25.60] It has two big ideas, the derivative, which zooms in to find how fast something is changing right now, and the integral, which adds up tiny pieces to find the total.
+[11:36.78] Both are built on limits, getting closer and closer to a perfect answer.
+[11:41.82] And the two ideas are opposites, joined together by the fundamental theorem of calculus.
+[11:47.46] That's it.
+[11:48.66] That's the heart of calculus.
+[11:50.62] Everything else you'll ever learn about it, all the rules and formulas, grows from these simple ideas.
+[11:56.98] And this was just the beginning.
+[11:58.38] If you want to go deeper with the full detailed calculus course, step by step, from limits all the way to advanced integrals, with plenty of practice problems, then subscribe to
+[12:09.52] the channel right now and turn on notifications.
+[12:12.64] I'd love to see you there.
+[12:14.32] Thanks for watching, keep being curious, and I'll see you in the next video.

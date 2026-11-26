@@ -1,0 +1,183 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/shark.js"></script><script src="assets/js/world.js"></script><script src="assets/js/story.js"></script><script src="assets/js/res.js"></script><script src="assets/js/peng.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="184.433" data-width="1920" data-height="1080">
+<div id="w323" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:157;"><video id="v322" class="clip fit" src="assets/clips/alba_dance_da2c56d1.mp4" muted playsinline data-start="0.000" data-duration="5.673" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s324" class="clip scene " data-start="0.000" data-duration="5.673" data-track-index="2" style="z-index:158" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Jean M Matuska</div></div>
+<div id="w326" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:159;"><video id="v325" class="clip fit" src="assets/clips/colony_7_9091bbf6.mp4" muted playsinline data-start="5.673" data-duration="3.620" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w328" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:160;"><video id="v327" class="clip fit" src="assets/clips/bremer_humboldt2_351046d8.mp4" muted playsinline data-start="9.293" data-duration="4.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s329" class="clip scene " data-start="9.293" data-duration="4.100" data-track-index="2" style="z-index:161" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: augenfreund1</div></div>
+<div id="w331" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:162;"><video id="v330" class="clip fit" src="assets/clips/gentoo_0_3532bb55.mp4" muted playsinline data-start="13.393" data-duration="2.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv332" class="clip" width="1920" height="1080" data-start="16.173" data-duration="3.460" data-track-index="1" style="z-index:163"></canvas>
+<div id="w334" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:164;"><video id="v333" class="clip fit" src="assets/clips/sphen_ice_e6bf16a1.mp4" muted playsinline data-start="19.633" data-duration="6.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s335" class="clip scene " data-start="19.633" data-duration="6.860" data-track-index="2" style="z-index:165" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w337" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:166;"><video id="v336" class="clip fit" src="assets/clips/walk_6_59c08435.mp4" muted playsinline data-start="26.493" data-duration="5.720" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w339" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:167;"><video id="v338" class="clip fit" src="assets/clips/sphen_ice_57c3e174.mp4" muted playsinline data-start="32.213" data-duration="3.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s340" class="clip scene " data-start="32.213" data-duration="3.520" data-track-index="2" style="z-index:168" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w342" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:169;"><video id="v341" class="clip fit" src="assets/clips/sphen_ice_a80545de.mp4" muted playsinline data-start="35.733" data-duration="5.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s343" class="clip scene " data-start="35.733" data-duration="5.200" data-track-index="2" style="z-index:170" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w345" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:171;"><video id="v344" class="clip fit" src="assets/clips/gentoo_pebble_2557a8f3.mp4" muted playsinline data-start="40.933" data-duration="4.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s346" class="clip scene " data-start="40.933" data-duration="4.100" data-track-index="2" style="z-index:172" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Mashi1</div></div>
+<div id="w348" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:173;"><video id="v347" class="clip fit" src="assets/clips/sphen_3yrs_deaf094c.mp4" muted playsinline data-start="45.033" data-duration="3.500" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s349" class="clip scene " data-start="45.033" data-duration="3.500" data-track-index="2" style="z-index:174" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w351" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:175;"><video id="v350" class="clip fit" src="assets/clips/chin_6_4d2226a6.mp4" muted playsinline data-start="48.533" data-duration="7.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s353" class="clip scene " data-start="55.813" data-duration="5.200" data-track-index="2" style="z-index:176" data-layout-allow-overflow data-layout-allow-overlap><img id="ph352" class="fill" src="assets/gen/gentoo_0_bd2ea4.jpg" alt="gentoo_0" style="transform-origin:50% 50%"><div class="credit">Photo: David Stanley from Nanaimo, Canada / Wikimedia Commons</div></div>
+<div id="w355" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:177;"><video id="v354" class="clip fit" src="assets/clips/sphen_3yrs_5ae50cb4.mp4" muted playsinline data-start="61.013" data-duration="2.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s356" class="clip scene " data-start="61.013" data-duration="2.480" data-track-index="2" style="z-index:178" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w358" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:179;"><video id="v357" class="clip fit" src="assets/clips/sphen_ice_08e8e953.mp4" muted playsinline data-start="63.493" data-duration="7.160" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s359" class="clip scene " data-start="63.493" data-duration="7.160" data-track-index="2" style="z-index:180" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w361" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:181;"><video id="v360" class="clip fit" src="assets/clips/chin_6_1fa44c06.mp4" muted playsinline data-start="70.653" data-duration="1.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w363" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:182;"><video id="v362" class="clip fit" src="assets/clips/sphen_ice_d19a544e.mp4" muted playsinline data-start="72.573" data-duration="7.400" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s364" class="clip scene " data-start="72.573" data-duration="7.400" data-track-index="2" style="z-index:183" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w366" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:184;"><video id="v365" class="clip fit" src="assets/clips/sphen_3yrs_97a37172.mp4" muted playsinline data-start="79.973" data-duration="2.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s367" class="clip scene " data-start="79.973" data-duration="2.280" data-track-index="2" style="z-index:185" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w369" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:186;"><video id="v368" class="clip fit" src="assets/clips/gentoo_sunset_3e9fe9e0.mp4" muted playsinline data-start="82.253" data-duration="5.700" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s370" class="clip scene " data-start="82.253" data-duration="5.700" data-track-index="2" style="z-index:187" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w372" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:188;"><video id="v371" class="clip fit" src="assets/clips/gentoo_sunset_d2ff9f35.mp4" muted playsinline data-start="87.953" data-duration="1.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s373" class="clip scene " data-start="87.953" data-duration="1.940" data-track-index="2" style="z-index:189" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w375" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:190;"><video id="v374" class="clip fit" src="assets/clips/sphen_ice_2fad53f7.mp4" muted playsinline data-start="89.893" data-duration="6.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s376" class="clip scene " data-start="89.893" data-duration="6.220" data-track-index="2" style="z-index:191" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: SEA LIFE Sydney Aquarium</div></div>
+<div id="w378" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:192;"><video id="v377" class="clip fit" src="assets/clips/chin_4_a12088a4.mp4" muted playsinline data-start="96.113" data-duration="2.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w380" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:193;"><video id="v379" class="clip fit" src="assets/clips/gentoo_sunset_c3a38793.mp4" muted playsinline data-start="98.153" data-duration="4.160" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s381" class="clip scene " data-start="98.153" data-duration="4.160" data-track-index="2" style="z-index:194" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w383" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:195;"><video id="v382" class="clip fit" src="assets/clips/berg_7_392a6e81.mp4" muted playsinline data-start="102.313" data-duration="6.440" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w385" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:196;"><video id="v384" class="clip fit" src="assets/clips/storm_1_03787915.mp4" muted playsinline data-start="108.753" data-duration="2.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w387" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:197;"><video id="v386" class="clip fit" src="assets/clips/colony_6_d4b1d95d.mp4" muted playsinline data-start="111.693" data-duration="2.680" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w389" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:198;"><video id="v388" class="clip fit" src="assets/clips/adelie_adare_0ef45810.mp4" muted playsinline data-start="114.373" data-duration="1.820" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s390" class="clip scene " data-start="114.373" data-duration="1.820" data-track-index="2" style="z-index:199" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<canvas id="cv391" class="clip" width="1920" height="1080" data-start="116.193" data-duration="8.280" data-track-index="1" style="z-index:200"></canvas>
+<div id="w393" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:201;"><video id="v392" class="clip fit" src="assets/clips/pair_4_1bbc0f15.mp4" muted playsinline data-start="124.473" data-duration="2.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w395" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:202;"><video id="v394" class="clip fit" src="assets/clips/king_court_26b378f9.mp4" muted playsinline data-start="126.753" data-duration="9.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s396" class="clip scene " data-start="126.753" data-duration="9.340" data-track-index="2" style="z-index:203" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w398" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:204;"><video id="v397" class="clip fit" src="assets/clips/adelie_adare_578f7948.mp4" muted playsinline data-start="136.093" data-duration="3.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s399" class="clip scene " data-start="136.093" data-duration="3.600" data-track-index="2" style="z-index:205" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w401" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:206;"><video id="v400" class="clip fit" src="assets/clips/zoo_6_b2f9db7e.mp4" muted playsinline data-start="139.693" data-duration="7.440" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w403" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:207;"><video id="v402" class="clip fit" src="assets/clips/swim_1_d9de7d7d.mp4" muted playsinline data-start="147.133" data-duration="3.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv404" class="clip" width="1920" height="1080" data-start="150.893" data-duration="5.420" data-track-index="1" style="z-index:208"></canvas>
+<div id="w406" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:209;"><video id="v405" class="clip fit" src="assets/clips/adelie_nests_6eb785d9.mp4" muted playsinline data-start="156.313" data-duration="4.620" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s407" class="clip scene " data-start="156.313" data-duration="4.620" data-track-index="2" style="z-index:210" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: varagner</div></div>
+<div id="s409" class="clip scene " data-start="160.933" data-duration="4.820" data-track-index="2" style="z-index:211" data-layout-allow-overflow data-layout-allow-overlap><img id="ph408" class="fill" src="assets/gen/cpz_5_8a4cde.jpg" alt="cpz_5" style="transform-origin:50% 50%"><div class="credit">Photo: Bryn Holmes / Wikimedia Commons</div></div>
+<div id="w411" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:212;"><video id="v410" class="clip fit" src="assets/clips/chin_sidey_3e81ab7b.mp4" muted playsinline data-start="165.753" data-duration="4.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s412" class="clip scene " data-start="165.753" data-duration="4.480" data-track-index="2" style="z-index:213" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w414" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:214;"><video id="v413" class="clip fit" src="assets/clips/chin_sidey_53ad6c6e.mp4" muted playsinline data-start="170.233" data-duration="1.720" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s415" class="clip scene " data-start="170.233" data-duration="1.720" data-track-index="2" style="z-index:215" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w417" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:216;"><video id="v416" class="clip fit" src="assets/clips/stones_0_efcfe3ef.mp4" muted playsinline data-start="171.953" data-duration="4.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv418" class="clip" width="1920" height="1080" data-start="176.313" data-duration="4.620" data-track-index="1" style="z-index:217"></canvas>
+<canvas id="cv419" class="clip" width="1920" height="1080" data-start="180.933" data-duration="3.500" data-track-index="1" style="z-index:218"></canvas>
+<div id="s423" class="clip scene " data-start="180.933" data-duration="3.500" data-track-index="2" style="z-index:219" data-layout-allow-overflow data-layout-allow-overlap><div id="en420" class="endname" style="opacity:0">UNSEEN BY EYE</div><div id="eb421" class="endbtn" style="opacity:0">SUBSCRIBE</div><div id="k422" class="black" style="opacity:0"></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v322",{scale:1.0},{scale:1.06,duration:5.673,ease:"none"},0.000);
+tl.fromTo("#v325",{scale:1.0},{scale:1.06,duration:3.62,ease:"none"},5.673);
+tl.fromTo("#v327",{scale:1.0},{scale:1.06,duration:4.1,ease:"none"},9.293);
+tl.fromTo("#v330",{scale:1.0},{scale:1.06,duration:2.78,ease:"none"},13.393);
+{const c=document.getElementById("cv332").getContext("2d");tl.to({},{duration:3.460,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [100, -10, 1.0], "to": [151.2, -33.87, 8.0], "t0": 0.2, "t1": 2.0, "pins": [[151.2, -33.87, 2.1, "#ff5b4f"]], "d": 3.46});}},16.173);}
+tl.fromTo("#v333",{scale:1.0},{scale:1.06,duration:6.86,ease:"none"},19.633);
+tl.fromTo("#v336",{scale:1.0},{scale:1.06,duration:5.72,ease:"none"},26.493);
+tl.fromTo("#v338",{scale:1.0},{scale:1.06,duration:3.52,ease:"none"},32.213);
+tl.fromTo("#v341",{scale:1.0},{scale:1.06,duration:5.2,ease:"none"},35.733);
+tl.fromTo("#v344",{scale:1.0},{scale:1.06,duration:4.1,ease:"none"},40.933);
+tl.fromTo("#v347",{scale:1.0},{scale:1.06,duration:3.5,ease:"none"},45.033);
+tl.fromTo("#v350",{scale:1.0},{scale:1.06,duration:7.28,ease:"none"},48.533);
+tl.fromTo("#ph352",{scale:1.0},{scale:1.12,duration:5.2,ease:"none"},55.813);
+tl.fromTo("#v354",{scale:1.0},{scale:1.06,duration:2.48,ease:"none"},61.013);
+tl.fromTo("#v357",{scale:1.0},{scale:1.06,duration:7.16,ease:"none"},63.493);
+tl.fromTo("#v360",{scale:1.0},{scale:1.06,duration:1.92,ease:"none"},70.653);
+tl.fromTo("#v362",{scale:1.0},{scale:1.06,duration:7.4,ease:"none"},72.573);
+tl.fromTo("#v365",{scale:1.0},{scale:1.06,duration:2.28,ease:"none"},79.973);
+tl.fromTo("#v368",{scale:1.0},{scale:1.06,duration:5.7,ease:"none"},82.253);
+tl.fromTo("#v371",{scale:1.0},{scale:1.06,duration:1.94,ease:"none"},87.953);
+tl.fromTo("#v374",{scale:1.0},{scale:1.06,duration:6.22,ease:"none"},89.893);
+tl.fromTo("#v377",{scale:1.0},{scale:1.06,duration:2.04,ease:"none"},96.113);
+tl.fromTo("#v379",{scale:1.0},{scale:1.06,duration:4.16,ease:"none"},98.153);
+tl.fromTo("#v382",{scale:1.0},{scale:1.06,duration:6.44,ease:"none"},102.313);
+tl.fromTo("#v384",{scale:1.0},{scale:1.06,duration:2.94,ease:"none"},108.753);
+tl.fromTo("#v386",{scale:1.0},{scale:1.06,duration:2.68,ease:"none"},111.693);
+tl.fromTo("#v388",{scale:1.0},{scale:1.06,duration:1.82,ease:"none"},114.373);
+{const c=document.getElementById("cv391").getContext("2d");tl.to({},{duration:8.280,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "adelie", "hearts": 1.0, "cam": {"z0": 1.0, "z1": 1.08}, "d": 8.28});}},116.193);}
+tl.fromTo("#v392",{scale:1.0},{scale:1.06,duration:2.28,ease:"none"},124.473);
+tl.fromTo("#v394",{scale:1.0},{scale:1.06,duration:9.34,ease:"none"},126.753);
+tl.fromTo("#v397",{scale:1.0},{scale:1.06,duration:3.6,ease:"none"},136.093);
+tl.fromTo("#v400",{scale:1.0},{scale:1.06,duration:7.44,ease:"none"},139.693);
+tl.fromTo("#v402",{scale:1.0},{scale:1.06,duration:3.76,ease:"none"},147.133);
+{const c=document.getElementById("cv404").getContext("2d");tl.to({},{duration:5.420,ease:"none",onUpdate:function(){SC.counter(c,this.time(),{"n": 1500, "label": "KINDS OF ANIMALS WITH SAME-SEX BEHAVIOUR", "cam": {"z0": 1.0, "z1": 1.04}, "d": 5.42});}},150.893);}
+tl.fromTo("#v405",{scale:1.0},{scale:1.06,duration:4.62,ease:"none"},156.313);
+tl.fromTo("#ph408",{scale:1.12},{scale:1.0,duration:4.82,ease:"none"},160.933);
+tl.fromTo("#v410",{scale:1.0},{scale:1.06,duration:4.48,ease:"none"},165.753);
+tl.fromTo("#v413",{scale:1.0},{scale:1.06,duration:1.72,ease:"none"},170.233);
+tl.fromTo("#v416",{scale:1.0},{scale:1.06,duration:4.36,ease:"none"},171.953);
+{const c=document.getElementById("cv418").getContext("2d");tl.to({},{duration:4.620,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "chinstrap", "item": "chick", "hearts": 1.5, "cam": {"z0": 1.0, "z1": 1.08}, "d": 4.62});}},176.313);}
+{const c=document.getElementById("cv419").getContext("2d");tl.to({},{duration:3.500,ease:"none",onUpdate:function(){SC.endpeng(c,this.time(),{"d": 3.5});}},180.933);}
+tl.fromTo("#en420",{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.7,ease:"back.out(2)"},181.233);
+tl.fromTo("#eb421",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"back.out(2)"},182.133);
+tl.fromTo("#k422",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},183.633);
+tl.set({}, {}, 184.433);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

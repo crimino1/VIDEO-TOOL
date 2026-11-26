@@ -1,0 +1,80 @@
+[
+ {
+  "id": "p01",
+  "start": 0.0,
+  "end": 19.821,
+  "text": "[curious] On November 23rd, one of China's biggest AI labs released a new flagship model. No launch event. No benchmark chart. It started with a single post on X, which hit eight hundred thousand views in a few hours. It's called GLM-5.4. And the strange part is how it got smarter: it reads some of its own layers twice."
+ },
+ {
+  "id": "p02",
+  "start": 20.571,
+  "end": 37.238,
+  "text": "First, who made it. Zhipu AI, now called Z.ai, out of Beijing. In January last year, the US put it on its entity list. This January, it went public in Hong Kong. And through all of that, it kept giving its models away as open weights."
+ },
+ {
+  "id": "p03",
+  "start": 37.588,
+  "end": 62.002,
+  "text": "The pace has been [chuckles] a little ridiculous. GLM-5 arrived in February: 744 billion parameters, and the first open model to score 50 on the Artificial Analysis Intelligence Index. 5.1 could work on its own for eight hours. 5.2 got a million-token memory. 5.3, in August, was all about code. And now, three months later, 5.4."
+ },
+ {
+  "id": "p04",
+  "start": 62.352,
+  "end": 82.119,
+  "text": "So what's new? [excited] It can see. 5.3 could only read text. Drop in a screenshot of a broken button, and it finds the bug in your code. It keeps the million-token context. Z.ai says coding is stronger across the board. And everyone on the GLM Coding Plan gets fifty percent more weekly usage than they had with 5.3."
+ },
+ {
+  "id": "p05",
+  "start": 82.869,
+  "end": 102.694,
+  "text": "Now, the part I find fascinating. [thoughtful] A normal model is a tall stack of layers, and every word goes through each layer once. GLM-5.4 takes twenty-eight of those layers, and runs them twice for every word. It's like rereading a hard paragraph before you answer. The model gets deeper, without getting any bigger."
+ },
+ {
+  "id": "p06",
+  "start": 103.044,
+  "end": 128.253,
+  "text": "Z.ai calls it their first Loop Transformer. They didn't train it from scratch, either: they took GLM-5, already trained, and taught it to loop. It's about 750 billion parameters, and they claim it thinks like a model with two to three trillion. It runs up to two hundred tokens a second off-peak, seventy to eighty when it's busy. And they admit one flaw themselves: sometimes it gets stuck in what they call marathon thinking."
+ },
+ {
+  "id": "p07",
+  "start": 128.603,
+  "end": 150.828,
+  "text": "They tested the idea at one, four, thirty, and finally 750 billion parameters. On the thirty-billion test model, same size, about ten percent more training, the looped version won on all five tests. Eleven points better on the AIME math exam. And it got there using fewer tokens. But that's the small test model. Not 5.4.\n"
+ },
+ {
+  "id": "p08",
+  "start": 151.578,
+  "end": 172.175,
+  "text": "[sighs] That's the problem. There are no benchmark scores for 5.4. Not from Z.ai, and not from anyone else yet. The API isn't open. The weights are promised, after safety testing, with no date. So that two-to-three-trillion claim? Right now, it's just a claim. And the replies under the launch post say exactly that."
+ },
+ {
+  "id": "p09",
+  "start": 172.925,
+  "end": 199.421,
+  "text": "Z.ai's own demos are a lot of fun. A brick-building game where you hunt down twelve golden bricks, then head back to the launchpad. A music video starring their little Z mascot. A snowy 3D garden with a bird you can follow. And one independent developer gave 5.4 and Qwen4-Max the same prompt: build a floating island. He liked 5.4's version more, though it thought longer, fifty-eight thousand tokens against forty-three."
+ },
+ {
+  "id": "p10",
+  "start": 200.171,
+  "end": 214.561,
+  "text": "If you want to try it, it's on the GLM Coding Plan, starting at eighteen dollars a month. It works in Z.ai's own chat and in ZCode, and you can plug it into Claude Code, Codex, or Cline. Just set the model to GLM-5.4."
+ },
+ {
+  "id": "p11",
+  "start": 215.311,
+  "end": 229.802,
+  "text": "[serious] I think this one is worth watching. The usual way to make a model smarter is to make it bigger, and bigger means more chips, which is hard when you're on a US blacklist. Looping is a cheaper path. If the scores hold up, that changes the math for everyone."
+ },
+ {
+  "id": "p12",
+  "start": 230.152,
+  "end": 244.788,
+  "text": "And Z.ai says this isn't even the big one. A significantly larger model is, in their words, ready soon. One report says December. [chuckles] So the benchmarks for 5.4 might show up right before its replacement does."
+ },
+ {
+  "id": "p13",
+  "start": 245.538,
+  "end": 253.183,
+  "text": "Would you trust a model that skipped the scoreboard? Tell me in the comments. This is AI Equator, and I'll see you in the next one."
+ }
+]

@@ -1,0 +1,1267 @@
+{
+ "result_count": 195,
+ "page_count": 10,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "7d573956-f2f0-457a-9ed6-3b2de0280c4e",
+   "title": "Ambient Dance",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/23557",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=23557&format=mp32",
+   "creator": "Zeropage",
+   "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Dance\" by Zeropage is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ambient Pills Update",
+    "foreign_landing_url": "https://www.jamendo.com/album/3263/ambient-pills-update",
+    "creator": "Zeropage",
+    "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 228000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7d573956-f2f0-457a-9ed6-3b2de0280c4e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7d573956-f2f0-457a-9ed6-3b2de0280c4e/",
+   "related_url": "https://api.openverse.org/v1/audio/7d573956-f2f0-457a-9ed6-3b2de0280c4e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7d573956-f2f0-457a-9ed6-3b2de0280c4e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b3071a42-fa8e-403e-9bf6-ae052760ff9a",
+   "title": "Ambient Flight (Electro Vocal Mix)",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/20237",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=20237&format=mp32",
+   "creator": "Zeropage",
+   "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "downtempo",
+    "electronica"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Flight (Electro Vocal Mix)\" by Zeropage is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ambient Pills",
+    "foreign_landing_url": "https://www.jamendo.com/album/2843/ambient-pills",
+    "creator": "Zeropage",
+    "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 264000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b3071a42-fa8e-403e-9bf6-ae052760ff9a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b3071a42-fa8e-403e-9bf6-ae052760ff9a/",
+   "related_url": "https://api.openverse.org/v1/audio/b3071a42-fa8e-403e-9bf6-ae052760ff9a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b3071a42-fa8e-403e-9bf6-ae052760ff9a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "297e676f-18e5-478c-9a39-e707f56eb5be",
+   "title": "Ambient Voyager",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/20231",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=20231&format=mp32",
+   "creator": "Zeropage",
+   "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "downtempo",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Voyager\" by Zeropage is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ambient Pills",
+    "foreign_landing_url": "https://www.jamendo.com/album/2843/ambient-pills",
+    "creator": "Zeropage",
+    "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 235000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/297e676f-18e5-478c-9a39-e707f56eb5be/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/297e676f-18e5-478c-9a39-e707f56eb5be/",
+   "related_url": "https://api.openverse.org/v1/audio/297e676f-18e5-478c-9a39-e707f56eb5be/related/",
+   "waveform": "https://api.openverse.org/v1/audio/297e676f-18e5-478c-9a39-e707f56eb5be/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7ddc1cd0-615c-4b1d-997f-74b93335693f",
+   "title": "Ambient India",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/20232",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=20232&format=mp32",
+   "creator": "Zeropage",
+   "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "indian",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient India\" by Zeropage is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ambient Pills",
+    "foreign_landing_url": "https://www.jamendo.com/album/2843/ambient-pills",
+    "creator": "Zeropage",
+    "creator_url": "https://www.jamendo.com/artist/2986/zeropage",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 386000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7ddc1cd0-615c-4b1d-997f-74b93335693f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7ddc1cd0-615c-4b1d-997f-74b93335693f/",
+   "related_url": "https://api.openverse.org/v1/audio/7ddc1cd0-615c-4b1d-997f-74b93335693f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7ddc1cd0-615c-4b1d-997f-74b93335693f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8234a630-1c0b-4edc-95a7-bdbf25526491",
+   "title": "Mante (ambient remix)",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/375193",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=375193&format=mp32",
+   "creator": "Mischapex",
+   "creator_url": "https://www.jamendo.com/artist/338444/Mischapex",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "downtempo"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "birthday",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Mante (ambient remix)\" by Mischapex is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Mante EP",
+    "foreign_landing_url": "https://www.jamendo.com/album/47914/mante-ep",
+    "creator": "Mischapex",
+    "creator_url": "https://www.jamendo.com/artist/338444/Mischapex",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 259000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8234a630-1c0b-4edc-95a7-bdbf25526491/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8234a630-1c0b-4edc-95a7-bdbf25526491/",
+   "related_url": "https://api.openverse.org/v1/audio/8234a630-1c0b-4edc-95a7-bdbf25526491/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8234a630-1c0b-4edc-95a7-bdbf25526491/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fa6f3c64-abff-4d75-abed-9136409c8440",
+   "title": "Ambiental",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/78956",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=78956&format=mp32",
+   "creator": "Mister M",
+   "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dark",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "fear",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "horror",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambiental\" by Mister M is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Rezolution",
+    "foreign_landing_url": "https://www.jamendo.com/album/7194/rezolution",
+    "creator": "Mister M",
+    "creator_url": "https://www.jamendo.com/artist/6278/mister.m",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 120000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fa6f3c64-abff-4d75-abed-9136409c8440/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fa6f3c64-abff-4d75-abed-9136409c8440/",
+   "related_url": "https://api.openverse.org/v1/audio/fa6f3c64-abff-4d75-abed-9136409c8440/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fa6f3c64-abff-4d75-abed-9136409c8440/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "879641f9-c9b2-41f3-a411-bf53e35c94e1",
+   "title": "Drumland - Ambient",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/866384",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=866384&format=mp32",
+   "creator": "Drumland",
+   "creator_url": "https://www.jamendo.com/artist/373729/Drumland",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Drumland - Ambient\" by Drumland is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The First",
+    "foreign_landing_url": "https://www.jamendo.com/album/101543/the-first",
+    "creator": "Drumland",
+    "creator_url": "https://www.jamendo.com/artist/373729/Drumland",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 342000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/879641f9-c9b2-41f3-a411-bf53e35c94e1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/879641f9-c9b2-41f3-a411-bf53e35c94e1/",
+   "related_url": "https://api.openverse.org/v1/audio/879641f9-c9b2-41f3-a411-bf53e35c94e1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/879641f9-c9b2-41f3-a411-bf53e35c94e1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "45bc4dac-af0d-4895-9d8a-f8a5bedb2b6a",
+   "title": "Meio Ambiente",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/26646",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=26646&format=mp32",
+   "creator": "NeLaS",
+   "creator_url": "https://www.jamendo.com/artist/3915/nelas",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "freestyle",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "minimal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meio Ambiente\" by NeLaS is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "OrgaNeLaS",
+    "foreign_landing_url": "https://www.jamendo.com/album/3649/organelas",
+    "creator": "NeLaS",
+    "creator_url": "https://www.jamendo.com/artist/3915/nelas",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 140000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/45bc4dac-af0d-4895-9d8a-f8a5bedb2b6a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/45bc4dac-af0d-4895-9d8a-f8a5bedb2b6a/",
+   "related_url": "https://api.openverse.org/v1/audio/45bc4dac-af0d-4895-9d8a-f8a5bedb2b6a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/45bc4dac-af0d-4895-9d8a-f8a5bedb2b6a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6347ce28-f0ae-4f8b-a38f-ef3b67abea6f",
+   "title": "Ambient",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/982013",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=982013&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dance Songs 4",
+    "foreign_landing_url": "https://www.jamendo.com/album/115650/dance-songs-4",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 241000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6347ce28-f0ae-4f8b-a38f-ef3b67abea6f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6347ce28-f0ae-4f8b-a38f-ef3b67abea6f/",
+   "related_url": "https://api.openverse.org/v1/audio/6347ce28-f0ae-4f8b-a38f-ef3b67abea6f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6347ce28-f0ae-4f8b-a38f-ef3b67abea6f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2aaad52a-b164-4331-8f5c-c98ec62e131a",
+   "title": "Plathe (Beatless Ambient Mix)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/596719",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=596719&format=mp32",
+   "creator": "POA",
+   "creator_url": "https://www.jamendo.com/artist/360724/POA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "commercial",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "dreamy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Plathe (Beatless Ambient Mix)\" by POA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Lemon Scented",
+    "foreign_landing_url": "https://www.jamendo.com/album/68948/lemon-scented",
+    "creator": "POA",
+    "creator_url": "https://www.jamendo.com/artist/360724/POA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 109000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2aaad52a-b164-4331-8f5c-c98ec62e131a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2aaad52a-b164-4331-8f5c-c98ec62e131a/",
+   "related_url": "https://api.openverse.org/v1/audio/2aaad52a-b164-4331-8f5c-c98ec62e131a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2aaad52a-b164-4331-8f5c-c98ec62e131a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ebad33c4-9d49-45af-94d3-417c7dd2a956",
+   "title": "Il Canto Dei Monaci Di Ostenvegr (ambient ethnic industrial)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/704402",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=704402&format=mp32",
+   "creator": "Ostenvegr",
+   "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "industrial",
+    "techno"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Il Canto Dei Monaci Di Ostenvegr (ambient ethnic industrial)\" by Ostenvegr is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ostenvegr's Travel (Demo)",
+    "foreign_landing_url": "https://www.jamendo.com/album/82126/ostenvegr-s-travel-demo",
+    "creator": "Ostenvegr",
+    "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 306000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ebad33c4-9d49-45af-94d3-417c7dd2a956/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ebad33c4-9d49-45af-94d3-417c7dd2a956/",
+   "related_url": "https://api.openverse.org/v1/audio/ebad33c4-9d49-45af-94d3-417c7dd2a956/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ebad33c4-9d49-45af-94d3-417c7dd2a956/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7f9685e7-e23f-4072-9de5-b8b4ea5366f6",
+   "title": "Madness Dawn (raw ambient black metal)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/749748",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=749748&format=mp32",
+   "creator": "Ostenvegr",
+   "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Madness Dawn (raw ambient black metal)\" by Ostenvegr is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Brainsick World",
+    "foreign_landing_url": "https://www.jamendo.com/album/87655/brainsick-world",
+    "creator": "Ostenvegr",
+    "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 219000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7f9685e7-e23f-4072-9de5-b8b4ea5366f6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7f9685e7-e23f-4072-9de5-b8b4ea5366f6/",
+   "related_url": "https://api.openverse.org/v1/audio/7f9685e7-e23f-4072-9de5-b8b4ea5366f6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7f9685e7-e23f-4072-9de5-b8b4ea5366f6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c9e4dec9-ff80-4b5c-b31a-02c9ce2e8acc",
+   "title": "Music ambient cool",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/673148",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=673148&format=mp32",
+   "creator": "empanada",
+   "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Music ambient cool\" by empanada is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Musica Ambient",
+    "foreign_landing_url": "https://www.jamendo.com/album/78108/musica-ambient",
+    "creator": "empanada",
+    "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 157000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c9e4dec9-ff80-4b5c-b31a-02c9ce2e8acc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c9e4dec9-ff80-4b5c-b31a-02c9ce2e8acc/",
+   "related_url": "https://api.openverse.org/v1/audio/c9e4dec9-ff80-4b5c-b31a-02c9ce2e8acc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c9e4dec9-ff80-4b5c-b31a-02c9ce2e8acc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f84d9865-4c12-4fc0-99f4-ea339345f88e",
+   "title": "Confused relaxing (ambient synth)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/704397",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=704397&format=mp32",
+   "creator": "Ostenvegr",
+   "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Confused relaxing (ambient synth)\" by Ostenvegr is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ostenvegr's Travel (Demo)",
+    "foreign_landing_url": "https://www.jamendo.com/album/82126/ostenvegr-s-travel-demo",
+    "creator": "Ostenvegr",
+    "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 124000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/",
+   "related_url": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "aa3de53a-6a18-4279-b8e8-d4e1f08b7e70",
+   "title": "Bas i Ambient",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/127634",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=127634&format=mp32",
+   "creator": "Projekt Niewidzialne Swinie",
+   "creator_url": "https://www.jamendo.com/artist/337886/Projekt_Niewidzialne_Swinie",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electrorock",
+    "gothic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "90s",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bas i Ambient\" by Projekt Niewidzialne Swinie is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Projekt Niewidzialne Swinie '2' EP",
+    "foreign_landing_url": "https://www.jamendo.com/album/18026/projekt-niewidzialne-swinie-2-ep",
+    "creator": "Projekt Niewidzialne Swinie",
+    "creator_url": "https://www.jamendo.com/artist/337886/Projekt_Niewidzialne_Swinie",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 405000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/aa3de53a-6a18-4279-b8e8-d4e1f08b7e70/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/aa3de53a-6a18-4279-b8e8-d4e1f08b7e70/",
+   "related_url": "https://api.openverse.org/v1/audio/aa3de53a-6a18-4279-b8e8-d4e1f08b7e70/related/",
+   "waveform": "https://api.openverse.org/v1/audio/aa3de53a-6a18-4279-b8e8-d4e1f08b7e70/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8f67cbe0-572d-43ff-9b3a-cdd82d98cf16",
+   "title": "Lemon Scented (Lemony Fresh Ambient Mix)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/596714",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=596714&format=mp32",
+   "creator": "POA",
+   "creator_url": "https://www.jamendo.com/artist/360724/POA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lemon Scented (Lemony Fresh Ambient Mix)\" by POA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Lemon Scented",
+    "foreign_landing_url": "https://www.jamendo.com/album/68948/lemon-scented",
+    "creator": "POA",
+    "creator_url": "https://www.jamendo.com/artist/360724/POA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 180000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8f67cbe0-572d-43ff-9b3a-cdd82d98cf16/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8f67cbe0-572d-43ff-9b3a-cdd82d98cf16/",
+   "related_url": "https://api.openverse.org/v1/audio/8f67cbe0-572d-43ff-9b3a-cdd82d98cf16/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8f67cbe0-572d-43ff-9b3a-cdd82d98cf16/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a6b46aba-985a-4179-9fad-61b7a0e34762",
+   "title": "Ambient Voyager by Zero Page",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/192862",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=192862&format=mp32",
+   "creator": "MascoHotel - Varios Artistas",
+   "creator_url": "https://www.jamendo.com/artist/340717/MascoHotel_-_Varios_Artistas",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Voyager by Zero Page\" by MascoHotel - Varios Artistas is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Rising Sun Compilation Vol.1",
+    "foreign_landing_url": "https://www.jamendo.com/album/28820/rising-sun-compilation-vol-1",
+    "creator": "MascoHotel - Varios Artistas",
+    "creator_url": "https://www.jamendo.com/artist/340717/MascoHotel_-_Varios_Artistas",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 235000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a6b46aba-985a-4179-9fad-61b7a0e34762/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a6b46aba-985a-4179-9fad-61b7a0e34762/",
+   "related_url": "https://api.openverse.org/v1/audio/a6b46aba-985a-4179-9fad-61b7a0e34762/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a6b46aba-985a-4179-9fad-61b7a0e34762/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6e15420c-b173-4018-aa14-a43c48a8ee1b",
+   "title": "Ambient Samurai Talk In Japanese on Exhibition of legendary Urawa Rock And Roll Center.",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1084099",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1084099&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "echo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Samurai Talk In Japanese on Exhibition of legendary Urawa Rock And Roll Center.\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2013/11/24 Inspired By Exhibition Of URC Part II Ambient Samur",
+    "foreign_landing_url": "https://www.jamendo.com/album/129123/2013-11-24-inspired-by-exhibition-of-urc-part-ii-ambient-samur",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 203000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/",
+   "related_url": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8983d262-0030-46d9-83e9-7a544ef43e66",
+   "title": "Music ambient family",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/673150",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=673150&format=mp32",
+   "creator": "empanada",
+   "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Music ambient family\" by empanada is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Musica Ambient",
+    "foreign_landing_url": "https://www.jamendo.com/album/78108/musica-ambient",
+    "creator": "empanada",
+    "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 79000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8983d262-0030-46d9-83e9-7a544ef43e66/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8983d262-0030-46d9-83e9-7a544ef43e66/",
+   "related_url": "https://api.openverse.org/v1/audio/8983d262-0030-46d9-83e9-7a544ef43e66/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8983d262-0030-46d9-83e9-7a544ef43e66/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2c4c8ea5-32ad-4f98-bcb4-7a97b79ae5f0",
+   "title": "ambient rezonator",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/298871",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=298871&format=mp32",
+   "creator": "YA-ZZEE",
+   "creator_url": "https://www.jamendo.com/artist/347864/YA-ZZEE",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dreamy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ambient rezonator\" by YA-ZZEE is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "space over the sky",
+    "foreign_landing_url": "https://www.jamendo.com/album/40932/space-over-the-sky",
+    "creator": "YA-ZZEE",
+    "creator_url": "https://www.jamendo.com/artist/347864/YA-ZZEE",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 490000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2c4c8ea5-32ad-4f98-bcb4-7a97b79ae5f0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2c4c8ea5-32ad-4f98-bcb4-7a97b79ae5f0/",
+   "related_url": "https://api.openverse.org/v1/audio/2c4c8ea5-32ad-4f98-bcb4-7a97b79ae5f0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2c4c8ea5-32ad-4f98-bcb4-7a97b79ae5f0/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

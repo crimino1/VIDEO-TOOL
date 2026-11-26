@@ -1,0 +1,59 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/How deep is the ocean.mp4",
+  "duration": 91.785624,
+  "width": 720,
+  "height": 1280,
+  "fps": 30.0,
+  "has_audio": true,
+  "shots": 15,
+  "avg_shot_sec": 6.12,
+  "median_shot_sec": 4.87,
+  "shortest_shot_sec": 1.67,
+  "longest_shot_sec": 12.8,
+  "cuts_per_minute": {
+    "first 30s": 12.0,
+    "30s-2m": 7.8
+  },
+  "loudness": {
+    "integrated_lufs": -14.4,
+    "range_lu": 6.0
+  },
+  "cuts": [
+    4.833333,
+    14.866667,
+    17.833333,
+    21.133333,
+    26.233333,
+    27.9,
+    35.266667,
+    45.1,
+    49.933333,
+    62.333333,
+    67.533333,
+    72.4,
+    85.2,
+    88.0
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 1.9
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 30.6,
+      "sec_between_frames": 1.9
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 61.2,
+      "sec_between_frames": 1.9
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

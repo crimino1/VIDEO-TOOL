@@ -1,0 +1,167 @@
+[   0.00-   1.56] Computer science and space.
+[   1.56-   4.96] They share a long history because sending humans to space is pretty hard.
+[   4.96-   9.88] So we use computers to help us or to completely operate things like rovers or probes on their own.
+[   9.88-  14.04] But how do you build something that can explore the unknown when it can't rely on you?
+[  17.36-  20.64] Well, the first problem is that we can't even build it like a normal computer.
+[  20.64-  22.44] For example, let's look at the modern phone.
+[  22.44-  28.12] Inside of it are billions of tiny transistors, little electronic switches that computers use to process information.
+[  28.12-  33.96] By controlling electrical signals, these transistors help represent the ones and zeros that make up everything your computer does.
+[  33.96-  40.12] Your photos, messages, games, even this video, at the lowest level, all of it is represented by binary information.
+[  40.12-  43.36] And modern chips have become ridiculously good at processing it.
+[  43.36-  47.04] We keep shrinking transistors and packing more computing power into our devices.
+[  47.04-  52.28] But the smaller these components become, the more sensitive they can be to certain kinds of electrical disturbances.
+[  52.28-  54.92] And in space, there's a lot of electrical disturbances.
+[  54.92-  58.72] High energy particles from cosmic rays can interact with spacecraft electronics.
+[  58.72-  64.16] Sometimes an interaction can literally flip a bit in memory, which is known as a single event effect.
+[  64.16-  69.20] And depending on where it happens, it can corrupt data, disrupt a computation or even damage a component.
+[  69.20-  74.00] And this is exactly why space missions use heavily tested components, radiation hardened technology,
+[  74.00-  77.92] all of which they pretty much have to do from scratch and it can last for years.
+[  77.92-  80.20] And so that's the philosophy of space hardware.
+[  80.20-  86.12] Work extremely hard to get it right, because once it's out there, it's pretty difficult to fix if anything goes wrong.
+[  86.12-  90.04] And this is exactly why we have to be extremely careful about the software, too.
+[  90.04-  94.64] NASA's Jet Propulsion Laboratory, which builds and operates many of NASA's robotic spacecraft,
+[  94.64-  99.44] has a set of guidelines for writing reliable mission critical software known as the Power of 10.
+[  99.44- 104.68] To list a few of them, recursion isn't allowed under these guidelines, whether directly or indirectly.
+[ 104.68- 108.72] And every loop also needs a provable upper bound on how many times it can execute.
+[ 108.72- 112.60] Because an infinite loop on another planet is probably the end of the mission.
+[ 112.60- 118.16] Another rule is that a function shouldn't be longer than what fits on a single printed page, so roughly 60 lines.
+[ 118.16- 123.28] This is to ensure that a human reviewer can actually hold the entire thing in their head and verify that it's correct.
+[ 123.28- 128.88] But even if we build the most reliable computer and software imaginable, there's still another problem.
+[ 128.88- 131.20] It has to communicate with us.
+[ 131.20- 135.00] You see, at its core, a computer works in binary, ones and zeros.
+[ 135.00- 141.92] So when we want a spacecraft to do something, we can encode commands into binary data and transmit them through NASA's Deep Space Network,
+[ 141.92- 146.96] a collection of enormous radio antennas designed to communicate with spacecraft across the solar system.
+[ 146.96- 151.84] So, for example, if you wanted a probe to take a picture, you'd send a command telling it to capture an image.
+[ 151.84- 155.88] The spacecraft receives the command, interprets the data and executes the instruction.
+[ 155.88- 160.16] Then its camera captures the image and represents it as numerical pixel values.
+[ 160.16- 167.00] Those numbers are encoded into binary data, transmitted back through radio signals and decoded on Earth into a picture like this.
+[ 167.00- 171.56] So in a sense, we're sending ones at zeros through space using radio waves.
+[ 171.56- 175.88] But getting those ones and zeros to their destination isn't as simple as it sounds.
+[ 175.88- 179.04] Radio signals become fainter as they travel farther from their source.
+[ 179.04- 185.44] They can be affected by noise and interference, and the receiver has to distinguish the actual message from everything that might obscure it.
+[ 185.44- 191.08] And when you're receiving a very faint signal from a spacecraft millions of miles away, even a little uncertainty matters.
+[ 191.08- 196.80] But luckily, before this was a problem for space, it was a problem for Earth, one which we solved using error correcting codes,
+[ 196.80- 199.68] which is the practice of building extra information into a message.
+[ 199.68- 202.72] So the receiver has a way to detect or recover from errors.
+[ 202.72- 205.12] For example, suppose I want to send you a single bit.
+[ 205.12- 207.76] Instead of sending it once, I could send it three times.
+[ 207.76- 211.56] Now, let's say noise corrupts one of those bits and you receive one zero one.
+[ 211.56- 213.08] So what was I trying to tell you?
+[ 213.08- 218.80] Well, two of the three bits are ones that you can take a majority vote and conclude that I probably meant to send a one.
+[ 218.80- 220.32] This is called a repetition code.
+[ 220.32- 225.20] It's an extremely simple example, and real communication systems use much more sophisticated codes.
+[ 225.20- 226.48] But the principle is the same.
+[ 226.48- 230.56] You build the ability to recover from mistakes into the message before it ever leaves Earth.
+[ 230.56- 235.40] So we can send information across enormous distances, and even if something goes wrong, we can recover.
+[ 235.40- 239.00] But there's one thing that we can't fix, the speed of light.
+[ 239.00- 242.92] Even though radio signals travel at the speed of light, that speed is finite.
+[ 243.00- 247.44] And the farther away your spacecraft is, the longer it takes for your messages to get there.
+[ 247.44- 254.36] For example, at the time of its encounter with Pluto, NASA's New Horizon spacecraft was receiving signals that took several hours to travel one way.
+[ 254.36- 260.48] At roughly four and a half hours for the trip in one direction, a command and its response could take around nine hours.
+[ 260.48- 262.52] Imagine trying to drive a car like that.
+[ 262.52- 266.80] You see an obstacle, send a message asking what you should do, and wait hours for an answer.
+[ 266.80- 268.24] And that's the fundamental problem.
+[ 268.24- 272.88] So if we want our spacecraft to explore the unknown, eventually we have to let them do some of the work
+[ 272.88- 276.60] themselves, which is exactly what we're doing with the Perseverance rover on Mars.
+[ 276.60- 284.04] You see, when a rover needs to drive somewhere, we don't want it to have to stop for a human to examine every obstacle or rock and decide whether it can drive around it.
+[ 284.04- 290.60] So we give it a system called AutoNav, which lets the rover plan and execute much of its short distance driving on its own.
+[ 290.60- 295.08] And it's a whole pipeline of computer vision and path planning algorithms, so bear with me for a second.
+[ 295.08- 301.32] Perseverance has stereo navigation cameras, meaning it can take images of the same scene from two slightly different viewpoints.
+[ 301.32- 305.52] It's the same basic trick your eyes use to perceive depth, which you can actually test right now.
+[ 305.52- 312.84] If you look at an object with one eye closed and switch to the other eye, you'll notice that nearby objects appear to shift more than objects that are far away.
+[ 312.84- 314.72] A computer can use a similar idea.
+[ 314.72- 318.92] It compares features in the two images and measures how much they shift between the two viewpoints.
+[ 318.92- 325.64] This produces what's called a disparity map, where the amount of displacement gives clues about how far away different parts of the scene are.
+[ 325.64- 335.04] From there, the system can reconstruct a three-dimensional representation of the terrain, which is known as a point cloud, a collection of points representing locations in visible space.
+[ 335.04- 341.60] And because we don't necessarily need an incredibly detailed model of every pebble, that information can be simplified into a height map,
+[ 341.60- 346.64] essentially a grid describing how high or low the terrain is at different locations.
+[ 346.64- 354.28] Now the rover has a useful representation of the world in front of it, but knowing what the terrain looks like is only half the problem, it still needs to decide where to drive.
+[ 354.28- 356.88] So the system generates a collection of possible paths.
+[ 356.88- 362.08] Rather than committing to a single route immediately, it can consider different curved trajectories the rover might follow.
+[ 362.08- 364.80] Then it scores these functions using a cost function.
+[ 364.80- 371.20] The cost function gives each potential path a numerical score based on things like terrain roughness, slope, and steering effort.
+[ 371.20- 376.20] A steep or dangerous route gets penalized, whereas a smoother, safer route gets a lower cost.
+[ 376.20- 379.08] But even the best-looking path could still be dangerous.
+[ 379.08- 388.44] So Perseverance then uses a method called Approximate Clearance Evaluation, or ACE, to evaluate candidate paths against the rover's physical geometry and the terrain.
+[ 388.44- 397.40] In simplified terms, the system checks whether the rover's body and wheels could collide with the ground or encounter an unsafe configuration as it travels along a proposed path.
+[ 397.40- 403.68] Then the system selects a suitable low-cost path that passes these checks, begins driving, and then replans as it moves.
+[ 403.68- 407.32] So that's AutoNav. We can have a rover move around obstacles on its own.
+[ 407.32- 409.00] But what if we wanted to find aliens?
+[ 409.00- 418.92] Well, one of Perseverance's goals is to investigate rocks that might reveal clues about Mars' geological history and its potential to have supported ancient microbial life.
+[ 418.92- 425.76] But we don't want the rover to have to send every image back to Earth and wait for scientists to examine it before doing any action on its own.
+[ 425.76- 431.36] We wanted to be able to identify certain kinds of targets and carry out some scientific observations on its own.
+[ 431.36- 436.36] That's where a system called Aegis comes in, Autonomous Exploration for Gathering Increased Science.
+[ 436.36- 441.76] The idea is to let the rover select targets based on criteria that scientists have specified in advance.
+[ 441.76- 444.44] But how do you teach a computer to recognize a rock?
+[ 444.44- 448.00] Well, at its most basic level, an image is just an array of numbers.
+[ 448.00- 452.04] A grayscale image, for example, can represent every pixel with a brightness value.
+[ 452.04- 455.72] A dark pixel might have a low value, while a bright pixel has a high one.
+[ 455.72- 457.96] So one approach is to look for boundaries.
+[ 457.96- 461.60] Think about where a dark rock sits against a lighter patch of ground.
+[ 461.60- 465.40] As you move across the pixels, you might encounter a sudden change in brightness.
+[ 465.40- 467.40] That change could indicate an edge.
+[ 467.40- 471.92] And so this algorithm is known as Rockster, named fittingly for finding rocks.
+[ 471.92- 476.44] And first, it smooths the image to reduce any small fluctuations that aren't meaningful.
+[ 476.44- 483.92] Then it detects strong changes in brightness between neighboring pixels and connects edge fragments into outlines in order to properly identify rocks.
+[ 483.92- 490.12] And once it has candidate rocks, Aegis can measure properties such as their size, shape, brightness, and apparent distance.
+[ 490.12- 491.96] Then it can rank and select a target.
+[ 491.96- 495.84] Perseverance then can use an instrument like SuperCam to fire a laser at it,
+[ 495.84- 502.40] because the laser creates a small amount of plasma, which the instrument can analyze to help determine which chemical elements are present.
+[ 502.40- 506.64] All of this can happen without waiting for a scientist on Earth to individually select the target.
+[ 506.64- 510.96] So we programmed AutoNav to let the rover avoid hazards and move around its environment.
+[ 510.96- 515.08] And we use Aegis to let it choose certain targets for scientific investigation.
+[ 515.08- 518.76] And now we're starting to use AI in this process too.
+[ 518.76- 525.64] In January, 2026, NASA announced that Perseverance had completed drives on Mars using routes planned with generative AI.
+[ 525.64- 530.12] And to understand why this is interesting, think about what human rover planners normally have to do.
+[ 530.12- 538.36] They have to manually examine terrain images, identify obstacles, evaluate slopes, and potentially hazardous areas in order to decide which way the rover should travel.
+[ 538.36- 543.20] And once they've examined a ton of information, they can then create a route using a series of waypoints.
+[ 543.20- 547.52] But this takes a lot of time because the terrain is unfamiliar, the rover is expensive,
+[ 547.52- 550.04] and you need to think carefully about what could go wrong.
+[ 550.04- 554.96] Which is why in 2025, NASA decided to use a vision language model for all of this work.
+[ 554.96- 562.08] The model was able to analyze and identify features such as boulders, rocky outcrops, sand ripples, and potentially hazardous terrain.
+[ 562.08- 565.12] And then generated a route using waypoints all by itself.
+[ 565.12- 570.44] So in other words, it was help carrying out work that human planners had traditionally performed manually.
+[ 570.44- 576.32] And so just to be clear, this wasn't an AI that had been unleashed on Mars and given complete control over the rover.
+[ 576.32- 582.16] The AI planning took place on Earth, and engineers checked the proposed commands before sending them to Perseverance.
+[ 582.16- 591.60] But imagine how the future will look like when we eventually tested and verified our AI systems enough to the point where maybe they can be unleashed on Mars or even further.
+[ 591.60- 596.28] But AI isn't just helping us with autonomy, it's also helping us identify planets.
+[ 596.28- 600.80] Because for decades, we've been collecting data trying to identify planets outside of our solar system.
+[ 600.80- 606.96] And we do this using the transit method, where we basically wait for and identify when a star's brightness drops.
+[ 606.96- 611.32] Because this can mean that a planet passed in front of the star, blocking a tiny fraction of its life.
+[ 611.32- 615.16] But the issue is, there's a lot of other things that cause brightness to dip as well.
+[ 615.16- 620.00] So astronomers have to examine the data and distinguish genuine exoplanets from false positives.
+[ 620.00- 626.76] And when you're dealing with enormous collections of observations from space telescopes, that becomes a substantial computational problem.
+[ 626.76- 629.40] Which is where a project called ExoMiner comes in.
+[ 629.40- 635.92] ExoMiner uses deep learning, specifically a neural network, to help identify genuine exoplanets from telescope data.
+[ 635.92- 645.96] You see, Rockstar is a good example of the foundations of computer vision, where we described a process involving explicitly designed image processing techniques to identify potential rock boundaries.
+[ 645.96- 655.36] But what you probably know as computer vision is, instead of describing every visual pattern or signal with a manually written set of rules, we can train a neural network using examples.
+[ 655.36- 661.16] For ExoMiner, that means giving the system data associated with previously confirmed planets and examples of false positives.
+[ 661.16- 665.84] The model uses those examples during training to learn patterns that help distinguish the two.
+[ 665.84- 671.08] And all of this helped us validate 301 additional planets in the Kepler solar system.
+[ 671.08- 676.08] And something similar to this also happened last year with a high school student named Mateo Paz.
+[ 676.08- 681.64] He developed a machine learning approach to analyze data collected by NASA's NEOWISE space telescope.
+[ 681.64- 686.44] The data set contained nearly 200 billion detections accumulated over more than a decade.
+[ 686.44- 692.64] And Paz made an algorithm to identify about 1.5 million previously unknown objects in this data.
+[ 692.64- 696.88] And so that's what I think is one of the coolest parts about computer science and space exploration.
+[ 696.88- 701.40] You don't need to be an astronaut or work at NASA, and you definitely don't need to build a spacecraft.
+[ 701.40- 705.88] You can literally contribute to space exploration with the same fundamental ideas you're learning.
+[ 705.88- 711.64] When you study things like algorithms or process data or build a computer vision system or train a neural network,
+[ 711.64- 715.48] all of it can help us investigate worlds that we can't reach ourselves.
+[ 715.48- 720.08] And if you want to actually understand code and make programs that work, check out Brilliant today's sponsor.
+[ 720.08- 724.28] It has tons of practical examples and problem solving that teaches you how to read code,
+[ 724.28- 727.28] see how a program fits together, and debug what's not working.
+[ 727.28- 730.28] And we all know AI has completely changed what coding looks like,
+[ 730.28- 733.08] which is why Brilliant focuses on the skills that still matter,
+[ 733.08- 737.48] like figuring out what to build, designing the solution, and proving it actually works.
+[ 737.48- 738.08] You got it.
+[ 738.08- 740.08] And learning to code can feel overwhelming,
+[ 740.08- 744.08] which is exactly why Brilliant starts with logic and real-world use cases,
+[ 744.08- 745.28] so you ramp up fast.
+[ 745.28- 748.08] I've been using Brilliant to build up my skills for coding projects,
+[ 748.08- 750.58] and what I love is how visual and hands-on it is.
+[ 750.58- 753.98] I'm actually solving problems myself instead of watching someone else do it.
+[ 753.98- 757.98] So click the link below or scan the QR code to get started with Brilliant for free.
+[ 757.98- 762.38] You can upgrade to Premium for full tutoring support and unlimited access to everything on Brilliant.
+[ 762.38- 768.28] And right now, Lattice viewers can save 20% off an annual Premium subscription at brilliant.org slash Lattice.
+[ 768.28- 769.68] So thank you to everyone for watching.
+[ 769.68- 772.88] If you liked the video, please subscribe, leave a comment, and thank you.

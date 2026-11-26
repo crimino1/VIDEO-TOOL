@@ -1,0 +1,323 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/ocean.js"></script><script src="assets/js/scenes.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="344.300" data-width="1920" data-height="1080">
+<img id="img_sperm" class="hid" src="assets/cut/il_sperm.png" alt=""><img id="img_orca" class="hid" src="assets/cut/il_orca.png" alt=""><img id="img_blue" class="hid" src="assets/cut/il_blue.png" alt=""><img id="img_hump" class="hid" src="assets/cut/il_hump.png" alt=""><img id="img_gray" class="hid" src="assets/cut/il_gray.png" alt=""><img id="img_squid" class="hid" src="assets/cut/squid_3d.png" alt=""><img id="img_shark" class="hid" src="assets/cut/il_shark.png" alt="">
+<canvas id="cv1" class="clip" width="1920" height="1080" data-start="0.000" data-duration="9.080" data-track-index="1" style="z-index:11"></canvas>
+<div id="s3" class="clip scene " data-start="0.000" data-duration="9.080" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div id="k2" class="black"></div></div>
+<canvas id="cv4" class="clip" width="1920" height="1080" data-start="9.080" data-duration="6.280" data-track-index="1" style="z-index:13"></canvas>
+<div id="s6" class="clip scene " data-start="9.080" data-duration="6.280" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t5" class="stamp" style="font-size:76px">MORE THAN A KILOMETRE DOWN</span></div></div>
+<canvas id="cv7" class="clip" width="1920" height="1080" data-start="15.360" data-duration="5.050" data-track-index="1" style="z-index:15"></canvas>
+<div id="s9" class="clip scene " data-start="15.360" data-duration="5.050" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t8" class="stamp" style="font-size:76px">COMPLETELY SILENT</span></div></div>
+<canvas id="cv10" class="clip" width="1920" height="1080" data-start="20.410" data-duration="7.710" data-track-index="1" style="z-index:17"></canvas>
+<div id="s12" class="clip scene " data-start="20.410" data-duration="7.710" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="l11" class="label left" style="left:1160px;top:210px;font-size:50px"><i class="tri"></i><span>BLUE WHALE</span></div></div>
+<canvas id="cv13" class="clip" width="1920" height="1080" data-start="28.120" data-duration="6.160" data-track-index="1" style="z-index:19"></canvas>
+<div id="s15" class="clip scene " data-start="28.120" data-duration="6.160" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t14" class="stamp" style="font-size:76px">12 SPERM WHALES</span></div></div>
+<div id="w17" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:21;"><video id="v16" class="clip fit" src="assets/clips/bremer_48a243f4.mp4" muted playsinline data-start="34.280" data-duration="1.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s18" class="clip scene " data-start="34.280" data-duration="1.740" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s20" class="clip scene " data-start="34.280" data-duration="1.740" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t19" class="stamp" style="font-size:76px">HUNTING LIKE ORCAS</span></div></div>
+<div id="w22" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:24;"><video id="v21" class="clip fit" src="assets/clips/dominica_0ff38bae.mp4" muted playsinline data-start="36.020" data-duration="4.620" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s23" class="clip scene " data-start="36.020" data-duration="4.620" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="w25" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:26;"><video id="v24" class="clip fit" src="assets/clips/dominica_e006bea4.mp4" muted playsinline data-start="40.640" data-duration="7.700" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s26" class="clip scene " data-start="40.640" data-duration="7.700" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="w28" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:28;"><video id="v27" class="clip fit" src="assets/clips/dominica_644282dd.mp4" muted playsinline data-start="48.340" data-duration="1.460" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s29" class="clip scene " data-start="48.340" data-duration="1.460" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s31" class="clip scene " data-start="48.340" data-duration="1.460" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t30" class="stamp" style="font-size:76px">THE BRAIN</span></div></div>
+<canvas id="cv32" class="clip" width="1920" height="1080" data-start="49.800" data-duration="1.460" data-track-index="1" style="z-index:31"></canvas>
+<div id="s34" class="clip scene " data-start="49.800" data-duration="1.460" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t33" class="stamp" style="font-size:76px">THE WEAPONS</span></div></div>
+<div id="w36" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:33;"><video id="v35" class="clip fit" src="assets/clips/dominica_da0452e7.mp4" muted playsinline data-start="51.260" data-duration="1.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s37" class="clip scene " data-start="51.260" data-duration="1.480" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s39" class="clip scene " data-start="51.260" data-duration="1.480" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t38" class="stamp" style="font-size:76px">THE FAMILIES</span></div></div>
+<canvas id="cv40" class="clip" width="1920" height="1080" data-start="52.740" data-duration="1.220" data-track-index="1" style="z-index:36"></canvas>
+<div id="s42" class="clip scene " data-start="52.740" data-duration="1.220" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t41" class="stamp" style="font-size:76px">THE TEAMWORK</span></div></div>
+<div id="w44" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:38;"><video id="v43" class="clip fit" src="assets/clips/dominica_12f15cca.mp4" muted playsinline data-start="53.960" data-duration="1.400" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s45" class="clip scene " data-start="53.960" data-duration="1.400" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s47" class="clip scene " data-start="53.960" data-duration="1.400" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t46" class="stamp" style="font-size:76px">THE LANGUAGE</span></div></div>
+<div id="w49" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:41;"><video id="v48" class="clip fit" src="assets/clips/dominica_4726916d.mp4" muted playsinline data-start="55.360" data-duration="2.000" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s50" class="clip scene " data-start="55.360" data-duration="2.000" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s52" class="clip scene " data-start="55.360" data-duration="2.000" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t51" class="stamp" style="font-size:76px">EVEN THE CULTURE</span></div></div>
+<div id="w54" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:44;"><video id="v53" class="clip fit" src="assets/clips/laguna_edb0f08e.mp4" muted playsinline data-start="57.360" data-duration="2.650" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s55" class="clip scene " data-start="57.360" data-duration="2.650" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: LagunaBluebelt</div></div>
+<div id="s57" class="clip scene " data-start="57.360" data-duration="2.650" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t56" class="stamp" style="font-size:76px">ONLY THE DECISION IS MISSING</span></div></div>
+<canvas id="cv58" class="clip" width="1920" height="1080" data-start="60.010" data-duration="3.230" data-track-index="1" style="z-index:47"></canvas>
+<canvas id="cv59" class="clip" width="1920" height="1080" data-start="63.240" data-duration="6.820" data-track-index="1" style="z-index:48"></canvas>
+<div id="s61" class="clip scene " data-start="63.240" data-duration="6.820" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.35"></div><div id="h60" class="chap" style="top:420px;font-size:120px">WHAT IF SPERM WHALES HUNTED LIKE ORCAS?</div></div>
+<div id="w63" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:50;"><video id="v62" class="clip fit" src="assets/clips/bremer_1d9f0e35.mp4" muted playsinline data-start="70.060" data-duration="4.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s64" class="clip scene " data-start="70.060" data-duration="4.940" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s67" class="clip scene " data-start="70.060" data-duration="4.940" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.3"></div><div id="h65" class="chap" style="top:380px;font-size:190px">THE KING</div><div id="h66" class="chapsub" style="top:566px">WHY THE ORCA RULES</div></div>
+<div id="w69" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:53;"><video id="v68" class="clip fit" src="assets/clips/iceseal_a30c46bb.mp4" muted playsinline data-start="75.000" data-duration="7.270" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s70" class="clip scene " data-start="75.000" data-duration="7.270" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Laag Ni Ivan</div></div>
+<canvas id="cv71" class="clip" width="1920" height="1080" data-start="82.270" data-duration="17.730" data-track-index="1" style="z-index:55"></canvas>
+<div id="s76" class="clip scene " data-start="82.270" data-duration="17.730" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="l72" class="label left" style="left:660px;top:125px;font-size:50px"><i class="tri"></i><span>ORCA · 8-9 M</span></div><div id="l73" class="label left" style="left:520px;top:325px;font-size:50px"><i class="tri"></i><span>GREAT WHITE · CLOSE</span></div><div id="l74" class="label left" style="left:1040px;top:525px;font-size:50px"><i class="tri"></i><span>HUMPBACK · NEARLY TWICE AS LONG</span></div><div id="l75" class="label right" style="right:320px;top:725px;font-size:50px"><span>BLUE WHALE · 3× LONGER</span><i class="tri"></i></div></div>
+<div id="w78" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:57;"><video id="v77" class="clip fit" src="assets/clips/bremer_92c28533.mp4" muted playsinline data-start="100.000" data-duration="2.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s79" class="clip scene " data-start="100.000" data-duration="2.480" data-track-index="2" style="z-index:58" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s81" class="clip scene " data-start="100.000" data-duration="2.480" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t80" class="stamp" style="font-size:76px">ORCAS HUNT ALL OF THEM</span></div></div>
+<div id="w83" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:60;"><video id="v82" class="clip fit" src="assets/clips/bremer_cb9ef8f9.mp4" muted playsinline data-start="102.480" data-duration="4.230" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s85" class="clip scene " data-start="102.480" data-duration="4.230" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div id="h84" class="chap" style="top:440px;font-size:110px">2019 · WESTERN AUSTRALIA</div></div>
+<div id="w87" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:62;"><video id="v86" class="clip fit" src="assets/clips/bremer_ab66a0ad.mp4" muted playsinline data-start="106.710" data-duration="5.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s88" class="clip scene " data-start="106.710" data-duration="5.040" data-track-index="2" style="z-index:63" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="w90" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:64;"><video id="v89" class="clip fit" src="assets/clips/bremer_9cccb779.mp4" muted playsinline data-start="111.750" data-duration="6.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s92" class="clip scene " data-start="111.750" data-duration="6.740" data-track-index="2" style="z-index:65" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t91" class="stamp" style="font-size:76px">A HEALTHY ADULT BLUE WHALE</span></div></div>
+<div id="w94" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:66;"><video id="v93" class="clip fit" src="assets/clips/bremer_c4bf63fb.mp4" muted playsinline data-start="118.490" data-duration="5.640" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s96" class="clip scene " data-start="118.490" data-duration="5.640" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t95" class="stamp" style="font-size:76px">THEY TOOK TURNS</span></div></div>
+<div id="w98" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:68;"><video id="v97" class="clip fit" src="assets/clips/bremer_3654182e.mp4" muted playsinline data-start="124.130" data-duration="3.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s100" class="clip scene " data-start="124.130" data-duration="3.360" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t99" class="stamp" style="font-size:76px">BLOCKING ITS DIVE</span></div></div>
+<div id="w102" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:70;"><video id="v101" class="clip fit" src="assets/clips/bremer_f48b69b2.mp4" muted playsinline data-start="127.490" data-duration="4.790" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s104" class="clip scene " data-start="127.490" data-duration="4.790" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t103" class="stamp" style="font-size:76px">ONE COVERED ITS BLOWHOLE</span></div></div>
+<div id="w106" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:72;"><video id="v105" class="clip fit" src="assets/clips/bremer_5e193e24.mp4" muted playsinline data-start="132.280" data-duration="4.150" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s108" class="clip scene " data-start="132.280" data-duration="4.150" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t107" class="stamp" style="font-size:76px">OVER 20 M LONG · IT DIDN'T SURVIVE</span></div></div>
+<div id="w110" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:74;"><video id="v109" class="clip fit" src="assets/clips/bremer2_0a8d556d.mp4" muted playsinline data-start="136.430" data-duration="3.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s112" class="clip scene " data-start="136.430" data-duration="3.940" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t111" class="stamp" style="font-size:76px">IT HAS HAPPENED AGAIN</span></div></div>
+<div id="w114" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:76;"><video id="v113" class="clip fit" src="assets/clips/pin_shark_9dc8741b.mp4" muted playsinline data-start="140.370" data-duration="5.170" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s115" class="clip scene " data-start="140.370" data-duration="5.170" data-track-index="2" style="z-index:77" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage via Pinterest</div></div>
+<div id="s117" class="clip scene " data-start="140.370" data-duration="5.170" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="h116" class="chap" style="top:440px;font-size:130px">SOUTH AFRICA</div></div>
+<div id="w119" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:79;"><video id="v118" class="clip fit" src="assets/clips/portstar_6788034c.mp4" muted playsinline data-start="145.540" data-duration="4.440" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s121" class="clip scene " data-start="145.540" data-duration="4.440" data-track-index="2" style="z-index:80" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Good Morning South Africa</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t120" class="stamp" style="font-size:76px">PORT AND STARBOARD</span></div></div>
+<div id="w123" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:81;"><video id="v122" class="clip fit" src="assets/clips/starboard_2d6bf2b6.mp4" muted playsinline data-start="149.980" data-duration="7.560" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s125" class="clip scene " data-start="149.980" data-duration="7.560" data-track-index="2" style="z-index:82" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: White Shark Ocean</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t124" class="stamp" style="font-size:76px">FLIP THE SHARK · EAT THE LIVER</span></div></div>
+<div id="w127" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:83;"><video id="v126" class="clip fit" src="assets/clips/portstar_9be3ff4d.mp4" muted playsinline data-start="157.540" data-duration="4.180" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s128" class="clip scene " data-start="157.540" data-duration="4.180" data-track-index="2" style="z-index:84" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Good Morning South Africa</div></div>
+<div id="w130" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:85;"><video id="v129" class="clip fit" src="assets/clips/px_shark_1_5f241df6.mp4" muted playsinline data-start="161.720" data-duration="8.730" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s132" class="clip scene " data-start="161.720" data-duration="8.730" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t131" class="stamp" style="font-size:76px">THE GREAT WHITES LEFT</span></div></div>
+<div id="w134" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:87;"><video id="v133" class="clip fit" src="assets/clips/starboard_62113252.mp4" muted playsinline data-start="170.450" data-duration="9.450" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s136" class="clip scene " data-start="170.450" data-duration="9.450" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: White Shark Ocean</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t135" class="stamp" style="font-size:76px">2023 · ONE ORCA · ABOUT TWO MINUTES</span></div></div>
+<div id="w138" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:89;"><video id="v137" class="clip fit" src="assets/clips/iceseal_e71e948a.mp4" muted playsinline data-start="179.900" data-duration="8.070" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s139" class="clip scene " data-start="179.900" data-duration="8.070" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Laag Ni Ivan</div></div>
+<div id="s143" class="clip scene " data-start="179.900" data-duration="8.070" data-track-index="2" style="z-index:91" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t140" class="stamp" style="font-size:76px">NOT SIZE</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t141" class="stamp" style="font-size:76px">NOT TEETH</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t142" class="stamp" style="font-size:110px">STRATEGY</span></div></div>
+<div id="w145" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:92;"><video id="v144" class="clip fit" src="assets/clips/bremer_218729dd.mp4" muted playsinline data-start="187.970" data-duration="4.070" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s146" class="clip scene " data-start="187.970" data-duration="4.070" data-track-index="2" style="z-index:93" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s148" class="clip scene " data-start="187.970" data-duration="4.070" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><div id="l147" class="label left" style="left:300px;top:200px;font-size:50px"><i class="tri"></i><span>LED BY OLDER FEMALES</span></div></div>
+<div id="w150" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:95;"><video id="v149" class="clip fit" src="assets/clips/bremer_604cbafe.mp4" muted playsinline data-start="192.040" data-duration="7.820" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s151" class="clip scene " data-start="192.040" data-duration="7.820" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s153" class="clip scene " data-start="192.040" data-duration="7.820" data-track-index="2" style="z-index:97" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t152" class="stamp" style="font-size:76px">HUNTING METHODS, PASSED DOWN LIKE RECIPES</span></div></div>
+<canvas id="cv154" class="clip" width="1920" height="1080" data-start="199.860" data-duration="10.450" data-track-index="1" style="z-index:98"></canvas>
+<div id="s156" class="clip scene " data-start="199.860" data-duration="10.450" data-track-index="2" style="z-index:99" data-layout-allow-overflow data-layout-allow-overlap><div id="h155" class="chap" style="top:120px;font-size:110px">ANTARCTICA</div></div>
+<div id="w158" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:100;"><video id="v157" class="clip fit" src="assets/clips/iceseal_3ae8eef8.mp4" muted playsinline data-start="210.310" data-duration="6.800" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s159" class="clip scene " data-start="210.310" data-duration="6.800" data-track-index="2" style="z-index:101" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Laag Ni Ivan</div></div>
+<div id="w161" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:102;"><video id="v160" class="clip fit" src="assets/clips/beach_c2de0565.mp4" muted playsinline data-start="217.110" data-duration="8.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s163" class="clip scene " data-start="217.110" data-duration="8.240" data-track-index="2" style="z-index:103" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Jorge Cazenave</div><div id="h162" class="chap" style="top:120px;font-size:110px">ARGENTINA</div></div>
+<div id="w165" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:104;"><video id="v164" class="clip fit" src="assets/clips/beach2_aa9e69c9.mp4" muted playsinline data-start="225.350" data-duration="4.440" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s167" class="clip scene " data-start="225.350" data-duration="4.440" data-track-index="2" style="z-index:105" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Anthropocene.Photography</div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t166" class="stamp" style="font-size:110px">TEACHING</span></div></div>
+<div id="s174" class="clip scene " data-start="229.790" data-duration="10.260" data-track-index="2" style="z-index:106" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn168" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn169" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="tx170" class="bigsub" style="top:150px;font-size:80px;opacity:0">DIFFERENT GROUPS · DIFFERENT PREY · DIFFERENT TECHNIQUES</div><div id="dc171" class="acard" style="left:180px;width:480px;opacity:0"><div class="an">ONLY FISH</div><div class="as">A DIFFERENT ORCA GROUP</div></div><div id="dc172" class="acard" style="left:740px;width:480px;opacity:0"><div class="an">ONLY SHARKS</div><div class="as">A DIFFERENT ORCA GROUP</div></div><div id="dc173" class="acard" style="left:1300px;width:480px;opacity:0"><div class="an">ONLY MAMMALS</div><div class="as">A DIFFERENT ORCA GROUP</div></div></div>
+<div id="s179" class="clip scene " data-start="240.050" data-duration="11.330" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn175" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn176" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><polyline id="wv177" points="600,540.0 610,550.3120458377754 620,559.1758836304066 630,564.0597216658932 640,563.1910570268591 650,556.1236846033831 660,544.0122296657793 670,529.4856139679614 680,516.1083234508231 690,507.5298527308066 700,506.5189143633465 710,514.1316198312052 720,529.2526565738978 730,548.6717292484108 740,567.7285290500188 750,581.408508872966 760,585.6381312303719 770,578.4503912744902 780,560.6959131048816 790,536.0681343522409 800,510.37551960492596 810,490.1907119793765 820,481.185082039851 830,486.5670495639459 840,506.0482998470038 850,535.653728671561 860,568.4891868130563 870,596.3335229975253 880,611.6917513514953 890,609.797824766157 900,590.034217193186 910,556.3556065916882 920,516.5422556996402 930,480.4085060861639 940,457.37624335066863 950,454.01491849365965 960,472.1919656059222 970,508.3506704981574 980,554.1616906132862 990,598.4445880654656 1000,629.9165045097322 1010,640.0875093057301 1020,625.5541087058472 1030,589.0693342875727 1040,539.0639794978991 1050,487.68685105205566 1060,447.8215667004597 1070,429.8200278832642 1080,438.7898380529874 1090,473.1531508472874 1100,524.8830459371003 1110,581.3975369500698 1120,628.6601647412235 1130,654.7132829525142 1140,652.7428714876007 1150,622.8792609200742 1160,572.2528478590133 1170,513.2683947195883 1180,460.52108444251917 1190,427.1319820562175 1200,421.4362051088566 1210,444.87171979477336 1220,491.6111599202641 1230,550.0322476846403 1240,605.6504276508006 1250,644.7630629487821 1260,657.8751273372917 1270,642.0376264323048 1280,601.5147049824544 1290,546.6280034216054 1300,491.0938258049375 1310,448.54880052171563 1320,429.1558118171269 1330,437.1461885428895 1340,469.89966135456206 1350,518.7602228719927 1360,571.3407945366024 1370,614.6980955170483 1380,638.555070270753 1390,637.7596668625433 1400,613.3866251027694 1410,572.2511016352064 1420,525.0119630268155 1430,483.3920722058614 1440,457.2455658719441 1450,452.21166853070395 1460,468.5161917911314 1470,501.16882738003966 1480,541.4423148630483 1490,579.2030235750734 1500,605.4699182852644 1510,614.5532563401608 1520,605.2637855146597 1530,580.9436294558612 1540,548.3788052617131 1550,515.9293872539472 1560,491.38861648179267 1570,480.1183524492002 1580,483.9045666058945 1590,500.7681339151912 1600,525.7124685896738 1610,552.1576685121822 1620,573.6578078400776 1630,585.4569023961877 1640,585.5121687970225 1650,574.773667045289 1660,556.7102678347768 1670,536.2594816402516 1680,518.5069266040575 1690,507.4426879168776 1700,505.09329312091296 1710,511.20926453861716 1720,523.5350333501616 1730,538.5418068896097 1740,552.4007445452404 1750,561.9354207313582 1760,565.3225903019643 1770,562.3947259545721 1780,554.5103207934669 1790,544.0676986864938 1800,533.8179535627838" fill="none" stroke="#7fe0ff" stroke-width="6" style="transform-origin:1200px 540px"/><text id="tx178" x="1200" y="300" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="120" opacity="0">THEY GO QUIET</text></svg></div>
+<div id="s186" class="clip scene " data-start="251.380" data-duration="4.900" data-track-index="2" style="z-index:108" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn180" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn181" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="rc182" class="recap" style="top:170px;font-size:110px;opacity:0">INTELLIGENCE</div><div id="rc183" class="recap" style="top:360px;font-size:110px;opacity:0">TEAMWORK</div><div id="rc184" class="recap" style="top:550px;font-size:110px;opacity:0">TEACHING</div><div id="rc185" class="recap" style="top:740px;font-size:110px;opacity:0">SILENCE</div></div>
+<canvas id="cv187" class="clip" width="1920" height="1080" data-start="256.280" data-duration="3.940" data-track-index="1" style="z-index:109"></canvas>
+<div id="s189" class="clip scene " data-start="256.280" data-duration="3.940" data-track-index="2" style="z-index:110" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t188" class="stamp" style="font-size:76px">FIVE TIMES HEAVIER</span></div></div>
+<div id="w191" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:111;"><video id="v190" class="clip fit" src="assets/clips/dominica_7eecfa72.mp4" muted playsinline data-start="260.220" data-duration="1.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s192" class="clip scene " data-start="260.220" data-duration="1.780" data-track-index="2" style="z-index:112" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s195" class="clip scene " data-start="260.220" data-duration="1.780" data-track-index="2" style="z-index:113" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.3"></div><div id="h193" class="chap" style="top:380px;font-size:190px">THE CHALLENGER</div><div id="h194" class="chapsub" style="top:566px">THE SPERM WHALE</div></div>
+<div id="s203" class="clip scene " data-start="262.000" data-duration="10.560" data-track-index="2" style="z-index:114" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 90% 80% at 50% 25%,#0d2a3b 0%,#061520 45%,#02070c 100%)"></div><img id="sn196" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn197" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="wh198" style="opacity:0"><img src="assets/gen/cut_il_sperm.png" alt="il_sperm" style="position:absolute;left:160px;top:330px;width:1600px;height:278px;"></div><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><g id="bus199" opacity="0"><g transform="translate(160 980) scale(1.0435)"><path d="M0,0 L0,-260 Q0,-290 30,-290 L1080,-290 Q1120,-290 1130,-250 L1150,-120 L1150,0 Z" fill="#d8a43a" opacity=".9"/><rect x="60" y="-240" width="980" height="110" fill="#1d2a33" opacity=".7"/><circle cx="220" cy="0" r="55" fill="#111"/><circle cx="920" cy="0" r="55" fill="#111"/></g><text x="760" y="1040" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="34">CITY BUS · 12 M</text></g><path d="M0,-100 a11,11 0 1,1 0.1,0 Z M-9,-86 L9,-86 Q19,-84 20,-72 L23,-44 Q23,-40 19,-40 L16,-40 L14,-66 L12,-40 L13,0 L5,0 L2,-36 L-2,-36 L-5,0 L-13,0 L-12,-40 L-14,-66 L-16,-40 L-19,-40 Q-23,-40 -23,-44 L-20,-72 Q-19,-84 -9,-86 Z" transform="translate(1830,980) scale(1.6216)" fill="#d9e6ee" opacity="0.9"/><line id="ln200" x1="160" y1="290" x2="1760" y2="290" stroke="#f2f6f8" stroke-width="5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><text id="tx201" x="960" y="250" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="110" opacity="0">AROUND 16 METRES</text><text id="tx202" x="960" y="170" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="90" fill="#ffd27a" opacity="0">40+ TONNES</text></svg></div>
+<div id="w205" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:115;"><video id="v204" class="clip fit" src="assets/clips/dominica_2b16a351.mp4" muted playsinline data-start="272.560" data-duration="8.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s206" class="clip scene " data-start="272.560" data-duration="8.600" data-track-index="2" style="z-index:116" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s208" class="clip scene " data-start="272.560" data-duration="8.600" data-track-index="2" style="z-index:117" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t207" class="stamp" style="font-size:76px">THE LARGEST PREDATOR WITH TEETH</span></div></div>
+<div id="s212" class="clip scene " data-start="281.160" data-duration="7.710" data-track-index="2" style="z-index:118" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 90% 80% at 50% 25%,#0d2a3b 0%,#061520 45%,#02070c 100%)"></div><img id="sn209" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn210" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><img src="assets/gen/cut_il_sperm.png" alt="il_sperm" style="position:absolute;left:160px;top:400px;width:1600px;height:278px;"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><g id="br211" opacity="0"><rect x="1216" y="380" width="544" height="318" fill="none" stroke="#ffd27a" stroke-width="6" stroke-dasharray="18 12" rx="16"/><text x="1486" y="350" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="80" fill="#ffd27a">THE HEAD: ABOUT A THIRD</text></g></svg></div>
+<div id="w214" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:119;"><video id="v213" class="clip fit" src="assets/clips/dominica_cff19943.mp4" muted playsinline data-start="288.870" data-duration="5.450" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s215" class="clip scene " data-start="288.870" data-duration="5.450" data-track-index="2" style="z-index:120" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s217" class="clip scene " data-start="288.870" data-duration="5.450" data-track-index="2" style="z-index:121" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t216" class="stamp" style="font-size:76px">MORE LIKE A SUBMARINE THAN AN ANIMAL</span></div></div>
+<div id="s225" class="clip scene " data-start="294.320" data-duration="10.540" data-track-index="2" style="z-index:122" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn218" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn219" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><g id="g220" opacity="0"><defs><radialGradient id="bg222" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f6c4bd"/><stop offset=".6" stop-color="#e0948c"/><stop offset="1" stop-color="#a95f5a"/></radialGradient></defs><g transform="translate(680 520) scale(2.4)"><path d="M-100,10 C-112,-40 -70,-92 -10,-96 C40,-100 92,-76 106,-36 C118,-6 110,24 86,34 C76,54 52,62 30,55 C20,70 2,72 -10,60 L-14,88 L-30,88 L-28,56 C-62,60 -96,44 -100,10 Z" fill="url(#bg222)" stroke="#7a3d3a" stroke-width="1.56"/><path d="M-80,-10 C-60,-30 -40,0 -20,-20 S20,-10 40,-30" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M-70,15 C-50,-5 -30,25 -5,5 S35,20 60,0" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M-50,-55 C-30,-70 -10,-45 10,-65 S50,-55 70,-60" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M-90,-30 C-80,-55 -55,-60 -40,-75" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M20,-80 C40,-70 60,-75 80,-50" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M-40,40 C-20,30 0,45 20,35" fill="none" stroke="#9c524e" stroke-width="1.75" stroke-linecap="round" opacity=".7"/><path d="M60,40 C75,52 90,40 92,28" fill="none" stroke="#9c524e" stroke-width="4" opacity=".7"/></g><text x="680" y="880" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="90">SPERM WHALE · ~8 KG</text></g><g id="g221" opacity="0"><defs><radialGradient id="bg223" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f6c4bd"/><stop offset=".6" stop-color="#e0948c"/><stop offset="1" stop-color="#a95f5a"/></radialGradient></defs><g transform="translate(1460 620) scale(0.97)"><path d="M-100,10 C-112,-40 -70,-92 -10,-96 C40,-100 92,-76 106,-36 C118,-6 110,24 86,34 C76,54 52,62 30,55 C20,70 2,72 -10,60 L-14,88 L-30,88 L-28,56 C-62,60 -96,44 -100,10 Z" fill="url(#bg223)" stroke="#7a3d3a" stroke-width="3.87"/><path d="M-80,-10 C-60,-30 -40,0 -20,-20 S20,-10 40,-30" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M-70,15 C-50,-5 -30,25 -5,5 S35,20 60,0" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M-50,-55 C-30,-70 -10,-45 10,-65 S50,-55 70,-60" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M-90,-30 C-80,-55 -55,-60 -40,-75" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M20,-80 C40,-70 60,-75 80,-50" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M-40,40 C-20,30 0,45 20,35" fill="none" stroke="#9c524e" stroke-width="4.33" stroke-linecap="round" opacity=".7"/><path d="M60,40 C75,52 90,40 92,28" fill="none" stroke="#9c524e" stroke-width="4" opacity=".7"/></g><text x="1460" y="880" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="90">YOU · ~1.3 KG</text></g><text id="tx224" x="960" y="160" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="96" opacity="0">THE BIGGEST BRAIN OF ANY ANIMAL, EVER</text></svg></div>
+<div id="w227" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:123;"><video id="v226" class="clip fit" src="assets/clips/dominica_40087187.mp4" muted playsinline data-start="304.860" data-duration="10.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s228" class="clip scene " data-start="304.860" data-duration="10.520" data-track-index="2" style="z-index:124" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s230" class="clip scene " data-start="304.860" data-duration="10.520" data-track-index="2" style="z-index:125" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t229" class="stamp" style="font-size:76px">BIGGER BODY, BIGGER BRAIN</span></div></div>
+<div id="w232" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:126;"><video id="v231" class="clip fit" src="assets/clips/dominica_450104a3.mp4" muted playsinline data-start="315.380" data-duration="4.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s233" class="clip scene " data-start="315.380" data-duration="4.360" data-track-index="2" style="z-index:127" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<canvas id="cv234" class="clip" width="1920" height="1080" data-start="319.740" data-duration="24.570" data-track-index="1" style="z-index:128"></canvas>
+<div id="s236" class="clip scene " data-start="319.740" data-duration="24.570" data-track-index="2" style="z-index:129" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t235" class="stamp" style="font-size:76px">2,000+ METRES · OVER AN HOUR</span></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+{const c=document.getElementById("cv1").getContext("2d");tl.to({},{duration:9.080,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"depth0": 0.85, "depth1": 0.6, "start": 1350, "end": 820, "d": 9.08});}},0.000);}
+tl.fromTo("#k2",{opacity:1},{opacity:0,duration:2.0,ease:"power1.inOut"},0.000);
+{const c=document.getElementById("cv4").getContext("2d");tl.to({},{duration:6.280,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"depth0": 0.6, "depth1": 0.45, "start": 1000, "end": 560, "d": 6.28});}},9.080);}
+tl.fromTo("#t5",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},9.940);
+tl.to("#t5",{opacity:0,duration:0.3,ease:"power2.out"},11.650);
+{const c=document.getElementById("cv7").getContext("2d");tl.to({},{duration:5.050,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"depth0": 0.45, "depth1": 0.35, "start": 760, "end": 420, "silhouette": 0.55, "d": 5.05});}},15.360);}
+tl.fromTo("#t8",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},18.100);
+{const c=document.getElementById("cv10").getContext("2d");tl.to({},{duration:7.710,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"blue": 1, "surface": [40, 90], "depth0": 0.35, "depth1": 0.3, "start": 1250, "end": 900, "d": 7.71});}},20.410);}
+tl.fromTo("#l11",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},21.690);
+{const c=document.getElementById("cv13").getContext("2d");tl.to({},{duration:6.160,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"prey": "blue", "preyFlip": 1, "n": 12, "speed": 0.8, "d": 6.16});}},28.120);}
+tl.fromTo("#t14",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},28.300);
+tl.fromTo("#v16",{scale:1.0},{scale:1.06,duration:1.74,ease:"none"},34.280);
+tl.fromTo("#t19",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},34.400);
+tl.fromTo("#v21",{scale:1.0},{scale:1.06,duration:4.62,ease:"none"},36.020);
+tl.fromTo("#v24",{scale:1.0},{scale:1.06,duration:7.7,ease:"none"},40.640);
+tl.fromTo("#v27",{scale:1.0},{scale:1.06,duration:1.46,ease:"none"},48.340);
+tl.fromTo("#t30",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},48.400);
+{const c=document.getElementById("cv32").getContext("2d");tl.to({},{duration:1.460,ease:"none",onUpdate:function(){SC.rams(c,this.time(),{"tHit": 0.8, "d": 1.46});}},49.800);}
+tl.fromTo("#t33",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},49.850);
+tl.fromTo("#v35",{scale:1.0},{scale:1.06,duration:1.48,ease:"none"},51.260);
+tl.fromTo("#t38",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},51.300);
+{const c=document.getElementById("cv40").getContext("2d");tl.to({},{duration:1.220,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"n": 6, "speed": 1.2, "d": 1.22});}},52.740);}
+tl.fromTo("#t41",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},52.780);
+tl.fromTo("#v43",{scale:1.0},{scale:1.06,duration:1.4,ease:"none"},53.960);
+tl.fromTo("#t46",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},54.000);
+tl.fromTo("#v48",{scale:1.0},{scale:1.06,duration:2.0,ease:"none"},55.360);
+tl.fromTo("#t51",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},55.400);
+tl.fromTo("#v53",{scale:1.0},{scale:1.06,duration:2.65,ease:"none"},57.360);
+tl.fromTo("#t56",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},57.600);
+{const c=document.getElementById("cv58").getContext("2d");tl.to({},{duration:3.230,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"depth0": 0.55, "depth1": 0.4, "start": 1200, "end": 650, "d": 3.23});}},60.010);}
+{const c=document.getElementById("cv59").getContext("2d");tl.to({},{duration:6.820,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"prey": "blue", "preyFlip": 1, "n": 10, "speed": 0.7, "d": 6.82});}},63.240);}
+tl.fromTo("#h60",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},63.400);
+tl.to("#h60",{opacity:0,duration:0.7,ease:"power1.in"},69.210);
+tl.fromTo("#v62",{scale:1.0},{scale:1.06,duration:4.94,ease:"none"},70.060);
+tl.fromTo("#h65",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},70.260);
+tl.to("#h65",{opacity:0,duration:0.7,ease:"power1.in"},73.710);
+tl.fromTo("#h66",{opacity:0},{opacity:1,duration:0.7,ease:"power2.out"},71.360);
+tl.to("#h66",{opacity:0,duration:0.7,ease:"power2.out"},73.710);
+tl.fromTo("#v68",{scale:1.0},{scale:1.06,duration:7.27,ease:"none"},75.000);
+{const c=document.getElementById("cv71").getContext("2d");tl.to({},{duration:17.730,ease:"none",onUpdate:function(){SC.lineup(c,this.time(),{"pxPerM": 56, "items": [["orca", 8.5, 1.68], ["shark", 6, 8.03], ["hump", 15, 11.63], ["blue", 25, 14.67]], "gap": 200, "y0": 150, "d": 17.73});}},82.270);}
+tl.fromTo("#l72",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},84.300);
+tl.fromTo("#l73",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},90.600);
+tl.fromTo("#l74",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},94.300);
+tl.fromTo("#l75",{opacity:0,x:20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},97.300);
+tl.fromTo("#v77",{scale:1.0},{scale:1.06,duration:2.48,ease:"none"},100.000);
+tl.fromTo("#t80",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},100.500);
+tl.fromTo("#v82",{scale:1.0},{scale:1.06,duration:4.23,ease:"none"},102.480);
+tl.fromTo("#h84",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},102.600);
+tl.to("#h84",{opacity:0,duration:0.7,ease:"power1.in"},105.860);
+tl.fromTo("#v86",{scale:1.0},{scale:1.06,duration:5.04,ease:"none"},106.710);
+tl.fromTo("#v89",{scale:1.0},{scale:1.06,duration:6.74,ease:"none"},111.750);
+tl.fromTo("#t91",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},115.400);
+tl.fromTo("#v93",{scale:1.0},{scale:1.06,duration:5.64,ease:"none"},118.490);
+tl.fromTo("#t95",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},118.600);
+tl.fromTo("#v97",{scale:1.0},{scale:1.06,duration:3.36,ease:"none"},124.130);
+tl.fromTo("#t99",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},124.300);
+tl.fromTo("#v101",{scale:1.0},{scale:1.06,duration:4.79,ease:"none"},127.490);
+tl.fromTo("#t103",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},128.400);
+tl.fromTo("#v105",{scale:1.0},{scale:1.06,duration:4.15,ease:"none"},132.280);
+tl.fromTo("#t107",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},132.400);
+tl.fromTo("#v109",{scale:1.0},{scale:1.06,duration:3.94,ease:"none"},136.430);
+tl.fromTo("#t111",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},137.200);
+tl.fromTo("#v113",{scale:1.0},{scale:1.06,duration:5.17,ease:"none"},140.370);
+tl.fromTo("#h116",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},143.800);
+tl.to("#h116",{opacity:0,duration:0.7,ease:"power1.in"},144.690);
+tl.fromTo("#v118",{scale:1.0},{scale:1.06,duration:4.44,ease:"none"},145.540);
+tl.fromTo("#t120",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},146.000);
+tl.fromTo("#v122",{scale:1.0},{scale:1.06,duration:7.56,ease:"none"},149.980);
+tl.fromTo("#t124",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},154.600);
+tl.fromTo("#v126",{scale:1.0},{scale:1.06,duration:4.18,ease:"none"},157.540);
+tl.fromTo("#v129",{scale:1.0},{scale:1.06,duration:8.73,ease:"none"},161.720);
+tl.fromTo("#t131",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},168.910);
+tl.fromTo("#v133",{scale:1.0},{scale:1.06,duration:9.45,ease:"none"},170.450);
+tl.fromTo("#t135",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},172.400);
+tl.fromTo("#v137",{scale:1.0},{scale:1.06,duration:8.07,ease:"none"},179.900);
+tl.fromTo("#t140",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},183.130);
+tl.to("#t140",{opacity:0,duration:0.3,ease:"power2.out"},184.200);
+tl.fromTo("#t141",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},184.650);
+tl.to("#t141",{opacity:0,duration:0.3,ease:"power2.out"},185.750);
+tl.fromTo("#t142",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},186.240);
+tl.fromTo("#v144",{scale:1.0},{scale:1.06,duration:4.07,ease:"none"},187.970);
+tl.fromTo("#l147",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},189.410);
+tl.fromTo("#v149",{scale:1.0},{scale:1.06,duration:7.82,ease:"none"},192.040);
+tl.fromTo("#t152",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},195.940);
+{const c=document.getElementById("cv154").getContext("2d");tl.to({},{duration:10.450,ease:"none",onUpdate:function(){SC.wavewash(c,this.time(),{"tDive": 7.54, "d": 10.45});}},199.860);}
+tl.fromTo("#h155",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},200.000);
+tl.to("#h155",{opacity:0,duration:0.7,ease:"power1.in"},202.750);
+tl.fromTo("#v157",{scale:1.0},{scale:1.06,duration:6.8,ease:"none"},210.310);
+tl.fromTo("#v160",{scale:1.0},{scale:1.06,duration:8.24,ease:"none"},217.110);
+tl.fromTo("#h162",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},217.300);
+tl.to("#h162",{opacity:0,duration:0.7,ease:"power1.in"},219.250);
+tl.fromTo("#v164",{scale:1.0},{scale:1.06,duration:4.44,ease:"none"},225.350);
+tl.fromTo("#t166",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},228.530);
+tl.fromTo("#sn168",{y:0,x:0},{y:-90,x:-20,duration:10.26,ease:"none"},229.790);
+tl.fromTo("#sn169",{y:0,x:0},{y:-170,x:30,duration:10.26,ease:"none"},229.790);
+tl.fromTo("#tx170",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},229.990);
+tl.fromTo("#dc171",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power2.out"},234.690);
+tl.fromTo("#dc172",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power2.out"},236.370);
+tl.fromTo("#dc173",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power2.out"},238.030);
+tl.fromTo("#sn175",{y:0,x:0},{y:-90,x:-20,duration:11.33,ease:"none"},240.050);
+tl.fromTo("#sn176",{y:0,x:0},{y:-170,x:30,duration:11.33,ease:"none"},240.050);
+tl.fromTo("#wv177",{scaleY:1},{scaleY:0.02,duration:1.2,ease:"power2.inOut"},243.310);
+tl.fromTo("#tx178",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},243.610);
+tl.fromTo("#sn180",{y:0,x:0},{y:-90,x:-20,duration:4.9,ease:"none"},251.380);
+tl.fromTo("#sn181",{y:0,x:0},{y:-170,x:30,duration:4.9,ease:"none"},251.380);
+tl.fromTo("#rc182",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},251.400);
+tl.fromTo("#rc183",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},252.680);
+tl.fromTo("#rc184",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},253.860);
+tl.fromTo("#rc185",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},254.950);
+{const c=document.getElementById("cv187").getContext("2d");tl.to({},{duration:3.940,ease:"none",onUpdate:function(){SC.lineup(c,this.time(),{"pxPerM": 90, "gap": 330, "y0": 330, "items": [["orca", 8.5, 0.12], ["sperm", 16, 0.92]], "d": 3.94});}},256.280);}
+tl.fromTo("#t188",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},258.140);
+tl.fromTo("#v190",{scale:1.0},{scale:1.06,duration:1.78,ease:"none"},260.220);
+tl.fromTo("#h193",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},260.420);
+tl.to("#h193",{opacity:0,duration:0.7,ease:"power1.in"},261.250);
+tl.fromTo("#h194",{opacity:0},{opacity:1,duration:0.7,ease:"power2.out"},261.520);
+tl.to("#h194",{opacity:0,duration:0.7,ease:"power2.out"},261.250);
+tl.fromTo("#sn196",{y:0,x:0},{y:-90,x:-20,duration:10.56,ease:"none"},262.000);
+tl.fromTo("#sn197",{y:0,x:0},{y:-170,x:30,duration:10.56,ease:"none"},262.000);
+tl.fromTo("#wh198",{opacity:0,x:60},{opacity:1,x:0,duration:1.0,ease:"power2.out"},262.200);
+tl.fromTo("#bus199",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},264.440);
+tl.fromTo("#ln200",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:"power1.inOut"},262.800);
+tl.fromTo("#tx201",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},263.400);
+tl.fromTo("#tx202",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},269.900);
+tl.fromTo("#v204",{scale:1.0},{scale:1.06,duration:8.6,ease:"none"},272.560);
+tl.fromTo("#t207",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},272.800);
+tl.fromTo("#sn209",{y:0,x:0},{y:-90,x:-20,duration:7.71,ease:"none"},281.160);
+tl.fromTo("#sn210",{y:0,x:0},{y:-170,x:30,duration:7.71,ease:"none"},281.160);
+tl.fromTo("#br211",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},281.760);
+tl.fromTo("#v213",{scale:1.0},{scale:1.06,duration:5.45,ease:"none"},288.870);
+tl.fromTo("#t216",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},291.510);
+tl.fromTo("#sn218",{y:0,x:0},{y:-90,x:-20,duration:10.54,ease:"none"},294.320);
+tl.fromTo("#sn219",{y:0,x:0},{y:-170,x:30,duration:10.54,ease:"none"},294.320);
+tl.fromTo("#g220",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.7,ease:"back.out(1.6)"},294.620);
+tl.fromTo("#g221",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},301.780);
+tl.fromTo("#tx224",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},295.120);
+tl.fromTo("#v226",{scale:1.0},{scale:1.06,duration:10.52,ease:"none"},304.860);
+tl.fromTo("#t229",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},308.600);
+tl.fromTo("#v231",{scale:1.0},{scale:1.06,duration:4.36,ease:"none"},315.380);
+{const c=document.getElementById("cv234").getContext("2d");tl.to({},{duration:24.570,ease:"none",onUpdate:function(){SC.dive(c,this.time(),{"tDive": 9.46, "d": 24.57});}},319.740);}
+tl.fromTo("#t235",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},333.300);
+tl.set({}, {}, 344.300);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

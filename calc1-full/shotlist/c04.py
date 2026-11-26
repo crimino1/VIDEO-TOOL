@@ -1,0 +1,20 @@
+# Builder 04: start of Chapter 2 "Limits" (download bar, x+3 table, notation, 0/0 hole, limit vs value,
+# practice, one-sided limits, the two-piece jump, the big rule, two friends at a cafe).
+S = [
+    ("20:18.08", "c", "K04_Chapter2", dict(label="Chapter 2", title="Limits", doodle="circle")),
+    ("20:21.60", "m", "K04_Foundation", {}),
+    ("20:35.20", "m", "K04_Download", {}),
+    ("21:00.60", "m", "K04_Table", {}),
+    ("21:43.70", "m", "K04_Notation", {}),
+    ("22:02.20", "m", "K04_Plug", {}),
+    ("22:21.40", "m", "K04_ZeroZero", {}),
+    ("22:46.20", "m", "K04_Sneak", {}),
+    ("23:21.10", "m", "K04_HoleGraph", {}),
+    ("23:58.80", "m", "K04_Ignore", {}),
+    ("24:28.30", "m", "K04_Cases", {}),
+    ("24:40.50", "q", "K04_Check", dict(title="Quick Check", sub="Limit or value?")),
+    ("24:42.50", "m", "K04_Q1", {}),
+    ("25:07.20", "m", "K04_OneSided", {}),
+    ("25:35.60", "m", "K04_Piece", {}),
+    ("26:15.80", "m", "K04_Rule", {}),
+]

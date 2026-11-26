@@ -1,0 +1,153 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/shark.js"></script><script src="assets/js/world.js"></script><script src="assets/js/story.js"></script><script src="assets/js/res.js"></script><script src="assets/js/peng.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="176.633" data-width="1920" data-height="1080">
+<div id="w119" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:66;"><video id="v118" class="clip fit" src="assets/clips/colony_0_d71ccd0b.mp4" muted playsinline data-start="0.000" data-duration="3.687" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w121" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:67;"><video id="v120" class="clip fit" src="assets/clips/king_1_4d47a642.mp4" muted playsinline data-start="3.687" data-duration="3.420" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv122" class="clip" width="1920" height="1080" data-start="7.107" data-duration="3.960" data-track-index="1" style="z-index:68"></canvas>
+<div id="s124" class="clip scene " data-start="11.067" data-duration="4.760" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><img id="ph123" class="fill" src="assets/gen/kerguelen_0_9a3121.jpg" alt="kerguelen_0" style="transform-origin:50% 50%"><div class="credit">Photo: Benoit Gineste / Wikimedia Commons</div></div>
+<div id="w126" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:70;"><video id="v125" class="clip fit" src="assets/clips/king_egg_058ab357.mp4" muted playsinline data-start="15.827" data-duration="5.380" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s127" class="clip scene " data-start="15.827" data-duration="5.380" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Imaging</div></div>
+<div id="w129" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:72;"><video id="v128" class="clip fit" src="assets/clips/king_court_0301fd97.mp4" muted playsinline data-start="21.207" data-duration="10.380" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s130" class="clip scene " data-start="21.207" data-duration="10.380" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w132" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:74;"><video id="v131" class="clip fit" src="assets/clips/king_court_c9b0447e.mp4" muted playsinline data-start="31.587" data-duration="5.560" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s133" class="clip scene " data-start="31.587" data-duration="5.560" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w135" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:76;"><video id="v134" class="clip fit" src="assets/clips/king_0_007d3f9b.mp4" muted playsinline data-start="37.147" data-duration="3.260" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w137" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:77;"><video id="v136" class="clip fit" src="assets/clips/king_court_373b26f6.mp4" muted playsinline data-start="40.407" data-duration="2.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s138" class="clip scene " data-start="40.407" data-duration="2.060" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w140" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:79;"><video id="v139" class="clip fit" src="assets/clips/emperor_4_21bba42e.mp4" muted playsinline data-start="42.467" data-duration="2.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv141" class="clip" width="1920" height="1080" data-start="45.247" data-duration="13.260" data-track-index="1" style="z-index:80"></canvas>
+<div id="w143" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:81;"><video id="v142" class="clip fit" src="assets/clips/king_egg_f895c0d6.mp4" muted playsinline data-start="58.507" data-duration="6.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s144" class="clip scene " data-start="58.507" data-duration="6.060" data-track-index="2" style="z-index:82" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Imaging</div></div>
+<div id="w146" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:83;"><video id="v145" class="clip fit" src="assets/clips/emperor_0_fa6adb8e.mp4" muted playsinline data-start="64.567" data-duration="5.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w148" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:84;"><video id="v147" class="clip fit" src="assets/clips/berg_6_c7fd111a.mp4" muted playsinline data-start="70.167" data-duration="3.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s150" class="clip scene " data-start="73.467" data-duration="4.000" data-track-index="2" style="z-index:85" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_levick_0_1d46a1.jpg" alt=""><div id="ph149" class="card" style="left:602px;top:100px;width:716px;height:860px"><img src="assets/gen/levick_0_238657.jpg" alt="levick_0" style="width:716px;height:860px"></div><div class="credit">Photo: Herbert Ponting / Wikimedia Commons</div></div>
+<canvas id="cv151" class="clip" width="1920" height="1080" data-start="77.467" data-duration="3.960" data-track-index="1" style="z-index:86"></canvas>
+<div id="s153" class="clip scene " data-start="81.427" data-duration="3.260" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_scott_6_e127d4.jpg" alt=""><div id="ph152" class="card" style="left:392px;top:100px;width:1135px;height:860px"><img src="assets/gen/scott_6_b1c9f7.jpg" alt="scott_6" style="width:1135px;height:860px"></div><div class="credit">Photo: Herbert George Ponting / Wikimedia Commons</div></div>
+<div id="s155" class="clip scene " data-start="84.687" data-duration="3.480" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><img id="ph154" class="fill" src="assets/gen/scott_2_4b0a7a.jpg" alt="scott_2" style="transform-origin:50% 50%"><div class="credit">Photo: Herbert Ponting / Wikimedia Commons</div></div>
+<div id="w157" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:89;"><video id="v156" class="clip fit" src="assets/clips/adelie_adare_33b73ab2.mp4" muted playsinline data-start="88.167" data-duration="4.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s158" class="clip scene " data-start="88.167" data-duration="4.240" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w160" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:91;"><video id="v159" class="clip fit" src="assets/clips/adelie_adare_0238d8cf.mp4" muted playsinline data-start="92.407" data-duration="4.660" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s161" class="clip scene " data-start="92.407" data-duration="4.660" data-track-index="2" style="z-index:92" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="s163" class="clip scene " data-start="97.067" data-duration="2.660" data-track-index="2" style="z-index:93" data-layout-allow-overflow data-layout-allow-overlap><img id="ph162" class="fill" src="assets/gen/levick_1_16156e.jpg" alt="levick_1" style="transform-origin:50% 50%"><div class="credit">Photo: George Murray Levick / Wikimedia Commons</div></div>
+<div id="s165" class="clip scene " data-start="99.727" data-duration="1.840" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_adare_0_959616.jpg" alt=""><div id="ph164" class="card" style="left:406px;top:100px;width:1107px;height:860px"><img src="assets/gen/adare_0_e26e5c.jpg" alt="adare_0" style="width:1107px;height:860px"></div><div class="credit">Photo: Carsten Borchgrevink / Wikimedia Commons</div></div>
+<div id="w167" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:95;"><video id="v166" class="clip fit" src="assets/clips/adelie_nests_121dbd59.mp4" muted playsinline data-start="101.567" data-duration="2.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s168" class="clip scene " data-start="101.567" data-duration="2.740" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: varagner</div></div>
+<div id="w170" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:97;"><video id="v169" class="clip fit" src="assets/clips/adelie_nests_b278f5fc.mp4" muted playsinline data-start="104.307" data-duration="5.320" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s171" class="clip scene " data-start="104.307" data-duration="5.320" data-track-index="2" style="z-index:98" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: varagner</div></div>
+<canvas id="cv172" class="clip" width="1920" height="1080" data-start="109.627" data-duration="7.780" data-track-index="1" style="z-index:99"></canvas>
+<canvas id="cv173" class="clip" width="1920" height="1080" data-start="117.407" data-duration="17.320" data-track-index="1" style="z-index:100"></canvas>
+<div id="s175" class="clip scene " data-start="134.727" data-duration="3.540" data-track-index="2" style="z-index:101" data-layout-allow-overflow data-layout-allow-overlap><img id="ph174" class="fill" src="assets/gen/nhm_5_5f910d.jpg" alt="nhm_5" style="transform-origin:50% 50%"><div class="credit">Photo: Ian Petticrew / Wikimedia Commons</div></div>
+<canvas id="cv176" class="clip" width="1920" height="1080" data-start="138.267" data-duration="10.580" data-track-index="1" style="z-index:102"></canvas>
+<div id="s178" class="clip scene " data-start="148.847" data-duration="4.220" data-track-index="2" style="z-index:103" data-layout-allow-overflow data-layout-allow-overlap><img id="ph177" class="fill" src="assets/gen/levick_5_cebc89.jpg" alt="levick_5" style="transform-origin:50% 50%"><div class="credit">Photo: Wikimedia Commons</div></div>
+<div id="w180" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:104;"><video id="v179" class="clip fit" src="assets/clips/adelie_olivier_75ede9f3.mp4" muted playsinline data-start="153.067" data-duration="4.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s181" class="clip scene " data-start="153.067" data-duration="4.100" data-track-index="2" style="z-index:105" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Frederique Olivier</div></div>
+<div id="w183" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:106;"><video id="v182" class="clip fit" src="assets/clips/king_court_8d373a78.mp4" muted playsinline data-start="157.167" data-duration="4.540" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s184" class="clip scene " data-start="157.167" data-duration="4.540" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Penguins International</div></div>
+<div id="w186" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:108;"><video id="v185" class="clip fit" src="assets/clips/king_1_015ed351.mp4" muted playsinline data-start="161.707" data-duration="2.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv187" class="clip" width="1920" height="1080" data-start="164.187" data-duration="12.440" data-track-index="1" style="z-index:109"></canvas>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v118",{scale:1.0},{scale:1.06,duration:3.687,ease:"none"},0.000);
+tl.fromTo("#v120",{scale:1.0},{scale:1.06,duration:3.42,ease:"none"},3.687);
+{const c=document.getElementById("cv122").getContext("2d");tl.to({},{duration:3.960,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [20, -10, 1.0], "to": [69.5, -49.3, 7.0], "t0": 0.2, "t1": 2.0, "pins": [[69.5, -49.3, 2.1, "#ff5b4f"]], "d": 3.96});}},7.107);}
+tl.fromTo("#ph123",{scale:1.0},{scale:1.12,duration:4.76,ease:"none"},11.067);
+tl.fromTo("#v125",{scale:1.0},{scale:1.06,duration:5.38,ease:"none"},15.827);
+tl.fromTo("#v128",{scale:1.0},{scale:1.06,duration:10.38,ease:"none"},21.207);
+tl.fromTo("#v131",{scale:1.0},{scale:1.06,duration:5.56,ease:"none"},31.587);
+tl.fromTo("#v134",{scale:1.0},{scale:1.06,duration:3.26,ease:"none"},37.147);
+tl.fromTo("#v136",{scale:1.0},{scale:1.06,duration:2.06,ease:"none"},40.407);
+tl.fromTo("#v139",{scale:1.0},{scale:1.06,duration:2.78,ease:"none"},42.467);
+{const c=document.getElementById("cv141").getContext("2d");tl.to({},{duration:13.260,ease:"none",onUpdate:function(){SC.odds(c,this.time(),{"swap": 6.5, "cam": {"z0": 1.0, "z1": 1.03, "hand": false}, "d": 13.26});}},45.247);}
+tl.fromTo("#v142",{scale:1.0},{scale:1.06,duration:6.06,ease:"none"},58.507);
+tl.fromTo("#v145",{scale:1.0},{scale:1.06,duration:5.6,ease:"none"},64.567);
+tl.fromTo("#v147",{scale:1.0},{scale:1.06,duration:3.3,ease:"none"},70.167);
+tl.fromTo("#ph149",{scale:1.0},{scale:1.06,duration:4.0,ease:"none"},73.467);
+{const c=document.getElementById("cv151").getContext("2d");tl.to({},{duration:3.960,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [60, -40, 1.0], "to": [170.2, -71.3, 6.0], "t0": 0.2, "t1": 2.0, "pins": [[170.2, -71.3, 2.1, "#ff5b4f"]], "d": 3.96});}},77.467);}
+tl.fromTo("#ph152",{scale:1.0},{scale:1.06,duration:3.26,ease:"none"},81.427);
+tl.fromTo("#ph154",{scale:1.0},{scale:1.08,duration:3.48,ease:"none"},84.687);
+tl.fromTo("#v156",{scale:1.0},{scale:1.06,duration:4.24,ease:"none"},88.167);
+tl.fromTo("#v159",{scale:1.0},{scale:1.06,duration:4.66,ease:"none"},92.407);
+tl.fromTo("#ph162",{scale:1.0},{scale:1.1,duration:2.66,ease:"none"},97.067);
+tl.fromTo("#ph164",{scale:1.0},{scale:1.06,duration:1.84,ease:"none"},99.727);
+tl.fromTo("#v166",{scale:1.0},{scale:1.06,duration:2.74,ease:"none"},101.567);
+tl.fromTo("#v169",{scale:1.0},{scale:1.06,duration:5.32,ease:"none"},104.307);
+{const c=document.getElementById("cv172").getContext("2d");tl.to({},{duration:7.780,ease:"none",onUpdate:function(){SC.levick(c,this.time(),{"stage": "notebook", "greek": 2.6, "cam": {"z0": 1.0, "z1": 1.08}, "d": 7.78});}},109.627);}
+{const c=document.getElementById("cv173").getContext("2d");tl.to({},{duration:17.320,ease:"none",onUpdate:function(){SC.levick(c,this.time(),{"stage": "pamphlet", "stamp": 4.4, "count": 12.5, "vanish": 15.0, "cam": {"z0": 1.06, "z1": 1.0}, "d": 17.32});}},117.407);}
+tl.fromTo("#ph174",{scale:1.0},{scale:1.1,duration:3.54,ease:"none"},134.727);
+{const c=document.getElementById("cv176").getContext("2d");tl.to({},{duration:10.580,ease:"none",onUpdate:function(){SC.levick(c,this.time(),{"stage": "drawer", "year": 4.0, "cam": {"z0": 1.0, "z1": 1.06}, "d": 10.58});}},138.267);}
+tl.fromTo("#ph177",{scale:1.0},{scale:1.1,duration:4.22,ease:"none"},148.847);
+tl.fromTo("#v179",{scale:1.0},{scale:1.06,duration:4.1,ease:"none"},153.067);
+tl.fromTo("#v182",{scale:1.0},{scale:1.06,duration:4.54,ease:"none"},157.167);
+tl.fromTo("#v185",{scale:1.0},{scale:1.06,duration:2.48,ease:"none"},161.707);
+{const c=document.getElementById("cv187").getContext("2d");tl.to({},{duration:12.440,ease:"none",onUpdate:function(){SC.voice(c,this.time(),{"sp": "king", "link": 6.0, "cam": {"z0": 1.04, "z1": 1.1}, "d": 12.44});}},164.187);}
+tl.set({}, {}, 176.633);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

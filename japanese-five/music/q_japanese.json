@@ -1,0 +1,1266 @@
+{
+ "result_count": 45,
+ "page_count": 3,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "2ab571ce-f7b4-42a2-9f0a-68be84c74214",
+   "title": "16 Japanese Words ( House Mix )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1173979",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1173979&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "house",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "japanese",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"16 Japanese Words ( House Mix )\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Made in Japan",
+    "foreign_landing_url": "https://www.jamendo.com/album/141393/made-in-japan",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 386000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2ab571ce-f7b4-42a2-9f0a-68be84c74214/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2ab571ce-f7b4-42a2-9f0a-68be84c74214/",
+   "related_url": "https://api.openverse.org/v1/audio/2ab571ce-f7b4-42a2-9f0a-68be84c74214/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2ab571ce-f7b4-42a2-9f0a-68be84c74214/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6e15420c-b173-4018-aa14-a43c48a8ee1b",
+   "title": "Ambient Samurai Talk In Japanese on Exhibition of legendary Urawa Rock And Roll Center.",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1084099",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1084099&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "echo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ambient Samurai Talk In Japanese on Exhibition of legendary Urawa Rock And Roll Center.\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2013/11/24 Inspired By Exhibition Of URC Part II Ambient Samur",
+    "foreign_landing_url": "https://www.jamendo.com/album/129123/2013-11-24-inspired-by-exhibition-of-urc-part-ii-ambient-samur",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 203000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/",
+   "related_url": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6e15420c-b173-4018-aa14-a43c48a8ee1b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "bc62f453-2c9b-4634-99ca-9fe51ca419f6",
+   "title": "Millions Of Japanese Tourist",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/168699",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=168699&format=mp32",
+   "creator": "Mr.Ju",
+   "creator_url": "https://www.jamendo.com/artist/339613/Mr.Ju",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/ca/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "jazz",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Millions Of Japanese Tourist\" by Mr.Ju is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/ca/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Nature Electronique",
+    "foreign_landing_url": "https://www.jamendo.com/album/24796/nature-electronique",
+    "creator": "Mr.Ju",
+    "creator_url": "https://www.jamendo.com/artist/339613/Mr.Ju",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 150000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bc62f453-2c9b-4634-99ca-9fe51ca419f6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bc62f453-2c9b-4634-99ca-9fe51ca419f6/",
+   "related_url": "https://api.openverse.org/v1/audio/bc62f453-2c9b-4634-99ca-9fe51ca419f6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bc62f453-2c9b-4634-99ca-9fe51ca419f6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6a3c7096-c0b3-4f26-b1d0-55ba9a885b92",
+   "title": "18 No Way ( Japanese Vocal Mix )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1173980",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1173980&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "japanese",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"18 No Way ( Japanese Vocal Mix )\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Made in Japan",
+    "foreign_landing_url": "https://www.jamendo.com/album/141393/made-in-japan",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 465000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6a3c7096-c0b3-4f26-b1d0-55ba9a885b92/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6a3c7096-c0b3-4f26-b1d0-55ba9a885b92/",
+   "related_url": "https://api.openverse.org/v1/audio/6a3c7096-c0b3-4f26-b1d0-55ba9a885b92/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6a3c7096-c0b3-4f26-b1d0-55ba9a885b92/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ff550cb0-016e-4347-bd82-ee194030b97a",
+   "title": "Japanese fighter",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/722140",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=722140&format=mp32",
+   "creator": "The big J",
+   "creator_url": "https://www.jamendo.com/artist/365725/The_big_J_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Japanese fighter\" by The big J is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "FREAK",
+    "foreign_landing_url": "https://www.jamendo.com/album/84283/freak",
+    "creator": "The big J",
+    "creator_url": "https://www.jamendo.com/artist/365725/The_big_J_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 198000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ff550cb0-016e-4347-bd82-ee194030b97a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ff550cb0-016e-4347-bd82-ee194030b97a/",
+   "related_url": "https://api.openverse.org/v1/audio/ff550cb0-016e-4347-bd82-ee194030b97a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ff550cb0-016e-4347-bd82-ee194030b97a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7f991413-7937-453e-b8fd-8029170751c2",
+   "title": "19 Numbers ( Japanese Numbers Mix )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1173983",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1173983&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "edm",
+    "house",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "japanese",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"19 Numbers ( Japanese Numbers Mix )\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Made in Japan",
+    "foreign_landing_url": "https://www.jamendo.com/album/141393/made-in-japan",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 435000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7f991413-7937-453e-b8fd-8029170751c2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7f991413-7937-453e-b8fd-8029170751c2/",
+   "related_url": "https://api.openverse.org/v1/audio/7f991413-7937-453e-b8fd-8029170751c2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7f991413-7937-453e-b8fd-8029170751c2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "993bee28-5d60-4692-895a-4cbf42d55614",
+   "title": "toryanse (japanese trad tune)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/434625",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=434625&format=mp32",
+   "creator": "Exes alt",
+   "creator_url": "https://www.jamendo.com/artist/353816/exes_alt",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"toryanse (japanese trad tune)\" by Exes alt is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "21 Century Pianocktail Systems",
+    "foreign_landing_url": "https://www.jamendo.com/album/52703/21-century-pianocktail-systems",
+    "creator": "Exes alt",
+    "creator_url": "https://www.jamendo.com/artist/353816/exes_alt",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 65000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/993bee28-5d60-4692-895a-4cbf42d55614/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/993bee28-5d60-4692-895a-4cbf42d55614/",
+   "related_url": "https://api.openverse.org/v1/audio/993bee28-5d60-4692-895a-4cbf42d55614/related/",
+   "waveform": "https://api.openverse.org/v1/audio/993bee28-5d60-4692-895a-4cbf42d55614/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "066d0aca-1ba3-410f-9c05-ab96916418ae",
+   "title": "Nogo - Japanese drums",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/519664",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=519664&format=mp32",
+   "creator": "NOGO",
+   "creator_url": "https://www.jamendo.com/artist/351358/NOGO",
+   "license": "by",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/br/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Nogo - Japanese drums\" by NOGO is licensed under CC BY 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.5/br/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Mancha Solaris",
+    "foreign_landing_url": "https://www.jamendo.com/album/60760/mancha-solaris",
+    "creator": "NOGO",
+    "creator_url": "https://www.jamendo.com/artist/351358/NOGO",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 106000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/066d0aca-1ba3-410f-9c05-ab96916418ae/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/066d0aca-1ba3-410f-9c05-ab96916418ae/",
+   "related_url": "https://api.openverse.org/v1/audio/066d0aca-1ba3-410f-9c05-ab96916418ae/related/",
+   "waveform": "https://api.openverse.org/v1/audio/066d0aca-1ba3-410f-9c05-ab96916418ae/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "65470670-dde8-4b10-9e52-ed65ef26b379",
+   "title": "singing Japanese robot",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/715097",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=715097&format=mp32",
+   "creator": "Lamax",
+   "creator_url": "https://www.jamendo.com/artist/358588/Lamax",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"singing Japanese robot\" by Lamax is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Exile",
+    "foreign_landing_url": "https://www.jamendo.com/album/83518/exile",
+    "creator": "Lamax",
+    "creator_url": "https://www.jamendo.com/artist/358588/Lamax",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 232000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/65470670-dde8-4b10-9e52-ed65ef26b379/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/65470670-dde8-4b10-9e52-ed65ef26b379/",
+   "related_url": "https://api.openverse.org/v1/audio/65470670-dde8-4b10-9e52-ed65ef26b379/related/",
+   "waveform": "https://api.openverse.org/v1/audio/65470670-dde8-4b10-9e52-ed65ef26b379/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f48206dc-c17a-42a9-acab-7aec3d78ef60",
+   "title": "MC in Japanese Fully Echoed",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1144297",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1144297&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "nakagawa",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"MC in Japanese Fully Echoed\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Live at 'Na Tsu Fes Kari\u201d on 2014-8-9 at Legendary Live Bar -- W",
+    "foreign_landing_url": "https://www.jamendo.com/album/137241/live-at-na-tsu-fes-kari-on-2014-8-9-at-legendary-live-bar-w",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 48000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f48206dc-c17a-42a9-acab-7aec3d78ef60/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f48206dc-c17a-42a9-acab-7aec3d78ef60/",
+   "related_url": "https://api.openverse.org/v1/audio/f48206dc-c17a-42a9-acab-7aec3d78ef60/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f48206dc-c17a-42a9-acab-7aec3d78ef60/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ce268938-62e0-4d3f-8a41-76eb71a78ff2",
+   "title": "Loop507 - Japanese Girl in Naples",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1016781",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1016781&format=mp32",
+   "creator": "Loop507",
+   "creator_url": "https://www.jamendo.com/artist/347851/Loop507",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Loop507 - Japanese Girl in Naples\" by Loop507 is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "So Vintage",
+    "foreign_landing_url": "https://www.jamendo.com/album/119744/so-vintage",
+    "creator": "Loop507",
+    "creator_url": "https://www.jamendo.com/artist/347851/Loop507",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 313000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ce268938-62e0-4d3f-8a41-76eb71a78ff2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ce268938-62e0-4d3f-8a41-76eb71a78ff2/",
+   "related_url": "https://api.openverse.org/v1/audio/ce268938-62e0-4d3f-8a41-76eb71a78ff2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ce268938-62e0-4d3f-8a41-76eb71a78ff2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "36786b80-f98e-4249-87eb-67d46fb50c7e",
+   "title": "Japanese palam palam",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1581745",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1581745&format=mp32",
+   "creator": "Joseph Curwen",
+   "creator_url": "https://www.jamendo.com/artist/471813/Joseph_Curwen",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "doublebass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Japanese palam palam\" by Joseph Curwen is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Apr\u00e8s Mars, sur la droite",
+    "foreign_landing_url": "https://www.jamendo.com/album/179861/apres-mars-sur-la-droite",
+    "creator": "Joseph Curwen",
+    "creator_url": "https://www.jamendo.com/artist/471813/Joseph_Curwen",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 372000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/36786b80-f98e-4249-87eb-67d46fb50c7e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/36786b80-f98e-4249-87eb-67d46fb50c7e/",
+   "related_url": "https://api.openverse.org/v1/audio/36786b80-f98e-4249-87eb-67d46fb50c7e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/36786b80-f98e-4249-87eb-67d46fb50c7e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c7a2d8ea-8f08-48a4-96b8-f8b68641e7d0",
+   "title": "Japanese Lakes",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1417569",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1417569&format=mp32",
+   "creator": "Raffa\u00eblli",
+   "creator_url": "https://www.jamendo.com/artist/496473/Raffaelli",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthetiser",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Japanese Lakes\" by Raffa\u00eblli is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Orients",
+    "foreign_landing_url": "https://www.jamendo.com/album/165432/orients",
+    "creator": "Raffa\u00eblli",
+    "creator_url": "https://www.jamendo.com/artist/496473/Raffaelli",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 508000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c7a2d8ea-8f08-48a4-96b8-f8b68641e7d0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c7a2d8ea-8f08-48a4-96b8-f8b68641e7d0/",
+   "related_url": "https://api.openverse.org/v1/audio/c7a2d8ea-8f08-48a4-96b8-f8b68641e7d0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c7a2d8ea-8f08-48a4-96b8-f8b68641e7d0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1dcd0cfb-738d-4477-8883-0e5d80e71100",
+   "title": "25 Japanese Bobtail ( House Mix )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1209897",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1209897&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidhouse",
+    "house",
+    "techno"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "housetech",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"25 Japanese Bobtail ( House Mix )\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Techno Trax - Episode 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/145302/techno-trax-episode-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 379000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1dcd0cfb-738d-4477-8883-0e5d80e71100/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1dcd0cfb-738d-4477-8883-0e5d80e71100/",
+   "related_url": "https://api.openverse.org/v1/audio/1dcd0cfb-738d-4477-8883-0e5d80e71100/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1dcd0cfb-738d-4477-8883-0e5d80e71100/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0f6bbb41-8f47-44ba-88f0-8cc0e5a24217",
+   "title": "Song For Sounding Moments (Japanese)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1261314",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1261314&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "zoomr16",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Song For Sounding Moments (Japanese)\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "For Ever Sounding Moments 2015-8-6 part 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/150837/for-ever-sounding-moments-2015-8-6-part-2",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 534000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0f6bbb41-8f47-44ba-88f0-8cc0e5a24217/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0f6bbb41-8f47-44ba-88f0-8cc0e5a24217/",
+   "related_url": "https://api.openverse.org/v1/audio/0f6bbb41-8f47-44ba-88f0-8cc0e5a24217/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0f6bbb41-8f47-44ba-88f0-8cc0e5a24217/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "de37f31f-6eaf-4475-b5cc-8b07d0296915",
+   "title": "Japanese Yodel Punk",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1438213",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1438213&format=mp32",
+   "creator": "Infocalypse",
+   "creator_url": "https://www.jamendo.com/artist/5060/stdin",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "generative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Japanese Yodel Punk\" by Infocalypse is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Generative V",
+    "foreign_landing_url": "https://www.jamendo.com/album/167440/generative-v",
+    "creator": "Infocalypse",
+    "creator_url": "https://www.jamendo.com/artist/5060/stdin",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 19000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/de37f31f-6eaf-4475-b5cc-8b07d0296915/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/de37f31f-6eaf-4475-b5cc-8b07d0296915/",
+   "related_url": "https://api.openverse.org/v1/audio/de37f31f-6eaf-4475-b5cc-8b07d0296915/related/",
+   "waveform": "https://api.openverse.org/v1/audio/de37f31f-6eaf-4475-b5cc-8b07d0296915/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9cff3070-0706-424e-a722-da043419c782",
+   "title": "Song For (Japanese) Comfortable Floating Senses",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1260993",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1260993&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "zoomr16",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Song For (Japanese) Comfortable Floating Senses\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "For Comfortable Floating Senses 2015-8-6 part 1",
+    "foreign_landing_url": "https://www.jamendo.com/album/150772/for-comfortable-floating-senses-2015-8-6-part-1",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 124000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9cff3070-0706-424e-a722-da043419c782/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9cff3070-0706-424e-a722-da043419c782/",
+   "related_url": "https://api.openverse.org/v1/audio/9cff3070-0706-424e-a722-da043419c782/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9cff3070-0706-424e-a722-da043419c782/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dca5b220-7ca1-4e2d-8c86-433d99498ec5",
+   "title": "Song For Crescent Moon Station (Japanese)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1261316",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1261316&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "zoomr16",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Song For Crescent Moon Station (Japanese)\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "For Ever Sounding Moments 2015-8-6 part 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/150837/for-ever-sounding-moments-2015-8-6-part-2",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 80000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dca5b220-7ca1-4e2d-8c86-433d99498ec5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dca5b220-7ca1-4e2d-8c86-433d99498ec5/",
+   "related_url": "https://api.openverse.org/v1/audio/dca5b220-7ca1-4e2d-8c86-433d99498ec5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dca5b220-7ca1-4e2d-8c86-433d99498ec5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "afc21e4e-4998-4d77-be4a-acce223922e2",
+   "title": "vs Japanese Zaimu Computer Okubo",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/712715",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=712715&format=mp32",
+   "creator": "Exes alt",
+   "creator_url": "https://www.jamendo.com/artist/353816/exes_alt",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"vs Japanese Zaimu Computer Okubo\" by Exes alt is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ShonenTantei OST 'Flowery Disappearance'",
+    "foreign_landing_url": "https://www.jamendo.com/album/83210/shonentantei-ost-flowery-disappearance",
+    "creator": "Exes alt",
+    "creator_url": "https://www.jamendo.com/artist/353816/exes_alt",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 292000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/afc21e4e-4998-4d77-be4a-acce223922e2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/afc21e4e-4998-4d77-be4a-acce223922e2/",
+   "related_url": "https://api.openverse.org/v1/audio/afc21e4e-4998-4d77-be4a-acce223922e2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/afc21e4e-4998-4d77-be4a-acce223922e2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "37262a99-dc16-4fe6-9a9c-cff1ed828b68",
+   "title": "analog",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/338001",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=338001&format=mp32",
+   "creator": "Hiroumi",
+   "creator_url": "https://www.jamendo.com/artist/349959/Secret_Ocean",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "japanese",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"analog\" by Hiroumi is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Kokoro No Furyoku",
+    "foreign_landing_url": "https://www.jamendo.com/album/44756/kokoro-no-furyoku",
+    "creator": "Hiroumi",
+    "creator_url": "https://www.jamendo.com/artist/349959/Secret_Ocean",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 277000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/37262a99-dc16-4fe6-9a9c-cff1ed828b68/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/37262a99-dc16-4fe6-9a9c-cff1ed828b68/",
+   "related_url": "https://api.openverse.org/v1/audio/37262a99-dc16-4fe6-9a9c-cff1ed828b68/related/",
+   "waveform": "https://api.openverse.org/v1/audio/37262a99-dc16-4fe6-9a9c-cff1ed828b68/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

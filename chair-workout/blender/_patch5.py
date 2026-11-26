@@ -1,0 +1,10 @@
+from pathlib import Path
+r = Path("blender/sample_still.py"); u = r.read_text(encoding="utf-8")
+u = u.replace('cam = room.build_camera((-1.25, -2.75, 1.05), (0.0, -0.12, 0.76), 36)', 'cam = room.build_camera((-1.55, -3.75, 1.12), (0.0, -0.10, 0.70), 45)')
+u = u.replace('    b.curl(s, 12)\n', '    b.curl(s, 6)\n')
+u = u.replace('scene.view_settings.look = "AgX - Medium High Contrast"\nscene.render.filepath', 'scene.view_settings.look = "AgX - High Contrast"\nscene.render.filepath')
+r.write_text(u, encoding="utf-8")
+p = Path("blender/build_figure.py"); s = p.read_text(encoding="utf-8")
+s = s.replace('mix.inputs["A"].default_value = (0.70, 0.70, 0.71, 1)', 'mix.inputs["A"].default_value = (0.62, 0.63, 0.65, 1)')
+s = s.replace('ao.inputs["Distance"].default_value = 0.05; ao.samples = 16', 'ao.inputs["Distance"].default_value = 0.05; ao.samples = 32')
+p.write_text(s, encoding="utf-8"); print("ok")

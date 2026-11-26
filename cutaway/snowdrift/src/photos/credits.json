@@ -1,0 +1,43 @@
+{
+ "hero_walk": {
+  "id": 7522072,
+  "photographer": "beytlik",
+  "url": "https://www.pexels.com/photo/unrecognizable-male-in-medical-mask-in-snowfall-7522072/"
+ },
+ "hero_kneel": {
+  "id": 6263503,
+  "photographer": "rois martin",
+  "url": "https://www.pexels.com/photo/man-in-black-winter-jacket-holding-a-trekking-pole-6263503/"
+ },
+ "hero_sit": {
+  "id": 1009866,
+  "photographer": "Shashank Kumawat",
+  "url": "https://www.pexels.com/photo/man-sitting-on-rock-wearing-black-jacket-1009866/"
+ },
+ "hero_lie": {
+  "id": 15238878,
+  "photographer": "EVG Kowalievska",
+  "url": "https://www.pexels.com/photo/man-shaping-an-eagle-on-the-snow-15238878/"
+ },
+ "soldiers_pair": {
+  "id": 6786309,
+  "photographer": "Gaurav_ ranjitkar",
+  "url": "https://www.pexels.com/photo/two-military-men-standing-on-a-snow-covered-forest-6786309/"
+ },
+ "soldier_walk1": {
+  "id": 6204497,
+  "photographer": "Tima Miroshnichenko",
+  "url": "https://www.pexels.com/photo/two-men-standing-in-the-woods-holding-rifles-6204497/"
+ },
+ "soldier_walk2": {
+  "id": 6204481,
+  "photographer": "Tima Miroshnichenko",
+  "url": "https://www.pexels.com/photo/grayscale-photo-of-two-men-carrying-rifles-6204481/"
+ },
+ "fox": {
+  "id": 12427830,
+  "photographer": "Alex Kad",
+  "url": "https://www.pexels.com/video/white-fox-on-rock-12427830/",
+  "video": true
+ }
+}

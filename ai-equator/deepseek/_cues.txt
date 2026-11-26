@@ -1,0 +1,14 @@
+    (9.66, "click-soft", 0.1),  # names light up
+    (63.50, "impact-bass-1", 0.06),  # -589B
+    (128.90, "whoosh-short", 0.08),  # leak 1
+    (177.12, "ping", 0.08),  # REAL
+    (199.86, "click", 0.08),  # 99.0.0
+    (218.22, "pop", 0.09),  # 9 tokens
+    (246.92, "whoosh-short", 0.08),  # leak 2
+    (285.06, "click", 0.08),  # no chart
+    (339.56, "whoosh-short", 0.08),  # real news
+    (378.56, "pop", 0.08),  # 2027
+    (422.74, "click-soft", 0.1),  # 410 TFLOPS
+    (541.86, "whoosh-short", 0.07),  # scorecard
+    (603.84, "impact-bass-1", 0.06),  # chip war
+    (624.36, "whoosh-short", 0.1),  # logo

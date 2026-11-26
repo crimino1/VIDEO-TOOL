@@ -1,0 +1,418 @@
+{
+ "result_count": 5,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "02358f8a-0f1d-4f60-84c5-4d9ce052654c",
+   "title": "Empty inside(acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1336852",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1336852&format=mp32",
+   "creator": "UNDER_SIGHT",
+   "creator_url": "https://www.jamendo.com/artist/422664/UNDER_SIGHT",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "inside",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Empty inside(acoustic)\" by UNDER_SIGHT is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Acoustic",
+    "foreign_landing_url": "https://www.jamendo.com/album/157964/acoustic",
+    "creator": "UNDER_SIGHT",
+    "creator_url": "https://www.jamendo.com/artist/422664/UNDER_SIGHT",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 342000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/02358f8a-0f1d-4f60-84c5-4d9ce052654c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/02358f8a-0f1d-4f60-84c5-4d9ce052654c/",
+   "related_url": "https://api.openverse.org/v1/audio/02358f8a-0f1d-4f60-84c5-4d9ce052654c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/02358f8a-0f1d-4f60-84c5-4d9ce052654c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0a831f59-4d3a-44bc-b2a7-b3fde29986ef",
+   "title": "Willow Tree (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1474285",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1474285&format=mp32",
+   "creator": "Mark Bodino",
+   "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "indiepop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "malevocals",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Willow Tree (acoustic)\" by Mark Bodino is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Mark Bodino with Broken Darling (vocals)",
+    "foreign_landing_url": "https://www.jamendo.com/album/170637/mark-bodino-with-broken-darling-vocals",
+    "creator": "Mark Bodino",
+    "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 205000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/",
+   "related_url": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4743b200-204e-41d6-bbef-4284cb74fa5c",
+   "title": "The First One Acoustic (Song 4)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1493177",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1493177&format=mp32",
+   "creator": "The Dishwater",
+   "creator_url": "https://www.jamendo.com/artist/504356/The_Dishwater",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "riot",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The First One Acoustic (Song 4)\" by The Dishwater is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "OWI - 37756 - E",
+    "foreign_landing_url": "https://www.jamendo.com/album/172264/owi-37756-e",
+    "creator": "The Dishwater",
+    "creator_url": "https://www.jamendo.com/artist/504356/The_Dishwater",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 101000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4743b200-204e-41d6-bbef-4284cb74fa5c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4743b200-204e-41d6-bbef-4284cb74fa5c/",
+   "related_url": "https://api.openverse.org/v1/audio/4743b200-204e-41d6-bbef-4284cb74fa5c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4743b200-204e-41d6-bbef-4284cb74fa5c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4cb4e8a4-bc27-455f-88df-9b7c8148a1a3",
+   "title": "Grains of Sand (acoustic version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1474286",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1474286&format=mp32",
+   "creator": "Mark Bodino",
+   "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "malevocals",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Grains of Sand (acoustic version)\" by Mark Bodino is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Mark Bodino with Broken Darling (vocals)",
+    "foreign_landing_url": "https://www.jamendo.com/album/170637/mark-bodino-with-broken-darling-vocals",
+    "creator": "Mark Bodino",
+    "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 197000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4cb4e8a4-bc27-455f-88df-9b7c8148a1a3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4cb4e8a4-bc27-455f-88df-9b7c8148a1a3/",
+   "related_url": "https://api.openverse.org/v1/audio/4cb4e8a4-bc27-455f-88df-9b7c8148a1a3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4cb4e8a4-bc27-455f-88df-9b7c8148a1a3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1a10a4a3-fb6d-4653-8a7e-77c5b0e33940",
+   "title": "Dieu N'est Pas Num\u00e9rique (Intense Acoustic Meditation Mix)",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2323649",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2323649&format=mp32",
+   "creator": "Adele Vivari",
+   "creator_url": "https://www.jamendo.com/artist/492496/Adele_Vivari",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dieu N'est Pas Num\u00e9rique (Intense Acoustic Meditation Mix)\" by Adele Vivari is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Deus Non Est Digitalis",
+    "foreign_landing_url": "https://www.jamendo.com/album/636559/deus-non-est-digitalis",
+    "creator": "Adele Vivari",
+    "creator_url": "https://www.jamendo.com/artist/492496/Adele_Vivari",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 239000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/",
+   "related_url": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

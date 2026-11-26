@@ -1,0 +1,96 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#fff;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#f5c842;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #f5c842;border-radius:6px;box-shadow:0 0 18px rgba(245,200,66,.8)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:0 0 14px currentColor}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="129.170" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s218" class="clip scene" data-start="0.000" data-duration="2.140" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="c217" class="scene"><div id="sec216" class="sec" style="top:440px"><div>The verdict:</div><div>Where I land</div></div></div></div>
+<div id="s223" class="clip scene" data-start="6.500" data-duration="7.680" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="c222" class="scene"><div class="mascot" style="left:60px;top:485px;width:476px;height:640px"><div id="mp220" class="mpose" style="opacity:1"><svg viewBox="-10 0 320 430" class="msvg"><g><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L90 185 L52 125" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L210 185 L255 125" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me221" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div></div><div id="sb219" class="sub" style="left:600px;top:330px;opacity:0"><div class="h">Need to know</div><div class="b"><div>WHY the code works?</div><div>Good decade for you.</div></div></div></div></div>
+<div id="s229" class="clip scene" data-start="24.160" data-duration="4.820" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="c228" class="scene"><div id="k224" class="kw" style="left:210px;width:1500px;text-align:center;top:300px;font-size:104px;line-height:1.3;color:#fff"><span id="w225" style="opacity:0">Cheap + solid</span> <br> <span id="w226" style="opacity:0">beats</span> <br> <span id="w227" style="opacity:0">famous + expensive</span></div></div></div>
+<div id="s234" class="clip scene" data-start="72.860" data-duration="4.020" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="c233" class="scene"><div id="k230" class="kw" style="left:210px;width:1500px;text-align:center;top:380px;font-size:92px;line-height:1.35;color:#fff"><span id="w231" style="opacity:0">Degree + proof you can ship</span> <br> <span id="w232" style="opacity:0">beats either one alone.</span></div></div></div>
+<div id="s245" class="clip scene" data-start="94.440" data-duration="3.820" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="c244" class="scene"><div id="k235" class="kw" style="left:210px;width:1500px;text-align:center;top:400px;font-size:100px;line-height:1.08;color:#fff"><span id="w236" style="opacity:0">Is</span> <span id="w237" style="opacity:0">a</span> <span id="w238" style="opacity:0">CS</span> <span id="w239" style="opacity:0">degree</span> <span id="w240" style="opacity:0">worth</span> <span id="w241" style="opacity:0">it</span> <span id="w242" style="opacity:0">in</span> <span id="w243" style="opacity:0">2027?</span></div></div></div>
+<div id="s255" class="clip scene" data-start="103.700" data-duration="4.200" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c254" class="scene"><div class="frame" style="left:451px;top:130px;width:1019px;height:680px"><img id="ph246" src="assets/gen/gym_43c670.jpg" alt="gym"></div><div id="k247" class="kw" style="left:210px;width:1500px;text-align:center;top:870px;font-size:74px;line-height:1.08;color:#fff"><span id="w248" style="opacity:0">A</span> <span id="w249" style="opacity:0">gym</span> <span id="w250" style="opacity:0">membership</span> <span id="w251" style="opacity:0">you</span> <span id="w252" style="opacity:0">never</span> <span id="w253" style="opacity:0">use</span></div></div></div>
+</div>
+<script>window.PXS = [[2.14, 6.5, "checklist", {"title": "DO IT IF...", "items": [{"text": "IT INTERESTS YOU", "at": 1.28, "mark": "ok"}, {"text": "EVEN AT TEACHER PAY", "at": 3.36, "mark": "ok"}]}], [14.18, 17.98, "checklist", {"title": "DO IT IF...", "items": [{"text": "IT INTERESTS YOU", "at": -9, "mark": "ok"}, {"text": "EVEN AT TEACHER PAY", "at": -9, "mark": "ok"}, {"text": "IT WON'T WRECK YOU $", "at": 1.16, "mark": "ok"}]}], [17.98, 24.16, "loans", {"a": 2.28, "b": 4.38}], [28.98, 37.04, "safe", {"open": 5.12, "gone": 7.16}], [37.04, 44.64, "profile", {"at": [0.8, 2.08, 3.34]}], [44.64, 51.92, "door_ai", {"at": 5.54}], [51.92, 59.12, "quest", {"items": [{"text": "BUILD SOMETHING REAL", "at": 1.94, "done": 99}, {"text": "ONE INTERNSHIP", "at": 99, "done": 99}, {"text": "HARD MATH ELECTIVES", "at": 99, "done": 99}], "sub": {"text": "TO-DO APP", "at": 5.18, "strike": 6.08, "end": 7.1}}], [59.12, 65.82, "rename", {"complain": 5.62}], [65.82, 72.86, "quest", {"items": [{"text": "BUILD SOMETHING REAL", "at": -9, "done": 0.2}, {"text": "ONE INTERNSHIP", "at": 0.92, "done": 2.12}, {"text": "HARD MATH ELECTIVES", "at": 4.88, "done": 6.08}], "sub": false}], [76.88, 94.44, "queue", {"leave": 7.7, "love": 15.34}], [98.26, 103.7, "ticket", {"no": 0.84, "yes": 2.48, "only": 4.44}], [107.9, 113.46, "checker", {"ghost": 4.44}], [113.46, 117.22, "logo", {"done": 2.88}], [117.22, 129.17, "subscribe", {"press": 1.86, "comment": 4.82}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/buy.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/data.js"></script>
+<script src="assets/js/scenes/end.js"></script>
+<script src="assets/js/scenes/money.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#sec216",{scale:2.4,opacity:0},{scale:1,opacity:1,duration:0.55,ease:"power3.out"},0.000);
+tl.set("#sb219",{opacity:1},6.500);
+tl.set("#me221",{scaleY:0.12},7.600);
+tl.set("#me221",{scaleY:1},7.720);
+tl.set("#me221",{scaleY:0.12},10.300);
+tl.set("#me221",{scaleY:1},10.420);
+tl.set("#me221",{scaleY:0.12},13.000);
+tl.set("#me221",{scaleY:1},13.120);
+tl.set("#w225",{opacity:1},24.160);
+tl.set("#w226",{opacity:1},24.940);
+tl.set("#w227",{opacity:1},25.300);
+tl.set("#w231",{opacity:1},72.960);
+tl.set("#w232",{opacity:1},74.600);
+tl.set("#w236",{opacity:1},95.160);
+tl.set("#w237",{opacity:1},95.260);
+tl.set("#w238",{opacity:1},95.420);
+tl.set("#w239",{opacity:1},95.720);
+tl.set("#w240",{opacity:1},96.060);
+tl.set("#w241",{opacity:1},96.380);
+tl.set("#w242",{opacity:1},96.640);
+tl.set("#w243",{opacity:1},96.800);
+tl.fromTo("#ph246",{scale:1.0},{scale:1.05,duration:4.2,ease:"none"},103.700);
+tl.set("#w248",{opacity:1},105.820);
+tl.set("#w249",{opacity:1},105.820);
+tl.set("#w250",{opacity:1},105.820);
+tl.set("#w251",{opacity:1},106.100);
+tl.set("#w252",{opacity:1},106.100);
+tl.set("#w253",{opacity:1},107.900);
+tl.set({}, {}, 129.170);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

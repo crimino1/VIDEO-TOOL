@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="546.4" data-width="1920" data-height="1080">
+<div id="s8" class="clip scene" data-start="0.000" data-duration="7.920" data-track-index="2" style="z-index:11"><div id="w9" class="sc"><div id="b10" class="body full"><div class="col" style="gap:56px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:32px;justify-content:center"><div id="i2" class="a win" style="width:500px"><div class="wbar"><i></i><i></i><i></i><span>9to5google.com · Jul 16, 2026</span></div><div class="wbody" style="height:257px"><img id="k1" src="assets/img/n_delay_2ee31.jpg" alt="" style="width:500px;height:257px"></div></div><div id="i4" class="a win" style="width:500px"><div class="wbar"><i></i><i></i><i></i><span>techcrunch.com · Jul 21, 2026</span></div><div class="wbody" style="height:239px"><img id="k3" src="assets/img/n_tc_e5ced.jpg" alt="" style="width:500px;height:239px"></div></div><div id="i6" class="a win" style="width:500px"><div class="wbar"><i></i><i></i><i></i><span>officechai.com · Aug 10, 2026</span></div><div class="wbody" style="height:259px"><img id="k5" src="assets/img/n_cancel_e0203.jpg" alt="" style="width:500px;height:259px"></div></div></div><div id="i7" class="a hd" style="font-size:84px;text-align:center">Has Google lost the AI race?</div></div></div><div class="srcl">9to5Google · TechCrunch · OfficeChai (SemiAnalysis report)</div></div></div>
+<div id="s15" class="clip scene" data-start="7.920" data-duration="7.160" data-track-index="2" style="z-index:12"><div id="w16" class="sc"><div class="head"><div class="kick">Mid-2026</div><div class="ttl">The company that invented the technology behind ChatGPT</div></div><div id="b17" class="body"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div id="i12" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">2017 · Google researchers</div><div id="v11" class="sval " style="font-size:58px">“Attention Is All You Need”</div><div class="ssub">the Transformer: the T in ChatGPT</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i13" class="a bg bad" style="font-size:160px;text-align:left">7+ months</div><div id="i14" class="a tx " style="font-size:40px;text-align:left">without a new top-tier Gemini model</div></div></div></div></div><div class="srcl">Vaswani et al., Google, 2017 · Artificial Analysis (“first model above Flash class in over 7 months”)</div></div></div>
+<div id="s23" class="clip scene" data-start="15.080" data-duration="8.640" data-track-index="2" style="z-index:13"><div id="w24" class="sc"><div class="head"><div class="kick">How bad it got</div><div class="ttl">Seven quiet months</div></div><div id="b25" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i18" class="a pic" style="width:240px"><img src="assets/raw/people/hassabis.jpg" alt="" style="width:240px;height:300px;object-fit:cover"><div class="pn">Demis Hassabis</div><div class="pr">moved to DeepMind chair, Aug 5</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i19" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Feb 19</div><div class="tlab">Gemini 3.1 Pro tops AA</div></div><div id="i20" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">June</div><div class="tlab">Gemini 3.5 Pro misses its date</div></div><div id="i21" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Aug 5</div><div class="tlab">DeepMind shake-up</div></div><div id="i22" class="a tev " style=""><i class="tdot "></i><div class="tdate">Sep 1–22</div><div class="tlab">Fable 5.1, GPT-6 Astra, Opus 5.5</div></div></div></div></div></div></div><div class="srcl">TheNextWeb, Aug 5, 2026 · 9to5Google · TechCrunch · photo: Duncan Hull, CC BY-SA 4.0</div></div></div>
+<div id="s29" class="clip scene" data-start="23.720" data-duration="15.160" data-track-index="2" style="z-index:14"><div id="w30" class="sc"><div class="head"><div class="kick">The comeback</div><div class="ttl">Now look at the last nine days</div></div><div id="b31" class="body"><div class="hrow" style="gap:40px;justify-content:center"><div id="i26" class="a etile " style="width:440px"><div class="enum">6</div><div class="esym">C</div><div class="ename">Gemini 4 Carbon</div><div class="esub">Nov 10 · open to everyone</div></div><div id="i27" class="a etile " style="width:440px"><div class="enum">1</div><div class="esym">H</div><div class="ename">Gemini 4 Hydrogen</div><div class="esub">Nov 12 · inside Google Search</div></div><div id="i28" class="a etile on" style="width:440px"><div class="enum">10</div><div class="esym">Ne</div><div class="ename">Gemini 4 Neon</div><div class="esub">Nov 18 · released</div></div></div></div></div></div>
+<div id="s51" class="clip scene" data-start="38.880" data-duration="6.860" data-track-index="2" style="z-index:15"><div id="w52" class="sc"><div class="head"><div class="kick">Independent leaderboard</div><div class="ttl">Artificial Analysis Intelligence Index, today</div></div><div id="b53" class="body"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div class="bars" style="gap:10px"><div id="i34" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:40px"><div id="bf32" class="bfill" style="width:65.00%"></div></div><div class="bval" style="width:120px"><span id="bv33">0</span></div></div><div id="i37" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:40px"><div id="bf35" class="bfill" style="width:62.00%"></div></div><div class="bval" style="width:120px"><span id="bv36">0</span></div></div><div id="i40" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Neon</span></div><div class="btrack" style="height:40px"><div id="bf38" class="bfill hero" style="width:61.00%"></div></div><div class="bval acc" style="width:120px"><span id="bv39">0</span><span class="bsub">#3</span></div></div><div id="i43" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Carbon</span></div><div class="btrack" style="height:40px"><div id="bf41" class="bfill hero" style="width:60.00%"></div></div><div class="bval acc" style="width:120px"><span id="bv42">0</span><span class="bsub">#4</span></div></div><div id="i46" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Opus 5.5</span></div><div class="btrack" style="height:40px"><div id="bf44" class="bfill" style="width:59.00%"></div></div><div class="bval" style="width:120px"><span id="bv45">0</span></div></div><div id="i49" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Sol</span></div><div class="btrack" style="height:40px"><div id="bf47" class="bfill" style="width:57.00%"></div></div><div class="bval" style="width:120px"><span id="bv48">0</span></div></div></div><div id="i50" class="a tx " style="font-size:40px;text-align:left">Two of the four smartest models: <b class="acc">Google's</b></div></div></div><div class="srcl">Artificial Analysis, Nov 18, 2026 (v5.0.1)</div></div></div>
+<div id="s58" class="clip scene" data-start="45.740" data-duration="10.680" data-track-index="2" style="z-index:16"><div id="w59" class="sc"><div class="head"><div class="kick">Google's comeback</div><div class="ttl">Today</div></div><div id="b60" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i54" class="a hd" style="font-size:54px"><span class="mono acc" style="font-size:26px;margin-right:26px">01</span>How the comeback happened</div><div id="i55" class="a hd" style="font-size:54px"><span class="mono acc" style="font-size:26px;margin-right:26px">02</span>Every new model</div><div id="i56" class="a hd" style="font-size:54px"><span class="mono acc" style="font-size:26px;margin-right:26px">03</span>Against OpenAI and Anthropic</div><div id="i57" class="a hd" style="font-size:54px"><span class="mono acc" style="font-size:26px;margin-right:26px">04</span>Is Google actually back?</div></div></div></div></div>
+<div id="s66" class="clip scene" data-start="56.420" data-duration="18.280" data-track-index="2" style="z-index:17"><div id="w67" class="sc"><div class="head"><div class="kick">Rewind</div><div class="ttl">Google was doing great</div></div><div id="b68" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i61" class="a pic" style="width:280px"><img src="assets/raw/people/pichai.jpg" alt="" style="width:280px;height:330px;object-fit:cover"><div class="pn">Sundar Pichai</div><div class="pr">CEO, Google and Alphabet</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i63" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Nov 18, 2025</div><div id="v62" class="sval " style="font-size:72px">Gemini 3 Pro</div><div class="ssub">launches</div></div><div id="i65" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Feb 19, 2026</div><div id="v64" class="sval hero">#1</div><div class="ssub">Gemini 3.1 Pro tops Artificial Analysis (57)</div></div></div></div></div></div><div class="srcl">Artificial Analysis · Google · photo: Lukasz Kobus / European Commission, CC BY 4.0</div></div></div>
+<div id="s76" class="clip scene" data-start="74.700" data-duration="14.860" data-track-index="2" style="z-index:18"><div id="w77" class="sc"><div class="head"><div class="kick">Rewind</div><div class="ttl">Then things went quiet</div></div><div id="b78" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i70" class="a win" style="width:640px"><div class="wbar"><i></i><i></i><i></i><span>9to5google.com/2026/07/16/gemini-3-5-pro-delays</span></div><div class="wbody" style="height:513px"><img id="k69" src="assets/img/n_delay_7fcd2.jpg" alt="" style="width:640px;height:513px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i72" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Promised at I/O in May</div><div id="v71" class="sval " style="font-size:80px">June 2026</div><div class="ssub">Gemini 3.5 Pro</div></div><div id="i74" class="a stat bad" style="flex:1"><div class="slab">June</div><div id="v73" class="sval bad" style="font-size:80px">Didn't ship</div></div><div id="i75" class="a fix" style=""><div class="fk">Source check</div><div class="ft">SemiAnalysis reported it shelved in August. Google told Reuters on Sep 30 it no longer plans to release 3.5 Pro.</div></div></div></div></div></div><div class="srcl">9to5Google · OfficeChai (SemiAnalysis) · Reuters via secondary reports</div></div></div>
+<div id="s85" class="clip scene" data-start="89.560" data-duration="7.760" data-track-index="2" style="z-index:19"><div id="w86" class="sc"><div class="head"><div class="kick">Rewind</div><div class="ttl">Meanwhile, the rivals kept shipping</div></div><div id="b87" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i80" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">OpenAI · Sep 9</div><div id="v79" class="sval " style="font-size:64px">GPT-6 Astra</div></div><div id="i82" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Anthropic · Sep 1</div><div id="v81" class="sval " style="font-size:64px">Fable 5.1</div></div><div id="i84" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Anthropic · Sep 22</div><div id="v83" class="sval " style="font-size:64px">Opus 5.5</div></div></div></div><div class="srcl">TechCrunch · Artificial Analysis</div></div></div>
+<div id="s93" class="clip scene" data-start="97.320" data-duration="9.640" data-track-index="2" style="z-index:20"><div id="w94" class="sc"><div class="head"><div class="kick">Rewind</div><div class="ttl">The message changed</div></div><div id="b95" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i89" class="a win" style="width:680px"><div class="wbar"><i></i><i></i><i></i><span>techcrunch.com · Jul 21, 2026</span></div><div class="wbody" style="height:235px"><img id="k88" src="assets/img/n_tc_bbfb1.jpg" alt="" style="width:680px;height:235px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i90" class="a hd" style="font-size:60px"><span style="text-decoration:line-through;text-decoration-thickness:5px;color:var(--ink3)">“we’re the smartest”</span></div><div id="i91" class="a hd" style="font-size:60px;color:var(--bad)">“we’re the cheapest”</div><div id="i92" class="a tx ink3" style="font-size:40px;text-align:left">Not what a leader sounds like.</div></div></div></div></div><div class="srcl">TechCrunch, Jul 21, 2026: 3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber, no 3.5 Pro</div></div></div>
+<div id="s101" class="clip scene" data-start="106.960" data-duration="11.320" data-track-index="2" style="z-index:21"><div id="w102" class="sc"><div id="b103" class="body clipb"><div class="vframe"></div><div class="vcred">@sundarpichai on X · Gemini 4 Argon demos, Oct 13, 2026</div></div></div></div>
+<div id="vw97" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:22"><video id="v96" class="clip" src="assets/clips/x_argon_pichai_45770590.mp4" muted playsinline data-start="106.960" data-duration="11.320" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i98" class="a cap " style="">Sep 30, 2026</div><div id="i99" class="a cap acc" style="">Model 1 · Gemini 4 Argon</div><div id="i100" class="a cap " style="">first frontier model in 7+ months</div></div></div>
+<div id="s109" class="clip scene" data-start="118.280" data-duration="8.980" data-track-index="2" style="z-index:23"><div id="w110" class="sc"><div class="head"><div class="kick">Model 1 · Argon</div><div class="ttl">A new naming system: chemical elements</div></div><div id="b111" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:center"><div id="i104" class="a etile " style="width:300px"><div class="enum">18</div><div class="esym">Ar</div><div class="ename">Gemini 4 Argon</div></div><div id="i105" class="a etile " style="width:300px"><div class="enum">6</div><div class="esym">C</div><div class="ename">Gemini 4 Carbon</div></div><div id="i106" class="a etile " style="width:300px"><div class="enum">1</div><div class="esym">H</div><div class="ename">Gemini 4 Hydrogen</div></div><div id="i107" class="a etile " style="width:300px"><div class="enum">10</div><div class="esym">Ne</div><div class="ename">Gemini 4 Neon</div></div></div><div id="i108" class="a hd" style="font-size:56px;text-align:center;color:var(--ink3)"><span style="text-decoration:line-through;text-decoration-thickness:4px">Pro</span> &nbsp; <span style="text-decoration:line-through;text-decoration-thickness:4px">Flash</span></div></div></div><div class="srcl">Google hasn't officially explained the names</div></div></div>
+<div id="s117" class="clip scene" data-start="127.260" data-duration="9.980" data-track-index="2" style="z-index:24"><div id="w118" class="sc"><div class="head"><div class="kick">Model 1 · Argon</div><div class="ttl">On Google's own numbers</div></div><div id="b119" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i113" class="a chartc" style="width:760px"><div class="cbody" style="height:427px"><img id="k112" src="assets/raw/web/c_argon_deepswe.gif" alt="" style="width:760px;height:427px"></div><div class="ccap">Google: DeepSWE v1.1, long-horizon software engineering</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i115" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">DeepSWE v1.1</div><div id="v114" class="sval hero">77.9%</div><div class="ssub">state of the art at launch</div></div><div id="i116" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Recounts of Google's 19-row table: Argon is best on 13 of 19 against the top rival, 14 of 19 head-to-head with GPT-6 Astra or Opus 5.5.</div></div></div></div></div></div><div class="srcl">blog.google (Gemini 4 Argon) · Apidog recount of Google's table</div></div></div>
+<div id="s126" class="clip scene" data-start="137.240" data-duration="9.460" data-track-index="2" style="z-index:25"><div id="w127" class="sc"><div class="head"><div class="kick">Model 1 · Argon</div><div class="ttl">The independent picture: more modest</div></div><div id="b128" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i121" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Gemini 4 Argon</div><div id="v120" class="sval hero">53</div><div class="ssub">AA Intelligence Index</div></div><div id="i123" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6 Astra (max)</div><div id="v122" class="sval ">53</div><div class="ssub">a tie</div></div><div id="i125" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Anthropic's best</div><div id="v124" class="sval " style="font-size:72px">Fable 5.1</div><div class="ssub">still led the index</div></div></div></div><div class="srcl">Artificial Analysis, Sep 30, 2026</div></div></div>
+<div id="s132" class="clip scene" data-start="146.700" data-duration="5.720" data-track-index="2" style="z-index:26"><div id="w133" class="sc"><div id="b134" class="body full"><div class="row" style="gap:60px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i129" class="a twc" style="width:520px"><img src="assets/img/tw_argon_gov_40.png" alt="" style="width:520px;height:534px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div id="i130" class="a tx " style="font-size:44px;text-align:left">At first, almost nobody could use it.</div><div id="i131" class="a quote " style=""><div class="qt">“it's with the US gov't and going to a set of trusted cyber defenders through our Fairwind Program”</div><div class="qwho"><div><b>Sundar Pichai</b><span>on X, Sep 30</span></div></div></div></div></div></div></div><div class="srcl">@sundarpichai on X, Sep 30, 2026</div></div></div>
+<div id="s139" class="clip scene" data-start="152.420" data-duration="8.560" data-track-index="2" style="z-index:27"><div id="w140" class="sc"><div id="b141" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i136" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/articles/gemini-4-argon</span></div><div class="wbody" style="height:435px"><img id="k135" src="assets/img/aa_argon_7073b.jpg" alt="" style="width:760px;height:435px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div id="i137" class="a quote " style=""><div class="qt">“Google returns as one of the top three labs on intelligence”</div><div class="qwho"><div><b>Artificial Analysis</b><span>Sep 30, 2026</span></div></div></div><div id="i138" class="a tx " style="font-size:44px;text-align:left">Not leading. But <b class="acc">in the race again</b>.</div></div></div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s146" class="clip scene" data-start="160.980" data-duration="6.500" data-track-index="2" style="z-index:28"><div id="w147" class="sc"><div id="b148" class="body clipb"><div class="vframe"></div><div class="vcred">Google · Gemini 4 Carbon demo: an underwater city built in Blender and Three.js</div></div></div></div>
+<div id="vw143" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:29"><video id="v142" class="clip" src="assets/clips/g_atlantis_cf91fcaf.mp4" muted playsinline data-start="160.980" data-duration="6.500" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i144" class="a cap acc" style="">Model 2 · Gemini 4 Carbon</div><div id="i145" class="a cap " style="">announced Oct 28 · public Nov 10</div></div></div>
+<div id="s153" class="clip scene" data-start="167.480" data-duration="11.360" data-track-index="2" style="z-index:30"><div id="w154" class="sc"><div id="b155" class="body clipb"><div class="vframe"></div><div class="vcred">Google · Gemini 4 Carbon demo: an underwater city built in Blender and Three.js</div></div></div></div>
+<div id="vw150" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:31"><video id="v149" class="clip" src="assets/clips/g_atlantis_74d4ee56.mp4" muted playsinline data-start="167.480" data-duration="11.360" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i151" class="a cap acc" style="">Google's heavyweight</div><div id="i152" class="a cap " style="">cybersecurity + tasks that run for hours or days</div></div></div>
+<div id="s162" class="clip scene" data-start="178.840" data-duration="20.120" data-track-index="2" style="z-index:32"><div id="w163" class="sc"><div class="head"><div class="kick">Model 2 · Carbon</div><div class="ttl">The comeback becomes real</div></div><div id="b164" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i156" class="a twc" style="width:560px"><img src="assets/img/tw_carbon_pichai_40.png" alt="" style="width:560px;height:342px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i158" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">AA Intelligence Index v5.0</div><div id="v157" class="sval hero">#1</div><div class="ssub">59 at launch, Oct 28</div></div><div id="i160" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Held the top spot</div><div id="v159" class="sval ">12 days</div><div class="ssub">until Claude Fable 5.2, Nov 9</div></div></div><div id="i161" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Google's blog says Carbon shares Argon's safety and security stack; it doesn't say the model is built on Argon.</div></div></div></div></div></div><div class="srcl">@sundarpichai on X, Oct 28, 2026 · Artificial Analysis</div></div></div>
+<div id="s169" class="clip scene" data-start="198.960" data-duration="12.120" data-track-index="2" style="z-index:33"><div id="w170" class="sc"><div id="b171" class="body clipb"><div class="vframe"></div><div class="vcred">Google · Gemini 4 Carbon demo</div></div></div></div>
+<div id="vw166" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:34"><video id="v165" class="clip" src="assets/clips/g_eiffel_942049ad.mp4" muted playsinline data-start="198.960" data-duration="12.120" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i167" class="a cap acc" style="">Google can build a #1 model again</div><div id="i168" class="a cap " style="">Full Carbon review: earlier on AI Equator</div></div></div>
+<div id="s177" class="clip scene" data-start="211.080" data-duration="20.620" data-track-index="2" style="z-index:35"><div id="w178" class="sc"><div class="head"><div class="kick">Model 3 · Hydrogen</div><div class="ttl">The most important launch: where it went</div></div><div id="b179" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i173" class="a win" style="width:700px"><div class="wbar"><i></i><i></i><i></i><span>blog.google · Introducing Gemini 4 Hydrogen</span></div><div class="wbody" style="height:435px"><img id="k172" src="assets/img/b_hyd_ec88f.jpg" alt="" style="width:700px;height:435px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i174" class="a etile on" style="width:360px"><div class="enum">1</div><div class="esym">H</div><div class="ename">Gemini 4 Hydrogen</div><div class="esub">Nov 12 · model 3</div></div><div id="i176" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">Powers Google Search</div><div id="v175" class="sval hero" style="font-size:80px">Every user</div><div class="ssub">worldwide</div></div></div></div></div></div><div class="srcl">blog.google, Nov 12, 2026</div></div></div>
+<div id="s184" class="clip scene" data-start="231.700" data-duration="10.880" data-track-index="2" style="z-index:36"><div id="w185" class="sc"><div id="b186" class="body full"><div class="row" style="gap:60px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i180" class="a twc" style="width:620px"><img src="assets/img/tw_hyd_logan_100.png" alt="" style="width:620px;height:721px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i181" class="a tx " style="font-size:44px;text-align:left">In the Gemini app, too.</div><div id="i182" class="a tx " style="font-size:40px;text-align:left">More people will use Hydrogen this month than most AI models <b class="acc">will ever touch</b>.</div><div id="i183" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Free users get it via auto model selection. 3.8 Flash stays in the API.</div></div></div></div></div></div><div class="srcl">@OfficialLoganK on X, Nov 12, 2026 · blog.google</div></div></div>
+<div id="s198" class="clip scene" data-start="242.580" data-duration="19.140" data-track-index="2" style="z-index:37"><div id="w199" class="sc"><div class="head"><div class="kick">Model 3 · Hydrogen</div><div class="ttl">Fast and cheap</div></div><div id="b200" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i188" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Price per million tokens</div><div id="v187" class="sval " style="font-size:84px">$1.50 / $7.50</div><div class="ssub">input / output</div></div><div id="i190" class="a stat " style="flex:1"><div class="slab">Speed vs 3.8 Flash</div><div id="v189" class="sval " style="font-size:84px">2.5×</div><div class="ssub">faster</div></div></div><div class="bars" style="gap:30px"><div id="i193" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Hydrogen</span></div><div class="btrack" style="height:56px"><div id="bf191" class="bfill hero" style="width:57.00%"></div></div><div class="bval acc" style="width:170px"><span id="bv192">0</span></div></div><div id="i196" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 3.8 Flash</span></div><div class="btrack" style="height:56px"><div id="bf194" class="bfill" style="width:18.20%"></div></div><div class="bval" style="width:170px"><span id="bv195">0</span></div></div></div><div id="i197" class="a tx " style="font-size:38px;text-align:left">More than <b class="acc">3× better</b> on Terminal-Bench 4.1 in one generation.</div></div></div><div class="srcl">blog.google (Hydrogen benchmarks)</div></div></div>
+<div id="s209" class="clip scene" data-start="261.720" data-duration="23.200" data-track-index="2" style="z-index:38"><div id="w210" class="sc"><div class="head"><div class="kick">Model 3 · Hydrogen</div><div class="ttl">Orchestrator, inside Antigravity</div></div><div id="b211" class="body"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i201" class="a " style=""><div style="display:flex;align-items:center;gap:28px"><div class="stat" style="flex:1"><div class="slab">Gemini 4 Carbon</div><div class="hd" style="font-size:44px;margin-top:8px">thinks and plans</div></div><div class="hd ink3" style="font-size:56px">→</div><div class="stat hero" style="flex:1"><div class="slab">Gemini 4 Hydrogen</div><div class="hd" style="font-size:44px;margin-top:8px">writes code, updates packages, runs tests</div></div></div></div><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i203" class="a stat " style="flex:1"><div class="slab">Task success</div><div id="v202" class="sval " style="font-size:72px">≈ Carbon</div></div><div id="i205" class="a stat hero" style="flex:1"><div class="slab">Quota used</div><div id="v204" class="sval hero" style="font-size:72px">−24%</div></div><div id="i207" class="a stat hero" style="flex:1"><div class="slab">Time</div><div id="v206" class="sval hero" style="font-size:72px">19% faster</div></div></div><div id="i208" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Google measured these on Terminal-Bench 4.0.</div></div></div></div><div class="srcl">blog.google (Hydrogen)</div></div></div>
+<div id="s216" class="clip scene" data-start="284.920" data-duration="14.860" data-track-index="2" style="z-index:39"><div id="w217" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">The newest one: Gemini 4 Neon</div></div><div id="b218" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i213" class="a chartc" style="width:820px"><div class="cbody" style="height:461px"><img id="k212" src="assets/raw/web/c_neon_family.webp" alt="" style="width:820px;height:461px"></div><div class="ccap">Google: the Gemini 4 lineup</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i214" class="a etile on" style="width:360px"><div class="enum">10</div><div class="esym">Ne</div><div class="ename">Gemini 4 Neon</div><div class="esub">Nov 18 · model 4</div></div><div id="i215" class="a tx " style="font-size:34px;text-align:left">Adapted from Gemini 4 Carbon (model card). Sits between Hydrogen and Carbon.</div></div></div></div></div><div class="srcl">blog.google · Gemini 4 Neon model card</div></div></div>
+<div id="s223" class="clip scene" data-start="299.780" data-duration="7.360" data-track-index="2" style="z-index:40"><div id="w224" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">The pitch</div></div><div id="b225" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i220" class="a win" style="width:680px"><div class="wbar"><i></i><i></i><i></i><span>9to5google.com · Nov 18, 2026</span></div><div class="wbody" style="height:546px"><img id="k219" src="assets/img/n_neon_7fcd2.jpg" alt="" style="width:680px;height:546px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i221" class="a quote " style=""><div class="qt">“Carbon quality at Flash speeds”</div><div class="qwho"><div><b>9to5Google</b><span>headline, Nov 18</span></div></div></div><div id="i222" class="a fix" style=""><div class="fk">Source check</div><div class="ft">“Carbon-level intelligence at much faster speeds” is a paraphrase, not Google's wording.</div></div></div></div></div></div><div class="srcl">9to5google.com</div></div></div>
+<div id="s246" class="clip scene" data-start="307.140" data-duration="26.900" data-track-index="2" style="z-index:41"><div id="w247" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">Artificial Analysis Intelligence Index</div></div><div id="b248" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i226" class="a twc" style="width:470px"><img src="assets/img/tw_neon_aa_52.png" alt="" style="width:470px;height:343px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="bars" style="gap:8px"><div id="i229" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:40px"><div id="bf227" class="bfill" style="width:65.00%"></div></div><div class="bval" style="width:110px"><span id="bv228">0</span></div></div><div id="i232" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:40px"><div id="bf230" class="bfill" style="width:62.00%"></div></div><div class="bval" style="width:110px"><span id="bv231">0</span></div></div><div id="i235" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Neon</span></div><div class="btrack" style="height:40px"><div id="bf233" class="bfill hero" style="width:61.00%"></div></div><div class="bval acc" style="width:110px"><span id="bv234">0</span><span class="bsub">#3</span></div></div><div id="i238" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Carbon</span></div><div class="btrack" style="height:40px"><div id="bf236" class="bfill" style="width:60.00%"></div></div><div class="bval" style="width:110px"><span id="bv237">0</span></div></div><div id="i241" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Opus 5.5</span></div><div class="btrack" style="height:40px"><div id="bf239" class="bfill" style="width:59.00%"></div></div><div class="bval" style="width:110px"><span id="bv240">0</span></div></div><div id="i244" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Sol</span></div><div class="btrack" style="height:40px"><div id="bf242" class="bfill" style="width:57.00%"></div></div><div class="bval" style="width:110px"><span id="bv243">0</span></div></div></div><div id="i245" class="a tx " style="font-size:38px;text-align:left">Google's mid-sized model: <b class="acc">#3 in the world</b>.</div></div></div></div></div><div class="srcl">@ArtificialAnlys on X, Nov 18, 2026</div></div></div>
+<div id="s255" class="clip scene" data-start="334.040" data-duration="10.240" data-track-index="2" style="z-index:42"><div id="w256" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">Vals Index: 0.4 points from first</div></div><div id="b257" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i250" class="a chartc" style="width:600px"><div class="cbody" style="height:600px"><img id="k249" src="assets/img/p_neon_vals_6f16a.png" alt="" style="width:600px;height:600px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i252" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Gemini 4 Neon</div><div id="v251" class="sval hero">70.9%</div><div class="ssub">#2 on the Vals Index</div></div><div id="i254" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Fable 5.2</div><div id="v253" class="sval ">71.3%</div><div class="ssub">#1</div></div></div></div></div></div><div class="srcl">@ValsAI on X, Nov 18, 2026</div></div></div>
+<div id="s282" class="clip scene" data-start="344.280" data-duration="24.920" data-track-index="2" style="z-index:43"><div id="w283" class="sc"><div class="head"><div class="kick">Model 4 · Neon vs Claude Opus 5.5 and GPT-6.2 Sol</div><div class="ttl">Some wins are big</div></div><div id="b284" class="body"><div class="hrow" style="gap:40px;justify-content:flex-start"><div style="flex:1;min-width:0"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i258" class="a hd" style="font-size:34px">AutomationBench</div><div class="bars" style="gap:4px"><div id="i261" class="a brow" style=""><div class="blab" style="width:100px"><span>Neon</span></div><div class="btrack" style="height:36px"><div id="bf259" class="bfill hero" style="width:56.30%"></div></div><div class="bval acc" style="width:180px"><span id="bv260">0</span></div></div><div id="i264" class="a brow" style=""><div class="blab" style="width:100px"><span>Opus</span></div><div class="btrack" style="height:36px"><div id="bf262" class="bfill" style="width:42.50%"></div></div><div class="bval" style="width:180px"><span id="bv263">0</span></div></div></div></div></div><div style="flex:1;min-width:0"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i265" class="a hd" style="font-size:34px">Agents' Last Exam</div><div class="bars" style="gap:4px"><div id="i268" class="a brow" style=""><div class="blab" style="width:100px"><span>Neon</span></div><div class="btrack" style="height:36px"><div id="bf266" class="bfill hero" style="width:75.80%"></div></div><div class="bval acc" style="width:180px"><span id="bv267">0</span></div></div><div id="i271" class="a brow" style=""><div class="blab" style="width:100px"><span>Opus</span></div><div class="btrack" style="height:36px"><div id="bf269" class="bfill" style="width:71.60%"></div></div><div class="bval" style="width:180px"><span id="bv270">0</span></div></div><div id="i274" class="a brow" style=""><div class="blab" style="width:100px"><span>Sol</span></div><div class="btrack" style="height:36px"><div id="bf272" class="bfill" style="width:73.00%"></div></div><div class="bval" style="width:180px"><span id="bv273">0</span></div></div></div></div></div><div style="flex:1;min-width:0"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i275" class="a hd" style="font-size:34px">GraphWalks (long context)</div><div class="bars" style="gap:4px"><div id="i278" class="a brow" style=""><div class="blab" style="width:100px"><span>Neon</span></div><div class="btrack" style="height:36px"><div id="bf276" class="bfill hero" style="width:95.20%"></div></div><div class="bval acc" style="width:180px"><span id="bv277">0</span></div></div><div id="i281" class="a brow" style=""><div class="blab" style="width:100px"><span>Opus</span></div><div class="btrack" style="height:36px"><div id="bf279" class="bfill" style="width:66.80%"></div></div><div class="bval" style="width:180px"><span id="bv280">0</span></div></div></div></div></div></div></div><div class="srcl">Gemini 4 Neon model card (Google's own comparisons)</div></div></div>
+<div id="s293" class="clip scene" data-start="369.200" data-duration="9.400" data-track-index="2" style="z-index:44"><div id="w294" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">Where it trails</div></div><div id="b295" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i286" class="a chartc" style="width:600px"><div class="cbody" style="height:522px"><img id="k285" src="assets/img/c_neon_table_8776b.png" alt="" style="width:600px;height:522px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i288" class="a stat " style="flex:1"><div class="slab">Terminal-Bench 4.1</div><div id="v287" class="sval " style="font-size:58px">65.2 vs 65.8</div><div class="ssub">Neon vs Opus 5.5</div></div><div id="i290" class="a stat " style="flex:1"><div class="slab">FrontierCode 2.0</div><div id="v289" class="sval " style="font-size:58px">46.2 vs 47.3</div><div class="ssub">Neon vs Opus 5.5</div></div><div id="i292" class="a stat bad" style="flex:1"><div class="slab">Chartography (chart reading)</div><div id="v291" class="sval bad" style="font-size:58px">73.5 vs 75.1</div><div class="ssub">Neon vs GPT-6.2 Sol</div></div></div></div></div></div><div class="srcl">Gemini 4 Neon model card · these are Google's own comparisons</div></div></div>
+<div id="s302" class="clip scene" data-start="378.600" data-duration="9.760" data-track-index="2" style="z-index:45"><div id="w303" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">Arena: where real people vote</div></div><div id="b304" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i297" class="a chartc" style="width:600px"><div class="cbody" style="height:491px"><img id="k296" src="assets/img/p_neon_arena_124a2.png" alt="" style="width:600px;height:491px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i299" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Text Arena</div><div id="v298" class="sval ">#3</div><div class="ssub">real people vote</div></div><div id="i301" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Agent Arena</div><div id="v300" class="sval hero">#2</div><div class="ssub">behind only Claude Fable 5.2</div></div></div></div></div></div><div class="srcl">@arena on X, Nov 18, 2026 · Text Arena rank via TestingCatalog</div></div></div>
+<div id="s308" class="clip scene" data-start="388.360" data-duration="9.440" data-track-index="2" style="z-index:46"><div id="w309" class="sc"><div id="b310" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i305" class="a twc" style="width:600px"><img src="assets/img/tw_neon_logan_30.png" alt="" style="width:600px;height:256px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i306" class="a quote " style=""><div class="qt">“punching above its model class in a meaningful way. To me, Neon feels like the right balance of intelligence, speed, and usability.”</div><div class="qwho"><div><b>Logan Kilpatrick</b><span>Google, on X, Nov 18</span></div></div></div><div id="i307" class="a fix" style=""><div class="fk">Source check</div><div class="ft">His exact words say “balance”, not “mix”.</div></div></div></div></div></div><div class="srcl">@OfficialLoganK on X, Nov 18, 2026</div></div></div>
+<div id="s315" class="clip scene" data-start="397.800" data-duration="7.980" data-track-index="2" style="z-index:47"><div id="w316" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">In the Gemini app</div></div><div id="b317" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i312" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Gemini app · Pro and Ultra</div><div id="v311" class="sval hero" style="font-size:84px">Neon</div><div class="ssub">replaces Argon</div></div><div id="i314" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Gemini 3.1 Pro</div><div id="v313" class="sval bad" style="font-size:84px">Gone</div><div class="ssub">finally retired</div></div></div></div><div class="srcl">9to5Google, Nov 18, 2026</div></div></div>
+<div id="s325" class="clip scene" data-start="405.780" data-duration="22.300" data-track-index="2" style="z-index:48"><div id="w326" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">The price, and the catch</div></div><div id="b327" class="body"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i319" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Gemini 4 Neon</div><div id="v318" class="sval hero" style="font-size:84px">$3 / $15</div><div class="ssub">per million tokens</div></div><div id="i321" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Carbon today (discount)</div><div id="v320" class="sval " style="font-size:84px">$2 / $10</div><div class="ssub">Neon costs 50% more per token today</div></div><div id="i323" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Carbon from Dec 1</div><div id="v322" class="sval bad" style="font-size:84px">$4 / $20</div><div class="ssub">Neon becomes the cheaper one</div></div></div><div id="i324" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Carbon moves to $4 input / $20 output per million tokens, not “4.20”.</div></div></div></div><div class="srcl">blog.google · Gemini 4 lineup table</div></div></div>
+<div id="s330" class="clip scene" data-start="428.080" data-duration="9.680" data-track-index="2" style="z-index:49"><div id="w331" class="sc"><div class="head"><div class="kick">Model 4 · Neon</div><div class="ttl">Same score, cheaper per task</div></div><div id="b332" class="body"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i328" class="a bg acc" style="font-size:180px;text-align:center">−32%</div><div id="i329" class="a tx " style="font-size:40px;text-align:center">cost per task vs Carbon, same score, at Neon's default setting (fewer tokens)</div></div></div><div class="srcl">blog.google (Gemini 4 Neon)</div></div></div>
+<div id="s338" class="clip scene" data-start="437.760" data-duration="24.840" data-track-index="2" style="z-index:50"><div id="w339" class="sc"><div class="head"><div class="kick">Put together</div><div class="ttl">Today: a full lineup</div></div><div id="b340" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i333" class="a hd" style="font-size:44px"><span class="mono acc" style="font-size:26px">50 DAYS AGO</span><br>No Google frontier model on the market</div><div class="hrow" style="gap:36px;justify-content:flex-start"><div id="i334" class="a etile " style="width:420px"><div class="enum">6</div><div class="esym">C</div><div class="ename">Gemini 4 Carbon</div><div class="esub">hardest long jobs</div></div><div id="i335" class="a etile on" style="width:420px"><div class="enum">10</div><div class="esym">Ne</div><div class="ename">Gemini 4 Neon</div><div class="esub">fast, high-level reasoning</div></div><div id="i336" class="a etile " style="width:420px"><div class="enum">1</div><div class="esym">H</div><div class="ename">Gemini 4 Hydrogen</div><div class="esub">speed and scale, in Search</div></div></div><div id="i337" class="a tx " style="font-size:40px;text-align:left">Artificial Analysis: Neon <b class="acc">#3</b>, Carbon <b class="acc">#4</b>.</div></div></div><div class="srcl">Artificial Analysis (“fourth model in just seven weeks”)</div></div></div>
+<div id="s353" class="clip scene" data-start="462.600" data-duration="15.420" data-track-index="2" style="z-index:51"><div id="w354" class="sc"><div class="head"><div class="kick">The other side</div><div class="ttl">Google is not #1 right now</div></div><div id="b355" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="bars" style="gap:8px"><div id="i343" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:40px"><div id="bf341" class="bfill" style="width:65.00%"></div></div><div class="bval" style="width:110px"><span id="bv342">0</span></div></div><div id="i346" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:40px"><div id="bf344" class="bfill" style="width:62.00%"></div></div><div class="bval" style="width:110px"><span id="bv345">0</span></div></div><div id="i349" class="a brow" style=""><div class="blab" style="width:360px"><img src="assets/raw/logos/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Neon</span></div><div class="btrack" style="height:40px"><div id="bf347" class="bfill hero" style="width:61.00%"></div></div><div class="bval acc" style="width:110px"><span id="bv348">0</span><span class="bsub">#3</span></div></div></div><div id="i350" class="a tx " style="font-size:34px;text-align:left">Fable 5.2 leads Neon by 4 points. GPT-6.2 Astra is ahead too.</div></div></div><div class="col" style="flex:none;min-width:0"><div id="i352" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/gemini_icon.png" alt="" class="slogo">Carbon at #1</div><div id="v351" class="sval bad" style="font-size:84px">< 2 weeks</div><div class="ssub">Oct 28 → Nov 9</div></div></div></div></div><div class="srcl">Artificial Analysis</div></div></div>
+<div id="s361" class="clip scene" data-start="478.020" data-duration="8.180" data-track-index="2" style="z-index:52"><div id="w362" class="sc"><div class="head"><div class="kick">The other side</div><div class="ttl">Google's own safety report</div></div><div id="b363" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i357" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>Gemini 4 Neon model card · page 8</span></div><div class="wbody" style="height:385px"><img id="k356" src="assets/img/card_p9_a1142.jpg" alt="" style="width:760px;height:385px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i358" class="a tx " style="font-size:36px;text-align:left">Carried forward from Argon to Neon:</div><div id="i359" class="a quote " style=""><div class="qt">“CCL cannot be ruled out”</div><div class="qwho"><div><b>Biological uplift and cybersecurity uplift</b><span>Frontier Safety Assessment table</span></div></div></div><div id="i360" class="a fix" style=""><div class="fk">Source check</div><div class="ft">The model card says “cannot be ruled out”, not “unresolved”. Neon's full safety report is “coming soon”.</div></div></div></div></div></div><div class="srcl">Gemini 4 Neon model card, Google DeepMind</div></div></div>
+<div id="s370" class="clip scene" data-start="486.200" data-duration="13.780" data-track-index="2" style="z-index:53"><div id="w371" class="sc"><div class="head"><div class="kick">The other side</div><div class="ttl">The speed of competition</div></div><div id="b372" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i364" class="a tev " style=""><i class="tdot "></i><div class="tdate">Nov 9</div><div class="tlab">Claude Fable 5.2</div></div><div id="i365" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Nov 10</div><div class="tlab">Carbon for everyone</div></div><div id="i366" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Nov 12</div><div class="tlab">Hydrogen</div></div><div id="i367" class="a tev " style=""><i class="tdot "></i><div class="tdate">Nov 17</div><div class="tlab">GPT-6.2 Astra + Sol</div></div><div id="i368" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Nov 18</div><div class="tlab">Neon</div></div></div></div><div id="i369" class="a tx " style="font-size:46px;text-align:left">Any lead in this race lasts <b class="acc">weeks, not months</b>.</div></div></div><div class="srcl">9to5Mac · MarkTechPost · blog.google</div></div></div>
+<div id="s375" class="clip scene" data-start="499.980" data-duration="8.240" data-track-index="2" style="z-index:54"><div id="w376" class="sc"><div class="head"><div class="kick">My answer</div><div class="ttl">Is Google back?</div></div><div id="b377" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i373" class="a bg acc" style="font-size:200px;text-align:center">Yes.</div><div id="i374" class="a tx " style="font-size:44px;text-align:center">Not as the clear leader. As a real threat at the very top again.</div></div></div></div></div>
+<div id="s387" class="clip scene" data-start="508.220" data-duration="15.800" data-track-index="2" style="z-index:55"><div id="w388" class="sc"><div class="head"><div class="kick">My answer</div><div class="ttl">What OpenAI and Anthropic don't have</div></div><div id="b389" class="body"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i379" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">Google</div><div id="v378" class="sval hero" style="font-size:72px">Search</div></div><div id="i381" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">Google</div><div id="v380" class="sval " style="font-size:72px">Android</div></div><div id="i383" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">Google</div><div id="v382" class="sval " style="font-size:72px">Chrome</div></div><div id="i385" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/google.png" alt="" class="slogo">Google</div><div id="v384" class="sval " style="font-size:72px">Workspace</div></div></div><div id="i386" class="a tx " style="font-size:40px;text-align:left">A good model can reach <b class="acc">billions of people the same day</b>, like Hydrogen in Search.</div></div></div></div></div>
+<div id="s395" class="clip scene" data-start="524.020" data-duration="14.040" data-track-index="2" style="z-index:56"><div id="w396" class="sc"><div id="b397" class="body clipb"><div class="vframe"></div><div class="vcred">Google DeepMind on X · building with Gemini 4 Argon, Oct 13, 2026</div></div></div></div>
+<div id="vw391" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:57"><video id="v390" class="clip" src="assets/clips/x_argon_promo_d1a66833.mp4" muted playsinline data-start="524.020" data-duration="14.040" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i392" class="a cap " style="">7 months ago: written off</div><div id="i393" class="a cap acc" style="">now: shipping faster than anyone</div><div id="i394" class="a cap " style="">not a two-horse race anymore</div></div></div>
+<div id="s401" class="clip scene" data-start="538.060" data-duration="5.920" data-track-index="2" style="z-index:58"><div id="w402" class="sc"><div id="b403" class="body full"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div id="i398" class="a " style=""><div style="display:flex;justify-content:center;align-items:center;gap:72px"><img src="assets/raw/logos/gemini_icon.png" alt="" style="height:130px"><div class="hd ink3" style="font-size:44px">vs</div><img src="assets/img/claude.png" alt="" style="height:130px"><img src="assets/img/openai_k.png" alt="" style="height:130px"></div></div><div id="i399" class="a hd" style="font-size:60px;text-align:center">Can Google take #1 back before the end of the year?</div><div id="i400" class="a tx ink3" style="font-size:36px;text-align:center">Tell me in the comments.</div></div></div></div></div>
+<div id="s406" class="clip scene" data-start="543.980" data-duration="2.420" data-track-index="2" style="z-index:59"><div id="w407" class="sc"><div id="b408" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i404" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i405" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="546.4" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#i2",{opacity:1,y:0},0);
+tl.set("#i4",{opacity:1,y:0},0);
+tl.set("#i6",{opacity:1,y:0},0);
+tl.fromTo("#i7",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},5.620);
+tl.set("#w9",{opacity:1},0);
+tl.to("#w9",{opacity:0,duration:0.25,ease:"power1.in"},7.670);
+tl.fromTo("#b10",{scale:1},{scale:1.015,duration:7.920,ease:"none"},0.000);
+tl.fromTo("#i12",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},8.120);
+tl.fromTo("#i13",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},10.900);
+tl.fromTo("#i14",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},11.300);
+tl.fromTo("#w16",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},7.920);
+tl.to("#w16",{opacity:0,duration:0.25,ease:"power1.in"},14.830);
+tl.fromTo("#b17",{scale:1},{scale:1.015,duration:7.160,ease:"none"},7.920);
+tl.fromTo("#i18",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},15.080);
+tl.fromTo("#i19",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},15.280);
+tl.fromTo("#i20",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},15.980);
+tl.fromTo("#i21",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.360);
+tl.fromTo("#i22",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},19.400);
+tl.fromTo("#w24",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},15.080);
+tl.to("#w24",{opacity:0,duration:0.25,ease:"power1.in"},23.470);
+tl.fromTo("#b25",{scale:1},{scale:1.015,duration:8.640,ease:"none"},15.080);
+tl.fromTo("#i26",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.960);
+tl.fromTo("#i27",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},29.300);
+tl.fromTo("#i28",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},35.460);
+tl.fromTo("#w30",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},23.720);
+tl.to("#w30",{opacity:0,duration:0.25,ease:"power1.in"},38.630);
+tl.fromTo("#b31",{scale:1},{scale:1.015,duration:15.160,ease:"none"},23.720);
+tl.fromTo("#bf32",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},39.180);
+count("#bv33",39.180,0,65,0,"","",0.9);
+tl.fromTo("#i34",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},39.180);
+tl.fromTo("#bf35",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},39.480);
+count("#bv36",39.480,0,62,0,"","",0.9);
+tl.fromTo("#i37",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},39.480);
+tl.fromTo("#bf38",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},39.780);
+count("#bv39",39.780,0,61,0,"","",0.9);
+tl.fromTo("#i40",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},39.780);
+tl.fromTo("#bf41",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},40.080);
+count("#bv42",40.080,0,60,0,"","",0.9);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.080);
+tl.fromTo("#bf44",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},40.380);
+count("#bv45",40.380,0,59,0,"","",0.9);
+tl.fromTo("#i46",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.380);
+tl.fromTo("#bf47",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},40.680);
+count("#bv48",40.680,0,57,0,"","",0.9);
+tl.fromTo("#i49",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.680);
+tl.fromTo("#i50",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.360);
+tl.fromTo("#w52",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},38.880);
+tl.to("#w52",{opacity:0,duration:0.25,ease:"power1.in"},45.490);
+tl.fromTo("#b53",{scale:1},{scale:1.015,duration:6.860,ease:"none"},38.880);
+tl.fromTo("#i54",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},48.680);
+tl.fromTo("#i55",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.740);
+tl.fromTo("#i56",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},51.860);
+tl.fromTo("#i57",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},54.680);
+tl.fromTo("#w59",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},45.740);
+tl.to("#w59",{opacity:0,duration:0.25,ease:"power1.in"},56.170);
+tl.fromTo("#b60",{scale:1},{scale:1.015,duration:10.680,ease:"none"},45.740);
+tl.fromTo("#i61",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},56.420);
+tl.fromTo("#i63",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},65.240);
+tl.fromTo("#i65",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},68.620);
+tl.fromTo("#w67",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},56.420);
+tl.to("#w67",{opacity:0,duration:0.25,ease:"power1.in"},74.450);
+tl.fromTo("#b68",{scale:1},{scale:1.015,duration:18.280,ease:"none"},56.420);
+tl.fromTo("#k69",{scale:1},{scale:1.035,duration:14.860,ease:"none"},74.700);
+tl.fromTo("#i70",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},74.700);
+tl.fromTo("#i72",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},76.900);
+tl.fromTo("#i74",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},81.420);
+tl.fromTo("#i75",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},82.840);
+tl.fromTo("#w77",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},74.700);
+tl.to("#w77",{opacity:0,duration:0.25,ease:"power1.in"},89.310);
+tl.fromTo("#b78",{scale:1},{scale:1.015,duration:14.860,ease:"none"},74.700);
+tl.fromTo("#i80",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},90.320);
+tl.fromTo("#i82",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},93.120);
+tl.fromTo("#i84",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},95.540);
+tl.fromTo("#w86",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},89.560);
+tl.to("#w86",{opacity:0,duration:0.25,ease:"power1.in"},97.070);
+tl.fromTo("#b87",{scale:1},{scale:1.015,duration:7.760,ease:"none"},89.560);
+tl.fromTo("#k88",{scale:1},{scale:1.035,duration:9.640,ease:"none"},97.320);
+tl.fromTo("#i89",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},97.320);
+tl.fromTo("#i90",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},97.920);
+tl.fromTo("#i91",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},101.700);
+tl.fromTo("#i92",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},104.340);
+tl.fromTo("#w94",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},97.320);
+tl.to("#w94",{opacity:0,duration:0.25,ease:"power1.in"},106.710);
+tl.fromTo("#b95",{scale:1},{scale:1.015,duration:9.640,ease:"none"},97.320);
+tl.fromTo("#vw97",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},106.960);
+tl.fromTo("#i98",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},107.260);
+tl.fromTo("#i99",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},110.460);
+tl.fromTo("#i100",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},113.760);
+tl.fromTo("#w102",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},106.960);
+tl.to("#w102",{opacity:0,duration:0.25,ease:"power1.in"},118.030);
+tl.to("#vw97",{opacity:0,duration:0.25,ease:"power1.in"},118.030);
+tl.fromTo("#i104",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},121.660);
+tl.fromTo("#i105",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},122.160);
+tl.fromTo("#i106",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},123.500);
+tl.fromTo("#i107",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},124.000);
+tl.fromTo("#i108",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},125.320);
+tl.fromTo("#w110",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},118.280);
+tl.to("#w110",{opacity:0,duration:0.25,ease:"power1.in"},127.010);
+tl.fromTo("#b111",{scale:1},{scale:1.015,duration:8.980,ease:"none"},118.280);
+tl.fromTo("#k112",{scale:1},{scale:1.03,duration:9.980,ease:"none"},127.260);
+tl.fromTo("#i113",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},127.260);
+count("#v114",132.640,0,77.9,1,"","%",1.0);
+tl.fromTo("#i115",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},132.540);
+tl.fromTo("#i116",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},128.760);
+tl.fromTo("#w118",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},127.260);
+tl.to("#w118",{opacity:0,duration:0.25,ease:"power1.in"},136.990);
+tl.fromTo("#b119",{scale:1},{scale:1.015,duration:9.980,ease:"none"},127.260);
+count("#v120",139.360,0,53,0,"","",1.0);
+tl.fromTo("#i121",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.260);
+count("#v122",142.720,0,53,0,"","",1.0);
+tl.fromTo("#i123",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},142.620);
+tl.fromTo("#i125",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},144.820);
+tl.fromTo("#w127",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},137.240);
+tl.to("#w127",{opacity:0,duration:0.25,ease:"power1.in"},146.450);
+tl.fromTo("#b128",{scale:1},{scale:1.015,duration:9.460,ease:"none"},137.240);
+tl.fromTo("#i129",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},146.700);
+tl.fromTo("#i130",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},147.200);
+tl.fromTo("#i131",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},147.700);
+tl.fromTo("#w133",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},146.700);
+tl.to("#w133",{opacity:0,duration:0.25,ease:"power1.in"},152.170);
+tl.fromTo("#b134",{scale:1},{scale:1.015,duration:5.720,ease:"none"},146.700);
+tl.fromTo("#k135",{scale:1},{scale:1.035,duration:8.560,ease:"none"},152.420);
+tl.fromTo("#i136",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},152.420);
+tl.fromTo("#i137",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},155.120);
+tl.fromTo("#i138",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},158.440);
+tl.fromTo("#w140",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},152.420);
+tl.to("#w140",{opacity:0,duration:0.25,ease:"power1.in"},160.730);
+tl.fromTo("#b141",{scale:1},{scale:1.015,duration:8.560,ease:"none"},152.420);
+tl.fromTo("#vw143",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},160.980);
+tl.fromTo("#i144",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.280);
+tl.fromTo("#i145",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},163.680);
+tl.fromTo("#w147",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},160.980);
+tl.to("#w147",{opacity:0,duration:0.25,ease:"power1.in"},167.230);
+tl.to("#vw143",{opacity:0,duration:0.25,ease:"power1.in"},167.230);
+tl.fromTo("#vw150",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},167.480);
+tl.fromTo("#i151",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},167.780);
+tl.fromTo("#i152",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},174.000);
+tl.fromTo("#w154",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},167.480);
+tl.to("#w154",{opacity:0,duration:0.25,ease:"power1.in"},178.590);
+tl.to("#vw150",{opacity:0,duration:0.25,ease:"power1.in"},178.590);
+tl.fromTo("#i156",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},178.840);
+tl.fromTo("#i158",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},181.820);
+tl.fromTo("#i160",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},191.860);
+tl.fromTo("#i161",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},180.840);
+tl.fromTo("#w163",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},178.840);
+tl.to("#w163",{opacity:0,duration:0.25,ease:"power1.in"},198.710);
+tl.fromTo("#b164",{scale:1},{scale:1.015,duration:20.120,ease:"none"},178.840);
+tl.fromTo("#vw166",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},198.960);
+tl.fromTo("#i167",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},199.260);
+tl.fromTo("#i168",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},203.000);
+tl.fromTo("#w170",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},198.960);
+tl.to("#w170",{opacity:0,duration:0.25,ease:"power1.in"},210.830);
+tl.to("#vw166",{opacity:0,duration:0.25,ease:"power1.in"},210.830);
+tl.fromTo("#k172",{scale:1},{scale:1.035,duration:18.000,ease:"none"},213.700);
+tl.fromTo("#i173",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},213.700);
+tl.fromTo("#i174",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},211.280);
+tl.fromTo("#i176",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},227.360);
+tl.fromTo("#w178",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},211.080);
+tl.to("#w178",{opacity:0,duration:0.25,ease:"power1.in"},231.450);
+tl.fromTo("#b179",{scale:1},{scale:1.015,duration:20.620,ease:"none"},211.080);
+tl.fromTo("#i180",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},231.700);
+tl.fromTo("#i181",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},232.000);
+tl.fromTo("#i182",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},238.640);
+tl.fromTo("#i183",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},232.900);
+tl.fromTo("#w185",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},231.700);
+tl.to("#w185",{opacity:0,duration:0.25,ease:"power1.in"},242.330);
+tl.fromTo("#b186",{scale:1},{scale:1.015,duration:10.880,ease:"none"},231.700);
+tl.fromTo("#i188",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},242.780);
+tl.fromTo("#i190",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},243.380);
+tl.fromTo("#bf191",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},252.820);
+count("#bv192",252.820,0,57.0,1,"","%",0.9);
+tl.fromTo("#i193",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},252.820);
+tl.fromTo("#bf194",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},254.600);
+count("#bv195",254.600,0,18.2,1,"","%",0.9);
+tl.fromTo("#i196",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},254.600);
+tl.fromTo("#i197",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},258.200);
+tl.fromTo("#w199",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},242.580);
+tl.to("#w199",{opacity:0,duration:0.25,ease:"power1.in"},261.470);
+tl.fromTo("#b200",{scale:1},{scale:1.015,duration:19.140,ease:"none"},242.580);
+tl.fromTo("#i201",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},268.160);
+tl.fromTo("#i203",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},276.180);
+tl.fromTo("#i205",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},279.700);
+tl.fromTo("#i207",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},281.820);
+tl.fromTo("#i208",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},277.180);
+tl.fromTo("#w210",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},261.720);
+tl.to("#w210",{opacity:0,duration:0.25,ease:"power1.in"},284.670);
+tl.fromTo("#b211",{scale:1},{scale:1.015,duration:23.200,ease:"none"},261.720);
+tl.fromTo("#k212",{scale:1},{scale:1.03,duration:4.780,ease:"none"},295.000);
+tl.fromTo("#i213",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},295.000);
+tl.fromTo("#i214",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},285.120);
+tl.fromTo("#i215",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},295.000);
+tl.fromTo("#w217",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},284.920);
+tl.to("#w217",{opacity:0,duration:0.25,ease:"power1.in"},299.530);
+tl.fromTo("#b218",{scale:1},{scale:1.015,duration:14.860,ease:"none"},284.920);
+tl.fromTo("#k219",{scale:1},{scale:1.035,duration:7.360,ease:"none"},299.780);
+tl.fromTo("#i220",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},299.780);
+tl.fromTo("#i221",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},300.580);
+tl.fromTo("#i222",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},302.180);
+tl.fromTo("#w224",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},299.780);
+tl.to("#w224",{opacity:0,duration:0.25,ease:"power1.in"},306.890);
+tl.fromTo("#b225",{scale:1},{scale:1.015,duration:7.360,ease:"none"},299.780);
+tl.fromTo("#i226",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},307.140);
+tl.fromTo("#bf227",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},320.880);
+count("#bv228",320.880,0,65,0,"","",0.9);
+tl.fromTo("#i229",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},320.880);
+tl.fromTo("#bf230",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},325.080);
+count("#bv231",325.080,0,62,0,"","",0.9);
+tl.fromTo("#i232",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},325.080);
+tl.fromTo("#bf233",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},309.940);
+count("#bv234",309.940,0,61,0,"","",0.9);
+tl.fromTo("#i235",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},309.940);
+tl.fromTo("#bf236",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},312.320);
+count("#bv237",312.320,0,60,0,"","",0.9);
+tl.fromTo("#i238",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},312.320);
+tl.fromTo("#bf239",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},314.100);
+count("#bv240",314.100,0,59,0,"","",0.9);
+tl.fromTo("#i241",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},314.100);
+tl.fromTo("#bf242",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},316.920);
+count("#bv243",316.920,0,57,0,"","",0.9);
+tl.fromTo("#i244",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},316.920);
+tl.fromTo("#i245",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},327.380);
+tl.fromTo("#w247",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},307.140);
+tl.to("#w247",{opacity:0,duration:0.25,ease:"power1.in"},333.790);
+tl.fromTo("#b248",{scale:1},{scale:1.015,duration:26.900,ease:"none"},307.140);
+tl.fromTo("#k249",{scale:1},{scale:1.03,duration:10.240,ease:"none"},334.040);
+tl.fromTo("#i250",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},334.040);
+count("#v251",335.660,0,70.9,1,"","%",1.0);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},335.560);
+count("#v253",340.560,0,71.31,1,"","%",1.0);
+tl.fromTo("#i254",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},340.460);
+tl.fromTo("#w256",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},334.040);
+tl.to("#w256",{opacity:0,duration:0.25,ease:"power1.in"},344.030);
+tl.fromTo("#b257",{scale:1},{scale:1.015,duration:10.240,ease:"none"},334.040);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},346.020);
+tl.fromTo("#bf259",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},348.900);
+count("#bv260",348.900,0,56.3,1,"","%",0.9);
+tl.fromTo("#i261",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},348.900);
+tl.fromTo("#bf262",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},351.000);
+count("#bv263",351.000,0,42.5,1,"","%",0.9);
+tl.fromTo("#i264",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},351.000);
+tl.fromTo("#i265",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},353.440);
+tl.fromTo("#bf266",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},355.720);
+count("#bv267",355.720,0,75.8,1,"","%",0.9);
+tl.fromTo("#i268",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},355.720);
+tl.fromTo("#bf269",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},357.140);
+count("#bv270",357.140,0,71.6,1,"","%",0.9);
+tl.fromTo("#i271",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},357.140);
+tl.fromTo("#bf272",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},359.780);
+count("#bv273",359.780,0,73.0,1,"","%",0.9);
+tl.fromTo("#i274",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},359.780);
+tl.fromTo("#i275",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},361.500);
+tl.fromTo("#bf276",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},364.420);
+count("#bv277",364.420,0,95.2,1,"","%",0.9);
+tl.fromTo("#i278",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},364.420);
+tl.fromTo("#bf279",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},366.240);
+count("#bv280",366.240,0,66.8,1,"","%",0.9);
+tl.fromTo("#i281",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},366.240);
+tl.fromTo("#w283",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},344.280);
+tl.to("#w283",{opacity:0,duration:0.25,ease:"power1.in"},368.950);
+tl.fromTo("#b284",{scale:1},{scale:1.015,duration:24.920,ease:"none"},344.280);
+tl.fromTo("#k285",{scale:1},{scale:1.03,duration:9.400,ease:"none"},369.200);
+tl.fromTo("#i286",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},369.200);
+tl.fromTo("#i288",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},370.940);
+tl.fromTo("#i290",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},374.100);
+tl.fromTo("#i292",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},375.160);
+tl.fromTo("#w294",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},369.200);
+tl.to("#w294",{opacity:0,duration:0.25,ease:"power1.in"},378.350);
+tl.fromTo("#b295",{scale:1},{scale:1.015,duration:9.400,ease:"none"},369.200);
+tl.fromTo("#k296",{scale:1},{scale:1.03,duration:9.760,ease:"none"},378.600);
+tl.fromTo("#i297",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},378.600);
+tl.fromTo("#i299",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},381.920);
+tl.fromTo("#i301",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},383.680);
+tl.fromTo("#w303",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},378.600);
+tl.to("#w303",{opacity:0,duration:0.25,ease:"power1.in"},388.110);
+tl.fromTo("#b304",{scale:1},{scale:1.015,duration:9.760,ease:"none"},378.600);
+tl.fromTo("#i305",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},388.360);
+tl.fromTo("#i306",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},391.360);
+tl.fromTo("#i307",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},393.360);
+tl.fromTo("#w309",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},388.360);
+tl.to("#w309",{opacity:0,duration:0.25,ease:"power1.in"},397.550);
+tl.fromTo("#b310",{scale:1},{scale:1.015,duration:9.440,ease:"none"},388.360);
+tl.fromTo("#i312",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},398.000);
+tl.fromTo("#i314",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},402.660);
+tl.fromTo("#w316",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},397.800);
+tl.to("#w316",{opacity:0,duration:0.25,ease:"power1.in"},405.530);
+tl.fromTo("#b317",{scale:1},{scale:1.015,duration:7.980,ease:"none"},397.800);
+tl.fromTo("#i319",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},409.500);
+tl.fromTo("#i321",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},414.420);
+tl.fromTo("#i323",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},420.600);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},421.800);
+tl.fromTo("#w326",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},405.780);
+tl.to("#w326",{opacity:0,duration:0.25,ease:"power1.in"},427.830);
+tl.fromTo("#b327",{scale:1},{scale:1.015,duration:22.300,ease:"none"},405.780);
+tl.fromTo("#i328",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},431.180);
+tl.fromTo("#i329",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},431.680);
+tl.fromTo("#w331",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},428.080);
+tl.to("#w331",{opacity:0,duration:0.25,ease:"power1.in"},437.510);
+tl.fromTo("#b332",{scale:1},{scale:1.015,duration:9.680,ease:"none"},428.080);
+tl.fromTo("#i333",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},440.580);
+tl.fromTo("#i334",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},446.640);
+tl.fromTo("#i335",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},449.260);
+tl.fromTo("#i336",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},451.760);
+tl.fromTo("#i337",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},456.620);
+tl.fromTo("#w339",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},437.760);
+tl.to("#w339",{opacity:0,duration:0.25,ease:"power1.in"},462.350);
+tl.fromTo("#b340",{scale:1},{scale:1.015,duration:24.840,ease:"none"},437.760);
+tl.fromTo("#bf341",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},464.180);
+count("#bv342",464.180,0,65,0,"","",0.9);
+tl.fromTo("#i343",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},464.180);
+tl.fromTo("#bf344",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},464.480);
+count("#bv345",464.480,0,62,0,"","",0.9);
+tl.fromTo("#i346",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},464.480);
+tl.fromTo("#bf347",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},464.780);
+count("#bv348",464.780,0,61,0,"","",0.9);
+tl.fromTo("#i349",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},464.780);
+tl.fromTo("#i350",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},466.940);
+tl.fromTo("#i352",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},474.820);
+tl.fromTo("#w354",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},462.600);
+tl.to("#w354",{opacity:0,duration:0.25,ease:"power1.in"},477.770);
+tl.fromTo("#b355",{scale:1},{scale:1.015,duration:15.420,ease:"none"},462.600);
+tl.fromTo("#k356",{scale:1},{scale:1.035,duration:8.180,ease:"none"},478.020);
+tl.fromTo("#i357",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},478.020);
+tl.fromTo("#i358",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},478.420);
+tl.fromTo("#i359",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},479.220);
+tl.fromTo("#i360",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},480.620);
+tl.fromTo("#w362",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},478.020);
+tl.to("#w362",{opacity:0,duration:0.25,ease:"power1.in"},485.950);
+tl.fromTo("#b363",{scale:1},{scale:1.015,duration:8.180,ease:"none"},478.020);
+tl.fromTo("#i364",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},486.500);
+tl.fromTo("#i365",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},487.000);
+tl.fromTo("#i366",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},487.500);
+tl.fromTo("#i367",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},488.840);
+tl.fromTo("#i368",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},489.640);
+tl.fromTo("#i369",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},496.340);
+tl.fromTo("#w371",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},486.200);
+tl.to("#w371",{opacity:0,duration:0.25,ease:"power1.in"},499.730);
+tl.fromTo("#b372",{scale:1},{scale:1.015,duration:13.780,ease:"none"},486.200);
+tl.fromTo("#i373",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},503.060);
+tl.fromTo("#i374",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},503.900);
+tl.fromTo("#w376",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},499.980);
+tl.to("#w376",{opacity:0,duration:0.25,ease:"power1.in"},507.970);
+tl.fromTo("#b377",{scale:1},{scale:1.015,duration:8.240,ease:"none"},499.980);
+tl.fromTo("#i379",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},512.760);
+tl.fromTo("#i381",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},513.640);
+tl.fromTo("#i383",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},514.660);
+tl.fromTo("#i385",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},515.540);
+tl.fromTo("#i386",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},516.380);
+tl.fromTo("#w388",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},508.220);
+tl.to("#w388",{opacity:0,duration:0.25,ease:"power1.in"},523.770);
+tl.fromTo("#b389",{scale:1},{scale:1.015,duration:15.800,ease:"none"},508.220);
+tl.fromTo("#vw391",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},524.020);
+tl.fromTo("#i392",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},524.320);
+tl.fromTo("#i393",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},526.920);
+tl.fromTo("#i394",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},535.460);
+tl.fromTo("#w396",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},524.020);
+tl.to("#w396",{opacity:0,duration:0.25,ease:"power1.in"},537.810);
+tl.to("#vw391",{opacity:0,duration:0.25,ease:"power1.in"},537.810);
+tl.fromTo("#i398",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.160);
+tl.fromTo("#i399",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.360);
+tl.fromTo("#i400",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.860);
+tl.fromTo("#w402",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},538.060);
+tl.to("#w402",{opacity:0,duration:0.25,ease:"power1.in"},543.730);
+tl.fromTo("#b403",{scale:1},{scale:1.015,duration:5.920,ease:"none"},538.060);
+tl.fromTo("#i404",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},543.980);
+tl.fromTo("#i405",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},543.980);
+tl.fromTo("#w407",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},543.980);
+tl.set({}, {}, 546.4);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

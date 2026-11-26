@@ -1,0 +1,117 @@
+(0:00.00) I'll dig into the MIT study first, so the script rests on real details.
+(0:05.30) Imagine you're a doctor with a patient who keeps getting stuck mid-sentence,
+(0:09.42) repeating the same thought over and over. Instead of years of therapy,
+(0:14.22) you open up their brain, find the exact wire that's causing it, and adjust it.
+(0:19.38) You touch less than two hundredths of one percent of it.
+(0:22.72) And the next day, their math score is six times higher.
+(0:26.14) That's roughly what happened when MIT researchers gave OpenAI's GPT-6 Astra,
+(0:31.56) the brain of another AI, and told it, make this better at math.
+(0:36.60) No retraining, no new data, Astra just looked at the numbers inside the other model and changed
+(0:42.86) them by hand. But this story has a twist, and a lot of people who covered it skipped it,
+(0:49.24) so let's go through what actually happened, why it matters, and what critics are saying.
+(0:54.34) This research came out on November 2nd from MIT's Computer Science and Artificial Intelligence Lab,
+(1:01.66) CHAIL. Four researchers worked on it, Rakea Takehi, a first-year PhD student, along with Jaden Tio,
+(1:10.06) Alex Zhang, and Omar Katab. They call the idea, weight-space programming.
+(1:16.22) To get why this is a big deal, you need to know what weights are. An AI model is basically
+(1:21.48) a giant pile of numbers called weights. A small model has hundreds of millions of them.
+(1:27.14) The big ones have trillions. Those numbers decide everything the model does,
+(1:31.64) what it knows, how it talks, and how it reasons. And here's the thing, no human ever sets those
+(1:38.88) numbers by hand. They come from training. You show the model a ton of examples, and an algorithm
+(1:44.88) called Gradient Descent nudges every number a tiny bit, over and over, millions of times.
+(1:52.30) It's blind. The optimizer doesn't understand what any single weight does. It just keeps nudging
+(1:58.26) in whatever direction makes the error a little smaller. That's why AI models are called black boxes.
+(2:04.60) We know how to grow them. We don't really know how to read them.
+(2:08.12) So the MIT team asked a strange question. What if, instead of blind training,
+(2:14.38) you hand the weights to a smart AI and let it reason about them. Read them like code,
+(2:19.92) find the bug, and fix it on purpose. Let's start with the main experiment.
+(2:25.58) The patient was Quinn 3.5-0.8B, a small open-source model from Alibaba with under a billion parameters.
+(2:33.92) Small models like this are cheap and fast, but they have problems. And Quinn had a famous one.
+(2:40.34) Its own documentation warns that it can get stuck in reasoning loops, repeating the same
+(2:45.00) text again and again without ever finishing. The researchers gave Astra a Python session with
+(2:50.86) Quinn's weights loaded, no GPU, and some practice math problems so it could test the model. It was
+(2:56.50) only allowed to run Quinn a limited number of times, 10, 25 or 50 runs, depending on the experiment.
+(3:03.92) And here's the key rule. Astra was not allowed to write a training loop. Every change had to be
+(3:09.48) written directly into the numbers. It also wasn't allowed to search the web. So what did Astra do?
+(3:16.12) The first thing it noticed wasn't a math problem at all. Quinn was often just never finishing its
+(3:21.36) answers. It was looping. Then Astra went hunting. It traced the loops to one specific direction written
+(3:27.98) by two internal layers, layers 15 and 19. Here's a simple way to think about it. Inside the model,
+(3:34.92) every word is turned into a long list of numbers, basically a point in a huge space.
+(3:40.86) Astra found one particular direction in that space that was pushing the model to keep going and going.
+(3:46.78) So it subtracted that direction out. It edited 64 output columns in each of those two layers.
+(3:53.24) In total, that changed 131,072 weights out of 800 million. That's 0.016%.
+(4:02.96) And here are the results with 50 test runs. On math 500, a standard math benchmark,
+(4:10.12) Quinn went from 7.9% to 48.1%. That's the six times jump in the headlines.
+(4:17.86) On GSM 8K, which is grade school math word problems, it went from 13.8 to 67.1.
+(4:26.02) And on ifovol, which tests whether a model follows instructions, it went from 21 to 62.
+(4:33.06) So it nearly tripled in instruction following, even though nobody asked Astra to work on that.
+(4:38.92) Why did that happen? Because the fix wasn't really a math fix.
+(4:43.32) Before the edit, 93% of Quinn's answers hit the maximum length limit.
+(4:48.24) Basically, the model was rambling until it got cut off. After the edit, that dropped to about 33%.
+(4:54.66) Once the model could actually finish its thoughts, everything improved.
+(4:59.00) They also ran a smart control test. They tried the same thing on Google's Gemma3,
+(5:03.64) a tiny model that rarely loops. And Astra found almost nothing to improve,
+(5:09.10) about one point at most. That actually supports the story. Astra didn't find a magic be smarter knob.
+(5:16.48) It found one specific bug and fixed it. Now, the Quinn experiment is the one everyone talked about.
+(5:23.20) But honestly, some of the other experiments in this paper are even wilder.
+(5:27.98) In one test, researchers gave Astra only the raw weights of small networks that had been
+(5:32.86) trained to play video games. No game footage, no labels, no running the networks, just numbers.
+(5:40.50) And they asked, which game was this network trained on? Astra correctly named which of
+(5:45.32) four games each network was built for. Simon Willison, a well-known developer,
+(5:49.98) tried the same test with an open model called Quinn 3.827b, and it got three out of four,
+(5:55.92) Pac-Man, Pong, and Breakout. It only missed Freeway. Then they flipped it.
+(6:02.08) Instead of reading weights, Astra had to write them from scratch. They gave it the rules and
+(6:07.36) source code of Breakout, and asked it to write the weights of a network that plays the game.
+(6:12.70) No training at all. That handwritten network averaged 517 points. A baseline network
+(6:19.36) trained over 100 million rounds, scored 25. To be fair, on the other two games,
+(6:25.46) Astra fell behind the networks that had trained the longest. But then they tried the board game Go,
+(6:30.88) on a small 9x9 board. Astra wrote weights for a network with about 1.5 million parameters.
+(6:38.36) With 50 rounds of testing and corrections, it beat a comparable model trained on roughly 20 million
+(6:43.60) games. There was also a little self-driving car policy that was stuck and failing every time.
+(6:49.36) Astra edited 3.5% of its weights in one shot, and the success rate went from 0 to 100%.
+(6:56.76) And here's where it gets interesting for the rest of the AI world. People started trying
+(7:01.60) this with other models right away. Alex Crensell repeated the Breakout test, and it wasn't just Astra.
+(7:08.20) GPT 6.1's Saul and Claude Opus 5.5 could do it too. And the CTO of the Legal AI Company Legora
+(7:15.60) said he got Claude Fable to handwrite the weights of a small network that tells real legal citations
+(7:20.94) from fake ones, and that the one-shot result beat actually training it. So it looks like this
+(7:26.68) isn't one magic model. It might be something Frontier models in general can now do.
+(7:31.96) Okay, now the twist. Not everyone bought the headline. Matthew Honnable, a well-known machine
+(7:38.92) learning engineer, went through the paper and pointed out a gap. The paper opens by saying
+(7:44.72) Astra can tell what a network does, just by looking at the raw weights. But the no-tools
+(7:50.08) experiments were only on tiny networks, between about 17,172,000 weights. Every experiment with a
+(7:58.44) real language model, including the Quen one, used Python and actually ran the model. His argument
+(8:04.56) was that this is impressive, but it's what a skilled human machine learning engineer could also do.
+(8:10.34) One article called this a method swap. The abstract describes one method, but the headline number
+(8:17.54) comes from another. And then there's the baseline problem, which is honestly the part I find most
+(8:23.04) important. A researcher named Carlos Toledo reran the original untouched Quen. With the exact settings
+(8:29.92) from the study, it scored about 7%, which matches. But with the sampling settings Quen's own model
+(8:36.14) card recommends and a longer length limit, it scored about 22%. And with thinking mode turned off,
+(8:42.98) the untouched model scored 43.95%. So the unedited model, with different settings,
+(8:50.36) gets close to what the edited model scored. That doesn't mean the edit did nothing.
+(8:55.26) It means the six times better number only applies to the original setup. It doesn't tell us how
+(9:00.58) much the edit really adds when everything else is set up properly. Nobody has run that
+(9:05.44) matched comparison yet. The researchers themselves are honest about limits too.
+(9:10.76) They say the edit seems to have removed a blockage that was suppressing abilities Quen already had.
+(9:16.26) It couldn't add skills the model fundamentally lacks. The loops weren't fully gone either.
+(9:21.58) About a third of answers still hit the limit. An Astra struggled with one test that matters a lot,
+(9:26.94) telling which of two models had been trained to just agree with users. From the weights alone,
+(9:31.70) it couldn't tell. It only succeeded after it was allowed to see what the models were paying attention
+(9:36.70) to. Also, this is a blog post and paper that hasn't been peer reviewed yet, and the big math
+(9:42.24) result hasn't been independently replicated under matched settings. So why does any of this matter?
+(9:49.04) Here's what the researchers think it could lead to. One is security audits. Checking a model's
+(9:55.08) weights directly for hidden back doors or dangerous capabilities, without needing to guess the right
+(10:00.56) test. Another is fixing one specific bug in a model without retraining the whole thing,
+(10:06.22) which costs a fortune and can break other things. They even think it could help reduce
+(10:10.48) sycophancy, which is AI telling you what you want to hear. And then there's the big one.
+(10:15.90) The researchers mention recursive self-improvement. That's the idea that an AI could one day edit
+(10:22.40) its own weights to make itself smarter, then use that smarter version to edit itself again,
+(10:27.48) and again. To be clear, that is not what happened here. Astra edited a different, much smaller model.
+(10:35.96) Researchers call an AI editing itself a proposed application, not a result. But think about the
+(10:42.56) direction. A few years ago, we couldn't read what was inside these models at all. Now one
+(10:48.08) model can open up another, find a bug in two specific layers, and patch it. Even if the headline
+(10:53.98) number was oversold, that part is real, and other people have reproduced pieces of it within days.
+(11:00.84) And it's coming at the same time as labs like anthropics say AI is starting to speed up their
+(11:05.84) own research. So AI that improves AI isn't a sci-fi phrase anymore. It's a research area.
+(11:12.96) My take? It's not magic brain surgery yet. It's more like a very skilled mechanic who can open
+(11:18.62) the hood and fix one known problem. But for the first time, the mechanic is also an AI.
+(11:24.72) What do you think? Is this the first step toward AI improving itself, or just good engineering
+(11:30.08) with a big headline? Let me know in the comments. This has been AI Equator.

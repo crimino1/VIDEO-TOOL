@@ -1,0 +1,200 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<script src='assets/js/voyager_mesh.js'></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="208.980" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s967" class="clip scene " data-start="0.000" data-duration="4.920" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="c966" class="scene"><img id="ph963" class="fill" src="assets/gen/hubble_telescope_d015fe.jpg" alt="hubble_telescope" style="transform-origin:50% 50%"><div class="shade"></div><div id="h964" class="hdr">2004</div><div class="lab w" style="left:60px;top:1010px;font-size:20px;"><span id="l965" style="display:inline-block;opacity:0">HUBBLE SPACE TELESCOPE</span></div></div></div>
+<div id="s971" class="clip scene " data-start="4.620" data-duration="10.500" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div id="c970" class="scene"><div class="lab w" style="left:960px;top:960px;font-size:22px;transform:translateX(-50%);"><span id="l968" style="display:inline-block;opacity:0">A PATCH THAT LOOKED EMPTY</span></div><div class="lab" style="left:960px;top:960px;font-size:22px;transform:translateX(-50%);"><span id="l969" style="display:inline-block;opacity:0">SMALLER THAN A GRAIN OF SAND AT ARM'S LENGTH</span></div></div></div>
+<div id="s976" class="clip scene " data-start="15.120" data-duration="9.160" data-track-index="2" style="z-index:76" data-layout-allow-overflow data-layout-allow-overlap><div id="c975" class="scene"><div id="h972" class="hdr">THE HUBBLE ULTRA DEEP FIELD</div><div id="n973" class="num" style="left:0;right:0;top:880px;justify-content:center"><b id="nv974" style="font-size:96px">0</b><span>GALAXIES</span></div></div></div>
+<div id="w977" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:77"><video id="v978" class="clip fit" src="assets/clips/px_handsand_0_a8075b5a.mp4" muted playsinline data-start="24.280" data-duration="6.080" data-track-index="1"></video></div>
+<div id="s981" class="clip scene " data-start="24.280" data-duration="6.080" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="c980" class="scene"><div class="shade"></div><div id="t979" class="stmt w" style="top:880px;font-size:56px">NOW COVER THE WHOLE SKY WITH THEM</div></div></div>
+<div id="w982" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:79"><video id="v983" class="clip fit" src="assets/clips/esahubble_hudf_flythrough_20878219.mp4" muted playsinline data-start="29.860" data-duration="3.860" data-track-index="1"></video></div>
+<div id="s987" class="clip scene " data-start="29.860" data-duration="3.860" data-track-index="2" style="z-index:80" data-layout-allow-overflow data-layout-allow-overlap><div id="c986" class="scene"><div class="shade"></div><div id="t984" class="stmt w" style="top:880px;font-size:58px">EVERY DIRECTION LOOKS LIKE THAT</div><div class="lab w" style="left:1860px;top:1010px;font-size:16px;transform:translateX(-100%);"><span id="l985" style="display:inline-block;opacity:0">HUDF FLY-THROUGH · ESA/HUBBLE</span></div></div></div>
+<div id="s995" class="clip scene " data-start="33.220" data-duration="8.560" data-track-index="2" style="z-index:81" data-layout-allow-overflow data-layout-allow-overlap><div id="c994" class="scene"><div id="push988" class="scene" style="transform-origin:50% 55%"><div class="navy"></div><img id="du989" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h990" class="hdr">GALAXIES WE CAN SEE</div><div id="n991" class="num" style="left:0;right:0;top:440px;justify-content:center"><b id="nv992" style="font-size:170px">UP TO 0</b><span>TRILLION</span></div><div id="t993" class="stmt w" style="top:700px;font-size:58px">EACH WITH BILLIONS OF STARS</div></div></div></div>
+<div id="w996" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:82"><video id="v997" class="clip fit" src="assets/clips/px_beach_0_8c55e5bb.mp4" muted playsinline data-start="41.280" data-duration="6.860" data-track-index="1"></video></div>
+<div id="s1000" class="clip scene " data-start="41.280" data-duration="6.860" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div id="c999" class="scene"><div class="shade"></div><div id="t998" class="stmt w" style="top:880px;font-size:52px">MORE STARS THAN GRAINS OF SAND ON EVERY BEACH</div></div></div>
+<div id="s1003" class="clip scene " data-start="47.840" data-duration="2.120" data-track-index="2" style="z-index:84" data-layout-allow-overflow data-layout-allow-overlap><div id="c1002" class="scene"><div id="t1001" class="stmt w" style="top:90px;font-size:64px">SO HOW BIG IS ALL OF IT?</div></div></div>
+<div id="s1033" class="clip scene " data-start="49.960" data-duration="26.060" data-track-index="2" style="z-index:85" data-layout-allow-overflow data-layout-allow-overlap><div id="c1032" class="scene"><div id="push1004" class="scene" style="transform-origin:50% 55%"><div class="navy"></div><img id="du1020" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h1021" class="hdr">SPACE ITSELF IS STRETCHING</div><svg class="full" viewBox="0 0 1920 1080"><g id="g1022" opacity="0"><line id="ge1007" x1="240" y1="520" x2="240" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1008" x1="360" y1="520" x2="360" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1009" x1="480" y1="520" x2="480" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1010" x1="600" y1="520" x2="600" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1011" x1="720" y1="520" x2="720" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1012" x1="840" y1="520" x2="840" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1013" x1="960" y1="520" x2="960" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1014" x1="1080" y1="520" x2="1080" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1015" x1="1200" y1="520" x2="1200" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1016" x1="1320" y1="520" x2="1320" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1017" x1="1440" y1="520" x2="1440" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1018" x1="1560" y1="520" x2="1560" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/><line id="ge1019" x1="1680" y1="520" x2="1680" y2="600" stroke="#46505f" stroke-width="1" opacity=".6"/></g><g id="d1023" style="transform-origin:240px 560px;transform-box:view-box" opacity="0"><circle cx="240" cy="560" r="16" fill="#6f9be0"/></g><g id="g1024" opacity="0"><circle id="gx1005" cx="900" cy="560" r="14" fill="#e4cd92"/></g><g id="g1025" opacity="0"><circle id="ph1006" cx="900" cy="560" r="6" fill="#eeebe4"/></g></svg><div class="lab w" style="left:240px;top:600px;font-size:20px;transform:translateX(-50%);"><span id="l1026" style="display:inline-block;opacity:0">US</span></div><div class="lab" style="left:900px;top:470px;font-size:20px;transform:translateX(-50%);"><span id="l1027" style="display:inline-block;opacity:0">A DISTANT GALAXY</span></div><div id="n1028" class="num" style="left:0;right:0;top:330px;justify-content:center"><b id="nv1029" style="font-size:96px">0.0</b><span>BILLION YEARS OLD</span></div><div class="lab w" style="left:960px;top:700px;font-size:20px;transform:translateX(-50%);"><span id="l1030" style="display:inline-block;opacity:0">ITS LIGHT TRAVELS... AND THE GALAXY KEEPS MOVING AWAY</span></div><div class="lab" style="left:1700px;top:470px;font-size:20px;transform:translateX(-100%);"><span id="l1031" style="display:inline-block;opacity:0">NOW ~46 BILLION LIGHT-YEARS AWAY</span></div></div></div></div>
+<div id="s1039" class="clip scene " data-start="75.720" data-duration="7.400" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap><div id="c1038" class="scene"><div id="h1034" class="hdr">THE OBSERVABLE UNIVERSE</div><div id="n1035" class="num" style="left:60px;top:880px"><b id="nv1036" style="font-size:84px">0</b><span>BILLION LIGHT-YEARS ACROSS</span></div><div class="lab w" style="left:1860px;top:1010px;font-size:16px;transform:translateX(-100%);"><span id="l1037" style="display:inline-block;opacity:0">WALL: THE COSMIC MICROWAVE BACKGROUND · ESA PLANCK</span></div></div></div>
+<div id="s1051" class="clip scene " data-start="83.120" data-duration="22.460" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><div id="c1050" class="scene"><div id="push1040" class="scene" style="transform-origin:50% 55%"><div class="navy"></div><img id="du1041" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h1042" class="hdr">ONE LAST COMPARISON</div><svg class="full" viewBox="0 0 1920 1080"><rect id="br1043" x="260" y="380" width="6" height="40" fill="#e4cd92" style="transform-origin:260px 380px;transform-box:view-box"/><rect id="br1044" x="260" y="560" width="1400" height="40" fill="#eeebe4" style="transform-origin:260px 560px;transform-box:view-box"/></svg><div class="lab" style="left:260px;top:340px;font-size:22px;"><span id="l1045" style="display:inline-block;opacity:0">VOYAGER 1 · 1 LIGHT-DAY IN ~50 YEARS</span></div><div class="lab w" style="left:260px;top:520px;font-size:22px;"><span id="l1046" style="display:inline-block;opacity:0">THE OBSERVABLE UNIVERSE · 93 BILLION LIGHT-YEARS</span></div><div id="n1047" class="num" style="left:260px;top:640px"><b id="nv1048" style="font-size:80px">~1.0</b><span>QUADRILLION YEARS AT VOYAGER'S SPEED</span></div><div id="t1049" class="stmt" style="top:820px;font-size:64px">≈ 120,000 × THE AGE OF THE UNIVERSE</div></div></div></div>
+<div id="s1055" class="clip scene " data-start="105.280" data-duration="13.040" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div id="c1054" class="scene"><div id="t1052" class="stmt" style="top:900px;font-size:60px">AND THAT'S ONLY THE PART WE CAN SEE</div><div class="lab w" style="left:960px;top:980px;font-size:22px;transform:translateX(-50%);"><span id="l1053" style="display:inline-block;opacity:0">THE WORD “OBSERVABLE” MATTERS</span></div></div></div>
+<div id="s1059" class="clip scene " data-start="118.320" data-duration="18.000" data-track-index="2" style="z-index:89" data-layout-allow-overflow data-layout-allow-overlap><div id="c1058" class="scene"><div id="t1056" class="stmt w" style="top:900px;font-size:60px">BEYOND THE EDGE, IT KEEPS GOING</div><div id="t1057" class="stmt" style="top:900px;font-size:72px">MAYBE FOREVER</div></div></div>
+<div id="s1063" class="clip scene " data-start="136.320" data-duration="10.360" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div id="c1062" class="scene"><div id="t1060" class="stmt w" style="top:780px;font-size:110px">WE DON'T KNOW</div><div class="lab" style="left:960px;top:930px;font-size:22px;transform:translateX(-50%);"><span id="l1061" style="display:inline-block;opacity:0">WHAT WE CAN SEE IS ALREADY TOO BIG TO IMAGINE</span></div></div></div>
+<div id="s1067" class="clip scene " data-start="146.680" data-duration="7.760" data-track-index="2" style="z-index:91" data-layout-allow-overflow data-layout-allow-overlap><div id="c1066" class="scene"><div style="position:absolute;left:60px;top:940px;"><div id="b1064" class="box " style="position:relative">FEBRUARY 14, 1990</div></div><div class="lab w" style="left:60px;top:1000px;font-size:22px;"><span id="l1065" style="display:inline-block;opacity:0">ONE LAST PICTURE OF HOME</span></div></div></div>
+<div id="s1072" class="clip scene " data-start="154.440" data-duration="9.300" data-track-index="2" style="z-index:92" data-layout-allow-overflow data-layout-allow-overlap><div id="c1071" class="scene"><img id="ph1068" class="fill" src="assets/gen/pale_blue_dot_81a6ec.jpg" alt="pale_blue_dot" style="transform-origin:64% 66%"><div class="shade"></div><div id="h1069" class="hdr">THE PALE BLUE DOT</div><div class="lab w" style="left:60px;top:1010px;font-size:20px;"><span id="l1070" style="display:inline-block;opacity:0">FROM 6 BILLION KM</span></div></div></div>
+<div id="w1073" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:93"><video id="v1074" class="clip fit" src="assets/clips/px_crowd_2_80fa1d00.mp4" muted playsinline data-start="163.240" data-duration="7.740" data-track-index="1"></video></div>
+<div id="s1077" class="clip scene " data-start="163.240" data-duration="7.740" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><div id="c1076" class="scene"><div class="shade"></div><div id="t1075" class="stmt w" style="top:880px;font-size:56px">EVERYONE WHO EVER LIVED, ON ONE DOT</div></div></div>
+<div id="s1080" class="clip scene " data-start="170.680" data-duration="3.740" data-track-index="2" style="z-index:95" data-layout-allow-overflow data-layout-allow-overlap><div id="c1079" class="scene"><div class="lab w" style="left:960px;top:960px;font-size:22px;transform:translateX(-50%);"><span id="l1078" style="display:inline-block;opacity:0">TAKEN FROM INSIDE OUR SOLAR SYSTEM</span></div></div></div>
+<div id="s1083" class="clip scene " data-start="174.420" data-duration="3.200" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap><div id="c1082" class="scene"><div class="lab w" style="left:960px;top:960px;font-size:22px;transform:translateX(-50%);"><span id="l1081" style="display:inline-block;opacity:0">FROM THE EDGE OF THE GALAXY, THE DOT IS GONE</span></div></div></div>
+<div id="s1086" class="clip scene " data-start="177.620" data-duration="5.020" data-track-index="2" style="z-index:97" data-layout-allow-overflow data-layout-allow-overlap><div id="c1085" class="scene"><div class="lab w" style="left:960px;top:960px;font-size:20px;transform:translateX(-50%);"><span id="l1084" style="display:inline-block;opacity:0">FROM THE EDGE OF THE OBSERVABLE UNIVERSE, EVEN OUR GALAXY VANISHES</span></div></div></div>
+<div id="w1087" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:98"><video id="v1088" class="clip fit" src="assets/clips/nasa_voyager_beauty3_c85b7424.mp4" muted playsinline data-start="182.640" data-duration="9.980" data-track-index="1"></video></div>
+<div id="s1092" class="clip scene " data-start="182.640" data-duration="9.980" data-track-index="2" style="z-index:99" data-layout-allow-overflow data-layout-allow-overlap><div id="c1091" class="scene"><div class="shade"></div><div class="lab w" style="left:1860px;top:1010px;font-size:16px;transform:translateX(-100%);"><span id="l1089" style="display:inline-block;opacity:0">THE GOLDEN RECORD · ANIMATION NASA SVS</span></div><div id="t1090" class="stmt w" style="top:880px;font-size:56px">WE'RE THE PART OF THE UNIVERSE THAT LOOKED UP</div></div></div>
+<div id="s1095" class="clip scene " data-start="192.320" data-duration="2.520" data-track-index="2" style="z-index:100" data-layout-allow-overflow data-layout-allow-overlap><div id="c1094" class="scene"><div id="t1093" class="stmt" style="top:900px;font-size:60px">MAYBE THAT MAKES US A LITTLE LESS SMALL</div></div></div>
+<div id="s1103" class="clip scene " data-start="194.840" data-duration="14.140" data-track-index="2" style="z-index:101" data-layout-allow-overflow data-layout-allow-overlap><div id="c1102" class="scene"><div id="push1096" class="scene" style="transform-origin:50% 55%"><div class="navy"></div><img id="du1097" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h1098" class="hdr">UP NEXT</div><div id="ls1099" class="lens" style="left:300px;top:240px;width:520px;height:520px"><img src="assets/gen/cmb_planck_a48f18.jpg" alt=""></div><div class="lab w" style="left:560px;top:790px;font-size:22px;transform:translateX(-50%);"><span id="l1100" style="display:inline-block;opacity:0">THE EDGE OF THE OBSERVABLE UNIVERSE</span></div><div style="position:absolute;left:1110px;top:300px;width:620px;height:400px;border:3px dashed #46505f"></div><div id="t1101" class="stmt" style="top:870px;font-size:120px">OUTSIDE LAY</div></div></div></div>
+<div id="s1106" class="clip scene " data-start="75.720" data-duration="70.960" data-track-index="2" style="z-index:9000" data-layout-allow-overflow data-layout-allow-overlap><div id="c1105" class="scene"><div class="lab w" style="left:1856px;top:60px;font-size:16px;transform:translateX(-100%);"><span id="l1104" style="display:inline-block;opacity:0">SCALE · 93 BILLION LIGHT-YEARS</span></div></div></div>
+<div id="s1108" class="clip scene " data-start="0.000" data-duration="0.400" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c1107" class="scene"><div id="seamin" class="black"></div></div></div>
+</div>
+<script>
+window.SPS = [[4.62, 15.12, "deepfield", {"img": "assets/img/hudf.jpg", "zK": [[0, 140], [10.4, 60]], "imgK": [[0, 0]], "frameK": [[0, 0], [1.0, 1]]}], [15.12, 24.28, "deepfield", {"img": "assets/img/hudf.jpg", "zK": [[0, 60], [4.0, 1.1], [9.1, 0.74]], "imgK": [[0, 0], [1.6, 1]], "frameK": [[0, 1], [3.4, 0]], "ease": "inout"}], [47.84, 49.96, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "distK": [[0, 150], [2.1, 240]], "el": 14, "cmbK": [[0, 0], [1.2, 1]]}], [75.72, 83.12, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "dist0": 185, "dist1": 165, "el": 16, "sx": 330}], [105.28, 118.32, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "dist0": 240, "dist1": 280, "el": 16}], [118.32, 136.32, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "dist0": 280, "dist1": 460, "el": 18, "beyondK": [[0, 0], [2.5, 1]], "cmbK": [[0, 1], [6, 0.5]]}], [136.32, 146.68, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "dist0": 460, "dist1": 600, "el": 18, "beyondK": [[0, 1]], "cmbK": [[0, 0.5]]}], [146.68, 154.44, "voyager", {"dist0": 10, "dist1": 12, "az0": 200, "az1": 160, "cy": 0.5, "yaw": -0.6}], [170.68, 174.42, "lightsys", {"voy": true, "distK": [[0, 300], [3.7, 1200]], "el": 40, "az": 20}], [174.42, 177.62, "galaxy", {"art": "assets/img/milkyway_art.jpg", "artOp": 0.5, "you": true, "dist0": 90, "dist1": 170, "el": 50, "az": 10}], [177.62, 182.64, "observable", {"cmb": "assets/img/cmb_sphere.jpg", "dist0": 240, "dist1": 290, "el": 16}], [192.32, 194.84, "earth", {"dist0": 3.2, "dist1": 3.6, "el": 8, "az0": 10, "az1": 22, "sun": [-70, 6]}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#ph963",{scale:1.0},{scale:1.08,duration:4.92,ease:"none"},0.000);
+tl.fromTo("#h964",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},0.100);
+tl.fromTo("#l965",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},0.500);
+tl.to("#c966",{opacity:0,duration:0.55,ease:"power1.inOut"},4.370);
+tl.fromTo("#l968",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},5.900);
+tl.to("#l968",{opacity:0,duration:0.25,ease:"power2.out"},10.300);
+tl.fromTo("#l969",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},10.600);
+tl.to("#l969",{opacity:0,duration:0.25,ease:"power2.out"},14.500);
+tl.fromTo("#h972",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},16.500);
+tl.fromTo("#n973",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},19.960);
+tl.fromTo({v:0},{v:0},{v:10000,duration:1.4,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv974").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},19.960);
+tl.fromTo("#v978",{scale:1.0},{scale:1.06,duration:6.08,ease:"none"},24.280);
+tl.fromTo("#w977",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},24.280);
+tl.fromTo("#t979",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},24.900);
+tl.fromTo("#c980",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},24.280);
+tl.fromTo("#v983",{scale:1.0},{scale:1.06,duration:3.86,ease:"none"},29.860);
+tl.fromTo("#w982",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},29.860);
+tl.fromTo("#t984",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},30.300);
+tl.fromTo("#l985",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},30.500);
+tl.fromTo("#c986",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},29.860);
+tl.fromTo("#push988",{scale:1.0},{scale:1.035,duration:8.56,ease:"none"},33.220);
+tl.fromTo("#du989",{x:0,y:0},{x:-40,y:-14,duration:8.56,ease:"none"},33.220);
+tl.fromTo("#h990",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},33.320);
+tl.fromTo("#n991",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},38.560);
+tl.fromTo({v:0},{v:0},{v:2,duration:1.3,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv992").textContent="UP TO "+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},38.560);
+tl.fromTo("#t993",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},40.160);
+tl.fromTo("#c994",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},33.220);
+tl.fromTo("#v997",{scale:1.0},{scale:1.06,duration:6.86,ease:"none"},41.280);
+tl.fromTo("#w996",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},41.280);
+tl.to("#w996",{opacity:0,duration:0.55,ease:"power1.inOut"},47.590);
+tl.fromTo("#t998",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},41.900);
+tl.fromTo("#c999",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},41.280);
+tl.to("#c999",{opacity:0,duration:0.55,ease:"power1.inOut"},47.590);
+tl.fromTo("#t1001",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},48.200);
+tl.fromTo("#push1004",{scale:1.0},{scale:1.035,duration:26.06,ease:"none"},49.960);
+tl.fromTo({p:0},{p:0},{p:1,duration:15.660,ease:"power1.inOut",onUpdate:function(){var p=this.targets()[0].p;document.getElementById("gx1005").setAttribute("cx",(900+800*p).toFixed(1));document.getElementById("ph1006").setAttribute("cx",(900-660*p).toFixed(1));}},60.360);
+tl.fromTo("#du1020",{x:0,y:0},{x:-40,y:-14,duration:26.06,ease:"none"},49.960);
+tl.fromTo("#h1021",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},50.060);
+tl.fromTo("#g1022",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},50.160);
+tl.fromTo("#d1023",{scale:0.85,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"power2.out"},50.260);
+tl.fromTo("#g1024",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},50.460);
+tl.fromTo("#g1025",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},60.360);
+tl.fromTo("#l1026",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},50.260);
+tl.fromTo("#l1027",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},50.560);
+tl.to("#l1027",{opacity:0,duration:0.25,ease:"power2.out"},60.060);
+tl.fromTo("#n1028",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},51.100);
+tl.fromTo({v:0},{v:0},{v:13.8,duration:1.0,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv1029").textContent=""+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"";}},51.100);
+tl.fromTo("#l1030",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},60.660);
+tl.fromTo("#l1031",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},72.600);
+tl.fromTo("#c1032",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},49.960);
+tl.to("#c1032",{opacity:0,duration:0.55,ease:"power1.inOut"},75.470);
+tl.fromTo("#h1034",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},75.820);
+tl.fromTo("#n1035",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},79.860);
+tl.fromTo({v:0},{v:0},{v:93,duration:1.4,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv1036").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},79.860);
+tl.fromTo("#l1037",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},76.900);
+tl.fromTo("#push1040",{scale:1.0},{scale:1.035,duration:22.46,ease:"none"},83.120);
+tl.fromTo("#du1041",{x:0,y:0},{x:-40,y:-14,duration:22.46,ease:"none"},83.120);
+tl.fromTo("#h1042",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},83.220);
+tl.fromTo("#br1043",{scaleX:0},{scaleX:1,duration:0.3,ease:"power3.out"},86.580);
+tl.fromTo("#br1044",{scaleX:0},{scaleX:1,duration:1.6,ease:"power3.out"},91.120);
+tl.fromTo("#l1045",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},86.580);
+tl.fromTo("#l1046",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},91.120);
+tl.fromTo("#n1047",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.120);
+tl.fromTo({v:1},{v:1},{v:1.6,duration:1.0,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv1048").textContent="~"+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"";}},92.120);
+tl.fromTo("#t1049",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},102.480);
+tl.fromTo("#c1050",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},83.120);
+tl.to("#c1050",{opacity:0,duration:0.55,ease:"power1.inOut"},105.030);
+tl.fromTo("#t1052",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},108.100);
+tl.fromTo("#l1053",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},111.200);
+tl.fromTo("#t1056",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},118.700);
+tl.to("#t1056",{opacity:0,duration:0.3,ease:"power2.out"},124.750);
+tl.fromTo("#t1057",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},127.840);
+tl.fromTo("#t1060",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},141.180);
+tl.fromTo("#l1061",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},142.500);
+tl.fromTo("#b1064",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},147.300);
+tl.fromTo("#l1065",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},153.520);
+tl.fromTo("#ph1068",{scale:1.0},{scale:1.35,duration:9.3,ease:"none"},154.440);
+tl.fromTo("#h1069",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},154.540);
+tl.fromTo("#l1070",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},155.100);
+tl.fromTo("#c1071",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},154.440);
+tl.fromTo("#v1074",{scale:1.0},{scale:1.06,duration:7.74,ease:"none"},163.240);
+tl.fromTo("#w1073",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},163.240);
+tl.to("#w1073",{opacity:0,duration:0.55,ease:"power1.inOut"},170.430);
+tl.fromTo("#t1075",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},163.900);
+tl.fromTo("#c1076",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},163.240);
+tl.to("#c1076",{opacity:0,duration:0.55,ease:"power1.inOut"},170.430);
+tl.fromTo("#l1078",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},171.200);
+tl.fromTo("#l1081",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},174.900);
+tl.fromTo("#l1084",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},178.200);
+tl.fromTo("#v1088",{scale:1.0},{scale:1.06,duration:9.98,ease:"none"},182.640);
+tl.fromTo("#w1087",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},182.640);
+tl.to("#w1087",{opacity:0,duration:0.55,ease:"power1.inOut"},192.070);
+tl.fromTo("#l1089",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},183.200);
+tl.fromTo("#t1090",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},188.940);
+tl.fromTo("#c1091",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},182.640);
+tl.to("#c1091",{opacity:0,duration:0.55,ease:"power1.inOut"},192.070);
+tl.fromTo("#t1093",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},192.700);
+tl.fromTo("#push1096",{scale:1.0},{scale:1.035,duration:14.14,ease:"none"},194.840);
+tl.fromTo("#du1097",{x:0,y:0},{x:-40,y:-14,duration:14.14,ease:"none"},194.840);
+tl.fromTo("#h1098",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},194.940);
+tl.fromTo("#ls1099",{opacity:0,scale:0.96},{opacity:1,scale:1,duration:0.6,ease:"power2.out"},195.140);
+tl.fromTo("#l1100",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},195.440);
+tl.fromTo("#t1101",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},203.140);
+tl.fromTo("#c1102",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},194.840);
+tl.fromTo("#l1104",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},75.920);
+tl.to("#l1104",{opacity:0,duration:0.25,ease:"power2.out"},146.380);
+tl.fromTo("#seamin",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.set({}, {}, 208.980);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

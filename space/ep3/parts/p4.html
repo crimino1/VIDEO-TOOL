@@ -1,0 +1,107 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="156.100" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s251" class="clip scene " data-start="0.000" data-duration="2.560" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="c250" class="scene"><div class="black"></div><div class="tcard"><div id="rk247" class="tk" style="opacity:0">NUMBER THREE</div><div id="rk249" class="trule" style="transform:scaleX(0)"></div><div id="rk248" class="tn" style="opacity:0">The Runaway</div></div></div></div>
+<div id="s254" class="clip scene " data-start="11.900" data-duration="17.400" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c253" class="scene"><img id="ph252" class="fill" src="assets/gen/runaway_streak_b_3c785f.jpg" alt="runaway_streak_b" style="transform-origin:78% 45%"></div></div>
+<div id="s257" class="clip scene " data-start="29.300" data-duration="11.340" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="c256" class="scene"><img id="ph255" class="fill" src="assets/gen/runaway_art_d98162.jpg" alt="runaway_art" style="transform-origin:30% 70%"></div></div>
+<div id="w258" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:42"><video id="v259" class="clip fit" src="assets/clips/nasa_runaway_streak_32c3a231.mp4" muted playsinline data-start="60.180" data-duration="8.340" data-track-index="1"></video></div>
+<div id="s262" class="clip scene " data-start="84.200" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c261" class="scene"><div id="dip260" class="black" style="opacity:0"></div></div></div>
+<div id="s267" class="clip scene " data-start="84.900" data-duration="2.440" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="c266" class="scene"><div class="black"></div><div class="tcard"><div id="rk263" class="tk" style="opacity:0">NUMBER TWO</div><div id="rk265" class="trule" style="transform:scaleX(0)"></div><div id="rk264" class="tn" style="opacity:0">The Glutton</div></div></div></div>
+<div id="s270" class="clip scene " data-start="87.340" data-duration="20.160" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="c269" class="scene"><img id="ph268" class="fill" src="assets/gen/quasar_j0529_art_68cb20.jpg" alt="quasar_j0529_art" style="transform-origin:55% 50%"></div></div>
+<div id="s273" class="clip scene " data-start="155.400" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c272" class="scene"><div id="dip271" class="black" style="opacity:0"></div></div></div>
+<div id="s282" class="clip scene " data-start="0.000" data-duration="156.100" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c281" class="scene"><div class="vign"></div><div id="grain280" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+<div id="s284" class="clip scene " data-start="155.750" data-duration="0.350" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c283" class="scene"><div id="seamout" class="black" style="opacity:0"></div></div></div>
+<div id="s286" class="clip scene " data-start="0.000" data-duration="0.400" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c285" class="scene"><div id="seamin" class="black"></div></div></div>
+</div>
+<script>
+window.SPS = [[2.56, 11.9, "bh", {"dist0": 42, "dist1": 34, "el": 4, "az0": 60, "az1": 72, "fov": 48, "shiftX": 300, "diskIn": 3.0, "diskOut": 18}], [40.64, 60.18, "bh", {"disk": 0, "dist": 40, "el": 4, "az0": 0, "az1": 10, "fov": 45, "skyRotSp": 0.014, "roll": -8}], [68.52, 84.9, "bh", {"disk": 0, "dist": 40, "el": 5, "az0": 80, "az1": 92, "fov": 20, "look0": [2.4, 0, 0], "look1": [1.9, 0.3, 0]}], [107.5, 113.68, "bh", {"dist0": 38, "dist1": 32, "el": 10, "az0": -20, "az1": -6, "shiftX": -300, "temp": 1.9, "diskOut": 20, "jet": 0.5, "exposure": 1.0}], [113.68, 123.5, "bh", {"dist0": 74, "dist1": 62, "el": 14, "az0": -6, "az1": 6, "temp": 1.9, "diskOut": 20, "jet": 0.5, "exposure": 1.0}], [123.5, 134.7, "bh", {"dist0": 60, "dist1": 52, "el0": 12, "el1": 5, "az0": 6, "az1": 16, "roll": 4, "temp": 1.9, "diskOut": 20, "jet": 0.5, "exposure": 1.0, "shiftX": 220}], [134.7, 156.1, "bh", {"distK": [[0, 30], [15.3, 14]], "el": 5, "az0": 20, "az1": 34, "shiftX0": 200, "shiftX1": 0, "diskIn": 3.0, "diskOut": 14}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#rk247",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},0.300);
+tl.fromTo("#rk248",{opacity:0},{opacity:1,duration:1.2,ease:"power1.inOut"},0.700);
+tl.fromTo("#rk249",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},0.500);
+tl.to("#rk247",{opacity:0,duration:0.5,ease:"power2.out"},1.960);
+tl.to("#rk248",{opacity:0,duration:0.5,ease:"power2.out"},1.960);
+tl.fromTo("#ph252",{scale:1.0},{scale:1.14,duration:17.4,ease:"none"},11.900);
+tl.fromTo("#ph255",{scale:1.0},{scale:1.1,duration:11.34,ease:"none"},29.300);
+tl.fromTo("#v259",{scale:1.0},{scale:1.06,duration:8.34,ease:"none"},60.180);
+tl.fromTo("#dip260",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},84.200);
+tl.fromTo("#rk263",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},85.200);
+tl.fromTo("#rk264",{opacity:0},{opacity:1,duration:1.2,ease:"power1.inOut"},85.600);
+tl.fromTo("#rk265",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},85.400);
+tl.to("#rk263",{opacity:0,duration:0.5,ease:"power2.out"},86.740);
+tl.to("#rk264",{opacity:0,duration:0.5,ease:"power2.out"},86.740);
+tl.fromTo("#ph268",{scale:1.0},{scale:1.12,duration:20.16,ease:"none"},87.340);
+tl.fromTo("#dip271",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},155.400);
+tl.fromTo("#grain280",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:138602,backgroundPositionY:198538,duration:156.1,ease:"steps(3746)"},0.000);
+tl.fromTo("#seamout",{opacity:0},{opacity:1,duration:0.35,ease:"power1.in"},155.750);
+tl.fromTo("#seamin",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.set({}, {}, 156.100);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

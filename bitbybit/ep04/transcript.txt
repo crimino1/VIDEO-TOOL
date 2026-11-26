@@ -1,0 +1,162 @@
+[0:00.00] Computer science and biology.
+[0:02.36] They don't sound like they belong in the same sentence.
+[0:05.36] One is silicon, and electricity, and spotless clean rooms.
+[0:09.94] The other is wet, and messy, and occasionally slimy.
+[0:14.10] But a computer was never really about silicon.
+[0:17.12] A computer is anything that takes in information, follows rules, and gives you an answer.
+[0:22.88] And by that definition, some of the strangest computers on earth are alive.
+[0:28.14] Welcome to bit by bit.
+[0:30.62] Today, five living computers, each one, weirder than the last.
+[0:35.86] And we start with one that lives on rotting logs.
+[0:39.56] It's called physarum polycephalum, a slime mould.
+[0:44.30] It's a bright yellow blob, and the whole thing is one giant cell.
+[0:48.50] It has no brain, no neurons, no eyes, and it can solve a maze.
+[0:54.14] Put it at one end, and food at the other, and it spreads into every corridor at once.
+[1:00.04] Then it pulls back from the dead ends, until all that's left is one thick tube along the shortest path.
+[1:07.90] In 2010, researchers in Japan pushed this further.
+[1:12.52] They laid out oat flakes on a wet dish in the pattern of the cities around Tokyo, 36 of them, and put the slime mould where Tokyo would be.
+[1:22.62] They even used bright light, which it avoids, to stand in for mountains and lakes.
+[1:28.52] Then they waited about a day.
+[1:30.98] What grew looked a lot like the Tokyo rail network, and when they measured it, it was comparable to the real one, in cost, in efficiency,
+[1:40.40] and in how well it survives a broken link.
+[1:43.20] One of the most carefully engineered rail systems on earth, roughly matched by a blob eating oats.
+[1:49.94] So how?
+[1:51.18] The rule is almost embarrassingly simple.
+[1:54.08] A tube that carries a lot of flow gets thicker.
+[1:57.40] A tube that carries very little gets thinner, and eventually disappears.
+[2:02.62] That's it.
+[2:03.50] No part of the slime knows the whole map.
+[2:05.94] Every part just follows the local rule, and a good network falls out.
+[2:10.42] The researchers turned that rule into a mathematical model, and it builds networks as good as the real thing.
+[2:16.70] No brain, no plan, still computing.
+[2:20.56] But there's a catch.
+[2:22.08] Slime mould is slow, and you can't exactly programme it.
+[2:26.26] So what if we went smaller?
+[2:28.12] What if we computed with the molecule that life already uses to store its instructions?
+[2:33.52] In 1994, a computer scientist named Leonard Adelman tried exactly that.
+[2:39.34] He picked a classic hard problem.
+[2:41.62] You have seven cities, and a set of one -way flights between them.
+[2:45.82] Find a route that starts in the first city, ends in the last, and visits every city exactly once.
+[2:53.10] His idea was beautiful.
+[2:54.80] Give every city its own short DNA sequence.
+[2:58.76] Build each flight so it sticks to the end of one city and the start of the next.
+[3:03.82] Then pour everything into a test tube.
+[3:06.92] And the molecules do the rest.
+[3:08.94] They bump into each other and link into chains.
+[3:11.76] And every chain is a possible route.
+[3:14.26] Within seconds, the tube holds pretty much every route there is.
+[3:18.36] The right one and all the wrong ones.
+[3:20.64] Built at the same time.
+[3:22.32] That's the trick.
+[3:23.72] A normal computer checks routes one after another.
+[3:26.80] The test tube tries them all at once, because it has trillions of tiny workers.
+[3:32.18] The catch?
+[3:33.44] Fishing the correct answer back out of that tube took about a week of lab work.
+[3:38.66] For a puzzle, you could solve on paper in a minute.
+[3:41.74] And it scales terribly.
+[3:44.04] By one estimate, at 200 cities, the DNA you'd need would outweigh the earth.
+[3:49.80] No chip, no electricity.
+[3:52.42] Still computing.
+[3:53.92] Just not very practical.
+[3:55.84] But DNA turned out to be spectacular at something else.
+[3:59.82] Not calculating.
+[4:01.10] Remembering.
+[4:02.18] Think about it.
+[4:03.26] DNA has four letters.
+[4:05.22] A, C, G, and T.
+[4:08.04] Four options is exactly two bits.
+[4:10.84] So A can be 00,
+[4:12.74] C can be 01, and so on.
+[4:15.50] Any file on your computer, a photo, a song, this video is just a long string of ones and zeros.
+[4:23.12] Which means it can be rewritten as a long string of letters, and then built as a real molecule.
+[4:29.66] In 2017, two researchers in New York did it with an entire computer operating system and a short movie.
+[4:37.56] They encoded the files into 72 ,000 tiny strands of DNA, sent the order to a company, and got back a spec in a vial.
+[4:47.18] Then they read it with a DNA sequencer.
+[4:50.12] Zero errors.
+[4:51.76] They booted the operating system and played Minesweeper on it to celebrate.
+[4:56.34] And the density is hard to picture.
+[4:59.04] Their method works out to 215 petabytes in a single gram.
+[5:03.92] That's 215 million gigabytes, in something that weighs about as much as a paperclip.
+[5:10.12] And kept cold and dry, DNA can last hundreds of thousands of years.
+[5:15.24] A hard drive might give you 10.
+[5:17.42] The catch this time is price and speed.
+[5:20.54] That demo was 2 megabytes.
+[5:22.94] It cost $7 ,000 to write and $2 ,000 to read.
+[5:26.84] And molecules get damaged or lost along the way, so the data has to be wrapped in error -correcting codes.
+[5:33.04] The one they used was originally designed for streaming video to phones.
+[5:37.16] No disk, no power.
+[5:39.32] Still remembering.
+[5:40.94] But storage just sits there.
+[5:43.02] What if the cell itself could run a program?
+[5:46.00] It can.
+[5:47.00] In 2016, a team at MIT built a tool called Shello, and it works the way a chip designer works.
+[5:54.54] You write code in Verilog, the same language engineers use to describe computer chips.
+[6:00.24] You say, if this input is present, and that one is missing, turn the output on, then you hit compile.
+[6:07.14] Except this compiler doesn't hand you a chip layout.
+[6:10.10] It hands you a DNA sequence.
+[6:11.66] You build that DNA, put it inside E.
+[6:14.58] coli bacteria, and now the bacteria run your logic.
+[6:18.18] The inputs are things a cell can sense, like oxygen or sugar.
+[6:22.18] The logic gates are genes switching other genes off.
+[6:25.50] The output is whatever you want the cell to make.
+[6:28.68] They design 60 circuits this way, and 45 worked correctly on the first try.
+[6:34.24] That's a better hit rate than my code gets.
+[6:37.20] The dream is a cell that makes decisions.
+[6:40.64] Bacteria that release a drug only when they detect a tumor.
+[6:44.92] Microbes on a plant's roots that make insecticide only when the plant is under attack.
+[6:50.54] Programs you don't install.
+[6:52.84] You grow them.
+[6:54.36] No keyboard, no screen.
+[6:56.88] Still running code.
+[6:58.70] And that brings us to the strangest one.
+[7:01.32] Because if you're going to compute with living cells, why not use the cells that evolved for it?
+[7:07.24] In 2022, a company in Australia grew about 800 ,000 brain cells on top of a chip covered in electrodes.
+[7:15.98] They tried it with mouse neurons, and with human ones.
+[7:19.64] They called it dishbrain.
+[7:21.68] And then they connected it to Pong.
+[7:24.06] It worked like this.
+[7:25.86] Electrodes on the chip told the neurons where the ball was.
+[7:29.04] The neurons' own firing moved the paddle.
+[7:32.24] And then the clever part.
+[7:33.96] When they hit the ball, they got a neat, predictable signal.
+[7:37.70] When they missed, they got random noise.
+[7:40.62] And neurons, it turns out, don't like unpredictability.
+[7:44.60] So they changed their own activity to get less of it.
+[7:48.16] Within about five minutes, they were hitting the ball more often than chance.
+[7:52.56] They never got good.
+[7:54.18] Any 10 -year -old would destroy them.
+[7:56.50] But nobody programmed those rallies.
+[7:59.18] A dish of cells learned them.
+[8:01.34] And it isn't only a lab trick anymore.
+[8:03.80] That company now sells a computer built around living neurons for about $35 ,000.
+[8:10.38] Why bother?
+[8:11.68] Power.
+[8:12.66] Your brain runs on roughly 20 watts, less than a light bulb.
+[8:17.18] Training a large AI model takes a whole data center.
+[8:21.00] No data set.
+[8:22.34] No graphics card.
+[8:23.72] Still learning.
+[8:25.14] So, a blob that plans railways.
+[8:28.12] A test tube that tries every answer at once.
+[8:31.60] A molecule that holds an operating system.
+[8:34.54] Bacteria that run compiled code.
+[8:37.22] And a dish of neurons that plays Pong.
+[8:40.22] Five living computers.
+[8:42.34] And not one of them needed a new kind of computer science.
+[8:46.16] Shortest paths.
+[8:47.64] Parallel search.
+[8:49.36] Error correction.
+[8:50.78] Logic gates.
+[8:52.34] Learning from feedback.
+[8:54.18] Those are the same ideas sitting in your textbook right now.
+[8:57.36] The hardware got weird.
+[8:58.82] The ideas stayed exactly the same.
+[9:01.52] That's why the fundamentals are worth learning properly.
+[9:04.84] Chips will change.
+[9:06.22] Languages will change.
+[9:07.68] The ideas are the part you get to keep.
+[9:10.14] And you learn them the way that slime mold builds a railway.
+[9:13.50] One small connection at a time.
+[9:15.50] Bit by bit.
+[9:16.88] If you enjoyed this, subscribe to Bit by Bit and tell me in the comments which of the five you'd want on your desk.
+[9:22.94] I'm taking the slime mold.

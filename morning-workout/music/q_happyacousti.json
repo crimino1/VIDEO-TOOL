@@ -1,0 +1,629 @@
+{
+ "result_count": 8,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "7bdb9782-2d15-4680-99b0-204b39d66166",
+   "title": "Madly, Deeply (Acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1204668",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1204668&format=mp32",
+   "creator": "Melanie Ungar",
+   "creator_url": "https://www.jamendo.com/artist/463402/melanieungar",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "country",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ballad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "pretty",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Madly, Deeply (Acoustic)\" by Melanie Ungar is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "What Is Love",
+    "foreign_landing_url": "https://www.jamendo.com/album/144705/what-is-love",
+    "creator": "Melanie Ungar",
+    "creator_url": "https://www.jamendo.com/artist/463402/melanieungar",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 247000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7bdb9782-2d15-4680-99b0-204b39d66166/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7bdb9782-2d15-4680-99b0-204b39d66166/",
+   "related_url": "https://api.openverse.org/v1/audio/7bdb9782-2d15-4680-99b0-204b39d66166/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7bdb9782-2d15-4680-99b0-204b39d66166/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6fecbcdc-efe1-4192-972a-c987e8a0eb8f",
+   "title": "Key, Kida &amp; Eddie (feat. ICD) - Dugang Kadasig (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1522598",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1522598&format=mp32",
+   "creator": "Key, Kida &amp; Eddie",
+   "creator_url": "https://www.jamendo.com/artist/507113/Key,_Kida_amp_Eddie",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "gangstarap",
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "progressive",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Key, Kida &amp; Eddie (feat. ICD) - Dugang Kadasig (acoustic)\" by Key, Kida &amp; Eddie is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dugang Kadasig!",
+    "foreign_landing_url": "https://www.jamendo.com/album/174869/dugang-kadasig",
+    "creator": "Key, Kida &amp; Eddie",
+    "creator_url": "https://www.jamendo.com/artist/507113/Key,_Kida_amp_Eddie",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 214000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6fecbcdc-efe1-4192-972a-c987e8a0eb8f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6fecbcdc-efe1-4192-972a-c987e8a0eb8f/",
+   "related_url": "https://api.openverse.org/v1/audio/6fecbcdc-efe1-4192-972a-c987e8a0eb8f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6fecbcdc-efe1-4192-972a-c987e8a0eb8f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ea4ef155-35a9-46bb-b136-4e4f8f2223d9",
+   "title": "Lucky Acoustic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1540859",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1540859&format=mp32",
+   "creator": "Jesse Keller",
+   "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "corporate",
+    "filmscore",
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "advertising",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lucky Acoustic\" by Jesse Keller is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "One Mans Journey",
+    "foreign_landing_url": "https://www.jamendo.com/album/176305/one-mans-journey",
+    "creator": "Jesse Keller",
+    "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 202000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/",
+   "related_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0a831f59-4d3a-44bc-b2a7-b3fde29986ef",
+   "title": "Willow Tree (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1474285",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1474285&format=mp32",
+   "creator": "Mark Bodino",
+   "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "indiepop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "malevocals",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Willow Tree (acoustic)\" by Mark Bodino is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Mark Bodino with Broken Darling (vocals)",
+    "foreign_landing_url": "https://www.jamendo.com/album/170637/mark-bodino-with-broken-darling-vocals",
+    "creator": "Mark Bodino",
+    "creator_url": "https://www.jamendo.com/artist/502233/Mark_Bodino_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 205000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/",
+   "related_url": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0a831f59-4d3a-44bc-b2a7-b3fde29986ef/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "169b728c-e875-46d7-9669-60c4eb270fa4",
+   "title": "LESAT Theme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1501647",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1501647&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "filmscore",
+    "folk",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acoustical",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"LESAT Theme\" by Daniel Bautista is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Petit Monde du \u00c9milie OST",
+    "foreign_landing_url": "https://www.jamendo.com/album/172959/le-petit-monde-du-emilie-ost",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 319000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/169b728c-e875-46d7-9669-60c4eb270fa4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/169b728c-e875-46d7-9669-60c4eb270fa4/",
+   "related_url": "https://api.openverse.org/v1/audio/169b728c-e875-46d7-9669-60c4eb270fa4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/169b728c-e875-46d7-9669-60c4eb270fa4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a368188f-3619-4070-b6cc-7ffbd65caecb",
+   "title": "Why cry cry(acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1336848",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1336848&format=mp32",
+   "creator": "UNDER_SIGHT",
+   "creator_url": "https://www.jamendo.com/artist/422664/UNDER_SIGHT",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "agressive",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Why cry cry(acoustic)\" by UNDER_SIGHT is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Acoustic",
+    "foreign_landing_url": "https://www.jamendo.com/album/157964/acoustic",
+    "creator": "UNDER_SIGHT",
+    "creator_url": "https://www.jamendo.com/artist/422664/UNDER_SIGHT",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 447000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a368188f-3619-4070-b6cc-7ffbd65caecb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a368188f-3619-4070-b6cc-7ffbd65caecb/",
+   "related_url": "https://api.openverse.org/v1/audio/a368188f-3619-4070-b6cc-7ffbd65caecb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a368188f-3619-4070-b6cc-7ffbd65caecb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "44f68d4f-a6d9-4832-bdaa-719791d469f3",
+   "title": "\u0421\u043d\u044b [ Dreams ] (Acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1343780",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1343780&format=mp32",
+   "creator": "UletarnO",
+   "creator_url": "https://www.jamendo.com/artist/7635/uletarno",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "\u043b\u044e\u0431\u043e\u0432\u044c",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"\u0421\u043d\u044b [ Dreams ] (Acoustic)\" by UletarnO is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2015",
+    "foreign_landing_url": "https://www.jamendo.com/album/157495/2015",
+    "creator": "UletarnO",
+    "creator_url": "https://www.jamendo.com/artist/7635/uletarno",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 243000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/44f68d4f-a6d9-4832-bdaa-719791d469f3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/44f68d4f-a6d9-4832-bdaa-719791d469f3/",
+   "related_url": "https://api.openverse.org/v1/audio/44f68d4f-a6d9-4832-bdaa-719791d469f3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/44f68d4f-a6d9-4832-bdaa-719791d469f3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1a10a4a3-fb6d-4653-8a7e-77c5b0e33940",
+   "title": "Dieu N'est Pas Num\u00e9rique (Intense Acoustic Meditation Mix)",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2323649",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2323649&format=mp32",
+   "creator": "Adele Vivari",
+   "creator_url": "https://www.jamendo.com/artist/492496/Adele_Vivari",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dieu N'est Pas Num\u00e9rique (Intense Acoustic Meditation Mix)\" by Adele Vivari is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Deus Non Est Digitalis",
+    "foreign_landing_url": "https://www.jamendo.com/album/636559/deus-non-est-digitalis",
+    "creator": "Adele Vivari",
+    "creator_url": "https://www.jamendo.com/artist/492496/Adele_Vivari",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 239000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/",
+   "related_url": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1a10a4a3-fb6d-4653-8a7e-77c5b0e33940/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

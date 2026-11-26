@@ -1,0 +1,153 @@
+[   0.00] Want to get good at coding?
+[   1.70] Easy.
+[   2.48] First, buy a mechanical keyboard.
+[   4.74] The loud one.
+[   5.70] Then set up three monitors, switch everything to dark mode, install Neovim, spend a full weekend configuring Neovim, and then watch every coding tutorial on
+[  15.26] YouTube at two times speed.
+[  17.44] By the end of the year, you'll have an incredible setup.
+[  20.72] And absolutely no idea how to build anything.
+[  24.08] Okay, I'm kidding.
+[  25.92] But only a little, because that's pretty much what most people do.
+[  29.28] And then one day, they open an empty file, the cursor starts blinking, and their brain just goes quiet.
+[  37.14] Welcome to Bit by Bit.
+[  39.36] Today, I want to talk about how people actually get good at programming, not how they feel like they're getting good.
+[  47.08] Those turn out to be two very different things.
+[  50.30] And stick around for the last one, because it's the reason most people quit right before it starts working.
+[  57.96] Let's start with why tutorials feel so productive.
+[  61.46] When you watch someone write code, every line makes sense.
+[  65.08] You nod along, you think, yeah, I would have done that.
+[  68.60] And that feeling is real.
+[  70.26] But it's measuring the wrong thing.
+[  72.46] Psychologists call it the fluency illusion.
+[  75.46] Recognizing an answer when you see it is much easier than producing it from nothing.
+[  80.54] A tutorial trains recognition, your job needs recall.
+[  85.18] So here's a test you can run tonight.
+[  87.36] Pick the last tutorial you finished, close it, open a blank file and build the same thing from memory.
+[  93.86] No peeking.
+[  94.86] If you get stuck in the first 10 minutes, that's not a failure.
+[  98.54] That's the exact spot where your learning actually starts.
+[ 102.40] Which brings us to the first rule, build before you feel ready.
+[ 106.84] Because you will never feel ready.
+[ 108.74] That feeling isn't coming.
+[ 110.74] The trick is picking the right size of project.
+[ 113.74] Too easy, and you're just typing.
+[ 116.12] Too hard, and you quit on day two.
+[ 118.92] What you want is something where you know about 80 % of what you need, and the other 20 % scares you a little.
+[ 125.62] That 20 % is where all the growth is.
+[ 128.84] Here's what a ladder like that might look like.
+[ 131.58] Start with a script that cleans up your messy downloads folder.
+[ 135.86] Then a scraper that messages you when something you want drops in price.
+[ 140.62] Then a tiny multiplayer game where two browsers talk to each other in real time.
+[ 145.52] Then your own mini version of Git.
+[ 148.10] Each one should feel slightly too big when you start it.
+[ 151.62] If it doesn't, climb a rung.
+[ 154.04] Now, rule two.
+[ 155.94] And this one comes from research that has nothing to do with computers.
+[ 160.06] In the early 90s, a psychologist named Anders Ericsson studied violin students at a music academy in Berlin, trying to figure out what set the
+[ 169.54] best ones apart.
+[ 171.02] And what stood out wasn't how much they loved playing.
+[ 174.18] It was how they practiced.
+[ 176.08] The top students spent far more time practicing alone, fully focused, on exactly the parts they couldn't play yet.
+[ 183.62] He called it deliberate practice, not playing your favourite piece for the hundredth time.
+[ 189.54] Finding the few bars you keep messing up, and drilling just those until they're clean.
+[ 194.50] In code, that looks like this.
+[ 196.90] If recursion scares you, spend a week writing nothing but recursive functions.
+[ 201.86] If SQL makes you nervous, grab a real dataset and write 50 queries against it.
+[ 207.48] Aim straight at the thing you avoid.
+[ 210.36] Most programmers practice the other way.
+[ 213.16] They build the same kind of app they already know how to build, give it a new colour scheme, and call it progress.
+[ 220.92] So what does deliberate practice look like for code?
+[ 224.26] Find something you use every day but don't really understand, and build your own version of it.
+[ 230.28] Write your own hash map, your own regex matcher, a tiny interpreter for a language with three keywords.
+[ 237.52] A web server that only knows how to say hello.
+[ 240.82] They'll all be worse than the real ones.
+[ 243.38] That's fine.
+[ 244.82] Nobody is going to use them.
+[ 246.66] The point is that after you've built a hash map yourself, you never look at a Python dictionary the same way again.
+[ 253.72] Rule 3.
+[ 254.82] Read more code than you write.
+[ 257.58] Writers read thousands of books before their own book is any good.
+[ 261.16] But programmers somehow expect to learn only by typing.
+[ 264.50] Pick a small library you actually use.
+[ 267.80] Something a few thousand lines long, not an entire operating system.
+[ 272.54] Open the source of one function you call all the time, and figure out how it really works.
+[ 278.20] You'll find tricks you'd never invent yourself, and you'll start to notice what clean code actually feels like.
+[ 284.78] And here's a related one that hurts a little.
+[ 287.70] Go read your own code from three months ago.
+[ 290.66] If it makes you cringe, congratulations.
+[ 293.40] That cringe is proof you've improved.
+[ 296.06] If it still looks perfect, you've been standing still.
+[ 300.14] Rule 4.
+[ 301.52] And this is the big one in 2027.
+[ 304.58] Struggle before you ask the AI.
+[ 307.22] When you hit a bug, the fastest move is to paste the error into a chatbot, and paste the fix back.
+[ 313.48] Bug's gone.
+[ 314.36] But so is the learning.
+[ 315.80] Because the struggle is the part that actually rewires your brain.
+[ 319.74] Debugging is where you find out the difference between what you think your code does, and what it really does.
+[ 325.78] So give yourself a rule.
+[ 327.60] 20 minutes on your own, first.
+[ 330.14] Read the error message.
+[ 331.60] The whole thing.
+[ 332.82] Most beginners read the first line and panic, but the answer is often sitting right there in the stack trace, pointing at the exact line.
+[ 340.30] Add print statements.
+[ 342.66] Make a guess about what's wrong, and test it.
+[ 346.22] And keep a bug journal.
+[ 347.88] One line per bug.
+[ 349.68] What broke, why it broke, and how you found it.
+[ 353.46] After a few months, you'll notice something slightly embarrassing.
+[ 357.70] You keep making the same five mistakes.
+[ 360.66] Now you know exactly what to watch for.
+[ 363.94] Still stuck?
+[ 365.04] Try the oldest trick in the book.
+[ 366.70] Explain your code out loud, line by line, to a rubber duck.
+[ 371.44] Programmers genuinely call this rubber duck debugging.
+[ 374.58] Half the time, you'll hear yourself say something like, and this variable is definitely a number, and realize it isn't.
+[ 382.60] And if you use AI after that, which is completely fine, ask it to explain, not to fix.
+[ 389.04] Show it what you tried, and ask why your version didn't work.
+[ 393.18] You'll still get unstuck, but you'll walk away understanding something, instead of just holding a patch.
+[ 399.76] Rule 5.
+[ 401.36] Ship something to a real person.
+[ 403.78] Not a portfolio project for a recruiter to glance at for six seconds.
+[ 408.30] Something one actual human uses.
+[ 410.98] Your friend's tuition centre needs a way to track who paid their fees.
+[ 414.86] Build it.
+[ 415.70] Your family keeps forgetting whose turn it is to pay the electricity bill.
+[ 419.96] Build that.
+[ 421.64] Because the second a real user touches your code, everything you assumed falls apart.
+[ 428.00] They type their name with an emoji in it.
+[ 430.68] They hit the back button in the middle of a payment.
+[ 433.88] They open it on a phone from 2017.
+[ 437.18] No tutorial teaches you that.
+[ 439.64] Users do.
+[ 440.90] And every bug they find turns you into the kind of programmer who thinks about those cases before anyone reports them.
+[ 448.22] Okay, last thing, and it's the one nobody warns you about.
+[ 452.32] When you start getting better, you're going to feel worse.
+[ 455.52] I know that sounds backwards, so let me explain.
+[ 458.84] Your taste improves faster than your skill.
+[ 461.66] You start reading good code, you start noticing what clean design looks like, and suddenly everything you write feels clumsy.
+[ 469.16] A lot of people quit right here, because they think that feeling means they're bad at this.
+[ 474.08] It means the opposite.
+[ 475.94] The gap between what you can recognise as good, and what you can actually make, is the space you're growing into.
+[ 482.54] Every good programmer has lived in that gap for years.
+[ 485.92] There's a well -known essay by Peter Norvig, who led research at Google, called Teach Yourself Programming in 10 Years.
+[ 493.46] It's a direct shot at all those books promising you can learn a language in 24 hours.
+[ 499.20] 10 years sounds depressing at first, but it's actually freeing.
+[ 504.04] It means nobody expects you to be great by next month.
+[ 507.92] So here's the whole video in one breath.
+[ 510.44] Stop measuring progress by what you've watched.
+[ 513.66] Build things slightly too big for you.
+[ 516.54] Practice the parts you're bad at.
+[ 518.84] Read code from people better than you.
+[ 521.38] Struggle before you ask.
+[ 523.44] And put your work in front of real humans.
+[ 526.58] Do that.
+[ 527.70] And one day you'll open an empty file.
+[ 530.08] The cursor will start blinking.
+[ 532.18] And you'll just start typing.
+[ 533.90] That's how you get good.
+[ 535.56] Not all at once.
+[ 536.96] Bit by bit.
+[ 537.84] If this helped, subscribe to bit by bit and tell me in the comments what you're building right now.
+[ 543.12] I actually read them.
+[ 544.52] See you in the next one.

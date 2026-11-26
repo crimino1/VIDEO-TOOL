@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Caveat";src:url("assets/fonts/caveat-600.woff2") format("woff2");font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(900px 600px at 18% 22%,rgba(30,52,110,.45),transparent 70%),radial-gradient(800px 560px at 84% 78%,rgba(22,40,96,.40),transparent 70%),#000}
+.grid{position:absolute;inset:-60px;background-image:linear-gradient(rgba(70,100,180,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(70,100,180,.07) 1.5px,transparent 1.5px);background-size:120px 120px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 80%)}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.h{font-weight:700;letter-spacing:-.025em;line-height:1.08}
+.big{font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.lab{color:#8A8F98;font-weight:400;line-height:1.2}
+.g{color:#8A8F98}
+.blue{color:#5B8FF0}
+.mono{font-family:"JetBrains Mono",monospace}
+.note{font-family:"Caveat",cursive;font-weight:600;color:#F0A818;line-height:1.05;white-space:nowrap}
+.arw{position:absolute;display:block}
+.src{font-size:22px;color:#6B7079}
+.card{background:#0D0F14;border:1.5px solid #2A2E37;border-radius:12px;padding:26px 30px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.card.sel{border-color:#5B8FF0;background:#0B1430}
+.card.red{border-color:rgba(248,81,73,.7);background:#1A0C0E}
+.card.ok{border-color:rgba(63,185,80,.7);background:#0B1A10}
+.card.dash{border-style:dashed;background:rgba(13,15,20,.6)}
+.card.lvl.hi{border-color:#F0A818}
+.card.lvl.crit{border-color:#F85149;background:#1A0C0E}
+.card.lvl.crit .ct{color:#F85149}
+.ct{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cs{font-size:26px;color:#8A8F98;margin-top:10px}
+.li{font-size:36px;font-weight:700;letter-spacing:-.015em}
+.cb{font-size:30px;line-height:1.3;padding:16px 22px;border-radius:16px;margin-top:14px;max-width:560px}
+.cb.u{background:#1E2A44;margin-left:auto;width:max-content}
+.cb.bot{background:#1A1C22;color:#D5D8DE}
+.mac{border-radius:12px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37}
+.mbar{height:44px;background:#1C1D21;position:relative}
+.mbar i{position:absolute;top:15px;width:14px;height:14px;border-radius:50%;background:#3A3C42}
+.mbar i:nth-child(1){left:18px;background:#ff5f57}.mbar i:nth-child(2){left:42px;background:#febc2e}.mbar i:nth-child(3){left:66px;background:#28c840}
+.murl{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:28px;padding:0 70px;background:#121316;border-radius:7px;font-size:16px;line-height:28px;color:#A9ADB5;white-space:nowrap}
+.mbody{overflow:hidden;position:relative}
+.mbody img{display:block}
+.im img,.logo img{display:block;object-fit:contain}
+.meme{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 3px #fff}
+.meme img{display:block;object-fit:cover}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.vcard{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37;background:#000}
+.person img{display:block;border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.pn{font-size:38px;font-weight:700;margin-top:18px}
+.pr{font-size:26px;color:#8A8F98;margin-top:4px}
+.track{position:absolute;height:44px;border-radius:6px;background:#15181F}
+.fill{position:absolute;height:44px;border-radius:6px;background:#4A505C}
+.fill.hero{background:#5B8FF0}
+.bl{font-weight:700;white-space:nowrap}
+.bvl{font-weight:900;font-variant-numeric:tabular-nums}
+.bugrow{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.bugrow i{display:block;width:16px;height:16px;border-radius:50%;background:#3A3E47}
+.codewall{font-size:27px;line-height:1.75;color:#6B7079}
+.cl{padding:0 10px;border-radius:4px;white-space:nowrap}
+.strike{text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:5px}
+.strike2{color:#8A8F98;text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:4px}
+.tline{position:absolute;height:2px;background:#2A2E37}
+.tp i.dot{display:block;width:30px;height:30px;border-radius:50%;background:#0D0F14;border:3px solid #5A606B}
+.prow{display:flex;align-items:baseline;gap:40px;margin-top:26px;font-size:84px;font-weight:900;letter-spacing:-.03em}
+.prow .pl{font-size:34px;font-weight:400;color:#8A8F98;width:150px}
+.prow .new{color:#5B8FF0}
+.tw img{filter:drop-shadow(0 24px 50px rgba(0,0,0,.6))}
+.tp i.dot.hero{border-color:#5B8FF0;background:#5B8FF0;box-shadow:0 0 24px #5B8FF0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="434.4" data-width="1920" data-height="1080">
+<div class="bg"><div class="grid" id="grid"></div></div>
+<div id="s4" class="clip scene" data-start="0.000" data-duration="4.520" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="w5" class="sc"><div id="hooklogo" class="a logo" style="left:760px;top:250px;width:400px;height:45px"><img src="assets/img/anthropic_w.png" alt="" style="width:400px;height:45px"></div><div id="c1" class="a h" style="left:0;right:0;top:340px;text-align:center;font-size:34px"><span class="mono g">Nov 9, 2026</span></div><div id="c2" class="a h" style="left:0;right:0;top:400px;text-align:center;font-size:150px">Claude <span class="blue">Fable 5.2</span></div><svg id="ul3" class="a" style="left:660px;top:600px;opacity:0" width="600" height="18" viewBox="0 0 600 18"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M4 12C180 4 420 4 596 10" fill="none" stroke="#F0A818" stroke-width="4" stroke-linecap="round"/></svg></div></div>
+<div id="s11" class="clip scene" data-start="4.120" data-duration="3.870" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div id="w12" class="sc"><div id="vc6" class="a vcard" style="left:360px;top:150px;width:1200px;height:675px"></div><div id="c9" class="a src" style="left:360px;top:839px">@claudeai on X · Nov 9, 2026</div><div id="c10" class="a note" style="left:1250px;top:880px;font-size:60px">+ Mythos 5.2<span class="arw" style="left:-60px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="vw8" class="vwrap" style="left:360px;top:150px;width:1200px;height:675px;z-index:13"><video id="v7" class="clip" src="assets/clips/x_launch_e478c320.mp4" muted playsinline data-start="4.120" data-duration="3.870" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s18" class="clip scene" data-start="7.590" data-duration="14.950" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div id="w19" class="sc"><div id="c13" class="a lab" style="left:0;right:0;top:110px;text-align:center;font-size:40px">quick context</div><div id="c14" class="a h" style="left:0;right:0;top:170px;text-align:center;font-size:76px">same <span class="blue">underlying model</span></div><div id="c15" class="a card sel" style="left:300px;top:380px;width:600px;height:250px;"><div class="mono g" style="font-size:22px">public version</div><div class="ct" style="font-size:54px;margin-top:8px">Fable 5.2</div><div class="cs">strong safety filters</div></div><div id="c16" class="a card" style="left:1020px;top:380px;width:600px;height:250px;"><div class="mono g" style="font-size:22px">restricted version</div><div class="ct" style="font-size:54px;margin-top:8px">Mythos 5.2</div><div class="cs">looser filters: cyber + biology</div></div><div id="c17" class="a note" style="left:1080px;top:670px;font-size:52px">vetted organizations only<span class="arw" style="left:60px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s24" class="clip scene" data-start="22.140" data-duration="9.210" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="w25" class="sc"><div id="c20" class="a h" style="left:0;right:0;top:130px;text-align:center;font-size:80px">so what <span class="blue">changed</span>?</div><div id="c21" class="a card sel" style="left:360px;top:330px;width:540px;height:320px;"><div class="big blue" style="font-size:110px">30%</div><div class="ct" style="margin-top:6px">faster</div><div class="cs">than Fable 5.1 (up to)</div></div><div id="c22" class="a card ok" style="left:1020px;top:330px;width:540px;height:320px;"><div class="big" style="font-size:110px;color:#3FB950">↓</div><div class="ct" style="margin-top:6px">cheaper</div><div class="cs">per token</div></div><div id="c23" class="a note" style="left:620px;top:720px;font-size:52px">almost never happens with a top model</div></div></div>
+<div id="s28" class="clip scene" data-start="30.950" data-duration="5.930" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="w29" class="sc"><div id="c26" class="a card" style="left:560px;top:250px;width:800px;height:380px;"><div class="mono g" style="font-size:24px">per million tokens</div><div class="prow"><span class="pl">input</span><span class="old">$10</span><span class="new">$8</span></div><div class="prow"><span class="pl">output</span><span class="old">$50</span><span class="new">$40</span></div></div><div id="c27" class="a src" style="left:0;right:0;top:700px;text-align:center">Source: Anthropic, Nov 9, 2026</div></div></div>
+<div id="s34" class="clip scene" data-start="36.480" data-duration="6.510" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="w35" class="sc"><div id="m30" class="a mac" style="left:260px;top:160px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:526px"><img id="k31" src="assets/img/a_fast_40b37.jpg" alt="a_fast" style="width:1400px;height:526px"></div></div><div id="c32" class="a card sel" style="left:260px;top:790px;width:760px;height:110px;"><div class="ct"><span class="blue">fast mode</span>: up to 2.5× faster</div></div><div id="c33" class="a card red" style="left:1060px;top:790px;width:600px;height:110px;"><div class="ct" style="color:#F85149">costs double: $16 / $80</div></div></div></div>
+<div id="s39" class="clip scene" data-start="42.590" data-duration="5.500" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="w40" class="sc"><div id="m36" class="a mac" style="left:360px;top:120px;width:1200px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:373px"><img id="k37" src="assets/img/a_table_el_f747d.jpg" alt="a_table_el" style="width:1200px;height:373px"></div></div><div id="c38" class="a note" style="left:1220px;top:880px;font-size:56px">their numbers<span class="arw" style="left:40px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s61" class="clip scene" data-start="47.690" data-duration="19.320" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="w62" class="sc"><div id="c41" class="a h" style="left:300px;top:150px;font-size:64px">Frontier<span class="blue">Code</span> 2.0</div><div id="c42" class="a lab" style="left:300px;top:240px;font-size:28px">agentic coding · Anthropic-reported</div><div id="c45" class="a bl" style="left:300px;top:360px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Fable 5.2</div><div class="track" style="left:760px;top:366px;width:1000px"></div><div id="bf43" class="fill hero" style="left:760px;top:366px;width:0"></div><div id="c46" class="a bvl blue" style="left:1273px;top:356px;font-size:44px"><span id="bv44">0.0%</span></div><div id="c49" class="a bl" style="left:300px;top:470px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Opus 5.5</div><div class="track" style="left:760px;top:476px;width:1000px"></div><div id="bf47" class="fill" style="left:760px;top:476px;width:0"></div><div id="c50" class="a bvl" style="left:1237px;top:466px;font-size:44px"><span id="bv48">0.0%</span></div><div id="c53" class="a bl" style="left:300px;top:580px;font-size:34px;width:440px"><img src="assets/img/openai_sym_w.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">GPT-6 Astra</div><div class="track" style="left:760px;top:586px;width:1000px"></div><div id="bf51" class="fill" style="left:760px;top:586px;width:0"></div><div id="c54" class="a bvl" style="left:1210px;top:576px;font-size:44px"><span id="bv52">0.0%</span></div><div id="c57" class="a bl" style="left:300px;top:690px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Fable 5.1</div><div class="track" style="left:760px;top:696px;width:1000px"></div><div id="bf55" class="fill" style="left:760px;top:696px;width:0"></div><div id="c58" class="a bvl" style="left:1106px;top:686px;font-size:44px"><span id="bv56">0.0%</span></div><div id="c59" class="a note" style="left:760px;top:840px;font-size:52px">+16.7 points in two months</div><div id="c60" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Anthropic, Nov 9, 2026</div></div></div>
+<div id="s70" class="clip scene" data-start="66.610" data-duration="15.710" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="w71" class="sc"><div id="c63" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:64px">the robotics one is <span class="blue">wild</span></div><div id="c64" class="a lab" style="left:0;right:0;top:160px;text-align:center;font-size:30px">model controls a simulated two-arm robot from camera images</div><div id="m65" class="a mac" style="left:340px;top:230px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:578px"><img id="k66" src="assets/img/a_robo_60a12.jpg" alt="a_robo" style="width:1000px;height:578px"></div></div><div id="c67" class="a note" style="left:1420px;top:300px;font-size:52px">Fable 5.2: 64.9%<span class="arw" style="left:-90px;top:40px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c68" class="a note" style="left:1420px;top:520px;font-size:46px">GPT-6 Astra: 29.8%</div><div id="c69" class="a note" style="left:1420px;top:620px;font-size:56px">more than double</div></div></div>
+<div id="s77" class="clip scene" data-start="81.920" data-duration="5.630" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="w78" class="sc"><div id="vc72" class="a vcard" style="left:360px;top:150px;width:1200px;height:675px"></div><div id="c75" class="a src" style="left:360px;top:839px">@claudeai on X · Fable 5.2 controlling real robot arms</div><div id="c76" class="a note" style="left:1590px;top:300px;font-size:50px">puzzle cube<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="vw74" class="vwrap" style="left:360px;top:150px;width:1200px;height:675px;z-index:22"><video id="v73" class="clip" src="assets/clips/x_robots_d72f3f10.mp4" muted playsinline data-start="81.920" data-duration="5.630" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s83" class="clip scene" data-start="84.900" data-duration="2.650" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="w84" class="sc"><div id="vc79" class="a vcard" style="left:360px;top:150px;width:1200px;height:675px"></div><div id="c82" class="a note" style="left:1590px;top:300px;font-size:50px">bottle cap<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="vw81" class="vwrap" style="left:360px;top:150px;width:1200px;height:675px;z-index:24"><video id="v80" class="clip" src="assets/clips/x_robots_429de96d.mp4" muted playsinline data-start="84.900" data-duration="2.650" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s89" class="clip scene" data-start="87.150" data-duration="6.840" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="w90" class="sc"><div id="m85" class="a mac" style="left:360px;top:120px;width:1200px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:373px"><img id="k86" src="assets/img/a_table_el_f747d.jpg" alt="a_table_el" style="width:1200px;height:373px"></div></div><div id="c87" class="a logo" style="left:1400px;top:860px;width:300px;height:67px"><img src="assets/img/gemini_w.png" alt="" style="width:300px;height:67px"></div><div id="c88" class="a note" style="left:380px;top:880px;font-size:50px">Gemini 4 Carbon wins AutomationBench</div></div></div>
+<div id="s97" class="clip scene" data-start="93.590" data-duration="8.440" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="w98" class="sc"><div id="c91" class="a h" style="left:0;right:0;top:100px;text-align:center;font-size:70px">what <span class="blue">independent testers</span> found</div><div id="c92" class="a im tw" style="left:160px;top:260px;width:380px;height:321px"><img src="assets/img/tw_aa_55.png" alt="" style="width:380px;height:321px"></div><div id="c93" class="a im tw" style="left:590px;top:300px;width:380px;height:332px"><img src="assets/img/tw_vals_55.png" alt="" style="width:380px;height:332px"></div><div id="c94" class="a im tw" style="left:1020px;top:260px;width:380px;height:301px"><img src="assets/img/tw_arc_60.png" alt="" style="width:380px;height:301px"></div><div id="c95" class="a im tw" style="left:1450px;top:300px;width:330px;height:263px"><img src="assets/img/tw_yuchen_75.png" alt="" style="width:330px;height:263px"></div><div id="c96" class="a note" style="left:640px;top:900px;font-size:52px">X was full of tests within hours</div></div></div>
+<div id="s101" class="clip scene" data-start="101.630" data-duration="6.470" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="w102" class="sc"><div id="c99" class="a im tw" style="left:620px;top:60px;width:680px;height:648px"><img src="assets/img/tw_aa_62.png" alt="" style="width:680px;height:648px"></div><div id="c100" class="a src" style="left:0;right:0;top:1010px;text-align:center">@ArtificialAnlys on X · Nov 9, 2026</div></div></div>
+<div id="s108" class="clip scene" data-start="107.700" data-duration="10.300" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="w109" class="sc"><div id="m103" class="a mac" style="left:560px;top:130px;width:760px"><div class="mbar"><i></i><i></i><i></i><div class="murl">artificialanalysis.ai</div></div><div class="mbody" style="height:694px"><img id="k104" src="assets/img/aa_full_0cb5c.jpg" alt="aa_full" style="width:760px;height:694px"></div></div><div id="c105" class="a note" style="left:1490px;top:300px;font-size:58px">#1 · score 65<span class="arw" style="left:-90px;top:40px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c106" class="a note" style="left:470px;top:960px;font-size:44px">Gemini 4 Carbon 60 · Opus 5.5 59 · GPT-6 Astra 57</div><div id="c107" class="a note" style="left:1490px;top:520px;font-size:46px">~15 points above Fable 5.1</div></div></div>
+<div id="s125" class="clip scene" data-start="117.600" data-duration="8.900" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="w126" class="sc"><div id="c110" class="a h" style="left:300px;top:150px;font-size:64px">Terminal-Bench <span class="blue">4.0</span></div><div id="c111" class="a lab" style="left:300px;top:240px;font-size:28px">as reported by Artificial Analysis</div><div id="c114" class="a bl" style="left:300px;top:380px;font-size:34px;width:440px"><img src="assets/img/kimi.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Kimi K3.1 Pro</div><div class="track" style="left:760px;top:386px;width:1000px"></div><div id="bf112" class="fill hero" style="left:760px;top:386px;width:0"></div><div id="c115" class="a bvl blue" style="left:1452px;top:376px;font-size:44px"><span id="bv113">0.0%</span></div><div id="c118" class="a bl" style="left:300px;top:500px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Fable 5.2</div><div class="track" style="left:760px;top:506px;width:1000px"></div><div id="bf116" class="fill" style="left:760px;top:506px;width:0"></div><div id="c119" class="a bvl" style="left:1382px;top:496px;font-size:44px"><span id="bv117">0.0%</span></div><div id="c122" class="a bl" style="left:300px;top:620px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Opus 5.5</div><div class="track" style="left:760px;top:626px;width:1000px"></div><div id="bf120" class="fill" style="left:760px;top:626px;width:0"></div><div id="c123" class="a bvl" style="left:1382px;top:616px;font-size:44px"><span id="bv121">0.0%</span></div><div id="c124" class="a note" style="left:760px;top:780px;font-size:50px">level with Opus, behind Kimi</div></div></div>
+<div id="s132" class="clip scene" data-start="126.100" data-duration="10.020" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div id="w133" class="sc"><div id="m127" class="a mac" style="left:380px;top:150px;width:740px"><div class="mbar"><i></i><i></i><i></i><div class="murl">artificialanalysis.ai</div></div><div class="mbody" style="height:678px"><img id="k128" src="assets/img/aa_full_1f27d.jpg" alt="aa_full" style="width:740px;height:678px"></div></div><div id="c129" class="a big" style="left:1290px;top:300px;font-size:130px"><span class="blue">$26.5</span></div><div id="c130" class="a lab" style="left:1290px;top:450px;font-size:32px">per task, max effort (avg)</div><div id="c131" class="a note" style="left:1290px;top:540px;font-size:58px">~2.6× Opus 5.5</div></div></div>
+<div id="s137" class="clip scene" data-start="135.720" data-duration="8.720" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="w138" class="sc"><div id="c134" class="a card sel" style="left:300px;top:330px;width:620px;height:190px;"><div class="mono g" style="font-size:22px">high effort</div><div class="ct" style="margin-top:8px">still beats every other model</div></div><div id="c135" class="a card" style="left:1000px;top:330px;width:620px;height:260px;"><div class="big blue" style="font-size:96px">−40%</div><div class="cs">output tokens vs Opus 5.5 at max</div></div><div id="c136" class="a src" style="left:0;right:0;top:700px;text-align:center">Source: Artificial Analysis</div></div></div>
+<div id="s142" class="clip scene" data-start="144.040" data-duration="8.340" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="w143" class="sc"><div id="c139" class="a im tw" style="left:620px;top:40px;width:680px;height:670px"><img src="assets/img/tw_vals_62.png" alt="" style="width:680px;height:670px"></div><div id="c140" class="a note" style="left:1350px;top:380px;font-size:52px">#1 · leads 7 benchmarks<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c141" class="a lab" style="left:1360px;top:470px;font-size:32px">coding · finance · science</div></div></div>
+<div id="s149" class="clip scene" data-start="151.980" data-duration="9.870" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap><div id="w150" class="sc"><div id="c144" class="a lab" style="left:0;right:0;top:120px;text-align:center;font-size:40px">the finding that got shared a lot</div><div id="c145" class="a h" style="left:0;right:0;top:180px;text-align:center;font-size:84px">max effort made it <span class="blue">worse</span></div><div id="c146" class="a card" style="left:300px;top:380px;width:640px;height:240px;"><div class="big" style="font-size:120px;text-align:center">#1 <span class="g">→</span> <span style="color:#F85149">#7</span></div></div><div id="c147" class="a note" style="left:380px;top:650px;font-size:54px">at nearly 3× the cost</div><div id="c148" class="a meme" style="left:1100px;top:340px;width:520px;height:309px"><img src="assets/img/pikachu.jpg" alt="" style="width:520px;height:309px"></div></div></div>
+<div id="s157" class="clip scene" data-start="161.450" data-duration="9.800" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="w158" class="sc"><div id="c151" class="a lab" style="left:300px;top:160px;font-size:40px">Vals says, at max effort it…</div><div id="c152" class="a card red" style="left:300px;top:260px;width:1000px;height:100px;"><div class="li">spends way more time on tasks</div></div><div id="c153" class="a card red" style="left:300px;top:390px;width:1000px;height:100px;"><div class="li">often fails to finish</div></div><div id="c154" class="a card red" style="left:300px;top:520px;width:1000px;height:100px;"><div class="li">runs out of time or tokens</div></div><div id="c155" class="a card ok" style="left:300px;top:690px;width:1000px;height:100px;"><div class="li"><span class="blue">High effort</span> = best setting overall</div></div><div id="c156" class="a " style="left:1330px;top:710px"><svg width="60" height="60" viewBox="0 0 64 64"><path d="M12 34l14 14 26-30" fill="none" stroke="#3FB950" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+<div id="s162" class="clip scene" data-start="170.850" data-duration="6.840" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="w163" class="sc"><div id="c159" class="a im tw" style="left:620px;top:70px;width:680px;height:723px"><img src="assets/img/tw_yuchen_100.png" alt="" style="width:680px;height:723px"></div><div id="c160" class="a note" style="left:1340px;top:260px;font-size:50px">the max-effort result<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c161" class="a src" style="left:0;right:0;top:1010px;text-align:center">@Yuchenj_UW on X · Nov 9, 2026</div></div></div>
+<div id="s168" class="clip scene" data-start="177.290" data-duration="9.410" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="w169" class="sc"><div id="c164" class="a h" style="left:0;right:0;top:200px;text-align:center;font-size:80px">Fable still <span class="blue">refuses</span> a lot</div><div id="c165" class="a card red" style="left:660px;top:360px;width:600px;height:250px;"><div class="big" style="font-size:100px;color:#F85149;text-align:center">10%+</div><div class="cs" style="text-align:center">refusals in some areas</div></div><div id="c166" class="a note" style="left:720px;top:660px;font-size:54px">mostly code migration tasks</div><div id="c167" class="a src" style="left:0;right:0;top:760px;text-align:center">Source: Vals AI</div></div></div>
+<div id="s172" class="clip scene" data-start="186.300" data-duration="7.500" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="w173" class="sc"><div id="c170" class="a im tw" style="left:600px;top:40px;width:720px;height:781px"><img src="assets/img/tw_arc_82.png" alt="" style="width:720px;height:781px"></div><div id="c171" class="a note" style="left:1360px;top:300px;font-size:50px">verified within minutes<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s180" class="clip scene" data-start="193.400" data-duration="8.440" data-track-index="2" style="z-index:38" data-layout-allow-overflow data-layout-allow-overlap><div id="w181" class="sc"><div id="m174" class="a mac" style="left:260px;top:120px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">arcprize.org/leaderboard</div></div><div class="mbody" style="height:754px"><img id="k175" src="assets/img/arc_1c1c3.jpg" alt="arc" style="width:1000px;height:754px"></div></div><div id="c176" class="a big" style="left:1340px;top:260px;font-size:120px"><span class="blue">81.2%</span></div><div id="c177" class="a lab" style="left:1340px;top:400px;font-size:28px">ARC-AGI-3 · standard harness · new high</div><div id="c178" class="a note" style="left:1340px;top:470px;font-size:46px">~18 points above GPT-6 Astra</div><div id="c179" class="a note" style="left:1340px;top:560px;font-size:54px">full run: ~$22,000</div></div></div>
+<div id="s197" class="clip scene" data-start="201.440" data-duration="13.080" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="w198" class="sc"><div id="c182" class="a h" style="left:300px;top:150px;font-size:64px">ARC-AGI-<span class="blue">2</span></div><div id="c183" class="a lab" style="left:300px;top:240px;font-size:28px">verified by ARC Prize</div><div id="c186" class="a bl" style="left:300px;top:380px;font-size:34px;width:440px"><img src="assets/img/openai_sym_w.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">GPT-6 Astra</div><div class="track" style="left:760px;top:386px;width:900px"></div><div id="bf184" class="fill" style="left:760px;top:386px;width:0"></div><div id="c187" class="a bvl" style="left:1637px;top:376px;font-size:44px"><span id="bv185">0.0%</span></div><div id="c190" class="a bl" style="left:300px;top:500px;font-size:34px;width:440px"><img src="assets/img/openai_sym_w.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">GPT-6.1 Sol</div><div class="track" style="left:760px;top:506px;width:900px"></div><div id="bf188" class="fill" style="left:760px;top:506px;width:0"></div><div id="c191" class="a bvl" style="left:1629px;top:496px;font-size:44px"><span id="bv189">0.0%</span></div><div id="c194" class="a bl" style="left:300px;top:620px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Fable 5.2</div><div class="track" style="left:760px;top:626px;width:900px"></div><div id="bf192" class="fill hero" style="left:760px;top:626px;width:0"></div><div id="c195" class="a bvl blue" style="left:1626px;top:616px;font-size:44px"><span id="bv193">0.0%</span></div><div id="c196" class="a note" style="left:300px;top:760px;font-size:56px">actually third</div></div></div>
+<div id="s203" class="clip scene" data-start="214.120" data-duration="12.040" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="w204" class="sc"><div id="c199" class="a im tw" style="left:300px;top:60px;width:640px;height:722px"><img src="assets/img/tw_cognition_78.png" alt="" style="width:640px;height:722px"></div><div id="c200" class="a card sel" style="left:1060px;top:300px;width:600px;height:180px;"><div class="mono g" style="font-size:22px">Fable 5.2 at low effort</div><div class="ct" style="margin-top:8px">beats Fable 5.1's score</div></div><div id="c201" class="a card" style="left:1060px;top:520px;width:600px;height:200px;"><div class="big blue" style="font-size:90px">⅓</div><div class="cs">of the cost</div></div><div id="c202" class="a src" style="left:300px;top:1010px">@cognition (makers of Devin) on X · Nov 9, 2026</div></div></div>
+<div id="s207" class="clip scene" data-start="225.760" data-duration="4.580" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="w208" class="sc"><div id="c205" class="a lab" style="left:0;right:0;top:380px;text-align:center;font-size:44px">now the fun part</div><div id="c206" class="a h" style="left:0;right:0;top:450px;text-align:center;font-size:96px">what people <span class="blue">actually built</span></div></div></div>
+<div id="s213" class="clip scene" data-start="229.940" data-duration="9.210" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="w214" class="sc"><div id="c209" class="a im tw" style="left:300px;top:70px;width:600px;height:497px"><img src="assets/img/tw_chetroute_45.png" alt="" style="width:600px;height:497px"></div><div id="c210" class="a h" style="left:1000px;top:260px;font-size:36px"><span class="mono g">Sept 2026</span></div><div id="c211" class="a card sel" style="left:1000px;top:330px;width:620px;height:170px;"><div class="ct">Fable 5.1 requests</div><div class="cs">quietly routed to a newer model</div></div><div id="c212" class="a src" style="left:300px;top:1010px">@chetaslua on X · Sep 18, 2026</div></div></div>
+<div id="s220" class="clip scene" data-start="238.750" data-duration="6.020" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="w221" class="sc"><div id="vc215" class="a vcard" style="left:360px;top:150px;width:1200px;height:675px"></div><div id="c218" class="a src" style="left:360px;top:839px">@chetaslua on X · one-shot game, pure JavaScript</div><div id="c219" class="a note" style="left:1250px;top:880px;font-size:52px">pure JS · no image files<span class="arw" style="left:-50px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="vw217" class="vwrap" style="left:360px;top:150px;width:1200px;height:675px;z-index:44"><video id="v216" class="clip" src="assets/clips/x_chet_game_a11c7235.mp4" muted playsinline data-start="238.750" data-duration="6.020" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s227" class="clip scene" data-start="244.370" data-duration="5.050" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="w228" class="sc"><div id="vc222" class="a vcard" style="left:360px;top:150px;width:1200px;height:675px"></div><div id="c225" class="a src" style="left:360px;top:839px">@chetaslua on X · Sep 20, 2026</div><div id="c226" class="a note" style="left:1060px;top:880px;font-size:52px">every animal got its own snack<span class="arw" style="left:-50px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="vw224" class="vwrap" style="left:360px;top:150px;width:1200px;height:675px;z-index:46"><video id="v223" class="clip" src="assets/clips/x_chet_snacks_a4f3db4b.mp4" muted playsinline data-start="244.370" data-duration="5.050" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s235" class="clip scene" data-start="249.020" data-duration="8.680" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="w236" class="sc"><div id="c229" class="a im tw" style="left:300px;top:90px;width:560px;height:358px"><img src="assets/img/tw_jazzy_27.png" alt="" style="width:560px;height:358px"></div><div id="c230" class="a card sel" style="left:960px;top:300px;width:660px;height:170px;"><div class="mono g" style="font-size:22px">Jazzy · Three.js</div><div class="ct" style="margin-top:8px">Brawl Stars-style 3D arena</div></div><div id="c231" class="a card" style="left:960px;top:510px;width:320px;height:90px;"><div class="li">about an hour</div></div><div id="c232" class="a card" style="left:1300px;top:510px;width:320px;height:90px;"><div class="li">one-line prompt</div></div><div id="c233" class="a note" style="left:1000px;top:640px;font-size:48px">about lighting and shadows</div><div id="c234" class="a src" style="left:300px;top:1010px">@notjazii on X · Sep 2026</div></div></div>
+<div id="s241" class="clip scene" data-start="257.300" data-duration="6.420" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="w242" class="sc"><div id="c237" class="a im tw" style="left:360px;top:80px;width:620px;height:785px"><img src="assets/img/tw_pankaj_100.png" alt="" style="width:620px;height:785px"></div><div id="c238" class="a note" style="left:1060px;top:330px;font-size:56px">3D cliffside house<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c239" class="a note" style="left:1060px;top:430px;font-size:42px">“lighting and reflections were really good”</div><div id="c240" class="a src" style="left:360px;top:1010px">@pankajkumar_dev on X · Sep 20, 2026</div></div></div>
+<div id="s247" class="clip scene" data-start="263.320" data-duration="7.020" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="w248" class="sc"><div id="c243" class="a lab" style="left:0;right:0;top:250px;text-align:center;font-size:44px">to be fair…</div><div id="c244" class="a h" style="left:0;right:0;top:320px;text-align:center;font-size:72px">nobody could confirm it was <span class="blue">really 5.2</span></div><div id="c245" class="a note" style="left:820px;top:470px;font-size:60px">it just lined up</div><div id="c246" class="a meme" style="left:760px;top:560px;width:400px;height:400px"><img src="assets/img/megamind.jpg" alt="" style="width:400px;height:400px"></div></div></div>
+<div id="s254" class="clip scene" data-start="269.940" data-duration="8.640" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div id="w255" class="sc"><div id="c249" class="a im tw" style="left:300px;top:80px;width:640px;height:520px"><img src="assets/img/tw_berman_62.png" alt="" style="width:640px;height:520px"></div><div id="c250" class="a big" style="left:1060px;top:280px;font-size:130px"><span id="tok">0</span>B+</div><div id="c251" class="a lab" style="left:1060px;top:430px;font-size:32px">tokens burned testing it</div><div id="c252" class="a note" style="left:1040px;top:520px;font-size:46px">“by far the best model I've ever used”</div><div id="c253" class="a meme" style="left:1180px;top:620px;width:380px;height:294px"><img src="assets/img/cinema.png" alt="" style="width:380px;height:294px"></div></div></div>
+<div id="s263" class="clip scene" data-start="278.180" data-duration="7.780" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><div id="w264" class="sc"><div id="vc256" class="a vcard" style="left:360px;top:130px;width:1200px;height:675px"></div><div id="c259" class="a src" style="left:360px;top:819px">@MatthewBerman on X · Gears of War-style clone in Unreal Engine</div><div id="c260" class="a card" style="left:360px;top:880px;width:360px;height:90px;"><div class="li">cover mechanics</div></div><div id="c261" class="a card" style="left:740px;top:880px;width:260px;height:90px;"><div class="li">enemy AI</div></div><div id="c262" class="a card" style="left:1020px;top:880px;width:300px;height:90px;"><div class="li">timed reload</div></div></div></div>
+<div id="vw258" class="vwrap" style="left:360px;top:130px;width:1200px;height:675px;z-index:52"><video id="v257" class="clip" src="assets/clips/x_berman_gears_cf13cb59.mp4" muted playsinline data-start="278.180" data-duration="7.780" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s276" class="clip scene" data-start="285.560" data-duration="13.830" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="w277" class="sc"><div id="c265" class="a h" style="left:300px;top:110px;font-size:50px">what those demos cost</div><div id="c266" class="a card sel" style="left:300px;top:220px;width:620px;height:250px;"><div class="mono g" style="font-size:22px">Gears of War clone</div><div class="big" style="font-size:76px;margin-top:10px"><span class="blue">$15,000</span></div><div class="cs">several days · ~8.5B tokens</div></div><div id="vc267" class="a vcard" style="left:1000px;top:200px;width:620px;height:349px"></div><div id="c270" class="a h" style="left:1000px;top:570px;font-size:30px">Fall Guys-style multiplayer · <span class="blue">~$13,000</span></div><div id="vc271" class="a vcard" style="left:300px;top:530px;width:560px;height:315px"></div><div id="c274" class="a h" style="left:900px;top:700px;font-size:34px">Excel clone · <span class="blue">~50 hours</span></div><div id="c275" class="a src" style="left:0;right:0;top:1000px;text-align:center">Matthew Berman · “Anthropic just dropped the best model ever... (Fable 5.2)”</div></div></div>
+<div id="vw269" class="vwrap" style="left:1000px;top:200px;width:620px;height:349px;z-index:54"><video id="v268" class="clip" src="assets/clips/yt_berman_e0ae141d.mp4" muted playsinline data-start="291.320" data-duration="8.070" data-track-index="1" style="width:620px;height:349px;object-fit:cover"></video></div>
+<div id="vw273" class="vwrap" style="left:300px;top:530px;width:560px;height:315px;z-index:55"><video id="v272" class="clip" src="assets/clips/yt_berman_0ba7f145.mp4" muted playsinline data-start="296.120" data-duration="3.270" data-track-index="1" style="width:560px;height:315px;object-fit:cover"></video></div>
+<div id="s282" class="clip scene" data-start="298.990" data-duration="8.330" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="w283" class="sc"><div id="c278" class="a lab" style="left:0;right:0;top:140px;text-align:center;font-size:40px">and even after all that…</div><div id="c279" class="a card sel" style="left:360px;top:300px;width:640px;height:220px;"><img src="assets/img/claude.png" alt="" style="width:70px;height:70px;vertical-align:middle;margin-right:20px"><span class="ct" style="font-size:52px">Opus 5.5</span><div class="cs" style="margin-top:12px">his day-to-day pick</div></div><div id="c280" class="a note" style="left:420px;top:560px;font-size:52px">rarely runs out of quota</div><div id="c281" class="a meme" style="left:1100px;top:300px;width:560px;height:293px"><img src="assets/img/monkey.jpg" alt="" style="width:560px;height:293px"></div></div></div>
+<div id="s289" class="clip scene" data-start="306.920" data-duration="4.180" data-track-index="2" style="z-index:57" data-layout-allow-overflow data-layout-allow-overlap><div id="w290" class="sc"><div id="c284" class="a im tw" style="left:300px;top:100px;width:640px;height:403px"><img src="assets/img/tw_mollick_50.png" alt="" style="width:640px;height:403px"></div><div id="vc285" class="a vcard" style="left:1000px;top:260px;width:680px;height:383px"></div><div id="c288" class="a note" style="left:1010px;top:700px;font-size:54px">“a sort of jagged AGI”</div></div></div>
+<div id="vw287" class="vwrap" style="left:1000px;top:260px;width:680px;height:383px;z-index:58"><video id="v286" class="clip" src="assets/clips/x_mollick_scooby_a42dcc84.mp4" muted playsinline data-start="307.200" data-duration="3.900" data-track-index="1" style="width:680px;height:383px;object-fit:cover"></video></div>
+<div id="s297" class="clip scene" data-start="310.700" data-duration="8.060" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="w298" class="sc"><div id="c291" class="a im tw" style="left:260px;top:80px;width:620px;height:407px"><img src="assets/img/tw_shumer_52.png" alt="" style="width:620px;height:407px"></div><div id="vc292" class="a vcard" style="left:960px;top:240px;width:720px;height:405px"></div><div id="c295" class="a note" style="left:980px;top:700px;font-size:46px">“the best model ever created”</div><div id="c296" class="a note" style="left:980px;top:790px;font-size:46px">…and a “school hall monitor”</div></div></div>
+<div id="vw294" class="vwrap" style="left:960px;top:240px;width:720px;height:405px;z-index:60"><video id="v293" class="clip" src="assets/clips/x_shumer_voxel_4aab5f27.mp4" muted playsinline data-start="311.000" data-duration="7.760" data-track-index="1" style="width:720px;height:405px;object-fit:cover"></video></div>
+<div id="s302" class="clip scene" data-start="318.360" data-duration="5.360" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div id="w303" class="sc"><div id="c299" class="a card red" style="left:300px;top:340px;width:760px;height:230px;"><div class="mono g" style="font-size:22px">Matt Shumer's review</div><div class="ct" style="margin-top:8px">one of its agents sent emails without his approval</div></div><div id="c300" class="a meme" style="left:1180px;top:300px;width:480px;height:601px"><img src="assets/img/harold.jpg" alt="" style="width:480px;height:601px"></div><div id="c301" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: somethingbig.ai/fable-5-2-review</div></div></div>
+<div id="s313" class="clip scene" data-start="323.320" data-duration="15.960" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><div id="w314" class="sc"><div id="c304" class="a h" style="left:160px;top:70px;font-size:56px">Anthropic's own <span class="blue">showcase</span></div><div id="vc305" class="a vcard" style="left:160px;top:170px;width:1120px;height:630px"></div><div id="c308" class="a src" style="left:160px;top:814px">Anthropic · Fable 5.2 builds an operating system from an empty folder</div><div id="c309" class="a card sel" style="left:1340px;top:220px;width:440px;height:90px;"><div class="li">1,000+ subagents</div></div><div id="c310" class="a card" style="left:1340px;top:330px;width:440px;height:90px;"><div class="li">8 days</div></div><div id="c311" class="a card ok" style="left:1340px;top:440px;width:440px;height:90px;"><div class="li">boots on a real laptop</div></div><div id="c312" class="a lab" style="left:1340px;top:560px;font-size:26px">drivers · windows · login · installer</div></div></div>
+<div id="vw307" class="vwrap" style="left:160px;top:170px;width:1120px;height:630px;z-index:63"><video id="v306" class="clip" src="assets/clips/yt_os_c2f9c7a6.mp4" muted playsinline data-start="326.020" data-duration="13.260" data-track-index="1" style="width:1120px;height:630px;object-fit:cover"></video></div>
+<div id="s321" class="clip scene" data-start="338.880" data-duration="8.060" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="w322" class="sc"><div id="vc315" class="a vcard" style="left:360px;top:130px;width:1200px;height:675px"></div><div id="c318" class="a src" style="left:360px;top:819px">Anthropic · three devices designed by Fable 5.2, built with Diode</div><div id="c319" class="a note" style="left:380px;top:880px;font-size:48px">3 devices from a one-paragraph prompt</div><div id="c320" class="a note" style="left:1180px;top:880px;font-size:48px">all worked, no electrical fixes</div></div></div>
+<div id="vw317" class="vwrap" style="left:360px;top:130px;width:1200px;height:675px;z-index:65"><video id="v316" class="clip" src="assets/clips/yt_devices_de53a6df.mp4" muted playsinline data-start="338.880" data-duration="8.060" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s328" class="clip scene" data-start="346.540" data-duration="10.890" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="w329" class="sc"><div id="m323" class="a mac" style="left:260px;top:120px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:630px"><img id="k324" src="assets/img/a_fermat_el_50519.jpg" alt="a_fermat_el" style="width:1000px;height:630px"></div></div><div id="c325" class="a card sel" style="left:1340px;top:220px;width:440px;height:150px;"><div class="ct">1,000 agents</div><div class="cs">Fermat's Last Theorem</div></div><div id="c326" class="a card" style="left:1340px;top:400px;width:440px;height:150px;"><div class="big blue" style="font-size:90px">30 h</div></div><div id="c327" class="a note" style="left:1340px;top:600px;font-size:42px">translating the proof so a<br>computer can check it,<br>not a new proof</div></div></div>
+<div id="s334" class="clip scene" data-start="357.030" data-duration="9.630" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="w335" class="sc"><div id="c330" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:56px">now the <span class="blue">complaints</span></div><div id="m331" class="a mac" style="left:260px;top:300px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">news.ycombinator.com</div></div><div class="mbody" style="height:250px"><img id="k332" src="assets/img/hn_writing_5d1b7.jpg" alt="hn_writing" style="width:1400px;height:250px"></div></div><div id="c333" class="a note" style="left:1250px;top:760px;font-size:52px">split on its writing</div></div></div>
+<div id="s340" class="clip scene" data-start="366.260" data-duration="7.970" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap><div id="w341" class="sc"><div id="m336" class="a mac" style="left:260px;top:200px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:194px"><img id="k337" src="assets/img/a_table_el_b8d1f.jpg" alt="a_table_el" style="width:1400px;height:194px"></div></div><div id="c338" class="a note" style="left:1000px;top:560px;font-size:52px">Gemini ran at medium effort<span class="arw" style="left:450px;top:-90px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c339" class="a note" style="left:1000px;top:650px;font-size:48px">inside a different tool</div></div></div>
+<div id="s348" class="clip scene" data-start="373.830" data-duration="12.640" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div id="w349" class="sc"><div id="c342" class="a h" style="left:0;right:0;top:120px;text-align:center;font-size:70px">usage limits <span class="blue">confused</span> people</div><div id="c343" class="a card sel" style="left:300px;top:320px;width:560px;height:170px;"><div class="mono g" style="font-size:22px">Max plan</div><div class="ct" style="margin-top:8px">Fable resets</div></div><div id="al344" class="a" style="left:880px;top:395px;width:120px;height:20px;opacity:0"><svg width="120" height="20" viewBox="0 0 120 20"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M2 10H116M106 2L116 10L106 18" fill="none" stroke="#5A606B" stroke-width="2.5"/></svg></div><div id="c345" class="a card" style="left:1020px;top:320px;width:600px;height:170px;"><div class="ct">only give back Fable usage</div><div class="cs">not your whole weekly quota</div></div><div id="c346" class="a note" style="left:300px;top:640px;font-size:54px">you can burn through limits faster</div><div id="c347" class="a meme" style="left:1240px;top:640px;width:420px;height:204px"><img src="assets/img/thisisfine.jpg" alt="" style="width:420px;height:204px"></div></div></div>
+<div id="s355" class="clip scene" data-start="386.070" data-duration="12.440" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="w356" class="sc"><div id="c350" class="a lab" style="left:0;right:0;top:70px;text-align:center;font-size:40px">a detail I found genuinely interesting</div><div id="m351" class="a mac" style="left:260px;top:150px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:526px"><img id="k352" src="assets/img/a_test_40b37.jpg" alt="a_test" style="width:1400px;height:526px"></div></div><div id="c353" class="a note" style="left:300px;top:870px;font-size:50px">harder to trust safety tests</div><div id="c354" class="a card ok" style="left:1180px;top:850px;width:480px;height:90px;"><div class="li">risk still rated: low</div></div></div></div>
+<div id="s361" class="clip scene" data-start="398.110" data-duration="6.860" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div id="w362" class="sc"><div id="m357" class="a mac" style="left:260px;top:150px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:526px"><img id="k358" src="assets/img/a_55_40b37.jpg" alt="a_55" style="width:1400px;height:526px"></div></div><div id="c359" class="a big" style="left:300px;top:830px;font-size:110px"><span class="blue">−55%</span></div><div id="c360" class="a lab" style="left:680px;top:870px;font-size:34px">blocked requests vs Fable 5.1</div></div></div>
+<div id="s367" class="clip scene" data-start="404.570" data-duration="12.900" data-track-index="2" style="z-index:72" data-layout-allow-overflow data-layout-allow-overlap><div id="w368" class="sc"><div id="c363" class="a h" style="left:0;right:0;top:100px;text-align:center;font-size:70px">so, <span class="blue">my take</span></div><div id="c364" class="a card sel" style="left:300px;top:280px;width:640px;height:180px;"><div class="mono g" style="font-size:22px">long, hard technical work</div><div class="ct" style="margin-top:8px">strongest model out right now</div></div><div id="c365" class="a card ok" style="left:1000px;top:280px;width:620px;height:180px;"><div class="mono g" style="font-size:22px">independent tests</div><div class="ct" style="margin-top:8px">mostly back that up</div></div><div id="c366" class="a card" style="left:560px;top:560px;width:800px;height:130px;"><div class="ct" style="text-align:center">use <span class="blue">High</span> effort, <span class="strike2">not Max</span></div></div></div></div>
+<div id="s372" class="clip scene" data-start="417.070" data-duration="5.060" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div id="w373" class="sc"><div id="m369" class="a mac" style="left:260px;top:150px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">anthropic.com/claude-fable-and-mythos-5-2</div></div><div class="mbody" style="height:526px"><img id="k370" src="assets/img/a_opus_40b37.jpg" alt="a_opus" style="width:1400px;height:526px"></div></div><div id="c371" class="a note" style="left:400px;top:880px;font-size:50px">even Anthropic says: Opus 5.5 for everyday stuff</div></div></div>
+<div id="s378" class="clip scene" data-start="421.730" data-duration="7.080" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="w379" class="sc"><div id="c374" class="a lab" style="left:0;right:0;top:220px;text-align:center;font-size:48px">the crazy demos took days and thousands of dollars</div><div id="c375" class="a h" style="left:0;right:0;top:380px;text-align:center;font-size:96px">it's <span class="blue">smarter</span>…</div><div id="c376" class="a h" style="left:0;right:0;top:520px;text-align:center;font-size:72px">but it isn't magic,</div><div id="c377" class="a h" style="left:0;right:0;top:620px;text-align:center;font-size:72px">and it isn't cheap.</div></div></div>
+<div id="s382" class="clip scene" data-start="428.410" data-duration="4.110" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div id="w383" class="sc"><div id="c380" class="a h" style="left:0;right:0;top:330px;text-align:center;font-size:76px">have you tried it yet?</div><div id="c381" class="a note" style="left:640px;top:480px;font-size:56px">tell me what you built in the comments</div></div></div>
+<div id="s386" class="clip scene" data-start="432.120" data-duration="2.280" data-track-index="2" style="z-index:76" data-layout-allow-overflow data-layout-allow-overlap><div id="w387" class="sc"><div id="c384" class="a im" style="left:760px;top:230px;width:400px;height:400px"><img src="assets/img/aiequator.png" alt="" style="width:400px;height:400px"></div><div id="c385" class="a lab" style="left:0;right:0;top:680px;text-align:center;font-size:40px">subscribe for more AI news</div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="434.4" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -60, duration: 434.4, ease: "none" }, 0);
+tl.fromTo("#hooklogo",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.000);
+tl.fromTo("#c1",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.600);
+tl.fromTo("#c2",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},1.560);
+tl.set("#ul3",{opacity:1},3.240);
+tl.fromTo("#ul3 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.4,stagger:0,ease:"power2.out"},3.240);
+tl.set("#w5",{opacity:1},0);
+tl.to("#w5",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},4.120);
+tl.set("#hooklogo",{opacity:1},0);
+tl.fromTo("#vc6",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},4.120);
+tl.fromTo("#vw8",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},4.120);
+tl.fromTo("#c9",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},4.120);
+tl.fromTo("#c10",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},5.920);
+tl.fromTo("#w12",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},4.120);
+tl.to("#w12",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},7.590);
+tl.to("#vw8",{opacity:0,duration:.4,ease:"power2.in"},7.590);
+tl.fromTo("#c13",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},7.590);
+tl.fromTo("#c14",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},9.010);
+tl.fromTo("#c15",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},12.270);
+tl.fromTo("#c16",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},15.550);
+tl.fromTo("#c17",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},19.530);
+tl.fromTo("#w19",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},7.590);
+tl.to("#w19",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},22.140);
+tl.fromTo("#c20",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},22.140);
+tl.fromTo("#c21",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},23.740);
+tl.fromTo("#c22",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.480);
+tl.fromTo("#c23",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},28.360);
+tl.fromTo("#w25",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},22.140);
+tl.to("#w25",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},30.950);
+tl.fromTo("#c26",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},31.040);
+tl.fromTo("#c27",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},31.300);
+tl.fromTo("#w29",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},30.950);
+tl.to("#w29",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},36.480);
+tl.fromTo(".prow .old",{color:"#FFFFFF"},{color:"#6B7079",textDecoration:"line-through",duration:.25},34.34);tl.fromTo(".prow .new",{opacity:0,x:-10},{opacity:1,x:0,duration:.3,stagger:.2},34.5);
+tl.fromTo("#m30",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},36.480);
+tl.fromTo("#k31",{scale:1},{scale:1.035,duration:6.110,ease:"none"},36.480);
+tl.fromTo("#c32",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},38.140);
+tl.fromTo("#c33",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},40.640);
+tl.fromTo("#w35",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},36.480);
+tl.to("#w35",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},42.590);
+tl.fromTo("#m36",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},42.590);
+tl.fromTo("#k37",{scale:1},{scale:1.035,duration:5.100,ease:"none"},42.590);
+tl.fromTo("#c38",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},44.750);
+tl.fromTo("#w40",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},42.590);
+tl.to("#w40",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},47.690);
+tl.fromTo("#c41",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},47.690);
+tl.fromTo("#c42",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},49.510);
+tl.fromTo("#c45",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},52.450);
+tl.fromTo("#c46",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},52.450);
+tl.fromTo("#bf43",{width:0},{width:491,duration:0.9,ease:"power3.out"},52.450);
+count("#bv44",52.450,0,49.1,1,"","%",0.9);
+tl.fromTo("#c49",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},55.410);
+tl.fromTo("#c50",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},55.410);
+tl.fromTo("#bf47",{width:0},{width:455,duration:0.9,ease:"power3.out"},55.410);
+count("#bv48",55.410,0,45.5,1,"","%",0.9);
+tl.fromTo("#c53",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},58.810);
+tl.fromTo("#c54",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},58.810);
+tl.fromTo("#bf51",{width:0},{width:428,duration:0.9,ease:"power3.out"},58.810);
+count("#bv52",58.810,0,42.8,1,"","%",0.9);
+tl.fromTo("#c57",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},61.710);
+tl.fromTo("#c58",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},61.710);
+tl.fromTo("#bf55",{width:0},{width:324,duration:0.9,ease:"power3.out"},61.710);
+count("#bv56",61.710,0,32.4,1,"","%",0.9);
+tl.fromTo("#c59",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},64.590);
+tl.fromTo("#c60",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},48.000);
+tl.fromTo("#w62",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},47.690);
+tl.to("#w62",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},66.610);
+tl.fromTo("#c63",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},66.610);
+tl.fromTo("#c64",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},70.040);
+tl.fromTo("#m65",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},68.800);
+tl.fromTo("#k66",{scale:1},{scale:1.035,duration:13.120,ease:"none"},68.800);
+tl.fromTo("#c67",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},75.240);
+tl.fromTo("#c68",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},78.860);
+tl.fromTo("#c69",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},80.740);
+tl.fromTo("#w71",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},66.610);
+tl.to("#w71",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},81.920);
+tl.fromTo("#vc72",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},81.920);
+tl.fromTo("#vw74",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},81.920);
+tl.fromTo("#c75",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},81.920);
+tl.fromTo("#c76",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.000);
+tl.fromTo("#w78",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},81.920);
+tl.to("#w78",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},87.150);
+tl.to("#vw74",{opacity:0,duration:.4,ease:"power2.in"},87.150);
+tl.fromTo("#vc79",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.900);
+tl.fromTo("#vw81",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.900);
+tl.fromTo("#c82",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},85.220);
+tl.fromTo("#w84",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},84.900);
+tl.to("#w84",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},87.150);
+tl.to("#vw81",{opacity:0,duration:.4,ease:"power2.in"},87.150);
+tl.fromTo("#m85",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},87.150);
+tl.fromTo("#k86",{scale:1},{scale:1.035,duration:6.440,ease:"none"},87.150);
+tl.fromTo("#c87",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},88.870);
+tl.fromTo("#c88",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},89.850);
+tl.fromTo("#w90",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},87.150);
+tl.to("#w90",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},93.590);
+tl.fromTo("#c91",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},93.590);
+tl.fromTo("#c92",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},98.550);
+tl.fromTo("#c93",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},99.000);
+tl.fromTo("#c94",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},99.470);
+tl.fromTo("#c95",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},99.900);
+tl.fromTo("#c96",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},98.900);
+tl.fromTo("#w98",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},93.590);
+tl.to("#w98",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},101.630);
+tl.fromTo("#c99",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},101.630);
+tl.fromTo("#c100",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},101.900);
+tl.fromTo("#w102",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},101.630);
+tl.to("#w102",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},107.700);
+tl.fromTo("#m103",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},107.700);
+tl.fromTo("#k104",{scale:1},{scale:1.035,duration:9.900,ease:"none"},107.700);
+tl.fromTo("#c105",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},108.500);
+tl.fromTo("#c106",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},110.000);
+tl.fromTo("#c107",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},114.520);
+tl.fromTo("#w109",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},107.700);
+tl.to("#w109",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},117.600);
+tl.fromTo("#c110",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.600);
+tl.fromTo("#c111",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.800);
+tl.fromTo("#c114",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},124.560);
+tl.fromTo("#c115",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},124.560);
+tl.fromTo("#bf112",{width:0},{width:670,duration:0.9,ease:"power3.out"},124.560);
+count("#bv113",124.560,0,67,1,"","%",0.9);
+tl.fromTo("#c118",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},119.560);
+tl.fromTo("#c119",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},119.560);
+tl.fromTo("#bf116",{width:0},{width:600,duration:0.9,ease:"power3.out"},119.560);
+count("#bv117",119.560,0,60,1,"","%",0.9);
+tl.fromTo("#c122",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},121.260);
+tl.fromTo("#c123",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},121.260);
+tl.fromTo("#bf120",{width:0},{width:600,duration:0.9,ease:"power3.out"},121.260);
+count("#bv121",121.260,0,60,1,"","%",0.9);
+tl.fromTo("#c124",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},122.900);
+tl.fromTo("#w126",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},117.600);
+tl.to("#w126",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},126.100);
+tl.fromTo("#m127",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},126.100);
+tl.fromTo("#k128",{scale:1},{scale:1.035,duration:9.620,ease:"none"},126.100);
+tl.fromTo("#c129",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},128.180);
+tl.fromTo("#c130",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},128.500);
+tl.fromTo("#c131",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},132.180);
+tl.fromTo("#w133",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},126.100);
+tl.to("#w133",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},135.720);
+tl.fromTo("#c134",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},135.720);
+tl.fromTo("#c135",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},138.840);
+tl.fromTo("#c136",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},136.000);
+tl.fromTo("#w138",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},135.720);
+tl.to("#w138",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},144.040);
+tl.fromTo("#c139",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},144.040);
+tl.fromTo("#c140",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},147.520);
+tl.fromTo("#c141",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},149.180);
+tl.fromTo("#w143",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},144.040);
+tl.to("#w143",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},151.980);
+tl.fromTo("#c144",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},151.980);
+tl.fromTo("#c145",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},154.830);
+tl.fromTo("#c146",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},158.030);
+tl.fromTo("#c147",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},159.810);
+tl.fromTo("#c148",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},155.600);
+tl.fromTo("#w150",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},151.980);
+tl.to("#w150",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},161.450);
+tl.fromTo("#c151",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},161.450);
+tl.fromTo("#c152",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},162.420);
+tl.fromTo("#c153",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},163.990);
+tl.fromTo("#c154",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},166.310);
+tl.fromTo("#c155",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},168.490);
+tl.fromTo("#c156",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},168.800);
+tl.fromTo("#w158",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},161.450);
+tl.to("#w158",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},170.850);
+tl.fromTo("#c159",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},170.850);
+tl.fromTo("#c160",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},173.600);
+tl.fromTo("#c161",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},171.100);
+tl.fromTo("#w163",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},170.850);
+tl.to("#w163",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},177.290);
+tl.fromTo("#c164",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},177.290);
+tl.fromTo("#c165",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},181.290);
+tl.fromTo("#c166",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},183.630);
+tl.fromTo("#c167",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},177.600);
+tl.fromTo("#w169",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},177.290);
+tl.to("#w169",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},186.300);
+tl.fromTo("#c170",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},186.300);
+tl.fromTo("#c171",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},189.820);
+tl.fromTo("#w173",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},186.300);
+tl.to("#w173",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},193.400);
+tl.fromTo("#m174",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},193.400);
+tl.fromTo("#k175",{scale:1},{scale:1.035,duration:8.040,ease:"none"},193.400);
+tl.fromTo("#c176",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},193.600);
+tl.fromTo("#c177",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},193.800);
+tl.fromTo("#c178",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},195.260);
+tl.fromTo("#c179",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},198.360);
+tl.fromTo("#w181",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},193.400);
+tl.to("#w181",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},201.440);
+tl.fromTo("#c182",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},201.440);
+tl.fromTo("#c183",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},201.600);
+tl.fromTo("#c186",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},207.820);
+tl.fromTo("#c187",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},207.820);
+tl.fromTo("#bf184",{width:0},{width:855,duration:0.9,ease:"power3.out"},207.820);
+count("#bv185",207.820,0,95.0,1,"","%",0.9);
+tl.fromTo("#c190",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},210.020);
+tl.fromTo("#c191",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},210.020);
+tl.fromTo("#bf188",{width:0},{width:847,duration:0.9,ease:"power3.out"},210.020);
+count("#bv189",210.020,0,94.2,1,"","%",0.9);
+tl.fromTo("#c194",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},203.720);
+tl.fromTo("#c195",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},203.720);
+tl.fromTo("#bf192",{width:0},{width:844,duration:0.9,ease:"power3.out"},203.720);
+count("#bv193",203.720,0,93.8,1,"","%",0.9);
+tl.fromTo("#c196",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},205.460);
+tl.fromTo("#w198",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},201.440);
+tl.to("#w198",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},214.120);
+tl.fromTo("#c199",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},214.120);
+tl.fromTo("#c200",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},217.940);
+tl.fromTo("#c201",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},222.000);
+tl.fromTo("#c202",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},214.400);
+tl.fromTo("#w204",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},214.120);
+tl.to("#w204",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},225.760);
+tl.fromTo("#c205",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},225.760);
+tl.fromTo("#c206",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},227.300);
+tl.fromTo("#w208",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},225.760);
+tl.to("#w208",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},229.940);
+tl.fromTo("#c209",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},229.940);
+tl.fromTo("#c210",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},232.190);
+tl.fromTo("#c211",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},233.450);
+tl.fromTo("#c212",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},230.200);
+tl.fromTo("#w214",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},229.940);
+tl.to("#w214",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},238.750);
+tl.fromTo("#vc215",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},238.750);
+tl.fromTo("#vw217",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},238.750);
+tl.fromTo("#c218",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},238.750);
+tl.fromTo("#c219",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},240.330);
+tl.fromTo("#w221",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},238.750);
+tl.to("#w221",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},244.370);
+tl.to("#vw217",{opacity:0,duration:.4,ease:"power2.in"},244.370);
+tl.fromTo("#vc222",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},244.370);
+tl.fromTo("#vw224",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},244.370);
+tl.fromTo("#c225",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},244.370);
+tl.fromTo("#c226",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},245.310);
+tl.fromTo("#w228",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},244.370);
+tl.to("#w228",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},249.020);
+tl.to("#vw224",{opacity:0,duration:.4,ease:"power2.in"},249.020);
+tl.fromTo("#c229",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},249.020);
+tl.fromTo("#c230",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},250.820);
+tl.fromTo("#c231",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},252.560);
+tl.fromTo("#c232",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},254.000);
+tl.fromTo("#c233",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},255.000);
+tl.fromTo("#c234",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},249.300);
+tl.fromTo("#w236",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},249.020);
+tl.to("#w236",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},257.300);
+tl.fromTo("#c237",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},257.300);
+tl.fromTo("#c238",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},258.840);
+tl.fromTo("#c239",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},260.640);
+tl.fromTo("#c240",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},257.600);
+tl.fromTo("#w242",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},257.300);
+tl.to("#w242",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},263.320);
+tl.fromTo("#c243",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},263.320);
+tl.fromTo("#c244",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},264.320);
+tl.fromTo("#c245",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},268.060);
+tl.fromTo("#c246",{opacity:0,scale:.86,rotation:-6},{opacity:1,scale:1,rotation:-2,duration:.22,ease:"back.out(2)"},266.000);
+tl.fromTo("#w248",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},263.320);
+tl.to("#w248",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},269.940);
+tl.fromTo("#c249",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},269.940);
+tl.fromTo("#c250",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},272.600);
+tl.fromTo("#c251",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},272.800);
+tl.fromTo("#c252",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},275.300);
+tl.fromTo("#c253",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},276.000);
+tl.fromTo("#w255",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},269.940);
+tl.to("#w255",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},278.180);
+count("#tok",272.600,0,100,0,"","",1.2);
+tl.fromTo("#vc256",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},278.180);
+tl.fromTo("#vw258",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},278.180);
+tl.fromTo("#c259",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},278.180);
+tl.fromTo("#c260",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},281.900);
+tl.fromTo("#c261",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},282.860);
+tl.fromTo("#c262",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},284.020);
+tl.fromTo("#w264",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},278.180);
+tl.to("#w264",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},285.560);
+tl.to("#vw258",{opacity:0,duration:.4,ease:"power2.in"},285.560);
+tl.fromTo("#c265",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},285.560);
+tl.fromTo("#c266",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},285.900);
+tl.fromTo("#vc267",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.320);
+tl.fromTo("#vw269",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.320);
+tl.fromTo("#c270",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.600);
+tl.fromTo("#vc271",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},296.120);
+tl.fromTo("#vw273",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},296.120);
+tl.fromTo("#c274",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},296.400);
+tl.fromTo("#c275",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},286.000);
+tl.fromTo("#w277",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},285.560);
+tl.to("#w277",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},298.990);
+tl.to("#vw269",{opacity:0,duration:.4,ease:"power2.in"},298.990);
+tl.to("#vw273",{opacity:0,duration:.4,ease:"power2.in"},298.990);
+tl.fromTo("#c278",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},298.990);
+tl.fromTo("#c279",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},300.740);
+tl.fromTo("#c280",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},304.420);
+tl.fromTo("#c281",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},302.000);
+tl.fromTo("#w283",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},298.990);
+tl.to("#w283",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},306.920);
+tl.fromTo("#c284",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},306.920);
+tl.fromTo("#vc285",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},307.200);
+tl.fromTo("#vw287",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},307.200);
+tl.fromTo("#c288",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},308.720);
+tl.fromTo("#w290",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},306.920);
+tl.to("#w290",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},310.700);
+tl.to("#vw287",{opacity:0,duration:.4,ease:"power2.in"},310.700);
+tl.fromTo("#c291",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},310.700);
+tl.fromTo("#vc292",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},311.000);
+tl.fromTo("#vw294",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},311.000);
+tl.fromTo("#c295",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},311.600);
+tl.fromTo("#c296",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},316.480);
+tl.fromTo("#w298",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},310.700);
+tl.to("#w298",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},318.360);
+tl.to("#vw294",{opacity:0,duration:.4,ease:"power2.in"},318.360);
+tl.fromTo("#c299",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},318.360);
+tl.fromTo("#c300",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},319.500);
+tl.fromTo("#c301",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},318.600);
+tl.fromTo("#w303",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},318.360);
+tl.to("#w303",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},323.320);
+tl.fromTo("#c304",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},323.320);
+tl.fromTo("#vc305",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},326.020);
+tl.fromTo("#vw307",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},326.020);
+tl.fromTo("#c308",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},326.020);
+tl.fromTo("#c309",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},330.720);
+tl.fromTo("#c310",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},331.860);
+tl.fromTo("#c311",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},333.660);
+tl.fromTo("#c312",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},335.020);
+tl.fromTo("#w314",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},323.320);
+tl.to("#w314",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},338.880);
+tl.to("#vw307",{opacity:0,duration:.4,ease:"power2.in"},338.880);
+tl.fromTo("#vc315",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},338.880);
+tl.fromTo("#vw317",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},338.880);
+tl.fromTo("#c318",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},338.880);
+tl.fromTo("#c319",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},340.100);
+tl.fromTo("#c320",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},343.520);
+tl.fromTo("#w322",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},338.880);
+tl.to("#w322",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},346.540);
+tl.to("#vw317",{opacity:0,duration:.4,ease:"power2.in"},346.540);
+tl.fromTo("#m323",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},346.540);
+tl.fromTo("#k324",{scale:1},{scale:1.035,duration:10.490,ease:"none"},346.540);
+tl.fromTo("#c325",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},347.280);
+tl.fromTo("#c326",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},349.200);
+tl.fromTo("#c327",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},351.350);
+tl.fromTo("#w329",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},346.540);
+tl.to("#w329",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},357.030);
+tl.fromTo("#c330",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},357.030);
+tl.fromTo("#m331",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},358.560);
+tl.fromTo("#k332",{scale:1},{scale:1.035,duration:7.700,ease:"none"},358.560);
+tl.fromTo("#c333",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},361.460);
+tl.fromTo("#w335",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},357.030);
+tl.to("#w335",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},366.260);
+tl.fromTo("#m336",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},366.260);
+tl.fromTo("#k337",{scale:1},{scale:1.035,duration:7.570,ease:"none"},366.260);
+tl.fromTo("#c338",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},369.340);
+tl.fromTo("#c339",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},371.000);
+tl.fromTo("#w341",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},366.260);
+tl.to("#w341",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},373.830);
+tl.fromTo("#c342",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},373.830);
+tl.fromTo("#c343",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},376.390);
+tl.set("#al344",{opacity:1},379.000);
+tl.fromTo("#al344 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.35,stagger:0,ease:"power2.out"},379.000);
+tl.fromTo("#c345",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},379.450);
+tl.fromTo("#c346",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},384.570);
+tl.fromTo("#c347",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},385.000);
+tl.fromTo("#w349",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},373.830);
+tl.to("#w349",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},386.070);
+tl.fromTo("#c350",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},386.070);
+tl.fromTo("#m351",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},388.790);
+tl.fromTo("#k352",{scale:1},{scale:1.035,duration:9.320,ease:"none"},388.790);
+tl.fromTo("#c353",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},392.410);
+tl.fromTo("#c354",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},395.610);
+tl.fromTo("#w356",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},386.070);
+tl.to("#w356",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},398.110);
+tl.fromTo("#m357",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},398.110);
+tl.fromTo("#k358",{scale:1},{scale:1.035,duration:6.460,ease:"none"},398.110);
+tl.fromTo("#c359",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},400.790);
+tl.fromTo("#c360",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},401.000);
+tl.fromTo("#w362",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},398.110);
+tl.to("#w362",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},404.570);
+tl.fromTo("#c363",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},404.570);
+tl.fromTo("#c364",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},406.010);
+tl.fromTo("#c365",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},411.730);
+tl.fromTo("#c366",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},414.650);
+tl.fromTo("#w368",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},404.570);
+tl.to("#w368",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},417.070);
+tl.fromTo("#m369",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},417.070);
+tl.fromTo("#k370",{scale:1},{scale:1.035,duration:4.660,ease:"none"},417.070);
+tl.fromTo("#c371",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},418.600);
+tl.fromTo("#w373",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},417.070);
+tl.to("#w373",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},421.730);
+tl.fromTo("#c374",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},421.730);
+tl.fromTo("#c375",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},425.070);
+tl.fromTo("#c376",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},426.000);
+tl.fromTo("#c377",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},426.990);
+tl.fromTo("#w379",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},421.730);
+tl.to("#w379",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},428.410);
+tl.fromTo("#c380",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},428.410);
+tl.fromTo("#c381",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},429.790);
+tl.fromTo("#w383",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},428.410);
+tl.to("#w383",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},432.120);
+tl.fromTo("#c384",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},432.120);
+tl.fromTo("#c385",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},432.120);
+tl.fromTo("#w387",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},432.120);
+tl.set({}, {}, 434.4);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

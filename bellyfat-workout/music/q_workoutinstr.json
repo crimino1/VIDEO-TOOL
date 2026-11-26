@@ -1,0 +1,90 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "549e3a52-eee4-42c6-9b24-5783c224ab13",
+   "title": "Workout",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1205623",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1205623&format=mp32",
+   "creator": "BAMP",
+   "creator_url": "https://www.jamendo.com/artist/443558/Blinoff",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "disco",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "80s",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "discorock",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Workout\" by BAMP is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "10",
+    "foreign_landing_url": "https://www.jamendo.com/album/144821/10",
+    "creator": "BAMP",
+    "creator_url": "https://www.jamendo.com/artist/443558/Blinoff",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 191000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/549e3a52-eee4-42c6-9b24-5783c224ab13/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/549e3a52-eee4-42c6-9b24-5783c224ab13/",
+   "related_url": "https://api.openverse.org/v1/audio/549e3a52-eee4-42c6-9b24-5783c224ab13/related/",
+   "waveform": "https://api.openverse.org/v1/audio/549e3a52-eee4-42c6-9b24-5783c224ab13/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

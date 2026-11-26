@@ -1,0 +1,547 @@
+Deep Neural Networks for YouTube Recommendations
+
+                              Paul Covington, Jay Adams, Emre Sargin
+
+                                                                 Google
+                                                         Mountain View, CA
+
+                               {pcovington, jka, msargin}@google.com
+
+ABSTRACT
+
+YouTube represents one of the largest scale and most sophis-
+ticated industrial recommendation systems in existence. In
+this paper, we describe the system at a high level and fo-
+cus on the dramatic performance improvements brought by
+deep learning. The paper is split according to the classic
+two-stage information retrieval dichotomy: first, we detail a
+deep candidate generation model and then describe a sepa-
+rate deep ranking model. We also provide practical lessons
+and insights derived from designing, iterating and maintain-
+ing a massive recommendation system with enormous user-
+facing impact.
+
+Keywords
+
+recommender system; deep learning; scalability
+
+1. INTRODUCTION                                                                            Figure 1: Recommendations displayed on YouTube
+                                                                                           mobile app home.
+   YouTube is the world's largest platform for creating, shar-
+ing and discovering video content. YouTube recommenda-                                            with well-established videos can be understood from
+tions are responsible for helping more than a billion users                                       an exploration/exploitation perspective.
+discover personalized content from an ever-growing corpus
+of videos. In this paper we will focus on the immense im-                                      · Noise: Historical user behavior on YouTube is inher-
+pact deep learning has recently had on the YouTube video                                          ently difficult to predict due to sparsity and a vari-
+recommendations system. Figure 1 illustrates the recom-                                           ety of unobservable external factors. We rarely ob-
+mendations on the YouTube mobile app home.                                                        tain the ground truth of user satisfaction and instead
+                                                                                                  model noisy implicit feedback signals. Furthermore,
+   Recommending YouTube videos is extremely challenging                                           metadata associated with content is poorly structured
+from three major perspectives:                                                                    without a well defined ontology. Our algorithms need
+                                                                                                  to be robust to these particular characteristics of our
+    · Scale: Many existing recommendation algorithms proven                                       training data.
+       to work well on small problems fail to operate on our
+       scale. Highly specialized distributed learning algorithms                              In conjugation with other product areas across Google,
+       and efficient serving systems are essential for handling                            YouTube has undergone a fundamental paradigm shift to-
+       YouTube's massive user base and corpus.                                             wards using deep learning as a general-purpose solution for
+                                                                                           nearly all learning problems. Our system is built on Google
+    · Freshness: YouTube has a very dynamic corpus with                                    Brain [4] which was recently open sourced as TensorFlow [1].
+       many hours of video are uploaded per second. The                                    TensorFlow provides a flexible framework for experimenting
+       recommendation system should be responsive enough                                   with various deep neural network architectures using large-
+       to model newly uploaded content as well as the lat-                                 scale distributed training. Our models learn approximately
+       est actions taken by the user. Balancing new content                                one billion parameters and are trained on hundreds of bil-
+                                                                                           lions of examples.
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed         In contrast to vast amount of research in matrix factoriza-
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for third-party components of this work must be honored.
+For all other uses, contact the owner/author(s).
+RecSys '16 September 15-19, 2016, Boston , MA, USA
+ c 2016 Copyright held by the owner/author(s).
+
+ACM ISBN 978-1-4503-4035-9/16/09.
+DOI: http://dx.doi.org/10.1145/2959100.2959190
+tion methods [19], there is relatively little work using deep                      user history and context
+neural networks for recommendation systems. Neural net-
+works are used for recommending news in [17], citations in       video   millions  candidate hundreds  ranking   dozens
+[8] and review ratings in [20]. Collaborative filtering is for-  corpus            generation
+mulated as a deep neural network in [22] and autoencoders
+in [18]. Elkahky et al. used deep learning for cross domain      other candidate sources                video
+user modeling [5]. In a content-based setting, Burges et al.                                           features
+used deep neural networks for music recommendation [21].
+                                                                 Figure 2: Recommendation system architecture
+   The paper is organized as follows: A brief system overview    demonstrating the "funnel" where candidate videos
+is presented in Section 2. Section 3 describes the candidate     are retrieved and ranked before presenting only a
+generation model in more detail, including how it is trained     few to the user.
+and used to serve recommendations. Experimental results
+will show how the model benefits from deep layers of hidden      described here was a matrix factorization approach trained
+units and additional heterogeneous signals. Section 4 details    under rank loss [23]. Early iterations of our neural network
+the ranking model, including how classic logistic regression     model mimicked this factorization behavior with shallow
+is modified to train a model predicting expected watch time      networks that only embedded the user's previous watches.
+(rather than click probability). Experimental results will       From this perspective, our approach can be viewed as a non-
+show that hidden layer depth is helpful as well in this situa-   linear generalization of factorization techniques.
+tion. Finally, Section 5 presents our conclusions and lessons
+learned.                                                         3.1 Recommendation as Classification
+
+2. SYSTEM OVERVIEW                                                  We pose recommendation as extreme multiclass classifica-
+                                                                 tion where the prediction problem becomes accurately clas-
+   The overall structure of our recommendation system is il-     sifying a specific video watch wt at time t among millions
+lustrated in Figure 2. The system is comprised of two neural     of videos i (classes) from a corpus V based on a user U and
+networks: one for candidate generation and one for ranking.      context C,
+
+   The candidate generation network takes events from the                P (wt = i|U, C) =              evi u
+user's YouTube activity history as input and retrieves a                                               jV evj u
+small subset (hundreds) of videos from a large corpus. These
+candidates are intended to be generally relevant to the user     where u  RN represents a high-dimensional "embedding" of
+with high precision. The candidate generation network only       the user, context pair and the vj  RN represent embeddings
+provides broad personalization via collaborative filtering.      of each candidate video. In this setting, an embedding is
+The similarity between users is expressed in terms of coarse     simply a mapping of sparse entities (individual videos, users
+features such as IDs of video watches, search query tokens       etc.) into a dense vector in RN . The task of the deep neural
+and demographics.                                                network is to learn user embeddings u as a function of the
+                                                                 user's history and context that are useful for discriminating
+   Presenting a few "best" recommendations in a list requires    among videos with a softmax classifier.
+a fine-level representation to distinguish relative importance
+among candidates with high recall. The ranking network              Although explicit feedback mechanisms exist on YouTube
+accomplishes this task by assigning a score to each video        (thumbs up/down, in-product surveys, etc.) we use the im-
+according to a desired objective function using a rich set of    plicit feedback [16] of watches to train the model, where a
+features describing the video and user. The highest scoring      user completing a video is a positive example. This choice is
+videos are presented to the user, ranked by their score.         based on the orders of magnitude more implicit user history
+                                                                 available, allowing us to produce recommendations deep in
+   The two-stage approach to recommendation allows us to         the tail where explicit feedback is extremely sparse.
+make recommendations from a very large corpus (millions)
+of videos while still being certain that the small number of     Efficient Extreme Multiclass
+videos appearing on the device are personalized and engag-
+ing for the user. Furthermore, this design enables blending      To efficiently train such a model with millions of classes, we
+candidates generated by other sources, such as those de-         rely on a technique to sample negative classes from the back-
+scribed in an earlier work [3].                                  ground distribution ("candidate sampling") and then correct
+                                                                 for this sampling via importance weighting [10]. For each ex-
+   During development, we make extensive use of offline met-     ample the cross-entropy loss is minimized for the true label
+rics (precision, recall, ranking loss, etc.) to guide iterative  and the sampled negative classes. In practice several thou-
+improvements to our system. However for the final deter-         sand negatives are sampled, corresponding to more than 100
+mination of the effectiveness of an algorithm or model, we       times speedup over traditional softmax. A popular alterna-
+rely on A/B testing via live experiments. In a live experi-      tive approach is hierarchical softmax [15], but we weren't
+ment, we can measure subtle changes in click-through rate,
+watch time, and many other metrics that measure user en-
+gagement. This is important because live A/B results are
+not always correlated with offline experiments.
+
+3. CANDIDATE GENERATION
+
+   During candidate generation, the enormous YouTube cor-
+pus is winnowed down to hundreds of videos that may be
+relevant to the user. The predecessor to the recommender
+able to achieve comparable accuracy. In hierarchical soft-       behavior from historical examples. The distribution of video
+max, traversing each node in the tree involves discriminat-      popularity is highly non-stationary but the multinomial dis-
+ing between sets of classes that are often unrelated, making     tribution over the corpus produced by our recommender will
+the classification problem much more difficult and degrading     reflect the average watch likelihood in the training window
+performance.                                                     of several weeks. To correct for this, we feed the age of the
+                                                                 training example as a feature during training. At serving
+   At serving time we need to compute the most likely N          time, this feature is set to zero (or slightly negative) to re-
+classes (videos) in order to choose the top N to present         flect that the model is making predictions at the very end
+to the user. Scoring millions of items under a strict serv-      of the training window.
+ing latency of tens of milliseconds requires an approximate
+scoring scheme sublinear in the number of classes. Previous         Figure 4 demonstrates the efficacy of this approach on an
+systems at YouTube relied on hashing [24] and the classi-        arbitrarily chosen video [26].
+fier described here uses a similar approach. Since calibrated
+likelihoods from the softmax output layer are not needed                            0.008                   Baseline Model
+at serving time, the scoring problem reduces to a nearest                           0.007                   With Example Age
+neighbor search in the dot product space for which general                          0.006                   Empirical Distribution
+purpose libraries can be used [12]. We found that A/B re-
+sults were not particularly sensitive to the choice of nearest   Class Probability  0.005
+neighbor search algorithm.
+                                                                                    0.004
+3.2 Model Architecture
+                                                                                    0.003
+   Inspired by continuous bag of words language models [14],
+we learn high dimensional embeddings for each video in a                            0.002
+fixed vocabulary and feed these embeddings into a feedfor-
+ward neural network. A user's watch history is represented                          0.001
+by a variable-length sequence of sparse video IDs which is
+mapped to a dense vector representation via the embed-                              0.000                               30
+dings. The network requires fixed-sized dense inputs and                            -30    -20  -10  0  10  20              40
+simply averaging the embeddings performed best among sev-
+eral strategies (sum, component-wise max, etc.). Impor-                                              Days Since Upload
+tantly, the embeddings are learned jointly with all other
+model parameters through normal gradient descent back-           Figure 4: For a given video [26], the model trained
+propagation updates. Features are concatenated into a wide       with example age as a feature is able to accurately
+first layer, followed by several layers of fully connected Rec-  represent the upload time and time-dependant pop-
+tified Linear Units (ReLU) [6]. Figure 3 shows the general       ularity observed in the data. Without the feature,
+network architecture with additional non-video watch fea-        the model would predict approximately the average
+tures described below.                                           likelihood over the training window.
+
+3.3 Heterogeneous Signals                                        3.4 Label and Context Selection
+
+   A key advantage of using deep neural networks as a gener-        It is important to emphasize that recommendation often
+alization of matrix factorization is that arbitrary continuous   involves solving a surrogate problem and transferring the
+and categorical features can be easily added to the model.       result to a particular context. A classic example is the as-
+Search history is treated similarly to watch history - each      sumption that accurately predicting ratings leads to effective
+query is tokenized into unigrams and bigrams and each to-        movie recommendations [2]. We have found that the choice
+ken is embedded. Once averaged, the user's tokenized, em-        of this surrogate learning problem has an outsized impor-
+bedded queries represent a summarized dense search history.      tance on performance in A/B testing but is very difficult to
+Demographic features are important for providing priors so       measure with offline experiments.
+that the recommendations behave reasonably for new users.
+The user's geographic region and device are embedded and            Training examples are generated from all YouTube watches
+concatenated. Simple binary and continuous features such         (even those embedded on other sites) rather than just watches
+as the user's gender, logged-in state and age are input di-      on the recommendations we produce. Otherwise, it would
+rectly into the network as real values normalized to [0, 1].     be very difficult for new content to surface and the recom-
+                                                                 mender would be overly biased towards exploitation. If users
+"Example Age" Feature                                            are discovering videos through means other than our recom-
+                                                                 mendations, we want to be able to quickly propagate this
+Many hours worth of videos are uploaded each second to           discovery to others via collaborative filtering. Another key
+YouTube. Recommending this recently uploaded ("fresh")           insight that improved live metrics was to generate a fixed
+content is extremely important for YouTube as a product.         number of training examples per user, effectively weighting
+We consistently observe that users prefer fresh content, though  our users equally in the loss function. This prevented a small
+not at the expense of relevance. In addition to the first-order  cohort of highly active users from dominating the loss.
+effect of simply recommending new videos that users want
+to watch, there is a critical secondary phenomenon of boot-         Somewhat counter-intuitively, great care must be taken
+strapping and propagating viral content [11].                    to withhold information from the classifier in order to pre-
+                                                                 vent the model from exploiting the structure of the site and
+   Machine learning systems often exhibit an implicit bias       overfitting the surrogate problem. Consider as an example a
+towards the past because they are trained to predict future
+         approx. top N                                                  class probabilities
+
+                                    video vectors                       softmax
+                                                                          training
+nearest neighbor
+       index
+
+                                 user vector
+
+serving                                                           ReLU
+
+                                                                  ReLU
+                                                                  ReLU
+
+watch vector  search vector
+
+average                 average                                                   example age
+
+                                                                        geographic             gender
+                                                                        embedding
+
+embedded video watches embedded search tokens
+
+Figure 3: Deep candidate generation model architecture showing embedded sparse features concatenated with
+dense features. Embeddings are averaged before concatenation to transform variable sized bags of sparse IDs
+into fixed-width vectors suitable for input to the hidden layers. All hidden layers are fully connected. In
+training, a cross-entropy loss is minimized with gradient descent on the output of the sampled softmax.
+At serving, an approximate nearest neighbor lookup is performed to generate hundreds of candidate video
+recommendations.
+
+case in which the user has just issued a search query for "tay-   mation and ignores any asymmetric consumption patterns.
+lor swift". Since our problem is posed as predicting the next     In contrast, we "rollback" a user's history by choosing a ran-
+watched video, a classifier given this information will predict   dom watch and only input actions the user took before the
+that the most likely videos to be watched are those which         held-out label watch (5b).
+appear on the corresponding search results page for "tay-
+lor swift". Unsurpisingly, reproducing the user's last search     3.5 Experiments with Features and Depth
+page as homepage recommendations performs very poorly.
+By discarding sequence information and representing search           Adding features and depth significantly improves preci-
+queries with an unordered bag of tokens, the classifier is no     sion on holdout data as shown in Figure 6. In these exper-
+longer directly aware of the origin of the label.                 iments, a vocabulary of 1M videos and 1M search tokens
+                                                                  were embedded with 256 floats each in a maximum bag size
+   Natural consumption patterns of videos typically lead to       of 50 recent watches and 50 recent searches. The softmax
+very asymmetric co-watch probabilities. Episodic series are       layer outputs a multinomial distribution over the same 1M
+usually watched sequentially and users often discover artists     video classes with a dimension of 256 (which can be thought
+in a genre beginning with the most broadly popular before         of as a separate output video embedding). These models
+focusing on smaller niches. We therefore found much better        were trained until convergence over all YouTube users, corre-
+performance predicting the user's next watch, rather than         sponding to several epochs over the data. Network structure
+predicting a randomly held-out watch (Figure 5). Many col-        followed a common "tower" pattern in which the bottom of
+laborative filtering systems implicitly choose the labels and     the network is widest and each successive hidden layer halves
+context by holding out a random item and predicting it from       the number of units (similar to Figure 3). The depth zero
+other items in the user's history (5a). This leaks future infor-  network is effectively a linear factorization scheme which
+                                            label  network inputs     network inputs  label
+                   network inputs
+
+                   watch history                                      watch history
+
+                   search history                     time            search history  time
+
+                   (a) Predicting held-out watch                      (b) Predicting future watch
+
+Figure 5: Choosing labels and input context to the model is challenging to evaluate offline but has a large
+impact on live performance. Here, solid events · are input features to the network while hollow events  are
+excluded. We found predicting a future watch (5b) performed better in A/B testing. In (5b), the example
+age is expressed as tmax - tN where tmax is the maximum observed time in the training data.
+
+performed very similarly to the predecessor system. Width             video with high probability generally but is unlikely to click
+and depth were added until the incremental benefit dimin-             on the specific homepage impression due to the choice of
+ished and convergence became difficult:                               thumbnail image. During ranking, we have access to many
+                                                                      more features describing the video and the user's relation-
+    · Depth 0: A linear layer simply transforms the concate-          ship to the video because only a few hundred videos are
+       nation layer to match the softmax dimension of 256             being scored rather than the millions scored in candidate
+                                                                      generation. Ranking is also crucial for ensembling different
+    · Depth 1: 256 ReLU                                               candidate sources whose scores are not directly comparable.
+
+    · Depth 2: 512 ReLU  256 ReLU                                        We use a deep neural network with similar architecture as
+                                                                      candidate generation to assign an independent score to each
+    · Depth 3: 1024 ReLU  512 ReLU  256 ReLU                          video impression using logistic regression (Figure 7). The
+                                                                      list of videos is then sorted by this score and returned to the
+    · Depth 4: 2048 ReLU  1024 ReLU  512 ReLU                         user. Our final ranking objective is constantly being tuned
+       256 ReLU                                                       based on live A/B testing results but is generally a simple
+                                                                      function of expected watch time per impression. Ranking
+               14                                                     by click-through rate often promotes deceptive videos that
+                                                                      the user does not complete ("clickbait") whereas watch time
+               12                                                     better captures engagement [13, 25].
+
+Holdout MAP %  10                                                     4.1 Feature Representation
+
+               8                                                         Our features are segregated with the traditional taxonomy
+                                                                      of categorical and continuous/ordinal features. The categor-
+               6                                                      ical features we use vary widely in their cardinality - some
+                                                                      are binary (e.g. whether the user is logged-in) while others
+               4                  Watches Only                        have millions of possible values (e.g. the user's last search
+                                                                      query). Features are further split according to whether they
+                                  Watches & Searches                  contribute only a single value ("univalent") or a set of values
+                                                                      ("multivalent"). An example of a univalent categorical fea-
+               2                  Watches, Searches & Example Age     ture is the video ID of the impression being scored, while a
+                                                                      corresponding multivalent feature might be a bag of the last
+                                  All Features                        N video IDs the user has watched. We also classify features
+                                                                      according to whether they describe properties of the item
+               00  1               2               3               4  ("impression") or properties of the user/context ("query").
+                                                                      Query features are computed once per request while impres-
+                      Network Depth                                   sion features are computed for each item scored.
+
+Figure 6: Features beyond video embeddings im-                        Feature Engineering
+prove holdout Mean Average Precision (MAP) and
+layers of depth add expressiveness so that the model                  We typically use hundreds of features in our ranking mod-
+can effectively use these additional features by mod-                 els, roughly split evenly between categorical and continu-
+eling their interaction.                                              ous. Despite the promise of deep learning to alleviate the
+                                                                      burden of engineering features by hand, the nature of our
+4. RANKING                                                            raw data does not easily lend itself to be input directly into
+                                                                      feedforward neural networks. We still expend considerable
+   The primary role of ranking is to use impression data to
+specialize and calibrate candidate predictions for the partic-
+ular user interface. For example, a user may watch a given
+                                                                       weighted
+                                                                        logistic
+
+serving                                                                training
+
+                                                                 ReLU
+
+                                                                 ReLU
+
+                                                                 ReLU
+
+average   language
+         embedding
+                                                                       normalize   normalize
+
+    video                                                                          # previous
+embedding user language video language                                             impressions
+
+impression video ID watched video IDs                                  time since
+                                                                       last watch
+
+Figure 7: Deep ranking network architecture depicting embedded categorical features (both univalent and
+multivalent) with shared embeddings and powers of normalized continuous features. All layers are fully
+connected. In practice, hundreds of features are fed into the network.
+
+engineering resources transforming user and video data into      has a separate learned embedding with dimension that in-
+useful features. The main challenge is in representing a tem-    creases approximately proportional to the logarithm of the
+poral sequence of user actions and how these actions relate      number of unique values. These vocabularies are simple
+to the video impression being scored.                            look-up tables built by passing over the data once before
+                                                                 training. Very large cardinality ID spaces (e.g. video IDs
+   We observe that the most important signals are those that     or search query terms) are truncated by including only the
+describe a user's previous interaction with the item itself and  top N after sorting based on their frequency in clicked im-
+other similar items, matching others' experience in ranking      pressions. Out-of-vocabulary values are simply mapped to
+ads [7]. As an example, consider the user's past history with    the zero embedding. As in candidate generation, multivalent
+the channel that uploaded the video being scored - how many      categorical feature embeddings are averaged before being fed
+videos has the user watched from this channel? When was          in to the network.
+the last time the user watched a video on this topic? These
+continuous features describing past user actions on related         Importantly, categorical features in the same ID space also
+items are particularly powerful because they generalize well     share underlying emeddings. For example, there exists a sin-
+across disparate items. We have also found it crucial to         gle global embedding of video IDs that many distinct fea-
+propagate information from candidate generation into rank-       tures use (video ID of the impression, last video ID watched
+ing in the form of features, e.g. which sources nominated        by the user, video ID that "seeded" the recommendation,
+this video candidate? What scores did they assign?               etc.). Despite the shared embedding, each feature is fed sep-
+                                                                 arately into the network so that the layers above can learn
+   Features describing the frequency of past video impres-       specialized representations per feature. Sharing embeddings
+sions are also critical for introducing "churn" in recommen-     is important for improving generalization, speeding up train-
+dations (successive requests do not return identical lists). If  ing and reducing memory requirements. The overwhelming
+a user was recently recommended a video but did not watch        majority of model parameters are in these high-cardinality
+it then the model will naturally demote this impression on       embedding spaces - for example, one million IDs embedded
+the next page load. Serving up-to-the-second impression          in a 32 dimensional space have 7 times more parameters
+and watch history is an engineering feat onto itself outside     than fully connected layers 2048 units wide.
+the scope of this paper, but is vital for producing responsive
+recommendations.                                                 Normalizing Continuous Features
+
+Embedding Categorical Features                                   Neural networks are notoriously sensitive to the scaling and
+                                                                 distribution of their inputs [9] whereas alternative approaches
+Similar to candidate generation, we use embeddings to map        such as ensembles of decision trees are invariant to scaling
+sparse categorical features to dense representations suitable    of individual features. We found that proper normalization
+for neural networks. Each unique ID space ("vocabulary")
+of continuous features was critical for convergence. A con-            Hidden layers                  weighted,
+                                                                                                      per-user loss
+tinuous feature x with distribution f is transformed to x~ by          None
+                                                                       256 ReLU                            41.6%
+scaling the values such that the feature is equally distributed        512 ReLU                            36.9%
+                                                            x          1024 ReLU                           36.7%
+in [0, 1) using the cumulative distribution, x~ =           -  df  .   512 ReLU  256 ReLU                  35.8%
+                                                                       1024 ReLU  512 ReLU                 35.2%
+This integral is approximated with linear interpolation on             1024 ReLU  512 ReLU  256 ReLU       34.7%
+                                                                                                           34.6%
+the quantiles of the feature values computed in a single pass
+
+over the data before training begins.
+
+   In addition to the raw normalized feature x~, we also input
+powers x~2 and x~, giving the network more expressive power
+
+by allowing it to easily form super- and sub-linear functions          Table 1: Effects of wider and deeper hidden ReLU
+                                                                       layers on watch time-weighted pairwise loss com-
+of the feature. Feeding powers of continuous features was              puted on next-day holdout data.
+
+found to improve offline accuracy.
+
+4.2 Modeling Expected Watch Time
+
+Our goal is to predict expected watch time given training              5. CONCLUSIONS
+
+examples that are either positive (the video impression was               We have described our deep neural network architecture
+                                                                       for recommending YouTube videos, split into two distinct
+clicked) or negative (the impression was not clicked). Pos-            problems: candidate generation and ranking.
+
+itive examples are annotated with the amount of time the                  Our deep collaborative filtering model is able to effectively
+                                                                       assimilate many signals and model their interaction with lay-
+user spent watching the video. To predict expected watch               ers of depth, outperforming previous matrix factorization
+                                                                       approaches used at YouTube [23]. There is more art than
+time we use the technique of weighted logistic regression,             science in selecting the surrogate problem for recommenda-
+                                                                       tions and we found classifying a future watch to perform well
+which was developed for this purpose.                                  on live metrics by capturing asymmetric co-watch behavior
+                                                                       and preventing leakage of future information. Withholding
+The model is trained with logistic regression under cross-             discrimative signals from the classifier was also essential to
+                                                                       achieving good results - otherwise the model would overfit
+entropy loss (Figure 7). However, the positive (clicked)               the surrogate problem and not transfer well to the home-
+                                                                       page.
+impressions are weighted by the observed watch time on
+                                                                          We demonstrated that using the age of the training exam-
+the video. Negative (unclicked) impressions all receive unit           ple as an input feature removes an inherent bias towards the
+                                                                       past and allows the model to represent the time-dependent
+weight. In this way, the odds learned by the logistic regres-          behavior of popular of videos. This improved offline holdout
+                                                                       precision results and increased the watch time dramatically
+sion  are      Ti  where  N  is  the  number  of  training  examples,  on recently uploaded videos in A/B testing.
+           N -k
+                                                                          Ranking is a more classical machine learning problem yet
+k is the number of positive impressions, and Ti is the watch           our deep learning approach outperformed previous linear
+                                                                       and tree-based methods for watch time prediction. Recom-
+time of the ith impression. Assuming the fraction of pos-              mendation systems in particular benefit from specialized fea-
+                                                                       tures describing past user behavior with items. Deep neural
+itive impressions is small (which is true in our case), the            networks require special representations of categorical and
+                                                                       continuous features which we transform with embeddings
+learned odds are approximately E[T ](1 + P ), where P is the           and quantile normalization, respectively. Layers of depth
+                                                                       were shown to effectively model non-linear interactions be-
+click probability and E[T ] is the expected watch time of the          tween hundreds of features.
+
+impression. Since P is small, this product is close to E[T ].             Logistic regression was modified by weighting training ex-
+For inference we use the exponential function ex as the fi-            amples with watch time for positive examples and unity for
+                                                                       negative examples, allowing us to learn odds that closely
+nal activation function to produce these odds that closely             model expected watch time. This approach performed much
+                                                                       better on watch-time weighted ranking evaluation metrics
+estimate expected watch time.                                          compared to predicting click-through rate directly.
+
+4.3 Experiments with Hidden Layers                                     6. ACKNOWLEDGMENTS
+
+   Table 1 shows the results we obtained on next-day holdout              The authors would like to thank Jim McFadden and Pranav
+data with different hidden layer configurations. The value             Khaitan for valuable guidance and support. Sujeet Bansal,
+shown for each configuration ("weighted, per-user loss") was           Shripad Thite and Radek Vingralek implemented key com-
+obtained by considering both positive (clicked) and negative           ponents of the training and serving infrastructure. Chris
+(unclicked) impressions shown to a user on a single page.              Berg and Trevor Walker contributed thoughtful discussion
+We first score these two impressions with our model. If the            and detailed feedback.
+negative impression receives a higher score than the posi-
+tive impression, then we consider the positive impression's
+watch time to be mispredicted watch time. Weighted, per-
+user loss is then the total amount mispredicted watch time
+as a fraction of total watch time over heldout impression
+pairs.
+
+   These results show that increasing the width of hidden
+layers improves results, as does increasing their depth. The
+trade-off, however, is server CPU time needed for inference.
+The configuration of a 1024-wide ReLU followed by a 512-
+wide ReLU followed by a 256-wide ReLU gave us the best
+results while enabling us to stay within our serving CPU
+budget.
+
+   For the 1024  512  256 model we tried only feeding the
+normalized continuous features without their powers, which
+increased loss by 0.2%. With the same hidden layer con-
+figuration, we also trained a model where positive and neg-
+ative examples are weighted equally. Unsurprisingly, this
+increased the watch time-weighted loss by a dramatic 4.1%.
+7. REFERENCES                                                        investigation of practical approximate nearest
+                                                                     neighbor algorithms. pages 825­832. MIT Press, 2004.
+ [1] M. Abadi, A. Agarwal, P. Barham, E. Brevdo,
+      Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean,     [13] E. Meyerson. Youtube now: Why we focus on watch
+      M. Devin, S. Ghemawat, I. Goodfellow, A. Harp,                 time. http://youtubecreator.blogspot.com/2012/08/
+      G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser,         youtube-now-why-we-focus-on-watch-time.html.
+      M. Kudlur, J. Levenberg, D. Man´e, R. Monga,                   Accessed: 2016-04-20.
+      S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens,
+      B. Steiner, I. Sutskever, K. Talwar, P. Tucker,          [14] T. Mikolov, I. Sutskever, K. Chen, G. Corrado, and
+      V. Vanhoucke, V. Vasudevan, F. Vi´egas, O. Vinyals,            J. Dean. Distributed representations of words and
+      P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and                 phrases and their compositionality. CoRR,
+      X. Zheng. TensorFlow: Large-scale machine learning             abs/1310.4546, 2013.
+      on heterogeneous systems, 2015. Software available
+      from tensorflow.org.                                     [15] F. Morin and Y. Bengio. Hierarchical probabilistic
+                                                                     neural network language model. In AISTATSa^AZ´05,
+ [2] X. Amatriain. Building industrial-scale real-world              pages 246­252, 2005.
+      recommender systems. In Proceedings of the Sixth
+      ACM Conference on Recommender Systems, RecSys            [16] D. Oard and J. Kim. Implicit feedback for
+      '12, pages 7­8, New York, NY, USA, 2012. ACM.                  recommender systems. In in Proceedings of the AAAI
+                                                                     Workshop on Recommender Systems, pages 81­83,
+ [3] J. Davidson, B. Liebald, J. Liu, P. Nandy,                      1998.
+      T. Van Vleet, U. Gargi, S. Gupta, Y. He, M. Lambert,
+      B. Livingston, and D. Sampath. The youtube video         [17] K. J. Oh, W. J. Lee, C. G. Lim, and H. J. Choi.
+      recommendation system. In Proceedings of the Fourth            Personalized news recommendation using classified
+      ACM Conference on Recommender Systems, RecSys                  keywords to capture user preference. In 16th
+      '10, pages 293­296, New York, NY, USA, 2010. ACM.              International Conference on Advanced Communication
+                                                                     Technology, pages 1283­1287, Feb 2014.
+ [4] J. Dean, G. S. Corrado, R. Monga, K. Chen,
+      M. Devin, Q. V. Le, M. Z. Mao, M. Ranzato,               [18] S. Sedhain, A. K. Menon, S. Sanner, and L. Xie.
+      A. Senior, P. Tucker, K. Yang, and A. Y. Ng. Large             Autorec: Autoencoders meet collaborative filtering. In
+      scale distributed deep networks. In NIPS, 2012.                Proceedings of the 24th International Conference on
+                                                                     World Wide Web, WWW '15 Companion, pages
+ [5] A. M. Elkahky, Y. Song, and X. He. A multi-view deep            111­112, New York, NY, USA, 2015. ACM.
+      learning approach for cross domain user modeling in
+      recommendation systems. In Proceedings of the 24th       [19] X. Su and T. M. Khoshgoftaar. A survey of
+      International Conference on World Wide Web, WWW                collaborative filtering techniques. Advances in
+      '15, pages 278­288, New York, NY, USA, 2015. ACM.              artificial intelligence, 2009:4, 2009.
+
+ [6] X. Glorot, A. Bordes, and Y. Bengio. Deep sparse          [20] D. Tang, B. Qin, T. Liu, and Y. Yang. User modeling
+      rectifier neural networks. In G. J. Gordon and D. B.           with neural network for review rating prediction. In
+      Dunson, editors, Proceedings of the Fourteenth                 Proc. IJCAI, pages 1340­1346, 2015.
+      International Conference on Artificial Intelligence and
+      Statistics (AISTATS-11), volume 15, pages 315­323.       [21] A. van den Oord, S. Dieleman, and B. Schrauwen.
+      Journal of Machine Learning Research - Workshop                Deep content-based music recommendation. In
+      and Conference Proceedings, 2011.                              C. J. C. Burges, L. Bottou, M. Welling,
+                                                                     Z. Ghahramani, and K. Q. Weinberger, editors,
+ [7] X. He, J. Pan, O. Jin, T. Xu, B. Liu, T. Xu, Y. Shi,            Advances in Neural Information Processing Systems
+      A. Atallah, R. Herbrich, S. Bowers, and J. Q. n.               26, pages 2643­2651. Curran Associates, Inc., 2013.
+      Candela. Practical lessons from predicting clicks on
+      ads at facebook. In Proceedings of the Eighth            [22] H. Wang, N. Wang, and D.-Y. Yeung. Collaborative
+      International Workshop on Data Mining for Online               deep learning for recommender systems. In Proceedings
+      Advertising, ADKDD'14, pages 5:1­5:9, New York,                of the 21th ACM SIGKDD International Conference
+      NY, USA, 2014. ACM.                                            on Knowledge Discovery and Data Mining, KDD '15,
+                                                                     pages 1235­1244, New York, NY, USA, 2015. ACM.
+ [8] W. Huang, Z. Wu, L. Chen, P. Mitra, and C. L. Giles.
+      A neural probabilistic model for context based citation  [23] J. Weston, S. Bengio, and N. Usunier. Wsabie: Scaling
+      recommendation. In AAAI, pages 2404­2410, 2015.                up to large vocabulary image annotation. In
+                                                                     Proceedings of the International Joint Conference on
+ [9] S. Ioffe and C. Szegedy. Batch normalization:                   Artificial Intelligence, IJCAI, 2011.
+      Accelerating deep network training by reducing
+      internal covariate shift. CoRR, abs/1502.03167, 2015.    [24] J. Weston, A. Makadia, and H. Yee. Label partitioning
+                                                                     for sublinear ranking. In S. Dasgupta and
+[10] S. Jean, K. Cho, R. Memisevic, and Y. Bengio. On                D. Mcallester, editors, Proceedings of the 30th
+      using very large target vocabulary for neural machine          International Conference on Machine Learning
+      translation. CoRR, abs/1412.2007, 2014.                        (ICML-13), volume 28, pages 181­189. JMLR
+                                                                     Workshop and Conference Proceedings, May 2013.
+[11] L. Jiang, Y. Miao, Y. Yang, Z. Lan, and A. G.
+      Hauptmann. Viral video style: A closer look at viral     [25] X. Yi, L. Hong, E. Zhong, N. N. Liu, and S. Rajan.
+      videos on youtube. In Proceedings of International             Beyond clicks: Dwell time for personalization. In
+      Conference on Multimedia Retrieval, ICMR '14, pages            Proceedings of the 8th ACM Conference on
+      193:193­193:200, New York, NY, USA, 2014. ACM.                 Recommender Systems, RecSys '14, pages 113­120,
+                                                                     New York, NY, USA, 2014. ACM.
+[12] T. Liu, A. W. Moore, A. Gray, and K. Yang. An
+                                                               [26] Zayn. Pillowtalk.
+                                                                     https://www.youtube.com/watch?v=C 3d6GntKbk.
+

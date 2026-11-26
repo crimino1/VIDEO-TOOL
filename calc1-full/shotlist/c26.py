@@ -1,0 +1,23 @@
+# Builder 26: middle of Chapter 9. Speeding ticket (MVT), x^3 on [0,2], f'=0 -> constant, increasing/decreasing,
+# sign chart for x^3-3x, first derivative test, concavity, inflection points, second derivative test,
+# start of the full example 2x^3-3x^2-12x+5 up to f''(-1) = -18 -> local max (builder 27 continues).
+S = [
+    ("2:37:36.64", "m", "K26_Tolls", {}),
+    ("2:38:09.07", "m", "K26_MvtCube", {}),
+    ("2:38:39.95", "m", "K26_Constant", {}),
+    ("2:38:58.47", "m", "K26_UpDown", {}),
+    ("2:39:14.81", "m", "K26_Plan", {}),
+    ("2:39:47.37", "m", "K26_SignTest", {}),
+    ("2:40:13.15", "m", "K26_FirstTest", {}),
+    ("2:40:41.55", "m", "K26_FirstApply", {}),
+    ("2:41:09.91", "m", "K26_Concave", {}),
+    ("2:41:33.67", "m", "K26_ConcaveWhy", {}),
+    ("2:41:50.21", "m", "K26_Inflection", {}),
+    ("2:42:09.01", "m", "K26_InflectEx", {}),
+    ("2:42:34.45", "m", "K26_FourthPower", {}),
+    ("2:42:55.21", "m", "K26_SecondTest", {}),
+    ("2:43:30.79", "m", "K26_SecondApply", {}),
+    ("2:43:44.33", "m", "K26_TestFails", {}),
+    ("2:44:00.41", "q", "K26_TryFull", dict(title="Try a Full One", sub="Work along")),
+    ("2:44:02.40", "m", "K26_FullEx", {}),
+]

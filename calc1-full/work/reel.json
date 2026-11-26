@@ -1,0 +1,333 @@
+{
+ "fps": 30,
+ "total_frames": 3455,
+ "shots": [
+  {
+   "name": "K01_Ch1",
+   "film_start": 76.2,
+   "film_end": 80.0,
+   "reel_start_f": 0,
+   "frames": 114
+  },
+  {
+   "name": "K02_TryCard",
+   "film_start": 431.6,
+   "film_end": 433.2,
+   "reel_start_f": 114,
+   "frames": 48
+  },
+  {
+   "name": "K03_TryCard",
+   "film_start": 1165.8,
+   "film_end": 1168.1,
+   "reel_start_f": 162,
+   "frames": 69
+  },
+  {
+   "name": "K04_Chapter2",
+   "film_start": 1218.08,
+   "film_end": 1221.6,
+   "reel_start_f": 231,
+   "frames": 106
+  },
+  {
+   "name": "K04_Check",
+   "film_start": 1480.5,
+   "film_end": 1482.5,
+   "reel_start_f": 337,
+   "frames": 60
+  },
+  {
+   "name": "K05_Quick",
+   "film_start": 1699.25,
+   "film_end": 1700.8,
+   "reel_start_f": 397,
+   "frames": 46
+  },
+  {
+   "name": "K06_TryCard",
+   "film_start": 2240.7,
+   "film_end": 2242.45,
+   "reel_start_f": 443,
+   "frames": 53
+  },
+  {
+   "name": "K07_Chapter3",
+   "film_start": 2373.08,
+   "film_end": 2376.8,
+   "reel_start_f": 496,
+   "frames": 112
+  },
+  {
+   "name": "K08_TryCard",
+   "film_start": 2901.45,
+   "film_end": 2903.0,
+   "reel_start_f": 608,
+   "frames": 46
+  },
+  {
+   "name": "K09_TryCard1",
+   "film_start": 3230.3,
+   "film_end": 3231.85,
+   "reel_start_f": 654,
+   "frames": 47
+  },
+  {
+   "name": "K09_TryCard2",
+   "film_start": 3428.4,
+   "film_end": 3429.95,
+   "reel_start_f": 701,
+   "frames": 46
+  },
+  {
+   "name": "K10_Chapter4",
+   "film_start": 3583.86,
+   "film_end": 3587.0,
+   "reel_start_f": 747,
+   "frames": 94
+  },
+  {
+   "name": "K11_TryCard",
+   "film_start": 4191.58,
+   "film_end": 4193.2,
+   "reel_start_f": 841,
+   "frames": 49
+  },
+  {
+   "name": "K11_TryCard2",
+   "film_start": 4288.82,
+   "film_end": 4290.4,
+   "reel_start_f": 890,
+   "frames": 47
+  },
+  {
+   "name": "K13_Chapter5",
+   "film_start": 4654.0,
+   "film_end": 4657.0,
+   "reel_start_f": 937,
+   "frames": 90
+  },
+  {
+   "name": "K14_TryCard1",
+   "film_start": 5165.66,
+   "film_end": 5167.9,
+   "reel_start_f": 1027,
+   "frames": 67
+  },
+  {
+   "name": "K14_TryCard2",
+   "film_start": 5363.77,
+   "film_end": 5365.49,
+   "reel_start_f": 1094,
+   "frames": 52
+  },
+  {
+   "name": "K15_TryCard",
+   "film_start": 5511.8,
+   "film_end": 5513.45,
+   "reel_start_f": 1146,
+   "frames": 50
+  },
+  {
+   "name": "K16_Chapter6",
+   "film_start": 5786.25,
+   "film_end": 5789.6,
+   "reel_start_f": 1196,
+   "frames": 100
+  },
+  {
+   "name": "K16_TryCard",
+   "film_start": 6111.5,
+   "film_end": 6113.3,
+   "reel_start_f": 1296,
+   "frames": 54
+  },
+  {
+   "name": "K18_TryCard",
+   "film_start": 6482.69,
+   "film_end": 6484.6,
+   "reel_start_f": 1350,
+   "frames": 57
+  },
+  {
+   "name": "K18_LastCard",
+   "film_start": 6747.73,
+   "film_end": 6750.3,
+   "reel_start_f": 1407,
+   "frames": 77
+  },
+  {
+   "name": "K19_Chapter7",
+   "film_start": 6826.13,
+   "film_end": 6829.3,
+   "reel_start_f": 1484,
+   "frames": 95
+  },
+  {
+   "name": "K20_TryCard",
+   "film_start": 7212.25,
+   "film_end": 7213.85,
+   "reel_start_f": 1579,
+   "frames": 48
+  },
+  {
+   "name": "K20_TryCard2",
+   "film_start": 7455.9,
+   "film_end": 7457.45,
+   "reel_start_f": 1627,
+   "frames": 47
+  },
+  {
+   "name": "K21_TryCard",
+   "film_start": 7782.2,
+   "film_end": 7783.75,
+   "reel_start_f": 1674,
+   "frames": 46
+  },
+  {
+   "name": "K22_Chapter8",
+   "film_start": 7842.37,
+   "film_end": 7846.3,
+   "reel_start_f": 1720,
+   "frames": 118
+  },
+  {
+   "name": "K24_TryCard1",
+   "film_start": 8721.45,
+   "film_end": 8723.45,
+   "reel_start_f": 1838,
+   "frames": 60
+  },
+  {
+   "name": "K24_TryCard2",
+   "film_start": 8892.5,
+   "film_end": 8894.55,
+   "reel_start_f": 1898,
+   "frames": 61
+  },
+  {
+   "name": "K25_Chapter9",
+   "film_start": 9031.57,
+   "film_end": 9034.6,
+   "reel_start_f": 1959,
+   "frames": 91
+  },
+  {
+   "name": "K26_TryFull",
+   "film_start": 9840.41,
+   "film_end": 9842.4,
+   "reel_start_f": 2050,
+   "frames": 60
+  },
+  {
+   "name": "K28_Chapter10",
+   "film_start": 10301.89,
+   "film_end": 10305.8,
+   "reel_start_f": 2110,
+   "frames": 117
+  },
+  {
+   "name": "K29_TryCard",
+   "film_start": 10923.8,
+   "film_end": 10925.4,
+   "reel_start_f": 2227,
+   "frames": 48
+  },
+  {
+   "name": "K30_TryCard",
+   "film_start": 11196.1,
+   "film_end": 11197.7,
+   "reel_start_f": 2275,
+   "frames": 48
+  },
+  {
+   "name": "K31_Chapter11",
+   "film_start": 11502.17,
+   "film_end": 11506.6,
+   "reel_start_f": 2323,
+   "frames": 133
+  },
+  {
+   "name": "K32_TryCard",
+   "film_start": 12013.85,
+   "film_end": 12015.4,
+   "reel_start_f": 2456,
+   "frames": 46
+  },
+  {
+   "name": "K32_Riemann",
+   "film_start": 12298.2,
+   "film_end": 12303.2,
+   "reel_start_f": 2502,
+   "frames": 150
+  },
+  {
+   "name": "K33_TryCard",
+   "film_start": 12731.6,
+   "film_end": 12733.2,
+   "reel_start_f": 2652,
+   "frames": 48
+  },
+  {
+   "name": "K34_Chapter12",
+   "film_start": 12785.37,
+   "film_end": 12789.3,
+   "reel_start_f": 2700,
+   "frames": 118
+  },
+  {
+   "name": "K35_TryCard",
+   "film_start": 13250.35,
+   "film_end": 13252.15,
+   "reel_start_f": 2818,
+   "frames": 54
+  },
+  {
+   "name": "K36_TryCard",
+   "film_start": 13805.45,
+   "film_end": 13807.0,
+   "reel_start_f": 2872,
+   "frames": 46
+  },
+  {
+   "name": "K37_Chapter13",
+   "film_start": 13893.77,
+   "film_end": 13896.65,
+   "reel_start_f": 2918,
+   "frames": 87
+  },
+  {
+   "name": "K38_TryCard",
+   "film_start": 14707.43,
+   "film_end": 14709.2,
+   "reel_start_f": 3005,
+   "frames": 53
+  },
+  {
+   "name": "K39_Chapter14",
+   "film_start": 14790.75,
+   "film_end": 14793.6,
+   "reel_start_f": 3058,
+   "frames": 86
+  },
+  {
+   "name": "K40_Founders",
+   "film_start": 15327.7,
+   "film_end": 15331.5,
+   "reel_start_f": 3144,
+   "frames": 114
+  },
+  {
+   "name": "K40_Subscribe",
+   "film_start": 15367.01,
+   "film_end": 15373.57,
+   "reel_start_f": 3258,
+   "frames": 197
+  }
+ ],
+ "clicks": [
+  12299.31,
+  15327.91,
+  15328.59
+ ]
+}

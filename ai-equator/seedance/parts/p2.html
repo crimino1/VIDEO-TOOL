@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="268.382" data-width="1920" data-height="1080">
+<div id="s159" class="clip scene" data-start="0.000" data-duration="17.722" data-track-index="2" style="z-index:49"><div id="w160" class="sc"><div id="b161" class="body clipb"><div class="vframe"></div><div class="vcred">Curious Refuge on YouTube, “Seedance 2.5 Is Incredible... Until It Isn't”</div></div></div></div>
+<div id="vw156" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:50"><video id="v155" class="clip" src="assets/clips/yt_cur_lantern_fd59c030.mp4" muted playsinline data-start="0.000" data-duration="17.722" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i157" class="a cap " style="">Built from reference photos of an antique shop</div><div id="i158" class="a cap bad" style="">…and then he turns into Green Lantern</div></div></div>
+<div id="s165" class="clip scene" data-start="17.722" data-duration="4.440" data-track-index="2" style="z-index:51"><div id="w166" class="sc"><div id="b167" class="body clipb"><div class="vframe"></div><div class="vcred">Curious Refuge on YouTube</div></div></div></div>
+<div id="vw163" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:52"><video id="v162" class="clip" src="assets/clips/yt_cur_v20_7913b6d9.mp4" muted playsinline data-start="17.722" data-duration="4.440" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i164" class="a cap bad" style="">This test: Seedance 2.0 did better than 2.5</div></div></div>
+<div id="s172" class="clip scene" data-start="22.162" data-duration="8.264" data-track-index="2" style="z-index:53"><div id="w173" class="sc"><div id="b174" class="body clipb"><div class="vframe"></div><div class="vcred">Curious Refuge on YouTube</div></div></div></div>
+<div id="vw169" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:54"><video id="v168" class="clip" src="assets/clips/yt_cur_shots_53f5d332.mp4" muted playsinline data-start="22.162" data-duration="8.264" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i170" class="a cap acc" style="">Best physics and emotion on the market…</div><div id="i171" class="a cap bad" style="">…but no 30 s clip usable as it came out</div></div></div>
+<div id="s179" class="clip scene" data-start="30.426" data-duration="7.456" data-track-index="2" style="z-index:55"><div id="w180" class="sc"><div id="b181" class="body clipb"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="vframe" style="left:160px;top:165px;width:600px;height:750px"></div><div class="vlab" style="left:160px;top:109px">@PromptSin on X · Kling 4.0 (top) vs Seedance 2.5</div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i175" class="a hd" style="font-size:56px">Dogfight test</div><div id="i176" class="a tx " style="font-size:36px;text-align:left">Tracers come out of nowhere, and both planes vanish.</div></div></div></div></div></div></div>
+<div id="vw178" class="vwrap" style="left:160px;top:165px;width:600px;height:750px;z-index:56"><video id="v177" class="clip" src="assets/clips/x_fail_dogfight_4afdde40.mp4" muted playsinline data-start="30.426" data-duration="7.456" data-track-index="1" style="width:600px;height:750px;object-fit:cover"></video></div>
+<div id="s186" class="clip scene" data-start="37.882" data-duration="6.220" data-track-index="2" style="z-index:57"><div id="w187" class="sc"><div id="b188" class="body clipb"><div class="vframe"></div><div class="vcred">@johnmccoyx on X</div></div></div></div>
+<div id="vw183" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:58"><video id="v182" class="clip" src="assets/clips/x_fail_faceswap_cbb04899.mp4" muted playsinline data-start="37.882" data-duration="6.220" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i184" class="a cap " style="">Face swap: Seedance 2.5 $3.61 vs Kling 4.0 $0.26</div><div id="i185" class="a cap bad" style="">Seedance failed twice</div></div></div>
+<div id="s192" class="clip scene" data-start="44.102" data-duration="5.040" data-track-index="2" style="z-index:59"><div id="w193" class="sc"><div id="b194" class="body clipb"><div class="vframe"></div><div class="vcred">@AIWarper on X</div></div></div></div>
+<div id="vw190" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:60"><video id="v189" class="clip" src="assets/clips/x_fail_tattoo_ea0464bb.mp4" muted playsinline data-start="44.102" data-duration="5.040" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i191" class="a cap bad" style="">Edit: remove the hand tattoos… they never went away</div></div></div>
+<div id="s196" class="clip scene" data-start="49.142" data-duration="5.445" data-track-index="2" style="z-index:61"><div id="w197" class="sc"><div class="head"><div class="kick">Limitations</div><div class="ttl">Their own words</div></div><div id="b198" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i195" class="a quote " style=""><div class="qt">“room for improvement in the physics of complex motion and in interactions between several subjects”</div><div class="qwho"><div><b>ByteDance Seed</b><span>Seedance 2.5 launch blog (paraphrased)</span></div></div></div></div></div><div class="srcl">ByteDance Seed, “Introducing Seedance 2.5”</div></div></div>
+<div id="s204" class="clip scene" data-start="54.587" data-duration="20.355" data-track-index="2" style="z-index:62"><div id="w205" class="sc"><div class="head"><div class="kick">Artificial Analysis · blind votes</div><div class="ttl">Text to video, with audio: #5</div></div><div id="b206" class="body"><div id="i203" class="a win" style="width:850px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/video/leaderboard/text-to-video</span></div><div class="wbody" style="height:655px;position:relative"><img id="k199" src="assets/img/aa_t2v_8b343.jpg" alt="" style="width:850px;height:655px"><div id="hl200" style="position:absolute;left:0px;top:196px;width:850px;height:36px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div><div id="hl201" style="position:absolute;left:0px;top:46px;width:850px;height:33px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div><div id="hl202" style="position:absolute;left:0px;top:233px;width:850px;height:36px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="srcl">artificialanalysis.ai, Nov 25, 2026</div></div></div>
+<div id="s210" class="clip scene" data-start="74.942" data-duration="5.282" data-track-index="2" style="z-index:63"><div id="w211" class="sc"><div class="head"><div class="kick">Artificial Analysis · blind votes</div><div class="ttl">Image to video, with audio: #2</div></div><div id="b212" class="body"><div id="i209" class="a win" style="width:810px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/video/leaderboard/image-to-video</span></div><div class="wbody" style="height:656px;position:relative"><img id="k207" src="assets/img/aa_i2v_910a9.jpg" alt="" style="width:810px;height:656px"><div id="hl208" style="position:absolute;left:0px;top:45px;width:810px;height:34px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="srcl">artificialanalysis.ai, Nov 25, 2026</div></div></div>
+<div id="s231" class="clip scene" data-start="80.224" data-duration="11.598" data-track-index="2" style="z-index:64"><div id="w232" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">LMArena: 2.5 sits below 2.0</div></div><div id="b233" class="body"><div class="bars" style="gap:10px"><div id="i215" class="a brow" style=""><div class="blab" style="width:420px"><span>Gemini Omni 1.2 Flash</span></div><div class="btrack" style="height:40px"><div id="bf213" class="bfill" style="width:96.25%"></div></div><div class="bval" style="width:200px"><span id="bv214">0</span><span class="bsub">#1</span></div></div><div id="i218" class="a brow" style=""><div class="blab" style="width:420px"><span>Grok Imagine 1.5</span></div><div class="btrack" style="height:40px"><div id="bf216" class="bfill" style="width:93.00%"></div></div><div class="bval" style="width:200px"><span id="bv217">0</span><span class="bsub">#4</span></div></div><div id="i221" class="a brow" style=""><div class="blab" style="width:420px"><span>Seedance 2.0</span></div><div class="btrack" style="height:40px"><div id="bf219" class="bfill" style="width:92.69%"></div></div><div class="bval" style="width:200px"><span id="bv220">0</span><span class="bsub">#5</span></div></div><div id="i224" class="a brow" style=""><div class="blab" style="width:420px"><span>Seedance 2.5 (720p)</span></div><div class="btrack" style="height:40px"><div id="bf222" class="bfill hero" style="width:92.44%"></div></div><div class="bval acc" style="width:200px"><span id="bv223">0</span><span class="bsub">#6</span></div></div><div id="i227" class="a brow" style=""><div class="blab" style="width:420px"><span>Sora 2 Pro</span></div><div class="btrack" style="height:40px"><div id="bf225" class="bfill" style="width:85.44%"></div></div><div class="bval" style="width:200px"><span id="bv226">0</span><span class="bsub">#13</span></div></div><div id="i230" class="a brow" style=""><div class="blab" style="width:420px"><span>Veo 3.1</span></div><div class="btrack" style="height:40px"><div id="bf228" class="bfill" style="width:85.19%"></div></div><div class="bval" style="width:200px"><span id="bv229">0</span><span class="bsub">#14</span></div></div></div><div class="bnote">LMArena text-to-video Elo, Nov 8, 2026</div></div><div class="srcl">arena.ai text-to-video leaderboard</div></div></div>
+<div id="s238" class="clip scene" data-start="91.822" data-duration="14.780" data-track-index="2" style="z-index:65"><div id="w239" class="sc"><div id="b240" class="body clipb"><div class="vframe"></div><div class="vcred">JSFILMZ on YouTube, “Seedance 2.5 Flash vs Seedance 2.5”</div></div></div></div>
+<div id="vw235" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:66"><video id="v234" class="clip" src="assets/clips/yt_js_film_86cef949.mp4" muted playsinline data-start="91.822" data-duration="14.780" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i236" class="a cap " style="">Flash: #17 text-to-video · #7 image-to-video</div><div id="i237" class="a cap acc" style="">Flash vs full: “mix and match”, a tie on multi-scene</div></div></div>
+<div id="s247" class="clip scene" data-start="106.602" data-duration="14.657" data-track-index="2" style="z-index:67"><div id="w248" class="sc"><div class="head"><div class="kick">Comparison</div><div class="ttl">Against Google's Gemini Omni</div></div><div id="b249" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i241" class="a twc" style="width:600px"><img src="assets/img/tw_omni_45.png" alt="" style="width:600px;height:681px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:16px;justify-content:flex-start"><div id="i243" class="a stat " style="flex:1"><div class="slab">Seedance 2.5</div><div id="v242" class="sval " style="font-size:84px">~$3.50</div><div class="ssub">his clip</div></div><div id="i245" class="a stat hero" style="flex:1"><div class="slab">Gemini Omni 1.2</div><div id="v244" class="sval hero" style="font-size:84px">~$1</div><div class="ssub">same prompt</div></div></div><div id="i246" class="a hd" style="font-size:48px">Does it look <b class='acc'>3× better</b>?</div></div></div></div></div><div class="srcl">@maxxmalist on X</div></div></div>
+<div id="s268" class="clip scene" data-start="121.259" data-duration="24.495" data-track-index="2" style="z-index:68"><div id="w269" class="sc"><div class="head"><div class="kick">Cost</div><div class="ttl">Cost per second</div></div><div id="b270" class="body"><div class="row" style="gap:40px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i251" class="a win" style="width:720px"><div class="wbar"><i></i><i></i><i></i><span>fal.ai/models/bytedance/seedance-2.5/text-to-video</span></div><div class="wbody" style="height:131px;position:relative"><img id="k250" src="assets/img/fal_ddd02.jpg" alt="" style="width:720px;height:131px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div class="bars" style="gap:10px"><div id="i254" class="a brow" style=""><div class="blab" style="width:130px"><span>480p</span></div><div class="btrack" style="height:38px"><div id="bf252" class="bfill" style="width:11.00%"></div></div><div class="bval" style="width:170px"><span id="bv253">0</span></div></div><div id="i257" class="a brow" style=""><div class="blab" style="width:130px"><span>720p</span></div><div class="btrack" style="height:38px"><div id="bf255" class="bfill" style="width:23.65%"></div></div><div class="bval" style="width:170px"><span id="bv256">0</span></div></div><div id="i260" class="a brow" style=""><div class="blab" style="width:130px"><span>1080p</span></div><div class="btrack" style="height:38px"><div id="bf258" class="bfill" style="width:58.20%"></div></div><div class="bval" style="width:170px"><span id="bv259">0</span></div></div><div id="i263" class="a brow" style=""><div class="blab" style="width:130px"><span>4K</span></div><div class="btrack" style="height:38px"><div id="bf261" class="bfill hero" style="width:92.00%"></div></div><div class="bval acc" style="width:170px"><span id="bv262">0</span></div></div><div id="i266" class="a brow" style=""><div class="blab" style="width:130px"><span>Flash</span></div><div class="btrack" style="height:38px"><div id="bf264" class="bfill" style="width:7.50%"></div></div><div class="bval" style="width:170px"><span id="bv265">0</span></div></div></div><div class="bnote">US$ per second of video (fal)</div><div id="i267" class="a tx " style="font-size:36px;text-align:left">10 s in 4K ≈ <b class='acc'>$18.40</b></div></div></div></div></div><div class="srcl">fal.ai · Artificial Analysis (Flash)</div></div></div>
+<div id="s290" class="clip scene" data-start="145.754" data-duration="27.380" data-track-index="2" style="z-index:69"><div id="w291" class="sc"><div class="head"><div class="kick">Cost</div><div class="ttl">A 10-second clip, compared</div></div><div id="b292" class="body"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div class="bars" style="gap:10px"><div id="i273" class="a brow" style=""><div class="blab" style="width:420px"><span>Seedance 2.5 · 1080p</span></div><div class="btrack" style="height:38px"><div id="bf271" class="bfill hero" style="width:97.00%"></div></div><div class="bval acc" style="width:150px"><span id="bv272">0</span></div></div><div id="i276" class="a brow" style=""><div class="blab" style="width:420px"><span>Veo 3.1</span></div><div class="btrack" style="height:38px"><div id="bf274" class="bfill" style="width:33.33%"></div></div><div class="bval" style="width:150px"><span id="bv275">0</span></div></div><div id="i279" class="a brow" style=""><div class="blab" style="width:420px"><span>Kling 3.0 Pro · 1080p</span></div><div class="btrack" style="height:38px"><div id="bf277" class="bfill" style="width:14.00%"></div></div><div class="bval" style="width:150px"><span id="bv278">0</span></div></div><div id="i282" class="a brow" style=""><div class="blab" style="width:420px"><span>Runway Gen-4.5</span></div><div class="btrack" style="height:38px"><div id="bf280" class="bfill" style="width:10.00%"></div></div><div class="bval" style="width:150px"><span id="bv281">0</span></div></div><div id="i285" class="a brow" style=""><div class="blab" style="width:420px"><span>Veo 3.1 Fast</span></div><div class="btrack" style="height:38px"><div id="bf283" class="bfill" style="width:10.00%"></div></div><div class="bval" style="width:150px"><span id="bv284">0</span></div></div><div id="i288" class="a brow" style=""><div class="blab" style="width:420px"><span>Gemini Omni 1.2 Flash</span></div><div class="btrack" style="height:38px"><div id="bf286" class="bfill" style="width:5.83%"></div></div><div class="bval" style="width:150px"><span id="bv287">0</span></div></div></div><div class="bnote">US$ per 10-second clip</div><div id="i289" class="a verd bad" style="font-size:26px;padding:12px 21px;border-width:3px">SORA API: SHUT DOWN SEPT 24</div></div></div><div class="srcl">fal · Artificial Analysis · Google · Runway · OpenAI docs</div></div></div>
+<div id="s299" class="clip scene" data-start="173.134" data-duration="21.581" data-track-index="2" style="z-index:70"><div id="w300" class="sc"><div class="head"><div class="kick">Cost</div><div class="ttl">In Dreamina</div></div><div id="b301" class="body"><div class="row" style="gap:40px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i294" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>dreamina.capcut.com/seedance/seedance-price</span></div><div class="wbody" style="height:242px;position:relative"><img id="k293" src="assets/img/dreamina_price_edf56.jpg" alt="" style="width:900px;height:242px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i296" class="a stat hero" style="flex:1"><div class="slab">Seedance 2.5 · 720p</div><div id="v295" class="sval hero" style="font-size:96px">37</div><div class="ssub">credits per second (2.0: 17)</div></div><div id="i298" class="a stat " style="flex:1"><div class="slab">US first month</div><div id="v297" class="sval " style="font-size:84px">$0.29</div><div class="ssub">1,575 credits ≈ 42 s of 2.5</div></div></div></div></div></div><div class="srcl">dreamina.capcut.com</div></div></div>
+<div id="s306" class="clip scene" data-start="194.715" data-duration="26.044" data-track-index="2" style="z-index:71"><div id="w307" class="sc"><div class="head"><div class="kick">Safety</div><div class="ttl">After the Hollywood trouble</div></div><div id="b308" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i302" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Visible watermark + C2PA content credentials</div></div><div class="verd good">ON</div></div><div id="i303" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Limits on real people's faces · likeness checks</div></div><div class="verd good">ON</div></div><div id="i304" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">10,000+ licensed virtual humans</div></div><div class="verd good">LIBRARY</div></div><div id="i305" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Official BytePlus API in the US</div><div class="ssub" style="margin-top:4px">fal, Runway and others still offer it</div></div><div class="verd warn">NOT AVAILABLE</div></div></div></div><div class="srcl">BytePlus blog, Aug 6, 2026</div></div></div>
+<div id="s311" class="clip scene" data-start="220.759" data-duration="23.228" data-track-index="2" style="z-index:72"><div id="w312" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Who is it for?</div></div><div id="b313" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i309" class="a stat hero" style="flex:1"><div class="slab">Use it for</div><div class="hd" style="font-size:36px;margin-top:14px">Realistic people</div><div class="hd" style="font-size:36px;margin-top:14px">Talking scenes</div><div class="hd" style="font-size:36px;margin-top:14px">Same character, many shots</div><div class="hd" style="font-size:36px;margin-top:14px">Reference-heavy shots</div></div><div id="i310" class="a stat " style="flex:1"><div class="slab">Skip it for</div><div class="hd" style="font-size:36px;margin-top:14px">Anime</div><div class="hd" style="font-size:36px;margin-top:14px">Lots of clips on a budget</div><div class="hd" style="font-size:36px;margin-top:14px">Heavy physics</div></div></div></div></div></div>
+<div id="s320" class="clip scene" data-start="243.987" data-duration="13.395" data-track-index="2" style="z-index:73"><div id="w321" class="sc"><div class="head"><div class="kick">Seedance 2.5</div><div class="ttl">My take</div></div><div id="b322" class="body"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i315" class="a stat hero" style="flex:1"><div class="slab">When it works</div><div id="v314" class="sval hero" style="font-size:76px">Stunning</div><div class="ssub">30 s with sound</div></div><div id="i317" class="a stat " style="flex:1"><div class="slab">Cost</div><div id="v316" class="sval " style="font-size:76px">High</div><div class="ssub">~7× Kling at 1080p</div></div><div id="i319" class="a stat " style="flex:1"><div class="slab">Reliability</div><div id="v318" class="sval " style="font-size:76px">Retries</div><div class="ssub">budget for them</div></div></div></div></div></div>
+<div id="s325" class="clip scene" data-start="257.382" data-duration="4.980" data-track-index="2" style="z-index:74"><div id="w326" class="sc"><div id="b327" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i323" class="a hd" style="font-size:80px;text-align:center">Which video model are you using?</div><div id="i324" class="a tx ink3" style="font-size:40px;text-align:center">Tell me in the comments.</div></div></div></div></div>
+<div id="s330" class="clip scene" data-start="262.362" data-duration="6.020" data-track-index="2" style="z-index:75"><div id="w331" class="sc"><div id="b332" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i328" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i329" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#vw156",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},0.000);
+tl.fromTo("#i157",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},5.442);
+tl.fromTo("#i158",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},13.902);
+tl.fromTo("#w160",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},0.000);
+tl.to("#w160",{opacity:0,duration:0.25,ease:"power1.in"},17.472);
+tl.to("#vw156",{opacity:0,duration:0.25,ease:"power1.in"},17.472);
+tl.fromTo("#vw163",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},17.722);
+tl.fromTo("#i164",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.922);
+tl.fromTo("#w166",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},17.722);
+tl.to("#w166",{opacity:0,duration:0.25,ease:"power1.in"},21.912);
+tl.to("#vw163",{opacity:0,duration:0.25,ease:"power1.in"},21.912);
+tl.fromTo("#vw169",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},22.162);
+tl.fromTo("#i170",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},22.462);
+tl.fromTo("#i171",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.682);
+tl.fromTo("#w173",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},22.162);
+tl.to("#w173",{opacity:0,duration:0.25,ease:"power1.in"},30.176);
+tl.to("#vw169",{opacity:0,duration:0.25,ease:"power1.in"},30.176);
+tl.fromTo("#i175",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},30.626);
+tl.fromTo("#i176",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},34.042);
+tl.fromTo("#vw178",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},30.426);
+tl.fromTo("#w180",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},30.426);
+tl.to("#w180",{opacity:0,duration:0.25,ease:"power1.in"},37.632);
+tl.to("#vw178",{opacity:0,duration:0.25,ease:"power1.in"},37.632);
+tl.fromTo("#vw183",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},37.882);
+tl.fromTo("#i184",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},38.082);
+tl.fromTo("#i185",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},39.542);
+tl.fromTo("#w187",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},37.882);
+tl.to("#w187",{opacity:0,duration:0.25,ease:"power1.in"},43.852);
+tl.to("#vw183",{opacity:0,duration:0.25,ease:"power1.in"},43.852);
+tl.fromTo("#vw190",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},44.102);
+tl.fromTo("#i191",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},44.302);
+tl.fromTo("#w193",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},44.102);
+tl.to("#w193",{opacity:0,duration:0.25,ease:"power1.in"},48.892);
+tl.to("#vw190",{opacity:0,duration:0.25,ease:"power1.in"},48.892);
+tl.fromTo("#i195",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.242);
+tl.fromTo("#w197",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},49.142);
+tl.to("#w197",{opacity:0,duration:0.25,ease:"power1.in"},54.337);
+tl.fromTo("#b198",{scale:1},{scale:1.015,duration:5.445,ease:"none"},49.142);
+tl.fromTo("#hl200",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},61.922);
+tl.fromTo("#hl201",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},65.402);
+tl.fromTo("#hl202",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},67.882);
+tl.fromTo("#i203",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},54.687);
+tl.fromTo("#w205",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},54.587);
+tl.to("#w205",{opacity:0,duration:0.25,ease:"power1.in"},74.692);
+tl.fromTo("#b206",{scale:1},{scale:1.015,duration:20.355,ease:"none"},54.587);
+tl.fromTo("#hl208",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},77.462);
+tl.fromTo("#i209",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},75.042);
+tl.fromTo("#w211",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},74.942);
+tl.to("#w211",{opacity:0,duration:0.25,ease:"power1.in"},79.974);
+tl.fromTo("#b212",{scale:1},{scale:1.015,duration:5.282,ease:"none"},74.942);
+tl.fromTo("#bf213",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},80.424);
+count("#bv214",80.424,0,1540,0,"","",0.9);
+tl.fromTo("#i215",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},80.424);
+tl.fromTo("#bf216",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},80.624);
+count("#bv217",80.624,0,1488,0,"","",0.9);
+tl.fromTo("#i218",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},80.624);
+tl.fromTo("#bf219",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},86.202);
+count("#bv220",86.202,0,1483,0,"","",0.9);
+tl.fromTo("#i221",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},86.202);
+tl.fromTo("#bf222",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},86.602);
+count("#bv223",86.602,0,1479,0,"","",0.9);
+tl.fromTo("#i224",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},86.602);
+tl.fromTo("#bf225",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},80.824);
+count("#bv226",80.824,0,1367,0,"","",0.9);
+tl.fromTo("#i227",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},80.824);
+tl.fromTo("#bf228",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},81.024);
+count("#bv229",81.024,0,1363,0,"","",0.9);
+tl.fromTo("#i230",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},81.024);
+tl.fromTo("#w232",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},80.224);
+tl.to("#w232",{opacity:0,duration:0.25,ease:"power1.in"},91.572);
+tl.fromTo("#b233",{scale:1},{scale:1.015,duration:11.598,ease:"none"},80.224);
+tl.fromTo("#vw235",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},91.822);
+tl.fromTo("#i236",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.022);
+tl.fromTo("#i237",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},102.522);
+tl.fromTo("#w239",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},91.822);
+tl.to("#w239",{opacity:0,duration:0.25,ease:"power1.in"},106.352);
+tl.to("#vw235",{opacity:0,duration:0.25,ease:"power1.in"},106.352);
+tl.fromTo("#i241",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.702);
+tl.fromTo("#i243",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.682);
+tl.fromTo("#i245",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},114.622);
+tl.fromTo("#i246",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},119.202);
+tl.fromTo("#w248",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},106.602);
+tl.to("#w248",{opacity:0,duration:0.25,ease:"power1.in"},121.009);
+tl.fromTo("#b249",{scale:1},{scale:1.015,duration:14.657,ease:"none"},106.602);
+tl.fromTo("#i251",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},121.359);
+tl.fromTo("#bf252",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},127.802);
+count("#bv253",127.802,0,0.22,2,"","",0.9);
+tl.fromTo("#i254",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},127.802);
+tl.fromTo("#bf255",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},130.242);
+count("#bv256",130.242,0,0.473,2,"","",0.9);
+tl.fromTo("#i257",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},130.242);
+tl.fromTo("#bf258",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},132.742);
+count("#bv259",132.742,0,1.164,2,"","",0.9);
+tl.fromTo("#i260",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},132.742);
+tl.fromTo("#bf261",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},134.982);
+count("#bv262",134.982,0,1.84,2,"","",0.9);
+tl.fromTo("#i263",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},134.982);
+tl.fromTo("#bf264",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},140.702);
+count("#bv265",140.702,0,0.15,2,"","",0.9);
+tl.fromTo("#i266",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},140.702);
+tl.fromTo("#i267",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},137.522);
+tl.fromTo("#w269",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},121.259);
+tl.to("#w269",{opacity:0,duration:0.25,ease:"power1.in"},145.504);
+tl.fromTo("#b270",{scale:1},{scale:1.015,duration:24.495,ease:"none"},121.259);
+tl.fromTo("#bf271",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},145.954);
+count("#bv272",145.954,0,11.64,2,"","",0.9);
+tl.fromTo("#i273",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},145.954);
+tl.fromTo("#bf274",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},148.802);
+count("#bv275",148.802,0,4.0,2,"","",0.9);
+tl.fromTo("#i276",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},148.802);
+tl.fromTo("#bf277",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},153.602);
+count("#bv278",153.602,0,1.68,2,"","",0.9);
+tl.fromTo("#i279",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},153.602);
+tl.fromTo("#bf280",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},157.422);
+count("#bv281",157.422,0,1.2,2,"","",0.9);
+tl.fromTo("#i282",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},157.422);
+tl.fromTo("#bf283",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},152.322);
+count("#bv284",152.322,0,1.2,2,"","",0.9);
+tl.fromTo("#i285",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},152.322);
+tl.fromTo("#bf286",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},161.782);
+count("#bv287",161.782,0,0.7,2,"","",0.9);
+tl.fromTo("#i288",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.782);
+tl.fromTo("#i289",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},163.562);
+tl.fromTo("#w291",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},145.754);
+tl.to("#w291",{opacity:0,duration:0.25,ease:"power1.in"},172.884);
+tl.fromTo("#b292",{scale:1},{scale:1.015,duration:27.380,ease:"none"},145.754);
+tl.fromTo("#i294",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},173.234);
+count("#v295",176.162,0,37,0,"","",1.0);
+tl.fromTo("#i296",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},176.062);
+tl.fromTo("#i298",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},186.422);
+tl.fromTo("#w300",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},173.134);
+tl.to("#w300",{opacity:0,duration:0.25,ease:"power1.in"},194.465);
+tl.fromTo("#b301",{scale:1},{scale:1.015,duration:21.581,ease:"none"},173.134);
+tl.fromTo("#i302",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},199.042);
+tl.fromTo("#i303",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},202.622);
+tl.fromTo("#i304",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},209.602);
+tl.fromTo("#i305",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},215.502);
+tl.fromTo("#w307",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},194.715);
+tl.to("#w307",{opacity:0,duration:0.25,ease:"power1.in"},220.509);
+tl.fromTo("#b308",{scale:1},{scale:1.015,duration:26.044,ease:"none"},194.715);
+tl.fromTo("#i309",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},222.522);
+tl.fromTo("#i310",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},232.702);
+tl.fromTo("#w312",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},220.759);
+tl.to("#w312",{opacity:0,duration:0.25,ease:"power1.in"},243.737);
+tl.fromTo("#b313",{scale:1},{scale:1.015,duration:23.228,ease:"none"},220.759);
+tl.fromTo("#i315",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},247.302);
+tl.fromTo("#i317",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},252.942);
+tl.fromTo("#i319",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},254.482);
+tl.fromTo("#w321",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},243.987);
+tl.to("#w321",{opacity:0,duration:0.25,ease:"power1.in"},257.132);
+tl.fromTo("#b322",{scale:1},{scale:1.015,duration:13.395,ease:"none"},243.987);
+tl.fromTo("#i323",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},257.482);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},257.982);
+tl.fromTo("#w326",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},257.382);
+tl.to("#w326",{opacity:0,duration:0.25,ease:"power1.in"},262.112);
+tl.fromTo("#i328",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},262.362);
+tl.fromTo("#i329",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},262.362);
+tl.fromTo("#w331",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},262.362);
+tl.set({}, {}, 268.382);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

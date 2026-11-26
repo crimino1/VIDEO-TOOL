@@ -1,0 +1,169 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="123.400" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s169" class="clip scene" data-start="0.000" data-duration="7.260" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c168" class="scene"><div id="k161" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:50px;line-height:1.08;color:#fff"><span id="w162" style="opacity:0">The</span> <span id="w163" style="opacity:0">molecule</span> <span id="w164" style="opacity:0">that</span> <span id="w165" style="opacity:0">stores</span> <span id="w166" style="opacity:0">life's</span> <span id="w167" style="opacity:0">instructions</span></div></div></div>
+<video id="v170" class="clip vid" src="assets/clips/pxb_tips_b_258e5cae.mp4" muted playsinline data-start="7.260" data-duration="2.620" data-track-index="1" style="z-index:50;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s174" class="clip scene" data-start="7.260" data-duration="2.620" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div id="c173" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch171" class="chap" style="top:330px"><div class="no">LIVING COMPUTER &nbsp;&middot;&nbsp; No. 2</div><div class="ti">The test tube that tries every answer</div><div id="ru172" class="rule"></div></div></div></div>
+<video id="v175" class="clip vid" src="assets/clips/pxb_la_9037f615.mp4" muted playsinline data-start="9.880" data-duration="3.200" data-track-index="1" style="z-index:53;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s181" class="clip scene" data-start="9.880" data-duration="3.200" data-track-index="2" style="z-index:55" data-layout-allow-overflow data-layout-allow-overlap><div id="c180" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf177" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt176" src="assets/gen/adleman_72bdaa.jpg" alt="adleman"></div><div id="tg178" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Leonard Adleman</div><div class="r">Computer scientist, USC</div></div><div id="pl179" class="place" style="top:850px"><div class="ru"></div><div class="l1">LOS ANGELES</div><div class="l2">1994</div></div><div class="credit">Photo: Leonard Adleman, CC BY-SA 3.0, via Wikimedia Commons</div></div></div>
+<div id="s188" class="clip scene" data-start="13.080" data-duration="13.760" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="c187" class="scene"><div id="k182" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w183" style="opacity:0">A</span> <span id="w184" style="opacity:0">classic</span> <span id="w185" style="opacity:0">hard</span> <span id="w186" style="opacity:0">problem</span></div></div></div>
+<video id="v189" class="clip vid" src="assets/clips/pxb_pipette_petri_becc92ce.mp4" muted playsinline data-start="26.840" data-duration="1.700" data-track-index="1" style="z-index:57;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s196" class="clip scene" data-start="26.840" data-duration="1.700" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="c195" class="scene"><div id="k190" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:58px;line-height:1.08;color:#fff"><span id="w191" style="opacity:0">His</span> <span id="w192" style="opacity:0">idea</span> <span id="w193" style="opacity:0">was</span> <span id="w194" style="opacity:0">beautiful.</span></div></div></div>
+<video id="v197" class="clip vid" src="assets/clips/pxb_tips_b_94677617.mp4" muted playsinline data-start="37.560" data-duration="3.100" data-track-index="1" style="z-index:60;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s206" class="clip scene" data-start="37.560" data-duration="3.100" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><div id="c205" class="scene"><div id="k198" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:56px;line-height:1.08;color:#fff"><span id="w199" style="opacity:0">Pour</span> <span id="w200" style="opacity:0">everything</span> <span id="w201" style="opacity:0">into</span> <span id="w202" style="opacity:0">a</span> <span id="w203" style="opacity:0">test</span> <span id="w204" style="opacity:0">tube</span></div></div></div>
+<div id="s215" class="clip scene" data-start="40.660" data-duration="15.400" data-track-index="2" style="z-index:63" data-layout-allow-overflow data-layout-allow-overlap><div id="c214" class="scene"><div id="k207" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w208" style="opacity:0">Every</span> <span id="w209" style="opacity:0">chain</span> <span id="w210" style="opacity:0">is</span> <span id="w211" style="opacity:0">a</span> <span id="w212" style="opacity:0">possible</span> <span id="w213" style="opacity:0">route</span></div></div></div>
+<div id="s224" class="clip scene" data-start="65.920" data-duration="9.560" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="c223" class="scene"><div id="k216" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:56px;line-height:1.08;color:#fff"><span id="w217" style="opacity:0">About</span> <span id="w218" style="opacity:0">a</span> <span id="w219" style="opacity:0">week</span> <span id="w220" style="opacity:0">of</span> <span id="w221" style="opacity:0">lab</span> <span id="w222" style="opacity:0">work</span></div></div></div>
+<div id="s231" class="clip scene" data-start="75.480" data-duration="8.060" data-track-index="2" style="z-index:65" data-layout-allow-overflow data-layout-allow-overlap><div id="c230" class="scene"><div id="k225" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:56px;line-height:1.08;color:#fff"><span id="w226" style="opacity:0">And</span> <span id="w227" style="opacity:0">it</span> <span id="w228" style="opacity:0">scales</span> <span id="w229" style="opacity:0">terribly</span></div></div></div>
+<div id="s241" class="clip scene" data-start="83.540" data-duration="6.040" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="c240" class="scene"><div class="scrim" style="opacity:0.62"></div><div class="refr" style="top:380px"><div class="a"><span id="rf232">No chip.</span><span id="rf233">No electricity.</span></div><div id="rb234" class="b">Still computing.</div></div><div id="k235" class="kw " style="left:210px;width:1500px;text-align:center;top:720px;font-size:50px;line-height:1.08;color:#aab0b6"><span id="w236" style="opacity:0">Just</span> <span id="w237" style="opacity:0">not</span> <span id="w238" style="opacity:0">very</span> <span id="w239" style="opacity:0">practical.</span></div></div></div>
+<div id="s250" class="clip scene" data-start="89.580" data-duration="6.340" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="c249" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch242" class="chap" style="top:330px"><div class="no">LIVING COMPUTER &nbsp;&middot;&nbsp; No. 3</div><div class="ti">The molecule that holds an OS</div><div id="ru243" class="rule"></div></div><div id="k244" class="kw " style="left:210px;width:1500px;text-align:center;top:770px;font-size:54px;line-height:1.08;color:#aab0b6"><span id="w245" style="opacity:0">Not</span> <span id="w246" style="opacity:0">calculating.</span></div><div id="k247" class="kw " style="left:210px;width:1500px;text-align:center;top:840px;font-size:64px;line-height:1.08;color:#e0b23a"><span id="w248" style="opacity:0">Remembering.</span></div></div></div>
+</div>
+<script>window.PXS = [[0.0, 7.26, "zoom_dna", {"tin": "fade", "tout": "zoom"}], [13.08, 26.84, "flight_map", {"flights": [2.56, 5.02], "rule": 10.7, "path": 11.3, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [28.54, 37.56, "dna_blocks", {"flights": 4.56, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [40.66, 56.06, "tube_chains", {"link": [2.14, 7.54], "right": 11.58, "cam": {"z": [1.0, 1.14]}, "tin": "zoom", "tout": "zoom"}], [56.06, 65.92, "serial_parallel", {"left": 1.56, "right": 4.66, "tin": "zoom", "tout": "zoom"}], [65.92, 75.48, "lab_week", {"days": [4.08, 4.88], "paper": 6.86, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [75.48, 83.54, "dna_vs_earth", {"cities": 3.9, "tip": 6.42, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [83.54, 89.58, "cabinet", {"focus": 2, "check": [[1, -9], [2, 2.98]], "lit": [-9, -9, -9, -9, -9], "tin": "fade", "tout": "fade"}], [89.58, 95.92, "file_bits", {"helix": -9, "tin": "fade", "tout": "fade"}], [95.92, 109.24, "bits_bases", {"four": 1.88, "two": 7.62, "map": 9.44, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [109.24, 123.4, "file_bits", {"bits": 6.1, "letters": 10.32, "helix": 12.94, "cam": {"z": [1.0, 1.12]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/brain.js"></script>
+<script src="assets/js/scenes/cello.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dnacalc.js"></script>
+<script src="assets/js/scenes/dnastore.js"></script>
+<script src="assets/js/scenes/intro.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/slime.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.set("#w162",{opacity:1},18.840);
+tl.set("#w163",{opacity:1},40.940);
+tl.set("#w164",{opacity:1},56.060);
+tl.set("#w165",{opacity:1},56.060);
+tl.set("#w166",{opacity:1},56.060);
+tl.set("#w167",{opacity:1},56.060);
+tl.fromTo("#v170",{scale:1.0},{scale:1.06,duration:2.62,ease:"none"},7.260);
+tl.fromTo("#ch171",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},7.410);
+tl.fromTo("#ru172",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},7.760);
+tl.fromTo("#v175",{scale:1.0},{scale:1.06,duration:3.2,ease:"none"},9.880);
+tl.fromTo("#pt176",{scale:1.0},{scale:1.04,duration:3.2,ease:"none"},9.880);
+tl.fromTo("#pf177",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},9.880);
+tl.fromTo("#tg178",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},10.280);
+tl.fromTo("#pl179",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},10.880);
+tl.set("#w183",{opacity:1},16.820);
+tl.set("#w184",{opacity:1},16.820);
+tl.set("#w185",{opacity:1},151.200);
+tl.set("#w186",{opacity:1},151.200);
+tl.set("#k182",{opacity:0},15.640);
+tl.fromTo("#v189",{scale:1.0},{scale:1.06,duration:1.7,ease:"none"},26.840);
+tl.set("#w191",{opacity:1},27.580);
+tl.set("#w192",{opacity:1},388.620);
+tl.set("#w193",{opacity:1},388.620);
+tl.set("#w194",{opacity:1},388.620);
+tl.fromTo("#v197",{scale:1.0},{scale:1.06,duration:3.1,ease:"none"},37.560);
+tl.set("#w199",{opacity:1},37.960);
+tl.set("#w200",{opacity:1},38.280);
+tl.set("#w201",{opacity:1},38.780);
+tl.set("#w202",{opacity:1},39.280);
+tl.set("#w203",{opacity:1},39.480);
+tl.set("#w204",{opacity:1},39.680);
+tl.set("#w208",{opacity:1},50.440);
+tl.set("#w209",{opacity:1},50.440);
+tl.set("#w210",{opacity:1},51.300);
+tl.set("#w211",{opacity:1},52.760);
+tl.set("#w212",{opacity:1},52.760);
+tl.set("#w213",{opacity:1},58.720);
+tl.set("#k207",{opacity:0},52.240);
+tl.set("#w217",{opacity:1},96.220);
+tl.set("#w218",{opacity:1},96.220);
+tl.set("#w219",{opacity:1},96.220);
+tl.set("#w220",{opacity:1},115.120);
+tl.set("#w221",{opacity:1},336.080);
+tl.set("#w222",{opacity:1},336.080);
+tl.set("#k216",{opacity:0},73.960);
+tl.set("#w226",{opacity:1},100.920);
+tl.set("#w227",{opacity:1},117.460);
+tl.set("#w228",{opacity:1},117.460);
+tl.set("#w229",{opacity:1},117.460);
+tl.set("#rf232",{opacity:1},83.780);
+tl.set("#rf233",{opacity:1},84.880);
+tl.fromTo("#rb234",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},86.520);
+tl.set("#w236",{opacity:1},114.180);
+tl.set("#w237",{opacity:1},278.320);
+tl.set("#w238",{opacity:1},278.320);
+tl.set("#w239",{opacity:1},278.320);
+tl.fromTo("#ch242",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},89.730);
+tl.fromTo("#ru243",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},90.080);
+tl.set("#w245",{opacity:1},278.320);
+tl.set("#w246",{opacity:1},278.320);
+tl.set("#w248",{opacity:1},94.840);
+tl.set({}, {}, 123.400);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

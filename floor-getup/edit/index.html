@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Poppins",sans-serif;color:#F4F1EA}
+.frame{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.w{display:inline-block}
+.lshade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.70) 0%,rgba(10,10,12,.38) 45%,rgba(10,10,12,0) 66%)}
+.title.left{position:absolute;left:80px;top:150px;width:1000px}
+.t0{display:inline-block;font-size:38px;font-weight:700;color:#16181C;background:#D49A5B;padding:6px 22px;border-radius:10px;letter-spacing:3px}
+.t1{font-size:168px;font-weight:800;line-height:1.0;margin-top:16px;letter-spacing:-2px}
+.t1 .w{color:#D49A5B}
+.t1.sm{font-size:100px;margin-top:0;letter-spacing:-1px}.t1.sm .w{color:#F4F1EA}
+.uline{width:500px;height:6px;background:#D49A5B;border-radius:3px;margin:18px 0 22px;transform-origin:left}
+.t2{display:inline-block;font-size:44px;font-weight:700;color:#F4F1EA;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);padding:8px 26px;border-radius:12px;white-space:nowrap}
+.t3{margin-top:22px;font-size:38px;font-weight:500;color:#B8B2A7}
+.find,.rlx{position:absolute;left:80px;top:150px;width:960px}
+.fh{font-size:62px;font-weight:800;line-height:1.1}
+.fh b{color:#D49A5B}
+.pv{width:100%;height:100%;overflow:visible}
+.frow{display:flex;align-items:center;gap:18px;font-size:46px;font-weight:600;margin-top:26px}
+.frow i,.mv i{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:rgba(22,24,28,.6);border:2px solid #D49A5B;color:#F4F1EA;font-style:normal;font-weight:700;font-size:30px;flex:none}
+.rchips{display:flex;flex-wrap:wrap;gap:18px;margin-top:40px;width:920px}
+.rchips em{font-style:normal;font-size:50px;font-weight:700;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);border-left:8px solid #D49A5B;padding:12px 32px;border-radius:12px}
+.moves{position:absolute;left:80px;top:80px;width:980px}
+.mvl{margin-top:22px;display:grid;grid-template-columns:1fr;gap:8px}
+.mv{display:flex;align-items:center;gap:18px;font-size:38px;font-weight:600}
+.mv i{width:48px;height:48px;font-size:24px}
+.safe,.sub{position:absolute;left:80px;bottom:50px;white-space:nowrap;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);font-size:38px;font-weight:600;padding:12px 34px;border-radius:14px}
+.sub{background:#F4F1EA;color:#16181C;border:none;bottom:80px;font-size:44px;font-weight:700}
+.tm{position:absolute;left:56px;top:46px;width:240px;height:240px;border-radius:50%;background:rgba(22,24,28,.72)}
+.tm svg{position:absolute;inset:0;width:240px;height:240px;transform:rotate(-90deg)}
+.tbg{fill:none;stroke:rgba(255,255,255,.14);stroke-width:10}
+.tfg{fill:none;stroke-width:10;stroke-linecap:round;stroke-dasharray:540}
+.tm b{position:absolute;left:0;right:0;top:42px;text-align:center;font-size:110px;font-weight:700;line-height:1}
+.tm span{position:absolute;left:0;right:0;top:160px;text-align:center;font-size:30px;font-weight:700;letter-spacing:5px}
+.pg{position:absolute;right:60px;top:60px;width:470px;text-align:right}
+.pg span{font-size:36px;font-weight:600;background:rgba(22,24,28,.82);padding:4px 18px;border-radius:10px}
+.dots{display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+.dots i{width:24px;height:24px;border-radius:50%;background:rgba(22,24,28,.5);border:2px solid rgba(255,255,255,.55)}
+.dots i.on{background:#F4F1EA;border-color:#F4F1EA}
+.dots i.cur{background:#D49A5B;border-color:#D49A5B}
+.name{position:absolute;left:56px;bottom:56px;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:16px 40px 20px 48px;overflow:hidden}
+.nbar{position:absolute;left:0;top:0;bottom:0;width:10px;background:#D49A5B;transform-origin:top}
+.name b{display:block;font-size:62px;font-weight:700;line-height:1.1}
+.chips{display:flex;gap:10px;margin-top:8px}
+.chips em{font-style:normal;font-size:28px;font-weight:600;color:#F4F1EA;background:rgba(255,255,255,.12);padding:2px 14px;border-radius:8px}
+.tip{position:absolute;right:56px;bottom:56px;display:flex;align-items:center;gap:16px;background:rgba(244,241,234,.95);color:#16181C;font-size:38px;font-weight:700;padding:12px 30px;border-radius:40px;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.xray{position:absolute;right:56px;top:250px;width:440px;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:18px 22px 20px;text-align:center}
+.xh{font-size:28px;font-weight:700;letter-spacing:5px;color:#B8B2A7}
+.xpv{width:396px;height:297px}
+.stbox{position:relative;height:92px;margin-top:6px}
+.st{position:absolute;left:0;right:0;top:0;height:92px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,.08);color:#F4F1EA;font-size:40px;font-weight:800;letter-spacing:1px;opacity:0;white-space:nowrap}
+.st.up{background:#D49A5B;color:#16181C}
+.reps{margin-top:12px;font-size:30px;font-weight:700;letter-spacing:3px;color:#B8B2A7}
+.reps b{font-size:42px;color:#F4F1EA;margin-left:8px}
+.nexth{position:absolute;left:0;right:0;top:40px;text-align:center}
+.nexth > span{display:block;font-size:44px;font-weight:700;color:#D49A5B;letter-spacing:8px}
+.nexth b{display:block;margin:0 auto;max-width:980px;font-size:64px;font-weight:800}
+.nbox{position:absolute;left:374px;top:282px;width:1172px;height:668px;background:#F4F1EA;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.nwrap{position:absolute;left:384px;top:292px;width:1152px;height:648px;border-radius:10px;overflow:hidden}
+.nvid{position:absolute;left:0;top:0;width:1152px;height:648px;object-fit:cover}
+.cd{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;background:rgba(22,24,28,.86);border:6px solid #D49A5B;display:flex;align-items:center;justify-content:center;font-size:190px;font-weight:700;color:#F4F1EA}
+.cdring{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;border:3px solid #D49A5B}
+.gotxt{position:absolute;left:0;right:0;top:410px;text-align:center;font-size:180px;font-weight:800;color:#F4F1EA;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+.wipe{display:none}
+.half{position:absolute;left:50%;top:50%;margin:-120px 0 0 -420px;width:840px;height:240px;border-radius:24px;background:rgba(22,24,28,.82);border:2px solid #D49A5B;display:flex;align-items:center;justify-content:center}
+.half span{font-size:120px;font-weight:800;letter-spacing:6px;color:#F4F1EA}
+.done{position:absolute;left:80px;top:70px;width:1000px}
+.dh{display:inline-block;font-size:66px;font-weight:800;color:#16181C;background:#D49A5B;padding:8px 32px;border-radius:14px;transform-origin:left center}
+.cklist{margin-top:18px;display:grid;grid-template-columns:1fr;gap:6px}
+.ck{display:flex;align-items:center;gap:14px;font-size:36px;font-weight:600}
+.ck i{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#D49A5B;color:#16181C;font-style:normal;font-weight:800;font-size:26px;flex:none}
+.goal{display:inline-block;margin-top:18px;font-size:36px;font-weight:700;color:#F4F1EA;background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.10);padding:6px 24px;border-radius:12px}
+@font-face{font-family:"BarlowC";src:url("assets/fonts/BarlowCondensed-Bold.ttf") format("truetype");font-weight:100 900}
+@font-face{font-family:"Barlow";src:url("assets/fonts/BarlowCondensed-Medium.ttf") format("truetype");font-weight:400}
+@font-face{font-family:"Barlow";src:url("assets/fonts/BarlowCondensed-Bold.ttf") format("truetype");font-weight:700}
+#root{font-family:"Barlow",sans-serif}
+.t0,.t1,.fh,.dh,.name b,.nexth b,.nexth > span,.half span,.cd,.gotxt,.tm b,.st,.xh,.rchips em,.goal,.sub,.t2{font-family:"BarlowC",serif}
+.t1,.fh,.dh,.name b,.nexth b,.half span,.st,.xh,.t0,.nexth > span,.gotxt{text-transform:uppercase;letter-spacing:1px}
+.t1{font-size:184px;font-weight:700;line-height:.92}.t1.sm{font-size:120px;font-weight:700}
+.fh{font-weight:700;font-size:72px}.name b{font-weight:700;font-size:64px}.nexth b{font-weight:700;font-size:72px}.st{font-weight:700;font-size:42px}
+.t0,.t2,.rchips em,.name,.safe,.sub,.goal,.dh,.st,.pg span,.chips em,.xray,.tip{border-radius:4px}
+.nexth > span{color:#F4F1EA}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="600.00" data-width="1920" data-height="1080">
+<div class="frame" id="wi"><video id="introvid" class="clip full" src="assets/clips/intro_live.mp4" muted playsinline data-start="0" data-duration="30.00" data-track-index="1"></video></div>
+<div id="shade" class="clip " data-start="0.00" data-duration="30.00" data-track-index="5" style="z-index:5"><div class="lshade"></div></div>
+<div id="ttl" class="clip " data-start="0.20" data-duration="6.60" data-track-index="10" style="z-index:10"><div class="title left" id="ttli"><div class="t0" id="t0">10 MINUTES · AGE 60+</div><div class="t1"><span class="w" id="tw0">Get</span> <span class="w" id="tw1">Up</span></div><div class="t1 sm"><span class="w" id="tx0">Off</span> <span class="w" id="tx1">the</span> <span class="w" id="tx2">Floor</span></div><div class="uline" id="ul"></div><div class="t2" id="t2">Strength moves + the full get-up</div><div class="t3" id="t3">Stay safe · stay independent</div></div></div>
+<div id="who" class="clip " data-start="6.60" data-duration="6.55" data-track-index="10" style="z-index:10"><div class="rlx" id="whoi"><div class="fh">WHY <b>PRACTISE?</b></div><div class="rchips"><em id="who0">Get up after a fall</em><em id="who1">Stronger legs</em><em id="who2">Steadier balance</em><em id="who3">More confidence</em></div></div></div>
+<div id="bstart" class="clip " data-start="13.20" data-duration="5.20" data-track-index="10" style="z-index:10"><div class="find" id="bsi"><div class="fh">BEFORE YOU <b>START</b></div><div class="frow" id="bs0"><i>1</i>A mat on the floor</div><div class="frow" id="bs1"><i>2</i>Sturdy chair within reach</div><div class="frow" id="bs2"><i>3</i>Slow, controlled moves</div></div></div>
+<div id="moves" class="clip " data-start="18.50" data-duration="11.30" data-track-index="10" style="z-index:10"><div class="moves"><div class="dh" id="mvh">TODAY'S 10 MOVES</div><div class="mvl"><div class="mv" id="mv0"><i>1</i>Glute Bridge</div><div class="mv" id="mv1"><i>2</i>Side-Lying Leg Lift</div><div class="mv" id="mv2"><i>3</i>Hands & Knees Rock Back</div><div class="mv" id="mv3"><i>4</i>Bird Dog</div><div class="mv" id="mv4"><i>5</i>Kneel to Half-Kneel</div><div class="mv" id="mv5"><i>6</i>Sit to Stand</div><div class="mv" id="mv6"><i>7</i>Split Squat</div><div class="mv" id="mv7"><i>8</i>Chair Push-Up</div><div class="mv" id="mv8"><i>9</i>Heel Raises</div><div class="mv" id="mv9"><i>10</i>Full Get-Up Practice</div></div></div></div>
+<div id="safe" class="clip " data-start="23.50" data-duration="6.10" data-track-index="11" style="z-index:11"><div class="safe" id="safei">Keep breathing · Stop if anything hurts</div></div>
+<img id="rb0" class="clip full" src="assets/clips/bg_rest.jpg" data-start="30.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx0" class="clip " data-start="30.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh0">NEXT</span><b><span class="w" id="nw0_0">Glute</span> <span class="w" id="nw0_1">Bridge</span></b></div></div>
+<div id="nbx0" class="clip " data-start="30.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi0"></div></div>
+<div class="nwrap" id="nvw0" style="z-index:4"><video id="nv0" class="clip nvid" src="assets/clips/bridge_g_next.mp4" muted playsinline data-start="30.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr0" class="clip " data-start="30.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr0r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr0n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr0" class="clip " data-start="30.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 1 of 10</span><div class="dots"><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd0_3" class="clip " data-start="42.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_3"></div><div class="cd" id="cd0_3i">3</div></div>
+<div id="cd0_2" class="clip " data-start="43.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_2"></div><div class="cd" id="cd0_2i">2</div></div>
+<div id="cd0_1" class="clip " data-start="44.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_1"></div><div class="cd" id="cd0_1i">1</div></div>
+<video id="wv0" class="clip full" src="assets/clips/bridge_g_work.mp4" muted playsinline data-start="45.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe0" class="clip " data-start="44.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp0"><i></i></div></div>
+<div id="go0t" class="clip " data-start="45.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go0ti">GO!</div></div>
+<div id="tw0" class="clip " data-start="45.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw0r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw0n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw0" class="clip " data-start="45.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 1 of 10</span><div class="dots"><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm0" class="clip " data-start="45.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm0i"><div class="nbar" id="nb0"></div><b>Glute Bridge</b><div class="chips"><em id="mc0_0">Glutes</em><em id="mc0_1">Hamstrings</em></div></div></div>
+<div id="xr0" class="clip " data-start="45.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr0i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p0s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st0_0">LIFT & HOLD</div><div class="st" id="st0_1">LOWER</div></div><div class="reps">REPS <b id="rp0">0</b></div></div></div>
+<div id="tip0" class="clip " data-start="58.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp0"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Squeeze at the top</span></div></div>
+<img id="rb1" class="clip full" src="assets/clips/bg_rest.jpg" data-start="85.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx1" class="clip " data-start="85.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh1">NEXT</span><b><span class="w" id="nw1_0">Side-Lying</span> <span class="w" id="nw1_1">Leg</span> <span class="w" id="nw1_2">Lift</span></b></div></div>
+<div id="nbx1" class="clip " data-start="85.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi1"></div></div>
+<div class="nwrap" id="nvw1" style="z-index:4"><video id="nv1" class="clip nvid" src="assets/clips/side_leg_lift_next.mp4" muted playsinline data-start="85.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr1" class="clip " data-start="85.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr1r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr1n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr1" class="clip " data-start="85.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 2 of 10</span><div class="dots"><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd1_3" class="clip " data-start="97.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_3"></div><div class="cd" id="cd1_3i">3</div></div>
+<div id="cd1_2" class="clip " data-start="98.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_2"></div><div class="cd" id="cd1_2i">2</div></div>
+<div id="cd1_1" class="clip " data-start="99.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_1"></div><div class="cd" id="cd1_1i">1</div></div>
+<video id="wv1" class="clip full" src="assets/clips/side_leg_lift_work.mp4" muted playsinline data-start="100.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe1" class="clip " data-start="99.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp1"><i></i></div></div>
+<div id="go1t" class="clip " data-start="100.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go1ti">GO!</div></div>
+<div id="tw1" class="clip " data-start="100.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw1r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw1n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw1" class="clip " data-start="100.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 2 of 10</span><div class="dots"><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm1" class="clip " data-start="100.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm1i"><div class="nbar" id="nb1"></div><b>Side-Lying Leg Lift</b><div class="chips"><em id="mc1_0">Hips</em><em id="mc1_1">Glutes</em></div></div></div>
+<div id="xr1" class="clip " data-start="100.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr1i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p1s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st1_0">LIFT</div><div class="st" id="st1_1">LOWER</div></div><div class="reps">REPS <b id="rp1">0</b></div></div></div>
+<div id="tip1" class="clip " data-start="113.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp1"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Top leg stays straight</span></div></div>
+<img id="rb2" class="clip full" src="assets/clips/bg_rest.jpg" data-start="140.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx2" class="clip " data-start="140.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh2">NEXT</span><b><span class="w" id="nw2_0">Hands</span> <span class="w" id="nw2_1">&</span> <span class="w" id="nw2_2">Knees</span> <span class="w" id="nw2_3">Rock</span> <span class="w" id="nw2_4">Back</span></b></div></div>
+<div id="nbx2" class="clip " data-start="140.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi2"></div></div>
+<div class="nwrap" id="nvw2" style="z-index:4"><video id="nv2" class="clip nvid" src="assets/clips/rock_back_next.mp4" muted playsinline data-start="140.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr2" class="clip " data-start="140.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr2r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr2n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr2" class="clip " data-start="140.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 3 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd2_3" class="clip " data-start="152.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_3"></div><div class="cd" id="cd2_3i">3</div></div>
+<div id="cd2_2" class="clip " data-start="153.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_2"></div><div class="cd" id="cd2_2i">2</div></div>
+<div id="cd2_1" class="clip " data-start="154.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_1"></div><div class="cd" id="cd2_1i">1</div></div>
+<video id="wv2" class="clip full" src="assets/clips/rock_back_work.mp4" muted playsinline data-start="155.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe2" class="clip " data-start="154.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp2"><i></i></div></div>
+<div id="go2t" class="clip " data-start="155.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go2ti">GO!</div></div>
+<div id="tw2" class="clip " data-start="155.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw2r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw2n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw2" class="clip " data-start="155.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 3 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm2" class="clip " data-start="155.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm2i"><div class="nbar" id="nb2"></div><b>Hands & Knees Rock Back</b><div class="chips"><em id="mc2_0">Back</em><em id="mc2_1">Hips</em><em id="mc2_2">Shoulders</em></div></div></div>
+<div id="xr2" class="clip " data-start="155.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr2i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p2s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st2_0">ROCK BACK</div><div class="st" id="st2_1">FORWARD</div></div><div class="reps">REPS <b id="rp2">0</b></div></div></div>
+<div id="tip2" class="clip " data-start="168.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp2"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Move slowly</span></div></div>
+<img id="rb3" class="clip full" src="assets/clips/bg_rest.jpg" data-start="195.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx3" class="clip " data-start="195.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh3">NEXT</span><b><span class="w" id="nw3_0">Bird</span> <span class="w" id="nw3_1">Dog</span></b></div></div>
+<div id="nbx3" class="clip " data-start="195.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi3"></div></div>
+<div class="nwrap" id="nvw3" style="z-index:4"><video id="nv3" class="clip nvid" src="assets/clips/bird_dog_next.mp4" muted playsinline data-start="195.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr3" class="clip " data-start="195.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr3r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr3n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr3" class="clip " data-start="195.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 4 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd3_3" class="clip " data-start="207.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_3"></div><div class="cd" id="cd3_3i">3</div></div>
+<div id="cd3_2" class="clip " data-start="208.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_2"></div><div class="cd" id="cd3_2i">2</div></div>
+<div id="cd3_1" class="clip " data-start="209.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_1"></div><div class="cd" id="cd3_1i">1</div></div>
+<video id="wv3" class="clip full" src="assets/clips/bird_dog_work.mp4" muted playsinline data-start="210.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe3" class="clip " data-start="209.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp3"><i></i></div></div>
+<div id="go3t" class="clip " data-start="210.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go3ti">GO!</div></div>
+<div id="tw3" class="clip " data-start="210.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw3r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw3n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw3" class="clip " data-start="210.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 4 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm3" class="clip " data-start="210.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm3i"><div class="nbar" id="nb3"></div><b>Bird Dog</b><div class="chips"><em id="mc3_0">Back</em><em id="mc3_1">Glutes</em><em id="mc3_2">Core</em></div></div></div>
+<div id="xr3" class="clip " data-start="210.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr3i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p3s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st3_0">RIGHT ARM</div><div class="st up" id="st3_1">LEFT ARM</div></div><div class="reps">REPS <b id="rp3">0</b></div></div></div>
+<div id="tip3" class="clip " data-start="223.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp3"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Keep your back flat</span></div></div>
+<img id="rb4" class="clip full" src="assets/clips/bg_rest.jpg" data-start="250.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx4" class="clip " data-start="250.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh4">NEXT</span><b><span class="w" id="nw4_0">Kneel</span> <span class="w" id="nw4_1">to</span> <span class="w" id="nw4_2">Half-Kneel</span></b></div></div>
+<div id="nbx4" class="clip " data-start="250.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi4"></div></div>
+<div class="nwrap" id="nvw4" style="z-index:4"><video id="nv4" class="clip nvid" src="assets/clips/half_kneel_next.mp4" muted playsinline data-start="250.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr4" class="clip " data-start="250.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr4r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr4n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr4" class="clip " data-start="250.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 5 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd4_3" class="clip " data-start="262.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_3"></div><div class="cd" id="cd4_3i">3</div></div>
+<div id="cd4_2" class="clip " data-start="263.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_2"></div><div class="cd" id="cd4_2i">2</div></div>
+<div id="cd4_1" class="clip " data-start="264.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_1"></div><div class="cd" id="cd4_1i">1</div></div>
+<video id="wv4" class="clip full" src="assets/clips/half_kneel_work.mp4" muted playsinline data-start="265.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe4" class="clip " data-start="264.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp4"><i></i></div></div>
+<div id="go4t" class="clip " data-start="265.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go4ti">GO!</div></div>
+<div id="tw4" class="clip " data-start="265.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw4r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw4n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw4" class="clip " data-start="265.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 5 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm4" class="clip " data-start="265.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm4i"><div class="nbar" id="nb4"></div><b>Kneel to Half-Kneel</b><div class="chips"><em id="mc4_0">Thighs</em><em id="mc4_1">Glutes</em></div></div></div>
+<div id="xr4" class="clip " data-start="265.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr4i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p4s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st4_0">RIGHT FOOT UP</div><div class="st up" id="st4_1">LEFT FOOT UP</div></div><div class="reps">REPS <b id="rp4">0</b></div></div></div>
+<div id="tip4" class="clip " data-start="278.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp4"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Hold a chair if needed</span></div></div>
+<img id="rb5" class="clip full" src="assets/clips/bg_rest.jpg" data-start="305.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx5" class="clip " data-start="305.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh5">NEXT</span><b><span class="w" id="nw5_0">Sit</span> <span class="w" id="nw5_1">to</span> <span class="w" id="nw5_2">Stand</span></b></div></div>
+<div id="nbx5" class="clip " data-start="305.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi5"></div></div>
+<div class="nwrap" id="nvw5" style="z-index:4"><video id="nv5" class="clip nvid" src="assets/clips/sit_to_stand_g_next.mp4" muted playsinline data-start="305.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr5" class="clip " data-start="305.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr5r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr5n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr5" class="clip " data-start="305.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 6 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="half" class="clip " data-start="305.20" data-duration="3.20" data-track-index="15" style="z-index:15"><div class="half" id="halfi"><span>HALFWAY!</span></div></div>
+<div id="cd5_3" class="clip " data-start="317.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_3"></div><div class="cd" id="cd5_3i">3</div></div>
+<div id="cd5_2" class="clip " data-start="318.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_2"></div><div class="cd" id="cd5_2i">2</div></div>
+<div id="cd5_1" class="clip " data-start="319.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_1"></div><div class="cd" id="cd5_1i">1</div></div>
+<video id="wv5" class="clip full" src="assets/clips/sit_to_stand_g_work.mp4" muted playsinline data-start="320.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe5" class="clip " data-start="319.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp5"><i></i></div></div>
+<div id="go5t" class="clip " data-start="320.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go5ti">GO!</div></div>
+<div id="tw5" class="clip " data-start="320.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw5r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw5n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw5" class="clip " data-start="320.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 6 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm5" class="clip " data-start="320.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm5i"><div class="nbar" id="nb5"></div><b>Sit to Stand</b><div class="chips"><em id="mc5_0">Legs</em><em id="mc5_1">Glutes</em></div></div></div>
+<div id="xr5" class="clip " data-start="320.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr5i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p5s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st5_0">STAND UP</div><div class="st" id="st5_1">SIT DOWN</div></div><div class="reps">REPS <b id="rp5">0</b></div></div></div>
+<div id="tip5" class="clip " data-start="333.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp5"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Use your hands if needed</span></div></div>
+<img id="rb6" class="clip full" src="assets/clips/bg_rest.jpg" data-start="360.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx6" class="clip " data-start="360.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh6">NEXT</span><b><span class="w" id="nw6_0">Split</span> <span class="w" id="nw6_1">Squat</span></b></div></div>
+<div id="nbx6" class="clip " data-start="360.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi6"></div></div>
+<div class="nwrap" id="nvw6" style="z-index:4"><video id="nv6" class="clip nvid" src="assets/clips/split_squat_next.mp4" muted playsinline data-start="360.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr6" class="clip " data-start="360.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr6r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr6n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr6" class="clip " data-start="360.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 7 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd6_3" class="clip " data-start="372.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_3"></div><div class="cd" id="cd6_3i">3</div></div>
+<div id="cd6_2" class="clip " data-start="373.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_2"></div><div class="cd" id="cd6_2i">2</div></div>
+<div id="cd6_1" class="clip " data-start="374.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_1"></div><div class="cd" id="cd6_1i">1</div></div>
+<video id="wv6" class="clip full" src="assets/clips/split_squat_work.mp4" muted playsinline data-start="375.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe6" class="clip " data-start="374.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp6"><i></i></div></div>
+<div id="go6t" class="clip " data-start="375.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go6ti">GO!</div></div>
+<div id="tw6" class="clip " data-start="375.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw6r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw6n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw6" class="clip " data-start="375.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 7 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm6" class="clip " data-start="375.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm6i"><div class="nbar" id="nb6"></div><b>Split Squat</b><div class="chips"><em id="mc6_0">Thighs</em><em id="mc6_1">Glutes</em></div></div></div>
+<div id="xr6" class="clip " data-start="375.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr6i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p6s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st6_0">BEND KNEES</div><div class="st" id="st6_1">RISE</div></div><div class="reps">REPS <b id="rp6">0</b></div></div></div>
+<div id="tip6" class="clip " data-start="388.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp6"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Hold a chair for balance</span></div></div>
+<img id="rb7" class="clip full" src="assets/clips/bg_rest.jpg" data-start="415.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx7" class="clip " data-start="415.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh7">NEXT</span><b><span class="w" id="nw7_0">Chair</span> <span class="w" id="nw7_1">Push-Up</span></b></div></div>
+<div id="nbx7" class="clip " data-start="415.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi7"></div></div>
+<div class="nwrap" id="nvw7" style="z-index:4"><video id="nv7" class="clip nvid" src="assets/clips/chair_pushup_next.mp4" muted playsinline data-start="415.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr7" class="clip " data-start="415.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr7r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr7n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr7" class="clip " data-start="415.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 8 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd7_3" class="clip " data-start="427.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_3"></div><div class="cd" id="cd7_3i">3</div></div>
+<div id="cd7_2" class="clip " data-start="428.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_2"></div><div class="cd" id="cd7_2i">2</div></div>
+<div id="cd7_1" class="clip " data-start="429.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_1"></div><div class="cd" id="cd7_1i">1</div></div>
+<video id="wv7" class="clip full" src="assets/clips/chair_pushup_work.mp4" muted playsinline data-start="430.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe7" class="clip " data-start="429.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp7"><i></i></div></div>
+<div id="go7t" class="clip " data-start="430.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go7ti">GO!</div></div>
+<div id="tw7" class="clip " data-start="430.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw7r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw7n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw7" class="clip " data-start="430.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 8 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm7" class="clip " data-start="430.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm7i"><div class="nbar" id="nb7"></div><b>Chair Push-Up</b><div class="chips"><em id="mc7_0">Chest</em><em id="mc7_1">Arms</em></div></div></div>
+<div id="xr7" class="clip " data-start="430.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr7i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p7s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st7_0">LEAN IN</div><div class="st" id="st7_1">PUSH AWAY</div></div><div class="reps">REPS <b id="rp7">0</b></div></div></div>
+<div id="tip7" class="clip " data-start="443.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp7"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Chair against a wall</span></div></div>
+<img id="rb8" class="clip full" src="assets/clips/bg_rest.jpg" data-start="470.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx8" class="clip " data-start="470.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh8">NEXT</span><b><span class="w" id="nw8_0">Heel</span> <span class="w" id="nw8_1">Raises</span></b></div></div>
+<div id="nbx8" class="clip " data-start="470.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi8"></div></div>
+<div class="nwrap" id="nvw8" style="z-index:4"><video id="nv8" class="clip nvid" src="assets/clips/calf_raise_g_next.mp4" muted playsinline data-start="470.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr8" class="clip " data-start="470.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr8r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr8n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr8" class="clip " data-start="470.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 9 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i></div></div></div>
+<div id="cd8_3" class="clip " data-start="482.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr8_3"></div><div class="cd" id="cd8_3i">3</div></div>
+<div id="cd8_2" class="clip " data-start="483.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr8_2"></div><div class="cd" id="cd8_2i">2</div></div>
+<div id="cd8_1" class="clip " data-start="484.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr8_1"></div><div class="cd" id="cd8_1i">1</div></div>
+<video id="wv8" class="clip full" src="assets/clips/calf_raise_g_work.mp4" muted playsinline data-start="485.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe8" class="clip " data-start="484.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp8"><i></i></div></div>
+<div id="go8t" class="clip " data-start="485.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go8ti">GO!</div></div>
+<div id="tw8" class="clip " data-start="485.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw8r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw8n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw8" class="clip " data-start="485.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 9 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i></div></div></div>
+<div id="nm8" class="clip " data-start="485.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm8i"><div class="nbar" id="nb8"></div><b>Heel Raises</b><div class="chips"><em id="mc8_0">Calves</em><em id="mc8_1">Ankles</em></div></div></div>
+<div id="xr8" class="clip " data-start="485.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr8i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p8s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st8_0">RISE UP</div><div class="st" id="st8_1">LOWER</div></div><div class="reps">REPS <b id="rp8">0</b></div></div></div>
+<div id="tip8" class="clip " data-start="498.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp8"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Hold a chair if needed</span></div></div>
+<img id="rb9" class="clip full" src="assets/clips/bg_rest.jpg" data-start="525.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx9" class="clip " data-start="525.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh9">LAST ONE!</span><b><span class="w" id="nw9_0">Full</span> <span class="w" id="nw9_1">Get-Up</span> <span class="w" id="nw9_2">Practice</span></b></div></div>
+<div id="nbx9" class="clip " data-start="525.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi9"></div></div>
+<div class="nwrap" id="nvw9" style="z-index:4"><video id="nv9" class="clip nvid" src="assets/clips/getup_next.mp4" muted playsinline data-start="525.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr9" class="clip " data-start="525.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr9r" cx="100" cy="100" r="86" class="tfg" style="stroke:#F4F1EA"/></svg><b id="tr9n">15</b><span style="color:#F4F1EA">REST</span></div></div>
+<div id="pr9" class="clip " data-start="525.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 10 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i></div></div></div>
+<div id="cd9_3" class="clip " data-start="537.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr9_3"></div><div class="cd" id="cd9_3i">3</div></div>
+<div id="cd9_2" class="clip " data-start="538.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr9_2"></div><div class="cd" id="cd9_2i">2</div></div>
+<div id="cd9_1" class="clip " data-start="539.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr9_1"></div><div class="cd" id="cd9_1i">1</div></div>
+<video id="wv9" class="clip full" src="assets/clips/getup_work.mp4" muted playsinline data-start="540.00" data-duration="40.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe9" class="clip " data-start="539.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp9"><i></i></div></div>
+<div id="go9t" class="clip " data-start="540.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go9ti">GO!</div></div>
+<div id="tw9" class="clip " data-start="540.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw9r" cx="100" cy="100" r="86" class="tfg" style="stroke:#D49A5B"/></svg><b id="tw9n">40</b><span style="color:#D49A5B">WORK</span></div></div>
+<div id="pw9" class="clip " data-start="540.00" data-duration="40.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 10 of 10</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i></div></div></div>
+<div id="nm9" class="clip " data-start="540.40" data-duration="39.30" data-track-index="11" style="z-index:11"><div class="name" id="nm9i"><div class="nbar" id="nb9"></div><b>Full Get-Up Practice</b><div class="chips"><em id="mc9_0">Whole body</em></div></div></div>
+<div id="xr9" class="clip " data-start="540.60" data-duration="39.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr9i"><div class="xh">STRENGTH</div><div class="xpv"><svg viewBox="0 0 400 300" class="pv"><circle cx="200" cy="36" r="28" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4"/><path d="M160,72 L240,72 C262,74 300,90 330,120 L318,136 C296,118 272,106 258,104 L256,176 L264,292 L216,292 L204,200 L196,200 L184,292 L136,292 L144,176 L142,104 C128,106 104,118 82,136 L70,120 C100,90 138,74 160,72 Z" fill="rgba(255,255,255,.04)" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="4" stroke-linejoin="round"/><rect x="156.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s00" x="156.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="204.0" y="216" width="40" height="66" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s01" x="204.0" y="216" width="40" height="66" rx="16" fill="#D49A5B" opacity="0"/><rect x="152.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s10" x="152.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="200.0" y="148" width="48" height="54" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s11" x="200.0" y="148" width="48" height="54" rx="16" fill="#D49A5B" opacity="0"/><rect x="82.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s20" x="82.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/><rect x="262.0" y="100" width="56" height="30" rx="16" fill="rgba(255,255,255,.10)"/><rect id="p9s21" x="262.0" y="100" width="56" height="30" rx="16" fill="#D49A5B" opacity="0"/></svg></div><div class="stbox"><div class="st up" id="st9_0">GET UP</div><div class="st" id="st9_1">GO DOWN</div></div><div class="reps">REPS <b id="rp9">0</b></div></div></div>
+<div id="tip9" class="clip " data-start="553.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp9"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#D49A5B"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Slow, one step at a time</span></div></div>
+<div class="frame" id="wo"><img id="outimg" class="clip full" src="assets/clips/idle.jpg" data-start="580.00" data-duration="20.00" data-track-index="1" alt=""></div>
+<div id="oshade" class="clip " data-start="580.00" data-duration="20.00" data-track-index="5" style="z-index:5"><div class="lshade"></div></div>
+<div id="end" class="clip " data-start="580.20" data-duration="19.80" data-track-index="10" style="z-index:10"><div class="done"><div class="dh" id="dh">WORKOUT COMPLETE!</div><div class="cklist"><div class="ck" id="ck0"><i id="cki0">&#10003;</i>Glute Bridge</div><div class="ck" id="ck1"><i id="cki1">&#10003;</i>Side-Lying Leg Lift</div><div class="ck" id="ck2"><i id="cki2">&#10003;</i>Hands & Knees Rock Back</div><div class="ck" id="ck3"><i id="cki3">&#10003;</i>Bird Dog</div><div class="ck" id="ck4"><i id="cki4">&#10003;</i>Kneel to Half-Kneel</div><div class="ck" id="ck5"><i id="cki5">&#10003;</i>Sit to Stand</div><div class="ck" id="ck6"><i id="cki6">&#10003;</i>Split Squat</div><div class="ck" id="ck7"><i id="cki7">&#10003;</i>Chair Push-Up</div><div class="ck" id="ck8"><i id="cki8">&#10003;</i>Heel Raises</div><div class="ck" id="ck9"><i id="cki9">&#10003;</i>Full Get-Up Practice</div></div><div class="goal" id="goal">3 to 4 times a week</div></div><div class="sub" id="e3">Like &amp; Subscribe for more</div></div>
+<audio id="vo_intro" class="clip" src="assets/voice/intro.mp3" data-start="0.80" data-volume="1.0" data-track-index="20"></audio>
+<audio id="vo_ex0" class="clip" src="assets/voice/ex01.mp3" data-start="30.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp0_3" class="clip" src="assets/sfx/beep.wav" data-start="42.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp0_2" class="clip" src="assets/sfx/beep.wav" data-start="43.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp0_1" class="clip" src="assets/sfx/beep.wav" data-start="44.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go0" class="clip" src="assets/sfx/go.wav" data-start="45.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten0" class="clip" src="assets/voice/ten.mp3" data-start="74.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell0" class="clip" src="assets/sfx/bell.wav" data-start="84.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex1" class="clip" src="assets/voice/ex02.mp3" data-start="85.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp1_3" class="clip" src="assets/sfx/beep.wav" data-start="97.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp1_2" class="clip" src="assets/sfx/beep.wav" data-start="98.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp1_1" class="clip" src="assets/sfx/beep.wav" data-start="99.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go1" class="clip" src="assets/sfx/go.wav" data-start="100.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten1" class="clip" src="assets/voice/ten.mp3" data-start="129.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell1" class="clip" src="assets/sfx/bell.wav" data-start="139.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex2" class="clip" src="assets/voice/ex03.mp3" data-start="140.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp2_3" class="clip" src="assets/sfx/beep.wav" data-start="152.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp2_2" class="clip" src="assets/sfx/beep.wav" data-start="153.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp2_1" class="clip" src="assets/sfx/beep.wav" data-start="154.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go2" class="clip" src="assets/sfx/go.wav" data-start="155.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten2" class="clip" src="assets/voice/ten.mp3" data-start="184.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell2" class="clip" src="assets/sfx/bell.wav" data-start="194.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex3" class="clip" src="assets/voice/ex04.mp3" data-start="195.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp3_3" class="clip" src="assets/sfx/beep.wav" data-start="207.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp3_2" class="clip" src="assets/sfx/beep.wav" data-start="208.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp3_1" class="clip" src="assets/sfx/beep.wav" data-start="209.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go3" class="clip" src="assets/sfx/go.wav" data-start="210.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten3" class="clip" src="assets/voice/ten.mp3" data-start="239.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell3" class="clip" src="assets/sfx/bell.wav" data-start="249.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex4" class="clip" src="assets/voice/ex05.mp3" data-start="250.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp4_3" class="clip" src="assets/sfx/beep.wav" data-start="262.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp4_2" class="clip" src="assets/sfx/beep.wav" data-start="263.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp4_1" class="clip" src="assets/sfx/beep.wav" data-start="264.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go4" class="clip" src="assets/sfx/go.wav" data-start="265.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten4" class="clip" src="assets/voice/ten.mp3" data-start="294.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell4" class="clip" src="assets/sfx/bell.wav" data-start="304.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex5" class="clip" src="assets/voice/ex06.mp3" data-start="305.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp5_3" class="clip" src="assets/sfx/beep.wav" data-start="317.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp5_2" class="clip" src="assets/sfx/beep.wav" data-start="318.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp5_1" class="clip" src="assets/sfx/beep.wav" data-start="319.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go5" class="clip" src="assets/sfx/go.wav" data-start="320.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten5" class="clip" src="assets/voice/ten.mp3" data-start="349.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell5" class="clip" src="assets/sfx/bell.wav" data-start="359.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex6" class="clip" src="assets/voice/ex07.mp3" data-start="360.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp6_3" class="clip" src="assets/sfx/beep.wav" data-start="372.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp6_2" class="clip" src="assets/sfx/beep.wav" data-start="373.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp6_1" class="clip" src="assets/sfx/beep.wav" data-start="374.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go6" class="clip" src="assets/sfx/go.wav" data-start="375.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten6" class="clip" src="assets/voice/ten.mp3" data-start="404.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell6" class="clip" src="assets/sfx/bell.wav" data-start="414.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex7" class="clip" src="assets/voice/ex08.mp3" data-start="415.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp7_3" class="clip" src="assets/sfx/beep.wav" data-start="427.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp7_2" class="clip" src="assets/sfx/beep.wav" data-start="428.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp7_1" class="clip" src="assets/sfx/beep.wav" data-start="429.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go7" class="clip" src="assets/sfx/go.wav" data-start="430.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten7" class="clip" src="assets/voice/ten.mp3" data-start="459.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell7" class="clip" src="assets/sfx/bell.wav" data-start="469.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex8" class="clip" src="assets/voice/ex09.mp3" data-start="470.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp8_3" class="clip" src="assets/sfx/beep.wav" data-start="482.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp8_2" class="clip" src="assets/sfx/beep.wav" data-start="483.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp8_1" class="clip" src="assets/sfx/beep.wav" data-start="484.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go8" class="clip" src="assets/sfx/go.wav" data-start="485.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten8" class="clip" src="assets/voice/ten.mp3" data-start="514.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell8" class="clip" src="assets/sfx/bell.wav" data-start="524.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex9" class="clip" src="assets/voice/ex10.mp3" data-start="525.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp9_3" class="clip" src="assets/sfx/beep.wav" data-start="537.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp9_2" class="clip" src="assets/sfx/beep.wav" data-start="538.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp9_1" class="clip" src="assets/sfx/beep.wav" data-start="539.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go9" class="clip" src="assets/sfx/go.wav" data-start="540.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten9" class="clip" src="assets/voice/ten.mp3" data-start="569.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell9" class="clip" src="assets/sfx/bell.wav" data-start="579.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_outro" class="clip" src="assets/voice/outro.mp3" data-start="580.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="600.00" data-volume="0.14" data-fade-in="1.5" data-fade-out="3" data-track-index="21"></audio>
+</div>
+<script>
+
+const RH = {"0": {"i": 0, "T": 4.0, "segs": [[0, 2.4, 0, 1, 1.2, 0, "b"], [2.4, 4.0, 1, 0.2, 1.2, 2.4, "b"]], "n": 2}, "1": {"i": 1, "T": 4.0, "segs": [[0, 2.0, 0, 1, 1.3, 0, "l"], [2.0, 4.0, 1, 0.2, 1.4, 2.0, "l"]], "n": 2}, "2": {"i": 2, "T": 5.0, "segs": [[0, 2.6, 0, 1, 1.9, 0, "b"], [2.6, 5.0, 1, 0.3, 1.9, 2.6, "b"]], "n": 2}, "3": {"i": 3, "T": 6.4, "segs": [[0, 3.2, 0, 1, 1.2, 0, "r"], [3.2, 6.4, 1, 1, 1.2, 3.2, "l"]], "n": 2}, "4": {"i": 4, "T": 8.0, "segs": [[0, 4.0, 0, 1, 1.3, 0, "r"], [4.0, 8.0, 1, 1, 1.3, 4.0, "l"]], "n": 2}, "5": {"i": 5, "T": 3.4, "segs": [[0, 1.7, 0, 1, 1.2, 0, "b"], [1.7, 3.4, 1, 0.2, 1.3, 1.7, "b"]], "n": 2}, "6": {"i": 6, "T": 4.0, "segs": [[0, 2.1, 0, 1, 1.5, 0, "b"], [2.1, 4.0, 1, 0.3, 1.5, 2.1, "b"]], "n": 2}, "7": {"i": 7, "T": 3.6, "segs": [[0, 1.9, 0, 1, 1.4, 0, "b"], [1.9, 3.6, 1, 0.3, 1.4, 1.9, "b"]], "n": 2}, "8": {"i": 8, "T": 2.0, "segs": [[0, 1.1, 0, 1, 0.7, 0, "b"], [1.1, 2.0, 1, 0.2, 0.7, 1.1, "b"]], "n": 2}, "9": {"i": 9, "T": 20.0, "segs": [[0, 10.0, 0, 1, 9.0, 0, "b"], [10.0, 20.0, 1, 0.15, 9.0, 10.0, "b"]], "n": 2}};
+function cp(id, lv){
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) {
+    const a = Math.max(0, Math.min(1, lv[c] * 3 - r)).toFixed(3);
+    const el = document.getElementById(`${id}s${r}${c}`); if (el) el.setAttribute("opacity", a); }
+  const g = document.getElementById(id + "gl"); if (g) g.setAttribute("opacity", (0.08 + 0.7 * Math.max(lv[0], lv[1])).toFixed(3));
+}
+function lev(s){ return [s[6] === "l" ? 0 : s[3], s[6] === "r" ? 0 : s[3]]; }
+function work(i, t){
+  const r = RH[i]; const lt = t % r.T; const S = r.segs;
+  let k = 0; while (k < S.length - 1 && lt >= S[k][1]) k++;
+  const pv = lev(S[(k + S.length - 1) % S.length]), cv = lev(S[k]);
+  const u = Math.min(1, (lt - S[k][0]) / S[k][4]); const e = 0.5 - 0.5 * Math.cos(Math.PI * u);
+  cp("p" + i, [pv[0] + (cv[0] - pv[0]) * e, pv[1] + (cv[1] - pv[1]) * e]);
+  for (let j = 0; j < r.n; j++) { const el = document.getElementById(`st${i}_${j}`); const on = j === S[k][2];
+    const since = lt - S[k][5];
+    el.style.opacity = (on ? Math.min(1, since / 0.15) : 0).toFixed(3); el.style.transform = `scale(${on ? 0.85 + 0.15 * Math.min(1, since / 0.25) : 0.85})`; }
+  document.getElementById("rp" + i).textContent = Math.floor(t / r.T) + 1;
+}
+
+const tl = gsap.timeline({paused:true});
+tl.fromTo("#wi",{scale:1.18,x:160,y:60},{scale:1.24,x:160,y:60,duration:30.0,ease:"none"},0);
+tl.fromTo("#tw0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},0.60);
+tl.fromTo("#tw1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},0.75);
+tl.fromTo("#tx0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},1.00);
+tl.fromTo("#tx1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},1.15);
+tl.fromTo("#tx2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},1.30);
+tl.fromTo("#t0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.5,ease:"expo.out"},0.3);
+tl.fromTo("#ul",{scaleX:0},{scaleX:1,duration:0.6,ease:"expo.out"},1.5);
+tl.fromTo("#t2",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"expo.out"},1.9);
+tl.fromTo("#t3",{opacity:0},{opacity:1,duration:0.6},2.5);
+tl.to("#ttli",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},6.4);
+tl.fromTo("#whoi",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"expo.out"},6.65);
+tl.fromTo("#who0",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"power3.out"},7.00);
+tl.fromTo("#who1",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"power3.out"},7.30);
+tl.fromTo("#who2",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"power3.out"},7.60);
+tl.fromTo("#who3",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"power3.out"},7.90);
+tl.to("#whoi",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},12.7);
+tl.fromTo("#bsi",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"expo.out"},13.25);
+tl.fromTo("#bs0",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"expo.out"},13.80);
+tl.fromTo("#bs1",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"expo.out"},14.60);
+tl.fromTo("#bs2",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"expo.out"},15.40);
+tl.to("#bsi",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},18.0);
+tl.fromTo("#mvh",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.6,ease:"power3.out"},18.6);
+tl.fromTo("#mv0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},19.30);
+tl.fromTo("#mv1",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},19.65);
+tl.fromTo("#mv2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},20.00);
+tl.fromTo("#mv3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},20.35);
+tl.fromTo("#mv4",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},20.70);
+tl.fromTo("#mv5",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},21.05);
+tl.fromTo("#mv6",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},21.40);
+tl.fromTo("#mv7",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},21.75);
+tl.fromTo("#mv8",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},22.10);
+tl.fromTo("#mv9",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},22.45);
+tl.fromTo("#safei",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"expo.out"},23.55);
+tl.fromTo("#nw0_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},30.30);
+tl.fromTo("#nw0_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},30.38);
+tl.fromTo("#nh0",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},30.10);
+tl.fromTo(["#nbi0","#nvw0"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},30.15);
+tl.fromTo("#tr0 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},30.00);
+tl.fromTo("#tr0r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},30.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr0n").textContent=Math.ceil(o.v);}},30.00);})();
+tl.fromTo("#cd0_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},42.00);
+tl.fromTo("#cr0_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},42.00);
+tl.fromTo("#cd0_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},43.00);
+tl.fromTo("#cr0_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},43.00);
+tl.fromTo("#cd0_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},44.00);
+tl.fromTo("#cr0_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},44.00);
+tl.fromTo("#wp0",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},44.95);
+tl.fromTo("#go0ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},45.10);
+tl.to("#go0ti",{opacity:0,scale:1.3,duration:0.3},45.65);
+tl.fromTo("#tw0 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},45.00);
+tl.fromTo("#tw0r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},45.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw0n").textContent=Math.ceil(o.v);}},45.00);})();
+tl.fromTo("#nm0i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},45.45);
+tl.fromTo("#nb0",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},45.60);
+tl.fromTo("#mc0_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},45.90);
+tl.fromTo("#mc0_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},46.02);
+tl.fromTo("#xr0i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},45.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(0,o.t)},45.00);})();
+tl.fromTo("#tp0",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},58.05);
+tl.to("#tp0",{opacity:0,x:60,duration:0.3,ease:"power2.in"},64.10);
+tl.fromTo("#nw1_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},85.30);
+tl.fromTo("#nw1_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},85.38);
+tl.fromTo("#nw1_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},85.46);
+tl.fromTo("#nh1",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},85.10);
+tl.fromTo(["#nbi1","#nvw1"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},85.15);
+tl.fromTo("#tr1 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},85.00);
+tl.fromTo("#tr1r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},85.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr1n").textContent=Math.ceil(o.v);}},85.00);})();
+tl.fromTo("#cd1_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},97.00);
+tl.fromTo("#cr1_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},97.00);
+tl.fromTo("#cd1_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},98.00);
+tl.fromTo("#cr1_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},98.00);
+tl.fromTo("#cd1_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},99.00);
+tl.fromTo("#cr1_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},99.00);
+tl.fromTo("#wp1",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},99.95);
+tl.fromTo("#go1ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},100.10);
+tl.to("#go1ti",{opacity:0,scale:1.3,duration:0.3},100.65);
+tl.fromTo("#tw1 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},100.00);
+tl.fromTo("#tw1r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},100.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw1n").textContent=Math.ceil(o.v);}},100.00);})();
+tl.fromTo("#nm1i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},100.45);
+tl.fromTo("#nb1",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},100.60);
+tl.fromTo("#mc1_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},100.90);
+tl.fromTo("#mc1_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},101.02);
+tl.fromTo("#xr1i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},100.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(1,o.t)},100.00);})();
+tl.fromTo("#tp1",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},113.05);
+tl.to("#tp1",{opacity:0,x:60,duration:0.3,ease:"power2.in"},119.10);
+tl.fromTo("#nw2_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},140.30);
+tl.fromTo("#nw2_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},140.38);
+tl.fromTo("#nw2_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},140.46);
+tl.fromTo("#nw2_3",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},140.54);
+tl.fromTo("#nw2_4",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},140.62);
+tl.fromTo("#nh2",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},140.10);
+tl.fromTo(["#nbi2","#nvw2"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},140.15);
+tl.fromTo("#tr2 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},140.00);
+tl.fromTo("#tr2r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},140.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr2n").textContent=Math.ceil(o.v);}},140.00);})();
+tl.fromTo("#cd2_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},152.00);
+tl.fromTo("#cr2_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},152.00);
+tl.fromTo("#cd2_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},153.00);
+tl.fromTo("#cr2_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},153.00);
+tl.fromTo("#cd2_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},154.00);
+tl.fromTo("#cr2_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},154.00);
+tl.fromTo("#wp2",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},154.95);
+tl.fromTo("#go2ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},155.10);
+tl.to("#go2ti",{opacity:0,scale:1.3,duration:0.3},155.65);
+tl.fromTo("#tw2 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},155.00);
+tl.fromTo("#tw2r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},155.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw2n").textContent=Math.ceil(o.v);}},155.00);})();
+tl.fromTo("#nm2i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},155.45);
+tl.fromTo("#nb2",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},155.60);
+tl.fromTo("#mc2_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},155.90);
+tl.fromTo("#mc2_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},156.02);
+tl.fromTo("#mc2_2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},156.14);
+tl.fromTo("#xr2i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},155.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(2,o.t)},155.00);})();
+tl.fromTo("#tp2",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},168.05);
+tl.to("#tp2",{opacity:0,x:60,duration:0.3,ease:"power2.in"},174.10);
+tl.fromTo("#nw3_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},195.30);
+tl.fromTo("#nw3_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},195.38);
+tl.fromTo("#nh3",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},195.10);
+tl.fromTo(["#nbi3","#nvw3"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},195.15);
+tl.fromTo("#tr3 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},195.00);
+tl.fromTo("#tr3r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},195.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr3n").textContent=Math.ceil(o.v);}},195.00);})();
+tl.fromTo("#cd3_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},207.00);
+tl.fromTo("#cr3_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},207.00);
+tl.fromTo("#cd3_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},208.00);
+tl.fromTo("#cr3_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},208.00);
+tl.fromTo("#cd3_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},209.00);
+tl.fromTo("#cr3_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},209.00);
+tl.fromTo("#wp3",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},209.95);
+tl.fromTo("#go3ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},210.10);
+tl.to("#go3ti",{opacity:0,scale:1.3,duration:0.3},210.65);
+tl.fromTo("#tw3 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},210.00);
+tl.fromTo("#tw3r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},210.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw3n").textContent=Math.ceil(o.v);}},210.00);})();
+tl.fromTo("#nm3i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},210.45);
+tl.fromTo("#nb3",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},210.60);
+tl.fromTo("#mc3_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},210.90);
+tl.fromTo("#mc3_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},211.02);
+tl.fromTo("#mc3_2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},211.14);
+tl.fromTo("#xr3i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},210.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(3,o.t)},210.00);})();
+tl.fromTo("#tp3",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},223.05);
+tl.to("#tp3",{opacity:0,x:60,duration:0.3,ease:"power2.in"},229.10);
+tl.fromTo("#nw4_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},250.30);
+tl.fromTo("#nw4_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},250.38);
+tl.fromTo("#nw4_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},250.46);
+tl.fromTo("#nh4",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},250.10);
+tl.fromTo(["#nbi4","#nvw4"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},250.15);
+tl.fromTo("#tr4 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},250.00);
+tl.fromTo("#tr4r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},250.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr4n").textContent=Math.ceil(o.v);}},250.00);})();
+tl.fromTo("#cd4_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},262.00);
+tl.fromTo("#cr4_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},262.00);
+tl.fromTo("#cd4_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},263.00);
+tl.fromTo("#cr4_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},263.00);
+tl.fromTo("#cd4_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},264.00);
+tl.fromTo("#cr4_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},264.00);
+tl.fromTo("#wp4",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},264.95);
+tl.fromTo("#go4ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},265.10);
+tl.to("#go4ti",{opacity:0,scale:1.3,duration:0.3},265.65);
+tl.fromTo("#tw4 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},265.00);
+tl.fromTo("#tw4r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},265.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw4n").textContent=Math.ceil(o.v);}},265.00);})();
+tl.fromTo("#nm4i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},265.45);
+tl.fromTo("#nb4",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},265.60);
+tl.fromTo("#mc4_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},265.90);
+tl.fromTo("#mc4_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},266.02);
+tl.fromTo("#xr4i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},265.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(4,o.t)},265.00);})();
+tl.fromTo("#tp4",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},278.05);
+tl.to("#tp4",{opacity:0,x:60,duration:0.3,ease:"power2.in"},284.10);
+tl.fromTo("#nw5_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},305.30);
+tl.fromTo("#nw5_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},305.38);
+tl.fromTo("#nw5_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},305.46);
+tl.fromTo("#nh5",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},305.10);
+tl.fromTo(["#nbi5","#nvw5"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},305.15);
+tl.fromTo("#tr5 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},305.00);
+tl.fromTo("#tr5r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},305.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr5n").textContent=Math.ceil(o.v);}},305.00);})();
+tl.fromTo("#halfi",{scale:0.9,opacity:0},{scale:1,opacity:1,duration:0.5,ease:"power3.out"},305.20);
+tl.to("#halfi",{scale:1.3,opacity:0,duration:0.35,ease:"power2.in"},308.00);
+tl.fromTo("#cd5_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},317.00);
+tl.fromTo("#cr5_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},317.00);
+tl.fromTo("#cd5_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},318.00);
+tl.fromTo("#cr5_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},318.00);
+tl.fromTo("#cd5_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},319.00);
+tl.fromTo("#cr5_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},319.00);
+tl.fromTo("#wp5",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},319.95);
+tl.fromTo("#go5ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},320.10);
+tl.to("#go5ti",{opacity:0,scale:1.3,duration:0.3},320.65);
+tl.fromTo("#tw5 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},320.00);
+tl.fromTo("#tw5r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},320.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw5n").textContent=Math.ceil(o.v);}},320.00);})();
+tl.fromTo("#nm5i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},320.45);
+tl.fromTo("#nb5",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},320.60);
+tl.fromTo("#mc5_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},320.90);
+tl.fromTo("#mc5_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},321.02);
+tl.fromTo("#xr5i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},320.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(5,o.t)},320.00);})();
+tl.fromTo("#tp5",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},333.05);
+tl.to("#tp5",{opacity:0,x:60,duration:0.3,ease:"power2.in"},339.10);
+tl.fromTo("#nw6_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},360.30);
+tl.fromTo("#nw6_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},360.38);
+tl.fromTo("#nh6",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},360.10);
+tl.fromTo(["#nbi6","#nvw6"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},360.15);
+tl.fromTo("#tr6 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},360.00);
+tl.fromTo("#tr6r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},360.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr6n").textContent=Math.ceil(o.v);}},360.00);})();
+tl.fromTo("#cd6_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},372.00);
+tl.fromTo("#cr6_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},372.00);
+tl.fromTo("#cd6_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},373.00);
+tl.fromTo("#cr6_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},373.00);
+tl.fromTo("#cd6_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},374.00);
+tl.fromTo("#cr6_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},374.00);
+tl.fromTo("#wp6",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},374.95);
+tl.fromTo("#go6ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},375.10);
+tl.to("#go6ti",{opacity:0,scale:1.3,duration:0.3},375.65);
+tl.fromTo("#tw6 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},375.00);
+tl.fromTo("#tw6r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},375.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw6n").textContent=Math.ceil(o.v);}},375.00);})();
+tl.fromTo("#nm6i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},375.45);
+tl.fromTo("#nb6",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},375.60);
+tl.fromTo("#mc6_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},375.90);
+tl.fromTo("#mc6_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},376.02);
+tl.fromTo("#xr6i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},375.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(6,o.t)},375.00);})();
+tl.fromTo("#tp6",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},388.05);
+tl.to("#tp6",{opacity:0,x:60,duration:0.3,ease:"power2.in"},394.10);
+tl.fromTo("#nw7_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},415.30);
+tl.fromTo("#nw7_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},415.38);
+tl.fromTo("#nh7",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},415.10);
+tl.fromTo(["#nbi7","#nvw7"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},415.15);
+tl.fromTo("#tr7 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},415.00);
+tl.fromTo("#tr7r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},415.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr7n").textContent=Math.ceil(o.v);}},415.00);})();
+tl.fromTo("#cd7_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},427.00);
+tl.fromTo("#cr7_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},427.00);
+tl.fromTo("#cd7_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},428.00);
+tl.fromTo("#cr7_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},428.00);
+tl.fromTo("#cd7_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},429.00);
+tl.fromTo("#cr7_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},429.00);
+tl.fromTo("#wp7",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},429.95);
+tl.fromTo("#go7ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},430.10);
+tl.to("#go7ti",{opacity:0,scale:1.3,duration:0.3},430.65);
+tl.fromTo("#tw7 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},430.00);
+tl.fromTo("#tw7r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},430.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw7n").textContent=Math.ceil(o.v);}},430.00);})();
+tl.fromTo("#nm7i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},430.45);
+tl.fromTo("#nb7",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},430.60);
+tl.fromTo("#mc7_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},430.90);
+tl.fromTo("#mc7_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},431.02);
+tl.fromTo("#xr7i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},430.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(7,o.t)},430.00);})();
+tl.fromTo("#tp7",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},443.05);
+tl.to("#tp7",{opacity:0,x:60,duration:0.3,ease:"power2.in"},449.10);
+tl.fromTo("#nw8_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},470.30);
+tl.fromTo("#nw8_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},470.38);
+tl.fromTo("#nh8",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},470.10);
+tl.fromTo(["#nbi8","#nvw8"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},470.15);
+tl.fromTo("#tr8 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},470.00);
+tl.fromTo("#tr8r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},470.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr8n").textContent=Math.ceil(o.v);}},470.00);})();
+tl.fromTo("#cd8_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},482.00);
+tl.fromTo("#cr8_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},482.00);
+tl.fromTo("#cd8_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},483.00);
+tl.fromTo("#cr8_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},483.00);
+tl.fromTo("#cd8_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},484.00);
+tl.fromTo("#cr8_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},484.00);
+tl.fromTo("#wp8",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},484.95);
+tl.fromTo("#go8ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},485.10);
+tl.to("#go8ti",{opacity:0,scale:1.3,duration:0.3},485.65);
+tl.fromTo("#tw8 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},485.00);
+tl.fromTo("#tw8r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},485.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw8n").textContent=Math.ceil(o.v);}},485.00);})();
+tl.fromTo("#nm8i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},485.45);
+tl.fromTo("#nb8",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},485.60);
+tl.fromTo("#mc8_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},485.90);
+tl.fromTo("#mc8_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},486.02);
+tl.fromTo("#xr8i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},485.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(8,o.t)},485.00);})();
+tl.fromTo("#tp8",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},498.05);
+tl.to("#tp8",{opacity:0,x:60,duration:0.3,ease:"power2.in"},504.10);
+tl.fromTo("#nw9_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},525.30);
+tl.fromTo("#nw9_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},525.38);
+tl.fromTo("#nw9_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},525.46);
+tl.fromTo("#nh9",{opacity:0,scale:1.1},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},525.10);
+tl.fromTo(["#nbi9","#nvw9"],{scale:0.94,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},525.15);
+tl.fromTo("#tr9 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},525.00);
+tl.fromTo("#tr9r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},525.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr9n").textContent=Math.ceil(o.v);}},525.00);})();
+tl.fromTo("#cd9_3i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},537.00);
+tl.fromTo("#cr9_3",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},537.00);
+tl.fromTo("#cd9_2i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},538.00);
+tl.fromTo("#cr9_2",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},538.00);
+tl.fromTo("#cd9_1i",{scale:1.12,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"power3.out"},539.00);
+tl.fromTo("#cr9_1",{scale:1,opacity:0.8},{scale:1.35,opacity:0,duration:0.8,ease:"power2.out"},539.00);
+tl.fromTo("#wp9",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},539.95);
+tl.fromTo("#go9ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"power3.out"},540.10);
+tl.to("#go9ti",{opacity:0,scale:1.3,duration:0.3},540.65);
+tl.fromTo("#tw9 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},540.00);
+tl.fromTo("#tw9r",{strokeDashoffset:0},{strokeDashoffset:540,duration:40.0,ease:"none"},540.00);
+(()=>{const o={v:40.0};tl.fromTo(o,{v:40.0},{v:0.001,duration:40.0,ease:"none",onUpdate:()=>{document.getElementById("tw9n").textContent=Math.ceil(o.v);}},540.00);})();
+tl.fromTo("#nm9i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},540.45);
+tl.fromTo("#nb9",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},540.60);
+tl.fromTo("#mc9_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},540.90);
+tl.fromTo("#xr9i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},540.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:40.0,duration:40.0,ease:"none",onUpdate:()=>work(9,o.t)},540.00);})();
+tl.fromTo("#tp9",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},553.05);
+tl.to("#tp9",{opacity:0,x:60,duration:0.3,ease:"power2.in"},559.10);
+tl.fromTo("#wo",{scale:1.26,x:190,y:70},{scale:1.22,x:190,y:70,duration:20.0,ease:"none"},580.00);
+tl.fromTo("#dh",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.6,ease:"power3.out"},580.30);
+tl.fromTo("#ck0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},581.20);
+tl.fromTo("#cki0",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},581.35);
+tl.fromTo("#ck1",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},581.50);
+tl.fromTo("#cki1",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},581.65);
+tl.fromTo("#ck2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},581.80);
+tl.fromTo("#cki2",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},581.95);
+tl.fromTo("#ck3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},582.10);
+tl.fromTo("#cki3",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},582.25);
+tl.fromTo("#ck4",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},582.40);
+tl.fromTo("#cki4",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},582.55);
+tl.fromTo("#ck5",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},582.70);
+tl.fromTo("#cki5",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},582.85);
+tl.fromTo("#ck6",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},583.00);
+tl.fromTo("#cki6",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},583.15);
+tl.fromTo("#ck7",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},583.30);
+tl.fromTo("#cki7",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},583.45);
+tl.fromTo("#ck8",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},583.60);
+tl.fromTo("#cki8",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},583.75);
+tl.fromTo("#ck9",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},583.90);
+tl.fromTo("#cki9",{scale:0},{scale:1,duration:0.35,ease:"power3.out"},584.05);
+tl.fromTo("#goal",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"expo.out"},584.40);
+tl.fromTo("#e3",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"expo.out"},588.00);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

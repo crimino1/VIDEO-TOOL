@@ -1,0 +1,430 @@
+{
+ "result_count": 6,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "5760d7b2-12d7-4a1a-a816-55712f02dbb6",
+   "title": "Acoustic Chill Out Guitar",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1137475",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1137475&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "out",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic Chill Out Guitar\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out - Episode 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/136616/chill-out-episode-3",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 433000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/",
+   "related_url": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "bb28a997-c363-449c-bdb7-6cf60ad4f251",
+   "title": "group 8 acoustic guitar (master)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/465206",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=465206&format=mp32",
+   "creator": "Stellar Art Wars Free License",
+   "creator_url": "https://www.jamendo.com/artist/349483/Stellar_Art_Wars_Free_License",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"group 8 acoustic guitar (master)\" by Stellar Art Wars Free License is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "4 Real Workshop",
+    "foreign_landing_url": "https://www.jamendo.com/album/55292/4-real-workshop",
+    "creator": "Stellar Art Wars Free License",
+    "creator_url": "https://www.jamendo.com/artist/349483/Stellar_Art_Wars_Free_License",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 188000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/",
+   "related_url": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ea4ef155-35a9-46bb-b136-4e4f8f2223d9",
+   "title": "Lucky Acoustic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1540859",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1540859&format=mp32",
+   "creator": "Jesse Keller",
+   "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "corporate",
+    "filmscore",
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "advertising",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lucky Acoustic\" by Jesse Keller is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "One Mans Journey",
+    "foreign_landing_url": "https://www.jamendo.com/album/176305/one-mans-journey",
+    "creator": "Jesse Keller",
+    "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 202000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/",
+   "related_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0436564c-41a4-42a1-9fe9-f4e68c0bc7b7",
+   "title": "Nocturno No. 2",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1374949",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1374949&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "progressiverock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acoustical",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Nocturno No. 2\" by Daniel Bautista is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Pink Album",
+    "foreign_landing_url": "https://www.jamendo.com/album/161658/the-pink-album",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 164000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0436564c-41a4-42a1-9fe9-f4e68c0bc7b7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0436564c-41a4-42a1-9fe9-f4e68c0bc7b7/",
+   "related_url": "https://api.openverse.org/v1/audio/0436564c-41a4-42a1-9fe9-f4e68c0bc7b7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0436564c-41a4-42a1-9fe9-f4e68c0bc7b7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "36119cae-1441-4d63-aa4e-fb40e5f027f3",
+   "title": "Red Flower (Acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1494569",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1494569&format=mp32",
+   "creator": "DEgITx",
+   "creator_url": "https://www.jamendo.com/artist/504613/DEgITx",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "celtic",
+    "folk",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acoutic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Red Flower (Acoustic)\" by DEgITx is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Red Flower",
+    "foreign_landing_url": "https://www.jamendo.com/album/172372/red-flower",
+    "creator": "DEgITx",
+    "creator_url": "https://www.jamendo.com/artist/504613/DEgITx",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 341000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/36119cae-1441-4d63-aa4e-fb40e5f027f3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/36119cae-1441-4d63-aa4e-fb40e5f027f3/",
+   "related_url": "https://api.openverse.org/v1/audio/36119cae-1441-4d63-aa4e-fb40e5f027f3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/36119cae-1441-4d63-aa4e-fb40e5f027f3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dd1c97ce-2077-4739-a6e1-953fd7ed922c",
+   "title": "Did You Ever (acoustic guitar fingerpicking) - Lenny Lionstar",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1493981",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1493981&format=mp32",
+   "creator": "Lenny Wiles Lionstar GALAXY BANDSTAND",
+   "creator_url": "https://www.jamendo.com/artist/503956/Lenny_Wiles_Lionstar",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "americana",
+    "folk",
+    "gothic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acoustickguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "classicalguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Did You Ever (acoustic guitar fingerpicking) - Lenny Lionstar\" by Lenny Wiles Lionstar GALAXY BANDSTAND is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "In A Gadda New Eden - Lenny Wiles Lionstar",
+    "foreign_landing_url": "https://www.jamendo.com/album/172327/in-a-gadda-new-eden-lenny-wiles-lionstar",
+    "creator": "Lenny Wiles Lionstar GALAXY BANDSTAND",
+    "creator_url": "https://www.jamendo.com/artist/503956/Lenny_Wiles_Lionstar",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 277000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dd1c97ce-2077-4739-a6e1-953fd7ed922c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dd1c97ce-2077-4739-a6e1-953fd7ed922c/",
+   "related_url": "https://api.openverse.org/v1/audio/dd1c97ce-2077-4739-a6e1-953fd7ed922c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dd1c97ce-2077-4739-a6e1-953fd7ed922c/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

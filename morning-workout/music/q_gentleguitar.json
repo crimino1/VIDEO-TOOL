@@ -1,0 +1,81 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "9cce4a0a-a3a2-48b4-a107-98ab4833b503",
+   "title": "The Gentle Art of Choking (My Vitriol)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1763843",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1763843&format=mp32",
+   "creator": "Phil Twite",
+   "creator_url": "https://www.jamendo.com/artist/368600/Phil_Twite",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "alternativerock",
+    "poprock",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Gentle Art of Choking (My Vitriol)\" by Phil Twite is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Undercover",
+    "foreign_landing_url": "https://www.jamendo.com/album/193929/undercover",
+    "creator": "Phil Twite",
+    "creator_url": "https://www.jamendo.com/artist/368600/Phil_Twite",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 208000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9cce4a0a-a3a2-48b4-a107-98ab4833b503/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9cce4a0a-a3a2-48b4-a107-98ab4833b503/",
+   "related_url": "https://api.openverse.org/v1/audio/9cce4a0a-a3a2-48b4-a107-98ab4833b503/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9cce4a0a-a3a2-48b4-a107-98ab4833b503/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

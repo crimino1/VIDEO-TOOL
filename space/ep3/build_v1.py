@@ -1,0 +1,303 @@
+"""Outside Lay EP3: The Most Terrifying Types of Black Holes. Writes parts/p*.html, sfx.json, usage.json, cues.txt.
+Voice public/voice.mp3 (873.61 s). 3D: space.js + kinds_ep2.js + kinds_ep3.js (ray-traced black hole). 2D: scenes_ep3.py."""
+import json, os, sys
+from lib import *
+from scenes2d import namecard, bignum, listcard, lenses
+from scenes_ep3 import *
+
+END = 873.61
+CSS = open(H / "style.css", encoding="utf-8").read()
+
+
+def I(name, w_=900, h_=900, crop=None):
+    try: return fitted(name, w_, h_, crop)
+    except AssertionError:
+        print("MISSING image", name)
+        return gen_img("missing.jpg", lambda out: Image.new("RGB", (64, 64), (14, 20, 32)).save(out))
+
+
+def IMGP(name):
+    """Raw path for a 3D texture from assets/img (falls back to a dark texture)."""
+    try: return "assets/img/" + img(name).name
+    except AssertionError:
+        print("MISSING texture", name); return "assets/tex/2k_stars.jpg"
+
+
+# ---------------- shot builders ----------------
+def G(kind, ov=None, **o):
+    def f(a, b, **_):
+        G3(a, b, kind, **o)
+        if ov: layer(a, b, ov(a, b), fin=0)
+    f.k = "3d"; return f
+
+
+def N(fn, *args, **kw):
+    def f(a, b):
+        pid = nid("push")   # slow camera push so diagrams never sit still
+        tw(f"#{pid}", {"scale": 1.035}, a, b - a, {"scale": 1.0}, "none")
+        return f'<div id="{pid}" class="scene" style="transform-origin:50% 55%">' + fn(a, b, *args, **kw) + '</div>'
+    f.k = "2d"; return f
+
+
+def PH(name, ov=None, **kw):
+    def f(a, b):
+        try: h = photo_html(a, b, name, **kw)
+        except AssertionError:
+            print("MISSING photo", name); h = navy(a, b)
+        return h + ('<div class="shade"></div>' + ov(a, b) if ov else "")
+    f.k = "2d"; return f
+
+
+def VD(src, ss=0, ov=None, **kw):
+    def f(a, b): return ("vid", src, ss, kw, ov)
+    f.k = "vid"; return f
+
+
+def OV(*fs): return lambda a, b: "".join(f(a, b) for f in fs)
+def ST_(text, t, end=None, y=900, white=False, size=72): return lambda a, b: stmt(text, t, end, y, white, size)
+def LB(text, t, x, y, end=None, white=False, size=22, anchor="left"): return lambda a, b: lab(text, t, x, y, end, white, size, anchor)
+def BX(text, t, x, y, end=None, kind="", anchor="left"): return lambda a, b: box(text, t, x, y, end, kind, anchor)
+def NM(n0, n1, unit, t, x=None, y=880, count=1.2, end=None, dec=0, prefix="", suffix="", size=96): return lambda a, b: num(n0, n1, unit, t, x, y, count, end, dec, prefix, suffix, size)
+def HD(text, t=None): return lambda a, b: hdr(text, t if t is not None else a + 0.1)
+def LN(name, t, x, y, r, end=None): return lambda a, b: lens(t, x, y, r, I(name), end)
+def FX(name, t, vol=1.0):
+    def f(a, b): sfx(name, t, vol); return ""
+    return f
+
+
+t = lambda word, after, **kw: w(word, after, **kw)
+SKY = "8k_stars_milky_way.jpg"
+HERO = dict(diskIn=3.0, diskOut=14)
+
+SHOTS = [
+    # ================= HOOK =================
+    ("0:00.00", G("bh", bhK=[[0, 0]], starDir=[0.02, 0.01, -1], starKK=[[0, 6], [11.8, 26]], dist=24, el=2, az0=-1.5, az1=1.5, fov=34, ov=OV(
+        lambda a, b: (tw("#fadein0", {"opacity": 0}, 0.0, 1.8, {"opacity": 1}, "power1.inOut") or "") + '<div id="fadein0" class="black"></div>',
+        ST_("2011", 1.6, 6.2, 900, True, 80), LB("A STAR TOWARD THE CENTRE OF OUR GALAXY", 2.4, 960, 1000, None, True, 20, "center"), FX("boom", 0.4, 0.5)))),
+    ("0:11.82", N(lightcurve, t("270", 11.8), t("magnifying", 11.8))),
+    (t("magnifying", 11.8) - 0.3, VD("px_magnify_0", 0, ov=ST_("AS IF SOMEONE HELD A MAGNIFYING GLASS OVER IT", t("magnifying", 11.8), None, 880, True, 52))),
+    ("0:23.70", G("bh", disk=0, starDir=[0.0, 0.0, -1], star=34, dist=24, el=2, az0=-5, az1=5, fov=36, ov=OV(
+        ST_("SOMETHING CROSSED IN FRONT OF IT", 24.2, t("seven", 23.7) - 0.3, 900, True, 60), NM(0, 7, "× HEAVIER THAN THE SUN", t("seven", 23.7), 60, 120, 1.0, size=72),
+        NM(0, 160000, "KM PER HOUR", t("160", 23.7), None, 880, 1.2, size=80), FX("boom", 24.0, 0.5)))),
+    ("0:35.44", G("bh", disk=0, glow=0, starDir=[0.0, 0.0, -1], starKK=[[0, 34], [2.5, 0]], dist0=24, dist1=21, el=2, az0=5, az1=8, fov=36, ov=OV(
+        ST_("WE NEVER SAW IT", 35.6, 37.0, 900, True, 70), ST_("IT GIVES OFF NO LIGHT AT ALL", t("light", 38.3) - 0.8, None, 900, False, 64)))),
+    ("0:40.86", G("bh", disk=0, dist0=30, dist1=26, el=4, az0=20, az1=70, fov=40, skyRot=0.12, ov=OV(
+        ST_("A BLACK HOLE. ALONE.", 41.2, 45.0, 900, True, 66), NM(0, 5000, "LIGHT-YEARS FROM US", t("5", 40.8, prefix=True), None, 880, 1.2)))),
+    ("0:51.57", G("galaxy", art=IMGP("milkyway_art"), artOp=0.5, marks=900, dist0=150, dist1=130, el=60, az0=0, az1=12, ov=OV(
+        NM(0, 100000000, "MORE LIKE IT?", t("hundred", 51.5), None, 880, 1.6), LB("ARTIST'S CONCEPT", 52.0, 1860, 1010, None, True, 16, "right")))),
+    ("0:55.54", G("bh", dist0=34, dist1=28, el=7, az0=-12, az1=4, **HERO, ov=OV(
+        ST_("IT'S NOWHERE NEAR THE TOP", t("nowhere", 57.7), 60.0, 900, True, 60), lambda a, b: stmt("THE MOST TERRIFYING TYPES OF BLACK HOLES", 60.4, None, 860, False, 74)))),
+    ("1:06.26", N(ranklist, 66.6, t("deadly", 66.2), t("question", 66.2))),
+    ("1:19.82", G("bh", dist0=40, dist1=33, el=10, az0=30, az1=40, jet=0.8, **HERO, ov=OV(LB("OUTSIDE LAY", 80.3, 960, 980, None, False, 26, "center"), FX("boom", 82.1, 0.6)))),
+    # ================= #8 SILENT =================
+    ("1:23.62", N(rankcard, 8, "THE SILENT ONE", "A PERFECT SPHERE OF DARKNESS", t("Silent", 83.6))),
+    ("1:26.58", G("bh", dist0=32, dist1=28, el=13, az0=-20, az1=-8, shiftY=90, glow=0, **HERO, diskK=[[0, 1], [t("aren't", 96.3) - 86.58, 1], [t("quiet", 99.4) - 86.58 + 1.0, 0]], ov=OV(
+        ST_("A GLOWING RING OF FIRE?", 87.4, 93.6, 900, True, 60), ST_("ONLY WHEN IT'S EATING", t("eating", 93.8), 96.2, 900, False, 64),
+        ST_("MOST OF THE TIME: SILENT", t("quiet", 99.4), None, 900, True, 64), LB("NO GLOW · NO SIGNAL", t("glow", 100.5), 960, 990, None, False, 20, "center")))),
+    ("1:46.82", G("bh", disk=0, dist=26, el=10, az0=0, az1=10, comp=dict(a=7.5, r=0.9, sp=15, ph=0), ov=OV(
+        ST_("SO HOW DO YOU FIND IT?", 107.2, 109.9, 900, True, 60), ST_("WATCH ITS NEIGHBOURS", t("neighbors", 110.0) - 0.5, None, 900, False, 64)))),
+    ("1:52.08", PH("gaia_spacecraft", zoom=(1.0, 1.08), ov=OV(BX("GAIA · ESA", 112.6, 60, 940), LB("2022 · A STAR DOING SOMETHING STRANGE", 113.4, 60, 1010, None, True, 20)))),
+    ("2:02.22", N(orbit_nothing, 122.6, t("10", 126.6))),
+    ("2:13.88", G("bh", disk=0, dist=30, el=14, az0=-10, az1=4, comp=dict(a=8, r=0.95, sp=12, ph=-30), ov=OV(
+        BX("GAIA BH1", 134.4, 60, 940), NM(0, 1560, "LIGHT-YEARS AWAY · THE CLOSEST WE KNOW", t("1", 136.7, prefix=True), 60, 120, 1.2, size=72)))),
+    ("2:23.06", PH("gaia_bh3_art", zoom=(1.0, 1.1), ov=OV(BX("GAIA BH3 · 2024", 143.6, 60, 900), NM(0, 33, "× THE MASS OF THE SUN", t("33", 143.0), 60, 960, 1.0, size=72),
+                                                           LB("ARTIST'S CONCEPT · ESO", 144.0, 1860, 1010, None, True, 16, "right")))),
+    ("2:35.66", G("bh", disk=0, dist0=34, dist1=30, el=6, az0=40, az1=56, ov=OV(ST_("THEY WERE FOUND BY LUCK", t("luck", 161.4) - 0.6, None, 900, True, 64)))),
+    ("2:46.16", VD("px_nightsky_0", 0, ov=OV(ST_("EVERY QUIET BLACK HOLE WITHOUT A PARTNER: UNSEEN", 166.6, t("nearest", 171.0) - 0.4, 880, True, 52),
+                                             ST_("THE NEAREST ONE COULD BE MUCH CLOSER", t("nearest", 171.0), None, 880, False, 56)))),
+    # ================= #7 SHREDDER =================
+    ("2:58.08", N(rankcard, 7, "THE SHREDDER", "SMALLER MEANS MORE VIOLENT", t("shredder", 178.0))),
+    ("3:00.28", G("bh", dist0=22, dist1=17, el=12, az0=10, az1=24, diskIn=3.0, diskOut=9, temp=1.4, tint=[0.85, 0.93, 1.12], ov=OV(ST_("THE SMALLER IT IS, THE MORE VIOLENT UP CLOSE", t("smaller", 182.6), None, 900, True, 56)))),
+    ("3:07.22", N(tidal, "assets/img/astronaut_cut.png", t("feet", 190.3), t("Near", 198.7), t("feet", 205.1))),
+    ("3:29.48", VD("px_toothpaste_0", 0, ov=ST_("STRETCHED, AND SQUEEZED FROM THE SIDES", 210.0, None, 880, True, 56))),
+    ("3:36.68", G("bh", distK=[[0, 24], [13.1, 16]], el=4, az0=-10, az1=10, diskIn=3.0, diskOut=9, temp=1.4, tint=[0.85, 0.93, 1.12], ease="in", ov=OV(
+        lambda a, b: stmt("SPAGHETTIFICATION", t("spaghettification", 216.6), None, 90, True, 110), LB("THE WORST POSSIBLE WAY TO GO", t("worst", 221.7), 960, 1000, None, False, 22, "center")))),
+    ("3:49.80", G("bh", dist0=16, dist1=15, el=4, az0=10, az1=16, diskIn=3.0, diskOut=9, temp=1.4, tint=[0.85, 0.93, 1.12], ov=LB("RIPPED APART THOUSANDS OF KILOMETRES BEFORE THE EDGE", 230.6, 960, 110, None, True, 22, "center"))),
+    ("3:57.24", VD("nasa_tde_a", 3, ov=OV(LB("A STAR UNRAVELLED INTO A RIBBON OF GAS", 238.0, 960, 1000, None, True, 22, "center"), LB("VISUALISATION · NASA", 238.0, 1860, 1010, None, True, 16, "right")))),
+    ("4:07.14", PH("tde_art", zoom=(1.0, 1.1), ov=OV(BX("TIDAL DISRUPTION EVENT", 247.6, 60, 900), LB("BRIEFLY BRIGHTER THAN A WHOLE GALAXY", t("outshine", 247.1), 60, 970, None, True, 20),
+                                                     LB("ARTIST'S CONCEPT", 247.6, 1860, 1010, None, True, 16, "right")))),
+    ("4:16.38", N(gentle, 256.8, t("supermassive", 256.3))),
+    # ================= #6 WANDERER =================
+    ("4:31.90", N(rankcard, 6, "THE WANDERER", "IT MOVES. AND YOU WOULD NEVER SEE IT COMING.", t("Wanderer", 271.9))),
+    (t("Remember", 273.0), G("bh", disk=0, starDir=[0.01, 0.0, -1], star=34, dist=24, el=2, az0=4, az1=-4, fov=36, ov=OV(
+        LB("THE ONE THAT BENT A STAR'S LIGHT FOR 270 DAYS", t("bent", 275.0), 960, 1000, None, True, 22, "center")))),
+    ("4:45.30", PH("crab_nebula", zoom=(1.0, 1.1), ov=OV(LB("THE CRAB NEBULA · WHAT'S LEFT OF A DEAD STAR", 286.0, 60, 1010, None, True, 18)))),
+    (t("lopsided", 290.5) - 0.6, N(kick, t("lopsided", 290.5), t("kick", 290.5))),
+    ("4:58.82", G("galaxy", art=IMGP("milkyway_art"), artOp=0.5, marks=1400, dist0=120, dist1=150, el=40, az0=30, az1=50, ov=OV(
+        NM(0, 100000000, "WANDERING BLACK HOLES (ESTIMATE)", t("100", 298.8), None, 880, 1.6), LB("ARTIST'S CONCEPT", 299.4, 1860, 1010, None, True, 16, "right")))),
+    ("5:10.54", PH("microlens_hubble", crop=(0.0, 0.14, 1.0, 0.58), zoom=(1.0, 1.12), ov=OV(BX("FOUND IN 2022", 311.0, 60, 940), LB("HUBBLE: THE LENSED STAR", 311.4, 60, 1010, None, True, 20)))),
+    ("5:15.18", N(microlens, 315.6, t("only", 322.7))),
+    ("5:27.84", VD("nasa_bh_bare_orbit", 2, ov=OV(LB("VISUALISATION · NASA", 328.4, 1860, 1010, None, True, 16, "right"), ST_("THE ODDS ARE TINY", 328.3, None, 900, True, 66), LB("SPACE IS ALMOST ENTIRELY EMPTY", t("empty", 331.7), 960, 1000, None, False, 20, "center")))),
+    ("5:38.26", N(orbit_drift, t("Orbits", 347.6))),
+    # ================= #5 PRIMORDIAL =================
+    ("5:54.96", N(rankcard, 5, "THE GHOST FROM THE BIG BANG", "OLDER THAN EVERY STAR", t("ghost", 355.0))),
+    ("5:58.58", PH("cmb_planck", mode="card", bg="navy", maxw=1300, maxh=600, zoom=(1.0, 1.05), ov=OV(LB("THE EARLIEST LIGHT · ESA PLANCK", 359.4, 960, 860, None, True, 18, "center"), ST_("OLDER THAN EVERY STAR IN THE UNIVERSE", t("older", 362.7), None, 930, True, 56)))),
+    ("6:12.88", PH("hawking_b", mode="card", bg="navy", maxh=760, zoom=(1.0, 1.04), ov=OV(HD("1971"), LB("STEPHEN HAWKING", 373.4, 960, 1000, None, True, 22, "center")))),
+    ("6:25.64", G("bh", disk=0, dist0=18, dist1=15, el=3, az0=0, az1=12, glow=1.5, ov=OV(ST_("PRIMORDIAL BLACK HOLES", 386.0, None, 900, True, 70)))),
+    ("6:31.66", VD("px_mountain_0", 0, ov=OV(ST_("THE MASS OF A MOUNTAIN", 392.0, None, 820, True, 60), LB("SMALLER THAN AN ATOM", t("atom", 391.7), 960, 920, None, False, 26, "center")))),
+    ("6:35.72", VD("px_palm_0", 0, ov=OV(ST_("THE MASS OF A PLANET", 396.0, None, 820, True, 60), LB("IN THE PALM OF YOUR HAND", t("palm", 395.7), 960, 920, None, False, 26, "center")))),
+    ("6:40.02", PH("rogue_bh_art", zoom=(1.0, 1.1), ov=OV(ST_("PART OF THE DARK MATTER?", t("dark", 405.3) - 0.5, None, 900, True, 60), LB("ARTIST'S CONCEPT", 400.5, 1860, 1010, None, True, 16, "right")))),
+    ("6:52.12", N(planet9, 417.4, t("Planet", 416.9), t("what", 425.1))),
+    ("7:09.46", VD("px_bowling_0", 0, ov=OV(NM(5, 10, "EARTH MASSES", t("five", 429.4), None, 820, 1.0, prefix="5–"), LB("SMALLER THAN A BOWLING BALL", t("bowling", 429.4), 960, 920, None, True, 26, "center")))),
+    ("7:17.38", G("bh", disk=0, dist0=14, dist1=11, el=2, az0=20, az1=30, ov=OV(ST_("INSIDE OUR OWN SOLAR SYSTEM?", 437.8, None, 900, True, 60), LB("COMPLETELY IMPOSSIBLE TO SEE", t("impossible", 437.4), 960, 1000, None, False, 20, "center")))),
+    # ================= #4 SNIPER =================
+    ("7:26.18", N(rankcard, 4, "THE SNIPER", "ONE IS POINTED STRAIGHT AT US", t("Sniper", 446.1))),
+    ("7:28.48", G("bh", dist0=46, dist1=40, el=12, az0=-30, az1=-14, jetK=[[0, 0], [t("blasted", 452.7) - 448.48, 0], [t("blasted", 452.7) - 448.48 + 2.0, 1.2]], diskOut=11, ov=OV(
+        LB("TWISTED MAGNETIC FIELDS", t("twisted", 452.7), 60, 1000, None, True, 20), ST_("TWO JETS", t("jets", 452.7), None, 900, False, 70)))),
+    ("7:41.40", G("bh", dist0=60, dist1=70, el0=10, el1=28, az0=-14, az1=10, jet=1.2, diskOut=11, ov=OV(LB("NEARLY THE SPEED OF LIGHT", 461.8, 60, 1000, None, True, 20),
+                                                                                            LB("STRETCHING THOUSANDS OF LIGHT-YEARS", t("thousands", 461.4), 60, 1040, None, False, 20)))),
+    ("7:47.52", G("bh", distK=[[0, 70], [10.7, 52]], elK=[[0, 28], [3.0, 30], [10.7, 66]], az=10, jet=1.3, diskOut=11, ov=OV(
+        ST_("A FEW POINT STRAIGHT AT US", t("few", 470.6), 472.5, 900, True, 60), lambda a, b: stmt("BLAZARS", t("blazars", 472.6), None, 90, False, 120),
+        LB("LIKE STARING DOWN THE BARREL OF A GUN", t("staring", 472.6), 960, 1000, None, True, 22, "center")))),
+    ("7:58.24", VD("px_ice_0", 0, ov=OV(BX("SEPTEMBER 22, 2017", 478.6, 60, 940), LB("DEEP IN THE ANTARCTIC ICE", 479.4, 60, 1010, None, True, 20)))),
+    (t("caught", 478.2), VD("nasa_icecube_detect", 0, ov=OV(BX("ICECUBE NEUTRINO OBSERVATORY", t("caught", 478.2) + 0.3, 60, 940), LB("VISUALISATION · NASA", t("caught", 478.2) + 0.3, 1860, 1010, None, True, 16, "right"),
+                                                                    LB("ONE GHOSTLY PARTICLE: A NEUTRINO", t("neutrino", 478.2), 60, 1010, None, True, 20)))),
+    ("8:11.20", N(neutrino, 491.6, t("block", 503.4))),
+    ("8:31.42", G("earth", dist0=3.4, dist1=3.0, el=8, az0=10, az1=20, sun=[-70, 6], ov=OV(ST_("FROM MUCH CLOSER, A DIFFERENT STORY", t("closer", 514.9) - 0.5, None, 900, True, 56),
+                                                                                         LB("RADIATION TEARING INTO OUR ATMOSPHERE", t("tear", 518.6), 960, 1000, None, False, 20, "center")))),
+    ("8:43.12", PH("milkyway_center", zoom=(1.0, 1.1), ov=OV(LB("THE CENTRE OF OUR GALAXY: QUIET, FOR NOW", 523.6, 60, 1010, None, True, 20)))),
+    # ================= #3 RUNAWAY =================
+    ("8:52.22", N(rankcard, 3, "THE RUNAWAY", "A GIANT THROWN OUT OF ITS GALAXY", t("Runaway", 532.2))),
+    (t("Almost", 533.4), G("bh", dist0=40, dist1=34, el=16, az0=60, az1=72, diskIn=3.0, diskOut=18, ov=OV(LB("SUPERMASSIVE BLACK HOLES: GALAXY ANCHORS", 535.6, 960, 1000, None, True, 20, "center")))),
+    ("9:04.12", PH("runaway_streak_b", zoom=(1.0, 1.12), ov=OV(BX("2023 · PIETER VAN DOKKUM", 544.6, 60, 900), NM(0, 200000, "LIGHT-YEARS LONG", t("200", 548.8), 60, 960, 1.2, size=64)))),
+    ("9:21.52", PH("runaway_art", zoom=(1.0, 1.1), ov=OV(ST_("A TRAIL OF NEWBORN STARS", t("trail", 562.4) - 0.4, None, 100, True, 60), LB("ARTIST'S CONCEPT", 562.0, 1860, 1010, None, True, 16, "right")))),
+    ("9:24.86", N(threebody, t("three", 566.3), t("Two", 572.8))),
+    ("9:41.54", G("bh", disk=0, dist=40, el=4, az0=0, az1=10, skyRotSp=0.012, fov=45, ov=OV(NM(0, 1600, "KM PER SECOND", t("1", 581.5, prefix=True), None, 880, 1.2),
+                                                                                       LB("EARTH TO THE MOON IN ABOUT FOUR MINUTES", t("Moon", 587.6), 960, 1000, None, True, 20, "center")))),
+    ("9:52.40", VD("nasa_runaway_streak", 0, ov=OV(LB("HUBBLE · THE STREAK OF NEW STARS", 592.6, 1860, 1010, None, True, 16, "right"), LB("SQUEEZED GAS COLLAPSES INTO NEW STARS", 593.0, 960, 1000, None, True, 20, "center"),
+                                                                                  ST_("ALL WE CAN SEE IS WHAT IT LEAVES BEHIND", 601.0, None, 900, True, 56)))),
+    ("10:09.56", G("bh", disk=0, dist=44, el=6, az0=80, az1=90, ov=OV(BX("2025 · JAMES WEBB SPACE TELESCOPE", 610.0, 60, 940), LB("STRONG NEW EVIDENCE IT'S REAL", 610.6, 60, 1010, None, True, 20)))),
+    # ================= #2 GLUTTON =================
+    ("10:17.12", N(rankcard, 2, "THE GLUTTON", "THE BRIGHTEST OBJECT EVER FOUND", t("Glutton", 617.1))),
+    (t("2024", 618.3) - 0.4, PH("quasar_j0529_art", zoom=(1.0, 1.12), ov=OV(BX("QUASAR J0529-4351", 621.6, 60, 900), NM(0, 17, "BILLION SUNS", t("17", 636.4), 60, 960, 1.0, size=64),
+                                                                            LB("ARTIST'S CONCEPT · ESO", 622.0, 1860, 1010, None, True, 16, "right")))),
+    ("10:39.72", G("bh", dist0=38, dist1=32, el=10, az0=-20, az1=-6, temp=1.9, diskOut=20, jet=0.5, exposure=1.0, ov=OV(NM(0, 1, "SUN SWALLOWED EVERY DAY", t("one", 639.7), None, 880, 0.6)))),
+    ("10:45.90", N(quasar_scale, 646.2, t("nearest", 650.5))),
+    (t("blazes", 650.5) - 0.2, G("bh", dist0=60, dist1=52, el=12, az0=-6, az1=6, temp=1.9, diskOut=20, jet=0.5, exposure=1.0, ov=OV(
+        NM(0, 500, "TRILLION × BRIGHTER THAN THE SUN", t("500", 650.5), None, 880, 1.2), LB("LIGHT THAT LEFT IT 12 BILLION YEARS AGO", t("12", 660.3), 960, 1000, None, True, 20, "center")))),
+    ("11:06.92", G("bh", distK=[[0, 30], [15.3, 14]], el=5, az0=20, az1=34, **HERO, ov=OV(ST_("AND IT ISN'T EVEN THE HEAVIEST", 667.2, 669.0, 900, True, 56),
+                                                                                       ST_("SOME COULD SWALLOW OUR SOLAR SYSTEM MANY TIMES OVER", t("swallow", 669.0) - 0.4, 679.9, 900, False, 52),
+                                                                                       ST_("NUMBER ONE IS DIFFERENT", 682.3, None, 900, True, 60)))),
+    # ================= #1 INSIDE =================
+    ("11:28.32", N(rankcard, 1, "THE ONE WE MIGHT BE INSIDE", "A QUESTION WE CAN'T STOP ASKING", t("inside", 688.3))),
+    ("11:31.48", G("bh", disk=0, dist0=24, dist1=20, el=4, az0=0, az1=10, ov=OV(ST_("NOTHING CAN ESCAPE. NOT EVEN LIGHT.", t("nothing", 694.0), None, 900, True, 58)))),
+    ("11:39.44", N(oneway, t("cross", 702.7), t("nobody", 707.0))),
+    ("11:52.70", G("observable", cmb=IMGP("cmb_sphere"), dist0=260, dist1=230, el=14, ov=OV(ST_("OUR UNIVERSE HAS AN EDGE TOO", 713.2, None, 120, True, 56),
+                                                                                          LB("LIGHT FROM BEYOND IT WILL NEVER REACH US", t("Light", 718.7), 960, 1000, None, False, 20, "center")))),
+    ("12:06.70", N(coincidence, t("Take", 731.0), t("surprisingly", 737.0))),
+    ("12:29.76", N(namecard, "AN IDEA", "NIKODEM POPŁAWSKI", "PHYSICIST", 750.6)),
+    ("12:35.76", G("bh", distK=[[0, 24], [8.82, 2.6]], el=6, az=0, **HERO, ease="in", ov=OV(LB("THE COLLAPSE NEVER REACHES A POINT", t("point", 756.0) - 0.8, 960, 1000, None, True, 20, "center")))),
+    ("12:44.58", G("observable", cmb=IMGP("cmb_sphere"), distK=[[0, 4], [14.7, 240]], el=10, cmbK=[[0, 0], [4, 0], [9, 1]], ov=OV(
+        ST_("IT REBOUNDS INTO A NEW UNIVERSE", 765.2, 770.4, 900, True, 58), ST_("OURS COULD BE INSIDE SOMEONE ELSE'S", t("ours", 770.6) - 0.3, None, 900, False, 56)))),
+    ("12:59.32", N(spins, 786.6, t("two", 789.0))),
+    ("13:17.80", G("bh", dist0=48, dist1=42, el=40, az0=0, az1=30, spin=1.3, speed=2.5, **HERO, ov=OV(ST_("A UNIVERSE BORN SPINNING?", t("spinning", 797.8) - 0.6, None, 100, True, 60),
+                                                                                                LB("FAR FROM PROVEN", 799.0, 960, 180, None, False, 20, "center")))),
+    ("13:29.20", PH("jades_field", zoom=(1.0, 1.1), ov=OV(ST_("MOST COSMOLOGISTS ARE SKEPTICAL", 809.6, 816.9, 880, True, 56), ST_("IT NEEDS TO BE TESTED AGAIN AND AGAIN", 817.4, None, 880, False, 52)))),
+    ("13:40.62", G("bh", distK=[[0, 26], [18.4, 2.2]], el=5, az0=-10, az1=10, **HERO, ease="in", ov=OV(
+        ST_("EVERY BLACK HOLE A DOORWAY", t("doorways", 824.4) - 0.5, 832.2, 100, True, 58), ST_("AND US, ON THE OTHER SIDE OF ONE", t("living", 832.0), None, 100, False, 56)))),
+    ("13:59.02", G("bh", dist0=34, dist1=28, el=8, az0=-30, az1=-10, **HERO, ov=OV(LB("WHERE TIME SLOWS TO A STOP", t("time", 842.2), 960, 980, t("light", 846.0), True, 22, "center"),
+                                                                                   LB("WHERE LIGHT GIVES UP", t("light", 846.0), 960, 980, t("laws", 846.0), True, 22, "center"),
+                                                                                   LB("WHERE OUR PHYSICS RUNS OUT", t("laws", 846.0), 960, 980, None, True, 22, "center")))),
+    ("14:09.42", G("bh", disk=0, dist0=20, dist1=16, el=3, az0=0, az1=8, ov=OV(lambda a, b: stmt("WHAT IF WE'RE ALREADY IN ONE?", t("already", 853.5) - 0.6, None, 850, True, 84)))),
+    ("14:15.74", PH("eht_sgra", mode="card", bg="navy", maxh=760, zoom=(1.0, 1.05), ov=OV(HD("ONE I LEFT OFF THE LIST"), LB("SAGITTARIUS A* · EVENT HORIZON TELESCOPE", 856.4, 960, 1000, None, True, 20, "center")))),
+    ("14:27.14", N(endcard, I("eht_sgra", 800, 800), "14:29.26")),
+]
+
+# rank readout (top right)
+HUD = [("1:23.62", "2:58.08", "#8 · THE SILENT ONE"), ("2:58.08", "4:31.90", "#7 · THE SHREDDER"), ("4:31.90", "5:54.96", "#6 · THE WANDERER"),
+       ("5:54.96", "7:26.18", "#5 · THE GHOST FROM THE BIG BANG"), ("7:26.18", "8:52.22", "#4 · THE SNIPER"), ("8:52.22", "10:17.12", "#3 · THE RUNAWAY"),
+       ("10:17.12", "11:28.32", "#2 · THE GLUTTON"), ("11:28.32", "14:15.74", "#1 · THE ONE WE MIGHT BE INSIDE")]
+
+
+def is_layer(f): return getattr(f, "k", "2d") != "3d"
+
+
+def write_part(k, parts):
+    p0, p1 = parts[k], parts[k + 1]
+    html.clear(); tl.clear(); sps.clear()
+    ST.update(off=p0, n=10)
+    for i, (st, fn) in enumerate(SHOTS):
+        a = s(st); b = s(SHOTS[i + 1][0]) if i + 1 < len(SHOTS) else END
+        ST["skip"] = not (p0 - 0.05 <= a < p1 - 0.05)
+        if abs(a - p0) < 0.05: a = p0
+        nxt = SHOTS[i + 1][1] if i + 1 < len(SHOTS) else None
+        prv = SHOTS[i - 1][1] if i else None
+        last_in_part = i + 1 >= len(SHOTS) or s(SHOTS[i + 1][0]) >= p1 - 0.05
+        if fn.k == "3d":
+            fn(a, b); continue
+        if last_in_part: bx, fout = min(b, p1), 0.0
+        elif nxt is not None and nxt.k == "3d": bx, fout = b + 0.3, 0.55
+        else: bx, fout = b + 0.5, 0.0
+        fin = 0.0 if abs(a - p0) < 0.05 and k else 0.45
+        if fn.k == "vid" and not os.path.exists(src_path(fn(a, b)[1])):
+            _, src, ss, kw, ov = fn(a, b); print("MISSING clip", src)
+            layer(a, bx, navy(a, bx) + (ov(a, bx) if ov else ""), fin=fin, fout=fout)
+        elif fn.k == "vid":
+            _, src, ss, kw, ov = fn(a, bx)
+            ST["n"] += 1
+            if not ST["skip"]:
+                wid, v = nid("w"), nid("v")
+                clip = trim(src, ss, bx - a, kw.get("speed", 1.0), kw.get("crop"), kw.get("grade", ""))
+                html.append(f'<div id="{wid}" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:{ST["n"]}"><video id="{v}" class="clip fit" src="{clip}" muted playsinline '
+                            f'data-start="{T(a)}" data-duration="{bx - a:.3f}" data-track-index="1"></video></div>')
+                z = kw.get("zoom", (1.0, 1.06)); tw(f"#{v}", {"scale": z[1]}, a, bx - a, {"scale": z[0]}, "none")
+                if fin: tw(f"#{wid}", {"opacity": 1}, a, fin, {"opacity": 0}, "power1.inOut")
+                if fout: tw(f"#{wid}", {"opacity": 0}, bx - fout, fout, None, "power1.inOut")
+            if ov: layer(a, bx, '<div class="shade"></div>' + ov(a, bx), fin=fin, fout=fout)
+        else:
+            layer(a, bx, fn(a, bx), fin=fin, fout=fout)
+            if prv is not None and prv.k == "3d" and fn.k == "2d": sfx("whoosh", a - 0.15, 0.4)
+    # scale readout on top of everything
+    for st, en, txt in HUD:
+        a, b = max(s(st), p0), min(s(en), p1)
+        ST["skip"] = not (a < b - 0.3)
+        if not ST["skip"]: layer(a, b, lab(txt, a + 0.2, 1856, 60, b, True, 16, "right"), fin=0, z=9000)
+    # part seams: dip to black over the last / first 0.35 s
+    ST["skip"] = False
+    if k + 1 < len(parts) - 1: layer(p1 - 0.35, p1, (tw("#seamout", {"opacity": 1}, p1 - 0.35, 0.35, {"opacity": 0}, "power1.in") or "") + '<div id="seamout" class="black" style="opacity:0"></div>', fin=0, z=9500)
+    if k: layer(p0, p0 + 0.4, (tw("#seamin", {"opacity": 0}, p0, 0.4, {"opacity": 1}, "power1.out") or "") + '<div id="seamin" class="black"></div>', fin=0, z=9500)
+    dur = p1 - p0
+    doc = f'''<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+{"<script src='assets/js/voyager_mesh.js'></script>" if (H / "assets/js/voyager_mesh.js").exists() else ""}
+<style>{CSS}</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="{dur:.3f}" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+{chr(10).join(html)}
+</div>
+<script>
+window.SPS = {json.dumps(sps)};
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({{ paused: true }});
+{chr(10).join(tl)}
+tl.set({{}}, {{}}, {dur:.3f});
+window.__timelines = window.__timelines || {{}};
+window.__timelines["main"] = tl;
+</script>
+</body></html>
+'''
+    (H / "parts" / f"p{k + 1}.html").write_text(doc, encoding="utf-8")
+    print(f"p{k + 1}.html  {p0:.2f}-{p1:.2f}  {len(html)} layers, {len(tl)} tweens, {len(sps)} 3D shots")
+
+
+PARTS = [0.0, s("2:58.08"), s("5:54.96"), s("8:52.22"), s("11:28.32"), END]
+
+if __name__ == "__main__":
+    for i in range(1, len(SHOTS)):
+        assert s(SHOTS[i][0]) > s(SHOTS[i - 1][0]), f"shot order {SHOTS[i - 1][0]} -> {SHOTS[i][0]}"
+    ks = [int(x) - 1 for x in sys.argv[1:]] or range(len(PARTS) - 1)
+    sfx_cues.clear()
+    for k in ks: write_part(k, PARTS)
+    if len(ks) == len(PARTS) - 1:
+        json.dump(sorted(sfx_cues), open(H / "sfx.json", "w"), indent=0)
+        json.dump(sorted(set(u[0] for u in usage)), open(H / "usage.json", "w"), indent=0)
+        open(H / "cues.txt", "w", encoding="utf-8").write("\n".join(f"{q!r:16} after {a:7.2f} -> {m!r:16} {tt:7.2f}" for q, a, m, tt in CUES))
+        print(len(sfx_cues), "sound cues;", len(CUES), "word cues in cues.txt")

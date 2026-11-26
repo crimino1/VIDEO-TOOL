@@ -1,0 +1,23 @@
+# Builder 25: start of Chapter 9 "Max, Min and Curve Sketching". Shape of a graph and the chapter road map,
+# absolute vs local max/min on a mountain range, flat tangents and the |x| corner, critical points, x^3,
+# the extreme value theorem, the closed interval method and its worked example (x^3 - 3x^2 + 1 on [-1, 4]),
+# the x^(2/3) cusp, Rolle's theorem (ball, x^2 - 4x), the mean value theorem, the toll booths begin.
+S = [
+    ("2:30:31.57", "c", "K25_Chapter9", dict(label="Chapter 9", title="Max, Min and Curve Sketching", doodle="triangle")),
+    ("2:30:34.60", "m", "K25_Shape", {}),
+    ("2:31:02.09", "m", "K25_Vocab", {}),
+    ("2:31:41.21", "m", "K25_Flat", {}),
+    ("2:32:02.93", "m", "K25_Critical", {}),
+    ("2:32:27.15", "m", "K25_Cubed", {}),
+    ("2:32:51.99", "m", "K25_EVT", {}),
+    ("2:33:29.13", "m", "K25_Method", {}),
+    ("2:33:58.01", "m", "K25_Example", {}),
+    ("2:34:22.23", "m", "K25_Table", {}),
+    ("2:34:47.25", "m", "K25_Winners", {}),
+    ("2:35:10.63", "m", "K25_Cusp", {}),
+    ("2:35:48.71", "m", "K25_Rolle", {}),
+    ("2:36:17.13", "m", "K25_Ball", {}),
+    ("2:36:26.31", "m", "K25_RolleEx", {}),
+    ("2:36:52.49", "m", "K25_MVT", {}),
+    ("2:37:29.55", "m", "K25_Toll", {}),
+]

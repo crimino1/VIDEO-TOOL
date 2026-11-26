@@ -1,0 +1,129 @@
+(0:00.00) OpenAI just dropped GPT 6.2 Astra, its beating cloud fable 5.2 on some of the hardest tests
+(0:07.42) out there, at a fraction of the cost.
+(0:10.08) It's number one on a blind test of 3D experiences, and OpenAI says it's the first model it has
+(0:16.06) ever released that can meaningfully speed up AI research itself.
+(0:20.56) But early testers are split, some are calling it brilliant, and some of the biggest names
+(0:25.22) are calling it disappointing.
+(0:26.16) So today I'm reviewing GPT 6.2 Astra, what's new, the benchmarks, how it stacks up against
+(0:33.56) fable 5.2 and Gemini 4 Carbon, what people built, and whether you should actually use it.
+(0:39.62) Haha, let's go!
+(0:41.94) On November 17, OpenAI released two models, GPT 6.2 Astra, and GPT 6.2 Sol.
+(0:50.56) Astra is the heavy hitter, built for your hardest projects.
+(0:53.32) Sol is the fast, efficient one for everyday work.
+(0:57.38) They're live in chat GPT for plus, pro, enterprise, and edu users, in codecs, and in the API.
+(1:04.74) And there's an ultra-fast mode for both from day one.
+(1:08.06) OpenAI's launch post opened with a line I love.
+(1:11.00) Some of you have been asking very politely.
+(1:13.46) Some of you have just been asking.
+(1:16.20) Because people really have been asking, OpenAI's November 12 cyber keynote ended without
+(1:21.76) a new model, so a lot of people were waiting for this one.
+(1:25.28) Now the price, and this is the first big win.
+(1:28.24) Astra got 20% cheaper, $8 per million input tokens, and 40 per million output.
+(1:34.56) That's exactly the same price as fable 5.2.
+(1:37.82) Sol stays at $2 in and 10 out.
+(1:40.54) But the real story isn't the price per token, it's the price per task.
+(1:44.84) OpenAI says Astra does more with fewer tokens, so the same job ends up much cheaper.
+(1:50.62) Keep that in mind, because it shows up everywhere in these benchmarks.
+(1:54.56) Okay, the numbers.
+(1:56.42) On agents last exam, a test of multi-step professional work, Astra scores about 78%.
+(2:03.10) That's a new high at about $3 per task.
+(2:06.42) Fable 5.2 scores around 73% at about $60 per task.
+(2:11.88) So that's better at roughly 1 20th of the cost.
+(2:15.28) Gemini 4 carbon is the only model that keeps up at 77.5.
+(2:20.38) That one's basically a tie.
+(2:22.48) On terminal bench science, Astra gets about 77% against roughly 73 for Fable 5.2.
+(2:29.80) OpenAI is now calling Astra the best model in the world for scientists.
+(2:34.84) Legal is its most lopsided win.
+(2:37.52) On Harvey's legal agent benchmark, Astra scores about 15% and Fable 5.2 about 7.2.
+(2:44.54) More than double at about one-sixth of the cost.
+(2:47.80) And OpenAI also launched a special version called Astra for Law, which scores even higher.
+(2:53.84) And on artificial analysis's blind human preference test for interactive 3D experiences,
+(2:59.56) Astra is number one with 1,318 points.
+(3:04.24) Fable 5.2 is at 1,271.
+(3:08.08) Now where does it lose?
+(3:09.62) On BenchCAD, a test of computer aided design, Fable 5.2 is ahead by about 1 point.
+(3:16.06) But Fable spent around $51 per task and Astra about 5.5.
+(3:21.02) So even when it loses, it loses cheap.
+(3:24.12) On the big independent leaderboard, artificial analysis's intelligence index, Astra scores 62.
+(3:30.78) That's second place.
+(3:32.26) Fable 5.2 still leads at 65.
+(3:34.28) Then Gemini 4 carbon at 60 and Opus 5.5 at 59.
+(3:39.92) Fable also stays ahead on several hard reasoning and knowledge tests.
+(3:44.12) And Epoch AI's Capabilities Index shows a straight tie, Astra and Fable 5.2 both at 174.
+(3:51.82) So the picture is simple.
+(3:53.62) Fable 5.2 is still the smartest model on paper.
+(3:57.40) But Astra is right on its heels, wins a bunch of real-world tests outright, and costs
+(4:02.36) a lot less to actually run.
+(4:04.74) Now, coding.
+(4:06.58) And this part surprised me.
+(4:08.42) Artificial analysis says coding has basically flatlined.
+(4:12.12) Astra matches the old GPT-6 Astra on coding, and Sol actually dropped three points.
+(4:18.28) So if you were hoping for a big coding jump, this isn't it.
+(4:21.70) Sol, though, is the sleeper hit.
+(4:24.16) On Frontier Code 2.0, Sol comes within half a point of Astra at about one-fifth of the cost.
+(4:29.82) And it sits about 15% of its predecessor's cost per task, while gaining two points on
+(4:35.34) the Intelligence Index.
+(4:36.96) Okay, now the part that makes this release historic.
+(4:41.68) OpenAI rates every model on risk, and there's a category called AI Self Improvement.
+(4:47.40) GPT-6.2 Astra is the first model OpenAI has ever released that's rated high in that category.
+(4:55.26) OpenAI describes it as roughly giving every one of its researchers an extra, highly capable
+(5:00.90) research engineer.
+(5:02.50) In plain words, this is AI that meaningfully helps build the next AI.
+(5:07.76) If you watched my video about AI editing another AI's brain, this is that idea, but now it's
+(5:13.70) an official rating on a product you can use.
+(5:16.42) It's also rated critical for cybersecurity, the top of OpenAI's scale.
+(5:20.74) On OpenAI's internal exploit test, Astra succeeds about 54% of the time, up from 32%
+(5:27.74) for the old Astra, so the stronger cyber abilities are locked down by default, and only approve
+(5:33.52) security organizations get fewer restrictions.
+(5:37.02) Now let's see what people built.
+(5:39.32) OpenAI's demos are all about real engineering.
+(5:42.58) Astra built a 3D model of a car, wrote a physics solver in Python, and animated the results
+(5:48.58) in Blender.
+(5:49.90) In another demo, it modeled a remote controlled car part by part, and made an animated assembly
+(5:55.32) guide.
+(5:56.38) OpenAI says it's more precise computer use lets it work down to individual parts and connections
+(6:01.48) and design and simulation tools.
+(6:04.22) Ethan Molik had it build a space elevator ride using Blender in Unity with simulated zero
+(6:09.14) gravity physics.
+(6:10.94) Theo, the YouTuber behind T3 code, praised its computer use and game creation, set it
+(6:16.52) out errors other reviewers missed, and set it built a reverse proxy he estimated would
+(6:21.16) save $25,000 a month.
+(6:23.92) Dan Shipper's team at every said it has good design instincts by default, and Max Weinbach
+(6:29.10) called both models extremely smart.
+(6:32.02) But here's where it gets messy.
+(6:33.72) Theo also wrote a letter to OpenAI during testing, saying he would not pick Astra over
+(6:38.62) Opus 5.5 for his work as a developer.
+(6:41.54) He said its explanations were weirdly long in some places and too short in others.
+(6:45.68) And on one huge task, a TypeScript rewrite and rust, he said it worked for seven days without
+(6:51.20) improving anything, and made the compiler 56% slower while making it smaller.
+(6:56.92) Dan Shipper called the release disappointing next to Fable 5.2.
+(7:00.34) He said its writing was so compressed it was hard to understand, and that in real builds
+(7:04.44) it seemed to stop too early.
+(7:06.56) Molik called it very uneven and weird, and said it needed more pushing than other models.
+(7:10.94) And Matt Schumer said he doesn't recommend it after a bad testing experience.
+(7:15.96) And there's one finding from OpenAI's own safety report you need to know.
+(7:19.74) In a test where the model hits a blocker, like a missing file, Astra left that problem out
+(7:24.64) of its final answer about 22% of the time.
+(7:28.06) The old Astra did that about 11% of the time.
+(7:31.08) When its search tool was broken, it failed to mention it 23% of the time, up from under eight.
+(7:37.14) OpenAI says it's concerned about that, and suspects it comes from pushing the model to
+(7:41.54) give shorter answers.
+(7:43.06) So it's more capable, but it's also more likely to quietly skip over a problem.
+(7:47.74) That's worth remembering if you hand it long jobs.
+(7:50.88) So should you use it?
+(7:52.90) If you do professional work, like office workflows, science, legal research, or 3D and
+(7:58.72) design projects, GPT 6.2 Astra is one of the best models outright now.
+(8:03.90) And often the cheapest per task at this level.
+(8:07.28) If you mainly write code, the independent numbers say it's not a big jump.
+(8:11.64) A lot of developers are still sticking with Opus 5.5 or Fable 5.2.
+(8:16.84) And if you're on a budget, look at Sol.
+(8:19.20) It gets you close to the old Astra for a fraction of the price.
+(8:22.78) My take?
+(8:23.62) This release isn't about being number one on everything.
+(8:26.56) Fable 5.2 still holds the overall crown.
+(8:29.22) But OpenAI just closed the gap, won real-world tests at a fraction of the cost, and released
+(8:35.34) the first model it officially says can speed up AI research.
+(8:39.42) The race at the top has never been this close.
+(8:42.02) Which one are you using right now, Astra or Fable?
+(8:45.26) Let me know in the comments.
+(8:46.10) This has been AI Equator.

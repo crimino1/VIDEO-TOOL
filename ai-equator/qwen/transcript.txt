@@ -1,0 +1,114 @@
+(0:00.00) Alibaba just launched Quen4Max. It's the new flagship of the Quen family, and Alibaba is calling it a frontier model.
+(0:08.30) On output, it costs almost nine times less than fable 5.2.
+(0:12.76) So the question is simple. Is it actually that good, or is the price the only frontier thing about it?
+(0:19.22) Today, I'm reviewing Quen4Max. What it is, what it costs, how it scores, how it compares to the top models,
+(0:27.06) and what happened when people put it to work.
+(0:30.30) Let's start with the news.
+(0:32.38) Quen4Max officially launched on November 16th.
+(0:35.76) But the Quen4 family isn't brand new.
+(0:38.38) Alibaba first showed it on stage back in September at its Uppsara conference in Hongzhou,
+(0:43.58) with four models, Max, Plus, Flash, and a small 27B model.
+(0:49.40) That day, it was only names on a slide, no specs, no prices, no benchmarks.
+(0:54.32) A preview opened on November 11th, and five days later, Max went live.
+(1:00.64) Here's what you get, a 1 million token context window, three thinking levels, low, high, and extra high,
+(1:08.02) with high as the default. And the price is the headline, a dollar 50 per million input tokens,
+(1:14.48) and 450 per million output tokens. Fable 5.2 costs $8 in and $40 out.
+(1:21.54) That's where the nine times cheaper comes from.
+(1:23.60) You can try it free in QuenChat.
+(1:26.42) For the API, there's a subscription called the token plan, starting around $6 a month,
+(1:31.94) or three for new users.
+(1:34.16) What it's not is open source.
+(1:37.06) The weights for Max are closed.
+(1:39.64) Alibaba says smaller Quen4 models are coming as open weights, but hasn't given a date.
+(1:45.16) And the size? You'll see 2.4 trillion parameters all over the internet, but be careful with that one.
+(1:51.44) 2.4 trillion is the confirmed size of the previous model, Quen 3.8 Max.
+(1:57.90) Alibaba hasn't published an official number for Quen4 Max, so for now nobody really knows.
+(2:04.14) Okay, benchmarks. And this is where it gets interesting, because Alibaba made a very specific choice.
+(2:11.48) Alibaba's table compares Quen4 Max against Claude Opus 5.5, GPT 6.1's soul, and Kimi K3.1.
+(2:20.58) Now notice who's missing. No fable 5.2. No Gemini 4 carbon.
+(2:26.60) And GPT 6 Astra was left out too.
+(2:29.46) So right away, Alibaba isn't lining up against the strongest models out there.
+(2:34.28) It's lining up against the next tier. And even against that tier, the table is mixed.
+(2:39.80) Where it wins? On DeepSUE, a coding agent test, Quen4 Max scores 75.7 and beats all three.
+(2:48.24) On Agent's last exam, which tests computer use, it gets 46.7, ahead of everyone,
+(2:55.38) and on a legal agent benchmark called HLAB, it scores 21.3, while Opus 5.5 gets 9.2.
+(3:03.70) That one's a blowout.
+(3:05.38) Where it loses? On Terminal Bench 4.0, Quen4 Max gets 48.5, Opus gets 59.6, and Kimi gets 67.2.
+(3:15.44) On Program Bench, Quen scores 31.5 and Opus scores 65, more than double.
+(3:22.34) And on Humanities last exam, Quen gets 51.7 against Opus at 59.8.
+(3:28.48) Count it up, and Quen4 Max is on top in three rows.
+(3:32.68) Opus 5.5 is on top in seven.
+(3:35.40) And remember, this is Alibaba's own table, the one where it got to pick the opponents.
+(3:40.70) So what do independent testers say?
+(3:42.54) Artificial analysis gives Quen4 Max a 42.9 on its intelligence index.
+(3:49.40) Opus 5.5 at max effort sits at 59.1, and Fable 5.2 is at 64.6.
+(3:56.06) That's not a small gap. That's a different league.
+(3:59.28) Val's AI has it closer.
+(4:01.28) Quen4 Max scores 63.2%, Fable 5.2 scores 71.3.
+(4:07.48) So on the big independent leaderboards, Quen4 Max is clearly behind the frontier.
+(4:12.58) But leaderboards aren't the whole story.
+(4:14.96) Let's see what happens when people actually use it.
+(4:18.12) The Atomic Agent team gave it a real coding job.
+(4:21.28) A stock library with 13 planted bugs and one missing feature, checked by 59 hidden tests.
+(4:28.20) Quen4 Max passed all 59 in all three runs.
+(4:32.48) The older Quen3.8 Max couldn't finish the same task even once.
+(4:37.00) So that's a big jump over the last Quen.
+(4:39.10) But look at the clock.
+(4:41.46) Quen4 Max took about 25 minutes.
+(4:44.18) Opus 5.5 did the same job in about 4.
+(4:47.60) GPT 6.1 Sol did it in under 2.5, and Sol was cheaper too, about 29 cents against Quen's 65.
+(4:56.62) Then Kingi AI ran a bigger test, 10 practical tasks, 5 models, 2 runs each, 200 graded stages.
+(5:05.58) Here's the result.
+(5:06.16) GPT 6 Astra scored 19.8 out of 20, Sol, 19.6, Opus, 19.2, Quen4 Max, 18.65, and Fable 5.2
+(5:19.46) came last at 17.3, because some of its outputs failed or got cut off.
+(5:25.38) Now the cost of that study, about $3.60 for Quen4 Max, for Fable 5.2, $61.
+(5:33.10) So Quen landed fourth on quality but second cheapest.
+(5:36.86) It did have two real slips, both on a customer support task, where it entered zeros for refunds that hadn't been decided yet.
+(5:44.46) MineStudio ran hands-on tests too, and some of these are genuinely impressive.
+(5:50.10) They gave it a full-stack sports scoring dashboard with one hidden bug, a less than, that should have been less than or equal to,
+(5:57.10) which was dropping the fourth judge's score, no hints.
+(6:00.94) Quen4 Max found it, rebuilt the app, reset the database, and checked the fix.
+(6:06.38) The right champion came back.
+(6:08.44) They gave it a hand-drawn sketch of a kebab rotisserie, and in about 15 minutes it built a working simulation,
+(6:14.74) with spin speed, heat, slice thickness, and meat that slowly browns.
+(6:19.98) And they asked it to invent sports team names in 82 languages.
+(6:24.40) It did all 82 in about four minutes, without skipping one.
+(6:28.70) On X, one tester said Quen4 Max ran six rounds of improvements on its own for his chip benchmark.
+(6:35.76) It checked every rendered frame visually, then went back and fixed things again and again.
+(6:41.32) The whole run took about a day and used only around half of his $5 plan.
+(6:46.00) He said it's the first Quen model that really surprised him.
+(6:49.32) Now the problems, because there are a few.
+(6:51.42) First, speed.
+(6:54.06) Testers keep saying it's slower than the competition, and the coding test backs that up.
+(6:59.52) Second, judgment on game design.
+(7:02.60) On a test called Game Feel, which checks whether a model can tell if a game change is balanced,
+(7:07.90) the preview scored 10.3.
+(7:10.24) That's lower than the old Quen 3.8 Max at 12.1.
+(7:15.00) Even the small early Quen4 models beat it.
+(7:18.70) Third, small details.
+(7:19.84) In the classic test of drawing a pelican writing a bicycle, one tester noticed the pelican's
+(7:25.96) feet didn't actually line up with the pedals.
+(7:29.12) It looked finished, but it wasn't quite right.
+(7:32.14) And fourth, the subscription behind the preview doesn't allow app backends or automation scripts,
+(7:38.24) so building a real product on it is complicated for now.
+(7:42.18) So, is Quen4 Max really a frontier model?
+(7:45.64) Honestly, no.
+(7:47.34) Not by the independent numbers.
+(7:48.78) Artificial analysis puts it more than 20 points behind Fable 5.2.
+(7:54.04) Even Alibaba's own hand-picked table has Opus 5.5 winning most rows,
+(7:59.08) and the strongest models weren't even invited.
+(8:02.00) But here's what a lot of people are missing.
+(8:04.60) It isn't trying to beat Fable at Fable's price.
+(8:07.54) It's trying to get close at a fraction of the cost.
+(8:10.58) In real work tests, it finished jobs the last Quen couldn't,
+(8:14.40) and it stayed in the same range as Opus for a small slice of the price.
+(8:20.10) So, my verdict?
+(8:21.58) It's not on the frontier.
+(8:23.32) It's right behind it, selling for almost nothing if you're running agents all day
+(8:28.04) or doing big coding jobs where the bill adds up fast that matters more than a leaderboard
+(8:33.34) and watch those open weights.
+(8:36.26) If Alibaba releases even a smaller Quen4 model that's this good,
+(8:40.32) that could hit harder than Max itself.
+(8:42.42) Would you trade a bit of quality for 9 times cheaper?
+(8:45.78) Let me know in the comments.
+(8:47.36) This has been AI Equator.

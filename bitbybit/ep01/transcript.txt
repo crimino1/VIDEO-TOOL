@@ -1,0 +1,146 @@
+[   0.00] If you're planning to start a computer science degree in 2027, I have some bad news.
+[   5.84] You're about to spend four years and a painful amount of money learning to do something a chat bot does in 11 seconds.
+[  13.66] Philosophy majors are getting hired faster than you.
+[  16.86] Philosophy.
+[  17.92] The people who argue about whether a chair exists.
+[  21.62] So do the smart thing.
+[  23.34] Drop out, buy a wrench, become a plumber, because no AI is crawling under a sink anytime soon.
+[  30.40] And whatever you do, do not learn to code.
+[  33.72] Okay, I'm kidding.
+[  35.90] Mostly.
+[  36.92] The annoying part is that the numbers behind that rant are real.
+[  40.78] I checked.
+[  41.94] So instead of yelling, it's over at you like half of this platform, I went and read the actual data, including the columns nobody screenshots.
+[  51.06] Welcome to Bit by Bit.
+[  52.82] Today we're taking this question apart one piece at a time.
+[  56.68] Because if you're 17 and picking a major, or 20 and already halfway through one, this decision deserves more than a headline.
+[  65.18] Let's start with the number everyone quotes.
+[  68.28] The New York Fed tracks unemployment for recent grads by major.
+[  72.76] In the latest release, computer science is at 7%.
+[  76.80] Computer engineering is at 7 .8.
+[  79.24] Philosophy is at 5 .1.
+[  81.82] So yes, that part of the rant was true.
+[  84.96] Students have noticed.
+[  86.28] This spring, the number of CS majors at four -year colleges in the US dropped 8 .4 % in a single year.
+[  93.60] That's about 53 ,000 fewer students choosing this field than the year before.
+[  99.48] And then there's the one that actually worries me.
+[ 102.26] Economists at Stanford went through payroll records covering millions of workers.
+[ 107.36] They found that jobs for software developers aged 22 to 25 are down nearly 20 % from their peak in late 2022.
+[ 116.64] Over the same stretch, older workers in the same kind of AI -exposed jobs grew by 6 to 9%.
+[ 123.04] Look at how odd that is.
+[ 125.30] Nobody is firing the seniors.
+[ 127.54] Companies just quietly stopped hiring juniors.
+[ 130.52] The ladder is still standing.
+[ 132.93] Somebody soared off the bottom rung.
+[ 135.09] The researchers have a theory for why it's the juniors.
+[ 138.57] A language model is trained on what's written down.
+[ 141.79] Textbooks, documentation, a billion forum answers.
+[ 145.87] And written down knowledge is exactly what a fresh grad shows up with.
+[ 150.07] What a senior has is the other kind.
+[ 152.81] The stuff you only learn by breaking production at 2am, which nobody ever wrote down.
+[ 159.43] Quick note before we go on.
+[ 160.99] These are US numbers, because that's where the best data is.
+[ 164.63] If you're watching from somewhere else, the percentages will be different.
+[ 168.49] I don't have data that clean for other countries, so treat this as a warning sign, not a measurement of your city.
+[ 175.45] So that's it, right?
+[ 176.97] Close the laptop, call the plumber.
+[ 179.51] Not yet, because every one of those numbers has a second column.
+[ 184.29] Go back to that New York Fed table and look one column to the right.
+[ 188.63] It's called underemployment.
+[ 190.97] That's the share of grads working a job that doesn't need a degree at all.
+[ 195.47] Think of a barista with a bachelor's.
+[ 197.77] Across all majors it's about 39%.
+[ 200.81] For philosophy, it's 47.
+[ 203.83] For computer science, it's 19.
+[ 207.09] Then pay.
+[ 208.37] The median CS grad, early in their career, makes $87 ,000 a year.
+[ 213.99] The median across all majors is $58 ,000.
+[ 217.43] And yes, median means half of CS grads make less than that.
+[ 222.05] It's still the second highest starting pay on the whole list, right behind computer engineering.
+[ 227.77] Now put the columns together.
+[ 229.71] A CS grad is a little more likely to be out of work, but when they do land something, it's far more likely to be
+[ 236.43] a job that actually needs the degree, and it pays about 50 % more.
+[ 241.33] The philosophy grad gets hired faster, sure.
+[ 244.59] Almost half the time it's a job they could have had at 18.
+[ 248.13] My guess is that part of that 7 % is CS grads holding out.
+[ 252.65] When the job you trained for pays 87k, you don't grab the first thing at the mall.
+[ 257.45] That's a guess, not something the data proves.
+[ 261.05] Now look forward.
+[ 262.57] The US Bureau of Labor Statistics publishes 10 -year job projections.
+[ 267.73] For software developers, it expects 10 % growth by 2035, with around 106 ,000 openings every year.
+[ 276.13] In the same handbook, there's a separate job called computer programmer.
+[ 280.33] That's the person who takes somebody else's design and turns it into code.
+[ 285.33] That job is projected to shrink 7%.
+[ 288.65] Two rows in a government table, and they tell you where this is going.
+[ 293.11] Turning a design into code is getting cheap.
+[ 296.15] Deciding what to build, and knowing whether the thing that got built is any good, is where the jobs are.
+[ 302.87] And one more thing that never makes the thumbnail.
+[ 305.49] The Stanford authors say themselves that they can't be sure AI caused that drop for young developers.
+[ 311.39] Other people point to interest rates and the hiring binge of 2021.
+[ 316.29] Nobody has a clean answer yet.
+[ 318.31] Be suspicious of anyone who says they do, including me.
+[ 322.45] So is the degree worth it?
+[ 324.45] That depends on what you think you're buying.
+[ 327.13] If you think you're buying a job, then no.
+[ 329.79] That deal is dead.
+[ 331.51] The old version went, show up, pass your classes, do one internship, collect an offer.
+[ 338.45] In 2027, a degree with nothing next to it is a receipt.
+[ 343.19] It proves you paid.
+[ 345.17] What you're really getting is three things.
+[ 348.17] First, the boring fundamentals, data structures, operating systems, networks, how a database actually stores a row.
+[ 357.45] It sounds like exactly the stuff AI made useless, and it's the reverse.
+[ 362.33] When a model hands you 400 lines of code, the only way to catch what's wrong is to already know what right looks like.
+[ 369.83] Picture a database query that runs fine on your 100 test rows and then falls over on 10 million real ones.
+[ 377.17] The AI won't warn you.
+[ 379.01] Your professor's boring lecture on indexes will.
+[ 382.03] You can't review what you can't read.
+[ 384.55] Second, the math.
+[ 386.45] Linear algebra, probability, discrete math.
+[ 389.47] Pretty much everything interesting in AI right now sits on top of those, and almost nobody learns them properly from a weekend tutorial.
+[ 397.29] A degree is one of the few places that makes you sit through them when you'd rather not.
+[ 402.73] Third, time and people.
+[ 404.69] Four years where learning is your main job, surrounded by others doing the same, with internships that mostly only take enrolled students.
+[ 413.17] When companies hire fewer juniors, that side door matters more.
+[ 417.81] What about skipping it and teaching yourself?
+[ 420.47] People did that, and some still do.
+[ 423.15] But it worked best when companies were hiring anyone who could ship.
+[ 427.21] With fewer junior seats, the filters get harsher, and a degree is the laziest filter a recruiter has.
+[ 434.43] The Bureau of Labor Statistics still lists a bachelor's as the typical way into this job.
+[ 440.65] You can beat that filter.
+[ 442.25] Just know you're choosing hard mode.
+[ 444.83] What the degree doesn't buy anymore is the right to coast.
+[ 448.67] So here's where I land.
+[ 450.81] Do it if you'd find this stuff interesting, even if it paid like teaching.
+[ 455.17] If you're the person who needs to know why the code works, the next 10 years are going to be a very good time to
+[ 461.67] be you.
+[ 462.85] Do it if you can get it without wrecking yourself financially.
+[ 466.65] 87k looks very different next to 20 ,000 in loans than next to 200 ,000.
+[ 472.83] Cheap and solid beats famous and expensive more often than people admit.
+[ 477.65] Think twice if your only reason is that someone told you in 2019, this was the safe choice.
+[ 484.27] Safe is gone.
+[ 485.71] A degree with nothing built, no internship, and no curiosity behind it is the profile I'd worry about.
+[ 493.31] And if you're already in, don't panic, and don't switch majors just because another department put AI on the door.
+[ 500.59] Do three things instead.
+[ 502.53] Build one thing real enough that a stranger uses it.
+[ 505.93] A to -do app doesn't count.
+[ 507.79] A script that renames 500 photos for your cousin's studio every week does, because someone will complain when it breaks.
+[ 514.49] Get one internship, even a small, unglamorous one, and take the hard math electives everyone dodges.
+[ 521.53] A degree plus proof you can ship beats either one alone.
+[ 525.55] There's also a strange upside.
+[ 527.89] Those 53 ,000 missing students?
+[ 530.91] My bet is a lot of them were only here for the money.
+[ 533.99] I can't promise the market is better when you graduate, but the line is getting shorter, and the people still standing in it actually want
+[ 541.65] to be there.
+[ 543.11] So, is a CS degree worth it in 2027?
+[ 546.93] As a ticket?
+[ 547.77] No.
+[ 548.55] As training?
+[ 549.41] Yes.
+[ 550.15] But only if you actually train.
+[ 552.37] Treat it like a gym membership you never use and you'll get the same results.
+[ 556.57] Use it, and you'll be the person checking what the AI wrote instead of the person it replaced.
+[ 562.13] You don't need to learn it all at once, just bit by bit.
+[ 565.89] That's the video.
+[ 567.17] If it helped, subscribe to bit by bit, and tell me in the comments what you're studying and whether you'd pick it again.
+[ 574.11] I'm curious how many of you would.
+[ 576.33] See you in the next one.

@@ -1,0 +1,173 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/shark.js"></script><script src="assets/js/world.js"></script><script src="assets/js/story.js"></script><script src="assets/js/res.js"></script><script src="assets/js/peng.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="180.933" data-width="1920" data-height="1080">
+<div id="w2" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:11;"><video id="v1" class="clip fit" src="assets/clips/chin_sidey_3b072bb6.mp4" muted playsinline data-start="0.000" data-duration="3.500" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s3" class="clip scene " data-start="0.000" data-duration="3.500" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="s5" class="clip scene " data-start="0.000" data-duration="3.500" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="k4" class="black"></div></div>
+<canvas id="cv6" class="clip" width="1920" height="1080" data-start="3.500" data-duration="2.780" data-track-index="1" style="z-index:14"></canvas>
+<div id="w8" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:15;"><video id="v7" class="clip fit" src="assets/clips/chin_sidey_1d155b14.mp4" muted playsinline data-start="6.280" data-duration="1.680" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s9" class="clip scene " data-start="6.280" data-duration="1.680" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="s11" class="clip scene " data-start="7.960" data-duration="3.540" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><img id="ph10" class="fill" src="assets/gen/cpz_0_7a970f.jpg" alt="cpz_0" style="transform-origin:50% 50%"><div class="credit">Photo: Jmoor231 / Wikimedia Commons</div></div>
+<div id="w13" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:18;"><video id="v12" class="clip fit" src="assets/clips/chin_sidey_6711030e.mp4" muted playsinline data-start="11.500" data-duration="4.540" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s14" class="clip scene " data-start="11.500" data-duration="4.540" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w16" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:20;"><video id="v15" class="clip fit" src="assets/clips/chin_feed_634d0435.mp4" muted playsinline data-start="16.040" data-duration="3.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s17" class="clip scene " data-start="16.040" data-duration="3.360" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Giovanni Mari</div></div>
+<div id="w19" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:22;"><video id="v18" class="clip fit" src="assets/clips/chin_sidey_82a64772.mp4" muted playsinline data-start="19.400" data-duration="3.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s20" class="clip scene " data-start="19.400" data-duration="3.760" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Richard Sidey</div></div>
+<div id="w22" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:24;"><video id="v21" class="clip fit" src="assets/clips/cpz_16bc71ae.mp4" muted playsinline data-start="23.160" data-duration="2.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s23" class="clip scene " data-start="23.160" data-duration="2.200" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: awctwo</div></div>
+<div id="w25" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:26;"><video id="v24" class="clip fit" src="assets/clips/pair_6_56425dcc.mp4" muted playsinline data-start="25.360" data-duration="2.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s27" class="clip scene " data-start="27.460" data-duration="3.100" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><img id="ph26" class="fill" src="assets/gen/cpz_5_8a4cde.jpg" alt="cpz_5" style="transform-origin:50% 50%"><div class="credit">Photo: Bryn Holmes / Wikimedia Commons</div></div>
+<canvas id="cv28" class="clip" width="1920" height="1080" data-start="30.560" data-duration="8.100" data-track-index="1" style="z-index:28"></canvas>
+<div id="w30" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:29;"><video id="v29" class="clip fit" src="assets/clips/adelie_olivier_3e422b14.mp4" muted playsinline data-start="38.660" data-duration="5.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s31" class="clip scene " data-start="38.660" data-duration="5.060" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Frederique Olivier</div></div>
+<div id="s33" class="clip scene " data-start="43.720" data-duration="4.220" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><img id="ph32" class="fill" src="assets/gen/cpz_7_4d3aea.jpg" alt="cpz_7" style="transform-origin:50% 50%"><div class="credit">Photo: Tony Hisgett from Birmingham, UK / Wikimedia Commons</div></div>
+<canvas id="cv34" class="clip" width="1920" height="1080" data-start="47.940" data-duration="6.360" data-track-index="1" style="z-index:32"></canvas>
+<div id="w36" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:33;"><video id="v35" class="clip fit" src="assets/clips/king_egg_94379e92.mp4" muted playsinline data-start="54.300" data-duration="4.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s37" class="clip scene " data-start="54.300" data-duration="4.480" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Imaging</div></div>
+<canvas id="cv38" class="clip" width="1920" height="1080" data-start="58.780" data-duration="6.340" data-track-index="1" style="z-index:35"></canvas>
+<div id="w40" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:36;"><video id="v39" class="clip fit" src="assets/clips/chin_feed_1b13722c.mp4" muted playsinline data-start="65.120" data-duration="4.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s41" class="clip scene " data-start="65.120" data-duration="4.920" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Giovanni Mari</div></div>
+<div id="w43" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:38;"><video id="v42" class="clip fit" src="assets/clips/gentoo_7_620c4574.mp4" muted playsinline data-start="70.040" data-duration="4.960" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w45" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:39;"><video id="v44" class="clip fit" src="assets/clips/colony_6_395b95f1.mp4" muted playsinline data-start="75.000" data-duration="4.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w47" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:40;"><video id="v46" class="clip fit" src="assets/clips/zoo_6_342435e3.mp4" muted playsinline data-start="79.200" data-duration="2.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w49" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:41;"><video id="v48" class="clip fit" src="assets/clips/walk_1_9988c8be.mp4" muted playsinline data-start="82.120" data-duration="1.840" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv50" class="clip" width="1920" height="1080" data-start="83.960" data-duration="3.540" data-track-index="1" style="z-index:42"></canvas>
+<div id="s52" class="clip scene " data-start="87.500" data-duration="3.480" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><img id="ph51" class="fill" src="assets/gen/bremer_6_8de8c7.jpg" alt="bremer_6" style="transform-origin:50% 50%"><div class="credit">Photo: Dietmar Rabich / Wikimedia Commons</div></div>
+<div id="s54" class="clip scene " data-start="90.980" data-duration="3.320" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><img id="ph53" class="fill" src="assets/gen/humboldt_0_65ebf7.jpg" alt="humboldt_0" style="transform-origin:50% 50%"><div class="credit">Photo: Syced / Wikimedia Commons</div></div>
+<div id="w56" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:45;"><video id="v55" class="clip fit" src="assets/clips/bremer_humboldt2_2d96e61b.mp4" muted playsinline data-start="94.300" data-duration="3.260" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s57" class="clip scene " data-start="94.300" data-duration="3.260" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: augenfreund1</div></div>
+<div id="w59" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:47;"><video id="v58" class="clip fit" src="assets/clips/humboldt_pairs_44bc06c4.mp4" muted playsinline data-start="97.560" data-duration="4.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s60" class="clip scene " data-start="97.560" data-duration="4.940" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Paul Rose</div></div>
+<div id="w62" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:49;"><video id="v61" class="clip fit" src="assets/clips/bremer_humboldt2_6559a211.mp4" muted playsinline data-start="102.500" data-duration="3.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s63" class="clip scene " data-start="102.500" data-duration="3.200" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: augenfreund1</div></div>
+<div id="s65" class="clip scene " data-start="105.700" data-duration="3.660" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><img id="ph64" class="fill" src="assets/gen/humboldt_1_3f5a45.jpg" alt="humboldt_1" style="transform-origin:50% 50%"><div class="credit">Photo: Daniel Manrique (roadmr@entropia.com.mx) / Wikimedia Commons</div></div>
+<div id="s67" class="clip scene " data-start="109.360" data-duration="4.140" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><img id="ph66" class="fill" src="assets/gen/humboldt_2_299ea6.jpg" alt="humboldt_2" style="transform-origin:50% 50%"><div class="credit">Photo: TimVickers / Wikimedia Commons</div></div>
+<div id="w69" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:53;"><video id="v68" class="clip fit" src="assets/clips/bremer_humboldt2_d9d7bb25.mp4" muted playsinline data-start="113.500" data-duration="4.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s70" class="clip scene " data-start="113.500" data-duration="4.240" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: augenfreund1</div></div>
+<div id="w72" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:55;"><video id="v71" class="clip fit" src="assets/clips/humboldt_4_b83cc3e0.mp4" muted playsinline data-start="117.740" data-duration="6.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w74" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:56;"><video id="v73" class="clip fit" src="assets/clips/chick_0_5c441643.mp4" muted playsinline data-start="124.260" data-duration="2.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv75" class="clip" width="1920" height="1080" data-start="127.020" data-duration="5.940" data-track-index="1" style="z-index:57"></canvas>
+<canvas id="cv76" class="clip" width="1920" height="1080" data-start="132.960" data-duration="7.480" data-track-index="1" style="z-index:58"></canvas>
+<div id="w78" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:59;"><video id="v77" class="clip fit" src="assets/clips/stones_7_15fbd8df.mp4" muted playsinline data-start="140.440" data-duration="4.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w80" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:60;"><video id="v79" class="clip fit" src="assets/clips/king_3_4607860d.mp4" muted playsinline data-start="144.480" data-duration="1.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w82" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:61;"><video id="v81" class="clip fit" src="assets/clips/huddle_1_918e1e62.mp4" muted playsinline data-start="146.340" data-duration="7.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w84" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:62;"><video id="v83" class="clip fit" src="assets/clips/emperor_7_de8baadd.mp4" muted playsinline data-start="153.400" data-duration="4.120" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv85" class="clip" width="1920" height="1080" data-start="157.520" data-duration="16.740" data-track-index="1" style="z-index:63"></canvas>
+<div id="w87" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:64;"><video id="v86" class="clip fit" src="assets/clips/walk_4_0c71eccf.mp4" muted playsinline data-start="174.260" data-duration="4.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w89" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:65;"><video id="v88" class="clip fit" src="assets/clips/african_4_692af6b5.mp4" muted playsinline data-start="178.540" data-duration="2.380" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1",{scale:1.0},{scale:1.06,duration:3.5,ease:"none"},0.000);
+tl.fromTo("#k4",{opacity:1},{opacity:0,duration:1.2,ease:"power1.inOut"},0.000);
+{const c=document.getElementById("cv6").getContext("2d");tl.to({},{duration:2.780,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "chinstrap", "item": "stone", "cam": {"z0": 1.12, "z1": 1.2}, "d": 2.78});}},3.500);}
+tl.fromTo("#v7",{scale:1.0},{scale:1.06,duration:1.68,ease:"none"},6.280);
+tl.fromTo("#ph10",{scale:1.0},{scale:1.1,duration:3.54,ease:"none"},7.960);
+tl.fromTo("#v12",{scale:1.0},{scale:1.06,duration:4.54,ease:"none"},11.500);
+tl.fromTo("#v15",{scale:1.0},{scale:1.06,duration:3.36,ease:"none"},16.040);
+tl.fromTo("#v18",{scale:1.0},{scale:1.06,duration:3.76,ease:"none"},19.400);
+tl.fromTo("#v21",{scale:1.0},{scale:1.06,duration:2.2,ease:"none"},23.160);
+tl.fromTo("#v24",{scale:1.0},{scale:1.06,duration:2.1,ease:"none"},25.360);
+tl.fromTo("#ph26",{scale:1.0},{scale:1.1,duration:3.1,ease:"none"},27.460);
+{const c=document.getElementById("cv28").getContext("2d");tl.to({},{duration:8.100,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "chinstrap", "twine": true, "cam": {"z0": 1.0, "z1": 1.08}, "d": 8.1});}},30.560);}
+tl.fromTo("#v29",{scale:1.0},{scale:1.06,duration:5.06,ease:"none"},38.660);
+tl.fromTo("#ph32",{scale:1.0},{scale:1.12,duration:4.22,ease:"none"},43.720);
+{const c=document.getElementById("cv34").getContext("2d");tl.to({},{duration:6.360,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "chinstrap", "item": "egg", "cam": {"z0": 1.06, "z1": 1.14}, "d": 6.36});}},47.940);}
+tl.fromTo("#v35",{scale:1.0},{scale:1.06,duration:4.48,ease:"none"},54.300);
+{const c=document.getElementById("cv38").getContext("2d");tl.to({},{duration:6.340,ease:"none",onUpdate:function(){SC.nest(c,this.time(),{"sp": "chinstrap", "item": "chick", "hearts": 1.0, "cam": {"z0": 1.0, "z1": 1.1}, "d": 6.34});}},58.780);}
+tl.fromTo("#v39",{scale:1.0},{scale:1.06,duration:4.92,ease:"none"},65.120);
+tl.fromTo("#v42",{scale:1.0},{scale:1.06,duration:4.96,ease:"none"},70.040);
+tl.fromTo("#v44",{scale:1.0},{scale:1.06,duration:4.2,ease:"none"},75.000);
+tl.fromTo("#v46",{scale:1.0},{scale:1.06,duration:2.92,ease:"none"},79.200);
+tl.fromTo("#v48",{scale:1.0},{scale:1.06,duration:1.84,ease:"none"},82.120);
+{const c=document.getElementById("cv50").getContext("2d");tl.to({},{duration:3.540,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [-40, 30, 1.0], "to": [8.6, 53.5, 9.0], "t0": 0.2, "t1": 2.0, "pins": [[8.58, 53.55, 2.1, "#ff5b4f"]], "d": 3.54});}},83.960);}
+tl.fromTo("#ph51",{scale:1.0},{scale:1.12,duration:3.48,ease:"none"},87.500);
+tl.fromTo("#ph53",{scale:1.0},{scale:1.1,duration:3.32,ease:"none"},90.980);
+tl.fromTo("#v55",{scale:1.0},{scale:1.06,duration:3.26,ease:"none"},94.300);
+tl.fromTo("#v58",{scale:1.0},{scale:1.06,duration:4.94,ease:"none"},97.560);
+tl.fromTo("#v61",{scale:1.0},{scale:1.06,duration:3.2,ease:"none"},102.500);
+tl.fromTo("#ph64",{scale:1.0},{scale:1.12,duration:3.66,ease:"none"},105.700);
+tl.fromTo("#ph66",{scale:1.0},{scale:1.1,duration:4.14,ease:"none"},109.360);
+tl.fromTo("#v68",{scale:1.0},{scale:1.06,duration:4.24,ease:"none"},113.500);
+tl.fromTo("#v71",{scale:1.0},{scale:1.06,duration:6.52,ease:"none"},117.740);
+tl.fromTo("#v73",{scale:1.0},{scale:1.06,duration:2.76,ease:"none"},124.260);
+{const c=document.getElementById("cv75").getContext("2d");tl.to({},{duration:5.940,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [40, 20, 1.0], "to": [40, 0, 1.15], "pins": [[151.2, -33.87, 0.4, "#ff5b4f"], [13.4, 52.5, 1.2, "#ff5b4f"], [-74.0, 40.7, 2.0, "#ff5b4f"], [8.58, 53.55, 2.6, "#ff5b4f"], [-79.4, 43.7, 3.2, "#ff5b4f"]], "d": 5.94});}},127.020);}
+{const c=document.getElementById("cv76").getContext("2d");tl.to({},{duration:7.480,ease:"none",onUpdate:function(){SC.species(c,this.time(),{"cam": {"z0": 1.0, "z1": 1.04}, "d": 7.48});}},132.960);}
+tl.fromTo("#v77",{scale:1.0},{scale:1.06,duration:4.04,ease:"none"},140.440);
+tl.fromTo("#v79",{scale:1.0},{scale:1.06,duration:1.86,ease:"none"},144.480);
+tl.fromTo("#v81",{scale:1.0},{scale:1.06,duration:7.06,ease:"none"},146.340);
+tl.fromTo("#v83",{scale:1.0},{scale:1.06,duration:4.12,ease:"none"},153.400);
+{const c=document.getElementById("cv85").getContext("2d");tl.to({},{duration:16.740,ease:"none",onUpdate:function(){SC.sexing(c,this.time(),{"sp": "chinstrap", "dna": 10.6, "cam": {"z0": 1.0, "z1": 1.06}, "d": 16.74});}},157.520);}
+tl.fromTo("#v86",{scale:1.0},{scale:1.06,duration:4.28,ease:"none"},174.260);
+tl.fromTo("#v88",{scale:1.0},{scale:1.06,duration:2.38,ease:"none"},178.540);
+tl.set({}, {}, 180.933);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

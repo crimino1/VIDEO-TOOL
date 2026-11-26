@@ -1,0 +1,44 @@
+{
+ "used": 2269,
+ "last_request": 1795706628.8414807,
+ "log": [
+  {
+   "time": "2026-11-26T20:36:46",
+   "chars": 469,
+   "task": "e7e487b1-c275-4afb-8b97-05c56befa450",
+   "out": "ai-equator/helium/assets/vo/p01.mp3"
+  },
+  {
+   "time": "2026-11-26T20:38:20",
+   "chars": 299,
+   "task": "06221386-d067-42fa-97be-7227b6b42d80",
+   "out": "ai-equator/helium/assets/vo/p02.mp3"
+  },
+  {
+   "time": "2026-11-26T20:42:18",
+   "chars": 379,
+   "task": "a9c8ef14-fde6-4482-87be-be95b4a99c1b",
+   "out": "ai-equator/helium/assets/vo/p03.mp3"
+  },
+  {
+   "time": "2026-11-26T20:46:13",
+   "chars": 452,
+   "task": "1e29150e-51cf-46a7-9284-5d64b5c252d7",
+   "out": "ai-equator/helium/assets/vo/p04.mp3"
+  },
+  {
+   "time": "2026-11-26T20:50:05",
+   "chars": 272,
+   "task": "6d69fec2-dedb-4f33-86d7-9d145efa5da5",
+   "out": "ai-equator/helium/assets/vo/p05.mp3"
+  },
+  {
+   "time": "2026-11-26T20:53:49",
+   "chars": 398,
+   "task": "aebf08c8-a75e-434a-8723-9b40bb5093b9",
+   "out": "ai-equator/helium/assets/vo/p06.mp3"
+  }
+ ],
+ "budget": 10000,
+ "model": "eleven_multilingual_v2"
+}

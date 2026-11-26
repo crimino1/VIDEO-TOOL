@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="177.600" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s215" class="clip" data-start="0.000" data-duration="3.940" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o216" class="big" style="opacity:0">Only one thing was still missing.</div><div id="o217" class="big" style="opacity:0">A picture.</div></div>
+<video id="s218v" class="clip" src="assets/clips/stargaze2_1307.mp4" muted playsinline data-start="3.940" data-duration="2.360" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s218" class="clip" data-start="3.940" data-duration="2.360" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s218k"></div><div class="vig"></div></div>
+<div id="s219" class="clip" data-start="6.300" data-duration="1.800" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s219k"></div><div class="vig"></div></div>
+<div id="s220" class="clip" data-start="8.100" data-duration="18.600" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s220k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o221" class="cap" style="opacity:0">M87* · 55 million light-years away</div><div id="o222" class="line" style="opacity:0">Like spotting an orange on the Moon.</div></div>
+<div id="s223" class="clip" data-start="26.700" data-duration="8.400" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s223k"></div><div class="vig"></div></div>
+<div id="s224" class="clip" data-start="35.100" data-duration="6.740" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb225" style="position:absolute;inset:0"><img src="assets/img_s/alma.jpg" alt="alma"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o226" class="cap" style="opacity:0">ALMA, Chile · one of eight observatories</div></div>
+<div id="s227" class="clip" data-start="41.840" data-duration="8.620" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s227k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o228" class="cap" style="opacity:0">The Event Horizon Telescope · April 2017</div></div>
+<video id="s229v" class="clip" src="assets/clips/harddrive_1354.mp4" muted playsinline data-start="50.460" data-duration="5.240" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s229" class="clip" data-start="50.460" data-duration="5.240" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s229k"></div><div class="vig"></div></div>
+<video id="s230v" class="clip" src="assets/clips/plane_1359.mp4" muted playsinline data-start="55.700" data-duration="3.580" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s230" class="clip" data-start="55.700" data-duration="3.580" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s230k"></div><div class="vig"></div></div>
+<div id="s231" class="clip" data-start="59.280" data-duration="8.020" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb232" style="position:absolute;left:682px;top:130px;width:555px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/spt.jpg" alt="spt" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o233" class="cap" style="opacity:0">South Pole Telescope</div></div>
+<div id="s234" class="clip" data-start="67.300" data-duration="10.440" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb235" style="position:absolute;left:650px;top:240px;width:620px;height:620px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/m87.jpg" alt="m87" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o236" class="capt" style="opacity:0">10 April 2019</div><div id="o237" class="cap" style="opacity:0">M87* · Event Horizon Telescope</div></div>
+<div id="s238" class="clip" data-start="77.740" data-duration="24.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s238k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o239" class="line" style="opacity:0">Not the black hole itself — its shadow.</div></div>
+<div id="s240" class="clip" data-start="101.860" data-duration="10.480" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb241" style="position:absolute;left:650px;top:240px;width:620px;height:620px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/sgra.jpg" alt="sgra" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o242" class="capt" style="opacity:0">May 2022</div><div id="o243" class="cap" style="opacity:0">Sagittarius A* · the centre of our galaxy</div></div>
+<div id="s244" class="clip" data-start="112.340" data-duration="6.340" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o245" class="big" style="opacity:0">So how did humans discover black holes?</div></div>
+<div id="s246" class="clip" data-start="118.680" data-duration="1.620" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s246k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o247" class="cap" style="opacity:0">A priest made a guess</div></div>
+<div id="s248" class="clip" data-start="120.300" data-duration="2.240" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:614px"><img id="kb249" src="assets/img_s/schwarzschild.jpg" alt="schwarzschild"></div><div id="pn250" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:846px">Karl Schwarzschild</div><div class="pmeta" style="left:160px;top:530px">A soldier solved an equation</div></div></div>
+<div id="s251" class="clip" data-start="122.540" data-duration="2.580" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb252" style="position:absolute;left:418px;top:130px;width:1084px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/liner.jpg" alt="liner" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o253" class="cap" style="opacity:0">A teenager did a calculation on a ship</div></div>
+<div id="s254" class="clip" data-start="125.120" data-duration="2.860" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:613px"><img id="kb255" src="assets/img_s/oppenheimer.jpg" alt="oppenheimer"></div><div id="pn256" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:847px">J. Robert Oppenheimer</div><div class="pmeta" style="left:160px;top:610px">A paper on the first day of a war</div></div></div>
+<div id="s257" class="clip" data-start="127.980" data-duration="3.000" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb258" style="position:absolute;left:670px;top:130px;width:580px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/aerobee.jpg" alt="aerobee" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o259" class="cap" style="opacity:0">A rocket above the sky</div></div>
+<div id="s260" class="clip" data-start="130.980" data-duration="5.720" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb261" style="position:absolute;left:438px;top:130px;width:1044px;height:739px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/cygx1art.jpg" alt="cygx1art" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o262" class="cap" style="opacity:0">X-rays from falling gas</div></div>
+<div id="s263" class="clip" data-start="136.700" data-duration="1.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s263k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o264" class="cap" style="opacity:0">Stars circling an empty point</div></div>
+<div id="s265" class="clip" data-start="138.400" data-duration="1.800" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb266" style="position:absolute;left:405px;top:130px;width:1110px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/ligo.jpg" alt="ligo" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o267" class="cap" style="opacity:0">Ripples in space</div></div>
+<div id="s268" class="clip" data-start="140.200" data-duration="2.620" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb269" style="position:absolute;left:590px;top:130px;width:740px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/m87.jpg" alt="m87" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o270" class="cap" style="opacity:0">A shadow in a photograph</div></div>
+<div id="s271" class="clip" data-start="142.820" data-duration="13.180" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s271k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o272" class="line" style="opacity:0">Every method keeps agreeing with the others.</div></div>
+<div id="s273" class="clip" data-start="156.000" data-duration="10.100" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s273k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o274" class="line" style="opacity:0">Watch a normal star move around nothing.</div></div>
+<div id="s275" class="clip" data-start="166.100" data-duration="11.500" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s275k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o276" class="line" style="opacity:0">A black hole can hide its light.</div><div id="o277" class="line" style="opacity:0">It can&#x27;t hide its gravity.</div></div>
+<div id="fout" class="black" style="z-index:9;opacity:0"></div>
+</div>
+<script>window.LAB = [[6.3, 8.1, "eyepiece", {"mode": "m87", "FT0": 1310.2}], [8.1, 26.7, "eht", {"mode": "orange", "FT0": 1312.0}], [26.7, 35.1, "eht", {"mode": "earth", "FT0": 1330.6}], [41.84, 50.46, "eht", {"mode": "earth", "FT0": 1345.74}], [77.74, 101.86, "eht", {"mode": "shadow", "FT0": 1381.64}], [118.68, 120.3, "notebook", {"mode": "michell2", "FT0": 1422.58}], [136.7, 138.4, "galcenter", {"mode": "orbits2", "FT0": 1440.6}], [142.82, 156.0, "bhslow", {"mode": "end", "FT0": 1446.72}], [156.0, 166.1, "notebook", {"mode": "end", "FT0": 1459.9}], [166.1, 177.6, "cygx1", {"mode": "end", "FT0": 1470.0}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_collapse.js"></script>
+<script src="assets/js/k_cygnus.js"></script>
+<script src="assets/js/k_gravity.js"></script>
+<script src="assets/js/k_scope.js"></script>
+<script src="assets/js/k_waves.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s215",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},0.000);
+tl.fromTo("#o216",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},0.100);
+tl.to("#o216",{opacity:0,duration:0.5,ease:"power1.inOut"},1.800);
+tl.fromTo("#o217",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},2.500);
+tl.fromTo("#s218k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},3.940);
+tl.fromTo("#s219k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},6.300);
+tl.fromTo("#s220k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},8.100);
+tl.fromTo("#o221",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},12.100);
+tl.to("#o221",{opacity:0,duration:0.5,ease:"power1.inOut"},17.800);
+tl.fromTo("#o222",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},18.400);
+tl.to("#o222",{opacity:0,duration:0.5,ease:"power1.inOut"},22.000);
+tl.fromTo("#s223k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},26.700);
+tl.fromTo("#kb225",{scale:1.0},{scale:1.08,duration:6.740,ease:"none"},35.100);
+tl.fromTo("#s224",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},35.100);
+tl.fromTo("#o226",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},35.500);
+tl.fromTo("#s227k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},41.840);
+tl.fromTo("#o228",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},47.400);
+tl.fromTo("#s229k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},50.460);
+tl.fromTo("#s230k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},55.700);
+tl.fromTo("#kb232",{scale:1.0,y:6},{scale:1.09,y:-6,duration:8.020,ease:"sine.inOut"},59.280);
+tl.fromTo("#s231",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},59.280);
+tl.fromTo("#o233",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},59.700);
+tl.fromTo("#kb235",{scale:1.0,y:6},{scale:1.09,y:-6,duration:10.440,ease:"sine.inOut"},67.300);
+tl.fromTo("#s234",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},67.300);
+tl.fromTo("#o236",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},67.500);
+tl.fromTo("#o237",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},72.200);
+tl.fromTo("#s238k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},77.740);
+tl.fromTo("#o239",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},87.400);
+tl.to("#o239",{opacity:0,duration:0.5,ease:"power1.inOut"},94.400);
+tl.fromTo("#kb241",{scale:1.0,y:6},{scale:1.09,y:-6,duration:10.480,ease:"sine.inOut"},101.860);
+tl.fromTo("#s240",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},101.860);
+tl.fromTo("#o242",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},102.100);
+tl.fromTo("#o243",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},106.300);
+tl.fromTo("#s244",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},112.340);
+tl.fromTo("#o245",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},112.500);
+tl.to("#o245",{opacity:0,duration:0.5,ease:"power1.inOut"},118.000);
+tl.fromTo("#s246k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},118.680);
+tl.fromTo("#o247",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},118.900);
+tl.fromTo("#kb249",{scale:1.0,x:0},{scale:1.10,x:-18,duration:2.240,ease:"none"},120.300);
+tl.fromTo("#pn250",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},120.650);
+tl.fromTo("#s248",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},120.300);
+tl.fromTo("#kb252",{scale:1.0,y:6},{scale:1.09,y:-6,duration:2.580,ease:"sine.inOut"},122.540);
+tl.fromTo("#s251",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},122.540);
+tl.fromTo("#o253",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},122.700);
+tl.fromTo("#kb255",{scale:1.0,x:0},{scale:1.10,x:-18,duration:2.860,ease:"none"},125.120);
+tl.fromTo("#pn256",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},125.470);
+tl.fromTo("#s254",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},125.120);
+tl.fromTo("#kb258",{scale:1.0,y:6},{scale:1.09,y:-6,duration:3.000,ease:"sine.inOut"},127.980);
+tl.fromTo("#s257",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},127.980);
+tl.fromTo("#o259",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},128.100);
+tl.fromTo("#kb261",{scale:1.0,y:6},{scale:1.09,y:-6,duration:5.720,ease:"sine.inOut"},130.980);
+tl.fromTo("#s260",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},130.980);
+tl.fromTo("#o262",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},134.800);
+tl.fromTo("#s263k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},136.700);
+tl.fromTo("#o264",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},136.900);
+tl.fromTo("#kb266",{scale:1.0,y:6},{scale:1.09,y:-6,duration:1.800,ease:"sine.inOut"},138.400);
+tl.fromTo("#s265",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},138.400);
+tl.fromTo("#o267",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},138.600);
+tl.fromTo("#kb269",{scale:1.0,y:6},{scale:1.09,y:-6,duration:2.620,ease:"sine.inOut"},140.200);
+tl.fromTo("#s268",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},140.200);
+tl.fromTo("#o270",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},140.400);
+tl.fromTo("#s271k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},142.820);
+tl.fromTo("#o272",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},150.200);
+tl.to("#o272",{opacity:0,duration:0.5,ease:"power1.inOut"},155.300);
+tl.fromTo("#s273k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},156.000);
+tl.fromTo("#o274",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},160.800);
+tl.fromTo("#s275k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},166.100);
+tl.fromTo("#o276",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},171.080);
+tl.to("#o276",{opacity:0,duration:0.5,ease:"power1.inOut"},173.100);
+tl.fromTo("#o277",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},173.700);
+tl.fromTo("#fout",{opacity:0},{opacity:1,duration:1.4,ease:"power1.inOut"},176.100);
+tl.set({}, {}, 177.600);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Builder 22: start of Chapter 8. Three kinds of problems, position -> velocity -> acceleration on a moving particle,
+# reading the signs and speed, the worked particle s = t^3 - 6t^2 + 9t (v, a, at rest, sign line, the whole trip),
+# displacement 4 vs distance 12, speeding up / slowing down (same vs opposite signs, a car), the sign chart,
+# and the ball thrown up at 20 m/s (track + h(t) + v(t) synced): top at t = 2, 20 m high, lands at t = 4.
+S = [
+    ("2:10:42.37", "c", "K22_Chapter8", dict(label="Chapter 8", title="Motion, Related Rates and Approximations", doodle="star")),
+    ("2:10:46.30", "m", "K22_ThreeKinds", {}),
+    ("2:11:08.60", "m", "K22_PosVelAcc", {}),
+    ("2:11:42.20", "m", "K22_Signs", {}),
+    ("2:12:11.40", "m", "K22_Example", {}),
+    ("2:12:48.50", "m", "K22_Direction", {}),
+    ("2:13:30.40", "m", "K22_Story", {}),
+    ("2:14:02.40", "m", "K22_Displacement", {}),
+    ("2:14:26.60", "m", "K22_Distance", {}),
+    ("2:14:56.60", "m", "K22_SameSign", {}),
+    ("2:15:16.60", "m", "K22_Car", {}),
+    ("2:15:41.00", "m", "K22_Pieces", {}),
+    ("2:16:17.00", "m", "K22_Ball", {}),
+    ("2:16:43.50", "m", "K22_BallTop", {}),
+    ("2:17:02.20", "m", "K22_BallLand", {}),
+]

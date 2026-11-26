@@ -1,0 +1,1332 @@
+{
+ "result_count": 25,
+ "page_count": 2,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "5b36aa00-3f0c-4180-bf13-dab9f1a66d7c",
+   "title": "Make it Feel Good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1353221",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1353221&format=mp32",
+   "creator": "Bahia de Roses",
+   "creator_url": "https://www.jamendo.com/artist/490851/Bahia_de_Roses",
+   "license": "by-nd",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "kick",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Make it Feel Good\" by Bahia de Roses is licensed under CC BY-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill a la Playa",
+    "foreign_landing_url": null,
+    "creator": "Bahia de Roses",
+    "creator_url": "https://www.jamendo.com/artist/490851/Bahia_de_Roses",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 146000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5b36aa00-3f0c-4180-bf13-dab9f1a66d7c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5b36aa00-3f0c-4180-bf13-dab9f1a66d7c/",
+   "related_url": "https://api.openverse.org/v1/audio/5b36aa00-3f0c-4180-bf13-dab9f1a66d7c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5b36aa00-3f0c-4180-bf13-dab9f1a66d7c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c772590e-ef42-438e-a891-9b530b931460",
+   "title": "Make Me Feel Good ( Radio Edit )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1353295",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1353295&format=mp32",
+   "creator": "Deep-X",
+   "creator_url": "https://www.jamendo.com/artist/490859/Deep_X",
+   "license": "by-nd",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "kick",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "summer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Make Me Feel Good ( Radio Edit )\" by Deep-X is licensed under CC BY-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Deep Radio Grooves",
+    "foreign_landing_url": null,
+    "creator": "Deep-X",
+    "creator_url": "https://www.jamendo.com/artist/490859/Deep_X",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 159000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c772590e-ef42-438e-a891-9b530b931460/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c772590e-ef42-438e-a891-9b530b931460/",
+   "related_url": "https://api.openverse.org/v1/audio/c772590e-ef42-438e-a891-9b530b931460/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c772590e-ef42-438e-a891-9b530b931460/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5534960b-1a98-4f6d-8143-553e8d3555a9",
+   "title": "Feeling good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/976136",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=976136&format=mp32",
+   "creator": "Jim Obzina",
+   "creator_url": "https://www.jamendo.com/artist/422568/Jim_Obzina_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feeling good\" by Jim Obzina is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Feeling good",
+    "foreign_landing_url": "https://www.jamendo.com/album/114948/feeling-good",
+    "creator": "Jim Obzina",
+    "creator_url": "https://www.jamendo.com/artist/422568/Jim_Obzina_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 263000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5534960b-1a98-4f6d-8143-553e8d3555a9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5534960b-1a98-4f6d-8143-553e8d3555a9/",
+   "related_url": "https://api.openverse.org/v1/audio/5534960b-1a98-4f6d-8143-553e8d3555a9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5534960b-1a98-4f6d-8143-553e8d3555a9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "79a6627c-a526-46ea-98ab-c4689f398d64",
+   "title": "Feel Good",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/360110",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=360110&format=mp32",
+   "creator": "Authush",
+   "creator_url": "https://www.jamendo.com/artist/5821/dj.authush",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feel Good\" by Authush is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "THE FIRST WAVE 2009",
+    "foreign_landing_url": "https://www.jamendo.com/album/46719/the-first-wave-2009",
+    "creator": "Authush",
+    "creator_url": "https://www.jamendo.com/artist/5821/dj.authush",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 184000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/79a6627c-a526-46ea-98ab-c4689f398d64/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/79a6627c-a526-46ea-98ab-c4689f398d64/",
+   "related_url": "https://api.openverse.org/v1/audio/79a6627c-a526-46ea-98ab-c4689f398d64/related/",
+   "waveform": "https://api.openverse.org/v1/audio/79a6627c-a526-46ea-98ab-c4689f398d64/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b5759ad3-aaea-4bbe-ac3a-1033260a2c92",
+   "title": "Feel Good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1063716",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1063716&format=mp32",
+   "creator": "bobby blue",
+   "creator_url": "https://www.jamendo.com/artist/437699/bobby_blue_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "pop",
+    "synthpop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "feelgood",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feel Good\" by bobby blue is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Sunshine",
+    "foreign_landing_url": "https://www.jamendo.com/album/125642/sunshine",
+    "creator": "bobby blue",
+    "creator_url": "https://www.jamendo.com/artist/437699/bobby_blue_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 196000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b5759ad3-aaea-4bbe-ac3a-1033260a2c92/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b5759ad3-aaea-4bbe-ac3a-1033260a2c92/",
+   "related_url": "https://api.openverse.org/v1/audio/b5759ad3-aaea-4bbe-ac3a-1033260a2c92/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b5759ad3-aaea-4bbe-ac3a-1033260a2c92/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f3421c41-09fb-4bce-9b8d-d4e58840bda7",
+   "title": "FEEL GOOD",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/731597",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=731597&format=mp32",
+   "creator": "HAT TRICK ROCK",
+   "creator_url": "https://www.jamendo.com/artist/365445/Hat_Trick_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"FEEL GOOD\" by HAT TRICK ROCK is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "FOREVER",
+    "foreign_landing_url": "https://www.jamendo.com/album/85526/forever",
+    "creator": "HAT TRICK ROCK",
+    "creator_url": "https://www.jamendo.com/artist/365445/Hat_Trick_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 330000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f3421c41-09fb-4bce-9b8d-d4e58840bda7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f3421c41-09fb-4bce-9b8d-d4e58840bda7/",
+   "related_url": "https://api.openverse.org/v1/audio/f3421c41-09fb-4bce-9b8d-d4e58840bda7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f3421c41-09fb-4bce-9b8d-d4e58840bda7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fe3d0609-fb56-43cb-8b4d-139a58ec4bb0",
+   "title": "FEELING GOOD",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/162378",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=162378&format=mp32",
+   "creator": "Xaviant Haze",
+   "creator_url": "https://www.jamendo.com/artist/337833/Xaviant_Haze",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"FEELING GOOD\" by Xaviant Haze is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Space Cake Breakz",
+    "foreign_landing_url": "https://www.jamendo.com/album/23807/space-cake-breakz",
+    "creator": "Xaviant Haze",
+    "creator_url": "https://www.jamendo.com/artist/337833/Xaviant_Haze",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 214000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fe3d0609-fb56-43cb-8b4d-139a58ec4bb0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fe3d0609-fb56-43cb-8b4d-139a58ec4bb0/",
+   "related_url": "https://api.openverse.org/v1/audio/fe3d0609-fb56-43cb-8b4d-139a58ec4bb0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fe3d0609-fb56-43cb-8b4d-139a58ec4bb0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "31ff39e9-cf86-42b2-9037-75d70aec035a",
+   "title": "3Teach me to feel Good mOOn Chez BAW",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1501521",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1501521&format=mp32",
+   "creator": "mOOnChezBAW",
+   "creator_url": "https://www.jamendo.com/artist/495654/mOOnChezBAW",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "babies",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "groovy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"3Teach me to feel Good mOOn Chez BAW\" by mOOnChezBAW is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ChezBAW SurMaRoute Babies Groove",
+    "foreign_landing_url": "https://www.jamendo.com/album/172951/chezbaw-surmaroute-babies-groove",
+    "creator": "mOOnChezBAW",
+    "creator_url": "https://www.jamendo.com/artist/495654/mOOnChezBAW",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 138000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/31ff39e9-cf86-42b2-9037-75d70aec035a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/31ff39e9-cf86-42b2-9037-75d70aec035a/",
+   "related_url": "https://api.openverse.org/v1/audio/31ff39e9-cf86-42b2-9037-75d70aec035a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/31ff39e9-cf86-42b2-9037-75d70aec035a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "efda1413-4bc9-4f1e-80fe-5db75c412dea",
+   "title": "Feel Good!",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1306464",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1306464&format=mp32",
+   "creator": "Mai-Ya",
+   "creator_url": "https://www.jamendo.com/artist/486218/Mai-Ya",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic",
+    "eurodance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dancer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feel Good!\" by Mai-Ya is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Per Action",
+    "foreign_landing_url": "https://www.jamendo.com/album/155334/per-action",
+    "creator": "Mai-Ya",
+    "creator_url": "https://www.jamendo.com/artist/486218/Mai-Ya",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 697000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/efda1413-4bc9-4f1e-80fe-5db75c412dea/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/efda1413-4bc9-4f1e-80fe-5db75c412dea/",
+   "related_url": "https://api.openverse.org/v1/audio/efda1413-4bc9-4f1e-80fe-5db75c412dea/related/",
+   "waveform": "https://api.openverse.org/v1/audio/efda1413-4bc9-4f1e-80fe-5db75c412dea/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "eb18c769-3f20-4eb7-b8c8-5268c9afc56f",
+   "title": "FEEL GOOD",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/599597",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=599597&format=mp32",
+   "creator": "NMZ ENT",
+   "creator_url": "https://www.jamendo.com/artist/360844/DJ_RAMPAGE,_PHAT_BOI,_MAX_1,_FLIGHT,_ROOK_A_LEE,_X,_SHO_BOY,_T1G",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/ca/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"FEEL GOOD\" by NMZ ENT is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/ca/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "BOTH SIDES OF THE TRAP",
+    "foreign_landing_url": "https://www.jamendo.com/album/69286/both-sides-of-the-trap",
+    "creator": "NMZ ENT",
+    "creator_url": "https://www.jamendo.com/artist/360844/DJ_RAMPAGE,_PHAT_BOI,_MAX_1,_FLIGHT,_ROOK_A_LEE,_X,_SHO_BOY,_T1G",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 211000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/eb18c769-3f20-4eb7-b8c8-5268c9afc56f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/eb18c769-3f20-4eb7-b8c8-5268c9afc56f/",
+   "related_url": "https://api.openverse.org/v1/audio/eb18c769-3f20-4eb7-b8c8-5268c9afc56f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/eb18c769-3f20-4eb7-b8c8-5268c9afc56f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3b638469-d9d3-45f9-9513-ae041607bc01",
+   "title": "Feeling good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/892076",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=892076&format=mp32",
+   "creator": "IRENE+PIANO",
+   "creator_url": "https://www.jamendo.com/artist/376594/IRENE+PIANO",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feeling good\" by IRENE+PIANO is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Butterfly above an Abyss",
+    "foreign_landing_url": "https://www.jamendo.com/album/104927/butterfly-above-an-abyss",
+    "creator": "IRENE+PIANO",
+    "creator_url": "https://www.jamendo.com/artist/376594/IRENE+PIANO",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 224000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3b638469-d9d3-45f9-9513-ae041607bc01/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3b638469-d9d3-45f9-9513-ae041607bc01/",
+   "related_url": "https://api.openverse.org/v1/audio/3b638469-d9d3-45f9-9513-ae041607bc01/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3b638469-d9d3-45f9-9513-ae041607bc01/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0ef8ec1e-8f62-4395-be5c-0bbed6cbc6be",
+   "title": "Feel Good - David G",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1327374",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1327374&format=mp32",
+   "creator": "David guillaume",
+   "creator_url": "https://www.jamendo.com/artist/349501/david_guillaume",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic",
+    "techno"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "battery",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feel Good - David G\" by David guillaume is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Humanity 1.0",
+    "foreign_landing_url": "https://www.jamendo.com/album/157129/humanity-1-0",
+    "creator": "David guillaume",
+    "creator_url": "https://www.jamendo.com/artist/349501/david_guillaume",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 276000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0ef8ec1e-8f62-4395-be5c-0bbed6cbc6be/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0ef8ec1e-8f62-4395-be5c-0bbed6cbc6be/",
+   "related_url": "https://api.openverse.org/v1/audio/0ef8ec1e-8f62-4395-be5c-0bbed6cbc6be/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0ef8ec1e-8f62-4395-be5c-0bbed6cbc6be/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7c8fe9c7-310d-4357-8ac7-e19099284c9b",
+   "title": "Feeling great,feeling Good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1005877",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1005877&format=mp32",
+   "creator": "J-water",
+   "creator_url": "https://www.jamendo.com/artist/419126/J-water",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feeling great,feeling Good\" by J-water is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "My Biggest Fan is my Mirror",
+    "foreign_landing_url": "https://www.jamendo.com/album/118397/my-biggest-fan-is-my-mirror",
+    "creator": "J-water",
+    "creator_url": "https://www.jamendo.com/artist/419126/J-water",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 116000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7c8fe9c7-310d-4357-8ac7-e19099284c9b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7c8fe9c7-310d-4357-8ac7-e19099284c9b/",
+   "related_url": "https://api.openverse.org/v1/audio/7c8fe9c7-310d-4357-8ac7-e19099284c9b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7c8fe9c7-310d-4357-8ac7-e19099284c9b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "170c51eb-c3f6-4251-8cfe-8d89427a61d1",
+   "title": "Life Feels Good (Guanabo Theme)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1093295",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1093295&format=mp32",
+   "creator": "DJBASTART",
+   "creator_url": "https://www.jamendo.com/artist/440388/DJBASTART",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "indietronica",
+    "triphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "drummandbass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Life Feels Good (Guanabo Theme)\" by DJBASTART is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Fear & Loathing On CUBA",
+    "foreign_landing_url": "https://www.jamendo.com/album/130308/fear-and-loathing-on-cuba",
+    "creator": "DJBASTART",
+    "creator_url": "https://www.jamendo.com/artist/440388/DJBASTART",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 352000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/170c51eb-c3f6-4251-8cfe-8d89427a61d1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/170c51eb-c3f6-4251-8cfe-8d89427a61d1/",
+   "related_url": "https://api.openverse.org/v1/audio/170c51eb-c3f6-4251-8cfe-8d89427a61d1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/170c51eb-c3f6-4251-8cfe-8d89427a61d1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "02dce0ae-2855-46b2-991a-a1e3811063e5",
+   "title": "Feels Good - C or Am - 140",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1098201",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1098201&format=mp32",
+   "creator": "Sprock3t",
+   "creator_url": "https://www.jamendo.com/artist/441111/Sprock3t",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feels Good - C or Am - 140\" by Sprock3t is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Scandinavian Arctic EP",
+    "foreign_landing_url": "https://www.jamendo.com/album/130994/scandinavian-arctic-ep",
+    "creator": "Sprock3t",
+    "creator_url": "https://www.jamendo.com/artist/441111/Sprock3t",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 438000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/02dce0ae-2855-46b2-991a-a1e3811063e5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/02dce0ae-2855-46b2-991a-a1e3811063e5/",
+   "related_url": "https://api.openverse.org/v1/audio/02dce0ae-2855-46b2-991a-a1e3811063e5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/02dce0ae-2855-46b2-991a-a1e3811063e5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f5d0115a-5ab6-4942-8c6d-40fc8186cae2",
+   "title": "Beat 13 Feeling Good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1584281",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1584281&format=mp32",
+   "creator": "One Milk",
+   "creator_url": "https://www.jamendo.com/artist/493932/One_Milk",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "breakbeat",
+    "drumnbass",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Beat 13 Feeling Good\" by One Milk is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Beat 1",
+    "foreign_landing_url": "https://www.jamendo.com/album/178147/beat-1",
+    "creator": "One Milk",
+    "creator_url": "https://www.jamendo.com/artist/493932/One_Milk",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 286000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f5d0115a-5ab6-4942-8c6d-40fc8186cae2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f5d0115a-5ab6-4942-8c6d-40fc8186cae2/",
+   "related_url": "https://api.openverse.org/v1/audio/f5d0115a-5ab6-4942-8c6d-40fc8186cae2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f5d0115a-5ab6-4942-8c6d-40fc8186cae2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8f2394e3-042d-4f9c-a17d-250938f0751e",
+   "title": "I Have A Good Feeling About This",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1745088",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1745088&format=mp32",
+   "creator": "PNFA",
+   "creator_url": "https://www.jamendo.com/artist/527568/PNFA",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "electronic",
+    "latin"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "whistling",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"I Have A Good Feeling About This\" by PNFA is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Vogue 01",
+    "foreign_landing_url": "https://www.jamendo.com/album/192309/vogue-01",
+    "creator": "PNFA",
+    "creator_url": "https://www.jamendo.com/artist/527568/PNFA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 207000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8f2394e3-042d-4f9c-a17d-250938f0751e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8f2394e3-042d-4f9c-a17d-250938f0751e/",
+   "related_url": "https://api.openverse.org/v1/audio/8f2394e3-042d-4f9c-a17d-250938f0751e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8f2394e3-042d-4f9c-a17d-250938f0751e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6e56e94a-2edb-49f6-b439-1680b8c64a3f",
+   "title": "Good feeling",
+   "indexed_on": "2022-05-01T07:20:02.881192Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/397700",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=397700&format=mp32",
+   "creator": "J.Blasco",
+   "creator_url": "https://www.jamendo.com/artist/5390/j.blasco",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "eurodance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Good feeling\" by J.Blasco is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Transmission",
+    "foreign_landing_url": "https://www.jamendo.com/album/49718/transmission",
+    "creator": "J.Blasco",
+    "creator_url": "https://www.jamendo.com/artist/5390/j.blasco",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 217000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6e56e94a-2edb-49f6-b439-1680b8c64a3f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6e56e94a-2edb-49f6-b439-1680b8c64a3f/",
+   "related_url": "https://api.openverse.org/v1/audio/6e56e94a-2edb-49f6-b439-1680b8c64a3f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6e56e94a-2edb-49f6-b439-1680b8c64a3f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0ee3f27c-2e2a-46fe-9533-899240b5df28",
+   "title": "Feel So Good",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/367018",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=367018&format=mp32",
+   "creator": "Felixjd",
+   "creator_url": "https://www.jamendo.com/artist/351202/felixjd",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Feel So Good\" by Felixjd is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Y Love House",
+    "foreign_landing_url": "https://www.jamendo.com/album/47305/y-love-house",
+    "creator": "Felixjd",
+    "creator_url": "https://www.jamendo.com/artist/351202/felixjd",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 192000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0ee3f27c-2e2a-46fe-9533-899240b5df28/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0ee3f27c-2e2a-46fe-9533-899240b5df28/",
+   "related_url": "https://api.openverse.org/v1/audio/0ee3f27c-2e2a-46fe-9533-899240b5df28/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0ee3f27c-2e2a-46fe-9533-899240b5df28/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1039c62c-4ff1-498c-8735-1945440d37eb",
+   "title": "I Feel So Good",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1216101",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1216101&format=mp32",
+   "creator": "The Woolly Hats",
+   "creator_url": "https://www.jamendo.com/artist/466868/The_Woolly_Hats_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "indiepop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "humour",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"I Feel So Good\" by The Woolly Hats is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Woolly Hats",
+    "foreign_landing_url": "https://www.jamendo.com/album/145900/woolly-hats",
+    "creator": "The Woolly Hats",
+    "creator_url": "https://www.jamendo.com/artist/466868/The_Woolly_Hats_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 321000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1039c62c-4ff1-498c-8735-1945440d37eb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1039c62c-4ff1-498c-8735-1945440d37eb/",
+   "related_url": "https://api.openverse.org/v1/audio/1039c62c-4ff1-498c-8735-1945440d37eb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1039c62c-4ff1-498c-8735-1945440d37eb/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

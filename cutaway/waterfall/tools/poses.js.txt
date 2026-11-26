@@ -1,0 +1,142 @@
+// pose library. Directions are in the character's own frame: +z forward, +y up, +x the character's left.
+const _v0 = new THREE.Vector3(), _v1 = new THREE.Vector3(), _q0 = new THREE.Quaternion(), _q1 = new THREE.Quaternion(), _q2 = new THREE.Quaternion();
+function aim(c, bone, child, dir, k = 1) {
+  const b = c.bones[bone], ch = c.bones[child]; if (!b || !ch || k <= 0) return;
+  c.root.updateMatrixWorld(true);
+  b.getWorldPosition(_v0); ch.getWorldPosition(_v1); const cur = _v1.sub(_v0).normalize();
+  c.root.getWorldQuaternion(_q2); const want = new THREE.Vector3(...dir).normalize().applyQuaternion(_q2);
+  _q0.setFromUnitVectors(cur, want); if (k < 1) _q0.slerp(_q1.identity(), 1 - k);
+  b.parent.getWorldQuaternion(_q1); const wb = _q1.clone().multiply(b.quaternion);
+  b.quaternion.copy(_q1.invert().multiply(_q0.multiply(wb)));
+  b.updateMatrixWorld(true);
+}
+const mixd = (a, b, k) => a.map((v, i) => lerp(v, b[i], k));
+function ground(c, floor, parts = ["LeftToeBase", "RightToeBase", "LeftFoot", "RightFoot", "LeftLeg", "RightLeg"], pad = 0.05) {
+  c.root.updateMatrixWorld(true); let m = Infinity;
+  for (const n of parts) if (c.bones[n]) { c.bones[n].getWorldPosition(_v0); m = Math.min(m, _v0.y); }
+  c.root.position.y += floor + pad - m; c.root.updateMatrixWorld(true);
+}
+const P = {
+  kneel(c) {          // left foot planted forward, right knee on the ground
+    aim(c, "LeftUpLeg", "LeftLeg", [0.1, -0.15, 1]); aim(c, "LeftLeg", "LeftFoot", [0, -1, 0.05]);
+    aim(c, "RightUpLeg", "RightLeg", [-0.05, -1, 0.25]); aim(c, "RightLeg", "RightFoot", [0, -0.12, -1]);
+  },
+  sitLong(c) {        // sitting on the floor, legs out in front
+    aim(c, "LeftUpLeg", "LeftLeg", [0.08, -0.05, 1]); aim(c, "LeftLeg", "LeftFoot", [0.05, -0.15, 1]);
+    aim(c, "RightUpLeg", "RightLeg", [-0.08, -0.05, 1]); aim(c, "RightLeg", "RightFoot", [-0.05, -0.15, 1]);
+  },
+  sitCross(c) {       // soldiers by the fire: knees up
+    aim(c, "LeftUpLeg", "LeftLeg", [0.35, 0.35, 1]); aim(c, "LeftLeg", "LeftFoot", [-0.1, -1, 0.15]);
+    aim(c, "RightUpLeg", "RightLeg", [-0.35, 0.35, 1]); aim(c, "RightLeg", "RightFoot", [0.1, -1, 0.15]);
+  },
+  dig(c, t) {         // two-handed pick: raise, then strike down in front, 0.9 s
+    const s = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 / 0.9);
+    c.rot("Spine", -12 - 14 * (1 - s)); c.rot("Spine1", -6);
+    aim(c, "RightArm", "RightForeArm", mixd([0.2, -0.55, 0.85], [0.15, 0.95, 0.35], s)); aim(c, "RightForeArm", "RightHand", mixd([0.35, -0.2, 1], [0.25, 1, 0.1], s));
+    aim(c, "LeftArm", "LeftForeArm", mixd([-0.2, -0.55, 0.85], [-0.15, 0.95, 0.35], s)); aim(c, "LeftForeArm", "LeftHand", mixd([-0.35, -0.2, 1], [-0.25, 1, 0.1], s));
+  },
+  carry(c) {
+    aim(c, "RightArm", "RightForeArm", [0.15, -0.75, 0.55]); aim(c, "RightForeArm", "RightHand", [0.35, 0.05, 1]);
+    aim(c, "LeftArm", "LeftForeArm", [-0.15, -0.75, 0.55]); aim(c, "LeftForeArm", "LeftHand", [-0.35, 0.05, 1]);
+  },
+  reachUp(c, t) {     // chisel at the ceiling
+    const s = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 / 0.5);
+    aim(c, "RightArm", "RightForeArm", [-0.1, 1, 0.25]); aim(c, "RightForeArm", "RightHand", [0.1, 1, 0.2 + 0.35 * s]);
+    aim(c, "LeftArm", "LeftForeArm", [0.15, 0.85, 0.3]); aim(c, "LeftForeArm", "LeftHand", [-0.15, 0.9, 0.35]);
+    c.rot("Head", 22); c.rot("Spine1", 8);
+  },
+  cough(c, t) {
+    const s = Math.max(0, Math.sin(t * 9));
+    c.rot("Spine", -10 - 14 * s); c.rot("Spine1", -6 * s);
+    aim(c, "RightArm", "RightForeArm", [0.3, -0.7, 0.55]); aim(c, "RightForeArm", "RightHand", [0.45, 0.85, 0.25]);
+  },
+  point(c, k) { aim(c, "RightArm", "RightForeArm", [-0.15, -0.35, 1], k); aim(c, "RightForeArm", "RightHand", [-0.1, -0.35, 1], k); },
+  ear(c, k) { aim(c, "RightArm", "RightForeArm", [-0.95, 0.05, 0.15], k); aim(c, "RightForeArm", "RightHand", [0.35, 0.95, 0], k); c.rot("Head", 0, 0, -12 * k); },
+  rodHold(c) {
+    aim(c, "RightArm", "RightForeArm", [0.1, -0.55, 0.8]); aim(c, "RightForeArm", "RightHand", [0.2, 0.25, 1]);
+    aim(c, "LeftArm", "LeftForeArm", [-0.1, -0.6, 0.75]); aim(c, "LeftForeArm", "LeftHand", [-0.15, 0.2, 1]);
+  },
+  armsDown(c) {
+    aim(c, "RightArm", "RightForeArm", [-0.12, -1, 0.05]); aim(c, "RightForeArm", "RightHand", [-0.05, -1, 0.1]);
+    aim(c, "LeftArm", "LeftForeArm", [0.12, -1, 0.05]); aim(c, "LeftForeArm", "LeftHand", [0.05, -1, 0.1]);
+  },
+  hugKnees(c) {
+    aim(c, "RightArm", "RightForeArm", [0.15, -0.6, 0.75]); aim(c, "RightForeArm", "RightHand", [0.5, 0.1, 0.85]);
+    aim(c, "LeftArm", "LeftForeArm", [-0.15, -0.6, 0.75]); aim(c, "LeftForeArm", "LeftHand", [-0.5, 0.1, 0.85]);
+  },
+};
+const FLOOR_UP = 0.05, FLOOR_LOW = -5.4;   // upper cave floor, lower room floor
+
+// ---------- staging: everything as a function of t ----------
+// yaw: 0 faces the camera (+z), 90 faces the falls (+x), -90 faces into the cliff (-x)
+function stageHero(t) {
+  const c = hero;
+  if (t < C.dig) {                                   // wading in, then standing behind the curtain
+    const k = sm(0.0, C.shadow, t), stop = sm(C.shadow - 0.4, C.shadow + 0.2, t);
+    c.pose([["walk", t * 0.8, 1 - stop], ["idle", t, stop]]);
+    c.at(lerp(3.4, 0.3, k), lerp(-1.02, -0.1, sm(0.4, C.shadow, t)), -1.6, lerp(-90, -30, stop));
+    if (k < 1) c.rot("Spine", -8);
+  } else if (t < C.brown) {                          // digging the upper cave
+    c.pose([["idle", t, 1]]); c.at(lerp(-0.5, -2.0, sm(C.dig, C.door + 0.8, t)), 0, -1.6, -90);
+    P.kneel(c); P.dig(c, t); ground(c, FLOOR_UP);
+  } else if (t < C.dogs) {                           // carries dirt to the falls at night and back
+    const k = sm(C.night - 0.2, C.night + 1.1, t), back = sm(C.carry + 0.5, C.carry + 1.7, t);
+    const moving = (k > 0.02 && k < 0.98) || (back > 0.02 && back < 0.98);
+    c.pose([["walk", t, moving ? 1 : 0], ["idle", t, moving ? 0 : 1]]);
+    c.at(lerp(lerp(-1.7, 0.2, k), -1.5, back), FLOOR_UP, -1.6, back > 0.02 ? -90 : 90);
+    if (back < 0.5) P.carry(c);
+    basket.visible = t >= C.brown + 0.3 && back < 0.9;
+    const hp = c.wpos("RightHand").add(c.wpos("LeftHand")).multiplyScalar(0.5);
+    const tip = sm(C.carry - 0.35, C.carry + 0.25, t) * (1 - back);
+    basket.position.copy(hp).add(V(0.08, -0.06, 0)); basket.rotation.set(0, 0, -tip * 1.7);
+  } else if (t < C.stale) {                          // out through the water and back in
+    const out = sm(C.dogs - 0.4, C.dogs + 0.6, t), inn = sm(C.through + 0.1, C.scent + 0.6, t);
+    c.pose([["walk", t * 0.9, 1]]);
+    c.at(lerp(lerp(-0.8, 1.7, out), -1.6, inn), lerp(FLOOR_UP, -0.6, out * (1 - inn)), -1.6, inn > 0.02 ? -90 : 90);
+    c.rot("Spine", -18); c.rot("Spine1", -8);
+  } else if (t < C.chip) {                           // stale air: coughing by the candle
+    c.pose([["idle", t, 1]]); c.at(-1.7, FLOOR_UP, -1.5, 25); P.cough(c, t);
+  } else if (t < C.camp) {                           // chisels the vent
+    c.pose([["idle", t, 1]]); c.at(-1.95, FLOOR_UP, -1.3, 10); P.reachUp(c, t);
+  } else if (t < C.deeper) {                         // inside, quiet, while they camp
+    c.pose([["idle", t, 1]]); c.at(-1.6, FLOOR_UP, -1.6, 30); P.sitLong(c); P.hugKnees(c);
+    ground(c, FLOOR_UP, ["Hips", "LeftFoot", "RightFoot"], 0.1);
+  } else if (t < C.louder) {                         // digs the lower room
+    c.pose([["idle", t, 1]]); c.at(lerp(0.9, -0.2, sm(C.deeper, C.mistake, t)), 0, -1.6, -90);
+    P.kneel(c); P.dig(c, t); ground(c, FLOOR_LOW);
+  } else if (t < C.moss) {                           // asleep on the moss bed
+    c.pose([["idle", 0.4, 1]]); c.at(0.25, 0, -1.6, 90, -90, 0); P.armsDown(c);
+    c.rot("Spine2", -2 * Math.sin(t * 2.2));
+    ground(c, -5.18, ["Hips", "Spine1", "Head"], 0.1);
+  } else {                                           // fishing, sitting on the bed
+    c.pose([["idle", t, 1]]); c.at(-0.9, 0, -1.7, 40); P.sitLong(c); P.rodHold(c);
+    ground(c, -5.18, ["Hips"], 0.1);
+  }
+  if (t < C.brown || t >= C.dogs) basket.visible = false;
+}
+function stageSoldiers(t) {
+  const night = t >= C.camp - 0.3;
+  soldiers.forEach((s, i) => {
+    s.root.visible = true;
+    if (night) {                                     // camp by the fire on the bank
+      const ang = [2.6, 0.5, -0.9][i], r = 1.25, x = 10.2 + Math.cos(ang) * r, z = -1.6 + Math.sin(ang) * r;
+      const yaw = Math.atan2(10.2 - x, -1.6 - z) * 180 / Math.PI;     // face the fire
+      s.pose([["sidle", t + i * 1.7, 1]]); s.at(x, 0, z, yaw); P.sitCross(s); P.hugKnees(s);
+      if (i === 0) P.ear(s, sm(C.listen - 0.3, C.listen + 0.4, t));
+      if (i === 2) s.rot("Head", 0, 12 * Math.sin(t * 0.8), 0);
+      ground(s, 0.25, ["Hips", "LeftFoot", "RightFoot"], 0.1);
+      return;
+    }
+    if (t >= C.dogs - 0.5) {                         // with the dog along the far bank
+      const kd = sm(C.dogs - 0.5, C.scent + 0.5, t), w2 = kd > 0.02 && kd < 0.98;
+      s.pose([["swalk", t + i * 0.37, w2 ? 1 : 0], ["sidle", t + i, w2 ? 0 : 1]]);
+      s.at(lerp(13.8 + i * 1.3, 8.9 + i * 1.3, kd), 0.25, -1.4 - i * 1.1, -90);
+      return;
+    }
+    // walk along the cliff top behind the river, stop near the lip, one points down
+    const k = sm(0, C.shadow + 0.2, t), walking = k > 0.02 && k < 0.98;
+    s.pose([["swalk", t + i * 0.37, walking ? 1 : 0], ["sidle", t + i, walking ? 0 : 1]]);
+    s.at(lerp(-9.5 + i * 1.3, -2.2 - i * 1.3, k), TOP_BACK, -SLAB - 0.8 - i * 0.9, lerp(90, 120, sm(C.shadow - 0.2, C.shadow + 0.4, t)));
+    if (i === 0) P.point(s, sm(C.shadow, C.shadow + 0.5, t) * (1 - sm(C.dig + 1, C.dig + 2, t)));
+  });
+}

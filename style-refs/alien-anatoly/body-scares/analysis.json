@@ -1,0 +1,46 @@
+{
+  "source": "alien-anatoly/ref/reference_src.mp4",
+  "duration": 880.708333,
+  "width": 1280,
+  "height": 714,
+  "fps": 24.0,
+  "has_audio": true,
+  "shots": 1,
+  "avg_shot_sec": 880.71,
+  "median_shot_sec": 880.71,
+  "shortest_shot_sec": 880.71,
+  "longest_shot_sec": 880.71,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 0.0,
+    "after 5m": 0.0
+  },
+  "loudness": {
+    "integrated_lufs": -18.3,
+    "range_lu": 4.3
+  },
+  "cuts": [],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 18.3
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 293.6,
+      "sec_between_frames": 18.3
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 587.1,
+      "sec_between_frames": 18.3
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

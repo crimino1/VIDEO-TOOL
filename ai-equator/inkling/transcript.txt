@@ -1,0 +1,331 @@
+(0:00.00) Thinking machines just dropped inkling too many,
+(0:02.56) and this one is a little different.
+(0:04.34) It's an open weights model you can actually run on a laptop,
+(0:07.68) and on coding agent benchmarks,
+(0:09.42) it beats every open model under 100 billion parameters.
+(0:13.18) That's their claim at least.
+(0:14.88) So in this video, I'm going to go through
+(0:16.96) what it is, how this weird looping trick works,
+(0:19.98) what people got when they actually ran it,
+(0:22.08) how many tokens per second you get on a Mac Mini,
+(0:24.78) a MacBook and a gaming GPU,
+(0:26.90) and how it stacks up against Quinn, Gemma and the rest.
+(0:30.26) And at the end, I'll tell you who should actually use it
+(0:32.70) and who really shouldn't.
+(0:34.60) Quick bit of background, thinking machines
+(0:36.76) is Mira Maradi's company.
+(0:38.80) She was the CTO at OpenAI,
+(0:40.88) and she started this lab in February last year.
+(0:43.66) They raised $2 billion at a $12 billion valuation
+(0:46.76) before shipping a single model.
+(0:48.98) Then this year, they released inkling in July,
+(0:51.88) which was huge, almost a trillion parameters.
+(0:54.74) Inkling too small came out earlier this month,
+(0:57.58) at 594 billion, and now there's Mini,
+(1:01.14) which is the one most of us can actually run.
+(1:03.78) So, the specs.
+(1:05.84) It's 26.4 billion parameters in total,
+(1:09.16) but it's a mixture of experts,
+(1:11.02) so only about 3.4 billion are active for each token.
+(1:15.00) Every token gets sent to eight out of 128 experts.
+(1:19.82) It takes text and images,
+(1:20.88) it has a 1 million token context window,
+(1:24.34) and it's Apache 2.0, so you can use it commercially,
+(1:27.58) fine-tune it and ship it,
+(1:29.12) as long as you follow their usage policy.
+(1:31.88) The official download is about 20 gigs,
+(1:34.14) and Thinking Machines says you want at least 32 gigs
+(1:36.96) of memory to run it properly.
+(1:39.22) Now, the interesting part is the Loop.
+(1:41.90) A normal model has a stack of layers,
+(1:44.32) and every token goes through each layer once.
+(1:47.48) Inkling too many has 24 layers,
+(1:49.58) split into four blocks of six.
+(1:52.42) The first block runs once,
+(1:54.18) and the last block runs once.
+(1:56.36) But the middle 12 layers run three times
+(1:58.80) for every single token.
+(2:00.86) So you get 48 layer passes out of only 24 layers
+(2:04.04) that are actually stored.
+(2:05.78) Basically, it thinks harder per token,
+(2:08.10) without getting any bigger on your disk.
+(2:10.38) If you watched my GLM 5.4 video,
+(2:13.46) Jipu did something similar, but they looped twice,
+(2:16.66) Thinking Machines loops three times.
+(2:18.38) And they actually tested where the loop should go.
+(2:22.06) Looping the middle layers beat looping the last layers
+(2:24.54) on 27 out of 28 evaluations.
+(2:27.62) They also say a normal model without the loop
+(2:29.80) would need about 140% more compute
+(2:32.54) to match it on long agent tasks.
+(2:35.16) But there's a catch, and they're upfront about it.
+(2:37.86) Looping makes it better at reasoning,
+(2:39.98) but it doesn't help it remember more facts.
+(2:42.46) Knowledge still comes down to total size.
+(2:45.28) So on factual questions,
+(2:47.10) it's about as good as any other 26B model.
+(2:50.28) Keep that in mind because it comes back later.
+(2:53.26) One more thing I really like here.
+(2:55.04) They trained it natively in 4-bit,
+(2:57.16) in a format called NVFP4.
+(3:00.10) So the 4-bit version isn't a squished copy of a bigger model.
+(3:04.16) It is the model.
+(3:05.34) You don't lose any quality to quantization.
+(3:07.94) They also started with 384 experts
+(3:10.76) and cut two thirds of them halfway through training,
+(3:13.40) which is a big part of why it ended up this small.
+(3:16.30) Okay, benchmarks are kind of boring,
+(3:19.10) so let's look at what it actually builds first.
+(3:21.58) Now, quick confession.
+(3:23.12) My editing laptop only has 16 gigs of RAM.
+(3:26.12) The only thing that would fit
+(3:27.24) is a heavily cut down 2-bit build,
+(3:29.40) and that wouldn't be a fair test.
+(3:31.34) So for this video, I went through thinking machines own demos,
+(3:34.68) plus a bunch of real tests people posted
+(3:36.58) over the last few days,
+(3:37.70) and I'll tell you what I think of each one.
+(3:40.56) First, their own demo.
+(3:42.08) One of their researchers took Inkling 2 Mini on a flight
+(3:45.96) on a MacBook Pro in airplane mode
+(3:48.08) and got it to build a flight simulator in a few minutes.
+(3:51.00) And honestly, it's pretty fun.
+(3:52.86) You've got terrain, a plane you can actually fly,
+(3:56.14) and a little heads-up display.
+(3:57.90) Is it a AAA game?
+(3:59.34) No, but this is a 20 gig model running offline
+(4:03.00) at 30,000 feet.
+(4:04.62) Then there's Thinkieville.
+(4:06.28) It's a tiny pixel town that Inkling 2 Mini built,
+(4:09.46) and all 20 villagers in it are run by the same model
+(4:12.58) at the same time on one offline MacBook.
+(4:15.60) They walk around, talk to each other,
+(4:17.84) and go about their day.
+(4:19.54) I think this is the best demo of the lot,
+(4:21.68) because running lots of agents at once
+(4:23.56) is exactly where a small, fast model makes sense.
+(4:27.84) Olamah posted this one on launch day.
+(4:30.18) It's the model playing 2048 live,
+(4:32.58) one move at a time, straight from the terminal.
+(4:35.48) It's a simple test, but it shows the speed.
+(4:38.30) It's making decisions pretty much in real time.
+(4:41.06) This next one is from a tester on X,
+(4:43.94) who ran the 4-bit version on an RTX 3090.
+(4:47.48) One prompt, build a snowy floating island in 3D.
+(4:51.44) It used about 23,000 tokens,
+(4:54.04) and it came out really clean in one shot.
+(4:56.54) For a model this size, that's pretty impressive.
+(5:00.10) A few YouTubers put it through proper tests too.
+(5:02.88) Square PC ran it on an RTX 5090,
+(5:05.16) and asked for a 3D pagoda inside an agent harness,
+(5:08.54) where it can take screenshots and fix its own work.
+(5:11.22) And it came out genuinely nice.
+(5:13.14) Night sky, flapping banners, little butterflies.
+(5:16.46) But, when he asked for the same kind of thing in one shot,
+(5:19.68) with no harness, the result was honestly pretty rough.
+(5:23.40) Same with a camel riding a bike.
+(5:25.40) The first try had a broken bike,
+(5:27.26) and it took a few rounds of looking at its own renders to fix it.
+(5:30.48) So this model really likes a harness.
+(5:33.00) Then Otis's AI lab ran a blind test
+(5:35.60) against Quinn 3.8 Flash Next,
+(5:38.42) a pixel fishing game, a stand-up comedy set,
+(5:41.32) and a 3D breakfast rollercoaster,
+(5:43.60) which is exactly as weird as it sounds.
+(5:46.04) He didn't know which was which.
+(5:47.78) When he revealed the results,
+(5:49.44) Inkling had won the fishing game and the comedy round,
+(5:52.22) and he said he was genuinely surprised.
+(5:54.60) But Quinn clearly won the 3D coasters.
+(5:57.26) So for 3D work, he'd still pick Quinn.
+(6:00.06) For the vision side, AI with Ritesh
+(6:02.54) ran a 3-bit version on a 24 gig MacBook Air with no fan.
+(6:06.96) It fixed a broken Python repo,
+(6:08.96) seven out of seven tests, in about a minute and a half.
+(6:12.32) It pulled all 17 fields from an invoice into JSON
+(6:15.82) without a single mistake.
+(6:17.58) And it got six out of six screen clicks right.
+(6:20.08) That's the agent stuff it was built for.
+(6:22.28) But when he asked a plain fact with no search,
+(6:24.68) it got the date completely wrong.
+(6:26.70) With search turned on, it got it in a few seconds.
+(6:29.66) And it's not all good.
+(6:31.22) When he asked it for a flight sim like the official one,
+(6:33.98) it thought for over 20,000 tokens, about half an hour,
+(6:37.74) and never wrote a single line of code.
+(6:40.16) Running just four agents at once,
+(6:42.32) each one dropped below four tokens a second.
+(6:45.30) Thinking machines even admits this in the model card.
+(6:48.18) It can get stuck in long reasoning loops,
+(6:50.42) especially when it's debugging,
+(6:52.34) and it can take destructive actions without asking,
+(6:54.62) and then misreport what it did.
+(6:57.16) So please, run it in a sandbox.
+(6:59.92) He also tried something really interesting.
+(7:02.48) The number of loops is just a setting in a config file,
+(7:05.40) so he changed it.
+(7:06.88) With one pass, it ran almost twice as fast,
+(7:10.08) but it was useless.
+(7:11.76) It misread a simple math question,
+(7:13.84) and it's reasoning slowly turned into random letters.
+(7:17.12) Two passes, it got stuck typing the same number over and over.
+(7:21.08) Three passes, the way it ships, got all four questions right,
+(7:26.12) and four passes, you'd think more thinking helps,
+(7:29.32) but it kept second-guessing its own math,
+(7:31.64) and got zero out of four,
+(7:33.48) so the loop count isn't a dial you can turn.
+(7:36.26) It was trained for exactly three.
+(7:38.98) All right, the question everyone asks,
+(7:41.60) how fast is it on my machine?
+(7:43.90) Thinking machines doesn't publish a token's per second number
+(7:46.70) for local hardware, so here's what people actually measured.
+(7:50.48) On a Mac Mini with the M5 Pro chip and 64 gigs,
+(7:53.88) someone ran a proper benchmark,
+(7:55.64) about 30 tokens per second with a short prompt,
+(7:58.42) 25 at 32,000 tokens of context,
+(8:01.40) and 17 at 131,000.
+(8:04.22) On a MacBook Pro with the M4 Pro and 36 gigs,
+(8:08.06) through a llama, it's about 27 tokens per second,
+(8:11.34) using 21 gigs of memory,
+(8:13.16) and on a Mac Studio with the M5 Ultra,
+(8:15.74) it goes up to about 83 tokens per second.
+(8:18.70) On NVIDIA, an RTX 4090 gets around 57 to 60 tokens per second,
+(8:23.80) a single RTX 3090 with the four-bit version
+(8:26.26) gets about 73, and two of them get close to 90,
+(8:30.02) a DGX Spark sits around 45.
+(8:32.68) Even an eight gig RTX 4060 can run it
+(8:35.34) at about 18 tokens per second with a three-bit build,
+(8:39.10) and Square PC hit over 400 tokens per second
+(8:41.84) for short bursts on an RTX 5090,
+(8:44.40) with an optimized engine,
+(8:45.76) though most of the time it hovered around 250.
+(8:48.48) Now you'll see some huge numbers on X.
+(8:51.18) XO Labs claim 210 tokens per second on an M5 Ultra,
+(8:55.24) but they're a launch partner,
+(8:56.60) they didn't share their settings,
+(8:58.04) and the best independent number on that same chip
+(9:00.18) is about 83.
+(9:02.02) On Thinking Machines own servers,
+(9:03.96) Artificial Analysis measured 197 tokens per second,
+(9:08.36) so that's the cloud number, not your laptop.
+(9:11.32) The real-week spot is pre-fill.
+(9:13.26) That's how fast it reads your prompt
+(9:14.80) before it starts answering.
+(9:16.60) On that Mac Mini, it reads about 490 tokens per second
+(9:20.34) with a short prompt, but only about 95 at 131,000.
+(9:25.40) One person fed it 950,000 tokens on a DGX Spark,
+(9:29.88) and it took 26 and a half minutes
+(9:31.64) before the first word came out.
+(9:33.72) And a tester on an RTX 3060 said the pre-fill
+(9:36.74) was the slowest he'd ever posted.
+(9:38.82) So yes, it has a million token context,
+(9:42.00) but actually filling it is painful.
+(9:44.08) Memory matters too.
+(9:45.96) The community four-bit builds on hugging face
+(9:47.84) are about 17 to 18 gigs,
+(9:50.20) the three-bit ones are 13 to 15,
+(9:52.42) and there's even a two-bit version around 10 gigs
+(9:54.72) that fits on a 16-gig machine.
+(9:57.36) But long-context eats memory fast.
+(10:00.10) One tester found that at 131,000 tokens,
+(10:03.54) it used 31 gigs,
+(10:05.22) where Quen 3.827B used 21,
+(10:08.36) and at 262,000 tokens, it didn't fit at all.
+(10:12.92) Okay, now the benchmarks,
+(10:14.54) and how it compares with other open models
+(10:16.40) in this size range.
+(10:17.88) Thinking machines put it up against Quen 3.827B,
+(10:21.78) Google's Gemma 431B,
+(10:24.08) Metas Muse Glimmer, and NVIDIA's Nematron 3.5 Super.
+(10:27.90) On the Artificial Analysis Intelligence Index,
+(10:30.66) Inkling too many scores 20.1,
+(10:32.90) which is exactly tied with Quen 3.827B.
+(10:36.62) Gemma 431B gets 4.4,
+(10:39.54) Muse Glimmer 6.3,
+(10:41.38) and Nematron 13.6,
+(10:43.44) where it really pulls ahead is coding agents.
+(10:46.16) On SWE Bench Verified,
+(10:47.82) which is fixing real GitHub issues,
+(10:49.66) it scores 79.2% against Quen's 77.8 and Gemma's 46.1.
+(10:55.74) On deeps of another coding agent test,
+(10:58.42) it's 48.2 against Quen's 42.2,
+(11:01.38) while Gemma gets basically zero.
+(11:03.52) And on browse comp,
+(11:04.44) which tests how well it can dig through the web
+(11:06.30) to find an answer, it's 79% against Quen's 61.6.
+(11:11.20) That's a big gap,
+(11:12.50) but it doesn't win everything even in their own table.
+(11:16.26) Quen beats it on Terminal Bench 2.1,
+(11:18.76) on GDP Val, which is real office work,
+(11:21.60) on Automation Bench, and on MooMoo Pro,
+(11:24.46) which is vision reasoning,
+(11:26.04) and on factual accuracy, Quen is clearly better.
+(11:29.58) Inkling avoids hallucinating 63.4% of the time.
+(11:33.18) Quen, 71.4.
+(11:35.62) That's the knowledge problem I mentioned earlier.
+(11:37.88) Artificial analysis ranks at number two
+(11:39.94) out of 16 models in its size class,
+(11:42.52) just behind non-Beige 4.33B.
+(11:45.82) But look at the cost.
+(11:47.46) One of their index tasks cost 59 cents with Inkling
+(11:50.48) against $3.53 for Quen 3.827B.
+(11:54.92) That's about six times cheaper.
+(11:57.02) And it finished tasks in about half the time,
+(11:59.46) even though it used around 38% more output tokens.
+(12:02.90) One thing to be careful with though,
+(12:04.94) thinking machine says it scores 46.5% on the Val's index,
+(12:09.38) but Val's own page currently shows 44%,
+(12:12.44) ranked 38 out of 43.
+(12:14.82) So it's good for its size, but it's not a top model overall.
+(12:18.78) And if you're wondering about DeepSeek,
+(12:20.66) they don't have anything in this size range.
+(12:23.10) Their smallest model, V4.1 Flash,
+(12:26.00) is 552 billion parameters.
+(12:29.26) OpenAI's GPTOS 20B is still around,
+(12:32.42) but artificial analysis doesn't even list
+(12:34.22) a current index score for it.
+(12:36.20) So in the 20 to 35 billion range right now,
+(12:39.02) it's basically Inkling, Quen, and Nan Beige at the top.
+(12:42.82) Just for perspective, the best closed model right now,
+(12:46.54) Claude Fable 5.2 scores 65 on that same index.
+(12:51.52) The best open model overall, Kimmy K3.1 Pro scores 46.
+(12:57.12) So Inkling 2 Mini at 20 isn't competing with those.
+(13:01.36) It's competing with whatever fits on your desk.
+(13:04.26) So who should use it?
+(13:06.08) If you care about privacy and you want your code
+(13:08.32) or your documents to never leave your machine,
+(13:10.74) this is one of the best options right now.
+(13:13.12) If you work offline, on flights,
+(13:15.36) or anywhere with bad internet, same thing.
+(13:18.12) If you're building coding agents or search agents
+(13:20.14) on a budget, it's really cheap to run.
+(13:23.00) And because it's Apache 2.0,
+(13:24.82) you can fine tune it and ship it in your own product.
+(13:27.76) And who shouldn't?
+(13:28.56) If you mostly ask it factual questions,
+(13:31.10) it'll make things up more than Quen,
+(13:32.82) so pair it with search.
+(13:34.52) If you work in languages other than English,
+(13:36.70) thinking machine says it's weaker there.
+(13:38.98) If you've got a 16 gig machine,
+(13:40.94) you're stuck with the two or three bit versions,
+(13:42.74) and those are slow.
+(13:44.84) If you need long multi-turn chats
+(13:46.20) or really hard engineering work, it struggles.
+(13:49.06) It scored 5.6% on Terminal Bench 4, the same as Quen,
+(13:52.82) so neither of them is good there.
+(13:54.72) And it's still early.
+(13:56.02) Some runtimes need patches,
+(13:57.86) and one tester couldn't get it running at all
+(13:59.48) on an RTX 6,000 ADA.
+(14:01.88) So that's inkling too many.
+(14:03.96) Honestly, I think the loop is a really smart idea.
+(14:07.42) It's tied with Quen on intelligence,
+(14:09.62) better at coding agents, a lot cheaper,
+(14:12.66) and it fits on a 32 gig Mac.
+(14:15.14) But it's slow at reading long prompts, weaker on facts,
+(14:18.76) and still a bit rough around the edges.
+(14:20.92) Let me know in the comments if you've tried it,
+(14:23.08) and what speed you're getting on your machine.
+(14:25.14) If you enjoyed this, hit like and subscribe,
+(14:28.38) and I'll see you in the next one.

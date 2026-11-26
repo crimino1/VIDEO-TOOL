@@ -1,0 +1,1304 @@
+{
+ "result_count": 240,
+ "page_count": 12,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "d6abe1c0-8a28-4beb-8562-26aa1246a871",
+   "title": "Bell Meditation",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/128345",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=128345&format=mp32",
+   "creator": "Doc",
+   "creator_url": "https://www.jamendo.com/artist/6186/doc",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bell Meditation\" by Doc is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Cosmic Lullabies",
+    "foreign_landing_url": "https://www.jamendo.com/album/18115/cosmic-lullabies",
+    "creator": "Doc",
+    "creator_url": "https://www.jamendo.com/artist/6186/doc",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 1390000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d6abe1c0-8a28-4beb-8562-26aa1246a871/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d6abe1c0-8a28-4beb-8562-26aa1246a871/",
+   "related_url": "https://api.openverse.org/v1/audio/d6abe1c0-8a28-4beb-8562-26aa1246a871/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d6abe1c0-8a28-4beb-8562-26aa1246a871/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "35dc0c87-c930-4315-8605-524852ba151f",
+   "title": "Meditation in Asia",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1740775",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1740775&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meditation in Asia\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Salt Lounge - Spa &amp; Wellness",
+    "foreign_landing_url": "https://www.jamendo.com/album/191948/salt-lounge-spa-and-wellness",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 340000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/35dc0c87-c930-4315-8605-524852ba151f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/35dc0c87-c930-4315-8605-524852ba151f/",
+   "related_url": "https://api.openverse.org/v1/audio/35dc0c87-c930-4315-8605-524852ba151f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/35dc0c87-c930-4315-8605-524852ba151f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6cec021b-06c9-492d-b5e5-ec1fab4b4c29",
+   "title": "Rameau in Meditation",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/347139",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=347139&format=mp32",
+   "creator": "Lena Selyanina",
+   "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "baroque",
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "rameau",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Rameau in Meditation\" by Lena Selyanina is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Piano Paintings",
+    "foreign_landing_url": "https://www.jamendo.com/album/45611/piano-paintings",
+    "creator": "Lena Selyanina",
+    "creator_url": "https://www.jamendo.com/artist/350097/Lena_Selyanina",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 273000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6cec021b-06c9-492d-b5e5-ec1fab4b4c29/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6cec021b-06c9-492d-b5e5-ec1fab4b4c29/",
+   "related_url": "https://api.openverse.org/v1/audio/6cec021b-06c9-492d-b5e5-ec1fab4b4c29/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6cec021b-06c9-492d-b5e5-ec1fab4b4c29/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "42a38414-4d8a-4823-8a1a-ffe64dd64d41",
+   "title": "Chaco Moon Meditation",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/607430",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=607430&format=mp32",
+   "creator": "Randy Granger",
+   "creator_url": "https://www.jamendo.com/artist/338604/Randy_Granger",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chaco Moon Meditation\" by Randy Granger is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Place Called Peace",
+    "foreign_landing_url": "https://www.jamendo.com/album/70767/a-place-called-peace",
+    "creator": "Randy Granger",
+    "creator_url": "https://www.jamendo.com/artist/338604/Randy_Granger",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 300000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/42a38414-4d8a-4823-8a1a-ffe64dd64d41/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/42a38414-4d8a-4823-8a1a-ffe64dd64d41/",
+   "related_url": "https://api.openverse.org/v1/audio/42a38414-4d8a-4823-8a1a-ffe64dd64d41/related/",
+   "waveform": "https://api.openverse.org/v1/audio/42a38414-4d8a-4823-8a1a-ffe64dd64d41/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "78932f00-856c-4094-9f76-b24caacfca13",
+   "title": "Alexander V.Mogilco & Ariadna - Deep Meditation Experience",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/810280",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=810280&format=mp32",
+   "creator": "Tunguska Electronic Music Society",
+   "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Alexander V.Mogilco & Ariadna - Deep Meditation Experience\" by Tunguska Electronic Music Society is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tunguska Summer Solstice Vol.1",
+    "foreign_landing_url": "https://www.jamendo.com/album/94652/tunguska-summer-solstice-vol-1",
+    "creator": "Tunguska Electronic Music Society",
+    "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 352000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/78932f00-856c-4094-9f76-b24caacfca13/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/78932f00-856c-4094-9f76-b24caacfca13/",
+   "related_url": "https://api.openverse.org/v1/audio/78932f00-856c-4094-9f76-b24caacfca13/related/",
+   "waveform": "https://api.openverse.org/v1/audio/78932f00-856c-4094-9f76-b24caacfca13/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "344f904f-6490-47b5-a0aa-31a5050abad3",
+   "title": "Guru Meditation",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/776863",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=776863&format=mp32",
+   "creator": "Andrey Avkhimovich",
+   "creator_url": "https://www.jamendo.com/artist/368142/Andrey_Avkhimovich",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "experimental",
+    "industrial"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "hangdrum",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "percussion",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Guru Meditation\" by Andrey Avkhimovich is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "My Own Album With Blackjack And Hookers",
+    "foreign_landing_url": "https://www.jamendo.com/album/91029/my-own-album-with-blackjack-and-hookers",
+    "creator": "Andrey Avkhimovich",
+    "creator_url": "https://www.jamendo.com/artist/368142/Andrey_Avkhimovich",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 205000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/344f904f-6490-47b5-a0aa-31a5050abad3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/344f904f-6490-47b5-a0aa-31a5050abad3/",
+   "related_url": "https://api.openverse.org/v1/audio/344f904f-6490-47b5-a0aa-31a5050abad3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/344f904f-6490-47b5-a0aa-31a5050abad3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "048a6716-4840-418a-b006-4f6c035993d5",
+   "title": "Aor Agni - Liturgic Meditation",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/155307",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=155307&format=mp32",
+   "creator": "Aor Agni",
+   "creator_url": "https://www.jamendo.com/artist/4545/aor.agni",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "drone",
+    "electronica"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "liturgic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Aor Agni - Liturgic Meditation\" by Aor Agni is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The spark in you",
+    "foreign_landing_url": "https://www.jamendo.com/album/22302/the-spark-in-you",
+    "creator": "Aor Agni",
+    "creator_url": "https://www.jamendo.com/artist/4545/aor.agni",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 213000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/048a6716-4840-418a-b006-4f6c035993d5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/048a6716-4840-418a-b006-4f6c035993d5/",
+   "related_url": "https://api.openverse.org/v1/audio/048a6716-4840-418a-b006-4f6c035993d5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/048a6716-4840-418a-b006-4f6c035993d5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ecf35baa-9246-4ccd-ab58-01eb7bb5d242",
+   "title": "Moonlight Sonata, Ludwig van Beethoven, Part 1 (meditation)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1174587",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1174587&format=mp32",
+   "creator": "Mark Subbotin",
+   "creator_url": "https://www.jamendo.com/artist/438490/Mark_Subbotin_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "aac",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Moonlight Sonata, Ludwig van Beethoven, Part 1 (meditation)\" by Mark Subbotin is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The World Classics of Modern Treatments",
+    "foreign_landing_url": "https://www.jamendo.com/album/141468/the-world-classics-of-modern-treatments",
+    "creator": "Mark Subbotin",
+    "creator_url": "https://www.jamendo.com/artist/438490/Mark_Subbotin_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 348000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ecf35baa-9246-4ccd-ab58-01eb7bb5d242/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ecf35baa-9246-4ccd-ab58-01eb7bb5d242/",
+   "related_url": "https://api.openverse.org/v1/audio/ecf35baa-9246-4ccd-ab58-01eb7bb5d242/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ecf35baa-9246-4ccd-ab58-01eb7bb5d242/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3f9150c7-ba4b-4679-b6ad-26a091e808b8",
+   "title": "Meditation",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/455606",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=455606&format=mp32",
+   "creator": "PhOniAndFlOrE",
+   "creator_url": "https://www.jamendo.com/artist/339690/phoniandflore",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meditation\" by PhOniAndFlOrE is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tribal Meditation",
+    "foreign_landing_url": "https://www.jamendo.com/album/54494/tribal-meditation",
+    "creator": "PhOniAndFlOrE",
+    "creator_url": "https://www.jamendo.com/artist/339690/phoniandflore",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 374000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3f9150c7-ba4b-4679-b6ad-26a091e808b8/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3f9150c7-ba4b-4679-b6ad-26a091e808b8/",
+   "related_url": "https://api.openverse.org/v1/audio/3f9150c7-ba4b-4679-b6ad-26a091e808b8/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3f9150c7-ba4b-4679-b6ad-26a091e808b8/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6e8f1eaf-b8ea-482a-ad81-fc43d6b2dd05",
+   "title": "Alexander V.Mogilco - Earth Meditations",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1045122",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1045122&format=mp32",
+   "creator": "Tunguska Electronic Music Society",
+   "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Alexander V.Mogilco - Earth Meditations\" by Tunguska Electronic Music Society is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tunguska Chillout Grooves X",
+    "foreign_landing_url": "https://www.jamendo.com/album/123081/tunguska-chillout-grooves-x",
+    "creator": "Tunguska Electronic Music Society",
+    "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 437000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6e8f1eaf-b8ea-482a-ad81-fc43d6b2dd05/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6e8f1eaf-b8ea-482a-ad81-fc43d6b2dd05/",
+   "related_url": "https://api.openverse.org/v1/audio/6e8f1eaf-b8ea-482a-ad81-fc43d6b2dd05/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6e8f1eaf-b8ea-482a-ad81-fc43d6b2dd05/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7768ad57-6637-4d9c-a26e-7a2da62c320e",
+   "title": "Meditation at the Full Moon",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1446225",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1446225&format=mp32",
+   "creator": "Mark Subbotin",
+   "creator_url": "https://www.jamendo.com/artist/438490/Mark_Subbotin_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "newage",
+    "newwave"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meditation at the Full Moon\" by Mark Subbotin is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Music for Meditation",
+    "foreign_landing_url": "https://www.jamendo.com/album/168162/music-for-meditation",
+    "creator": "Mark Subbotin",
+    "creator_url": "https://www.jamendo.com/artist/438490/Mark_Subbotin_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 439000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7768ad57-6637-4d9c-a26e-7a2da62c320e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7768ad57-6637-4d9c-a26e-7a2da62c320e/",
+   "related_url": "https://api.openverse.org/v1/audio/7768ad57-6637-4d9c-a26e-7a2da62c320e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7768ad57-6637-4d9c-a26e-7a2da62c320e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c43a87df-f825-49d7-924d-e77de698854f",
+   "title": "\u0420\u0430\u0437\u043c\u044b\u0448\u043b\u0435\u043d\u0438\u0435 \u0414\u0443\u0445\u0430 ( \u0413\u043e\u0440\u043d\u0430\u044f \u0420\u0435\u043a\u0430 \u0410\u043b\u0442\u0430\u044f, \u041a\u0443\u0431\u0430) -[Meditation of Spirit (the Mountain River Cuba Altay, )]-",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/799255",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=799255&format=mp32",
+   "creator": "-[Taiga Fox]-\u0422\u0430\u0451\u0436\u043d\u044b\u0439 \u041b\u0438\u0441",
+   "creator_url": "https://www.jamendo.com/artist/370157/-_Taiga_Fox_-",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "shaman",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"\u0420\u0430\u0437\u043c\u044b\u0448\u043b\u0435\u043d\u0438\u0435 \u0414\u0443\u0445\u0430 ( \u0413\u043e\u0440\u043d\u0430\u044f \u0420\u0435\u043a\u0430 \u0410\u043b\u0442\u0430\u044f, \u041a\u0443\u0431\u0430) -[Meditation of Spirit (the Mountain River Cuba Altay, )]-\" by -[Taiga Fox]-\u0422\u0430\u0451\u0436\u043d\u044b\u0439 \u041b\u0438\u0441 is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Obscurity",
+    "foreign_landing_url": "https://www.jamendo.com/album/93968/obscurity",
+    "creator": "-[Taiga Fox]-\u0422\u0430\u0451\u0436\u043d\u044b\u0439 \u041b\u0438\u0441",
+    "creator_url": "https://www.jamendo.com/artist/370157/-_Taiga_Fox_-",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 220000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c43a87df-f825-49d7-924d-e77de698854f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c43a87df-f825-49d7-924d-e77de698854f/",
+   "related_url": "https://api.openverse.org/v1/audio/c43a87df-f825-49d7-924d-e77de698854f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c43a87df-f825-49d7-924d-e77de698854f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7aaefbd2-c0b2-4377-a464-d4b411a3559a",
+   "title": "Sunset Meditation",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1740776",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1740776&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Sunset Meditation\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Salt Lounge - Spa &amp; Wellness",
+    "foreign_landing_url": "https://www.jamendo.com/album/191948/salt-lounge-spa-and-wellness",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 390000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7aaefbd2-c0b2-4377-a464-d4b411a3559a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7aaefbd2-c0b2-4377-a464-d4b411a3559a/",
+   "related_url": "https://api.openverse.org/v1/audio/7aaefbd2-c0b2-4377-a464-d4b411a3559a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7aaefbd2-c0b2-4377-a464-d4b411a3559a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "12d931d2-151d-45fc-8d43-2fc6d2653e58",
+   "title": "Birthday Meditations (Crossing the Sound)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/801488",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=801488&format=mp32",
+   "creator": "Truman",
+   "creator_url": "https://www.jamendo.com/artist/360275/Truman_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Birthday Meditations (Crossing the Sound)\" by Truman is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Piano Favorites",
+    "foreign_landing_url": "https://www.jamendo.com/album/93834/piano-favorites",
+    "creator": "Truman",
+    "creator_url": "https://www.jamendo.com/artist/360275/Truman_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 215000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/12d931d2-151d-45fc-8d43-2fc6d2653e58/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/12d931d2-151d-45fc-8d43-2fc6d2653e58/",
+   "related_url": "https://api.openverse.org/v1/audio/12d931d2-151d-45fc-8d43-2fc6d2653e58/related/",
+   "waveform": "https://api.openverse.org/v1/audio/12d931d2-151d-45fc-8d43-2fc6d2653e58/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b8aef96c-31ec-42f9-813f-8a35e5a355fa",
+   "title": "For the Soul (Meditation)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1188441",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1188441&format=mp32",
+   "creator": "Different Shapes",
+   "creator_url": "https://www.jamendo.com/artist/444579/Different_Shapes",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "downtempo",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"For the Soul (Meditation)\" by Different Shapes is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Different Colors",
+    "foreign_landing_url": "https://www.jamendo.com/album/143038/different-colors",
+    "creator": "Different Shapes",
+    "creator_url": "https://www.jamendo.com/artist/444579/Different_Shapes",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 563000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b8aef96c-31ec-42f9-813f-8a35e5a355fa/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b8aef96c-31ec-42f9-813f-8a35e5a355fa/",
+   "related_url": "https://api.openverse.org/v1/audio/b8aef96c-31ec-42f9-813f-8a35e5a355fa/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b8aef96c-31ec-42f9-813f-8a35e5a355fa/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e7b5a33e-f4be-43dc-b80b-25b1ee336c39",
+   "title": "Cannon Meditation",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1386919",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1386919&format=mp32",
+   "creator": "K Rother",
+   "creator_url": "https://www.jamendo.com/artist/494218/K_Rother",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "surfrock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "austin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "island",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Cannon Meditation\" by K Rother is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Working Coastlines EP",
+    "foreign_landing_url": "https://www.jamendo.com/album/162677/working-coastlines-ep",
+    "creator": "K Rother",
+    "creator_url": "https://www.jamendo.com/artist/494218/K_Rother",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 236000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e7b5a33e-f4be-43dc-b80b-25b1ee336c39/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e7b5a33e-f4be-43dc-b80b-25b1ee336c39/",
+   "related_url": "https://api.openverse.org/v1/audio/e7b5a33e-f4be-43dc-b80b-25b1ee336c39/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e7b5a33e-f4be-43dc-b80b-25b1ee336c39/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b2bcdd43-9cf8-463d-b599-66c752ed6fa3",
+   "title": "Meditate",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/774879",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=774879&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meditate\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "More Emorej",
+    "foreign_landing_url": "https://www.jamendo.com/album/90802/more-emorej",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 222000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b2bcdd43-9cf8-463d-b599-66c752ed6fa3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b2bcdd43-9cf8-463d-b599-66c752ed6fa3/",
+   "related_url": "https://api.openverse.org/v1/audio/b2bcdd43-9cf8-463d-b599-66c752ed6fa3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b2bcdd43-9cf8-463d-b599-66c752ed6fa3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "83375cc1-ffa1-4af1-b766-c1641393d1c9",
+   "title": "Free BGM For Meditation #1",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1065109",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1065109&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Free BGM For Meditation #1\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2013/9/1 part 1 Ichiro NAKAGAWA Recorded at Comunale, Urawa, Sa",
+    "foreign_landing_url": "https://www.jamendo.com/album/125805/2013-9-1-part-1-ichiro-nakagawa-recorded-at-comunale-urawa-sa",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 451000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/83375cc1-ffa1-4af1-b766-c1641393d1c9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/83375cc1-ffa1-4af1-b766-c1641393d1c9/",
+   "related_url": "https://api.openverse.org/v1/audio/83375cc1-ffa1-4af1-b766-c1641393d1c9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/83375cc1-ffa1-4af1-b766-c1641393d1c9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b1abdb10-b856-46d2-b233-d6a479d10912",
+   "title": "Free BGM For Meditation #1",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1074578",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1074578&format=mp32",
+   "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+   "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Free BGM For Meditation #1\" by Ambient Samurai - Ichiro NAKAGAWA is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Week Before The Birthday Party -- 2013-10-12",
+    "foreign_landing_url": "https://www.jamendo.com/album/127824/a-week-before-the-birthday-party-2013-10-12",
+    "creator": "Ambient Samurai - Ichiro NAKAGAWA",
+    "creator_url": "https://www.jamendo.com/artist/357163/Ambient_Samurai_-_Ichiro_NAKAGAWA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 113000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b1abdb10-b856-46d2-b233-d6a479d10912/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b1abdb10-b856-46d2-b233-d6a479d10912/",
+   "related_url": "https://api.openverse.org/v1/audio/b1abdb10-b856-46d2-b233-d6a479d10912/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b1abdb10-b856-46d2-b233-d6a479d10912/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cf183b30-cda0-4beb-aadf-7d1cb2c7ec43",
+   "title": "Meditation",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/739322",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=739322&format=mp32",
+   "creator": "Thomas Haake",
+   "creator_url": "https://www.jamendo.com/artist/367115/Thomas_Haake_(2)",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meditation\" by Thomas Haake is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/de/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Gili",
+    "foreign_landing_url": "https://www.jamendo.com/album/86385/gili",
+    "creator": "Thomas Haake",
+    "creator_url": "https://www.jamendo.com/artist/367115/Thomas_Haake_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 158000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cf183b30-cda0-4beb-aadf-7d1cb2c7ec43/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cf183b30-cda0-4beb-aadf-7d1cb2c7ec43/",
+   "related_url": "https://api.openverse.org/v1/audio/cf183b30-cda0-4beb-aadf-7d1cb2c7ec43/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cf183b30-cda0-4beb-aadf-7d1cb2c7ec43/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

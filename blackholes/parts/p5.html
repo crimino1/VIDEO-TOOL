@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="202.000" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<video id="s150v" class="clip" src="assets/clips/motorbike_857.mp4" muted playsinline data-start="0.000" data-duration="12.480" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s150" class="clip" data-start="0.000" data-duration="12.480" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s150k"></div><div class="vig"></div></div>
+<div id="s151" class="clip" data-start="12.480" data-duration="33.180" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s151k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o152" class="cap" style="opacity:0">Toward us: bluer · away: redder</div><div id="o153" class="cap" style="opacity:0">One orbit every 5.6 days</div></div>
+<div id="s154" class="clip" data-start="45.660" data-duration="13.800" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb155" style="position:absolute;left:412px;top:130px;width:1096px;height:739px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/hammer.jpg" alt="hammer" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o156" class="cap" style="opacity:0">Hammer throw · Olympic Games, 1904</div></div>
+<div id="s157" class="clip" data-start="59.460" data-duration="24.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s157k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o158" class="line" style="opacity:0">Look for a star moving around nothing.</div><div id="o159" class="big" style="opacity:0">21<small>times the mass of the Sun</small></div></div>
+<div id="s160" class="clip" data-start="84.160" data-duration="20.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s160k"></div><div class="vig"></div></div>
+<div id="s161" class="clip" data-start="104.860" data-duration="17.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s161k"></div><div class="vig"></div></div>
+<div id="s162" class="clip" data-start="121.860" data-duration="10.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s162k"></div><div class="vig"></div></div>
+<div id="s163" class="clip" data-start="132.560" data-duration="27.280" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s163k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o164" class="line" style="opacity:0">The black hole itself is black.</div></div>
+<div id="s165" class="clip" data-start="159.840" data-duration="26.700" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="left:330px;top:150px;width:560px;height:680px"><img id="kb166" src="assets/img_s/hawking.jpg" alt="hawking"></div><div id="pn167" style="opacity:0"><div class="pname" style="left:330px;top:864px;width:560px;text-align:center;font-size:50px">Stephen Hawking</div><div class="pmeta" style="left:330px;top:934px;width:560px;text-align:center;font-size:22px">1942–2018</div></div><div class="port" style="left:1030px;top:150px;width:560px;height:680px"><img id="kb168" src="assets/img_s/thorne.jpg" alt="thorne"></div><div id="pn169" style="opacity:0"><div class="pname" style="left:1030px;top:864px;width:560px;text-align:center;font-size:50px">Kip Thorne</div><div class="pmeta" style="left:1030px;top:934px;width:560px;text-align:center;font-size:22px">b. 1940</div></div><div id="o170" class="capt" style="opacity:0">1974 · the bet</div><div id="o171" class="line" style="opacity:0">By 1990, Hawking paid up.</div></div>
+<video id="s172v" class="clip" src="assets/clips/nightsky4_1044.mp4" muted playsinline data-start="186.540" data-duration="7.100" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s172" class="clip" data-start="186.540" data-duration="7.100" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s172k"></div><div class="vig"></div></div>
+<div id="s173" class="clip" data-start="193.640" data-duration="8.360" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:680px"><img id="kb174" src="assets/img_s/schmidt.jpg" alt="schmidt"></div><div id="pn175" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:780px">Maarten Schmidt</div><div class="pmeta" style="left:160px;top:530px">Astronomer · 1963</div></div></div>
+
+</div>
+<script>window.LAB = [[12.48, 45.66, "cygx1", {"mode": "doppler", "FT0": 870.12}], [59.46, 84.16, "cygx1", {"mode": "weigh", "FT0": 917.1}], [84.16, 104.86, "cygx1", {"mode": "suspects", "FT0": 941.8}], [104.86, 121.86, "cygx1", {"mode": "disk", "FT0": 962.5}], [121.86, 132.56, "funnel", {"mode": "full", "FT0": 979.5}], [132.56, 159.84, "cygx1", {"mode": "disk2", "FT0": 990.2}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_collapse.js"></script>
+<script src="assets/js/k_cygnus.js"></script>
+<script src="assets/js/k_gravity.js"></script>
+<script src="assets/js/k_scope.js"></script>
+<script src="assets/js/k_waves.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s150k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.fromTo("#s151k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},12.480);
+tl.fromTo("#o152",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},14.660);
+tl.to("#o152",{opacity:0,duration:0.5,ease:"power1.inOut"},22.460);
+tl.fromTo("#o153",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},34.060);
+tl.to("#o153",{opacity:0,duration:0.5,ease:"power1.inOut"},40.160);
+tl.fromTo("#kb155",{scale:1.0,y:6},{scale:1.09,y:-6,duration:13.800,ease:"sine.inOut"},45.660);
+tl.fromTo("#s154",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},45.660);
+tl.fromTo("#o156",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},45.960);
+tl.fromTo("#s157k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},59.460);
+tl.fromTo("#o158",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},63.960);
+tl.to("#o158",{opacity:0,duration:0.5,ease:"power1.inOut"},67.860);
+tl.fromTo("#o159",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},80.260);
+tl.to("#o159",{opacity:0,duration:0.5,ease:"power1.inOut"},83.460);
+tl.fromTo("#s160k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},84.160);
+tl.fromTo("#s161k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},104.860);
+tl.fromTo("#s162k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},121.860);
+tl.fromTo("#s163k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},132.560);
+tl.fromTo("#o164",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},152.960);
+tl.to("#o164",{opacity:0,duration:0.5,ease:"power1.inOut"},155.260);
+tl.fromTo("#kb166",{scale:1.0},{scale:1.08,duration:26.700,ease:"none"},159.840);
+tl.fromTo("#pn167",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},160.190);
+tl.fromTo("#kb168",{scale:1.0},{scale:1.08,duration:26.700,ease:"none"},159.840);
+tl.fromTo("#pn169",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},160.540);
+tl.fromTo("#s165",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},159.840);
+tl.fromTo("#o170",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},163.160);
+tl.fromTo("#o171",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},180.760);
+tl.to("#o171",{opacity:0,duration:0.5,ease:"power1.inOut"},185.860);
+tl.fromTo("#s172k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},186.540);
+tl.fromTo("#kb174",{scale:1.0,x:0},{scale:1.10,x:-18,duration:8.360,ease:"none"},193.640);
+tl.fromTo("#pn175",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},193.990);
+tl.fromTo("#s173",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},193.640);
+tl.set({}, {}, 202.000);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

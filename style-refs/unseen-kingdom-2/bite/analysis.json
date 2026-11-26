@@ -1,0 +1,75 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/Strongest bite force.mp4",
+  "duration": 79.455828,
+  "width": 720,
+  "height": 1280,
+  "fps": 30.0,
+  "has_audio": true,
+  "shots": 31,
+  "avg_shot_sec": 2.56,
+  "median_shot_sec": 2.63,
+  "shortest_shot_sec": 0.27,
+  "longest_shot_sec": 6.93,
+  "cuts_per_minute": {
+    "first 30s": 32.0,
+    "30s-2m": 17.0
+  },
+  "loudness": {
+    "integrated_lufs": -14.1,
+    "range_lu": 1.5
+  },
+  "cuts": [
+    0.3,
+    0.566667,
+    0.866667,
+    1.133333,
+    1.433333,
+    1.766667,
+    3.1,
+    5.966667,
+    7.966667,
+    10.766667,
+    14.266667,
+    18.266667,
+    22.0,
+    24.866667,
+    25.866667,
+    26.533333,
+    30.033333,
+    33.666667,
+    39.1,
+    41.666667,
+    43.8,
+    46.7,
+    50.0,
+    53.4,
+    58.666667,
+    65.6,
+    67.966667,
+    70.6,
+    76.266667,
+    78.033333
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 1.7
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 26.5,
+      "sec_between_frames": 1.7
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 53.0,
+      "sec_between_frames": 1.7
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

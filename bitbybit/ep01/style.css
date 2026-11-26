@@ -1,0 +1,33 @@
+@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#fff;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#f5c842;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #f5c842;border-radius:6px;box-shadow:0 0 18px rgba(245,200,66,.8)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:0 0 14px currentColor}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}

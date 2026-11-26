@@ -1,0 +1,20 @@
+# Builder 19: start of Chapter 7. Explicit vs implicit, the circle x^2+y^2=25 (two halves), x^3+y^3=6xy,
+# the idea (differentiate both sides, y is a function of x, dy/dx = y'), d/dx(y^2) = 2y y', the circle -> y' = -x/y,
+# a tangent sliding round the circle (live slope = -x/y), (3,4): check, -3/4, tangent line, radius perpendicular,
+# xy + y^2 = 6 at (1,2) -> -2/5, the four-step pattern, the folium x^3+y^3=6xy at (3,3) differentiated piece by piece.
+S = [
+    ("1:53:46.13", "c", "K19_Chapter7", dict(label="Chapter 7", title="Implicit Differentiation", doodle="circle")),
+    ("1:53:49.30", "m", "K19_Explicit", {}),
+    ("1:54:08.40", "m", "K19_Circle", {}),
+    ("1:54:30.30", "m", "K19_Worse", {}),
+    ("1:54:40.20", "m", "K19_Idea", {}),
+    ("1:55:10.00", "m", "K19_YSquared", {}),
+    ("1:55:40.50", "m", "K19_CircleDiff", {}),
+    ("1:56:14.00", "m", "K19_Slide", {}),
+    ("1:56:42.10", "m", "K19_Sense", {}),
+    ("1:57:02.00", "m", "K19_Perp", {}),
+    ("1:57:26.50", "m", "K19_Product", {}),
+    ("1:58:09.30", "m", "K19_ProductSolve", {}),
+    ("1:58:37.60", "m", "K19_Pattern", {}),
+    ("1:58:51.30", "m", "K19_Folium", {}),
+]

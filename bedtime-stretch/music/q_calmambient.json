@@ -1,0 +1,324 @@
+{
+ "result_count": 4,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1",
+   "title": "PARPG Solitude (Calm, Ambient)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/875307",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=875307&format=mp32",
+   "creator": "Pal Zoltan Illes",
+   "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "apocalyptique",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "doublebass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "scifi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"PARPG Solitude (Calm, Ambient)\" by Pal Zoltan Illes is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Mantle Of Games",
+    "foreign_landing_url": "https://www.jamendo.com/album/102732/a-mantle-of-games",
+    "creator": "Pal Zoltan Illes",
+    "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 197000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/",
+   "related_url": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "62ef9bd2-e2fe-46fd-bae7-5ceb064cae30",
+   "title": "ambient under the blue",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/671181",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=671181&format=mp32",
+   "creator": "MG-Rizzello",
+   "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calmful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ambient under the blue\" by MG-Rizzello is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm down",
+    "foreign_landing_url": "https://www.jamendo.com/album/77859/calm-down",
+    "creator": "MG-Rizzello",
+    "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 349000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/62ef9bd2-e2fe-46fd-bae7-5ceb064cae30/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/62ef9bd2-e2fe-46fd-bae7-5ceb064cae30/",
+   "related_url": "https://api.openverse.org/v1/audio/62ef9bd2-e2fe-46fd-bae7-5ceb064cae30/related/",
+   "waveform": "https://api.openverse.org/v1/audio/62ef9bd2-e2fe-46fd-bae7-5ceb064cae30/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ed521e9a-f423-4577-a3b9-bea54ca6a3a0",
+   "title": "ambient chill on dark ocean",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/671176",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=671176&format=mp32",
+   "creator": "MG-Rizzello",
+   "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calmful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ambient chill on dark ocean\" by MG-Rizzello is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm down",
+    "foreign_landing_url": "https://www.jamendo.com/album/77859/calm-down",
+    "creator": "MG-Rizzello",
+    "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 209000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ed521e9a-f423-4577-a3b9-bea54ca6a3a0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ed521e9a-f423-4577-a3b9-bea54ca6a3a0/",
+   "related_url": "https://api.openverse.org/v1/audio/ed521e9a-f423-4577-a3b9-bea54ca6a3a0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ed521e9a-f423-4577-a3b9-bea54ca6a3a0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dcff8a10-44e3-4dca-b92b-afcaf5190eca",
+   "title": "ambient underwater",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/671173",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=671173&format=mp32",
+   "creator": "MG-Rizzello",
+   "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calmful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sampler",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ambient underwater\" by MG-Rizzello is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm down",
+    "foreign_landing_url": "https://www.jamendo.com/album/77859/calm-down",
+    "creator": "MG-Rizzello",
+    "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 523000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dcff8a10-44e3-4dca-b92b-afcaf5190eca/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dcff8a10-44e3-4dca-b92b-afcaf5190eca/",
+   "related_url": "https://api.openverse.org/v1/audio/dcff8a10-44e3-4dca-b92b-afcaf5190eca/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dcff8a10-44e3-4dca-b92b-afcaf5190eca/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="149.300" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s103" class="clip scene" data-start="0.000" data-duration="2.640" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="c102" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch100" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; FIVE</div><div class="ti">The most famous rule</div><div id="ru101" class="rule"></div></div></div></div>
+<video id="v104" class="clip vid" src="assets/clips/mn_Pythag_11628d55.mp4" muted playsinline data-start="2.640" data-duration="48.480" data-track-index="1" style="z-index:71;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s109" class="clip scene" data-start="51.120" data-duration="7.340" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div id="c108" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf106" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt105" src="assets/gen/pythagoras_7af1a7.jpg" alt="pythagoras"></div><div id="tg107" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Pythagoras</div><div class="r">Greek thinker, about 2,500 years ago</div></div><div class="credit">Bust: Capitoline Museums, photo Cmick25, CC BY-SA 4.0</div></div></div>
+<div id="s113" class="clip scene" data-start="58.460" data-duration="5.800" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="c112" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:412px;top:120px;width:1097px;height:760px"><img id="ph110" src="assets/gen/plimpton322_fd4134.jpg" alt="plimpton322"></div><div id="pl111" class="place" style="top:850px"><div class="ru"></div><div class="l1">BABYLON</div><div class="l2">more than 1,000 years before him</div></div><div class="credit">Plimpton 322, Columbia University, public domain</div></div></div>
+<div id="s124" class="clip scene" data-start="64.260" data-duration="12.980" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div id="c123" class="scene"><div id="pl114" class="place" style="top:850px"><div class="ru"></div><div class="l1">INDIA</div><div class="l2">the Baudhayana Sulbasutra</div></div><div id="k115" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:48px;line-height:1.08;color:#fff"><span id="w116" style="opacity:0">usually</span> <span id="w117" style="opacity:0">dated</span> <span id="w118" style="opacity:0">between</span> <span id="w119" style="opacity:0">800</span> <span id="w120" style="opacity:0">and</span> <span id="w121" style="opacity:0">500</span> <span id="w122" style="opacity:0">BC</span></div></div></div>
+<video id="v125" class="clip vid" src="assets/clips/mn_TV_4836d034.mp4" muted playsinline data-start="80.660" data-duration="15.680" data-track-index="1" style="z-index:76;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s129" class="clip scene" data-start="107.820" data-duration="2.460" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="c128" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch126" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; SIX</div><div class="ti">Circles and pi</div><div id="ru127" class="rule"></div></div></div></div>
+<video id="v130" class="clip vid" src="assets/clips/mn_CircleDef_d7a77c6f.mp4" muted playsinline data-start="117.080" data-duration="4.300" data-track-index="1" style="z-index:79;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v131" class="clip vid" src="assets/clips/pxg_wheel_f77ff441.mp4" muted playsinline data-start="121.380" data-duration="2.800" data-track-index="1" style="z-index:81;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s133" class="clip scene" data-start="121.380" data-duration="2.800" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div id="c132" class="scene"></div></div>
+<video id="v134" class="clip vid" src="assets/clips/pxg_moon_c20a6fa6.mp4" muted playsinline data-start="124.180" data-duration="2.560" data-track-index="1" style="z-index:84;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s136" class="clip scene" data-start="124.180" data-duration="2.560" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap><div id="c135" class="scene"></div></div>
+<video id="v137" class="clip vid" src="assets/clips/mn_PiScene_9edafb47.mp4" muted playsinline data-start="126.740" data-duration="22.560" data-track-index="1" style="z-index:87;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[0.0, 2.64, "builder_corner", {"three": -9, "four": -9, "five": -9, "tin": "fade", "tout": "fade"}], [51.12, 58.46, "euclid_class", {"line": -9, "circle": -9, "tin": "fade", "tout": "fade"}], [58.46, 64.26, "euclid_class", {"line": -9, "circle": -9, "tin": "fade", "tout": "fade"}], [64.26, 77.24, "altar_ropes", {"ropes": 0.3, "bricks": 4.06, "fire": 7.46, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [77.24, 80.66, "rope_stretchers", {"stretch": -9, "peg": -9, "mark": -9, "cam": {"z": [1.05, 1.12]}, "tin": "zoom", "tout": "zoom"}], [96.34, 107.82, "builder_corner", {"three": 3.88, "four": 5.5, "five": 9.6, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [107.82, 110.28, "string_circle", {"walk": 99, "tin": "fade", "tout": "fade"}], [110.28, 117.08, "string_circle", {"walk": 4.02, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/ancient.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/modern.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#ch100",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},0.150);
+tl.fromTo("#ru101",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},0.500);
+tl.fromTo("#pt105",{scale:1.0},{scale:1.04,duration:7.34,ease:"none"},51.120);
+tl.fromTo("#pf106",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},51.120);
+tl.fromTo("#tg107",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},51.500);
+tl.fromTo("#ph110",{scale:1.0},{scale:1.05,duration:5.8,ease:"none"},58.460);
+tl.fromTo("#pl111",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},58.660);
+tl.fromTo("#pl114",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},65.940);
+tl.set("#w116",{opacity:1},73.440);
+tl.set("#w117",{opacity:1},73.440);
+tl.set("#w118",{opacity:1},74.300);
+tl.set("#w119",{opacity:1},74.660);
+tl.set("#w120",{opacity:1},75.280);
+tl.set("#w121",{opacity:1},75.520);
+tl.set("#w122",{opacity:1},76.040);
+tl.fromTo("#ch126",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},107.970);
+tl.fromTo("#ru127",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},108.320);
+tl.fromTo("#v131",{scale:1.0},{scale:1.06,duration:2.8,ease:"none"},121.380);
+tl.fromTo("#v134",{scale:1.0},{scale:1.08,duration:2.56,ease:"none"},124.180);
+tl.set({}, {}, 149.300);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

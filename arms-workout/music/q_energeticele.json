@@ -1,0 +1,659 @@
+{
+ "result_count": 9,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "387f7aed-000a-411b-922d-4fbecd39afbd",
+   "title": "Bort \u2116402",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/922717",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=922717&format=mp32",
+   "creator": "Mirror Of Death",
+   "creator_url": "https://www.jamendo.com/artist/356728/Mirror_Of_Death",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ebm",
+    "electronic",
+    "industrial"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electronics",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bort \u2116402\" by Mirror Of Death is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Bort \u2116402",
+    "foreign_landing_url": "https://www.jamendo.com/album/109307/bort-402",
+    "creator": "Mirror Of Death",
+    "creator_url": "https://www.jamendo.com/artist/356728/Mirror_Of_Death",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 279000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/387f7aed-000a-411b-922d-4fbecd39afbd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/387f7aed-000a-411b-922d-4fbecd39afbd/",
+   "related_url": "https://api.openverse.org/v1/audio/387f7aed-000a-411b-922d-4fbecd39afbd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/387f7aed-000a-411b-922d-4fbecd39afbd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7c97f89c-0481-4be7-ae43-f9005fd5ae8a",
+   "title": "Ultraviolet - Trance Dance Electronic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1208876",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1208876&format=mp32",
+   "creator": "Eddy J",
+   "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ultraviolet - Trance Dance Electronic\" by Eddy J is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ELECTROPHANTASMAGORIA",
+    "foreign_landing_url": "https://www.jamendo.com/album/145176/electrophantasmagoria",
+    "creator": "Eddy J",
+    "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 337000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7c97f89c-0481-4be7-ae43-f9005fd5ae8a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7c97f89c-0481-4be7-ae43-f9005fd5ae8a/",
+   "related_url": "https://api.openverse.org/v1/audio/7c97f89c-0481-4be7-ae43-f9005fd5ae8a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7c97f89c-0481-4be7-ae43-f9005fd5ae8a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "55bf0083-c94e-4b0c-9e34-1f1f5a1a5b34",
+   "title": "Electron - esgm_feat_fl",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1523367",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1523367&format=mp32",
+   "creator": "EdSeGaMe",
+   "creator_url": "https://www.jamendo.com/artist/478969/EdSeGaMe_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "surfrock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "progressivetrance",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Electron - esgm_feat_fl\" by EdSeGaMe is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Electr\u00f3n",
+    "foreign_landing_url": "https://www.jamendo.com/album/174959/electron",
+    "creator": "EdSeGaMe",
+    "creator_url": "https://www.jamendo.com/artist/478969/EdSeGaMe_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 654000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/55bf0083-c94e-4b0c-9e34-1f1f5a1a5b34/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/55bf0083-c94e-4b0c-9e34-1f1f5a1a5b34/",
+   "related_url": "https://api.openverse.org/v1/audio/55bf0083-c94e-4b0c-9e34-1f1f5a1a5b34/related/",
+   "waveform": "https://api.openverse.org/v1/audio/55bf0083-c94e-4b0c-9e34-1f1f5a1a5b34/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e335dfd2-e23a-4855-b6bd-89443b3c2760",
+   "title": "Taste It - Electronic Euro Rnb",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1208880",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1208880&format=mp32",
+   "creator": "Eddy J",
+   "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Taste It - Electronic Euro Rnb\" by Eddy J is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ELECTROPHANTASMAGORIA",
+    "foreign_landing_url": "https://www.jamendo.com/album/145176/electrophantasmagoria",
+    "creator": "Eddy J",
+    "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 382000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e335dfd2-e23a-4855-b6bd-89443b3c2760/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e335dfd2-e23a-4855-b6bd-89443b3c2760/",
+   "related_url": "https://api.openverse.org/v1/audio/e335dfd2-e23a-4855-b6bd-89443b3c2760/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e335dfd2-e23a-4855-b6bd-89443b3c2760/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "648dba34-d8ad-46c7-82a7-85ed0f1560ef",
+   "title": "2. Spy Prelude / Electronic Pop *Synth Crystals",
+   "indexed_on": "2025-06-01T16:50:55.087809Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2230432",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2230432&format=mp32",
+   "creator": "Micha\u0142 Ja\u0142ochowski",
+   "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "disco",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "slideguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"2. Spy Prelude / Electronic Pop *Synth Crystals\" by Micha\u0142 Ja\u0142ochowski is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Spy Prelude / Pop Accordion",
+    "foreign_landing_url": "https://www.jamendo.com/album/592522/spy-prelude-pop-accordion",
+    "creator": "Micha\u0142 Ja\u0142ochowski",
+    "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 375000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/",
+   "related_url": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/related/",
+   "waveform": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a2f40f70-d061-4dd6-976f-27df8edd6a0e",
+   "title": "Electronic Session",
+   "indexed_on": "2023-10-01T22:35:41.429277Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1994512",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1994512&format=mp32",
+   "creator": "Francisco S\u00e1nchez Lab",
+   "creator_url": "https://www.jamendo.com/artist/370168/Francisco_Sanchez",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Electronic Session\" by Francisco S\u00e1nchez Lab is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Electronic Sessions",
+    "foreign_landing_url": "https://www.jamendo.com/album/506400/electronic-sessions",
+    "creator": "Francisco S\u00e1nchez Lab",
+    "creator_url": "https://www.jamendo.com/artist/370168/Francisco_Sanchez",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 363000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a2f40f70-d061-4dd6-976f-27df8edd6a0e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a2f40f70-d061-4dd6-976f-27df8edd6a0e/",
+   "related_url": "https://api.openverse.org/v1/audio/a2f40f70-d061-4dd6-976f-27df8edd6a0e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a2f40f70-d061-4dd6-976f-27df8edd6a0e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d6c9eed2-4101-4170-825b-b5a938877294",
+   "title": "Paradox - Techno Euro Electronic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1182874",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1182874&format=mp32",
+   "creator": "Eddy J",
+   "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Paradox - Techno Euro Electronic\" by Eddy J is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Time Machine",
+    "foreign_landing_url": "https://www.jamendo.com/album/142347/time-machine",
+    "creator": "Eddy J",
+    "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 486000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d6c9eed2-4101-4170-825b-b5a938877294/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d6c9eed2-4101-4170-825b-b5a938877294/",
+   "related_url": "https://api.openverse.org/v1/audio/d6c9eed2-4101-4170-825b-b5a938877294/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d6c9eed2-4101-4170-825b-b5a938877294/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0b32fbf4-8525-4ecc-bafd-bb4733eff99d",
+   "title": "Jezabelle - Euro Electronic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1208881",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1208881&format=mp32",
+   "creator": "Eddy J",
+   "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Jezabelle - Euro Electronic\" by Eddy J is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ELECTROPHANTASMAGORIA",
+    "foreign_landing_url": "https://www.jamendo.com/album/145176/electrophantasmagoria",
+    "creator": "Eddy J",
+    "creator_url": "https://www.jamendo.com/artist/444476/Cordite_Eddy_J",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 286000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0b32fbf4-8525-4ecc-bafd-bb4733eff99d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0b32fbf4-8525-4ecc-bafd-bb4733eff99d/",
+   "related_url": "https://api.openverse.org/v1/audio/0b32fbf4-8525-4ecc-bafd-bb4733eff99d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0b32fbf4-8525-4ecc-bafd-bb4733eff99d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "258cc73a-5f94-4860-9b63-a856c257450c",
+   "title": "VolexTagamine - Electronics (StepTwo, music2000, ps1)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1618099",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1618099&format=mp32",
+   "creator": "VolexOne",
+   "creator_url": "https://www.jamendo.com/artist/514904/VolexTagamine",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "neoclassical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "adventure",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "doublebass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"VolexTagamine - Electronics (StepTwo, music2000, ps1)\" by VolexOne is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "StepTwo",
+    "foreign_landing_url": "https://www.jamendo.com/album/182549/steptwo",
+    "creator": "VolexOne",
+    "creator_url": "https://www.jamendo.com/artist/514904/VolexTagamine",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 184000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/258cc73a-5f94-4860-9b63-a856c257450c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/258cc73a-5f94-4860-9b63-a856c257450c/",
+   "related_url": "https://api.openverse.org/v1/audio/258cc73a-5f94-4860-9b63-a856c257450c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/258cc73a-5f94-4860-9b63-a856c257450c/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+# Builder 38: end of Chapter 13. Area between curves (top - bottom), x vs x^2 = 1/6, 4 - x^2 vs x + 2 = 9/2,
+# curves that switch (x^3 vs x: 1/4 + 1/4, not 0), horizontal slices (x = y^2 vs x = y + 2 = 9/2), practice
+# (4/3 and average value 4), what else integrals do, the big idea.
+S = [
+    ("3:59:01.68", "m", "K38_Formula", {}),
+    ("3:59:25.40", "m", "K38_XCross", {}),
+    ("3:59:57.00", "m", "K38_XArea", {}),
+    ("4:00:14.60", "m", "K38_ParabSetup", {}),
+    ("4:00:46.15", "m", "K38_ParabInt", {}),
+    ("4:01:03.30", "m", "K38_ParabEval", {}),
+    ("4:01:30.60", "m", "K38_Switch", {}),
+    ("4:01:56.15", "m", "K38_SwitchTest", {}),
+    ("4:02:20.30", "m", "K38_TwoInts", {}),
+    ("4:02:57.45", "m", "K38_OneGo", {}),
+    ("4:03:12.15", "m", "K38_Horiz", {}),
+    ("4:03:34.40", "m", "K38_YSetup", {}),
+    ("4:04:12.40", "m", "K38_YEval", {}),
+    ("4:04:49.30", "m", "K38_WhyHoriz", {}),
+    ("4:05:07.43", "q", "K38_TryCard", dict(title="Try These Two", sub="Pause and try")),
+    ("4:05:09.20", "m", "K38_TryTwo", {}),
+    ("4:05:18.75", "m", "K38_Sol1", {}),
+    ("4:05:51.45", "m", "K38_Sol2", {}),
+    ("4:06:03.45", "m", "K38_More", {}),
+    ("4:06:19.70", "m", "K38_Idea", {}),
+]

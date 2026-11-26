@@ -1,0 +1,1590 @@
+{
+ "result_count": 27,
+ "page_count": 2,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "2fd62c11-a10d-48be-8064-eefbc37ee912",
+   "title": "Best for us",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/908828",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=908828&format=mp32",
+   "creator": "Teresa",
+   "creator_url": "https://www.jamendo.com/artist/374229/Teresa_(4)",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "easylistening",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Best for us\" by Teresa is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Reality",
+    "foreign_landing_url": "https://www.jamendo.com/album/107486/reality",
+    "creator": "Teresa",
+    "creator_url": "https://www.jamendo.com/artist/374229/Teresa_(4)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 227000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2fd62c11-a10d-48be-8064-eefbc37ee912/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2fd62c11-a10d-48be-8064-eefbc37ee912/",
+   "related_url": "https://api.openverse.org/v1/audio/2fd62c11-a10d-48be-8064-eefbc37ee912/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2fd62c11-a10d-48be-8064-eefbc37ee912/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c",
+   "title": "At last, calm",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/341547",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=341547&format=mp32",
+   "creator": "Tymphony",
+   "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"At last, calm\" by Tymphony is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm",
+    "foreign_landing_url": "https://www.jamendo.com/album/45082/calm",
+    "creator": "Tymphony",
+    "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 179000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/",
+   "related_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "98f2e262-8fac-4e23-bfc4-bfc4f9acd72b",
+   "title": "Corvois calm",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/151039",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=151039&format=mp32",
+   "creator": "Torley on Piano",
+   "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Corvois calm\" by Torley on Piano is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "solo piano 7: Improvisations for a New Age",
+    "foreign_landing_url": "https://www.jamendo.com/album/21576/solo-piano-7-improvisations-for-a-new-age",
+    "creator": "Torley on Piano",
+    "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 108000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/",
+   "related_url": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3a8825e8-490e-4b9d-b06a-63bf21c679b7",
+   "title": "A Long Journey Awaits Us",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1337969",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1337969&format=mp32",
+   "creator": "DotSlash",
+   "creator_url": "https://www.jamendo.com/artist/431845/DotSlash",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calme",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Long Journey Awaits Us\" by DotSlash is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "On The Road Again",
+    "foreign_landing_url": "https://www.jamendo.com/album/158078/on-the-road-again",
+    "creator": "DotSlash",
+    "creator_url": "https://www.jamendo.com/artist/431845/DotSlash",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 378000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3a8825e8-490e-4b9d-b06a-63bf21c679b7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3a8825e8-490e-4b9d-b06a-63bf21c679b7/",
+   "related_url": "https://api.openverse.org/v1/audio/3a8825e8-490e-4b9d-b06a-63bf21c679b7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3a8825e8-490e-4b9d-b06a-63bf21c679b7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5f7af4b0-3629-4345-83ae-9ca5bca2e9d9",
+   "title": "Intro",
+   "indexed_on": "2024-07-01T18:32:57.174001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2185462",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2185462&format=mp32",
+   "creator": "zero-project",
+   "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bagpipes",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Intro\" by zero-project is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "e-world",
+    "foreign_landing_url": "https://www.jamendo.com/album/572376/e-world",
+    "creator": "zero-project",
+    "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 222000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5f7af4b0-3629-4345-83ae-9ca5bca2e9d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5f7af4b0-3629-4345-83ae-9ca5bca2e9d9/",
+   "related_url": "https://api.openverse.org/v1/audio/5f7af4b0-3629-4345-83ae-9ca5bca2e9d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5f7af4b0-3629-4345-83ae-9ca5bca2e9d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "80fade4a-66e0-45dd-9afc-dcd7dc8a550c",
+   "title": "nuage",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1241611",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1241611&format=mp32",
+   "creator": "thomas saliba",
+   "creator_url": "https://www.jamendo.com/artist/440843/Thomas_Saliba",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "calme",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"nuage\" by thomas saliba is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Couleurs",
+    "foreign_landing_url": "https://www.jamendo.com/album/148799/couleurs",
+    "creator": "thomas saliba",
+    "creator_url": "https://www.jamendo.com/artist/440843/Thomas_Saliba",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 199000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/80fade4a-66e0-45dd-9afc-dcd7dc8a550c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/80fade4a-66e0-45dd-9afc-dcd7dc8a550c/",
+   "related_url": "https://api.openverse.org/v1/audio/80fade4a-66e0-45dd-9afc-dcd7dc8a550c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/80fade4a-66e0-45dd-9afc-dcd7dc8a550c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5dc042e4-6953-4bb7-a896-768624f30f1b",
+   "title": "Dream keeper (dreamy version)",
+   "indexed_on": "2024-11-01T16:38:58.867315Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2193530",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2193530&format=mp32",
+   "creator": "zero-project",
+   "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dream keeper (dreamy version)\" by zero-project is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dream keeper",
+    "foreign_landing_url": "https://www.jamendo.com/album/576211/dream-keeper",
+    "creator": "zero-project",
+    "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 304000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5dc042e4-6953-4bb7-a896-768624f30f1b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5dc042e4-6953-4bb7-a896-768624f30f1b/",
+   "related_url": "https://api.openverse.org/v1/audio/5dc042e4-6953-4bb7-a896-768624f30f1b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5dc042e4-6953-4bb7-a896-768624f30f1b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f283b173-3639-4edd-a594-839dc012df95",
+   "title": "Keep Calm",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1075574",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1075574&format=mp32",
+   "creator": "Jahzzar",
+   "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "melancholic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Keep Calm\" by Jahzzar is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Viikinsaari",
+    "foreign_landing_url": "https://www.jamendo.com/album/128111/viikinsaari",
+    "creator": "Jahzzar",
+    "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 152000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f283b173-3639-4edd-a594-839dc012df95/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f283b173-3639-4edd-a594-839dc012df95/",
+   "related_url": "https://api.openverse.org/v1/audio/f283b173-3639-4edd-a594-839dc012df95/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f283b173-3639-4edd-a594-839dc012df95/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b6ba4e5e-dfaf-4608-a4a5-300b3a3bee8d",
+   "title": "Mer Calme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1431198",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1431198&format=mp32",
+   "creator": "Christian DALMONT",
+   "creator_url": "https://www.jamendo.com/artist/7137/christian.dalmont",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "filmscore",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Mer Calme\" by Christian DALMONT is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "JAZZ NEIGE",
+    "foreign_landing_url": "https://www.jamendo.com/album/166759/jazz-neige",
+    "creator": "Christian DALMONT",
+    "creator_url": "https://www.jamendo.com/artist/7137/christian.dalmont",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 323000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b6ba4e5e-dfaf-4608-a4a5-300b3a3bee8d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b6ba4e5e-dfaf-4608-a4a5-300b3a3bee8d/",
+   "related_url": "https://api.openverse.org/v1/audio/b6ba4e5e-dfaf-4608-a4a5-300b3a3bee8d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b6ba4e5e-dfaf-4608-a4a5-300b3a3bee8d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "48266e9e-3864-4097-a9df-60123fdf4830",
+   "title": "A new world",
+   "indexed_on": "2024-07-01T18:32:57.174001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2185505",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2185505&format=mp32",
+   "creator": "zero-project",
+   "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A new world\" by zero-project is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "e-world",
+    "foreign_landing_url": "https://www.jamendo.com/album/572376/e-world",
+    "creator": "zero-project",
+    "creator_url": "https://www.jamendo.com/artist/340121/zero-project",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 226000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/48266e9e-3864-4097-a9df-60123fdf4830/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/48266e9e-3864-4097-a9df-60123fdf4830/",
+   "related_url": "https://api.openverse.org/v1/audio/48266e9e-3864-4097-a9df-60123fdf4830/related/",
+   "waveform": "https://api.openverse.org/v1/audio/48266e9e-3864-4097-a9df-60123fdf4830/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fa846601-012e-4d42-b1ed-1d0d91b0981f",
+   "title": "Calm BeforeThe Storm",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1191880",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1191880&format=mp32",
+   "creator": "Gary David Pobst",
+   "creator_url": "https://www.jamendo.com/artist/460873/Gary_David_Pobst",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "newage",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmosphericc",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "saxophone",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Calm BeforeThe Storm\" by Gary David Pobst is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Bright Future",
+    "foreign_landing_url": "https://www.jamendo.com/album/143445/bright-future",
+    "creator": "Gary David Pobst",
+    "creator_url": "https://www.jamendo.com/artist/460873/Gary_David_Pobst",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 299000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fa846601-012e-4d42-b1ed-1d0d91b0981f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fa846601-012e-4d42-b1ed-1d0d91b0981f/",
+   "related_url": "https://api.openverse.org/v1/audio/fa846601-012e-4d42-b1ed-1d0d91b0981f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fa846601-012e-4d42-b1ed-1d0d91b0981f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5d6d8d39-2cb5-49f9-8601-fc5b92f8b7b2",
+   "title": "Kingdom of the blind",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1932605",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1932605&format=mp32",
+   "creator": "PNFA",
+   "creator_url": "https://www.jamendo.com/artist/527568/PNFA",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "videogame",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Kingdom of the blind\" by PNFA is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Sylmar",
+    "foreign_landing_url": "https://www.jamendo.com/album/477254/sylmar",
+    "creator": "PNFA",
+    "creator_url": "https://www.jamendo.com/artist/527568/PNFA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 0,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5d6d8d39-2cb5-49f9-8601-fc5b92f8b7b2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5d6d8d39-2cb5-49f9-8601-fc5b92f8b7b2/",
+   "related_url": "https://api.openverse.org/v1/audio/5d6d8d39-2cb5-49f9-8601-fc5b92f8b7b2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5d6d8d39-2cb5-49f9-8601-fc5b92f8b7b2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d67e2e20-7223-45a7-938e-3a2a413ee675",
+   "title": "IV. Lev\u00e9e d \u00e9crou",
+   "indexed_on": "2023-10-01T22:35:41.429277Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1988347",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1988347&format=mp32",
+   "creator": "Toucan",
+   "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "contemporarypiano",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"IV. Lev\u00e9e d \u00e9crou\" by Toucan is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Printemps Sans Le Reste - Musique",
+    "foreign_landing_url": "https://www.jamendo.com/album/503581/le-printemps-sans-le-reste-musique",
+    "creator": "Toucan",
+    "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 0,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d67e2e20-7223-45a7-938e-3a2a413ee675/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d67e2e20-7223-45a7-938e-3a2a413ee675/",
+   "related_url": "https://api.openverse.org/v1/audio/d67e2e20-7223-45a7-938e-3a2a413ee675/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d67e2e20-7223-45a7-938e-3a2a413ee675/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "98280cb7-3853-43f9-ac0f-182a335b3cdf",
+   "title": "I. Le grand enfermement",
+   "indexed_on": "2023-10-01T22:35:41.429277Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1988344",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1988344&format=mp32",
+   "creator": "Toucan",
+   "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "contemporarypiano",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "organ",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"I. Le grand enfermement\" by Toucan is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Printemps Sans Le Reste - Musique",
+    "foreign_landing_url": "https://www.jamendo.com/album/503581/le-printemps-sans-le-reste-musique",
+    "creator": "Toucan",
+    "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 690000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/98280cb7-3853-43f9-ac0f-182a335b3cdf/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/98280cb7-3853-43f9-ac0f-182a335b3cdf/",
+   "related_url": "https://api.openverse.org/v1/audio/98280cb7-3853-43f9-ac0f-182a335b3cdf/related/",
+   "waveform": "https://api.openverse.org/v1/audio/98280cb7-3853-43f9-ac0f-182a335b3cdf/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "86efe223-ec82-437e-bfdb-7b24ce373490",
+   "title": "Easy On The Eye",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1907866",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1907866&format=mp32",
+   "creator": "Roy Smiles",
+   "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Easy On The Eye\" by Roy Smiles is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "40 MORE BIG HITS - Roy Smiles",
+    "foreign_landing_url": "https://www.jamendo.com/album/465908/40-more-big-hits-roy-smiles",
+    "creator": "Roy Smiles",
+    "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 211000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/86efe223-ec82-437e-bfdb-7b24ce373490/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/86efe223-ec82-437e-bfdb-7b24ce373490/",
+   "related_url": "https://api.openverse.org/v1/audio/86efe223-ec82-437e-bfdb-7b24ce373490/related/",
+   "waveform": "https://api.openverse.org/v1/audio/86efe223-ec82-437e-bfdb-7b24ce373490/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3e049245-7479-4f2a-8b61-07fb56db0df0",
+   "title": "II. Interm\u00e8des (Lumi\u00e8re, les vacances)",
+   "indexed_on": "2023-10-01T22:35:41.429277Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1988346",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1988346&format=mp32",
+   "creator": "Toucan",
+   "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "contemporarypiano",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"II. Interm\u00e8des (Lumi\u00e8re, les vacances)\" by Toucan is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Printemps Sans Le Reste - Musique",
+    "foreign_landing_url": "https://www.jamendo.com/album/503581/le-printemps-sans-le-reste-musique",
+    "creator": "Toucan",
+    "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 234000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3e049245-7479-4f2a-8b61-07fb56db0df0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3e049245-7479-4f2a-8b61-07fb56db0df0/",
+   "related_url": "https://api.openverse.org/v1/audio/3e049245-7479-4f2a-8b61-07fb56db0df0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3e049245-7479-4f2a-8b61-07fb56db0df0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5fb43f33-4f35-4cee-b460-5ce3892f47cd",
+   "title": "III. Le grand renfermement",
+   "indexed_on": "2023-10-01T22:35:41.429277Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1988345",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1988345&format=mp32",
+   "creator": "Toucan",
+   "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "contemporarypiano",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"III. Le grand renfermement\" by Toucan is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Printemps Sans Le Reste - Musique",
+    "foreign_landing_url": "https://www.jamendo.com/album/503581/le-printemps-sans-le-reste-musique",
+    "creator": "Toucan",
+    "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 481000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5fb43f33-4f35-4cee-b460-5ce3892f47cd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5fb43f33-4f35-4cee-b460-5ce3892f47cd/",
+   "related_url": "https://api.openverse.org/v1/audio/5fb43f33-4f35-4cee-b460-5ce3892f47cd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5fb43f33-4f35-4cee-b460-5ce3892f47cd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0bfc928c-6510-4547-91f8-d72fa4dd93bb",
+   "title": "This Summer Haze",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1907220",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1907220&format=mp32",
+   "creator": "Roy Smiles",
+   "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"This Summer Haze\" by Roy Smiles is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "40 BIG HITS - Roy Smiles",
+    "foreign_landing_url": "https://www.jamendo.com/album/465784/40-big-hits-roy-smiles",
+    "creator": "Roy Smiles",
+    "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 224000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0bfc928c-6510-4547-91f8-d72fa4dd93bb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0bfc928c-6510-4547-91f8-d72fa4dd93bb/",
+   "related_url": "https://api.openverse.org/v1/audio/0bfc928c-6510-4547-91f8-d72fa4dd93bb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0bfc928c-6510-4547-91f8-d72fa4dd93bb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "51afb037-fbac-48ae-9b23-9f56afea72b5",
+   "title": "Meet Me In The Angel",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1907219",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1907219&format=mp32",
+   "creator": "Roy Smiles",
+   "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Meet Me In The Angel\" by Roy Smiles is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "40 BIG HITS - Roy Smiles",
+    "foreign_landing_url": "https://www.jamendo.com/album/465784/40-big-hits-roy-smiles",
+    "creator": "Roy Smiles",
+    "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 200000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/51afb037-fbac-48ae-9b23-9f56afea72b5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/51afb037-fbac-48ae-9b23-9f56afea72b5/",
+   "related_url": "https://api.openverse.org/v1/audio/51afb037-fbac-48ae-9b23-9f56afea72b5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/51afb037-fbac-48ae-9b23-9f56afea72b5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0dd10509-8747-419f-b174-471972479be5",
+   "title": "A Good Man Passing",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1907234",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1907234&format=mp32",
+   "creator": "Roy Smiles",
+   "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calm",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Good Man Passing\" by Roy Smiles is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "40 BIG HITS - Roy Smiles",
+    "foreign_landing_url": "https://www.jamendo.com/album/465784/40-big-hits-roy-smiles",
+    "creator": "Roy Smiles",
+    "creator_url": "https://www.jamendo.com/artist/461369/Roy_Smiles_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 276000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0dd10509-8747-419f-b174-471972479be5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0dd10509-8747-419f-b174-471972479be5/",
+   "related_url": "https://api.openverse.org/v1/audio/0dd10509-8747-419f-b174-471972479be5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0dd10509-8747-419f-b174-471972479be5/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

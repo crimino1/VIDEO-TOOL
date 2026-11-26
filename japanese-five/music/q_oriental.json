@@ -1,0 +1,1260 @@
+{
+ "result_count": 68,
+ "page_count": 4,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "ec25988e-fec7-4c03-ba3a-600f8fb76813",
+   "title": "Oriente Medio",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/19864",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=19864&format=mp32",
+   "creator": "BrunoXe",
+   "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+   "license": "by",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriente Medio\" by BrunoXe is licensed under CC BY 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.5/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Crear en balde",
+    "foreign_landing_url": "https://www.jamendo.com/album/2790/crear-en-balde",
+    "creator": "BrunoXe",
+    "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 116000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ec25988e-fec7-4c03-ba3a-600f8fb76813/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ec25988e-fec7-4c03-ba3a-600f8fb76813/",
+   "related_url": "https://api.openverse.org/v1/audio/ec25988e-fec7-4c03-ba3a-600f8fb76813/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ec25988e-fec7-4c03-ba3a-600f8fb76813/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8991b797-b057-4320-b69a-12276fe5afcd",
+   "title": "orient express",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/454789",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=454789&format=mp32",
+   "creator": "Andreas Verhamme",
+   "creator_url": "https://www.jamendo.com/artist/351314/Andreas_Verhamme_guano-music",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"orient express\" by Andreas Verhamme is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Atmosph\u00e8re",
+    "foreign_landing_url": "https://www.jamendo.com/album/54399/atmosphere",
+    "creator": "Andreas Verhamme",
+    "creator_url": "https://www.jamendo.com/artist/351314/Andreas_Verhamme_guano-music",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 285000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8991b797-b057-4320-b69a-12276fe5afcd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8991b797-b057-4320-b69a-12276fe5afcd/",
+   "related_url": "https://api.openverse.org/v1/audio/8991b797-b057-4320-b69a-12276fe5afcd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8991b797-b057-4320-b69a-12276fe5afcd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "027754d0-3f8e-4b73-8cd7-f07c0b168ef5",
+   "title": "Ex Oriente Lux 2k8",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/513471",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=513471&format=mp32",
+   "creator": "Vulturius",
+   "creator_url": "https://www.jamendo.com/artist/356880/Vulturius",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "adventure",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "spiritual",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ex Oriente Lux 2k8\" by Vulturius is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Electrovulturism",
+    "foreign_landing_url": "https://www.jamendo.com/album/60079/electrovulturism",
+    "creator": "Vulturius",
+    "creator_url": "https://www.jamendo.com/artist/356880/Vulturius",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 342000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/027754d0-3f8e-4b73-8cd7-f07c0b168ef5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/027754d0-3f8e-4b73-8cd7-f07c0b168ef5/",
+   "related_url": "https://api.openverse.org/v1/audio/027754d0-3f8e-4b73-8cd7-f07c0b168ef5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/027754d0-3f8e-4b73-8cd7-f07c0b168ef5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4f940c0f-8360-42d5-9253-b04b49041e45",
+   "title": "Ostenvegr's Travel - Oriental Life (Original Mix)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1099782",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1099782&format=mp32",
+   "creator": "Ostenvegr",
+   "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "filmscore",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "travel",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Ostenvegr's Travel - Oriental Life (Original Mix)\" by Ostenvegr is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Oriental Life",
+    "foreign_landing_url": "https://www.jamendo.com/album/131228/oriental-life",
+    "creator": "Ostenvegr",
+    "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 245000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4f940c0f-8360-42d5-9253-b04b49041e45/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4f940c0f-8360-42d5-9253-b04b49041e45/",
+   "related_url": "https://api.openverse.org/v1/audio/4f940c0f-8360-42d5-9253-b04b49041e45/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4f940c0f-8360-42d5-9253-b04b49041e45/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ab073a1e-ed64-4c67-9460-8754f6a27c7b",
+   "title": "Orient Hop",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1107696",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1107696&format=mp32",
+   "creator": "Naturalbodyartist",
+   "creator_url": "https://www.jamendo.com/artist/430126/naturalbody2",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "oriental",
+    "pop",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "erhu",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "exotic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Orient Hop\" by Naturalbodyartist is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "best of vol.3",
+    "foreign_landing_url": "https://www.jamendo.com/album/132294/best-of-vol-3",
+    "creator": "Naturalbodyartist",
+    "creator_url": "https://www.jamendo.com/artist/430126/naturalbody2",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 108000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ab073a1e-ed64-4c67-9460-8754f6a27c7b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ab073a1e-ed64-4c67-9460-8754f6a27c7b/",
+   "related_url": "https://api.openverse.org/v1/audio/ab073a1e-ed64-4c67-9460-8754f6a27c7b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ab073a1e-ed64-4c67-9460-8754f6a27c7b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4ea98e2a-370d-487d-a197-1d6043cf3057",
+   "title": "flamenco oriental",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/639223",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=639223&format=mp32",
+   "creator": "Bellanger Jacques jbabebel",
+   "creator_url": "https://www.jamendo.com/artist/351376/jbabebel",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"flamenco oriental\" by Bellanger Jacques jbabebel is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "spleen 2 melancolie",
+    "foreign_landing_url": "https://www.jamendo.com/album/74035/spleen-2-melancolie",
+    "creator": "Bellanger Jacques jbabebel",
+    "creator_url": "https://www.jamendo.com/artist/351376/jbabebel",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 570000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4ea98e2a-370d-487d-a197-1d6043cf3057/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4ea98e2a-370d-487d-a197-1d6043cf3057/",
+   "related_url": "https://api.openverse.org/v1/audio/4ea98e2a-370d-487d-a197-1d6043cf3057/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4ea98e2a-370d-487d-a197-1d6043cf3057/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a0d0d835-3ce2-434b-a075-9ebb162f3f6a",
+   "title": "Oriental Nights",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1001290",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1001290&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriental Nights\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Female Vocal 6",
+    "foreign_landing_url": "https://www.jamendo.com/album/117827/female-vocal-6",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 307000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a0d0d835-3ce2-434b-a075-9ebb162f3f6a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a0d0d835-3ce2-434b-a075-9ebb162f3f6a/",
+   "related_url": "https://api.openverse.org/v1/audio/a0d0d835-3ce2-434b-a075-9ebb162f3f6a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a0d0d835-3ce2-434b-a075-9ebb162f3f6a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "94405eff-ae09-4a3a-bc4c-ea0596568117",
+   "title": "orient",
+   "indexed_on": "2022-05-01T07:20:02.881192Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/397626",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=397626&format=mp32",
+   "creator": "Lulo",
+   "creator_url": "https://www.jamendo.com/artist/352409/Lulo_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"orient\" by Lulo is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "COLLAGE",
+    "foreign_landing_url": "https://www.jamendo.com/album/49715/collage",
+    "creator": "Lulo",
+    "creator_url": "https://www.jamendo.com/artist/352409/Lulo_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 85000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/94405eff-ae09-4a3a-bc4c-ea0596568117/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/94405eff-ae09-4a3a-bc4c-ea0596568117/",
+   "related_url": "https://api.openverse.org/v1/audio/94405eff-ae09-4a3a-bc4c-ea0596568117/related/",
+   "waveform": "https://api.openverse.org/v1/audio/94405eff-ae09-4a3a-bc4c-ea0596568117/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "310b1bbc-9e26-4573-a886-23f78d55d6f7",
+   "title": "Oriente",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/871231",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=871231&format=mp32",
+   "creator": "Mattia Goglio",
+   "creator_url": "https://www.jamendo.com/artist/374605/mattiagoglio",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriente\" by Mattia Goglio is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "On the movie",
+    "foreign_landing_url": "https://www.jamendo.com/album/102217/on-the-movie",
+    "creator": "Mattia Goglio",
+    "creator_url": "https://www.jamendo.com/artist/374605/mattiagoglio",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 338000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/310b1bbc-9e26-4573-a886-23f78d55d6f7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/310b1bbc-9e26-4573-a886-23f78d55d6f7/",
+   "related_url": "https://api.openverse.org/v1/audio/310b1bbc-9e26-4573-a886-23f78d55d6f7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/310b1bbc-9e26-4573-a886-23f78d55d6f7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "82368f2c-4cc9-4373-bffc-b79d4a950df4",
+   "title": "Oriental Story",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/642874",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=642874&format=mp32",
+   "creator": "Luigi Alessi",
+   "creator_url": "https://www.jamendo.com/artist/362690/Luigi_Alessi",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/it/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriental Story\" by Luigi Alessi is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/it/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "New Age",
+    "foreign_landing_url": "https://www.jamendo.com/album/74461/new-age",
+    "creator": "Luigi Alessi",
+    "creator_url": "https://www.jamendo.com/artist/362690/Luigi_Alessi",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 224000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/82368f2c-4cc9-4373-bffc-b79d4a950df4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/82368f2c-4cc9-4373-bffc-b79d4a950df4/",
+   "related_url": "https://api.openverse.org/v1/audio/82368f2c-4cc9-4373-bffc-b79d4a950df4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/82368f2c-4cc9-4373-bffc-b79d4a950df4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "75ae4dcb-0f0e-4d56-9588-d0aa4af93485",
+   "title": "Oriental Vibes",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1030432",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1030432&format=mp32",
+   "creator": "No Control",
+   "creator_url": "https://www.jamendo.com/artist/423236/Tony_Djahman",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "new",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriental Vibes\" by No Control is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Beatz",
+    "foreign_landing_url": "https://www.jamendo.com/album/121188/beatz",
+    "creator": "No Control",
+    "creator_url": "https://www.jamendo.com/artist/423236/Tony_Djahman",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 161000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/75ae4dcb-0f0e-4d56-9588-d0aa4af93485/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/75ae4dcb-0f0e-4d56-9588-d0aa4af93485/",
+   "related_url": "https://api.openverse.org/v1/audio/75ae4dcb-0f0e-4d56-9588-d0aa4af93485/related/",
+   "waveform": "https://api.openverse.org/v1/audio/75ae4dcb-0f0e-4d56-9588-d0aa4af93485/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "67ce08e7-8fd6-4c1a-bd65-ef80f08d383f",
+   "title": "proche orient",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/846388",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=846388&format=mp32",
+   "creator": "Matthieu POM",
+   "creator_url": "https://www.jamendo.com/artist/359328/Matthieu_POM_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"proche orient\" by Matthieu POM is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "L'histoire G\u00e9o en chansons - Programme de 6\u00e8me",
+    "foreign_landing_url": "https://www.jamendo.com/album/98922/l-histoire-geo-en-chansons-programme-de-6eme",
+    "creator": "Matthieu POM",
+    "creator_url": "https://www.jamendo.com/artist/359328/Matthieu_POM_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 284000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/67ce08e7-8fd6-4c1a-bd65-ef80f08d383f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/67ce08e7-8fd6-4c1a-bd65-ef80f08d383f/",
+   "related_url": "https://api.openverse.org/v1/audio/67ce08e7-8fd6-4c1a-bd65-ef80f08d383f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/67ce08e7-8fd6-4c1a-bd65-ef80f08d383f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "eff9f63b-37aa-4363-bbdc-0715dd21e8be",
+   "title": "oriental",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/211729",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=211729&format=mp32",
+   "creator": "BrunoXe",
+   "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"oriental\" by BrunoXe is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Nuevos Aires",
+    "foreign_landing_url": "https://www.jamendo.com/album/31249/nuevos-aires",
+    "creator": "BrunoXe",
+    "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 48000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/eff9f63b-37aa-4363-bbdc-0715dd21e8be/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/eff9f63b-37aa-4363-bbdc-0715dd21e8be/",
+   "related_url": "https://api.openverse.org/v1/audio/eff9f63b-37aa-4363-bbdc-0715dd21e8be/related/",
+   "waveform": "https://api.openverse.org/v1/audio/eff9f63b-37aa-4363-bbdc-0715dd21e8be/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ca52bbd3-fc61-42f4-87c0-201cc28d31d9",
+   "title": "Oriente",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/547221",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=547221&format=mp32",
+   "creator": "Lord Daelith",
+   "creator_url": "https://www.jamendo.com/artist/358630/Lord_Daelith",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "industrial",
+    "metal",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriente\" by Lord Daelith is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Sin City",
+    "foreign_landing_url": "https://www.jamendo.com/album/63719/sin-city",
+    "creator": "Lord Daelith",
+    "creator_url": "https://www.jamendo.com/artist/358630/Lord_Daelith",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 402000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ca52bbd3-fc61-42f4-87c0-201cc28d31d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ca52bbd3-fc61-42f4-87c0-201cc28d31d9/",
+   "related_url": "https://api.openverse.org/v1/audio/ca52bbd3-fc61-42f4-87c0-201cc28d31d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ca52bbd3-fc61-42f4-87c0-201cc28d31d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ab380c69-b598-4cb0-b759-b1501ecfe141",
+   "title": "Oriental",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1265798",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1265798&format=mp32",
+   "creator": "Yonael",
+   "creator_url": "https://www.jamendo.com/artist/480266/Yonael",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidhouse",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "batteries",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriental\" by Yonael is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Yonaelecro",
+    "foreign_landing_url": "https://www.jamendo.com/album/151278/yonaelecro",
+    "creator": "Yonael",
+    "creator_url": "https://www.jamendo.com/artist/480266/Yonael",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 143000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ab380c69-b598-4cb0-b759-b1501ecfe141/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ab380c69-b598-4cb0-b759-b1501ecfe141/",
+   "related_url": "https://api.openverse.org/v1/audio/ab380c69-b598-4cb0-b759-b1501ecfe141/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ab380c69-b598-4cb0-b759-b1501ecfe141/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "23a30506-fd19-4723-8705-eed6c22ef9d9",
+   "title": "When You're in Paradise [Oriental String Mix]",
+   "indexed_on": "2024-03-01T17:56:32.524232Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1108654",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1108654&format=mp32",
+   "creator": "Caf\u00e9 Del Chillia",
+   "creator_url": "https://www.jamendo.com/artist/416786/Cafe_Del_Chillia",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"When You're in Paradise [Oriental String Mix]\" by Caf\u00e9 Del Chillia is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "When You're in Paradise",
+    "foreign_landing_url": "https://www.jamendo.com/album/132437/when-you-re-in-paradise",
+    "creator": "Caf\u00e9 Del Chillia",
+    "creator_url": "https://www.jamendo.com/artist/416786/Cafe_Del_Chillia",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 455000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/23a30506-fd19-4723-8705-eed6c22ef9d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/23a30506-fd19-4723-8705-eed6c22ef9d9/",
+   "related_url": "https://api.openverse.org/v1/audio/23a30506-fd19-4723-8705-eed6c22ef9d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/23a30506-fd19-4723-8705-eed6c22ef9d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f49780fc-d83b-43e6-b202-227ef4ef9303",
+   "title": "Oriente",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/683317",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=683317&format=mp32",
+   "creator": "Graciela L\u00f3pez",
+   "creator_url": "https://www.jamendo.com/artist/364581/Graciela_Lopez",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriente\" by Graciela L\u00f3pez is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Gedanken Experiment",
+    "foreign_landing_url": "https://www.jamendo.com/album/79463/gedanken-experiment",
+    "creator": "Graciela L\u00f3pez",
+    "creator_url": "https://www.jamendo.com/artist/364581/Graciela_Lopez",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 92000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f49780fc-d83b-43e6-b202-227ef4ef9303/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f49780fc-d83b-43e6-b202-227ef4ef9303/",
+   "related_url": "https://api.openverse.org/v1/audio/f49780fc-d83b-43e6-b202-227ef4ef9303/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f49780fc-d83b-43e6-b202-227ef4ef9303/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "00f3e922-8bea-42cc-ac21-dd26596feeeb",
+   "title": "Oriental Dreams",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1330501",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1330501&format=mp32",
+   "creator": "Stefano Giardiniere",
+   "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "orchestra",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "orient",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Oriental Dreams\" by Stefano Giardiniere is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Hidden",
+    "foreign_landing_url": "https://www.jamendo.com/album/157417/the-hidden",
+    "creator": "Stefano Giardiniere",
+    "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 260000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/00f3e922-8bea-42cc-ac21-dd26596feeeb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/00f3e922-8bea-42cc-ac21-dd26596feeeb/",
+   "related_url": "https://api.openverse.org/v1/audio/00f3e922-8bea-42cc-ac21-dd26596feeeb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/00f3e922-8bea-42cc-ac21-dd26596feeeb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d78535e8-0a0e-4005-a1e8-e85066c7ee3b",
+   "title": "Orient Cafe",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/182410",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=182410&format=mp32",
+   "creator": "Jazoo",
+   "creator_url": "https://www.jamendo.com/artist/340240/Jazoo",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Orient Cafe\" by Jazoo is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "On Time",
+    "foreign_landing_url": "https://www.jamendo.com/album/27342/on-time",
+    "creator": "Jazoo",
+    "creator_url": "https://www.jamendo.com/artist/340240/Jazoo",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 417000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d78535e8-0a0e-4005-a1e8-e85066c7ee3b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d78535e8-0a0e-4005-a1e8-e85066c7ee3b/",
+   "related_url": "https://api.openverse.org/v1/audio/d78535e8-0a0e-4005-a1e8-e85066c7ee3b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d78535e8-0a0e-4005-a1e8-e85066c7ee3b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6b5a3452-9072-4dc8-af2c-74cea0c9eb39",
+   "title": "Orient Express",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/990341",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=990341&format=mp32",
+   "creator": "Acoustic Enlacement",
+   "creator_url": "https://www.jamendo.com/artist/428721/Acoustic_Enlacement",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidjazz",
+    "electronic",
+    "triphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Orient Express\" by Acoustic Enlacement is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/de/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "I'm A Machine",
+    "foreign_landing_url": "https://www.jamendo.com/album/116507/i-m-a-machine",
+    "creator": "Acoustic Enlacement",
+    "creator_url": "https://www.jamendo.com/artist/428721/Acoustic_Enlacement",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 306000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6b5a3452-9072-4dc8-af2c-74cea0c9eb39/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6b5a3452-9072-4dc8-af2c-74cea0c9eb39/",
+   "related_url": "https://api.openverse.org/v1/audio/6b5a3452-9072-4dc8-af2c-74cea0c9eb39/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6b5a3452-9072-4dc8-af2c-74cea0c9eb39/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

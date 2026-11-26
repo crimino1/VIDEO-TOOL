@@ -1,0 +1,360 @@
+Benchmarks
+
+Models
+
+Comparison
+
+Vals Smith
+
+App Reports
+
+Government
+
+News
+
+Blog
+
+Hackathon
+
+About
+
+ALL MODELS
+ALL COMPANIES
+
+RELEASE DATE
+
+MODEL
+
+NOV 05, 2026
+
+Inkling 2 Small
+
+🇺🇸
+
+NOV 04, 2026
+
+Hy4
+
+🇨🇳
+
+OCT 29, 2026
+
+Mistral Large 4
+
+🇫🇷
+
+OCT 28, 2026
+
+Gemini 4 Carbon
+
+OCT 26, 2026
+
+GPT-6.1 Terra
+
+🇺🇸
+
+OCT 23, 2026
+
+Kimi K3.1 Pro
+
+🇨🇳
+
+OCT 21, 2026
+
+Drex Max
+
+🇺🇸
+
+OCT 20, 2026
+
+MiniMax-M3.1-Flash
+
+🇨🇳
+
+OCT 19, 2026
+
+Mercury 3
+
+🇺🇸
+
+OCT 17, 2026
+
+DeepSeek V4.1 Flash 1017
+
+🇨🇳
+
+OCT 16, 2026
+
+Beam 1.0
+
+🇺🇸
+
+OCT 16, 2026
+
+Decider Flash V1.2
+
+🇺🇸
+
+OCT 16, 2026
+
+Decider V1.2
+
+🇺🇸
+
+OCT 15, 2026
+
+Muse Spark Open
+
+🇺🇸
+
+OCT 15, 2026
+
+Nemotron 3.5 Super VL
+
+🇺🇸
+
+OCT 15, 2026
+
+d1-ultra
+
+🇺🇸
+
+OCT 14, 2026
+
+Jev 1.14
+
+🇺🇸
+
+OCT 13, 2026
+
+Classify-1
+
+🇺🇸
+
+OCT 13, 2026
+
+Gemini 4 Argon
+
+🇺🇸
+
+OCT 12, 2026
+
+Wonder Full
+
+🇺🇸
+
+OCT 12, 2026
+
+Wonder
+
+🇺🇸
+
+OCT 12, 2026
+
+Drex v2.0
+
+🇺🇸
+
+OCT 12, 2026
+
+GLM Legal
+
+🇨🇳
+
+OCT 09, 2026
+
+Clef Omni
+
+🇺🇸
+
+OCT 09, 2026
+
+Drex v1.5
+
+🇺🇸
+
+OCT 09, 2026
+
+Microsoft-Decision-1
+
+🇺🇸
+
+OCT 08, 2026
+
+Solar Decide Flash
+
+🇰🇷
+
+OCT 07, 2026
+
+Claude Haiku 5.5
+
+🇺🇸
+VIEW 259 MORE MODELS
+DOWNLOAD
+COMPARE MODELS
+Gemini 4 Carbon
+
+Gemini 4 Carbon is a model from Google, released October 28, 2026. It ranks #2 of 34 models on the Vals Index with 70.45%. Its best result is #1 of 91 on Legal Research Bench.
+
+RELEASE DATE: OCT 28, 2026
+
+DEVELOPER
+GOOGLE  🇺🇸
+CONTEXT WINDOW
+1M
+MAX OUTPUT TOKENS
+1M
+TOKEN COSTS (IN/OUT)
+$4.00/20.00
+WEIGHTS
+PRIVATE
+INPUT MODALITIES
+
+ACCURACY
+
+70.45 % ± 0.97
+
+COST / TEST (VALS INDEX)
+
+$ 10.51
+
+LATENCY
+
+47 min 45 s
+
+ACCURACY
+COST
+LATENCY
+BENCHMARKS
+ACCURACY
+RANKINGS
+Vals Index
+
+70.45
+%
+
+±0.97
+2
+/
+34
+Vals Finance Index
+
+67.05
+%
+
+±1.43
+1
+/
+37
+Vals Legal Index
+
+75.93
+%
+
+±1.85
+3
+/
+35
+EMB v1.1
+
+76.47
+%
+
+±2.21
+2
+/
+39
+Finance Agent v2.1
+
+67.16
+%
+
+±2.02
+6
+/
+37
+Legal Research Bench
+
+55.77
+%
+
+±3.45
+1
+/
+91
+Tax Agent Bench
+
+51.78
+%
+
+±3.60
+1
+/
+82
+Vibe Code Bench v1.1
+
+89.06
+%
+
+±2.29
+8
+/
+125
+HLAB-Vals-1.1
+
+17.50
+%
+
+±3.00
+7
+/
+35
+Terminal-Bench 4.0
+
+63.13
+%
+
+±2.20
+4
+/
+61
+PROPRIETARY BENCHMARKS
+ACADEMIC BENCHMARKS
+INDUSTRY PARTNERS
+View Hyperparameter Settings
+Updates
+
+Oct 28, 2026
+
+Google's Gemini 4 Carbon evaluated on the Vals Index
+
+We evaluated Google’s new Gemini 4 Carbon on Vals Index v2.2 and its components.
+
+#2 of 29 on the Vals Index (70.36%) at $10.51 per test, behind Claude Sonnet 5.5 (70.85%) and ahead of Claude Opus 5.5 (70.18%).
+
+Leads on research and finance: #1 of 87 on Legal Research Bench (55.77%), #2 of 35 on EMB v1.1 (76.47%), #3 of 78 on Tax Agent Bench (48.86%) and #5 of 33 on Finance Agent v2.1 (67.16%).
+
+Strong on coding: #4 of 57 on Terminal-Bench 4.0 (63.13%) and 89.06% on Vibe Code Bench (#8 of 121). Weakest on HLAB-Vals-1.1 (17.50%, tied #6 of 30).
+
+Gemini 4 Carbon is priced at $4.00 per million input tokens and $20.00 per million output tokens. The model has a 1M-token context window. Evaluations were run with reasoning effort set to “high”.
+
+Congrats to the Google team on the release!
+
+BENCHMARKS
+MODELS
+COMPARISON
+VALS SMITH
+APP REPORTS
+ABOUT
+METHODOLOGY
+NEWS
+BLOG
+GOVERNMENT
+SECURITY
+CAREERS
+
+Copyright © 2026 Vals AI. All rights reserved.
+
+X (TWITTER)
+LINKEDIN

@@ -1,0 +1,1380 @@
+{
+ "result_count": 240,
+ "page_count": 12,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "99c3d924-9442-4ca2-b871-1fed72d3731b",
+   "title": "Give me the peace",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/634537",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=634537&format=mp32",
+   "creator": "BS",
+   "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Give me the peace\" by BS is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Zero Gravity -2010 mix-",
+    "foreign_landing_url": "https://www.jamendo.com/album/73592/zero-gravity-2010-mix",
+    "creator": "BS",
+    "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 312000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/99c3d924-9442-4ca2-b871-1fed72d3731b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/99c3d924-9442-4ca2-b871-1fed72d3731b/",
+   "related_url": "https://api.openverse.org/v1/audio/99c3d924-9442-4ca2-b871-1fed72d3731b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/99c3d924-9442-4ca2-b871-1fed72d3731b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5a849586-3737-4124-bef4-31ed8a8ded51",
+   "title": "Peace On Earth (Same Place)",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/6575",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=6575&format=mp32",
+   "creator": "Tryad",
+   "creator_url": "https://www.jamendo.com/artist/104/tryad",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "podcast",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace On Earth (Same Place)\" by Tryad is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Public Domain",
+    "foreign_landing_url": "https://www.jamendo.com/album/1003/public-domain",
+    "creator": "Tryad",
+    "creator_url": "https://www.jamendo.com/artist/104/tryad",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 229000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5a849586-3737-4124-bef4-31ed8a8ded51/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5a849586-3737-4124-bef4-31ed8a8ded51/",
+   "related_url": "https://api.openverse.org/v1/audio/5a849586-3737-4124-bef4-31ed8a8ded51/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5a849586-3737-4124-bef4-31ed8a8ded51/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1e90b338-b213-4f49-8933-96dd1e036944",
+   "title": "Peace Dream",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/989880",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=989880&format=mp32",
+   "creator": "Kellee Maize",
+   "creator_url": "https://www.jamendo.com/artist/357359/Kellee_Maize",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "hiphop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace Dream\" by Kellee Maize is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Owl Time (2013)",
+    "foreign_landing_url": "https://www.jamendo.com/album/116452/owl-time-2013",
+    "creator": "Kellee Maize",
+    "creator_url": "https://www.jamendo.com/artist/357359/Kellee_Maize",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 279000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1e90b338-b213-4f49-8933-96dd1e036944/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1e90b338-b213-4f49-8933-96dd1e036944/",
+   "related_url": "https://api.openverse.org/v1/audio/1e90b338-b213-4f49-8933-96dd1e036944/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1e90b338-b213-4f49-8933-96dd1e036944/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "93ff4fff-bae4-41f8-b046-283288664c87",
+   "title": "Peace on earth",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/764",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=764&format=mp32",
+   "creator": "Vavrek",
+   "creator_url": "https://www.jamendo.com/artist/103/vavrek",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "indie",
+    "indiepop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace on earth\" by Vavrek is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "00",
+    "foreign_landing_url": "https://www.jamendo.com/album/124/00",
+    "creator": "Vavrek",
+    "creator_url": "https://www.jamendo.com/artist/103/vavrek",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 220000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/93ff4fff-bae4-41f8-b046-283288664c87/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/93ff4fff-bae4-41f8-b046-283288664c87/",
+   "related_url": "https://api.openverse.org/v1/audio/93ff4fff-bae4-41f8-b046-283288664c87/related/",
+   "waveform": "https://api.openverse.org/v1/audio/93ff4fff-bae4-41f8-b046-283288664c87/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f27249b3-b7b0-4b19-a6eb-82f121caacc4",
+   "title": "Christmas Peace",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/704157",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=704157&format=mp32",
+   "creator": "Stefano Giardiniere",
+   "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "neoclassical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cello",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "christmas",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "weihnachtlich",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Christmas Peace\" by Stefano Giardiniere is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Winter Moments",
+    "foreign_landing_url": "https://www.jamendo.com/album/82106/winter-moments",
+    "creator": "Stefano Giardiniere",
+    "creator_url": "https://www.jamendo.com/artist/352844/Stefano_Giardiniere",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 353000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f27249b3-b7b0-4b19-a6eb-82f121caacc4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f27249b3-b7b0-4b19-a6eb-82f121caacc4/",
+   "related_url": "https://api.openverse.org/v1/audio/f27249b3-b7b0-4b19-a6eb-82f121caacc4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f27249b3-b7b0-4b19-a6eb-82f121caacc4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4329ae59-f835-4cb8-918b-d2a5fbf2d7e0",
+   "title": "Keep The Peace With Me",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/790461",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=790461&format=mp32",
+   "creator": "Matt Lammin",
+   "creator_url": "https://www.jamendo.com/artist/369321/Matt_Lammin",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Keep The Peace With Me\" by Matt Lammin is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Middle",
+    "foreign_landing_url": "https://www.jamendo.com/album/92784/the-middle",
+    "creator": "Matt Lammin",
+    "creator_url": "https://www.jamendo.com/artist/369321/Matt_Lammin",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 246000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4329ae59-f835-4cb8-918b-d2a5fbf2d7e0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4329ae59-f835-4cb8-918b-d2a5fbf2d7e0/",
+   "related_url": "https://api.openverse.org/v1/audio/4329ae59-f835-4cb8-918b-d2a5fbf2d7e0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4329ae59-f835-4cb8-918b-d2a5fbf2d7e0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "45f2f304-2e18-40ff-bf45-5adac9bf8289",
+   "title": "Dreams of Peace",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1004747",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1004747&format=mp32",
+   "creator": "Victor Hammer",
+   "creator_url": "https://www.jamendo.com/artist/430491/Victor_Hammer",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dreams of Peace\" by Victor Hammer is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Concert of the Soul",
+    "foreign_landing_url": "https://www.jamendo.com/album/118260/concert-of-the-soul",
+    "creator": "Victor Hammer",
+    "creator_url": "https://www.jamendo.com/artist/430491/Victor_Hammer",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 219000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/45f2f304-2e18-40ff-bf45-5adac9bf8289/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/45f2f304-2e18-40ff-bf45-5adac9bf8289/",
+   "related_url": "https://api.openverse.org/v1/audio/45f2f304-2e18-40ff-bf45-5adac9bf8289/related/",
+   "waveform": "https://api.openverse.org/v1/audio/45f2f304-2e18-40ff-bf45-5adac9bf8289/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a45eca06-c37a-4518-a8d0-257b8827b471",
+   "title": "A trip to the peace",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/131887",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=131887&format=mp32",
+   "creator": "Bruno Sauty",
+   "creator_url": "https://www.jamendo.com/artist/338050/Bruno_Sauty",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A trip to the peace\" by Bruno Sauty is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Voyages",
+    "foreign_landing_url": "https://www.jamendo.com/album/18648/voyages",
+    "creator": "Bruno Sauty",
+    "creator_url": "https://www.jamendo.com/artist/338050/Bruno_Sauty",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 322000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a45eca06-c37a-4518-a8d0-257b8827b471/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a45eca06-c37a-4518-a8d0-257b8827b471/",
+   "related_url": "https://api.openverse.org/v1/audio/a45eca06-c37a-4518-a8d0-257b8827b471/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a45eca06-c37a-4518-a8d0-257b8827b471/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "058dad0f-b4df-4e74-962c-49dd95bfe3a2",
+   "title": "Peace In Suffering",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1451009",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1451009&format=mp32",
+   "creator": "Color Out",
+   "creator_url": "https://www.jamendo.com/artist/479140/Color_Out",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "emo",
+    "poppunk",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocals",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace In Suffering\" by Color Out is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Forget Yesterday EP",
+    "foreign_landing_url": "https://www.jamendo.com/album/168634/forget-yesterday-ep",
+    "creator": "Color Out",
+    "creator_url": "https://www.jamendo.com/artist/479140/Color_Out",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 170000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/058dad0f-b4df-4e74-962c-49dd95bfe3a2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/058dad0f-b4df-4e74-962c-49dd95bfe3a2/",
+   "related_url": "https://api.openverse.org/v1/audio/058dad0f-b4df-4e74-962c-49dd95bfe3a2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/058dad0f-b4df-4e74-962c-49dd95bfe3a2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dfcbfeaa-5db4-4ea3-bb7b-af1350938aee",
+   "title": "World Peace",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/260193",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=260193&format=mp32",
+   "creator": "Torley on Piano",
+   "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"World Peace\" by Torley on Piano is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Holidium - Festive holiday piano!",
+    "foreign_landing_url": "https://www.jamendo.com/album/37222/holidium-festive-holiday-piano",
+    "creator": "Torley on Piano",
+    "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 236000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dfcbfeaa-5db4-4ea3-bb7b-af1350938aee/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dfcbfeaa-5db4-4ea3-bb7b-af1350938aee/",
+   "related_url": "https://api.openverse.org/v1/audio/dfcbfeaa-5db4-4ea3-bb7b-af1350938aee/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dfcbfeaa-5db4-4ea3-bb7b-af1350938aee/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7217fd46-3f73-4713-ae8f-25fe0125c42a",
+   "title": "Mac Cartnon's hymn to peace",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/74204",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=74204&format=mp32",
+   "creator": "Marc ANDR\u00c9",
+   "creator_url": "https://www.jamendo.com/artist/7489/marc.andre",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chansonfrancaise",
+    "country"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "anglaise",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "comedy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Mac Cartnon's hymn to peace\" by Marc ANDR\u00c9 is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Flopsy's wonderland",
+    "foreign_landing_url": "https://www.jamendo.com/album/6590/flopsy-s-wonderland",
+    "creator": "Marc ANDR\u00c9",
+    "creator_url": "https://www.jamendo.com/artist/7489/marc.andre",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 150000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7217fd46-3f73-4713-ae8f-25fe0125c42a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7217fd46-3f73-4713-ae8f-25fe0125c42a/",
+   "related_url": "https://api.openverse.org/v1/audio/7217fd46-3f73-4713-ae8f-25fe0125c42a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7217fd46-3f73-4713-ae8f-25fe0125c42a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dbfa352a-fec9-4c13-b7ef-3585465d6914",
+   "title": "peaceful night",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/418890",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=418890&format=mp32",
+   "creator": "St Adam",
+   "creator_url": "https://www.jamendo.com/artist/6038/stadam",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"peaceful night\" by St Adam is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "balaton",
+    "foreign_landing_url": "https://www.jamendo.com/album/51460/balaton",
+    "creator": "St Adam",
+    "creator_url": "https://www.jamendo.com/artist/6038/stadam",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 133000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dbfa352a-fec9-4c13-b7ef-3585465d6914/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dbfa352a-fec9-4c13-b7ef-3585465d6914/",
+   "related_url": "https://api.openverse.org/v1/audio/dbfa352a-fec9-4c13-b7ef-3585465d6914/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dbfa352a-fec9-4c13-b7ef-3585465d6914/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1cc3991a-4e4c-4a10-8d72-110506eab3f6",
+   "title": "Donde est\u00e0 el amor - Ghabby Ghaww & Dj Zahm feat. J-Peace & CMC",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/632412",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=632412&format=mp32",
+   "creator": "Ghabby Ghaww & Dj Zahm",
+   "creator_url": "https://www.jamendo.com/artist/362284/Ghabby_Ghaww_Dj_Zahm",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "reggaeton"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ballad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "hip",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Donde est\u00e0 el amor - Ghabby Ghaww & Dj Zahm feat. J-Peace & CMC\" by Ghabby Ghaww & Dj Zahm is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "El Extranjero",
+    "foreign_landing_url": "https://www.jamendo.com/album/73210/el-extranjero",
+    "creator": "Ghabby Ghaww & Dj Zahm",
+    "creator_url": "https://www.jamendo.com/artist/362284/Ghabby_Ghaww_Dj_Zahm",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 236000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1cc3991a-4e4c-4a10-8d72-110506eab3f6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1cc3991a-4e4c-4a10-8d72-110506eab3f6/",
+   "related_url": "https://api.openverse.org/v1/audio/1cc3991a-4e4c-4a10-8d72-110506eab3f6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1cc3991a-4e4c-4a10-8d72-110506eab3f6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c0048d4d-b6b6-4183-9668-387d4639241a",
+   "title": "06. Peace OF My Heart",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1199609",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1199609&format=mp32",
+   "creator": "Prospect Of Idiots",
+   "creator_url": "https://www.jamendo.com/artist/462229/Prospect_Of_Idiots",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "funk",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "heart",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "psychedelic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"06. Peace OF My Heart\" by Prospect Of Idiots is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Space Funk",
+    "foreign_landing_url": "https://www.jamendo.com/album/144294/space-funk",
+    "creator": "Prospect Of Idiots",
+    "creator_url": "https://www.jamendo.com/artist/462229/Prospect_Of_Idiots",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 179000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c0048d4d-b6b6-4183-9668-387d4639241a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c0048d4d-b6b6-4183-9668-387d4639241a/",
+   "related_url": "https://api.openverse.org/v1/audio/c0048d4d-b6b6-4183-9668-387d4639241a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c0048d4d-b6b6-4183-9668-387d4639241a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "263ef86e-3713-4ae1-b1a6-5f1cc7edfbc4",
+   "title": "Jesus real peace",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1555917",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1555917&format=mp32",
+   "creator": "Angelo God's Minstrel",
+   "creator_url": "https://www.jamendo.com/artist/496620/Angelo_God's_Minstrel",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "christian"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "inspirational",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soundscape",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Jesus real peace\" by Angelo God's Minstrel is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Spontaneous Guitar Worship - Vol. 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/177616/spontaneous-guitar-worship-vol-2",
+    "creator": "Angelo God's Minstrel",
+    "creator_url": "https://www.jamendo.com/artist/496620/Angelo_God's_Minstrel",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 599000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/263ef86e-3713-4ae1-b1a6-5f1cc7edfbc4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/263ef86e-3713-4ae1-b1a6-5f1cc7edfbc4/",
+   "related_url": "https://api.openverse.org/v1/audio/263ef86e-3713-4ae1-b1a6-5f1cc7edfbc4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/263ef86e-3713-4ae1-b1a6-5f1cc7edfbc4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f319f3cb-e997-47a3-bed0-15bfe05b7fef",
+   "title": "Peace",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/766433",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=766433&format=mp32",
+   "creator": "La Compagnie Cuanol",
+   "creator_url": "https://www.jamendo.com/artist/354158/La_Compagnie_Cuanol",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "reggae"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "wind",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace\" by La Compagnie Cuanol is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Luna TicTac",
+    "foreign_landing_url": "https://www.jamendo.com/album/89762/luna-tictac",
+    "creator": "La Compagnie Cuanol",
+    "creator_url": "https://www.jamendo.com/artist/354158/La_Compagnie_Cuanol",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 223000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f319f3cb-e997-47a3-bed0-15bfe05b7fef/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f319f3cb-e997-47a3-bed0-15bfe05b7fef/",
+   "related_url": "https://api.openverse.org/v1/audio/f319f3cb-e997-47a3-bed0-15bfe05b7fef/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f319f3cb-e997-47a3-bed0-15bfe05b7fef/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "33b48c66-85c9-46f7-9aa0-a50f533a8075",
+   "title": "Peace",
+   "indexed_on": "2023-07-01T12:41:11.500001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1081247",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1081247&format=mp32",
+   "creator": "DJ Answer",
+   "creator_url": "https://www.jamendo.com/artist/336818/DJ_Answer",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/se/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "epic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "moviemusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace\" by DJ Answer is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/se/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Sandra",
+    "foreign_landing_url": "https://www.jamendo.com/album/128795/sandra",
+    "creator": "DJ Answer",
+    "creator_url": "https://www.jamendo.com/artist/336818/DJ_Answer",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 504000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/33b48c66-85c9-46f7-9aa0-a50f533a8075/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/33b48c66-85c9-46f7-9aa0-a50f533a8075/",
+   "related_url": "https://api.openverse.org/v1/audio/33b48c66-85c9-46f7-9aa0-a50f533a8075/related/",
+   "waveform": "https://api.openverse.org/v1/audio/33b48c66-85c9-46f7-9aa0-a50f533a8075/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7f36d30b-22a6-44ab-b668-b41eca739d2b",
+   "title": "Indicazo - Inner peace",
+   "indexed_on": "2023-07-01T12:41:11.500001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1045782",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1045782&format=mp32",
+   "creator": "Indicazo",
+   "creator_url": "https://www.jamendo.com/artist/435307/Indicazo",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "power",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Indicazo - Inner peace\" by Indicazo is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/nl/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Inner Peace",
+    "foreign_landing_url": "https://www.jamendo.com/album/123224/inner-peace",
+    "creator": "Indicazo",
+    "creator_url": "https://www.jamendo.com/artist/435307/Indicazo",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 235000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7f36d30b-22a6-44ab-b668-b41eca739d2b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7f36d30b-22a6-44ab-b668-b41eca739d2b/",
+   "related_url": "https://api.openverse.org/v1/audio/7f36d30b-22a6-44ab-b668-b41eca739d2b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7f36d30b-22a6-44ab-b668-b41eca739d2b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0c5f180e-b607-43e0-9bfe-d108f0293776",
+   "title": "Give me the peace",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/503584",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=503584&format=mp32",
+   "creator": "BS",
+   "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "eurodance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Give me the peace\" by BS is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The dark side of the light",
+    "foreign_landing_url": "https://www.jamendo.com/album/59002/the-dark-side-of-the-light",
+    "creator": "BS",
+    "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 385000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0c5f180e-b607-43e0-9bfe-d108f0293776/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0c5f180e-b607-43e0-9bfe-d108f0293776/",
+   "related_url": "https://api.openverse.org/v1/audio/0c5f180e-b607-43e0-9bfe-d108f0293776/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0c5f180e-b607-43e0-9bfe-d108f0293776/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4269b1ae-83ab-4f7a-8a40-c959bb5b61a0",
+   "title": "Peace",
+   "indexed_on": "2022-05-01T07:20:02.881192Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/396927",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=396927&format=mp32",
+   "creator": "J.Blasco",
+   "creator_url": "https://www.jamendo.com/artist/5390/j.blasco",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Peace\" by J.Blasco is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Electro House",
+    "foreign_landing_url": "https://www.jamendo.com/album/49687/electro-house",
+    "creator": "J.Blasco",
+    "creator_url": "https://www.jamendo.com/artist/5390/j.blasco",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 440000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4269b1ae-83ab-4f7a-8a40-c959bb5b61a0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4269b1ae-83ab-4f7a-8a40-c959bb5b61a0/",
+   "related_url": "https://api.openverse.org/v1/audio/4269b1ae-83ab-4f7a-8a40-c959bb5b61a0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4269b1ae-83ab-4f7a-8a40-c959bb5b61a0/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

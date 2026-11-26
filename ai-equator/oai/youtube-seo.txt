@@ -1,0 +1,55 @@
+TITLE (pick one)
+1. GPT-6.2 Astra Review: Beats Fable 5.2 for 1/20th the Cost… But Testers Are Split
+2. OpenAI's GPT-6.2 Astra Is Here: Benchmarks, Price, and the Catch
+3. GPT-6.2 Astra vs Claude Fable 5.2: The Closest AI Race Yet
+Recommended: 1
+
+DESCRIPTION
+OpenAI just released GPT-6.2 Astra and GPT-6.2 Sol. Astra beats Claude Fable 5.2 on Agents' Last Exam at a fraction of the cost per task, tops Artificial Analysis' human-graded 3D test, and it's the first model OpenAI has ever released rated High for AI self-improvement. But early testers are split: Max Weinbach calls it extremely smart, while Theo calls it the worst model OpenAI has ever released. In this review: what's new, the price (and why price per task matters more than price per token), every key benchmark against Fable 5.2 and Gemini 4 Carbon, where it loses, coding, the safety report finding you need to know, what people built, and whether you should use it.
+
+⏱️ CHAPTERS
+0:00 GPT-6.2 Astra is here
+0:41 Two models: Astra and Sol
+1:25 The price (and price per task)
+1:54 Benchmarks: Agents' Last Exam
+2:22 Terminal-Bench Science
+2:34 Legal + Astra for Law
+2:53 Interactive 3D
+3:08 Where it loses
+3:24 Artificial Analysis + Epoch indexes
+4:04 Coding: no big jump
+4:21 Sol, the sleeper hit
+4:36 First model rated High for AI self-improvement
+5:16 Critical for cybersecurity
+5:37 What people built
+6:32 Where it gets messy
+7:15 The safety report finding
+7:50 Should you use it?
+8:22 My take
+
+🔗 SOURCES
+OpenAI launch post: https://x.com/OpenAI/status/2122750124543926515
+OpenAI blog: https://openai.com/index/introducing-gpt-6-2-astra-sol/
+GPT-6.2 system card: https://deploymentsafety.openai.com/gpt-6-2-astra-sol
+OpenAI Developers thread (charts, RC buggy demo): https://x.com/OpenAIDevs/status/2122752442240827467
+Astra for Law: https://openai.com/index/astra-law-6-2/
+Artificial Analysis: https://artificialanalysis.ai/articles/openai-has-the-2-model-in-the-intelligence-index-with-the-release-of-gpt-6-2-astra-and-gpt-6-2-sol
+Artificial Analysis post: https://x.com/ArtificialAnlys/status/2122750634210529569
+Epoch AI (ECI): https://x.com/EpochAIResearch/status/2122762380463735010
+Ethan Mollick: https://x.com/emollick/status/2122755693191287009
+Theo: https://x.com/theo/status/2122757647170703550 · https://x.com/theo/status/2122760447103484410
+Dan Shipper: https://x.com/danshipper/status/2122754729012777052
+Max Weinbach: https://x.com/mweinbach/status/2122751346365591923
+Matt Shumer: https://x.com/mattshumer_/status/2122752192226406421
+SecurityWeek (Nov 12 event): https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/
+
+💬 Which one are you using right now, Astra or Fable? Tell me in the comments.
+🔔 Subscribe to AI Equator for AI news, explained without the hype.
+
+#GPT62 #OpenAI #GPT62Astra #ChatGPT #AINews #ClaudeFable #AI #LLM
+
+TAGS (under 500 characters)
+gpt 6.2,gpt-6.2 astra,gpt 6.2 astra review,openai,gpt 6.2 sol,openai new model,chatgpt,gpt 6.2 vs claude,claude fable 5.2,gemini 4 carbon,ai benchmarks,agents last exam,ai news,new ai model,openai system card,ai self improvement,codex,ai model review,artificial analysis,epoch ai,ai equator
+
+PINNED COMMENT
+Source check: a few voiceover lines differ from the sources, so the video shows them on screen. GPT-6.2 is in ChatGPT Work and Codex (not the regular Plus plan). Cyber "Critical" isn't new: GPT-6 Astra had it too. Sol matches GPT-6 Astra at ~15% of GPT-6 Astra's cost per task. Theo's "smaller compiler" isn't confirmed in his post. Astra or Fable: which are you using?

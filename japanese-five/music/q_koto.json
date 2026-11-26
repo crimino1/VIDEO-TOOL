@@ -1,0 +1,1094 @@
+{
+ "result_count": 15,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "71de2a9f-9758-46ca-8a98-6387b02a05fb",
+   "title": "Koto",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/577739",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=577739&format=mp32",
+   "creator": "Transformation",
+   "creator_url": "https://www.jamendo.com/artist/357251/Transformation",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Koto\" by Transformation is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Haunter House",
+    "foreign_landing_url": "https://www.jamendo.com/album/68360/haunter-house",
+    "creator": "Transformation",
+    "creator_url": "https://www.jamendo.com/artist/357251/Transformation",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 123000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/71de2a9f-9758-46ca-8a98-6387b02a05fb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/71de2a9f-9758-46ca-8a98-6387b02a05fb/",
+   "related_url": "https://api.openverse.org/v1/audio/71de2a9f-9758-46ca-8a98-6387b02a05fb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/71de2a9f-9758-46ca-8a98-6387b02a05fb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "be8d1f0d-0bfc-4470-bd92-405fc58a61c5",
+   "title": "Koto",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/306604",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=306604&format=mp32",
+   "creator": "The Whisky project",
+   "creator_url": "https://www.jamendo.com/artist/338221/The_Whisky_project",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Koto\" by The Whisky project is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "lost & found",
+    "foreign_landing_url": "https://www.jamendo.com/album/41661/lost-and-found",
+    "creator": "The Whisky project",
+    "creator_url": "https://www.jamendo.com/artist/338221/The_Whisky_project",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 69000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/be8d1f0d-0bfc-4470-bd92-405fc58a61c5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/be8d1f0d-0bfc-4470-bd92-405fc58a61c5/",
+   "related_url": "https://api.openverse.org/v1/audio/be8d1f0d-0bfc-4470-bd92-405fc58a61c5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/be8d1f0d-0bfc-4470-bd92-405fc58a61c5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a0c602fc-cbee-44cd-bb93-0e481106be3a",
+   "title": "16 - Koto Beat",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1293904",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1293904&format=mp32",
+   "creator": "Crise2nerf",
+   "creator_url": "https://www.jamendo.com/artist/479390/crise2nerf",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sample",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"16 - Koto Beat\" by Crise2nerf is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Crise2nerf - Second Vibes Beat Tape",
+    "foreign_landing_url": "https://www.jamendo.com/album/154078/crise2nerf-second-vibes-beat-tape",
+    "creator": "Crise2nerf",
+    "creator_url": "https://www.jamendo.com/artist/479390/crise2nerf",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 200000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a0c602fc-cbee-44cd-bb93-0e481106be3a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a0c602fc-cbee-44cd-bb93-0e481106be3a/",
+   "related_url": "https://api.openverse.org/v1/audio/a0c602fc-cbee-44cd-bb93-0e481106be3a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a0c602fc-cbee-44cd-bb93-0e481106be3a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ee665b0d-61d4-463e-adce-804f883fcce4",
+   "title": "Handel Sonata C iter",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1356016",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1356016&format=mp32",
+   "creator": "Re-Lab",
+   "creator_url": "https://www.jamendo.com/artist/346032/Re-Lab",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "darkambient",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "stringspiccato",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Handel Sonata C iter\" by Re-Lab is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Handel: Sonata C - Adagio",
+    "foreign_landing_url": "https://www.jamendo.com/album/159830/handel-sonata-c-adagio",
+    "creator": "Re-Lab",
+    "creator_url": "https://www.jamendo.com/artist/346032/Re-Lab",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 211000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ee665b0d-61d4-463e-adce-804f883fcce4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ee665b0d-61d4-463e-adce-804f883fcce4/",
+   "related_url": "https://api.openverse.org/v1/audio/ee665b0d-61d4-463e-adce-804f883fcce4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ee665b0d-61d4-463e-adce-804f883fcce4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a49855f0-460d-4a6d-8b73-d524527529c5",
+   "title": "Om Mani Padme Hum",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1505591",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1505591&format=mp32",
+   "creator": "Motokiyo",
+   "creator_url": "https://www.jamendo.com/artist/505626/Motokiyo",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chansonfrancaise",
+    "experimental",
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "percussion",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "shakuhachi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Om Mani Padme Hum\" by Motokiyo is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2014",
+    "foreign_landing_url": "https://www.jamendo.com/album/173301/2014",
+    "creator": "Motokiyo",
+    "creator_url": "https://www.jamendo.com/artist/505626/Motokiyo",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 247000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/",
+   "related_url": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "50ec10d3-5ca4-4d51-997d-5a9ac3bec0f4",
+   "title": "03 Hypocondriaque",
+   "indexed_on": "2024-01-01T16:22:33.076923Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2139205",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2139205&format=mp32",
+   "creator": "Mike Rain",
+   "creator_url": "https://www.jamendo.com/artist/501902/Mike_Rain",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "metal",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_veryhigh",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"03 Hypocondriaque\" by Mike Rain is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le deluge artistique",
+    "foreign_landing_url": "https://www.jamendo.com/album/552351/le-deluge-artistique",
+    "creator": "Mike Rain",
+    "creator_url": "https://www.jamendo.com/artist/501902/Mike_Rain",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 378000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/50ec10d3-5ca4-4d51-997d-5a9ac3bec0f4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/50ec10d3-5ca4-4d51-997d-5a9ac3bec0f4/",
+   "related_url": "https://api.openverse.org/v1/audio/50ec10d3-5ca4-4d51-997d-5a9ac3bec0f4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/50ec10d3-5ca4-4d51-997d-5a9ac3bec0f4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "104c5275-ba9f-4840-8030-d44e4754ec71",
+   "title": "Bushido Flava - Kutinava",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1872888",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1872888&format=mp32",
+   "creator": "Bushido Flava",
+   "creator_url": "https://www.jamendo.com/artist/475205/povenamprod",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "trap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "powerful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bushido Flava - Kutinava\" by Bushido Flava is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Samurai in fog",
+    "foreign_landing_url": "https://www.jamendo.com/album/449527/samurai-in-fog",
+    "creator": "Bushido Flava",
+    "creator_url": "https://www.jamendo.com/artist/475205/povenamprod",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 263000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/104c5275-ba9f-4840-8030-d44e4754ec71/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/104c5275-ba9f-4840-8030-d44e4754ec71/",
+   "related_url": "https://api.openverse.org/v1/audio/104c5275-ba9f-4840-8030-d44e4754ec71/related/",
+   "waveform": "https://api.openverse.org/v1/audio/104c5275-ba9f-4840-8030-d44e4754ec71/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "210615a0-b710-4fbb-904e-bb97b2dbcfb9",
+   "title": "Bushido Flava - Yoshi",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1872885",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1872885&format=mp32",
+   "creator": "Bushido Flava",
+   "creator_url": "https://www.jamendo.com/artist/475205/povenamprod",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ethno",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bushido Flava - Yoshi\" by Bushido Flava is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Samurai in fog",
+    "foreign_landing_url": "https://www.jamendo.com/album/449527/samurai-in-fog",
+    "creator": "Bushido Flava",
+    "creator_url": "https://www.jamendo.com/artist/475205/povenamprod",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 90000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/210615a0-b710-4fbb-904e-bb97b2dbcfb9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/210615a0-b710-4fbb-904e-bb97b2dbcfb9/",
+   "related_url": "https://api.openverse.org/v1/audio/210615a0-b710-4fbb-904e-bb97b2dbcfb9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/210615a0-b710-4fbb-904e-bb97b2dbcfb9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d08896bc-0ae9-41e1-9245-ba2fe5ecf078",
+   "title": "Catching the Sunrise",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1440844",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1440844&format=mp32",
+   "creator": "DJ Hard",
+   "creator_url": "https://www.jamendo.com/artist/367586/FatalBomb_aka_DJ_Hard",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electronic",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "fmsynthesis",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Catching the Sunrise\" by DJ Hard is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Outcome",
+    "foreign_landing_url": "https://www.jamendo.com/album/167717/outcome",
+    "creator": "DJ Hard",
+    "creator_url": "https://www.jamendo.com/artist/367586/FatalBomb_aka_DJ_Hard",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 251000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d08896bc-0ae9-41e1-9245-ba2fe5ecf078/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d08896bc-0ae9-41e1-9245-ba2fe5ecf078/",
+   "related_url": "https://api.openverse.org/v1/audio/d08896bc-0ae9-41e1-9245-ba2fe5ecf078/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d08896bc-0ae9-41e1-9245-ba2fe5ecf078/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c14d8b56-d8fa-4b1f-bc83-fe96aaab5424",
+   "title": "invasion alien presidentiel 3",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1733175",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1733175&format=mp32",
+   "creator": "asdeuzicks",
+   "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "grindcore",
+    "grunge",
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "doublebass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"invasion alien presidentiel 3\" by asdeuzicks is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "cosmos style - partie 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/191475/cosmos-style-partie-3",
+    "creator": "asdeuzicks",
+    "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 389000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c14d8b56-d8fa-4b1f-bc83-fe96aaab5424/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c14d8b56-d8fa-4b1f-bc83-fe96aaab5424/",
+   "related_url": "https://api.openverse.org/v1/audio/c14d8b56-d8fa-4b1f-bc83-fe96aaab5424/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c14d8b56-d8fa-4b1f-bc83-fe96aaab5424/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "87fc1ee1-3b6d-43a0-ae11-65f9e5f0901c",
+   "title": "troufion vs vaginax 2",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1674859",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1674859&format=mp32",
+   "creator": "asdeuzicks",
+   "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chamber",
+    "chansonfrancaise",
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "religious",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_veryhigh",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"troufion vs vaginax 2\" by asdeuzicks is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "cosmos style - partie 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/186821/cosmos-style-partie-2",
+    "creator": "asdeuzicks",
+    "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 321000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/87fc1ee1-3b6d-43a0-ae11-65f9e5f0901c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/87fc1ee1-3b6d-43a0-ae11-65f9e5f0901c/",
+   "related_url": "https://api.openverse.org/v1/audio/87fc1ee1-3b6d-43a0-ae11-65f9e5f0901c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/87fc1ee1-3b6d-43a0-ae11-65f9e5f0901c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2b9f2319-b5da-4c99-b931-ecb3ea88fc2a",
+   "title": "juste un bedo du cosmos 9",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1733242",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1733242&format=mp32",
+   "creator": "asdeuzicks",
+   "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "hiphop",
+    "indiepop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "90s",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "kanun",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"juste un bedo du cosmos 9\" by asdeuzicks is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "cosmos style - partie 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/191475/cosmos-style-partie-3",
+    "creator": "asdeuzicks",
+    "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 751000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2b9f2319-b5da-4c99-b931-ecb3ea88fc2a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2b9f2319-b5da-4c99-b931-ecb3ea88fc2a/",
+   "related_url": "https://api.openverse.org/v1/audio/2b9f2319-b5da-4c99-b931-ecb3ea88fc2a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2b9f2319-b5da-4c99-b931-ecb3ea88fc2a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "78850a16-80e4-4a6b-883c-4eb3bb85b1c6",
+   "title": "\u0421\u0432\u043e\u0431\u043e\u0434\u0430",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1614933",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1614933&format=mp32",
+   "creator": "\u041a\u043e$\u043c\u043e\u043d@\u0432\u0442",
+   "creator_url": "https://www.jamendo.com/artist/514293/S_a",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rap",
+    "trap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"\u0421\u0432\u043e\u0431\u043e\u0434\u0430\" by \u041a\u043e$\u043c\u043e\u043d@\u0432\u0442 is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "\u041a\u043e$\u043c\u043e\u043d@\u0432\u0442 - \u041e\u0442\u0440\u0430\u0436\u0435\u043d\u0438\u0435",
+    "foreign_landing_url": "https://www.jamendo.com/album/182291/kousdmon-vt-otrazhenie",
+    "creator": "\u041a\u043e$\u043c\u043e\u043d@\u0432\u0442",
+    "creator_url": "https://www.jamendo.com/artist/514293/S_a",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 257000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/78850a16-80e4-4a6b-883c-4eb3bb85b1c6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/78850a16-80e4-4a6b-883c-4eb3bb85b1c6/",
+   "related_url": "https://api.openverse.org/v1/audio/78850a16-80e4-4a6b-883c-4eb3bb85b1c6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/78850a16-80e4-4a6b-883c-4eb3bb85b1c6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e7b34d90-cb42-428b-a032-301ec7b91a51",
+   "title": "il voyage dans l uni vert",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1733173",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1733173&format=mp32",
+   "creator": "asdeuzicks",
+   "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "cabaret",
+    "chansonfrancaise",
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"il voyage dans l uni vert\" by asdeuzicks is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "cosmos style - partie 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/191475/cosmos-style-partie-3",
+    "creator": "asdeuzicks",
+    "creator_url": "https://www.jamendo.com/artist/511305/asdeuzicks_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 1164000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e7b34d90-cb42-428b-a032-301ec7b91a51/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e7b34d90-cb42-428b-a032-301ec7b91a51/",
+   "related_url": "https://api.openverse.org/v1/audio/e7b34d90-cb42-428b-a032-301ec7b91a51/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e7b34d90-cb42-428b-a032-301ec7b91a51/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8591ed59-2e4a-48c4-9d4e-14d98d720a14",
+   "title": "\u0428\u0435\u043b\u044c\u043c\u0430",
+   "indexed_on": "2025-08-01T16:31:00.832064Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2259211",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2259211&format=mp32",
+   "creator": "\u041a\u043e$\u043c\u043e\u043d@\u0432\u0442",
+   "creator_url": "https://www.jamendo.com/artist/514293/S_a",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rap",
+    "trap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"\u0428\u0435\u043b\u044c\u043c\u0430\" by \u041a\u043e$\u043c\u043e\u043d@\u0432\u0442 is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "\u041c\u043e\u0440\u0442\u0438\u0434\u043e",
+    "foreign_landing_url": "https://www.jamendo.com/album/605888/mortido",
+    "creator": "\u041a\u043e$\u043c\u043e\u043d@\u0432\u0442",
+    "creator_url": "https://www.jamendo.com/artist/514293/S_a",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 160000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8591ed59-2e4a-48c4-9d4e-14d98d720a14/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8591ed59-2e4a-48c4-9d4e-14d98d720a14/",
+   "related_url": "https://api.openverse.org/v1/audio/8591ed59-2e4a-48c4-9d4e-14d98d720a14/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8591ed59-2e4a-48c4-9d4e-14d98d720a14/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

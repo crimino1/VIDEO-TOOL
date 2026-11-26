@@ -1,0 +1,72 @@
+TITLE (pick one)
+1. Inkling 2 Mini: New 26B Open Model That Beats Qwen at Coding (Runs on a Laptop)
+2. This New 26B Model Beats Qwen 3.8 and Runs on Your Mac | Inkling 2 Mini
+3. Inkling 2 Mini Just Beat Qwen, and It's Only 26B Parameters
+4. New 26B Model Beats Qwen at Coding: Inkling 2 Mini Tested (Mac + GPU Speeds)
+5. Inkling 2 Mini: The Small Open Model That Beats Qwen 3.8 27B
+Recommended: 1
+(Kept at 26B, not 30B: the real size is 26.4B. "Beats Qwen" holds for coding agents; on the overall Intelligence Index they're tied, and the video says so.)
+
+DESCRIPTION
+Thinking Machines (Mira Murati's lab) released Inkling 2 Mini on November 20, 2026: an open-weights, 26.4B-parameter looped mixture-of-experts model (3.4B active) that runs on a 32 GB Mac. Its middle 12 layers run three times per token, so it gets 48 layer passes from 24 stored layers. In this video: what it is and how the loop works, Thinking Machines' own demos, real tests from people who ran it (agent harness builds, a blind test against Qwen where Inkling won 2 of 3 rounds, coding, vision, and where it broke), measured tokens per second on Mac mini, MacBook, Mac Studio, RTX 3060/3090/4060/4090/5090 and DGX Spark, prefill and memory, the benchmarks against Qwen 3.8 27B, Gemma 4 31B, Muse Glimmer and Nemotron, cost per task, and who should and shouldn't use it.
+
+Honest note: my editing laptop has 16 GB of RAM, so I didn't run it myself. Every test shown is credited on screen and linked below. Speeds are community measurements, not official numbers. The 210 tok/s figure is Exo Labs' (launch partner) claim. Vals' own page shows 44.03%, not the 46.5% Thinking Machines quotes.
+
+⏱️ CHAPTERS
+0:00 Inkling 2 Mini, explained
+0:34 Who made it
+1:04 Specs
+1:39 The loop, explained
+2:53 Trained in 4-bit
+3:16 Real tests (I couldn't run it)
+3:40 Flight sim and Thinkyville
+4:27 Ollama 2048 and a floating island
+4:59 YouTube tests: harness and blind test
+6:00 Coding, vision, and where it broke
+6:59 Changing the loop count
+7:39 Tokens per second on Macs
+8:18 Nvidia GPUs, the 210 claim, cloud speed
+9:11 Prefill and memory
+10:12 Benchmarks vs Qwen, Gemma, Nemotron, Muse
+11:37 Cost, Vals, DeepSeek and gpt-oss
+12:42 Frontier perspective
+13:04 Who should use it, and who shouldn't
+14:02 My take
+
+🔗 SOURCES
+Thinking Machines, "Introducing Inkling 2 Mini": https://thinkingmachines.ai/news/inkling-2-mini/
+Model card: https://huggingface.co/thinkingmachines/Inkling-2-Mini
+Launch thread: https://x.com/thinkymachines/status/2123871643797995872
+Artificial Analysis (model page): https://artificialanalysis.ai/models/inkling-2-mini
+Artificial Analysis (small open models): https://artificialanalysis.ai/models/open-source/small
+Vals: https://www.vals.ai/models/thinkingmachines_inkling-2-mini
+Unsloth guide and GGUF sizes: https://unsloth.ai/docs/models/inkling-2-mini
+Mac mini M5 Pro benchmark: https://huggingface.co/datasets/pratikgx/inkling-2-mini-m5-pro-mac-mini-bench
+MacBook Pro M4 Pro speed: https://flaviocopes.com/inkling-2-mini/
+Mac Studio M5 Ultra (oMLX): https://omlx.ai/benchmarks/performance/t3gjl6vk
+DGX Spark: https://github.com/tonyd2wild/Inkling-2-Mini-NVFP4-DGX-Spark
+RTX 3090: https://github.com/tonyd2wild/Inkling-2-Mini-W4A16-RTX3090
+RTX 4090: https://huggingface.co/IndrasMirror/Inkling-2-Mini-XQ-Uncensored
+Ollama 2048 demo: https://x.com/ollama/status/2123889582303281557
+Floating island (RTX 3090): https://x.com/ItsmeAjayKV/status/2124093650120687984
+RTX 4060 test: https://x.com/analogalok/status/2124135141555720653
+RTX 3060 prefill: https://x.com/DogukanUrker/status/2124072810431537504
+Exo Labs claim: https://x.com/exolabs/status/2123953913342935486
+Memory at long context: https://x.com/lasse_ai/status/2124066983276654994
+Square Pc review (RTX 5090): https://www.youtube.com/watch?v=RyZDSKOwCZ0
+Otis's AI Lab blind test: https://www.youtube.com/watch?v=u-VvvCmyr-E
+AI WITH Rithesh (MacBook Air tests, loop count): https://www.youtube.com/watch?v=TmsF-1t_ej8
+Artificial Analysis leaderboard: https://artificialanalysis.ai/leaderboards/models
+DeepSeek V4.1 Flash: https://openrouter.ai/models/deepseek/deepseek-v4.1-flash-20260910
+Mira Murati photo: SWinxy, CC BY 4.0, Wikimedia Commons
+
+💬 Tried it? What tokens per second do you get on your machine?
+🔔 Subscribe for more AI news.
+
+#Inkling2Mini #ThinkingMachines #LocalLLM #OpenSourceAI #Qwen #AINews #LLM
+
+TAGS (under 500 characters)
+inkling 2 mini,thinking machines,mira murati,local llm,run ai locally,looped transformer,inkling 2 mini vs qwen,qwen 3.8 27b,gemma 4,open weights model,tokens per second,mac mini ai,rtx 4090 llm,ollama,lm studio,artificial analysis,ai news,ai equator
+
+PINNED COMMENT
+I didn't run this one myself (16 GB laptop), so every test here is someone else's, credited and linked. Speeds are community numbers and vary a lot by runtime and quant. What do you get on your machine? Drop your hardware and tokens per second below.

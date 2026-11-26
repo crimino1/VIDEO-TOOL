@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="214.080" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s109" class="clip" data-start="0.000" data-duration="20.020" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s109k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o110" class="line" style="opacity:0">The hidden shape would write the laws of physics.</div></div>
+<div id="s111" class="clip" data-start="20.020" data-duration="14.060" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="pn112" style="opacity:0"><div class="pname" style="left:160px;top:430px;width:720px;font-size:84px">John Schwarz</div><div class="pmeta" style="left:160px;top:540px">b. 1941</div></div><div style="position:absolute;left:920px;top:400px;width:1px;height:240px;background:rgba(241,239,233,.3)"></div><div id="pn113" style="opacity:0"><div class="pname" style="left:960px;top:430px;width:720px;font-size:84px">Michael Green</div><div class="pmeta" style="left:960px;top:540px">b. 1946</div></div><div id="o114" class="capt" style="opacity:0">Summer 1984</div></div>
+<div id="s115" class="clip" data-start="34.080" data-duration="8.020" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb116" style="position:absolute;inset:0"><img src="assets/img_s/full_hall.jpg" alt="full_hall"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o117" class="cap" style="opacity:0">Hundreds of physicists switched to strings</div></div>
+<div id="s118" class="clip" data-start="42.100" data-duration="21.500" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s118k"></div><div class="vig"></div></div>
+<div id="s119" class="clip" data-start="63.600" data-duration="8.760" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb120" style="position:absolute;inset:0"><img src="assets/img_s/usc.jpg" alt="usc"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o121" class="cap" style="opacity:0">University of Southern California · 1995</div></div>
+<div id="s122" class="clip" data-start="72.360" data-duration="5.720" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:658px"><img id="kb123" src="assets/img_s/witten.jpg" alt="witten"></div><div id="pn124" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:802px">Edward Witten</div><div class="pmeta" style="left:160px;top:530px">Physicist · b. 1951</div></div></div>
+<div id="s125" class="clip" data-start="78.080" data-duration="3.140" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s125k"></div><div class="vig"></div></div>
+<div id="s126" class="clip" data-start="81.220" data-duration="11.520" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s126k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o127" class="line" style="opacity:0">Same can, different shadows.</div></div>
+<div id="s128" class="clip" data-start="92.740" data-duration="21.740" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s128k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o129" class="cap" style="opacity:0">M-theory · 11 dimensions</div><div id="o130" class="line" style="opacity:0">Magic, mystery, or membrane.</div></div>
+<div id="s131" class="clip" data-start="114.480" data-duration="12.140" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s131k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o132" class="line" style="opacity:0">The middle is still blank.</div></div>
+<div id="s133" class="clip" data-start="126.620" data-duration="13.300" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s133k"></div><div class="vig"></div></div>
+<div id="s134" class="clip" data-start="139.920" data-duration="24.420" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s134k"></div><div class="vig"></div><div id="o135" class="big" style="opacity:0">10<sup style='font-size:.5em'>500</sup><small>possible shapes</small></div><div id="o136" class="big" style="opacity:0">10<sup style='font-size:.5em'>80</sup><small>atoms in the visible universe</small></div></div>
+<div id="s137" class="clip" data-start="164.340" data-duration="19.520" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s137k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o138" class="line" style="opacity:0">Which one is ours?</div><div id="o139" class="line" style="opacity:0">Nobody knows who&#x27;s right.</div></div>
+<div id="s140" class="clip" data-start="183.860" data-duration="3.320" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o141" class="big" style="opacity:0">Can't we just look for the strings?</div><div id="o142" class="big" style="opacity:0">No.</div></div>
+<div id="s143" class="clip" data-start="187.180" data-duration="7.380" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s143k"></div><div class="vig"></div></div>
+<div id="s144" class="clip" data-start="194.560" data-duration="8.720" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb145" style="position:absolute;inset:0"><img src="assets/img_s/lhc.jpg" alt="lhc"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o146" class="cap" style="opacity:0">Large Hadron Collider · 27 km</div><div id="o147" class="cap" style="opacity:0">Higgs boson · 2012</div></div>
+<div id="s148" class="clip" data-start="203.280" data-duration="10.800" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s148k"></div><div class="vig"></div></div>
+
+</div>
+<script>window.LAB = [[0.0, 20.02, "curled", {"mode": "grid", "FT0": 418.52}], [42.1, 63.6, "five", {"mode": "five", "FT0": 460.62}], [78.08, 81.22, "five", {"mode": "merge", "FT0": 496.6}], [81.22, 92.74, "soupcan", {"mode": "full", "FT0": 499.74}], [92.74, 114.48, "brane", {"mode": "full", "FT0": 511.26}], [114.48, 126.62, "puzzle", {"mode": "full", "FT0": 533.0}], [126.62, 139.92, "curled", {"mode": "one", "FT0": 545.14}], [139.92, 164.34, "landscape", {"mode": "count", "FT0": 558.44}], [164.34, 183.86, "landscape", {"mode": "which", "FT0": 582.86}], [187.18, 194.56, "collision", {"mode": "full", "FT0": 605.7}], [203.28, 214.08, "lhc", {"mode": "galaxy", "FT0": 621.8}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_cosmos.js"></script>
+<script src="assets/js/k_dims.js"></script>
+<script src="assets/js/k_ideas.js"></script>
+<script src="assets/js/k_micro.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s109k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#o110",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},16.820);
+tl.to("#o110",{opacity:0,duration:0.5,ease:"power1.inOut"},19.280);
+tl.fromTo("#pn112",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},20.370);
+tl.fromTo("#pn113",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},20.820);
+tl.fromTo("#s111",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},20.020);
+tl.fromTo("#o114",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},20.780);
+tl.fromTo("#kb116",{scale:1.0},{scale:1.06,duration:8.020,ease:"none"},34.080);
+tl.fromTo("#s115",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},34.080);
+tl.fromTo("#o117",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},36.780);
+tl.fromTo("#s118k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},42.100);
+tl.fromTo("#kb120",{scale:1.0},{scale:1.06,duration:8.760,ease:"none"},63.600);
+tl.fromTo("#s119",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},63.600);
+tl.fromTo("#o121",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},65.880);
+tl.fromTo("#kb123",{scale:1.0},{scale:1.05,duration:5.720,ease:"none"},72.360);
+tl.fromTo("#pn124",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},72.710);
+tl.fromTo("#s122",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},72.360);
+tl.fromTo("#s125k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},78.080);
+tl.fromTo("#s126k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},81.220);
+tl.fromTo("#o127",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},89.900);
+tl.to("#o127",{opacity:0,duration:0.5,ease:"power1.inOut"},91.980);
+tl.fromTo("#s128k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},92.740);
+tl.fromTo("#o129",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},94.380);
+tl.to("#o129",{opacity:0,duration:0.5,ease:"power1.inOut"},99.180);
+tl.fromTo("#o130",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},109.920);
+tl.to("#o130",{opacity:0,duration:0.5,ease:"power1.inOut"},113.780);
+tl.fromTo("#s131k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},114.480);
+tl.fromTo("#o132",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},124.780);
+tl.fromTo("#s133k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},126.620);
+tl.fromTo("#s134k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},139.920);
+tl.fromTo("#o135",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},146.980);
+tl.to("#o135",{opacity:0,duration:0.5,ease:"power1.inOut"},149.680);
+tl.fromTo("#o136",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},150.480);
+tl.to("#o136",{opacity:0,duration:0.5,ease:"power1.inOut"},156.280);
+tl.fromTo("#s137k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},164.340);
+tl.fromTo("#o138",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},164.340);
+tl.to("#o138",{opacity:0,duration:0.5,ease:"power1.inOut"},166.480);
+tl.fromTo("#o139",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},181.920);
+tl.fromTo("#s140",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},183.860);
+tl.fromTo("#o141",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},183.980);
+tl.to("#o141",{opacity:0,duration:0.5,ease:"power1.inOut"},185.680);
+tl.fromTo("#o142",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},186.320);
+tl.fromTo("#s143k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},187.180);
+tl.fromTo("#kb145",{scale:1.0},{scale:1.06,duration:8.720,ease:"none"},194.560);
+tl.fromTo("#s144",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},194.560);
+tl.fromTo("#o146",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},194.780);
+tl.to("#o146",{opacity:0,duration:0.5,ease:"power1.inOut"},199.180);
+tl.fromTo("#o147",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},199.780);
+tl.fromTo("#s148k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},203.280);
+tl.set({}, {}, 214.080);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

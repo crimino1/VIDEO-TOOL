@@ -1,0 +1,179 @@
+(0:00.00) DeepSeek's next big model just leaked, and it didn't come from a stage, a blog post,
+(0:05.76) or a launch event, it came from DeepSeek's own code on GitHub.
+(0:09.66) Three model names, DeepSeek's-V5, DeepSeek's-V5, next open, and DeepSeek's-V5 next.
+(0:18.72) Within hours, X went crazy.
+(0:21.10) V5 beats GPT-6 Astra.
+(0:23.86) V5 drops in November, 2 trillion parameters, trained fully on Chinese chips.
+(0:28.94) So today, I'm breaking down every DeepSeek V5 leak.
+(0:33.26) What's real? What's a rumor? And what's someone basically made up?
+(0:37.42) Because once you dig in, the real story is bigger than the hype.
+(0:41.64) It isn't about a benchmark, it's about NVIDIA, Huawei, and who controls the future of AI chips?
+(0:48.14) Let's get into it.
+(0:49.72) First, why does one leaked model name make the whole internet lose its mind?
+(0:54.08) Go back to January 2025.
+(0:56.76) DeepSeek drops R1, a reasoning model that performs close to the best American models at a fraction of the cost.
+(1:03.50) In a single day, roughly $600 billion disappears from NVIDIA's market value.
+(1:09.06) One model from a lab in Hangzhou did that.
+(1:11.84) Since then, every time the word DeepSeek trends, markets get nervous.
+(1:16.84) And 2026 has been busy for them.
+(1:19.22) V4 launched in April.
+(1:21.12) V4 Pro went fully public on August 13.
+(1:23.30) Then on September 10, they dropped V4.1 Flash.
+(1:27.56) That's a 552 billion parameter mixture of experts model,
+(1:31.56) but only about 8 billion parameters are active when it reads your input,
+(1:35.18) and about 16 billion when it writes.
+(1:37.66) It's natively multi-modal, with a 1 million token context and open weights under the MIT license,
+(1:43.80) which means anyone can download it and run it.
+(1:46.46) The price?
+(1:47.52) 15 cents per million input tokens off-peak, 60 cents output.
+(1:51.70) Then on October 17, they shipped an update, V4.1-flash10117,
+(1:58.48) and DeepSeek has publicly named V4.1 Pro as the next model.
+(2:03.48) As of today, that hasn't shipped either.
+(2:06.26) Remember that, because it matters later.
+(2:08.90) Now, leak number one.
+(2:10.96) The code.
+(2:12.08) DeepSeek has an open-source software repo on GitHub called DeepSeek-harness.
+(2:17.42) Inside it are test files that check how the client handles different models,
+(2:21.72) which ones show up in the model list and when your app needs an update.
+(2:25.66) In those test files, someone spotted three names, DeepSeek-V5,
+(2:30.24) DeepSeek-V5 open, and DeepSeek-V5 next.
+(2:35.24) The names were reportedly added around late September,
+(2:38.14) but nobody noticed until October 27th and 28th.
+(2:41.82) Then it exploded.
+(2:42.62) One viral post called it a big leak and said the names are no longer theoretical.
+(2:48.66) A Chinese tech site, Kuai Keji, went further.
+(2:52.24) It guessed that a V5 Pro would arrive in November.
+(2:55.54) So, is this real?
+(2:57.12) The names are real.
+(2:58.76) They're in DeepSeek's official repo.
+(3:01.04) Nobody faked that, but look at what the tests actually do.
+(3:05.34) DeepSeek-V5-Open is a test case for an unknown model the app is allowed to show.
+(3:10.66) Next to Flash.
+(3:12.62) Plain DeepSeek-V5 gets refused, unless the app meets a minimum version.
+(3:17.36) And DeepSeek-V5 next requires harness version 99.0.0 alpha.1.
+(3:23.56) Version 99.
+(3:25.32) That version doesn't exist.
+(3:28.04) It's a fake number used to test the, please update your app screen, and it gets better.
+(3:33.22) In two of the tests, DeepSeek-V5's context window is set to nine tokens,
+(3:38.22) nine, not nine million, not nine thousand, nine.
+(3:42.94) So these are placeholders.
+(3:44.60) Dummy names a developer used to test the plumbing.
+(3:47.64) There are no specs, no benchmarks, and no release date in that code.
+(3:52.08) That said, I'll give the hype crowd one point.
+(3:55.34) Out of every possible fake name, a DeepSeek engineer typed V5, so they're clearly thinking about it.
+(4:01.82) But they're thinking about it, and it's launching in November are very different headlines.
+(4:06.92) Leak number two, the Viral Beats Astra Post.
+(4:11.30) On September 26th, a post on X went viral with the headline, DeepSeek-V5-Leak Beats Astra.
+(4:18.92) Here's what it claimed.
+(4:20.56) DeepSeek is preparing an imminent V5 launch.
+(4:23.96) Founder Liang Wenfeng calls it the company's biggest bet.
+(4:27.66) It has about two trillion parameters.
+(4:30.24) It's the first DeepSeek model trained fully on Huawei Ascend chips instead of Nvidia.
+(4:34.54) And it beats OpenAI's GPT-6 Astra.
+(4:38.42) And the proof attached to the post?
+(4:40.50) The DeepSeek whale logo with V5 written next to it.
+(4:43.96) That's it.
+(4:45.06) No chart, no table, no score.
+(4:47.80) So let's go through it.
+(4:50.48) Beats GPT-6 Astra.
+(4:52.60) There's no source and no benchmark.
+(4:55.00) Nothing.
+(4:55.92) Imminent launch.
+(4:57.18) Later reporting contradicts it.
+(4:58.90) And I'll show you that in a minute.
+(5:00.72) Biggest bet.
+(5:01.30) Liang reportedly did say something like that.
+(5:04.84) But according to the information, he was talking about training on Huawei chips.
+(5:09.50) He wasn't talking about V5 specifically.
+(5:12.50) Two trillion parameters.
+(5:14.48) The information did report a two trillion parameter figure, but no report connects it to V5.
+(5:20.80) 36K also reported that Liang talked about eight trillion parameters as a future goal.
+(5:26.54) People then stitched those numbers onto V5 themselves.
+(5:29.00) So the post took real reporting about chips and parameter counts, glued it onto a model name,
+(5:35.28) and added a fake benchmark claim on top.
+(5:37.70) Classic leak culture.
+(5:39.56) Now here's the part almost nobody is talking about.
+(5:42.64) And it's the real news.
+(5:44.26) On November 3rd, two Chinese financial outlets, Chai Wen and Star Market Daily, both reported,
+(5:50.78) citing people in the chip supply chain that DeepSeek V5 will be pre-trained on Huawei Ascend chips.
+(5:56.64) Not NVIDIA.
+(5:58.62) Huawei.
+(5:59.66) Kai Wen goes further and names the chip, the Ascend 950.
+(6:03.76) It says V5 training is still in the selection phase, that the parameters, features, and date
+(6:09.46) are internal secrets, and that the release is likely sometime in 2027, in the first or
+(6:15.64) second half depending on how training goes.
+(6:18.56) So, 2027.
+(6:20.50) Not November, not this year.
+(6:22.78) Neither DeepSeek nor Huawei has confirmed any of this.
+(6:25.50) So it's a reported plan.
+(6:27.56) It's not a fact yet.
+(6:28.96) But look at all the signals pointing the same way.
+(6:31.68) In September, Bloomberg reported DeepSeek plans to deploy at least 160,000 Ascend 950 DT chips
+(6:38.86) at a site in Inner Mongolia.
+(6:41.24) One source said those weren't currently planned for training.
+(6:44.36) The information reported that Liang said training on Huawei chips has to work.
+(6:48.74) And in mid-October, it reported that pre-training on the Ascend 950 DT could start as early as
+(6:55.48) 6, with Huawei engineers sitting inside DeepSeek's offices.
+(6:59.16) DeepSeek has also been porting its own low-level code to Ascend.
+(7:02.74) Their flash MLA kernel reportedly hits up to 410 teraflops on the Ascend 950 during pre-fill.
+(7:09.32) That's about 95% of the chips peak, and here's why that's a big deal.
+(7:14.16) Right now, no top Chinese model has been pre-trained on domestic chips.
+(7:18.86) A team did run post-training of V4 Pro on Huawei's older Ascend 910C this autumn,
+(7:24.22) but post-training is the finishing step.
+(7:26.98) Pre-training is the giant, expensive, months-long part where the model actually learns.
+(7:33.44) That's the part everyone still does on NVIDIA.
+(7:36.32) If V5 gets pre-trained end-to-end on Huawei and it's actually competitive,
+(7:41.30) that's DeepSeek moment number two.
+(7:43.50) And this one wouldn't be about cost.
+(7:45.80) It would be about China not needing NVIDIA at all.
+(7:49.34) And look at the timing.
+(7:50.14) This week, NVIDIA stopped shipping AI chips to China.
+(7:54.46) Jensen Huang is out as CEO.
+(7:56.66) Washington is tightening chip rules.
+(7:58.96) So the DeepSeek on Huawei story isn't a side detail.
+(8:02.96) It might be the most important AI hardware story of 2027.
+(8:07.98) So when is V5 actually coming?
+(8:10.80) Here's everything on the table.
+(8:12.84) Bank of America forecast V5 for the second half of 2026.
+(8:16.62) That was an analyst guess from September, and it already looks outdated.
+(8:21.52) Kuai Keji guessed November 2026, based on the placeholder code, not happening.
+(8:27.14) Taiwan says 2027, with training still being planned, and look at DeepSeek's own history.
+(8:33.08) V3 came out in December 2024.
+(8:35.74) V4 came out in April 2026.
+(8:38.42) That's about 16 months between big versions.
+(8:41.62) They've been shipping point updates in between.
+(8:43.26) V3.1, V3.2, V4 Pro, V4.1 Flash, and they've already publicly named V4.1 Pro as the next model.
+(8:54.60) So if you're waiting for something from DeepSeek soon, the realistic answer is V4.1 Pro, not V5.
+(9:01.86) Quick scorecard, so you can screenshot it.
+(9:04.90) V5 names in DeepSeek's code?
+(9:07.48) Real, but test placeholders.
+(9:09.84) V5 launching in November?
+(9:11.88) No evidence.
+(9:12.22) Reporting points to 2027.
+(9:15.46) V5 beats GPT-6 Astra?
+(9:18.24) No source.
+(9:19.50) Zero.
+(9:20.34) Two trillion parameters?
+(9:22.42) Reported for DeepSeek, but not tied to V5.
+(9:25.92) Trained on Huawei Ascend?
+(9:27.66) Reported plan?
+(9:29.06) Two outlets?
+(9:30.14) Not confirmed.
+(9:31.60) Open weights?
+(9:32.44) Likely, based on their history, but DeepSeek hasn't promised anything.
+(9:36.66) Here's my take.
+(9:37.94) The V5 hype is about 90% noise.
+(9:40.08) Some test files and a whale logo turned into V5 beats Astra next week.
+(9:45.32) But the remaining 10% is huge.
+(9:47.60) DeepSeek is reportedly trying something no Chinese lab has pulled off.
+(9:51.50) Pre-training a frontier model on Chinese chips.
+(9:54.48) Nvidia just lost its CEO and is pulling back from China at the same time.
+(9:59.78) If that works, the next DeepSeek shock won't be a price war.
+(10:03.84) It'll be a chip war, so don't fall for every V5 dropped thumbnail you see this month.
+(10:08.74) But keep watching DeepSeek and Huawei very closely.
+(10:12.80) What do you think?
+(10:13.84) Can DeepSeek build a frontier model without Nvidia?
+(10:16.74) Tell me in the comments.
+(10:18.28) And if you want the real story behind the hype, subscribe.
+(10:21.58) I'll cover V5 the day it actually lands.
+(10:24.36) This has been AI Equator.

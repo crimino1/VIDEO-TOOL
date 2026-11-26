@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Poppins",sans-serif;color:#fff}
+.frame{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.w{display:inline-block}
+.lshade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.32) 45%,rgba(0,0,0,0) 66%)}
+.title.left{position:absolute;left:80px;top:150px;width:1000px}
+.t0{display:inline-block;font-size:44px;font-weight:800;color:#10241b;background:#3ee07a;padding:6px 26px;border-radius:12px;letter-spacing:2px}
+.t1{font-size:170px;font-weight:900;line-height:1.0;margin-top:14px;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+.t1 .w{color:#ff5c7a}
+.t1.sm{font-size:100px;margin-top:0}.t1.sm .w{color:#fff}
+.uline{width:560px;height:14px;background:#ffd21f;border-radius:7px;margin:14px 0 18px;transform-origin:left}
+.t2{display:inline-flex;align-items:center;gap:12px;font-size:52px;font-weight:800;color:#10241b;background:#ffd21f;padding:6px 30px;border-radius:14px;white-space:nowrap}
+.sym{display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;font-style:normal;font-size:44px;color:#fff}
+.sym.m{background:#2f80ed}.sym.f{background:#e8457a}
+.t3{margin-top:20px;font-size:40px;font-weight:600;text-shadow:0 4px 16px rgba(0,0,0,.7)}
+.find,.rlx{position:absolute;left:80px;top:110px;width:960px}
+.fh{font-size:56px;font-weight:900;line-height:1.1;text-shadow:0 6px 20px rgba(0,0,0,.6)}
+.fh b{color:#ff5c7a}
+.fpv{width:520px;height:390px;margin:10px 0 6px 40px;background:rgba(10,24,40,.82);border-radius:26px;padding:18px 30px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.pv{width:100%;height:100%;overflow:visible}
+.frow{display:flex;align-items:center;gap:18px;font-size:44px;font-weight:700;margin-top:12px;text-shadow:0 4px 14px rgba(0,0,0,.7)}
+.frow i,.mv i{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#ffd21f;color:#10241b;font-style:normal;font-weight:900;font-size:36px;flex:none}
+.fkey{display:inline-block;margin-top:20px;font-size:46px;font-weight:800;color:#10241b;background:#3ee07a;padding:8px 30px;border-radius:14px}
+.rchips{display:flex;gap:20px;margin-top:40px}
+.rchips em{font-style:normal;font-size:60px;font-weight:800;background:rgba(10,24,40,.85);border:4px solid #ff5c7a;padding:14px 36px;border-radius:20px}
+.moves{position:absolute;left:80px;top:100px;width:980px}
+.mvl{margin-top:24px;display:grid;grid-template-columns:1fr;gap:10px}
+.mv{display:flex;align-items:center;gap:18px;font-size:42px;font-weight:700;text-shadow:0 3px 12px rgba(0,0,0,.7)}
+.mv i{width:52px;height:52px;font-size:30px}
+.safe,.sub{position:absolute;left:80px;bottom:60px;white-space:nowrap;background:rgba(6,40,27,.94);font-size:44px;font-weight:700;padding:12px 36px;border-radius:16px}
+.sub{background:#e63946;bottom:80px;font-size:48px}
+.tm{position:absolute;left:56px;top:46px;width:250px;height:250px;border-radius:50%;background:rgba(0,0,0,.45)}
+.tm svg{position:absolute;inset:0;width:250px;height:250px;transform:rotate(-90deg)}
+.tbg{fill:none;stroke:rgba(255,255,255,.18);stroke-width:14}
+.tfg{fill:none;stroke-width:14;stroke-linecap:round;stroke-dasharray:540}
+.tm b{position:absolute;left:0;right:0;top:44px;text-align:center;font-size:118px;font-weight:800;line-height:1}
+.tm span{position:absolute;left:0;right:0;top:168px;text-align:center;font-size:36px;font-weight:800;letter-spacing:3px}
+.pg{position:absolute;right:60px;top:60px;width:440px;text-align:right;text-shadow:0 3px 12px rgba(0,0,0,.6)}
+.pg span{font-size:40px;font-weight:700}
+.dots{display:flex;justify-content:flex-end;gap:12px;margin-top:14px}
+.dots i{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.35);border:3px solid rgba(255,255,255,.6)}
+.dots i.on{background:#3ee07a;border-color:#3ee07a}
+.dots i.cur{background:#ffd21f;border-color:#fff}
+.name{position:absolute;left:56px;bottom:56px;background:rgba(6,40,27,.92);border-radius:16px;padding:16px 40px 20px 52px;overflow:hidden}
+.nbar{position:absolute;left:0;top:0;bottom:0;width:16px;background:#ffd21f;transform-origin:top}
+.name b{display:block;font-size:66px;font-weight:800;line-height:1.1}
+.chips{display:flex;gap:12px;margin-top:8px}
+.chips em{font-style:normal;font-size:30px;font-weight:700;color:#10241b;background:#ffc2cd;padding:2px 16px;border-radius:10px}
+.tip{position:absolute;right:56px;bottom:56px;display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.96);color:#10241b;font-size:40px;font-weight:800;padding:12px 30px;border-radius:50px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.xray{position:absolute;right:56px;top:250px;width:440px;background:rgba(10,24,40,.86);border-radius:26px;padding:18px 22px 20px;box-shadow:0 20px 50px rgba(0,0,0,.4);text-align:center}
+.xh{font-size:34px;font-weight:900;letter-spacing:3px;color:#ff8da1}
+.xpv{width:396px;height:317px}
+.stbox{position:relative;height:96px;margin-top:6px}
+.st{position:absolute;left:0;right:0;top:0;height:96px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:#3a4b5e;font-size:46px;font-weight:900;letter-spacing:1px;opacity:0;white-space:nowrap}
+.st.up{background:#e8304f;box-shadow:0 0 30px rgba(255,70,100,.6)}
+.reps{margin-top:12px;font-size:34px;font-weight:800;letter-spacing:2px;color:#cfe3f5}
+.reps b{font-size:46px;color:#ffd21f;margin-left:8px}
+.glow{position:absolute;width:260px;height:104px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,70,100,.9) 0%,rgba(255,70,100,.45) 40%,rgba(255,70,100,0) 72%);mix-blend-mode:screen;opacity:.1}
+.nexth{position:absolute;left:0;right:0;top:40px;text-align:center}
+.nexth > span{display:block;font-size:52px;font-weight:800;color:#ffd21f;letter-spacing:6px}
+.nexth b{display:block;font-size:84px;font-weight:900;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+.nbox{position:absolute;left:374px;top:282px;width:1172px;height:668px;background:#fff;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.nwrap{position:absolute;left:384px;top:292px;width:1152px;height:648px;border-radius:12px;overflow:hidden}
+.nvid{position:absolute;left:0;top:0;width:1152px;height:648px;object-fit:cover}
+.cd{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;background:rgba(62,224,122,.94);box-shadow:0 0 60px 20px rgba(62,224,122,.5);display:flex;align-items:center;justify-content:center;font-size:220px;font-weight:900;color:#0b3d24}
+.cdring{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;border:12px solid #3ee07a}
+.gotxt{position:absolute;left:0;right:0;top:400px;text-align:center;font-size:200px;font-weight:900;color:#ffd21f;text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.wipe{position:absolute;left:-200px;top:-200px;width:1400px;height:1480px}
+.wipe i{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,92,122,0),#ff5c7a 30%,#ffd21f 70%,rgba(255,210,31,0));transform:skewX(-18deg);opacity:.85}
+.half{position:absolute;left:50%;top:50%;margin:-130px 0 0 -460px;width:920px;height:260px;border-radius:30px;background:#e63946;box-shadow:0 20px 60px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}
+.half span{font-size:150px;font-weight:900;letter-spacing:4px}
+.done{position:absolute;left:80px;top:90px;width:1000px}
+.dh{display:inline-block;font-size:76px;font-weight:900;color:#10241b;background:#3ee07a;padding:8px 34px;border-radius:16px;transform-origin:left center}
+.cklist{margin-top:22px;display:grid;grid-template-columns:1fr;gap:10px}
+.ck{display:flex;align-items:center;gap:14px;font-size:40px;font-weight:700;text-shadow:0 3px 12px rgba(0,0,0,.7)}
+.ck i{display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:#3ee07a;color:#0b3d24;font-style:normal;font-weight:900;font-size:32px;flex:none}
+.goal{display:inline-block;margin-top:22px;font-size:38px;font-weight:800;color:#10241b;background:#ffd21f;padding:6px 26px;border-radius:12px}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="536.00" data-width="1920" data-height="1080">
+<div class="frame" id="wi"><video id="introvid" class="clip full" src="assets/clips/intro_live.mp4" muted playsinline data-start="0" data-duration="36.00" data-track-index="1"></video></div>
+<div id="shade" class="clip " data-start="0.00" data-duration="36.00" data-track-index="5" style="z-index:5"><div class="lshade"></div></div>
+<div id="ttl" class="clip " data-start="0.20" data-duration="6.90" data-track-index="10" style="z-index:10"><div class="title left" id="ttli"><div class="t0" id="t0">PELVIC FLOOR WORKOUT</div><div class="t1"><span class="w" id="tw0">KEGEL</span></div><div class="t1 sm"><span class="w" id="tx0">EXERCISES</span></div><div class="uline" id="ul"></div><div class="t2" id="t2">for Men <i class="sym m">&#9794;</i> &amp; Women <i class="sym f">&#9792;</i></div><div class="t3" id="t3">8 moves · 8 minutes · just a chair</div></div></div>
+<div id="find" class="clip " data-start="7.00" data-duration="8.70" data-track-index="10" style="z-index:10"><div class="find" id="findi"><div class="fh">HOW TO FIND YOUR <b>PELVIC FLOOR</b></div><div class="fpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="ipb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="ipg"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#ipb)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#ipb)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="ipgl" cx="200" cy="262" rx="105" ry="48" fill="url(#ipg)" opacity=".2"/><path id="iph" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="ipf" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="ipa" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="frow" id="fr0"><i>1</i>Imagine stopping the flow of urine</div><div class="frow" id="fr1"><i>2</i>Or holding in gas</div><div class="fkey" id="fk">That squeeze &amp; lift = a Kegel</div></div></div>
+<div id="relax" class="clip " data-start="15.70" data-duration="6.60" data-track-index="10" style="z-index:10"><div class="rlx" id="rlxi"><div class="fh">KEEP THESE <b>RELAXED</b></div><div class="rchips"><em id="rx0">Belly</em><em id="rx1">Thighs</em><em id="rx2">Buttocks</em></div><div class="fkey" id="br">Keep breathing the whole time</div></div></div>
+<div id="moves" class="clip " data-start="22.40" data-duration="13.40" data-track-index="10" style="z-index:10"><div class="moves"><div class="dh" id="mvh">TODAY'S 8 MOVES</div><div class="mvl"><div class="mv" id="mv0"><i>1</i>Belly Breathing Kegel</div><div class="mv" id="mv1"><i>2</i>Basic Kegel Hold</div><div class="mv" id="mv2"><i>3</i>Seated Pelvic Tilt</div><div class="mv" id="mv3"><i>4</i>Quick Flicks</div><div class="mv" id="mv4"><i>5</i>Inner Thigh Squeeze</div><div class="mv" id="mv5"><i>6</i>Elevator Kegel</div><div class="mv" id="mv6"><i>7</i>Seated Knee Opener</div><div class="mv" id="mv7"><i>8</i>Sit to Stand + Squeeze</div></div></div></div>
+<div id="safe" class="clip " data-start="28.50" data-duration="7.10" data-track-index="11" style="z-index:11"><div class="safe" id="safei">Never hold your breath · Stop if anything hurts</div></div>
+<img id="rb0" class="clip full" src="assets/clips/bg_rest.jpg" data-start="36.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx0" class="clip " data-start="36.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh0">NEXT</span><b><span class="w" id="nw0_0">Belly</span> <span class="w" id="nw0_1">Breathing</span> <span class="w" id="nw0_2">Kegel</span></b></div></div>
+<div id="nbx0" class="clip " data-start="36.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi0"></div></div>
+<div class="nwrap" id="nvw0" style="z-index:4"><video id="nv0" class="clip nvid" src="assets/clips/breathing_kegel_next.mp4" muted playsinline data-start="36.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr0" class="clip " data-start="36.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr0r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr0n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr0" class="clip " data-start="36.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 1 of 8</span><div class="dots"><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd0_3" class="clip " data-start="48.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_3"></div><div class="cd" id="cd0_3i">3</div></div>
+<div id="cd0_2" class="clip " data-start="49.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_2"></div><div class="cd" id="cd0_2i">2</div></div>
+<div id="cd0_1" class="clip " data-start="50.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr0_1"></div><div class="cd" id="cd0_1i">1</div></div>
+<video id="wv0" class="clip full" src="assets/clips/breathing_kegel_work.mp4" muted playsinline data-start="51.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw0" class="clip " data-start="51.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl0" style="left:795px;top:563px"></div></div>
+<div id="wipe0" class="clip " data-start="50.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp0"><i></i></div></div>
+<div id="go0t" class="clip " data-start="51.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go0ti">GO!</div></div>
+<div id="tw0" class="clip " data-start="51.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw0r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw0n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw0" class="clip " data-start="51.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 1 of 8</span><div class="dots"><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm0" class="clip " data-start="51.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm0i"><div class="nbar" id="nb0"></div><b>Belly Breathing Kegel</b><div class="chips"><em id="mc0_0">Pelvic floor</em><em id="mc0_1">Breathing</em></div></div></div>
+<div id="xr0" class="clip " data-start="51.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr0i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p0b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p0g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p0b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p0b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p0gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p0g)" opacity=".2"/><path id="p0h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p0f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p0a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st" id="st0_0">BREATHE IN</div><div class="st up" id="st0_1">OUT · SQUEEZE</div></div><div class="reps">REPS <b id="rp0">0</b></div></div></div>
+<div id="tip0" class="clip " data-start="64.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp0"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Belly rises as you breathe in</span></div></div>
+<img id="rb1" class="clip full" src="assets/clips/bg_rest.jpg" data-start="96.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx1" class="clip " data-start="96.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh1">NEXT</span><b><span class="w" id="nw1_0">Basic</span> <span class="w" id="nw1_1">Kegel</span> <span class="w" id="nw1_2">Hold</span></b></div></div>
+<div id="nbx1" class="clip " data-start="96.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi1"></div></div>
+<div class="nwrap" id="nvw1" style="z-index:4"><video id="nv1" class="clip nvid" src="assets/clips/basic_kegel_next.mp4" muted playsinline data-start="96.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr1" class="clip " data-start="96.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr1r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr1n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr1" class="clip " data-start="96.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 2 of 8</span><div class="dots"><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd1_3" class="clip " data-start="108.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_3"></div><div class="cd" id="cd1_3i">3</div></div>
+<div id="cd1_2" class="clip " data-start="109.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_2"></div><div class="cd" id="cd1_2i">2</div></div>
+<div id="cd1_1" class="clip " data-start="110.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr1_1"></div><div class="cd" id="cd1_1i">1</div></div>
+<video id="wv1" class="clip full" src="assets/clips/basic_kegel_work.mp4" muted playsinline data-start="111.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw1" class="clip " data-start="111.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl1" style="left:795px;top:563px"></div></div>
+<div id="wipe1" class="clip " data-start="110.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp1"><i></i></div></div>
+<div id="go1t" class="clip " data-start="111.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go1ti">GO!</div></div>
+<div id="tw1" class="clip " data-start="111.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw1r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw1n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw1" class="clip " data-start="111.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 2 of 8</span><div class="dots"><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm1" class="clip " data-start="111.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm1i"><div class="nbar" id="nb1"></div><b>Basic Kegel Hold</b><div class="chips"><em id="mc1_0">Pelvic floor</em></div></div></div>
+<div id="xr1" class="clip " data-start="111.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr1i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p1g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p1b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p1b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p1gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p1g)" opacity=".2"/><path id="p1h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p1f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p1a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st1_0">SQUEEZE</div><div class="st" id="st1_1">RELAX</div></div><div class="reps">REPS <b id="rp1">0</b></div></div></div>
+<div id="tip1" class="clip " data-start="124.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp1"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Don't hold your breath</span></div></div>
+<img id="rb2" class="clip full" src="assets/clips/bg_rest.jpg" data-start="156.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx2" class="clip " data-start="156.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh2">NEXT</span><b><span class="w" id="nw2_0">Seated</span> <span class="w" id="nw2_1">Pelvic</span> <span class="w" id="nw2_2">Tilt</span></b></div></div>
+<div id="nbx2" class="clip " data-start="156.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi2"></div></div>
+<div class="nwrap" id="nvw2" style="z-index:4"><video id="nv2" class="clip nvid" src="assets/clips/pelvic_tilt_next.mp4" muted playsinline data-start="156.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr2" class="clip " data-start="156.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr2r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr2n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr2" class="clip " data-start="156.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 3 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd2_3" class="clip " data-start="168.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_3"></div><div class="cd" id="cd2_3i">3</div></div>
+<div id="cd2_2" class="clip " data-start="169.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_2"></div><div class="cd" id="cd2_2i">2</div></div>
+<div id="cd2_1" class="clip " data-start="170.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr2_1"></div><div class="cd" id="cd2_1i">1</div></div>
+<video id="wv2" class="clip full" src="assets/clips/pelvic_tilt_work.mp4" muted playsinline data-start="171.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw2" class="clip " data-start="171.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl2" style="left:795px;top:563px"></div></div>
+<div id="wipe2" class="clip " data-start="170.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp2"><i></i></div></div>
+<div id="go2t" class="clip " data-start="171.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go2ti">GO!</div></div>
+<div id="tw2" class="clip " data-start="171.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw2r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw2n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw2" class="clip " data-start="171.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 3 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm2" class="clip " data-start="171.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm2i"><div class="nbar" id="nb2"></div><b>Seated Pelvic Tilt</b><div class="chips"><em id="mc2_0">Pelvic floor</em><em id="mc2_1">Lower abs</em></div></div></div>
+<div id="xr2" class="clip " data-start="171.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr2i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p2b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p2g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p2b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p2b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p2gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p2g)" opacity=".2"/><path id="p2h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p2f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p2a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st2_0">SQUEEZE</div><div class="st" id="st2_1">RELAX</div></div><div class="reps">REPS <b id="rp2">0</b></div></div></div>
+<div id="tip2" class="clip " data-start="184.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp2"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Small movement, gentle squeeze</span></div></div>
+<img id="rb3" class="clip full" src="assets/clips/bg_rest.jpg" data-start="216.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx3" class="clip " data-start="216.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh3">NEXT</span><b><span class="w" id="nw3_0">Quick</span> <span class="w" id="nw3_1">Flicks</span></b></div></div>
+<div id="nbx3" class="clip " data-start="216.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi3"></div></div>
+<div class="nwrap" id="nvw3" style="z-index:4"><video id="nv3" class="clip nvid" src="assets/clips/quick_flicks_next.mp4" muted playsinline data-start="216.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr3" class="clip " data-start="216.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr3r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr3n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr3" class="clip " data-start="216.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 4 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd3_3" class="clip " data-start="228.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_3"></div><div class="cd" id="cd3_3i">3</div></div>
+<div id="cd3_2" class="clip " data-start="229.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_2"></div><div class="cd" id="cd3_2i">2</div></div>
+<div id="cd3_1" class="clip " data-start="230.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr3_1"></div><div class="cd" id="cd3_1i">1</div></div>
+<video id="wv3" class="clip full" src="assets/clips/quick_flicks_work.mp4" muted playsinline data-start="231.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw3" class="clip " data-start="231.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl3" style="left:795px;top:563px"></div></div>
+<div id="wipe3" class="clip " data-start="230.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp3"><i></i></div></div>
+<div id="go3t" class="clip " data-start="231.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go3ti">GO!</div></div>
+<div id="tw3" class="clip " data-start="231.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw3r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw3n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw3" class="clip " data-start="231.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 4 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm3" class="clip " data-start="231.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm3i"><div class="nbar" id="nb3"></div><b>Quick Flicks</b><div class="chips"><em id="mc3_0">Pelvic floor</em><em id="mc3_1">Fast fibres</em></div></div></div>
+<div id="xr3" class="clip " data-start="231.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr3i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p3g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p3b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p3b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p3gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p3g)" opacity=".2"/><path id="p3h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p3f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p3a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st3_0">SQUEEZE</div><div class="st" id="st3_1">RELAX</div></div><div class="reps">REPS <b id="rp3">0</b></div></div></div>
+<div id="tip3" class="clip " data-start="244.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp3"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Squeeze fast, let go fully</span></div></div>
+<img id="rb4" class="clip full" src="assets/clips/bg_rest.jpg" data-start="276.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx4" class="clip " data-start="276.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh4">NEXT</span><b><span class="w" id="nw4_0">Inner</span> <span class="w" id="nw4_1">Thigh</span> <span class="w" id="nw4_2">Squeeze</span></b></div></div>
+<div id="nbx4" class="clip " data-start="276.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi4"></div></div>
+<div class="nwrap" id="nvw4" style="z-index:4"><video id="nv4" class="clip nvid" src="assets/clips/knee_squeeze_next.mp4" muted playsinline data-start="276.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr4" class="clip " data-start="276.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr4r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr4n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr4" class="clip " data-start="276.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 5 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="half" class="clip " data-start="276.20" data-duration="3.20" data-track-index="15" style="z-index:15"><div class="half" id="halfi"><span>HALFWAY!</span></div></div>
+<div id="cd4_3" class="clip " data-start="288.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_3"></div><div class="cd" id="cd4_3i">3</div></div>
+<div id="cd4_2" class="clip " data-start="289.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_2"></div><div class="cd" id="cd4_2i">2</div></div>
+<div id="cd4_1" class="clip " data-start="290.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr4_1"></div><div class="cd" id="cd4_1i">1</div></div>
+<video id="wv4" class="clip full" src="assets/clips/knee_squeeze_work.mp4" muted playsinline data-start="291.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw4" class="clip " data-start="291.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl4" style="left:795px;top:563px"></div></div>
+<div id="wipe4" class="clip " data-start="290.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp4"><i></i></div></div>
+<div id="go4t" class="clip " data-start="291.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go4ti">GO!</div></div>
+<div id="tw4" class="clip " data-start="291.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw4r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw4n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw4" class="clip " data-start="291.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 5 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm4" class="clip " data-start="291.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm4i"><div class="nbar" id="nb4"></div><b>Inner Thigh Squeeze</b><div class="chips"><em id="mc4_0">Pelvic floor</em><em id="mc4_1">Inner thighs</em></div></div></div>
+<div id="xr4" class="clip " data-start="291.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr4i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p4g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p4b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p4b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p4gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p4g)" opacity=".2"/><path id="p4h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p4f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p4a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st4_0">SQUEEZE</div><div class="st" id="st4_1">RELAX</div></div><div class="reps">REPS <b id="rp4">0</b></div></div></div>
+<div id="tip4" class="clip " data-start="304.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp4"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Lift up and in, never push down</span></div></div>
+<img id="rb5" class="clip full" src="assets/clips/bg_rest.jpg" data-start="336.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx5" class="clip " data-start="336.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh5">NEXT</span><b><span class="w" id="nw5_0">Elevator</span> <span class="w" id="nw5_1">Kegel</span></b></div></div>
+<div id="nbx5" class="clip " data-start="336.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi5"></div></div>
+<div class="nwrap" id="nvw5" style="z-index:4"><video id="nv5" class="clip nvid" src="assets/clips/elevator_next.mp4" muted playsinline data-start="336.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr5" class="clip " data-start="336.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr5r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr5n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr5" class="clip " data-start="336.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 6 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i></div></div></div>
+<div id="cd5_3" class="clip " data-start="348.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_3"></div><div class="cd" id="cd5_3i">3</div></div>
+<div id="cd5_2" class="clip " data-start="349.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_2"></div><div class="cd" id="cd5_2i">2</div></div>
+<div id="cd5_1" class="clip " data-start="350.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr5_1"></div><div class="cd" id="cd5_1i">1</div></div>
+<video id="wv5" class="clip full" src="assets/clips/elevator_work.mp4" muted playsinline data-start="351.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw5" class="clip " data-start="351.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl5" style="left:795px;top:563px"></div></div>
+<div id="wipe5" class="clip " data-start="350.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp5"><i></i></div></div>
+<div id="go5t" class="clip " data-start="351.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go5ti">GO!</div></div>
+<div id="tw5" class="clip " data-start="351.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw5r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw5n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw5" class="clip " data-start="351.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 6 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i></div></div></div>
+<div id="nm5" class="clip " data-start="351.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm5i"><div class="nbar" id="nb5"></div><b>Elevator Kegel</b><div class="chips"><em id="mc5_0">Pelvic floor</em><em id="mc5_1">Control</em></div></div></div>
+<div id="xr5" class="clip " data-start="351.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr5i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p5g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p5b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p5b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p5gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p5g)" opacity=".2"/><path id="p5h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p5f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p5a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st5_0">FLOOR 1</div><div class="st up" id="st5_1">FLOOR 2</div><div class="st up" id="st5_2">TOP · HOLD</div><div class="st" id="st5_3">LOWER SLOWLY</div><div class="st" id="st5_4">RELAX</div></div><div class="reps">REPS <b id="rp5">0</b></div></div></div>
+<div id="tip5" class="clip " data-start="364.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp5"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Slow, one floor at a time</span></div></div>
+<img id="rb6" class="clip full" src="assets/clips/bg_rest.jpg" data-start="396.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx6" class="clip " data-start="396.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh6">NEXT</span><b><span class="w" id="nw6_0">Seated</span> <span class="w" id="nw6_1">Knee</span> <span class="w" id="nw6_2">Opener</span></b></div></div>
+<div id="nbx6" class="clip " data-start="396.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi6"></div></div>
+<div class="nwrap" id="nvw6" style="z-index:4"><video id="nv6" class="clip nvid" src="assets/clips/knee_opener_next.mp4" muted playsinline data-start="396.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr6" class="clip " data-start="396.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr6r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr6n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr6" class="clip " data-start="396.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 7 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i></div></div></div>
+<div id="cd6_3" class="clip " data-start="408.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_3"></div><div class="cd" id="cd6_3i">3</div></div>
+<div id="cd6_2" class="clip " data-start="409.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_2"></div><div class="cd" id="cd6_2i">2</div></div>
+<div id="cd6_1" class="clip " data-start="410.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr6_1"></div><div class="cd" id="cd6_1i">1</div></div>
+<video id="wv6" class="clip full" src="assets/clips/knee_opener_work.mp4" muted playsinline data-start="411.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="glw6" class="clip " data-start="411.00" data-duration="45.00" data-track-index="3" style="z-index:3"><div class="glow" id="gl6" style="left:795px;top:563px"></div></div>
+<div id="wipe6" class="clip " data-start="410.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp6"><i></i></div></div>
+<div id="go6t" class="clip " data-start="411.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go6ti">GO!</div></div>
+<div id="tw6" class="clip " data-start="411.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw6r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw6n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw6" class="clip " data-start="411.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 7 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i></div></div></div>
+<div id="nm6" class="clip " data-start="411.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm6i"><div class="nbar" id="nb6"></div><b>Seated Knee Opener</b><div class="chips"><em id="mc6_0">Pelvic floor</em><em id="mc6_1">Glutes</em></div></div></div>
+<div id="xr6" class="clip " data-start="411.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr6i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p6b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p6g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p6b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p6b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p6gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p6g)" opacity=".2"/><path id="p6h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p6f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p6a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st up" id="st6_0">SQUEEZE</div><div class="st" id="st6_1">RELAX</div></div><div class="reps">REPS <b id="rp6">0</b></div></div></div>
+<div id="tip6" class="clip " data-start="424.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp6"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Keep your back tall</span></div></div>
+<img id="rb7" class="clip full" src="assets/clips/bg_rest.jpg" data-start="456.00" data-duration="15.00" data-track-index="1" style="z-index:1" alt="">
+<div id="nx7" class="clip " data-start="456.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nexth"><span id="nh7">NEXT</span><b><span class="w" id="nw7_0">Sit</span> <span class="w" id="nw7_1">to</span> <span class="w" id="nw7_2">Stand</span> <span class="w" id="nw7_3">+</span> <span class="w" id="nw7_4">Squeeze</span></b></div></div>
+<div id="nbx7" class="clip " data-start="456.00" data-duration="15.00" data-track-index="3" style="z-index:3"><div class="nbox" id="nbi7"></div></div>
+<div class="nwrap" id="nvw7" style="z-index:4"><video id="nv7" class="clip nvid" src="assets/clips/sit_to_stand_next.mp4" muted playsinline data-start="456.00" data-duration="15.00" data-track-index="4"></video></div>
+<div id="tr7" class="clip " data-start="456.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tr7r" cx="100" cy="100" r="86" class="tfg" style="stroke:#ffd21f"/></svg><b id="tr7n">15</b><span style="color:#ffd21f">REST</span></div></div>
+<div id="pr7" class="clip " data-start="456.00" data-duration="15.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 8 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i></div></div></div>
+<div id="cd7_3" class="clip " data-start="468.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_3"></div><div class="cd" id="cd7_3i">3</div></div>
+<div id="cd7_2" class="clip " data-start="469.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_2"></div><div class="cd" id="cd7_2i">2</div></div>
+<div id="cd7_1" class="clip " data-start="470.00" data-duration="0.98" data-track-index="14" style="z-index:14"><div class="cdring" id="cr7_1"></div><div class="cd" id="cd7_1i">1</div></div>
+<video id="wv7" class="clip full" src="assets/clips/sit_to_stand_work.mp4" muted playsinline data-start="471.00" data-duration="45.00" data-track-index="2" style="z-index:2"></video>
+<div id="wipe7" class="clip " data-start="470.95" data-duration="0.75" data-track-index="16" style="z-index:16"><div class="wipe" id="wp7"><i></i></div></div>
+<div id="go7t" class="clip " data-start="471.10" data-duration="0.90" data-track-index="14" style="z-index:14"><div class="gotxt" id="go7ti">GO!</div></div>
+<div id="tw7" class="clip " data-start="471.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="tm"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" class="tbg"/><circle id="tw7r" cx="100" cy="100" r="86" class="tfg" style="stroke:#3ee07a"/></svg><b id="tw7n">45</b><span style="color:#3ee07a">WORK</span></div></div>
+<div id="pw7" class="clip " data-start="471.00" data-duration="45.00" data-track-index="12" style="z-index:12"><div class="pg"><span>Exercise 8 of 8</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i></div></div></div>
+<div id="nm7" class="clip " data-start="471.40" data-duration="44.30" data-track-index="11" style="z-index:11"><div class="name" id="nm7i"><div class="nbar" id="nb7"></div><b>Sit to Stand + Squeeze</b><div class="chips"><em id="mc7_0">Pelvic floor</em><em id="mc7_1">Legs</em><em id="mc7_2">Glutes</em></div></div></div>
+<div id="xr7" class="clip " data-start="471.60" data-duration="44.10" data-track-index="11" style="z-index:11"><div class="xray" id="xr7i"><div class="xh">PELVIC FLOOR</div><div class="xpv"><svg viewBox="0 0 400 320" class="pv"><defs><linearGradient id="p7b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#d8c19b"/></linearGradient><radialGradient id="p7g"><stop offset="0" stop-color="#ff5470" stop-opacity=".9"/><stop offset="1" stop-color="#ff5470" stop-opacity="0"/></radialGradient></defs><path d="M168,66 L232,66 C230,118 218,160 200,190 C182,160 170,118 168,66 Z" fill="#d6bf96" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round"/><path d="M40,46 C78,34 136,46 166,88 C178,118 172,150 162,176 C156,200 160,222 166,244 C162,266 140,276 120,266 C100,254 98,224 108,198 C78,172 44,122 40,46 Z M133,206 C142,206 147,218 147,230 C147,242 141,250 133,250 C125,250 119,242 119,230 C119,218 124,206 133,206 Z" fill="url(#p7b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><path d="M360,46 C322,34 264,46 234,88 C222,118 228,150 238,176 C244,200 240,222 234,244 C238,266 260,276 280,266 C300,254 302,224 292,198 C322,172 356,122 360,46 Z M267,206 C258,206 253,218 253,230 C253,242 259,250 267,250 C275,250 281,242 281,230 C281,218 276,206 267,206 Z" fill="url(#p7b)" stroke="#8a6f47" stroke-width="4" stroke-linejoin="round" fill-rule="evenodd"/><ellipse id="p7gl" cx="200" cy="262" rx="105" ry="48" fill="url(#p7g)" opacity=".2"/><path id="p7h" d="M150,250 Q200,300 250,250" fill="none" stroke="#e8304f" stroke-width="26" stroke-linecap="round"/><path id="p7f" d="M150,250 Q200,300 250,250" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 9"/><g id="p7a" opacity="0" fill="#ffd21f"><path d="M168,318 L168,300 L156,300 L176,280 L196,300 L184,300 L184,318 Z"/><path d="M216,318 L216,300 L204,300 L224,280 L244,300 L232,300 L232,318 Z"/></g></svg></div><div class="stbox"><div class="st" id="st7_0">RELAX</div><div class="st up" id="st7_1">SQUEEZE</div></div><div class="reps">REPS <b id="rp7">0</b></div></div></div>
+<div id="tip7" class="clip " data-start="484.00" data-duration="6.50" data-track-index="12" style="z-index:12"><div class="tip" id="tp7"><svg viewBox="0 0 24 24" width="46" height="46"><circle cx="12" cy="12" r="10" fill="#ffd21f"/><path d="M12 6v8M12 17v1" stroke="#10241b" stroke-width="2.6" stroke-linecap="round"/></svg><span>Lift as you stand up</span></div></div>
+<div class="frame" id="wo"><img id="outimg" class="clip full" src="assets/clips/idle.jpg" data-start="516.00" data-duration="20.00" data-track-index="1" alt=""></div>
+<div id="oshade" class="clip " data-start="516.00" data-duration="20.00" data-track-index="5" style="z-index:5"><div class="lshade"></div></div>
+<div id="end" class="clip " data-start="516.20" data-duration="19.80" data-track-index="10" style="z-index:10"><div class="done"><div class="dh" id="dh">WORKOUT COMPLETE!</div><div class="cklist"><div class="ck" id="ck0"><i id="cki0">&#10003;</i>Belly Breathing Kegel</div><div class="ck" id="ck1"><i id="cki1">&#10003;</i>Basic Kegel Hold</div><div class="ck" id="ck2"><i id="cki2">&#10003;</i>Seated Pelvic Tilt</div><div class="ck" id="ck3"><i id="cki3">&#10003;</i>Quick Flicks</div><div class="ck" id="ck4"><i id="cki4">&#10003;</i>Inner Thigh Squeeze</div><div class="ck" id="ck5"><i id="cki5">&#10003;</i>Elevator Kegel</div><div class="ck" id="ck6"><i id="cki6">&#10003;</i>Seated Knee Opener</div><div class="ck" id="ck7"><i id="cki7">&#10003;</i>Sit to Stand + Squeeze</div></div><div class="goal" id="goal">Do it every day · results in 4 to 6 weeks</div></div><div class="sub" id="e3">Like &amp; Subscribe for more</div></div>
+<audio id="vo_intro" class="clip" src="assets/voice/intro.mp3" data-start="0.80" data-volume="1.0" data-track-index="20"></audio>
+<audio id="vo_ex0" class="clip" src="assets/voice/ex01.mp3" data-start="36.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp0_3" class="clip" src="assets/sfx/beep.wav" data-start="48.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp0_2" class="clip" src="assets/sfx/beep.wav" data-start="49.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp0_1" class="clip" src="assets/sfx/beep.wav" data-start="50.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go0" class="clip" src="assets/sfx/go.wav" data-start="51.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="cue0_400" class="clip" src="assets/voice/squeeze.mp3" data-start="55.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue0_800" class="clip" src="assets/voice/relax.mp3" data-start="59.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue0_1200" class="clip" src="assets/voice/squeeze.mp3" data-start="63.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue0_1600" class="clip" src="assets/voice/relax.mp3" data-start="67.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="vo_ten0" class="clip" src="assets/voice/ten.mp3" data-start="85.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell0" class="clip" src="assets/sfx/bell.wav" data-start="95.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex1" class="clip" src="assets/voice/ex02.mp3" data-start="96.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp1_3" class="clip" src="assets/sfx/beep.wav" data-start="108.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp1_2" class="clip" src="assets/sfx/beep.wav" data-start="109.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp1_1" class="clip" src="assets/sfx/beep.wav" data-start="110.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go1" class="clip" src="assets/sfx/go.wav" data-start="111.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="cue1_25" class="clip" src="assets/voice/squeeze.mp3" data-start="111.25" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue1_300" class="clip" src="assets/voice/relax.mp3" data-start="114.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue1_600" class="clip" src="assets/voice/squeeze.mp3" data-start="117.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue1_900" class="clip" src="assets/voice/relax.mp3" data-start="120.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="vo_ten1" class="clip" src="assets/voice/ten.mp3" data-start="145.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell1" class="clip" src="assets/sfx/bell.wav" data-start="155.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex2" class="clip" src="assets/voice/ex03.mp3" data-start="156.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp2_3" class="clip" src="assets/sfx/beep.wav" data-start="168.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp2_2" class="clip" src="assets/sfx/beep.wav" data-start="169.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp2_1" class="clip" src="assets/sfx/beep.wav" data-start="170.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go2" class="clip" src="assets/sfx/go.wav" data-start="171.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="cue2_25" class="clip" src="assets/voice/squeeze.mp3" data-start="171.25" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue2_200" class="clip" src="assets/voice/relax.mp3" data-start="173.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue2_400" class="clip" src="assets/voice/squeeze.mp3" data-start="175.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue2_600" class="clip" src="assets/voice/relax.mp3" data-start="177.00" data-volume="0.9" data-track-index="20"></audio>
+<audio id="vo_ten2" class="clip" src="assets/voice/ten.mp3" data-start="205.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell2" class="clip" src="assets/sfx/bell.wav" data-start="215.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex3" class="clip" src="assets/voice/ex04.mp3" data-start="216.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp3_3" class="clip" src="assets/sfx/beep.wav" data-start="228.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp3_2" class="clip" src="assets/sfx/beep.wav" data-start="229.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp3_1" class="clip" src="assets/sfx/beep.wav" data-start="230.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go3" class="clip" src="assets/sfx/go.wav" data-start="231.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten3" class="clip" src="assets/voice/ten.mp3" data-start="265.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell3" class="clip" src="assets/sfx/bell.wav" data-start="275.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex4" class="clip" src="assets/voice/ex05.mp3" data-start="276.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp4_3" class="clip" src="assets/sfx/beep.wav" data-start="288.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp4_2" class="clip" src="assets/sfx/beep.wav" data-start="289.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp4_1" class="clip" src="assets/sfx/beep.wav" data-start="290.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go4" class="clip" src="assets/sfx/go.wav" data-start="291.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="cue4_25" class="clip" src="assets/voice/squeeze.mp3" data-start="291.25" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue4_260" class="clip" src="assets/voice/relax.mp3" data-start="293.60" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue4_420" class="clip" src="assets/voice/squeeze.mp3" data-start="295.20" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue4_660" class="clip" src="assets/voice/relax.mp3" data-start="297.60" data-volume="0.9" data-track-index="20"></audio>
+<audio id="vo_ten4" class="clip" src="assets/voice/ten.mp3" data-start="325.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell4" class="clip" src="assets/sfx/bell.wav" data-start="335.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex5" class="clip" src="assets/voice/ex06.mp3" data-start="336.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp5_3" class="clip" src="assets/sfx/beep.wav" data-start="348.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp5_2" class="clip" src="assets/sfx/beep.wav" data-start="349.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp5_1" class="clip" src="assets/sfx/beep.wav" data-start="350.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go5" class="clip" src="assets/sfx/go.wav" data-start="351.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten5" class="clip" src="assets/voice/ten.mp3" data-start="385.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell5" class="clip" src="assets/sfx/bell.wav" data-start="395.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex6" class="clip" src="assets/voice/ex07.mp3" data-start="396.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp6_3" class="clip" src="assets/sfx/beep.wav" data-start="408.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp6_2" class="clip" src="assets/sfx/beep.wav" data-start="409.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp6_1" class="clip" src="assets/sfx/beep.wav" data-start="410.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go6" class="clip" src="assets/sfx/go.wav" data-start="411.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="cue6_25" class="clip" src="assets/voice/squeeze.mp3" data-start="411.25" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue6_160" class="clip" src="assets/voice/relax.mp3" data-start="412.60" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue6_420" class="clip" src="assets/voice/squeeze.mp3" data-start="415.20" data-volume="0.9" data-track-index="20"></audio>
+<audio id="cue6_560" class="clip" src="assets/voice/relax.mp3" data-start="416.60" data-volume="0.9" data-track-index="20"></audio>
+<audio id="vo_ten6" class="clip" src="assets/voice/ten.mp3" data-start="445.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell6" class="clip" src="assets/sfx/bell.wav" data-start="455.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_ex7" class="clip" src="assets/voice/ex08.mp3" data-start="456.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bp7_3" class="clip" src="assets/sfx/beep.wav" data-start="468.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp7_2" class="clip" src="assets/sfx/beep.wav" data-start="469.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="bp7_1" class="clip" src="assets/sfx/beep.wav" data-start="470.02" data-volume="0.5" data-track-index="20"></audio>
+<audio id="go7" class="clip" src="assets/sfx/go.wav" data-start="471.02" data-volume="0.55" data-track-index="20"></audio>
+<audio id="vo_ten7" class="clip" src="assets/voice/ten.mp3" data-start="505.50" data-volume="1.0" data-track-index="20"></audio>
+<audio id="bell7" class="clip" src="assets/sfx/bell.wav" data-start="515.90" data-volume="0.5" data-track-index="20"></audio>
+<audio id="vo_outro" class="clip" src="assets/voice/outro.mp3" data-start="516.60" data-volume="1.0" data-track-index="20"></audio>
+<audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="536.00" data-volume="0.17" data-fade-in="1.5" data-fade-out="3" data-track-index="21"></audio>
+</div>
+<script>
+
+const RH = {"0": {"i": 0, "T": 8.0, "segs": [[0, 4, 0, 0, 0.8], [4, 8, 1, 1, 0.8]], "n": 2, "glow": true}, "1": {"i": 1, "T": 6.0, "segs": [[0, 3, 0, 1, 0.5], [3, 6, 1, 0, 0.5]], "n": 2, "glow": true}, "2": {"i": 2, "T": 4.0, "segs": [[0, 2, 0, 1, 0.6], [2, 4, 1, 0, 0.6]], "n": 2, "glow": true}, "3": {"i": 3, "T": 2.0, "segs": [[0, 1, 0, 1, 0.2], [1, 2, 1, 0, 0.2]], "n": 2, "glow": true}, "4": {"i": 4, "T": 4.0, "segs": [[0, 2.6, 0, 1, 0.6], [2.6, 4, 1, 0, 0.5]], "n": 2, "glow": true}, "5": {"i": 5, "T": 8.0, "segs": [[0, 1, 0, 0.33, 0.4], [1, 2, 1, 0.66, 0.4], [2, 4, 2, 1, 0.4], [4, 7, 3, 0, 3.0], [7, 8, 4, 0, 0.3]], "n": 5, "glow": true}, "6": {"i": 6, "T": 4.0, "segs": [[0, 1.6, 0, 1, 0.6], [1.6, 4, 1, 0, 0.8]], "n": 2, "glow": true}, "7": {"i": 7, "T": 3.4, "segs": [[0, 0.3, 0, 0, 0.3], [0.3, 1.9, 1, 1, 0.5], [1.9, 3.4, 0, 0, 0.6]], "n": 2, "glow": false}};
+function pv(id, l){
+  const h = document.getElementById(id + "h"); if (!h) return;
+  const d = `M150,250 Q200,${(300 - 66 * l).toFixed(1)} 250,250`; h.setAttribute("d", d); document.getElementById(id + "f").setAttribute("d", d);
+  document.getElementById(id + "a").setAttribute("opacity", Math.max(0, Math.min(1, l * 1.4 - 0.2)).toFixed(3));
+  document.getElementById(id + "gl").setAttribute("opacity", (0.15 + 0.75 * l).toFixed(3));
+}
+function work(i, t){
+  const r = RH[i]; const lt = t % r.T; const S = r.segs;
+  let k = 0; while (k < S.length - 1 && lt >= S[k][1]) k++;
+  const prev = S[(k + S.length - 1) % S.length][3];
+  const u = Math.min(1, (lt - S[k][0]) / S[k][4]); const e = 0.5 - 0.5 * Math.cos(Math.PI * u);
+  const l = prev + (S[k][3] - prev) * e;
+  pv("p" + i, l);
+  for (let j = 0; j < r.n; j++) { const el = document.getElementById(`st${i}_${j}`); const on = j === S[k][2];
+    const a = on ? Math.min(1, (lt - S[k][0]) / 0.15) : 0; el.style.opacity = a.toFixed(3); el.style.transform = `scale(${on ? 0.85 + 0.15 * Math.min(1, (lt - S[k][0]) / 0.25) : 0.85})`; }
+  const first = S.findIndex(s => s[3] > 0); const reps = Math.floor(t / r.T) + (lt >= S[first][0] ? 1 : 0);
+  document.getElementById("rp" + i).textContent = reps;
+  if (r.glow) document.getElementById("gl" + i).style.opacity = (0.08 + 0.62 * l).toFixed(3);
+}
+
+const tl = gsap.timeline({paused:true});
+tl.fromTo("#wi",{scale:1.30,x:300,y:110},{scale:1.36,x:300,y:110,duration:36.0,ease:"none"},0);
+tl.fromTo("#tw0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},0.60);
+tl.fromTo("#tx0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},1.00);
+tl.fromTo("#t0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.5,ease:"expo.out"},0.3);
+tl.fromTo("#ul",{scaleX:0},{scaleX:1,duration:0.6,ease:"expo.out"},1.4);
+tl.fromTo("#t2",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"expo.out"},1.8);
+tl.fromTo("#t3",{opacity:0},{opacity:1,duration:0.6},2.4);
+tl.to("#ttli",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},6.65);
+tl.fromTo("#findi",{opacity:0,y:40},{opacity:1,y:0,duration:0.6,ease:"expo.out"},7.05);
+tl.fromTo("#fr0",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"expo.out"},8.4);
+tl.fromTo("#fr1",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"expo.out"},10.6);
+tl.fromTo("#fk",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(2)"},12.4);
+tl.to("#findi",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},15.3);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:8.7,duration:8.7,ease:"none",onUpdate:()=>{const c=(o.t%2.6)/2.6;const l=c<0.45?Math.sin(Math.PI*c/0.9):Math.max(0,Math.cos(Math.PI*(c-0.45)/1.1));pv("ip",l);}},7.0);})();
+tl.fromTo("#rlxi",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"expo.out"},15.75);
+tl.fromTo("#rx0",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"back.out(2.2)"},16.30);
+tl.fromTo("#rx1",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"back.out(2.2)"},16.75);
+tl.fromTo("#rx2",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.4,ease:"back.out(2.2)"},17.20);
+tl.fromTo("#br",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"expo.out"},18.2);
+tl.to("#rlxi",{opacity:0,x:-60,duration:0.4,ease:"power2.in"},21.9);
+tl.fromTo("#mvh",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},22.5);
+tl.fromTo("#mv0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},23.30);
+tl.fromTo("#mv1",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},23.70);
+tl.fromTo("#mv2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},24.10);
+tl.fromTo("#mv3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},24.50);
+tl.fromTo("#mv4",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},24.90);
+tl.fromTo("#mv5",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},25.30);
+tl.fromTo("#mv6",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},25.70);
+tl.fromTo("#mv7",{opacity:0,x:-40},{opacity:1,x:0,duration:0.4,ease:"expo.out"},26.10);
+tl.fromTo("#safei",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"expo.out"},28.55);
+tl.fromTo("#nw0_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},36.30);
+tl.fromTo("#nw0_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},36.38);
+tl.fromTo("#nw0_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},36.46);
+tl.fromTo("#nh0",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},36.10);
+tl.fromTo(["#nbi0","#nvw0"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},36.15);
+tl.fromTo("#tr0 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},36.00);
+tl.fromTo("#tr0r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},36.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr0n").textContent=Math.ceil(o.v);}},36.00);})();
+tl.fromTo("#cd0_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},48.00);
+tl.fromTo("#cr0_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},48.00);
+tl.fromTo("#cd0_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},49.00);
+tl.fromTo("#cr0_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},49.00);
+tl.fromTo("#cd0_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},50.00);
+tl.fromTo("#cr0_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},50.00);
+tl.fromTo("#wp0",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},50.95);
+tl.fromTo("#go0ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},51.10);
+tl.to("#go0ti",{opacity:0,scale:1.3,duration:0.3},51.65);
+tl.fromTo("#tw0 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},51.00);
+tl.fromTo("#tw0r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},51.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw0n").textContent=Math.ceil(o.v);}},51.00);})();
+tl.fromTo("#nm0i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},51.45);
+tl.fromTo("#nb0",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},51.60);
+tl.fromTo("#mc0_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},51.90);
+tl.fromTo("#mc0_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},52.02);
+tl.fromTo("#xr0i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},51.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(0,o.t)},51.00);})();
+tl.fromTo("#tp0",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},64.05);
+tl.to("#tp0",{opacity:0,x:60,duration:0.3,ease:"power2.in"},70.10);
+tl.fromTo("#nw1_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},96.30);
+tl.fromTo("#nw1_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},96.38);
+tl.fromTo("#nw1_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},96.46);
+tl.fromTo("#nh1",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},96.10);
+tl.fromTo(["#nbi1","#nvw1"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},96.15);
+tl.fromTo("#tr1 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},96.00);
+tl.fromTo("#tr1r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},96.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr1n").textContent=Math.ceil(o.v);}},96.00);})();
+tl.fromTo("#cd1_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},108.00);
+tl.fromTo("#cr1_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},108.00);
+tl.fromTo("#cd1_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},109.00);
+tl.fromTo("#cr1_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},109.00);
+tl.fromTo("#cd1_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},110.00);
+tl.fromTo("#cr1_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},110.00);
+tl.fromTo("#wp1",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},110.95);
+tl.fromTo("#go1ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},111.10);
+tl.to("#go1ti",{opacity:0,scale:1.3,duration:0.3},111.65);
+tl.fromTo("#tw1 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},111.00);
+tl.fromTo("#tw1r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},111.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw1n").textContent=Math.ceil(o.v);}},111.00);})();
+tl.fromTo("#nm1i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},111.45);
+tl.fromTo("#nb1",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},111.60);
+tl.fromTo("#mc1_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},111.90);
+tl.fromTo("#xr1i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},111.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(1,o.t)},111.00);})();
+tl.fromTo("#tp1",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},124.05);
+tl.to("#tp1",{opacity:0,x:60,duration:0.3,ease:"power2.in"},130.10);
+tl.fromTo("#nw2_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},156.30);
+tl.fromTo("#nw2_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},156.38);
+tl.fromTo("#nw2_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},156.46);
+tl.fromTo("#nh2",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},156.10);
+tl.fromTo(["#nbi2","#nvw2"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},156.15);
+tl.fromTo("#tr2 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},156.00);
+tl.fromTo("#tr2r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},156.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr2n").textContent=Math.ceil(o.v);}},156.00);})();
+tl.fromTo("#cd2_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},168.00);
+tl.fromTo("#cr2_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},168.00);
+tl.fromTo("#cd2_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},169.00);
+tl.fromTo("#cr2_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},169.00);
+tl.fromTo("#cd2_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},170.00);
+tl.fromTo("#cr2_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},170.00);
+tl.fromTo("#wp2",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},170.95);
+tl.fromTo("#go2ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},171.10);
+tl.to("#go2ti",{opacity:0,scale:1.3,duration:0.3},171.65);
+tl.fromTo("#tw2 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},171.00);
+tl.fromTo("#tw2r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},171.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw2n").textContent=Math.ceil(o.v);}},171.00);})();
+tl.fromTo("#nm2i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},171.45);
+tl.fromTo("#nb2",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},171.60);
+tl.fromTo("#mc2_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},171.90);
+tl.fromTo("#mc2_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},172.02);
+tl.fromTo("#xr2i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},171.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(2,o.t)},171.00);})();
+tl.fromTo("#tp2",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},184.05);
+tl.to("#tp2",{opacity:0,x:60,duration:0.3,ease:"power2.in"},190.10);
+tl.fromTo("#nw3_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},216.30);
+tl.fromTo("#nw3_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},216.38);
+tl.fromTo("#nh3",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},216.10);
+tl.fromTo(["#nbi3","#nvw3"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},216.15);
+tl.fromTo("#tr3 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},216.00);
+tl.fromTo("#tr3r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},216.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr3n").textContent=Math.ceil(o.v);}},216.00);})();
+tl.fromTo("#cd3_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},228.00);
+tl.fromTo("#cr3_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},228.00);
+tl.fromTo("#cd3_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},229.00);
+tl.fromTo("#cr3_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},229.00);
+tl.fromTo("#cd3_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},230.00);
+tl.fromTo("#cr3_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},230.00);
+tl.fromTo("#wp3",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},230.95);
+tl.fromTo("#go3ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},231.10);
+tl.to("#go3ti",{opacity:0,scale:1.3,duration:0.3},231.65);
+tl.fromTo("#tw3 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},231.00);
+tl.fromTo("#tw3r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},231.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw3n").textContent=Math.ceil(o.v);}},231.00);})();
+tl.fromTo("#nm3i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},231.45);
+tl.fromTo("#nb3",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},231.60);
+tl.fromTo("#mc3_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},231.90);
+tl.fromTo("#mc3_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},232.02);
+tl.fromTo("#xr3i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},231.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(3,o.t)},231.00);})();
+tl.fromTo("#tp3",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},244.05);
+tl.to("#tp3",{opacity:0,x:60,duration:0.3,ease:"power2.in"},250.10);
+tl.fromTo("#nw4_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},276.30);
+tl.fromTo("#nw4_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},276.38);
+tl.fromTo("#nw4_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},276.46);
+tl.fromTo("#nh4",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},276.10);
+tl.fromTo(["#nbi4","#nvw4"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},276.15);
+tl.fromTo("#tr4 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},276.00);
+tl.fromTo("#tr4r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},276.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr4n").textContent=Math.ceil(o.v);}},276.00);})();
+tl.fromTo("#halfi",{scale:0.3,rotation:-8,opacity:0},{scale:1,rotation:-4,opacity:1,duration:0.5,ease:"back.out(2)"},276.20);
+tl.to("#halfi",{scale:1.3,opacity:0,duration:0.35,ease:"power2.in"},279.00);
+tl.fromTo("#cd4_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},288.00);
+tl.fromTo("#cr4_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},288.00);
+tl.fromTo("#cd4_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},289.00);
+tl.fromTo("#cr4_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},289.00);
+tl.fromTo("#cd4_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},290.00);
+tl.fromTo("#cr4_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},290.00);
+tl.fromTo("#wp4",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},290.95);
+tl.fromTo("#go4ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},291.10);
+tl.to("#go4ti",{opacity:0,scale:1.3,duration:0.3},291.65);
+tl.fromTo("#tw4 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},291.00);
+tl.fromTo("#tw4r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},291.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw4n").textContent=Math.ceil(o.v);}},291.00);})();
+tl.fromTo("#nm4i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},291.45);
+tl.fromTo("#nb4",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},291.60);
+tl.fromTo("#mc4_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},291.90);
+tl.fromTo("#mc4_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},292.02);
+tl.fromTo("#xr4i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},291.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(4,o.t)},291.00);})();
+tl.fromTo("#tp4",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},304.05);
+tl.to("#tp4",{opacity:0,x:60,duration:0.3,ease:"power2.in"},310.10);
+tl.fromTo("#nw5_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},336.30);
+tl.fromTo("#nw5_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},336.38);
+tl.fromTo("#nh5",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},336.10);
+tl.fromTo(["#nbi5","#nvw5"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},336.15);
+tl.fromTo("#tr5 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},336.00);
+tl.fromTo("#tr5r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},336.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr5n").textContent=Math.ceil(o.v);}},336.00);})();
+tl.fromTo("#cd5_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},348.00);
+tl.fromTo("#cr5_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},348.00);
+tl.fromTo("#cd5_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},349.00);
+tl.fromTo("#cr5_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},349.00);
+tl.fromTo("#cd5_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},350.00);
+tl.fromTo("#cr5_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},350.00);
+tl.fromTo("#wp5",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},350.95);
+tl.fromTo("#go5ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},351.10);
+tl.to("#go5ti",{opacity:0,scale:1.3,duration:0.3},351.65);
+tl.fromTo("#tw5 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},351.00);
+tl.fromTo("#tw5r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},351.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw5n").textContent=Math.ceil(o.v);}},351.00);})();
+tl.fromTo("#nm5i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},351.45);
+tl.fromTo("#nb5",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},351.60);
+tl.fromTo("#mc5_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},351.90);
+tl.fromTo("#mc5_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},352.02);
+tl.fromTo("#xr5i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},351.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(5,o.t)},351.00);})();
+tl.fromTo("#tp5",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},364.05);
+tl.to("#tp5",{opacity:0,x:60,duration:0.3,ease:"power2.in"},370.10);
+tl.fromTo("#nw6_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},396.30);
+tl.fromTo("#nw6_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},396.38);
+tl.fromTo("#nw6_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},396.46);
+tl.fromTo("#nh6",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},396.10);
+tl.fromTo(["#nbi6","#nvw6"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},396.15);
+tl.fromTo("#tr6 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},396.00);
+tl.fromTo("#tr6r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},396.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr6n").textContent=Math.ceil(o.v);}},396.00);})();
+tl.fromTo("#cd6_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},408.00);
+tl.fromTo("#cr6_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},408.00);
+tl.fromTo("#cd6_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},409.00);
+tl.fromTo("#cr6_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},409.00);
+tl.fromTo("#cd6_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},410.00);
+tl.fromTo("#cr6_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},410.00);
+tl.fromTo("#wp6",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},410.95);
+tl.fromTo("#go6ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},411.10);
+tl.to("#go6ti",{opacity:0,scale:1.3,duration:0.3},411.65);
+tl.fromTo("#tw6 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},411.00);
+tl.fromTo("#tw6r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},411.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw6n").textContent=Math.ceil(o.v);}},411.00);})();
+tl.fromTo("#nm6i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},411.45);
+tl.fromTo("#nb6",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},411.60);
+tl.fromTo("#mc6_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},411.90);
+tl.fromTo("#mc6_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},412.02);
+tl.fromTo("#xr6i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},411.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(6,o.t)},411.00);})();
+tl.fromTo("#tp6",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},424.05);
+tl.to("#tp6",{opacity:0,x:60,duration:0.3,ease:"power2.in"},430.10);
+tl.fromTo("#nw7_0",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},456.30);
+tl.fromTo("#nw7_1",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},456.38);
+tl.fromTo("#nw7_2",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},456.46);
+tl.fromTo("#nw7_3",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},456.54);
+tl.fromTo("#nw7_4",{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.45,ease:"expo.out"},456.62);
+tl.fromTo("#nh7",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.6,ease:"expo.out"},456.10);
+tl.fromTo(["#nbi7","#nvw7"],{scale:0.8,rotation:-3,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.6,ease:"back.out(1.5)"},456.15);
+tl.fromTo("#tr7 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},456.00);
+tl.fromTo("#tr7r",{strokeDashoffset:0},{strokeDashoffset:540,duration:15.0,ease:"none"},456.00);
+(()=>{const o={v:15.0};tl.fromTo(o,{v:15.0},{v:0.001,duration:15.0,ease:"none",onUpdate:()=>{document.getElementById("tr7n").textContent=Math.ceil(o.v);}},456.00);})();
+tl.fromTo("#cd7_3i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},468.00);
+tl.fromTo("#cr7_3",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},468.00);
+tl.fromTo("#cd7_2i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},469.00);
+tl.fromTo("#cr7_2",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},469.00);
+tl.fromTo("#cd7_1i",{scale:1.6,opacity:0},{scale:1,opacity:1,duration:0.35,ease:"back.out(1.7)"},470.00);
+tl.fromTo("#cr7_1",{scale:0.9,opacity:0.9},{scale:1.9,opacity:0,duration:0.8,ease:"power2.out"},470.00);
+tl.fromTo("#wp7",{x:-2600},{x:2600,duration:0.7,ease:"power2.inOut"},470.95);
+tl.fromTo("#go7ti",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},471.10);
+tl.to("#go7ti",{opacity:0,scale:1.3,duration:0.3},471.65);
+tl.fromTo("#tw7 .tm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.7)"},471.00);
+tl.fromTo("#tw7r",{strokeDashoffset:0},{strokeDashoffset:540,duration:45.0,ease:"none"},471.00);
+(()=>{const o={v:45.0};tl.fromTo(o,{v:45.0},{v:0.001,duration:45.0,ease:"none",onUpdate:()=>{document.getElementById("tw7n").textContent=Math.ceil(o.v);}},471.00);})();
+tl.fromTo("#nm7i",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"expo.out"},471.45);
+tl.fromTo("#nb7",{scaleY:0},{scaleY:1,duration:0.5,ease:"expo.out"},471.60);
+tl.fromTo("#mc7_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},471.90);
+tl.fromTo("#mc7_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},472.02);
+tl.fromTo("#mc7_2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"back.out(2)"},472.14);
+tl.fromTo("#xr7i",{opacity:0,x:120},{opacity:1,x:0,duration:0.6,ease:"expo.out"},471.65);
+(()=>{const o={t:0};tl.fromTo(o,{t:0},{t:45.0,duration:45.0,ease:"none",onUpdate:()=>work(7,o.t)},471.00);})();
+tl.fromTo("#tp7",{opacity:0,x:80},{opacity:1,x:0,duration:0.5,ease:"expo.out"},484.05);
+tl.to("#tp7",{opacity:0,x:60,duration:0.3,ease:"power2.in"},490.10);
+tl.fromTo("#wo",{scale:1.22,x:190,y:70},{scale:1.18,x:190,y:70,duration:20.0,ease:"none"},516.00);
+tl.fromTo("#dh",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},516.30);
+tl.fromTo("#ck0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},517.20);
+tl.fromTo("#cki0",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},517.35);
+tl.fromTo("#ck1",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},517.50);
+tl.fromTo("#cki1",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},517.65);
+tl.fromTo("#ck2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},517.80);
+tl.fromTo("#cki2",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},517.95);
+tl.fromTo("#ck3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},518.10);
+tl.fromTo("#cki3",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},518.25);
+tl.fromTo("#ck4",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},518.40);
+tl.fromTo("#cki4",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},518.55);
+tl.fromTo("#ck5",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},518.70);
+tl.fromTo("#cki5",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},518.85);
+tl.fromTo("#ck6",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},519.00);
+tl.fromTo("#cki6",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},519.15);
+tl.fromTo("#ck7",{opacity:0,x:-40},{opacity:1,x:0,duration:0.35,ease:"expo.out"},519.30);
+tl.fromTo("#cki7",{scale:0},{scale:1,duration:0.35,ease:"back.out(2.5)"},519.45);
+tl.fromTo("#goal",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"expo.out"},520.40);
+tl.fromTo("#e3",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"expo.out"},525.00);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

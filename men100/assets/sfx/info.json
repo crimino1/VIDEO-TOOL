@@ -1,0 +1,482 @@
+{
+"mk1976_dinosaur_monster_roar": {
+"dur": 4.05,
+"peak": 1.18,
+"onset": 0.36,
+"lufs": -14.4
+},
+"mk1972_giant_monster_roar": {
+"dur": 4.0,
+"peak": 0.48,
+"onset": 0.0,
+"lufs": -6.1
+},
+"mk1970_big_monster_roar": {
+"dur": 3.63,
+"peak": 1.01,
+"onset": 0.48,
+"lufs": -15.1
+},
+"mk1726_big_wild_beast_roar": {
+"dur": 8.17,
+"peak": 2.59,
+"onset": 0.35,
+"lufs": -12.4
+},
+"mk1974_giant_monster_footstep": {
+"dur": 3.43,
+"peak": 0.03,
+"onset": 0.0,
+"lufs": -18.8
+},
+"mk1727_angry_dragon_roar_echo": {
+"dur": 12.88,
+"peak": 0.4,
+"onset": 0.17,
+"lufs": -10.6
+},
+"mk306_beast_long_roar": {
+"dur": 2.98,
+"peak": 0.41,
+"onset": 0.11,
+"lufs": -13.1
+},
+"mk307_creature_long_screech": {
+"dur": 3.57,
+"peak": 0.41,
+"onset": 0.22,
+"lufs": -11.8
+},
+"mk1965_monster_creature_scream": {
+"dur": 1.67,
+"peak": 0.75,
+"onset": 0.19,
+"lufs": -10.3
+},
+"mk1969_monster_aggressive_snarl": {
+"dur": 1.46,
+"peak": 1.12,
+"onset": 0.21,
+"lufs": -13.4
+},
+"mk1773_wolf_attack": {
+"dur": 1.5,
+"peak": 0.42,
+"onset": 0.22,
+"lufs": -11.2
+},
+"mk1775_wolf_howling": {
+"dur": 8.03,
+"peak": 1.07,
+"onset": 0.39,
+"lufs": -12.6
+},
+"mk24_exotic_tropical_bird_screech": {
+"dur": 1.07,
+"peak": 0.21,
+"onset": 0.02,
+"lufs": -10.5
+},
+"mk70_big_wild_eagle_calling": {
+"dur": 0.87,
+"peak": 0.46,
+"onset": 0.25,
+"lufs": -5.0
+},
+"mk6_wild_lion_animal_roar": {
+"dur": 1.28,
+"peak": 0.21,
+"onset": 0.03,
+"lufs": -14.7
+},
+"mk95_big_wild_lion_growl": {
+"dur": 2.66,
+"peak": 1.42,
+"onset": 0.7,
+"lufs": -24.6
+},
+"mk5_wounded_lion_growling": {
+"dur": 5.34,
+"peak": 2.02,
+"onset": 0.22,
+"lufs": -7.9
+},
+"mk90_big_wild_cat_slow_moan": {
+"dur": 4.41,
+"peak": 2.41,
+"onset": 0.77,
+"lufs": -5.7
+},
+"mk1728_angry_beast_roar": {
+"dur": 4.0,
+"peak": 1.67,
+"onset": 0.37,
+"lufs": -14.4
+},
+"mk13_aggressive_beast_roar": {
+"dur": 1.46,
+"peak": 0.36,
+"onset": 0.13,
+"lufs": -11.6
+},
+"mk1963_angry_monster_scream": {
+"dur": 2.21,
+"peak": 0.86,
+"onset": 0.28,
+"lufs": -10.5
+},
+"mk1964_monster_hiss": {
+"dur": 0.64,
+"peak": 0.34,
+"onset": 0.12,
+"lufs": -12.3
+},
+"mk1957_wild_creature_growl": {
+"dur": 1.98,
+"peak": 0.51,
+"onset": 0.3,
+"lufs": -21.1
+},
+"mk1966_monster_growl": {
+"dur": 1.53,
+"peak": 0.57,
+"onset": 0.31,
+"lufs": -9.5
+},
+"mk1209_underwater_white_noise": {
+"dur": 4.98,
+"peak": 1.56,
+"onset": 0.08,
+"lufs": -15.1
+},
+"mk1312_diving_in_deep_water": {
+"dur": 80.82,
+"peak": 12.87,
+"onset": 1.95,
+"lufs": -19.8
+},
+"mk1321_deep_water_bubbles": {
+"dur": 5.85,
+"peak": 0.13,
+"onset": 0.0,
+"lufs": -13.9
+},
+"mk1178_sinking_in_the_sea": {
+"dur": 31.44,
+"peak": 3.16,
+"onset": 0.07,
+"lufs": -18.4
+},
+"mk15_beast_in_pain_roaring": {
+"dur": 2.15,
+"peak": 1.25,
+"onset": 0.03,
+"lufs": -10.2
+},
+"mk8_wild_animal_hungry_grunting": {
+"dur": 4.18,
+"peak": 0.84,
+"onset": 0.31,
+"lufs": -14.2
+},
+"mk458_angry_male_crowd_ambience": {
+"dur": 31.73,
+"peak": 3.89,
+"onset": 0.19,
+"lufs": -17.3
+},
+"mk440_male_crowd_chanting_revolution": {
+"dur": 5.56,
+"peak": 4.35,
+"onset": 0.09,
+"lufs": -11.0
+},
+"mk457_male_crowd_cheering_and_whistl": {
+"dur": 49.46,
+"peak": 1.43,
+"onset": 0.61,
+"lufs": -19.3
+},
+"mk459_male_crowd_cheering_short": {
+"dur": 4.32,
+"peak": 2.86,
+"onset": 0.37,
+"lufs": -16.4
+},
+"mk462_huge_crowd_cheering_victory": {
+"dur": 10.06,
+"peak": 1.63,
+"onset": 0.59,
+"lufs": -8.7
+},
+"mk455_male_crowd_whispering_voices": {
+"dur": 45.02,
+"peak": 4.11,
+"onset": 0.68,
+"lufs": -32.4
+},
+"mk461_big_army_crowd_marching": {
+"dur": 8.65,
+"peak": 1.53,
+"onset": 0.18,
+"lufs": -13.8
+},
+"mk391_falling_male_scream": {
+"dur": 3.83,
+"peak": 0.8,
+"onset": 0.04,
+"lufs": -7.8
+},
+"mk392_male_falling_scream": {
+"dur": 3.01,
+"peak": 0.23,
+"onset": 0.07,
+"lufs": -10.1
+},
+"mk376_rioting_crowd": {
+"dur": 43.07,
+"peak": 7.45,
+"onset": 0.01,
+"lufs": -14.4
+},
+"mk469_people_moaning_sadly": {
+"dur": 43.78,
+"peak": 30.28,
+"onset": 0.68,
+"lufs": -25.1
+},
+"mk2055_boxer_getting_hit": {
+"dur": 2.22,
+"peak": 0.28,
+"onset": 0.06,
+"lufs": -14.6
+},
+"mk2052_martial_arts_punch": {
+"dur": 1.31,
+"peak": 0.16,
+"onset": 0.05,
+"lufs": -17.3
+},
+"mk2070_light_impact_on_the_ground": {
+"dur": 1.02,
+"peak": 0.03,
+"onset": 0.0,
+"lufs": -24.5
+},
+"mk756_falling_hit_on_gravel": {
+"dur": 1.23,
+"peak": 0.14,
+"onset": 0.08,
+"lufs": -16.2
+},
+"mk2057_blow_breaking_the_air": {
+"dur": 1.19,
+"peak": 0.1,
+"onset": 0.02,
+"lufs": -19.5
+},
+"mk1489_air_woosh": {
+"dur": 2.32,
+"peak": 0.72,
+"onset": 0.42,
+"lufs": -18.0
+},
+"mk1472_quick_hit_swoosh": {
+"dur": 1.03,
+"peak": 0.25,
+"onset": 0.18,
+"lufs": -12.3
+},
+"mk1488_throw_hard_wind_woosh": {
+"dur": 0.96,
+"peak": 0.15,
+"onset": 0.1,
+"lufs": -13.3
+},
+"mk1491_arrow_whoosh": {
+"dur": 1.1,
+"peak": 0.28,
+"onset": 0.2,
+"lufs": -22.3
+},
+"mk788_big_cinematic_impact": {
+"dur": 7.93,
+"peak": 2.18,
+"onset": 1.43,
+"lufs": -15.8
+},
+"mk780_cinematic_impact_echo": {
+"dur": 7.74,
+"peak": 0.2,
+"onset": 0.1,
+"lufs": -14.5
+},
+"mk1143_cinematic_whoosh_deep_impact": {
+"dur": 4.06,
+"peak": 0.61,
+"onset": 0.32,
+"lufs": -13.2
+},
+"mk549_deep_cinematic_subtle_drum_imp": {
+"dur": 4.5,
+"peak": 0.77,
+"onset": 0.59,
+"lufs": -19.1
+},
+"mk563_drum_deep_impact": {
+"dur": 5.5,
+"peak": 0.19,
+"onset": 0.14,
+"lufs": -19.1
+},
+"mk498_deep_heartbeat_impact": {
+"dur": 3.47,
+"peak": 0.08,
+"onset": 0.04,
+"lufs": -16.2
+},
+"mk1296_thunder_deep_rumble": {
+"dur": 18.17,
+"peak": 0.43,
+"onset": 0.13,
+"lufs": -14.5
+},
+"mk1297_big_thunder_rumble": {
+"dur": 22.74,
+"peak": 9.07,
+"onset": 0.98,
+"lufs": -14.1
+},
+"mk1301_distant_long_thunder_rumble": {
+"dur": 14.24,
+"peak": 2.94,
+"onset": 0.48,
+"lufs": -21.6
+},
+"mk1283_cinematic_thunder": {
+"dur": 4.98,
+"peak": 0.95,
+"onset": 0.21,
+"lufs": -16.5
+},
+"mk1166_meadow_wind_light": {
+"dur": 23.77,
+"peak": 9.61,
+"onset": 0.21,
+"lufs": -32.2
+},
+"mk1733_wild_light_wind": {
+"dur": 44.14,
+"peak": 2.5,
+"onset": 0.62,
+"lufs": -36.6
+},
+"mk40_insects_birds_and_frogs_in_the": {
+"dur": 22.25,
+"peak": 0.62,
+"onset": 0.56,
+"lufs": -30.8
+},
+"mk1189_sea_waves_ambience": {
+"dur": 151.67,
+"peak": 39.28,
+"onset": 0.01,
+"lufs": -16.9
+},
+"mk1199_stormy_sea_waves_loop": {
+"dur": 135.73,
+"peak": 70.09,
+"onset": 0.0,
+"lufs": -16.9
+},
+"mk1329_campfire_burning_crackles": {
+"dur": 14.08,
+"peak": 12.27,
+"onset": 0.4,
+"lufs": -54.1
+},
+"mk1335_big_fire_burning": {
+"dur": 3.51,
+"peak": 1.37,
+"onset": 0.14,
+"lufs": -13.4
+},
+"mk1736_campfire_night_wind": {
+"dur": 30.75,
+"peak": 10.72,
+"onset": 0.78,
+"lufs": -25.7
+},
+"mk1213_european_forest_ambience": {
+"dur": 161.3,
+"peak": 76.5,
+"onset": 0.01,
+"lufs": -29.7
+},
+"mk1289_thunderstorm_ambience": {
+"dur": 25.5,
+"peak": 3.07,
+"onset": 1.1,
+"lufs": -19.3
+},
+"mk1921_walking_on_grass": {
+"dur": 14.6,
+"peak": 13.06,
+"onset": 0.61,
+"lufs": -29.5
+},
+"mk1236_man_running_in_the_forest": {
+"dur": 11.24,
+"peak": 8.79,
+"onset": 1.24,
+"lufs": -26.6
+},
+"mk532_footsteps_on_tall_grass": {
+"dur": 23.1,
+"peak": 6.86,
+"onset": 0.02,
+"lufs": -37.5
+},
+"mk1311_water_splash": {
+"dur": 1.48,
+"peak": 0.47,
+"onset": 0.22,
+"lufs": -15.5
+},
+"mk1198_sea_water_splash": {
+"dur": 1.74,
+"peak": 0.6,
+"onset": 0.05,
+"lufs": -19.8
+},
+"mk1180_jump_into_the_water": {
+"dur": 2.28,
+"peak": 0.38,
+"onset": 0.05,
+"lufs": -15.6
+},
+"mk1975_monster_footstep": {
+"dur": 3.0,
+"peak": 0.03,
+"onset": 0.0,
+"lufs": -18.3
+},
+"mk1956_monster_calm_growl": {
+"dur": 2.16,
+"peak": 0.87,
+"onset": 0.15,
+"lufs": -18.0
+},
+"mk1968_small_monster_growl": {
+"dur": 0.69,
+"peak": 0.4,
+"onset": 0.13,
+"lufs": -18.8
+},
+"mk14_aggressive_monster_beast_roar": {
+"dur": 3.21,
+"peak": 0.36,
+"onset": 0.06,
+"lufs": -10.7
+}
+}

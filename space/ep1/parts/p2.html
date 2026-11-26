@@ -1,0 +1,219 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#000e26;--violet:#6f1cee;--neon:#deef45;--pink:#ff2d55;--orange:#f7941d;--grey:#e6e6e6;--ring:#5c6472}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:#fff}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:#fff}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:#fff}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:#f2f2f2;color:#111;padding:2px 10px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:7px solid #fff;background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:4px solid #fff;opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="241.440" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s647" class="clip scene " data-start="0.000" data-duration="5.420" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="c646" class="scene"><div class="navy"></div><img id="du644" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="ph643" class="card" style="left:539px;top:130px;width:841px;height:820px;opacity:1"><img src="assets/gen/huygens_systema_6243ea.jpg" alt="huygens_systema"></div><div class="shade"></div><div class="lab" style="left:960px;top:1000px;font-size:24px;transform:translateX(-50%);"><span id="l645" style="display:inline-block;opacity:0">A THIN, FLAT RING THAT TOUCHES NOTHING</span></div></div></div>
+<div id="s650" class="clip scene " data-start="5.120" data-duration="8.100" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c649" class="scene"><div id="t648" class="stmt" style="top:900px;font-size:66px">THE FIRST RING PLANE CROSSING</div></div></div>
+<div id="s660" class="clip scene " data-start="13.220" data-duration="8.240" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div id="c659" class="scene"><div class="navy"></div><img id="du651" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h652" class="hdr">TILTED</div><svg class="full" viewBox="0 0 1920 1080"><g id="si653" opacity="0" style="transform-origin:960px 560px;transform-box:view-box"><g transform="rotate(-27 960 560)"><path d="M475.99999999999994,560 A484.00000000000006,121.00000000000001 0 0,1 1444.0,560" fill="none" stroke="#deef45" stroke-width="13.2" opacity=".9"/><circle cx="960" cy="560" r="220" fill="#6f1cee"/><path d="M475.99999999999994,560 A484.00000000000006,121.00000000000001 0 0,0 1444.0,560" fill="none" stroke="#deef45" stroke-width="13.2"/></g></g><line id="ln654" x1="960" y1="160" x2="960" y2="960" stroke="#5c6472" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 10" opacity="0"/><line id="ln655" x1="787.4836100989722" y1="221.4175208084202" x2="1132.5163899010277" y2="898.5824791915798" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="760.0" stroke-dashoffset="760.0" opacity="1.0"/><g id="g656" opacity="0"><path d="M960,260 A300,300 0 0,0 823.8,292.7" fill="none" stroke="#ff2d55" stroke-width="4"/></g></svg><div id="n657" class="num" style="left:1250px;top:330px"><b id="nv658" style="font-size:96px">0.0°</b><span>DEGREES</span></div></div></div>
+<div id="s677" class="clip scene " data-start="20.960" data-duration="25.620" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><div id="c676" class="scene"><div class="navy"></div><img id="du665" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h666" class="hdr">WHY THE RINGS VANISH</div><svg class="full" viewBox="0 0 1920 1080"><g id="g667" opacity="0"><circle cx="700" cy="560" r="46" fill="#f7941d"/><ellipse cx="700" cy="560" rx="90" ry="49.50000000000001" fill="none" stroke="#5c6472" stroke-width="2"/><ellipse cx="700" cy="560" rx="380" ry="209.00000000000003" fill="none" stroke="#5c6472" stroke-width="2"/><circle id="eo664" cx="790" cy="560" r="10" fill="#3a7bd5"/><g id="so661"><line x1="-70" y1="-30" x2="70" y2="30" stroke="#deef45" stroke-width="5"/><circle r="28" fill="#6f1cee"/></g></g><g id="g668" opacity="0"><circle cx="1530" cy="540" r="250" fill="#000" stroke="#fff" stroke-width="6"/><ellipse id="vr663" cx="1530" cy="540" rx="200" ry="80" fill="none" stroke="#deef45" stroke-width="10"/><circle cx="1530" cy="540" r="90" fill="#6f1cee"/></g></svg><div class="lab w" style="left:700px;top:616px;font-size:18px;transform:translateX(-50%);"><span id="l669" style="display:inline-block;opacity:0">SUN</span></div><div class="lab" style="left:1530px;top:820px;font-size:22px;transform:translateX(-50%);"><span id="l670" style="display:inline-block;opacity:0">OUR VIEW</span></div><div id="n671" class="num" style="left:260px;top:900px"><b id="nv672" style="font-size:70px">0.0</b><span>YEARS PER ORBIT</span></div><div class="lab w" style="left:1530px;top:230px;font-size:22px;transform:translateX(-50%);"><span id="l673" style="display:inline-block;opacity:0">LOOKING DOWN ON TOP</span></div><div class="lab w" style="left:1530px;top:230px;font-size:22px;transform:translateX(-50%);"><span id="l674" style="display:inline-block;opacity:0">LOOKING UP AT THE BOTTOM</span></div><div class="lab" style="left:1530px;top:230px;font-size:22px;transform:translateX(-50%);"><span id="l675" style="display:inline-block;opacity:0">EDGE-ON EVERY 13–15 YEARS</span></div></div></div>
+<div id="s682" class="clip scene " data-start="46.280" data-duration="6.980" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div id="c681" class="scene"><div class="lab" style="left:1450px;top:470px;font-size:24px;"><span id="l678" style="display:inline-block;opacity:0">10 M THICK</span></div><div id="n679" class="num" style="left:0;right:0;top:860px;justify-content:center"><b id="nv680" style="font-size:90px">0.0</b><span>BILLION KM AWAY</span></div></div></div>
+<div id="w683" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:53"><video id="v684" class="clip fit" src="assets/clips/px_paper_0_205c13fc.mp4" muted playsinline data-start="53.260" data-duration="10.100" data-track-index="1"></video></div>
+<div id="s687" class="clip scene " data-start="53.260" data-duration="10.100" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div id="c686" class="scene"><div class="shade"></div><div id="t685" class="stmt" style="top:880px;font-size:56px">A SHEET OF PAPER, SIDEWAYS, FROM ACROSS A COUNTRY</div></div></div>
+<div id="s704" class="clip scene " data-start="62.860" data-duration="22.760" data-track-index="2" style="z-index:55" data-layout-allow-overflow data-layout-allow-overlap><div id="c703" class="scene"><div class="navy"></div><img id="du688" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h689" class="hdr">RING PLANE CROSSINGS</div><div class="lab" style="left:300px;top:470px;font-size:44px;transform:translateX(-50%);"><span id="l692" style="display:inline-block;opacity:0">2009</span></div><div class="lab w" style="left:300px;top:650px;font-size:20px;transform:translateX(-50%);"><span id="l693" style="display:inline-block;opacity:0">PREVIOUS CROSSING</span></div><div class="lab" style="left:700px;top:470px;font-size:44px;transform:translateX(-50%);"><span id="l695" style="display:inline-block;opacity:0">2025</span></div><div class="lab w" style="left:700px;top:650px;font-size:20px;transform:translateX(-50%);"><span id="l696" style="display:inline-block;opacity:0">MARCH 23</span></div><div class="lab" style="left:1120px;top:470px;font-size:44px;transform:translateX(-50%);"><span id="l698" style="display:inline-block;opacity:0">EARLY 2030S</span></div><div class="lab w" style="left:1120px;top:650px;font-size:20px;transform:translateX(-50%);"><span id="l699" style="display:inline-block;opacity:0">WIDEST OPEN</span></div><div class="lab" style="left:1580px;top:470px;font-size:44px;transform:translateX(-50%);"><span id="l701" style="display:inline-block;opacity:0">2038–39</span></div><div class="lab w" style="left:1580px;top:650px;font-size:20px;transform:translateX(-50%);"><span id="l702" style="display:inline-block;opacity:0">THREE CROSSINGS</span></div><svg class="full" viewBox="0 0 1920 1080"><line id="ln690" x1="200" y1="600" x2="1720" y2="600" stroke="#5c6472" stroke-width="3" stroke-linecap="round" stroke-dasharray="1520.0" stroke-dashoffset="1520.0" opacity="1.0"/><g id="d691" style="transform-origin:300px 600px;transform-box:view-box" opacity="0"><circle cx="300" cy="600" r="18" fill="#deef45"/></g><g id="d694" style="transform-origin:700px 600px;transform-box:view-box" opacity="0"><circle cx="700" cy="600" r="26" fill="#ff2d55"/></g><g id="d697" style="transform-origin:1120px 600px;transform-box:view-box" opacity="0"><circle cx="1120" cy="600" r="18" fill="#deef45"/></g><g id="d700" style="transform-origin:1580px 600px;transform-box:view-box" opacity="0"><circle cx="1580" cy="600" r="18" fill="#deef45"/></g></svg></div></div>
+<div id="s707" class="clip scene " data-start="85.320" data-duration="6.140" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="c706" class="scene"><div class="lab w" style="left:960px;top:960px;font-size:26px;transform:translateX(-50%);"><span id="l705" style="display:inline-block;opacity:0">REAL · SPECTACULAR · HARMLESS</span></div></div></div>
+<div id="s710" class="clip scene " data-start="91.460" data-duration="1.760" data-track-index="2" style="z-index:57" data-layout-allow-overflow data-layout-allow-overlap><div id="c709" class="scene"><div id="t708" class="stmt" style="top:900px;font-size:76px">THE SECOND ONE ISN'T</div></div></div>
+<div id="s715" class="clip scene " data-start="93.220" data-duration="11.540" data-track-index="2" style="z-index:58" data-layout-allow-overflow data-layout-allow-overlap><div id="c714" class="scene"><img id="ph711" class="fill" src="assets/gen/voyager_saturn_407ee0.jpg" alt="voyager_saturn" style="transform-origin:50% 50%"><div class="shade"></div><div id="h712" class="hdr">THE FIRST CLUES</div><div class="lab w" style="left:60px;top:1010px;font-size:22px;"><span id="l713" style="display:inline-block;opacity:0">VOYAGER · 1980–81</span></div></div></div>
+<div id="s720" class="clip scene " data-start="104.460" data-duration="11.840" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="c719" class="scene"><div style="position:absolute;left:1180px;top:360px;"><div id="b716" class="box " style="position:relative">DARK BANDS IN THE ATMOSPHERE</div></div><div style="position:absolute;left:1180px;top:440px;"><div id="b717" class="box v" style="position:relative">ODD CHANGES IN THE IONOSPHERE</div></div><div style="position:absolute;left:1180px;top:520px;"><div id="b718" class="box " style="position:relative">DENSITY VARIATIONS IN THE RINGS</div></div></div></div>
+<div id="s727" class="clip scene " data-start="116.300" data-duration="10.240" data-track-index="2" style="z-index:60" data-layout-allow-overflow data-layout-allow-overlap><div id="c726" class="scene"><div class="navy"></div><img id="du721" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h722" class="hdr">1986</div><div id="t723" class="stmt w" style="top:430px;font-size:120px">JACK CONNERNEY</div><div class="lab" style="left:960px;top:590px;font-size:28px;transform:translateX(-50%);"><span id="l724" style="display:inline-block;opacity:0">A NEW IDEA</span></div><div id="t725" class="stmt" style="top:760px;font-size:70px">THE RINGS ARE RAINING ONTO SATURN</div></div></div>
+<div id="s747" class="clip scene " data-start="126.040" data-duration="27.540" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div id="c746" class="scene"><div class="navy"></div><img id="du736" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h737" class="hdr">HOW A GRAIN GETS CHARGED</div><svg class="full" viewBox="0 0 1920 1080"><g id="gr735"><circle cx="960" cy="560" r="120" fill="#e6e6e6"/></g><g id="g738" opacity="0"><path d="M200,300 q30,-20 60,0 t60,0 t60,0 t60,0 t60,0" fill="none" stroke="#b07cff" stroke-width="4"/><path d="M200,440 q30,-20 60,0 t60,0 t60,0 t60,0 t60,0" fill="none" stroke="#b07cff" stroke-width="4"/><path d="M200,580 q30,-20 60,0 t60,0 t60,0 t60,0 t60,0" fill="none" stroke="#b07cff" stroke-width="4"/><path d="M200,720 q30,-20 60,0 t60,0 t60,0 t60,0 t60,0" fill="none" stroke="#b07cff" stroke-width="4"/></g><g id="g739" opacity="0"><circle cx="1500" cy="260" r="7" fill="#f7941d"/><line x1="1500" y1="260" x2="1600" y2="200" stroke="#f7941d" stroke-width="2" opacity=".6"/><circle cx="1560" cy="380" r="7" fill="#f7941d"/><line x1="1560" y1="380" x2="1660" y2="320" stroke="#f7941d" stroke-width="2" opacity=".6"/><circle cx="1620" cy="500" r="7" fill="#f7941d"/><line x1="1620" y1="500" x2="1720" y2="440" stroke="#f7941d" stroke-width="2" opacity=".6"/></g><g id="el728" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el729" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el730" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el731" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el732" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el733" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="el734" opacity="0"><circle cx="960" cy="560" r="12" fill="#7fd6ff"/><text x="960" y="561" font-family="Space Mono" font-size="14" text-anchor="middle" dominant-baseline="central" fill="#000e26">e</text></g><g id="g740" opacity="0"><text x="960" y="566" text-anchor="middle" dominant-baseline="central" font-family="Anton" font-size="120" fill="#000e26">+</text></g></svg><div class="lab w" style="left:960px;top:720px;font-size:22px;transform:translateX(-50%);"><span id="l741" style="display:inline-block;opacity:0">ICE GRAIN</span></div><div class="lab" style="left:200px;top:240px;font-size:22px;"><span id="l742" style="display:inline-block;opacity:0">ULTRAVIOLET LIGHT</span></div><div class="lab" style="left:1500px;top:180px;font-size:22px;"><span id="l743" style="display:inline-block;opacity:0">MICROMETEOROIDS</span></div><div class="lab" style="left:960px;top:960px;font-size:22px;transform:translateX(-50%);"><span id="l744" style="display:inline-block;opacity:0">ELECTRONS KNOCKED LOOSE</span></div><div class="lab w" style="left:960px;top:1010px;font-size:22px;transform:translateX(-50%);"><span id="l745" style="display:inline-block;opacity:0">NOW SATURN'S MAGNETIC FIELD CAN GRAB IT</span></div></div></div>
+<div id="s751" class="clip scene " data-start="153.280" data-duration="11.140" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><div id="c750" class="scene"><div class="lab" style="left:60px;top:1000px;font-size:24px;"><span id="l748" style="display:inline-block;opacity:0">MAGNETIC FIELD LINES</span></div><div class="lab w" style="left:960px;top:1000px;font-size:24px;transform:translateX(-50%);"><span id="l749" style="display:inline-block;opacity:0">LIKE BEADS ON A CURVED WIRE</span></div></div></div>
+<div id="s755" class="clip scene " data-start="164.420" data-duration="10.760" data-track-index="2" style="z-index:63" data-layout-allow-overflow data-layout-allow-overlap><div id="c754" class="scene"><div id="t752" class="stmt" style="top:880px;font-size:90px">RING RAIN</div><div class="lab w" style="left:960px;top:990px;font-size:24px;transform:translateX(-50%);"><span id="l753" style="display:inline-block;opacity:0">IT GLOWS IN INFRARED</span></div></div></div>
+<div id="s762" class="clip scene " data-start="175.180" data-duration="14.120" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="c761" class="scene"><img id="ph756" class="fill" src="assets/gen/keck_obs_478e63.jpg" alt="keck_obs" style="transform-origin:50% 50%"><div class="shade"></div><div style="position:absolute;left:60px;top:940px;"><div id="b757" class="box " style="position:relative">JAMES O'DONOGHUE · NASA</div></div><div class="lab w" style="left:60px;top:1010px;font-size:20px;"><span id="l758" style="display:inline-block;opacity:0">KECK TELESCOPE · HAWAII</span></div><div id="ls759" class="lens" style="left:1160px;top:170px;width:600px;height:600px"><img src="assets/gen/ringrain_keck_1baeef.jpg" alt=""></div><div class="lab w" style="left:1460px;top:800px;font-size:18px;transform:translateX(-50%);"><span id="l760" style="display:inline-block;opacity:0">ARTIST'S CONCEPT · NASA</span></div></div></div>
+<div id="w763" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:65"><video id="v764" class="clip fit" src="assets/clips/px_pool_1_91df0af6.mp4" muted playsinline data-start="188.800" data-duration="8.500" data-track-index="1"></video></div>
+<div id="s769" class="clip scene " data-start="188.800" data-duration="8.500" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="c768" class="scene"><div class="shade"></div><div id="n765" class="num" style="left:0;right:0;top:380px;justify-content:center"><b id="nv766" style="font-size:120px">1–1</b><span>TONS OF WATER EVERY SECOND</span></div><div class="lab w" style="left:960px;top:560px;font-size:28px;transform:translateX(-50%);"><span id="l767" style="display:inline-block;opacity:0">AN OLYMPIC POOL IN ABOUT HALF AN HOUR</span></div></div></div>
+<div id="s773" class="clip scene " data-start="197.000" data-duration="7.600" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="c772" class="scene"><div id="n770" class="num" style="left:0;right:0;top:880px;justify-content:center"><b id="nv771" style="font-size:96px">0</b><span>MILLION YEARS LEFT</span></div></div></div>
+<div id="s777" class="clip scene " data-start="204.600" data-duration="4.500" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap><div id="c776" class="scene"><div id="h774" class="hdr">CASSINI</div><div id="t775" class="stmt w" style="top:900px;font-size:60px">RING RAIN WAS ONLY HALF THE STORY</div></div></div>
+<div id="s782" class="clip scene " data-start="209.100" data-duration="5.520" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div id="c781" class="scene"><img id="ph778" class="fill" src="assets/gen/cassini_launch_e92a6c.jpg" alt="cassini_launch" style="transform-origin:50% 50%"><div class="shade"></div><div style="position:absolute;left:60px;top:920px;"><div id="b779" class="box " style="position:relative">LAUNCH · 1997</div></div><div style="position:absolute;left:60px;top:980px;"><div id="b780" class="box v" style="position:relative">ARRIVAL · 2004</div></div></div></div>
+<div id="s786" class="clip scene " data-start="214.320" data-duration="3.340" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="c785" class="scene"><div id="n783" class="num" style="left:60px;top:880px"><b id="nv784" style="font-size:96px">0</b><span>YEARS ORBITING SATURN</span></div></div></div>
+<div id="s789" class="clip scene " data-start="217.660" data-duration="4.620" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div id="c788" class="scene"><div class="lab w" style="left:60px;top:1000px;font-size:24px;"><span id="l787" style="display:inline-block;opacity:0">2017 · RUNNING OUT OF FUEL</span></div></div></div>
+<div id="s797" class="clip scene " data-start="222.280" data-duration="7.400" data-track-index="2" style="z-index:72" data-layout-allow-overflow data-layout-allow-overlap><div id="c796" class="scene"><div class="navy"></div><img id="du790" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h791" class="hdr">PLACES TO LOOK FOR LIFE</div><div id="ls792" class="lens" style="left:70px;top:290px;width:460px;height:460px"><img src="assets/gen/enceladus_f159e3.jpg" alt=""></div><div class="lab" style="left:300px;top:780px;font-size:24px;transform:translateX(-50%);"><span id="l793" style="display:inline-block;opacity:0">ENCELADUS</span></div><div id="ls794" class="lens" style="left:1390px;top:290px;width:460px;height:460px"><img src="assets/gen/titan_bb2656.jpg" alt=""></div><div class="lab" style="left:1620px;top:780px;font-size:24px;transform:translateX(-50%);"><span id="l795" style="display:inline-block;opacity:0">TITAN</span></div></div></div>
+<div id="s801" class="clip scene " data-start="229.180" data-duration="7.600" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div id="c800" class="scene"><img id="ph798" class="fill" src="assets/gen/cassini_art_87f013.jpg" alt="cassini_art" style="transform-origin:50% 50%"><div class="shade"></div><div id="t799" class="stmt" style="top:900px;font-size:64px">IT COULD CONTAMINATE THEM FOREVER</div></div></div>
+<div id="s804" class="clip scene " data-start="236.480" data-duration="4.960" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="c803" class="scene"><div id="t802" class="stmt w" style="top:900px;font-size:60px">SO CASSINI WOULD DIVE INTO SATURN</div></div></div>
+</div>
+<script>
+window.SPS = [[5.12, 13.22, "sat", {"sun": [-62, 12], "dist": 6.2, "el0": 2.5, "el1": 0.15, "az0": 6, "az1": -2}], [46.28, 53.26, "sat", {"sun": [-62, 12], "dist": 7.5, "el": 0.25, "az0": -3, "az1": 3}], [85.32, 91.46, "sat", {"sun": [-62, 12], "dist0": 8, "dist1": 7, "el": 22, "az0": -40, "az1": -20, "roll": -14}], [91.46, 93.22, "sat", {"sun": [178, 5], "dist": 4.2, "el": 6, "az0": 160, "az1": 170}], [104.46, 116.3, "sat", {"sun": [-62, 12], "dist": 2.9, "dist1": 2.6, "el": 14, "az0": -6, "az1": 6, "sx": -200, "rot": 4}], [153.28, 164.42, "sat_rain", {"dist": 6, "el": 12, "az0": -10, "az1": 8, "lt0": 0.4, "tg": 2.4}], [164.42, 175.18, "sat_rain", {"dist": 4.6, "el": 24, "az0": 40, "az1": 52, "lt0": 0, "tg": 0, "grains": 1600}], [197.0, 204.6, "sat", {"sun": [-62, 12], "dist": 7.2, "el": 18, "az0": -12, "az1": 4, "drainK": [[2.5, 0], [7.4, 2.3]]}], [204.6, 209.1, "cassini", {"az0": 20, "az1": 60, "dist0": 16, "dist1": 12}], [214.32, 217.66, "cassini", {"az0": -40, "az1": -10, "dist": 11, "cy": 1}], [217.66, 222.28, "sat", {"sun": [-30, 8], "dist": 5.5, "el": 10, "az0": 90, "az1": 100}], [236.48, 241.44, "cassini", {"az0": 150, "az1": 190, "dist": 13, "cy": -1, "ss": 12, "sp": [10, -2, -36]}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#ph643",{scale:1.0},{scale:1.05,duration:5.42,ease:"none"},0.000);
+tl.fromTo("#du644",{x:0,y:0},{x:-40,y:-14,duration:5.42,ease:"none"},0.000);
+tl.fromTo("#l645",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},0.540);
+tl.to("#c646",{opacity:0,duration:0.55,ease:"power1.inOut"},4.870);
+tl.fromTo("#t648",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},7.860);
+tl.fromTo("#du651",{x:0,y:0},{x:-40,y:-14,duration:8.24,ease:"none"},13.220);
+tl.fromTo("#h652",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},13.320);
+tl.fromTo("#si653",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"back.out(1.3)"},13.320);
+tl.fromTo("#ln654",{opacity:0},{opacity:1.0,duration:0.4,ease:"power2.out"},13.620);
+tl.fromTo("#ln655",{strokeDashoffset:759.9999999999999},{strokeDashoffset:0,duration:0.7,ease:"power2.inOut"},16.840);
+tl.fromTo("#g656",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.140);
+tl.fromTo("#n657",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.140);
+tl.fromTo({v:0},{v:0},{v:26.7,duration:1.0,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv658").textContent=""+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"°";}},17.140);
+tl.fromTo("#c659",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},13.220);
+tl.fromTo({p:0},{p:0},{p:1,duration:25.620,ease:"none",onUpdate:function(){var p=this.targets()[0].p;var A=-1.2+p*25.62*0.32;var x=700+380*Math.cos(A),y=560+380*0.55*Math.sin(A);var g=document.getElementById("so661");g.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")");var E=p*25.62*2.2;document.getElementById("eo664").setAttribute("cx",(700+90*Math.cos(E)).toFixed(1));document.getElementById("eo664").setAttribute("cy",(560+90*0.55*Math.sin(E)).toFixed(1));var o=Math.abs(Math.sin(A));document.getElementById("vr663").setAttribute("ry",(4+150*o).toFixed(1));}},20.960);
+tl.fromTo("#du665",{x:0,y:0},{x:-40,y:-14,duration:25.62,ease:"none"},20.960);
+tl.fromTo("#h666",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},21.060);
+tl.fromTo("#g667",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},21.060);
+tl.fromTo("#g668",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},21.560);
+tl.fromTo("#l669",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},21.360);
+tl.fromTo("#l670",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},21.760);
+tl.fromTo("#n671",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},22.040);
+tl.fromTo({v:0},{v:0},{v:29.5,duration:0.9,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv672").textContent=""+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"";}},22.040);
+tl.fromTo("#l673",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},31.940);
+tl.to("#l673",{opacity:0,duration:0.25,ease:"power2.out"},36.700);
+tl.fromTo("#l674",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},37.000);
+tl.to("#l674",{opacity:0,duration:0.25,ease:"power2.out"},38.560);
+tl.fromTo("#l675",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},38.860);
+tl.fromTo("#c676",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},20.960);
+tl.to("#c676",{opacity:0,duration:0.55,ease:"power1.inOut"},46.030);
+tl.fromTo("#l678",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},47.740);
+tl.fromTo("#n679",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},51.320);
+tl.fromTo({v:0},{v:0},{v:1.2,duration:1.0,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv680").textContent=""+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"";}},51.320);
+tl.fromTo("#v684",{scale:1.0},{scale:1.07,duration:10.1,ease:"none"},53.260);
+tl.fromTo("#w683",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},53.260);
+tl.fromTo("#t685",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},53.840);
+tl.fromTo("#c686",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},53.260);
+tl.fromTo("#du688",{x:0,y:0},{x:-40,y:-14,duration:22.76,ease:"none"},62.860);
+tl.fromTo("#h689",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},62.960);
+tl.fromTo("#ln690",{strokeDashoffset:1520.0},{strokeDashoffset:0,duration:1.0,ease:"power2.inOut"},63.060);
+tl.fromTo("#d691",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},67.520);
+tl.fromTo("#l692",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},67.520);
+tl.fromTo("#l693",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},67.670);
+tl.fromTo("#d694",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},64.740);
+tl.fromTo("#l695",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},64.740);
+tl.fromTo("#l696",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},64.890);
+tl.fromTo("#d697",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},74.700);
+tl.fromTo("#l698",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},74.700);
+tl.fromTo("#l699",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},74.850);
+tl.fromTo("#d700",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},77.860);
+tl.fromTo("#l701",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},77.860);
+tl.fromTo("#l702",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},78.010);
+tl.fromTo("#c703",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},62.860);
+tl.to("#c703",{opacity:0,duration:0.55,ease:"power1.inOut"},85.070);
+tl.fromTo("#l705",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},87.600);
+tl.fromTo("#t708",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},91.740);
+tl.fromTo("#ph711",{scale:1.0},{scale:1.1,duration:11.54,ease:"none"},93.220);
+tl.fromTo("#h712",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},93.320);
+tl.fromTo("#l713",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},99.140);
+tl.fromTo("#c714",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},93.220);
+tl.to("#c714",{opacity:0,duration:0.55,ease:"power1.inOut"},104.210);
+tl.fromTo("#b716",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},105.240);
+tl.fromTo("#b717",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},110.780);
+tl.fromTo("#b718",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},113.380);
+tl.fromTo("#du721",{x:0,y:0},{x:-40,y:-14,duration:10.24,ease:"none"},116.300);
+tl.fromTo("#h722",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},116.400);
+tl.fromTo("#t723",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},116.600);
+tl.fromTo("#l724",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},117.240);
+tl.fromTo("#t725",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},124.260);
+tl.fromTo("#c726",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},116.300);
+tl.fromTo("#el728",{x:0,y:0,opacity:0},{x:315.26104141145,y:97.52166819824205,opacity:1,duration:1.4,ease:"power2.out"},141.040);
+tl.fromTo("#el729",{x:0,y:0,opacity:0},{x:119.57805897730229,y:307.57289836918466,opacity:1,duration:1.4,ease:"power2.out"},141.120);
+tl.fromTo("#el730",{x:0,y:0,opacity:0},{x:-166.599214517953,y:284.85909099412834,opacity:1,duration:1.4,ease:"power2.out"},141.200);
+tl.fromTo("#el731",{x:0,y:0,opacity:0},{x:-326.69752387814697,y:46.56960265975618,opacity:1,duration:1.4,ease:"power2.out"},141.280);
+tl.fromTo("#el732",{x:0,y:0,opacity:0},{x:-239.55766038604628,y:-226.96283253071135,opacity:1,duration:1.4,ease:"power2.out"},141.360);
+tl.fromTo("#el733",{x:0,y:0,opacity:0},{x:28.87466453501731,y:-328.7343209158274,opacity:1,duration:1.4,ease:"power2.out"},141.440);
+tl.fromTo("#el734",{x:0,y:0,opacity:0},{x:275.4552189969227,y:-181.7262290572204,opacity:1,duration:1.4,ease:"power2.out"},141.520);
+tl.to("#gr735 circle",{fill:"#ff2d55",duration:0.5,ease:"power2.out"},144.360);
+tl.fromTo("#du736",{x:0,y:0},{x:-40,y:-14,duration:27.54,ease:"none"},126.040);
+tl.fromTo("#h737",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},126.140);
+tl.fromTo("#g738",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},133.700);
+tl.fromTo("#g739",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},138.160);
+tl.fromTo("#g740",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},144.360);
+tl.fromTo("#l741",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},126.340);
+tl.fromTo("#l742",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},133.700);
+tl.fromTo("#l743",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},138.160);
+tl.fromTo("#l744",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},141.340);
+tl.fromTo("#l745",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},151.160);
+tl.fromTo("#c746",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},126.040);
+tl.to("#c746",{opacity:0,duration:0.55,ease:"power1.inOut"},153.030);
+tl.fromTo("#l748",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},153.840);
+tl.fromTo("#l749",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},159.480);
+tl.fromTo("#t752",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},165.560);
+tl.fromTo("#l753",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},171.500);
+tl.fromTo("#ph756",{scale:1.0},{scale:1.1,duration:14.12,ease:"none"},175.180);
+tl.fromTo("#b757",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},175.640);
+tl.fromTo("#l758",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},180.260);
+tl.fromTo("#ls759",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},183.240);
+tl.fromTo("#l760",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},183.540);
+tl.fromTo("#c761",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},175.180);
+tl.fromTo("#v764",{scale:1.0},{scale:1.07,duration:8.5,ease:"none"},188.800);
+tl.fromTo("#w763",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},188.800);
+tl.to("#w763",{opacity:0,duration:0.55,ease:"power1.inOut"},196.750);
+tl.fromTo("#n765",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},190.260);
+tl.fromTo({v:1},{v:1},{v:3,duration:0.8,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv766").textContent="1–"+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},190.260);
+tl.fromTo("#l767",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},193.680);
+tl.fromTo("#c768",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},188.800);
+tl.to("#c768",{opacity:0,duration:0.55,ease:"power1.inOut"},196.750);
+tl.fromTo("#n770",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},202.300);
+tl.fromTo({v:0},{v:0},{v:300,duration:1.2,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv771").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},202.300);
+tl.fromTo("#h774",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},204.700);
+tl.fromTo("#t775",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},207.680);
+tl.fromTo("#ph778",{scale:1.0},{scale:1.1,duration:5.52,ease:"none"},209.100);
+tl.fromTo("#b779",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},209.600);
+tl.fromTo("#b780",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},212.740);
+tl.fromTo("#c781",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},209.100);
+tl.to("#c781",{opacity:0,duration:0.55,ease:"power1.inOut"},214.070);
+tl.fromTo("#n783",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},215.020);
+tl.fromTo({v:0},{v:0},{v:13,duration:0.8,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv784").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},215.020);
+tl.fromTo("#l787",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},218.240);
+tl.fromTo("#du790",{x:0,y:0},{x:-40,y:-14,duration:7.4,ease:"none"},222.280);
+tl.fromTo("#h791",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},222.380);
+tl.fromTo("#ls792",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},223.880);
+tl.fromTo("#l793",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},224.080);
+tl.fromTo("#ls794",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},224.720);
+tl.fromTo("#l795",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},224.920);
+tl.fromTo("#c796",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},222.280);
+tl.fromTo("#ph798",{scale:1.0},{scale:1.08,duration:7.6,ease:"none"},229.180);
+tl.fromTo("#t799",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},234.660);
+tl.fromTo("#c800",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},229.180);
+tl.to("#c800",{opacity:0,duration:0.55,ease:"power1.inOut"},236.230);
+tl.fromTo("#t802",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},237.240);
+tl.set({}, {}, 241.440);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

@@ -1,0 +1,53 @@
+TITLE (pick one)
+1. Is Your Phone Listening to You? How Your Feed Really Knows   <- recommended
+2. Your Phone Isn't Listening. What It Does Is Creepier.
+3. Creepy Computer Science: How the Algorithm Knows You
+4. How TikTok, YouTube and Netflix Know What You Want (Recommendation Systems Explained)
+
+DESCRIPTION
+Is your phone listening to you? You talked about hiking boots once, out loud, and an hour later there was an ad for hiking boots. Researchers tested more than 17,000 Android apps and found none secretly sending audio. So how did it know? It never needed to hear you. In this video we build a recommendation system from scratch, one piece at a time, and find out exactly what your feed knows about you.
+
+You'll see how collaborative filtering matches you with strangers who behave like you, the Netflix Prize (one million dollars to beat Netflix's recommendations by 10%, won by 20 minutes), how matrix factorization turns every person and movie into 50 numbers that quietly learn ideas like serious vs silly, why you are a dot in a 50-direction space, how a Wall Street Journal experiment showed the TikTok algorithm figuring out bots from nothing but hesitation, how the YouTube algorithm works in two stages and predicts watch time instead of clicks, and the study where your Facebook likes predicted your personality better than your friends and family.
+
+Then the fair part: the system doesn't understand you, it's arithmetic, and it's trained on what you keep watching, not what you're glad you watched. So here's how to take control of your feed: the not interested button, pausing your watch history, searching on purpose, and finishing what you actually want more of. Plus why that one random video in your feed is the algorithm exploring.
+
+Your phone isn't listening. It's paying attention to what you pay attention to. Bit by bit.
+
+CHAPTERS
+0:00 Is your phone listening to you?
+1:01 Welcome to Bit by Bit
+1:14 Piece 1: A spreadsheet of strangers (collaborative filtering)
+2:09 The empty spreadsheet
+2:40 Piece 2: The million-dollar Netflix Prize
+3:14 Piece 3: Shrink the spreadsheet (matrix factorization)
+4:24 You are a dot in 50 dimensions
+4:48 Piece 4: Your hesitation is a vote (the TikTok experiment)
+5:38 Piece 5: How the YouTube algorithm works
+6:22 The creepy part: what your likes reveal
+7:09 To be fair
+7:54 How to take control of your feed
+8:20 Why you see random videos
+8:43 Back to the hiking boots
+
+What's the strangest thing your feed ever got right about you? Tell me in the comments.
+Subscribe to Bit by Bit for computer science explained, one piece at a time.
+
+CREDITS
+Photos of Christo Wilson, David Choffnes: Northeastern University
+Photo of Reed Hastings: JD Lasica, CC BY 2.0, via Wikimedia Commons
+Photo of Michal Kosinski: Adrian Grycuk, CC BY-SA 3.0 PL, via Wikimedia Commons
+Photo of David Stillwell: University of Cambridge
+Netflix Prize award footage: AT&T Tech Channel
+TikTok bot experiment footage: The Wall Street Journal
+Stock footage and sound effects: Pixabay
+
+#algorithm #computerscience #privacy #tiktokalgorithm #youtubealgorithm #recommendationsystem #bitbybit
+
+TAGS (paste into YouTube's tags box)
+is my phone listening to me,is your phone listening to you,how tiktok knows you,tiktok algorithm explained,youtube algorithm explained,recommendation system explained,recommendation algorithm,collaborative filtering,netflix prize,matrix factorization,how the algorithm works,creepy computer science,computer science explained,why do i see ads on my phone,social media algorithm,bit by bit
+
+HASHTAGS (first 3 show above the title)
+#algorithm #computerscience #privacy
+
+PINNED COMMENT
+Your phone isn't listening. It's paying attention to what you pay attention to. What's the strangest thing your feed ever got right about you?

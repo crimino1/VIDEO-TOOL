@@ -1,0 +1,51 @@
+TITLE (pick one)
+1. AI Can Now Edit Another AI's Brain (And Made It 6x Better at Math)
+2. An AI Rewired Another AI's Brain by Hand. Here's the Twist.
+3. GPT-6 Astra Edited Another AI's Weights: 6x Better… or Not?
+Recommended: 1
+
+DESCRIPTION
+MIT researchers handed GPT-6 Astra the weights of another AI and said: make this better at math. No retraining, no new data. Astra found a looping bug in two layers of Qwen3.5-0.8B, changed just 0.016% of its weights by hand, and its MATH-500 score jumped from 7.9% to 48.1%. It also named which game a network was trained on just from its numbers, and hand-wrote a Breakout network that beat one trained for 100 million rounds. But there's a twist most coverage skipped: critics reran the untouched model with better settings and got close to the edited score. Here's what really happened, why it matters, and what it means for AI improving AI.
+
+⏱️ CHAPTERS
+0:00 Brain surgery on an AI
+0:49 The MIT "weight-space programming" study
+1:11 What weights actually are
+2:03 The strange question
+2:20 The patient: Qwen3.5-0.8B
+3:09 What Astra found (layers 15 and 19)
+3:58 The results: 7.9% → 48.1%
+4:34 Why it worked: the loop fix
+4:54 The control test
+5:14 Reading which game a network plays
+5:55 Writing weights from scratch: Breakout, Go, a self-driving car
+6:51 Other models can do it too
+7:27 The twist: what critics found
+8:14 The baseline problem
+9:02 The researchers' own limits
+9:41 Why it matters: audits, bug fixes, self-improvement
+10:36 AI that improves AI
+11:08 My take
+
+🔗 SOURCES
+MIT CSAIL blog (Takehi, Teoh, Zhang, Khattab): https://rikiyat.github.io/blog/weight-space-programming/
+Experiment logs: https://github.com/RikiyaT/lm_understand-logs
+Qwen3.5-0.8B model card: https://huggingface.co/Qwen/Qwen3.5-0.8B
+Simon Willison: https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/
+Alex Krentsel: https://x.com/AlexKrentsel/status/2117376683724660898
+Jacob Lauritzen (Legora): https://x.com/jacsebl/status/2117606206764175543
+Matthew Honnibal: https://honnibal.dev/blog/astra-read-write-misleading
+Carlos Toledo's rerun: https://carlostoledo.co/reports/weight-space-programming.html
+METR on AI speeding up Anthropic's research: https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment
+Prompt Engineering explainer: https://www.youtube.com/watch?v=wXJDtImT_-0
+
+💬 First step toward AI improving itself, or good engineering with a big headline? Tell me in the comments.
+🔔 Subscribe to AI Equator for AI news explained.
+
+#AI #ArtificialIntelligence #AINews #MachineLearning #GPT6 #MIT #AIResearch #WeightSpaceProgramming
+
+TAGS (under 500 characters)
+ai edits another ai,weight space programming,gpt 6 astra,mit csail ai,ai brain surgery,qwen 3.5,ai editing neural network weights,ai improving ai,recursive self improvement,neural network weights explained,how ai works,ai news,ai news today,mechanistic interpretability,ai research,openai,machine learning explained,ai black box,llm weights,ai equator
+
+PINNED COMMENT
+The edit was real, but the "6x" depends on a weak baseline. Would you call this AI brain surgery, or just good engineering? 👇

@@ -1,0 +1,303 @@
+{
+ "voyager_photo": {
+  "title": "Voyager in Space Artist Concept",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA17049",
+  "size": "1280x720",
+  "source_url": "http://images-assets.nasa.gov/image/PIA17049/PIA17049~orig.jpg"
+ },
+ "voyager_photo_b": {
+  "title": "Voyager in Deep Space (Artist Concept)",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA21839",
+  "size": "1280x720",
+  "source_url": "http://images-assets.nasa.gov/image/PIA21839/PIA21839~orig.jpg"
+ },
+ "voyager_launch": {
+  "title": "Voyager 1 Launch",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech/KSC",
+  "page": "https://images.nasa.gov/details/PIA21747",
+  "size": "1833x2304",
+  "source_url": "http://images-assets.nasa.gov/image/PIA21747/PIA21747~orig.jpg"
+ },
+ "voyager_launch_b": {
+  "title": "Voyager 1 Launch",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech/KSC",
+  "page": "https://images.nasa.gov/details/PIA21746",
+  "size": "1760x2227",
+  "source_url": "http://images-assets.nasa.gov/image/PIA21746/PIA21746~orig.jpg"
+ },
+ "dsn_dish": {
+  "title": "Goldstone’s 70-Meter Antenna Under the Stars",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA26716",
+  "size": "1958x3000",
+  "source_url": "http://images-assets.nasa.gov/image/PIA26716/PIA26716~orig.png"
+ },
+ "dsn_dish_b": {
+  "title": "The Goldstone Solar System Radar at Sunset",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA26150",
+  "size": "4000x3000",
+  "source_url": "http://images-assets.nasa.gov/image/PIA26150/PIA26150~orig.jpg"
+ },
+ "earth_blue_marble": {
+  "title": "View of the Earth seen by the Apollo 17 crew traveling toward the moon",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/as17-148-22727",
+  "size": "4000x4000",
+  "source_url": "http://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg"
+ },
+ "earth_moon": {
+  "title": "From a Million Miles Away, NASA Camera Shows Moon Crossing Face of Earth",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/GSFC",
+  "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000670",
+  "size": "2048x2048",
+  "source_url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000670/GSFC_20171208_Archive_e000670~orig.png"
+ },
+ "sun_sdo": {
+  "title": "SDO AIA 171 full disk (latest, 2026-11)",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/SDO and the AIA science team",
+  "page": "https://sdo.gsfc.nasa.gov/data/",
+  "size": "4000x4000",
+  "source_url": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0171.jpg",
+  "note": "burned-in SDO/AIA timestamp (bottom-left) masked to black"
+ },
+ "betelgeuse": {
+  "title": "Betelgeuse captured by ALMA",
+  "license": "CC BY 4.0",
+  "artist": "ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella",
+  "page": "https://www.eso.org/public/images/potw1726a/",
+  "size": "4000x4000",
+  "source_url": "https://cdn.eso.org/images/publicationjpg/potw1726a.jpg"
+ },
+ "orion_b": {
+  "title": "The Hunter and La Silla",
+  "license": "CC BY 4.0",
+  "artist": "P. Horálek /ESO",
+  "page": "https://www.eso.org/public/images/potw1922a/",
+  "size": "2646x4000",
+  "source_url": "https://cdn.eso.org/images/publicationjpg/potw1922a.jpg"
+ },
+ "proxima": {
+  "title": "New shot of Proxima Centauri, our nearest neighbour",
+  "license": "CC BY 4.0",
+  "artist": "ESA/Hubble & NASA",
+  "page": "https://esahubble.org/images/potw1343a/",
+  "size": "604x592",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg"
+ },
+ "alpha_cen": {
+  "title": "The bright star Alpha Centauri and its surroundings",
+  "license": "CC BY 4.0",
+  "artist": "ESO/Digitized Sky Survey 2 Acknowledgement: Davide De Martin",
+  "page": "https://www.eso.org/public/images/eso1241e/",
+  "size": "3993x4000",
+  "source_url": "https://cdn.eso.org/images/large/eso1241e.jpg"
+ },
+ "milkyway_art": {
+  "title": "Our Milky Way Gets a Makeover  Artist Concept",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA10748",
+  "size": "4000x4000",
+  "source_url": "http://images-assets.nasa.gov/image/PIA10748/PIA10748~orig.jpg"
+ },
+ "milkyway_sky": {
+  "title": "The southern Milky Way above ALMA",
+  "license": "CC BY 4.0",
+  "artist": "ESO/B. Tafreshi ( twanight.org )",
+  "page": "https://www.eso.org/public/images/potw1222a/",
+  "size": "4000x2667",
+  "source_url": "https://cdn.eso.org/images/publicationjpg/potw1222a.jpg"
+ },
+ "milkyway_sky_b": {
+  "title": "The Milky Way panorama",
+  "license": "CC BY 4.0",
+  "artist": "ESO/S. Brunier",
+  "page": "https://www.eso.org/public/images/eso0932a/",
+  "size": "4000x2000",
+  "source_url": "https://cdn.eso.org/images/publicationjpg/eso0932a.jpg"
+ },
+ "hudf": {
+  "title": "Hubble sees galaxies galore",
+  "license": "CC BY 4.0",
+  "artist": "NASA , ESA , and S. Beckwith ( STScI ) and the HUDF Team",
+  "page": "https://esahubble.org/images/heic0406a/",
+  "size": "6200x6200",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/heic0406a.jpg"
+ },
+ "hudf_xdf": {
+  "title": "The Hubble eXtreme Deep Field",
+  "license": "CC BY 4.0",
+  "artist": "NASA, ESA, G. Illingworth, D. Magee, and P. Oesch (University of California, Santa Cruz), R. Bouwens (Leiden University), and the HUDF09 Team",
+  "page": "https://esahubble.org/images/heic1214a/",
+  "size": "2382x2078",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/heic1214a.jpg"
+ },
+ "pale_blue_dot": {
+  "title": "Pale Blue Dot Revisited",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA23645",
+  "size": "4000x3958",
+  "source_url": "http://images-assets.nasa.gov/image/PIA23645/PIA23645~orig.jpg"
+ },
+ "voyager_real": {
+  "title": "Voyager: Vibration Acoustics and Pyro Shock Testing",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA21733",
+  "size": "2156x2192",
+  "source_url": "http://images-assets.nasa.gov/image/PIA21733/PIA21733~orig.jpg"
+ },
+ "betelgeuse_b": {
+  "title": "SPHERE's view of Betelgeuse in December 2019",
+  "license": "CC BY 4.0",
+  "artist": "ESO/M. Montargès et al.",
+  "page": "https://www.eso.org/public/images/eso2003a/",
+  "size": "816x816",
+  "source_url": "https://cdn.eso.org/images/large/eso2003a.jpg"
+ },
+ "orion": {
+  "title": "Orion above the VLT",
+  "license": "CC BY 4.0",
+  "artist": "ESO/ Y. Beletsky",
+  "page": "https://www.eso.org/public/images/paranal_orion_cc_8bit/",
+  "size": "2500x3000",
+  "source_url": "https://cdn.eso.org/images/large/paranal_orion_cc_8bit.jpg"
+ },
+ "andromeda": {
+  "title": "M31 (Andromeda Galaxy)",
+  "license": "CC BY 4.0",
+  "artist": "KPNO/NOIRLab/NSF/AURA/Adam Block",
+  "page": "https://noirlab.edu/public/images/noao-m31fsqblock/",
+  "size": "3676x1336",
+  "source_url": "https://noirlab.edu/public/media/archives/images/large/noao-m31fsqblock.jpg"
+ },
+ "andromeda_b": {
+  "title": "File:Andromeda galaxy 2023.jpg",
+  "license": "CC0",
+  "artist": "Taavi Niittee",
+  "page": "https://commons.wikimedia.org/wiki/File:Andromeda_galaxy_2023.jpg",
+  "size": "3840x2527",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Andromeda_galaxy_2023.jpg/3840px-Andromeda_galaxy_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "edwin_hubble": {
+  "title": "File:Studio portrait photograph of Edwin Powell Hubble.JPG",
+  "license": "Public domain",
+  "artist": "Johan Hagemeyer",
+  "page": "https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble.JPG",
+  "size": "1280x1848",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Studio_portrait_photograph_of_Edwin_Powell_Hubble.JPG/1280px-Studio_portrait_photograph_of_Edwin_Powell_Hubble.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "lascaux": {
+  "title": "File:Lascaux, horse.JPG",
+  "license": "Public domain",
+  "artist": "HTO",
+  "page": "https://commons.wikimedia.org/wiki/File:Lascaux,_horse.JPG",
+  "size": "1920x1837",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Lascaux%2C_horse.JPG/1920px-Lascaux%2C_horse.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "lascaux_b": {
+  "title": "File:Lascaux 026.jpg",
+  "license": "CC BY 4.0",
+  "artist": "JoJan",
+  "page": "https://commons.wikimedia.org/wiki/File:Lascaux_026.jpg",
+  "size": "1920x1440",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Lascaux_026.jpg/1920px-Lascaux_026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "cmb_planck": {
+  "title": "Best Map Ever of the Universe",
+  "license": "CC BY-SA 3.0 IGO (ESA image, also on NASA Photojournal)",
+  "artist": "ESA and the Planck Collaboration",
+  "page": "https://images.nasa.gov/details/PIA16873",
+  "size": "3600x1800",
+  "source_url": "http://images-assets.nasa.gov/image/PIA16873/PIA16873~orig.jpg"
+ },
+ "hubble_telescope": {
+  "title": "HST deployed after repairs",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/S109E5707",
+  "size": "3032x1998",
+  "source_url": "http://images-assets.nasa.gov/image/S109E5707/S109E5707~orig.jpg",
+  "note": "cropped off burned-in frame-ID strip at bottom"
+ },
+ "hubble_telescope_b": {
+  "title": "View of HST during its release from the Shuttle Atlantis",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/s125e011780",
+  "size": "4000x2651",
+  "source_url": "http://images-assets.nasa.gov/image/s125e011780/s125e011780~orig.jpg",
+  "note": "cropped off burned-in frame-ID strip at bottom"
+ },
+ "jwst_deep": {
+  "title": "Webb’s First Deep Field (NIRCam Image)",
+  "license": "CC BY 4.0",
+  "artist": "NASA, ESA, CSA, and STScI",
+  "page": "https://esawebb.org/images/weic2209a/",
+  "size": "3920x4000",
+  "source_url": "https://cdn.esawebb.org/archives/images/large/weic2209a.jpg"
+ },
+ "golden_record": {
+  "title": "File:The Sounds of Earth - GPN-2000-001976.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Sounds_of_Earth_-_GPN-2000-001976.jpg",
+  "size": "1920x1919",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/The_Sounds_of_Earth_-_GPN-2000-001976.jpg/1920px-The_Sounds_of_Earth_-_GPN-2000-001976.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "golden_record_b": {
+  "title": "File:The Sounds of Earth Record Cover - GPN-2000-001978.jpg",
+  "license": "Public domain",
+  "artist": "NASA/JPL",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Sounds_of_Earth_Record_Cover_-_GPN-2000-001978.jpg",
+  "size": "1920x1920",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/The_Sounds_of_Earth_Record_Cover_-_GPN-2000-001978.jpg/1920px-The_Sounds_of_Earth_Record_Cover_-_GPN-2000-001978.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "voyager_photo_c": {
+  "title": "NASA's Voyager Probe Speeds Through Space (Artist's Concept)",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA26353",
+  "size": "1920x1080",
+  "source_url": "http://images-assets.nasa.gov/image/PIA26353/PIA26353~orig.jpg"
+ },
+ "voyager_photo_d": {
+  "title": "Artist Concept of Voyager",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL",
+  "page": "https://images.nasa.gov/details/PIA04495",
+  "size": "3017x2494",
+  "source_url": "http://images-assets.nasa.gov/image/PIA04495/PIA04495~orig.jpg"
+ },
+ "orion_r": {
+  "title": "Orion above the VLT",
+  "license": "CC BY 4.0",
+  "artist": "ESO/ Y. Beletsky",
+  "page": "https://www.eso.org/public/images/paranal_orion_cc_8bit/",
+  "size": "2500x3000",
+  "source_url": "https://cdn.eso.org/images/large/paranal_orion_cc_8bit.jpg",
+  "note": "rotated 180 (northern view)"
+ },
+ "dinosaur": {
+  "file": "File:Herrerasaurus ischigualastensis Illustration.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Fred Wierum",
+  "page": "https://commons.wikimedia.org/wiki/File:Herrerasaurus_ischigualastensis_Illustration.jpg",
+  "credit_line": "Own work",
+  "size": "1920x1306",
+  "title": "Herrerasaurus ischigualastensis illustration"
+ }
+}

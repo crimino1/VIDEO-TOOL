@@ -1,0 +1,48 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/vidssave.com 15 Min Full Body Workout at Home \u2014 No Equipment 480P.mp4",
+  "duration": 1036.493792,
+  "width": 854,
+  "height": 480,
+  "fps": 23.98,
+  "has_audio": true,
+  "shots": 2,
+  "avg_shot_sec": 518.25,
+  "median_shot_sec": 518.25,
+  "shortest_shot_sec": 466.05,
+  "longest_shot_sec": 570.44,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 0.0,
+    "after 5m": 0.1
+  },
+  "loudness": {
+    "integrated_lufs": -16.5,
+    "range_lu": 12.8
+  },
+  "cuts": [
+    570.444875
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 21.6
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 345.5,
+      "sec_between_frames": 21.6
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 691.0,
+      "sec_between_frames": 21.6
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

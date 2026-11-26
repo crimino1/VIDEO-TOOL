@@ -1,0 +1,168 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/shark.js"></script><script src="assets/js/world.js"></script><script src="assets/js/story.js"></script><script src="assets/js/res.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="217.700" data-width="1920" data-height="1080">
+<canvas id="cv151" class="clip" width="1920" height="1080" data-start="0.000" data-duration="12.833" data-track-index="1" style="z-index:87"></canvas>
+<div id="s152" class="clip scene " data-start="0.000" data-duration="12.833" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv153" class="clip" width="1920" height="1080" data-start="12.833" data-duration="4.920" data-track-index="1" style="z-index:89"></canvas>
+<div id="s154" class="clip scene " data-start="12.833" data-duration="4.920" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv155" class="clip" width="1920" height="1080" data-start="17.753" data-duration="6.940" data-track-index="1" style="z-index:91"></canvas>
+<div id="s156" class="clip scene " data-start="17.753" data-duration="6.940" data-track-index="2" style="z-index:92" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s158" class="clip scene " data-start="24.693" data-duration="7.520" data-track-index="2" style="z-index:93" data-layout-allow-overflow data-layout-allow-overlap><img id="ph157" class="fill" src="assets/gen/srkw_5_1729ff.jpg" alt="srkw_5" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries (anon.) / Wikimedia Commons</div></div>
+<canvas id="cv159" class="clip" width="1920" height="1080" data-start="32.213" data-duration="9.880" data-track-index="1" style="z-index:94"></canvas>
+<div id="s160" class="clip scene " data-start="32.213" data-duration="9.880" data-track-index="2" style="z-index:95" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s162" class="clip scene " data-start="42.093" data-duration="7.440" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap><img id="ph161" class="fill" src="assets/gen/srkw_6_231c05.jpg" alt="srkw_6" style="transform-origin:50% 50%"><div class="credit">Photo: Kevin Nichols / Wikimedia Commons</div></div>
+<canvas id="cv163" class="clip" width="1920" height="1080" data-start="49.533" data-duration="6.200" data-track-index="1" style="z-index:97"></canvas>
+<div id="s164" class="clip scene " data-start="49.533" data-duration="6.200" data-track-index="2" style="z-index:98" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s166" class="clip scene " data-start="55.733" data-duration="6.280" data-track-index="2" style="z-index:99" data-layout-allow-overflow data-layout-allow-overlap><img id="ph165" class="fill" src="assets/gen/hporp_3_9e02b6.jpg" alt="hporp_3" style="transform-origin:50% 50%"><div class="credit">Photo: Erik Christensen / Wikimedia Commons</div></div>
+<canvas id="cv167" class="clip" width="1920" height="1080" data-start="62.013" data-duration="7.680" data-track-index="1" style="z-index:100"></canvas>
+<div id="s168" class="clip scene " data-start="62.013" data-duration="7.680" data-track-index="2" style="z-index:101" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s170" class="clip scene " data-start="69.693" data-duration="6.220" data-track-index="2" style="z-index:102" data-layout-allow-overflow data-layout-allow-overlap><img id="ph169" class="fill" src="assets/gen/transient_2_1c36ce.jpg" alt="transient_2" style="transform-origin:50% 50%"><div class="credit">Photo: steve b / Wikimedia Commons</div></div>
+<div id="w172" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:103;"><video id="v171" class="clip fit" src="assets/clips/pod_1_b556ba96.mp4" muted playsinline data-start="75.913" data-duration="8.840" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s173" class="clip scene " data-start="75.913" data-duration="8.840" data-track-index="2" style="z-index:104" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv174" class="clip" width="1920" height="1080" data-start="84.753" data-duration="6.080" data-track-index="1" style="z-index:105"></canvas>
+<div id="s175" class="clip scene " data-start="84.753" data-duration="6.080" data-track-index="2" style="z-index:106" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s177" class="clip scene " data-start="90.833" data-duration="9.100" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><img id="ph176" class="fill" src="assets/gen/transient_3_6e6add.jpg" alt="transient_3" style="transform-origin:50% 50%"><div class="credit">Photo: Rennett Stowe from USA / Wikimedia Commons</div></div>
+<canvas id="cv178" class="clip" width="1920" height="1080" data-start="99.933" data-duration="9.840" data-track-index="1" style="z-index:108"></canvas>
+<div id="s179" class="clip scene " data-start="99.933" data-duration="9.840" data-track-index="2" style="z-index:109" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s181" class="clip scene " data-start="109.773" data-duration="4.340" data-track-index="2" style="z-index:110" data-layout-allow-overflow data-layout-allow-overlap><img id="ph180" class="fill" src="assets/gen/whalewatch_3_31d1a4.jpg" alt="whalewatch_3" style="transform-origin:50% 50%"><div class="credit">Photo: Bureau of Land Management Oregon and Washington from Portlan / Wikimedia Commons</div></div>
+<div id="s183" class="clip scene " data-start="114.113" data-duration="4.960" data-track-index="2" style="z-index:111" data-layout-allow-overflow data-layout-allow-overlap><img id="ph182" class="fill" src="assets/gen/srkw_7_ffc41b.jpg" alt="srkw_7" style="transform-origin:50% 50%"><div class="credit">Photo: Katy Foster / Wikimedia Commons</div></div>
+<canvas id="cv184" class="clip" width="1920" height="1080" data-start="119.073" data-duration="4.320" data-track-index="1" style="z-index:112"></canvas>
+<div id="s185" class="clip scene " data-start="119.073" data-duration="4.320" data-track-index="2" style="z-index:113" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv186" class="clip" width="1920" height="1080" data-start="123.393" data-duration="7.520" data-track-index="1" style="z-index:114"></canvas>
+<div id="s188" class="clip scene " data-start="123.393" data-duration="7.520" data-track-index="2" style="z-index:115" data-layout-allow-overflow data-layout-allow-overlap><div id="h187" class="chap" style="top:360px;font-size:170px">CULTURE</div></div>
+<canvas id="cv189" class="clip" width="1920" height="1080" data-start="130.913" data-duration="6.720" data-track-index="1" style="z-index:116"></canvas>
+<div id="s190" class="clip scene " data-start="130.913" data-duration="6.720" data-track-index="2" style="z-index:117" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv191" class="clip" width="1920" height="1080" data-start="137.633" data-duration="4.660" data-track-index="1" style="z-index:118"></canvas>
+<div id="s192" class="clip scene " data-start="137.633" data-duration="4.660" data-track-index="2" style="z-index:119" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv193" class="clip" width="1920" height="1080" data-start="142.293" data-duration="4.740" data-track-index="1" style="z-index:120"></canvas>
+<div id="s194" class="clip scene " data-start="142.293" data-duration="4.740" data-track-index="2" style="z-index:121" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv195" class="clip" width="1920" height="1080" data-start="147.033" data-duration="4.420" data-track-index="1" style="z-index:122"></canvas>
+<div id="s196" class="clip scene " data-start="147.033" data-duration="4.420" data-track-index="2" style="z-index:123" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv197" class="clip" width="1920" height="1080" data-start="151.453" data-duration="6.840" data-track-index="1" style="z-index:124"></canvas>
+<div id="s198" class="clip scene " data-start="151.453" data-duration="6.840" data-track-index="2" style="z-index:125" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv199" class="clip" width="1920" height="1080" data-start="158.293" data-duration="3.880" data-track-index="1" style="z-index:126"></canvas>
+<div id="s200" class="clip scene " data-start="158.293" data-duration="3.880" data-track-index="2" style="z-index:127" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv201" class="clip" width="1920" height="1080" data-start="162.173" data-duration="11.120" data-track-index="1" style="z-index:128"></canvas>
+<div id="s202" class="clip scene " data-start="162.173" data-duration="11.120" data-track-index="2" style="z-index:129" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv203" class="clip" width="1920" height="1080" data-start="173.293" data-duration="8.700" data-track-index="1" style="z-index:130"></canvas>
+<div id="s204" class="clip scene " data-start="173.293" data-duration="8.700" data-track-index="2" style="z-index:131" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s206" class="clip scene " data-start="181.993" data-duration="5.880" data-track-index="2" style="z-index:132" data-layout-allow-overflow data-layout-allow-overlap><img id="ph205" class="fill" src="assets/gen/srkw_1_3e0032.jpg" alt="srkw_1" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<div id="w208" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:133;"><video id="v207" class="clip fit" src="assets/clips/orcau_0_e11dcc41.mp4" muted playsinline data-start="187.873" data-duration="6.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s209" class="clip scene " data-start="187.873" data-duration="6.280" data-track-index="2" style="z-index:134" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv210" class="clip" width="1920" height="1080" data-start="194.153" data-duration="2.680" data-track-index="1" style="z-index:135"></canvas>
+<div id="s214" class="clip scene " data-start="194.153" data-duration="2.680" data-track-index="2" style="z-index:136" data-layout-allow-overflow data-layout-allow-overlap><div id="tn211" class="chap" style="top:250px;font-size:110px;color:#3fa9d6;opacity:0">THEORY 1</div><div id="tt212" class="chap" style="top:400px;font-size:200px;opacity:0">PLAY</div><div id="ts213" class="chapsub" style="top:650px;font-size:56px;opacity:0">THEY'RE PLAYING</div></div>
+<div id="s216" class="clip scene " data-start="196.833" data-duration="3.980" data-track-index="2" style="z-index:137" data-layout-allow-overflow data-layout-allow-overlap><img id="ph215" class="fill" src="assets/gen/srkw_3_6b40c6.jpg" alt="srkw_3" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<canvas id="cv217" class="clip" width="1920" height="1080" data-start="200.813" data-duration="9.780" data-track-index="1" style="z-index:138"></canvas>
+<div id="s218" class="clip scene " data-start="200.813" data-duration="9.780" data-track-index="2" style="z-index:139" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv219" class="clip" width="1920" height="1080" data-start="210.593" data-duration="7.120" data-track-index="1" style="z-index:140"></canvas>
+<div id="s220" class="clip scene " data-start="210.593" data-duration="7.120" data-track-index="2" style="z-index:141" data-layout-allow-overflow data-layout-allow-overlap></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+{const c=document.getElementById("cv151").getContext("2d");tl.to({},{duration:12.833,ease:"none",onUpdate:function(){SC.peanut(c,this.time(),{"t0": 2.6, "cam": {"z0": 1.0, "z1": 1.04}, "d": 12.833});}},0.000);}
+{const c=document.getElementById("cv153").getContext("2d");tl.to({},{duration:4.920,ease:"none",onUpdate:function(){SC.dronemeasure(c,this.time(),{"cam": {"z0": 1.1, "z1": 1.2, "hand": true}, "d": 4.92});}},12.833);}
+{const c=document.getElementById("cv155").getContext("2d");tl.to({},{duration:6.940,ease:"none",onUpdate:function(){SC.calves(c,this.time(),{"t0": 1.6, "cam": {"z0": 1.0, "z1": 1.05}, "d": 6.94});}},17.753);}
+tl.fromTo("#ph157",{scale:1.0},{scale:1.1,duration:7.52,ease:"none"},24.693);
+{const c=document.getElementById("cv159").getContext("2d");tl.to({},{duration:9.880,ease:"none",onUpdate:function(){SC.pods(c,this.time(),{"counts": [["J", 25, 360], ["K", 14, 960], ["L", 34, 1560]], "k14": 1.2, "cam": {"z0": 1.0, "z1": 1.06}, "d": 9.88});}},32.213);}
+tl.fromTo("#ph161",{scale:1.0},{scale:1.1,duration:7.44,ease:"none"},42.093);
+{const c=document.getElementById("cv163").getContext("2d");tl.to({},{duration:6.200,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "grey", "actors": [{"k": "orca", "path": [[0, -300, 550], [6.2, 1100, 550]], "len": 860, "thin": 1, "beat": 0.4}, {"k": "porpoise", "kind": "harbor", "path": [[0, 1500, 560], [6.2, 500, 580]], "len": 300, "beat": 1.4}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 6.2});}},49.533);}
+tl.fromTo("#ph165",{scale:1.0},{scale:1.1,duration:6.28,ease:"none"},55.733);
+{const c=document.getElementById("cv167").getContext("2d");tl.to({},{duration:7.680,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "orca", "path": [[0, 700, 520], [7.68, 900, 520]], "len": 880, "thin": 1, "beat": 0.5}, {"k": "porpoise", "kind": "harbor", "path": [[3.6, 560, 540], [7.68, 520, 640]], "len": 280, "heldBy": 0, "hold": [-80, 30, 0.0, 480, 0], "heldOn": [[0, 1], [3.5, 1], [3.6, 0]], "roll": [[3.6, 0], [4.4, 3.14159]], "limp": [[2.0, 0], [3.4, 1]]}], "cam": {"z0": 1.05, "z1": 1.12}, "d": 7.68});}},62.013);}
+tl.fromTo("#ph169",{scale:1.0},{scale:1.1,duration:6.22,ease:"none"},69.693);
+tl.fromTo("#v171",{scale:1.0},{scale:1.06,duration:8.84,ease:"none"},75.913);
+{const c=document.getElementById("cv174").getContext("2d");tl.to({},{duration:6.080,ease:"none",onUpdate:function(){SC.menus(c,this.time(),{"t1": 0.3, "t2": 1.4, "cam": {"z0": 1.0, "z1": 1.04}, "d": 6.08});}},84.753);}
+tl.fromTo("#ph176",{scale:1.12},{scale:1.0,duration:9.1,ease:"none"},90.833);
+{const c=document.getElementById("cv178").getContext("2d");tl.to({},{duration:9.840,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "orca", "path": [[0, -400, 550], [9.84, 1700, 540]], "len": 760, "beat": 0.6}, {"k": "orca", "path": [[0, -800, 590], [9.84, 1300, 580]], "len": 560, "beat": 0.7, "ph0": 2}, {"k": "orca", "path": [[0, 2300, 770], [9.84, 400, 770]], "len": 760, "thin": 1, "beat": 0.4, "fog": 0.15}], "cam": {"z0": 1.0, "z1": 1.05}, "d": 9.84});}},99.933);}
+tl.fromTo("#ph180",{scale:1.0},{scale:1.1,duration:4.34,ease:"none"},109.773);
+tl.fromTo("#ph182",{scale:1.0},{scale:1.1,duration:4.96,ease:"none"},114.113);
+{const c=document.getElementById("cv184").getContext("2d");tl.to({},{duration:4.320,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "orca", "path": [[0, -300, 560], [4.32, 1300, 540]], "len": 860, "thin": 1, "beat": 0.5}, {"k": "porpoise", "kind": "harbor", "path": [[0, 1300, 320], [4.32, 700, 340]], "len": 280, "beat": 1.4}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 4.32});}},119.073);}
+{const c=document.getElementById("cv186").getContext("2d");tl.to({},{duration:7.520,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"cam": {"z0": 1.06, "z1": 1.0}, "d": 7.52});}},123.393);}
+tl.fromTo("#h187",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},123.533);
+tl.to("#h187",{opacity:0,duration:0.7,ease:"power1.in"},124.783);
+{const c=document.getElementById("cv189").getContext("2d");tl.to({},{duration:6.720,ease:"none",onUpdate:function(){SC.map(c,this.time(),{"from": [-40, 20, 1.0], "to": [-10, 0, 1.25], "pins": [[18.0, 69.6, 1.2, "#ff5b4f"], [-63.8, -42.5, 2.4, "#ff5b4f"], [22.1, -34.2, 3.6, "#ff5b4f"]], "d": 6.72});}},130.913);}
+{const c=document.getElementById("cv191").getContext("2d");tl.to({},{duration:4.660,ease:"none",onUpdate:function(){SC.carousel(c,this.time(),{"cam": {"z0": 1.0, "z1": 1.06}, "d": 4.66});}},137.633);}
+{const c=document.getElementById("cv193").getContext("2d");tl.to({},{duration:4.740,ease:"none",onUpdate:function(){SC.beachhunt(c,this.time(),{"go": 1.0, "cam": {"z0": 1.0, "z1": 1.05}, "d": 4.74});}},142.293);}
+{const c=document.getElementById("cv195").getContext("2d");tl.to({},{duration:4.420,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "dark", "actors": [{"k": "orca", "path": [[0, 600, 500], [4.42, 1700, 440]], "len": 860, "carry": 0, "beat": 0.8}, {"k": "shark", "path": [[0, 700, 640], [4.42, 760, 900]], "len": 560, "roll": 3.14159, "limp": 1, "z": -2}], "cam": {"z0": 1.06, "z1": 1.0}, "d": 4.42});}},147.033);}
+{const c=document.getElementById("cv197").getContext("2d");tl.to({},{duration:6.840,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"teach": 0.6, "cam": {"z0": 1.0, "z1": 1.06}, "d": 6.84});}},151.453);}
+{const c=document.getElementById("cv199").getContext("2d");tl.to({},{duration:3.880,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "calf", "path": [[0, -200, 600], [3.88, 1100, 580]], "len": 420, "beat": 1.0}, {"k": "orca", "path": [[0, -500, 440], [3.88, 900, 420]], "len": 860, "beat": 0.7}, {"k": "salmon", "path": null, "len": 200, "heldBy": 1, "hold": [30, 60, 0.15, 480, 0], "holdDir": -1}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 3.88});}},158.293);}
+{const c=document.getElementById("cv201").getContext("2d");tl.to({},{duration:11.120,ease:"none",onUpdate:function(){SC.kitchen(c,this.time(),{"cam": {"z0": 1.0, "z1": 1.08}, "d": 11.12});}},162.173);}
+{const c=document.getElementById("cv203").getContext("2d");tl.to({},{duration:8.700,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "orca", "path": [[0, -300, 360], [8.58, 2200, 340]], "len": 760, "beat": 0.6}, {"k": "orca", "path": [[0, -700, 420], [8.58, 1800, 400]], "len": 560, "beat": 0.7, "ph0": 2}, {"k": "orca", "path": [[0, 2300, 720], [8.58, -300, 740]], "len": 760, "beat": 0.6, "ph0": 4}, {"k": "orca", "path": [[0, 2700, 780], [8.58, 100, 800]], "len": 600, "beat": 0.7, "ph0": 1}], "cam": {"z0": 1.0, "z1": 1.05}, "d": 8.7});}},173.293);}
+tl.fromTo("#ph205",{scale:1.12},{scale:1.0,duration:5.88,ease:"none"},181.993);
+tl.fromTo("#v207",{scale:1.0},{scale:1.06,duration:6.28,ease:"none"},187.873);
+{const c=document.getElementById("cv210").getContext("2d");tl.to({},{duration:2.680,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "dark", "actors": [], "snow": 40, "d": 2.68});}},194.153);}
+tl.fromTo("#tn211",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(2)"},194.303);
+tl.fromTo("#tt212",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"back.out(2)"},194.603);
+tl.fromTo("#ts213",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},195.153);
+tl.fromTo("#ph215",{scale:1.0},{scale:1.1,duration:3.98,ease:"none"},196.833);
+{const c=document.getElementById("cv217").getContext("2d");tl.to({},{duration:9.780,ease:"none",onUpdate:function(){SC.hat(c,this.time(),{"copies": 0, "cam": {"z0": 1.12, "z1": 1.04}, "d": 9.78});}},200.813);}
+{const c=document.getElementById("cv219").getContext("2d");tl.to({},{duration:7.120,ease:"none",onUpdate:function(){SC.hat(c,this.time(),{"copies": 2, "cam": {"z0": 1.0, "z1": 1.05}, "d": 7.12});}},210.593);}
+tl.set({}, {}, 217.700);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

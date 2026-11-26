@@ -1,0 +1,68 @@
+# Allowlist: ignore every file, then let through only what is needed to make videos.
+*
+!*/
+
+# code and text
+!*.py
+!*.js
+!*.mjs
+!*.cjs
+!*.jsx
+!*.ts
+!*.html
+!*.css
+!*.md
+!*.json
+!*.txt
+!*.sh
+!*.srt
+!*.vtt
+!*.toml
+!*.yaml
+!*.yml
+!.gitignore
+
+# fonts, 3D models, workout figures
+!*.ttf
+!*.otf
+!*.woff2
+!*.glb
+!*.gltf
+!*.bin
+!**/models/**/textures/*.jpg
+!um_*.blend
+!figure.blend
+!character.blend
+!aa_figure.blend
+!chair-workout/**/*.png
+!chair-workout/**/*.jpg
+
+# real sound effects library (real-sfx skill reads it)
+!sfx-library/openverse/**
+
+# never: installs, finished videos, caches, downloads, secrets
+.env
+.env.*
+node_modules/
+.venv/
+__pycache__/
+done/
+.hyperframes/
+media/
+renders/
+frames/
+snaps/
+raw/
+dl/
+research_raw/
+zanat/
+*.info.json
+*.log
+*_backup*
+*.blend1
+pine_tree_01.bin
+
+# skills keep everything, including real-sfx's bundled ui sounds
+!.claude/skills/real-sfx/vendor/node_modules/
+!.claude/skills/**
+.claude/skills/**/__pycache__/

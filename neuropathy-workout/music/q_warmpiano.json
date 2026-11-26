@@ -1,0 +1,461 @@
+{
+ "result_count": 6,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "f3adcaee-908f-44f9-be87-6c926586457d",
+   "title": "Contemporary Pandemonium - Sea and warm breeze. Remembrance",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1357334",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1357334&format=mp32",
+   "creator": "Tunguska Electronic Music Society",
+   "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "cinematique",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Contemporary Pandemonium - Sea and warm breeze. Remembrance\" by Tunguska Electronic Music Society is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tunguska Chillout Grooves Vol. 13",
+    "foreign_landing_url": "https://www.jamendo.com/album/159958/tunguska-chillout-grooves-vol-13",
+    "creator": "Tunguska Electronic Music Society",
+    "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 243000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f3adcaee-908f-44f9-be87-6c926586457d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f3adcaee-908f-44f9-be87-6c926586457d/",
+   "related_url": "https://api.openverse.org/v1/audio/f3adcaee-908f-44f9-be87-6c926586457d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f3adcaee-908f-44f9-be87-6c926586457d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "58f92d78-d17f-478e-b2b8-d7cfbdfb2e1b",
+   "title": "Warm of Mechanical Heart",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1232206",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1232206&format=mp32",
+   "creator": "Kai Engel",
+   "creator_url": "https://www.jamendo.com/artist/437857/Kai_Engel_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore",
+    "triphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "epic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "hybrid",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "rythmic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Warm of Mechanical Heart\" by Kai Engel is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Atlantida",
+    "foreign_landing_url": "https://www.jamendo.com/album/147762/atlantida",
+    "creator": "Kai Engel",
+    "creator_url": "https://www.jamendo.com/artist/437857/Kai_Engel_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 140000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/58f92d78-d17f-478e-b2b8-d7cfbdfb2e1b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/58f92d78-d17f-478e-b2b8-d7cfbdfb2e1b/",
+   "related_url": "https://api.openverse.org/v1/audio/58f92d78-d17f-478e-b2b8-d7cfbdfb2e1b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/58f92d78-d17f-478e-b2b8-d7cfbdfb2e1b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7d2fde57-55d0-44bb-88cb-12839ada678d",
+   "title": "Komm ins Warme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1188814",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1188814&format=mp32",
+   "creator": "Purpurea",
+   "creator_url": "https://www.jamendo.com/artist/438420/Purpurea",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "symphonic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Komm ins Warme\" by Purpurea is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Komm ins Warme",
+    "foreign_landing_url": "https://www.jamendo.com/album/143078/komm-ins-warme",
+    "creator": "Purpurea",
+    "creator_url": "https://www.jamendo.com/artist/438420/Purpurea",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 600000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7d2fde57-55d0-44bb-88cb-12839ada678d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7d2fde57-55d0-44bb-88cb-12839ada678d/",
+   "related_url": "https://api.openverse.org/v1/audio/7d2fde57-55d0-44bb-88cb-12839ada678d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7d2fde57-55d0-44bb-88cb-12839ada678d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "816f2f0f-62f0-4719-8a61-66e2953425ed",
+   "title": "warm hugh",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1519357",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1519357&format=mp32",
+   "creator": "Lfete",
+   "creator_url": "https://www.jamendo.com/artist/489551/Lfete",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "house",
+    "synthpop",
+    "synthwave"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"warm hugh\" by Lfete is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Lukkede d\u00f8re",
+    "foreign_landing_url": "https://www.jamendo.com/album/174224/lukkede-dore",
+    "creator": "Lfete",
+    "creator_url": "https://www.jamendo.com/artist/489551/Lfete",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 227000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/816f2f0f-62f0-4719-8a61-66e2953425ed/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/816f2f0f-62f0-4719-8a61-66e2953425ed/",
+   "related_url": "https://api.openverse.org/v1/audio/816f2f0f-62f0-4719-8a61-66e2953425ed/related/",
+   "waveform": "https://api.openverse.org/v1/audio/816f2f0f-62f0-4719-8a61-66e2953425ed/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b7dc52bf-44ec-4930-9537-a22f198db190",
+   "title": "04 Warm Winter",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1416645",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1416645&format=mp32",
+   "creator": "The Sound Of Lex",
+   "creator_url": "https://www.jamendo.com/artist/496355/The_Sound_Of_Lex",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "newagemusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"04 Warm Winter\" by The Sound Of Lex is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Waiting For The Moment",
+    "foreign_landing_url": "https://www.jamendo.com/album/165350/waiting-for-the-moment",
+    "creator": "The Sound Of Lex",
+    "creator_url": "https://www.jamendo.com/artist/496355/The_Sound_Of_Lex",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 204000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b7dc52bf-44ec-4930-9537-a22f198db190/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b7dc52bf-44ec-4930-9537-a22f198db190/",
+   "related_url": "https://api.openverse.org/v1/audio/b7dc52bf-44ec-4930-9537-a22f198db190/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b7dc52bf-44ec-4930-9537-a22f198db190/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c2713bf8-b319-4819-8abb-1b622b325211",
+   "title": "A Warm Meal at Last",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2327643",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2327643&format=mp32",
+   "creator": "Helen Langfort",
+   "creator_url": "https://www.jamendo.com/artist/605823/Helen_Langfort",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "neoclassical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "melancholic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Warm Meal at Last\" by Helen Langfort is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Way We Lived",
+    "foreign_landing_url": "https://www.jamendo.com/album/638962/the-way-we-lived",
+    "creator": "Helen Langfort",
+    "creator_url": "https://www.jamendo.com/artist/605823/Helen_Langfort",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 116000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c2713bf8-b319-4819-8abb-1b622b325211/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c2713bf8-b319-4819-8abb-1b622b325211/",
+   "related_url": "https://api.openverse.org/v1/audio/c2713bf8-b319-4819-8abb-1b622b325211/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c2713bf8-b319-4819-8abb-1b622b325211/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

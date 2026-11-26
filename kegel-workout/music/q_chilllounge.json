@@ -1,0 +1,900 @@
+{
+ "result_count": 13,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "a3acc808-b78a-4230-9170-cde2ff326cbf",
+   "title": "Other Dimension(Chill Pill Mix) - (The Diventa Project)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1439562",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1439562&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electricpiano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "rhodesriff",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "saxophone",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Other Dimension(Chill Pill Mix) - (The Diventa Project)\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tabu",
+    "foreign_landing_url": "https://www.jamendo.com/album/167568/tabu",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 194000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a3acc808-b78a-4230-9170-cde2ff326cbf/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a3acc808-b78a-4230-9170-cde2ff326cbf/",
+   "related_url": "https://api.openverse.org/v1/audio/a3acc808-b78a-4230-9170-cde2ff326cbf/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a3acc808-b78a-4230-9170-cde2ff326cbf/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dfa31fca-2eaa-4aa4-afef-86e63c86b102",
+   "title": "Bonus Track - Bayres Chill Out",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1060004",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1060004&format=mp32",
+   "creator": "Elektrotango",
+   "creator_url": "https://www.jamendo.com/artist/437221/elektrotango",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidjazz",
+    "ambient",
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticbass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "bandoneon",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "tangonuevo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Bonus Track - Bayres Chill Out\" by Elektrotango is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Maktub",
+    "foreign_landing_url": "https://www.jamendo.com/album/125050/maktub",
+    "creator": "Elektrotango",
+    "creator_url": "https://www.jamendo.com/artist/437221/elektrotango",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 499000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dfa31fca-2eaa-4aa4-afef-86e63c86b102/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dfa31fca-2eaa-4aa4-afef-86e63c86b102/",
+   "related_url": "https://api.openverse.org/v1/audio/dfa31fca-2eaa-4aa4-afef-86e63c86b102/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dfa31fca-2eaa-4aa4-afef-86e63c86b102/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "20c0faeb-e026-4027-9854-1603e4763246",
+   "title": "Chill Out",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/9460",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=9460&format=mp32",
+   "creator": "BrunoXe",
+   "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+   "license": "by",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_veryhigh",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out\" by BrunoXe is licensed under CC BY 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.5/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "aprendiendo desde 2004",
+    "foreign_landing_url": "https://www.jamendo.com/album/1420/aprendiendo-desde-2004",
+    "creator": "BrunoXe",
+    "creator_url": "https://www.jamendo.com/artist/1365/brunoxe",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 200000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/20c0faeb-e026-4027-9854-1603e4763246/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/20c0faeb-e026-4027-9854-1603e4763246/",
+   "related_url": "https://api.openverse.org/v1/audio/20c0faeb-e026-4027-9854-1603e4763246/related/",
+   "waveform": "https://api.openverse.org/v1/audio/20c0faeb-e026-4027-9854-1603e4763246/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3504ee3c-f5e1-4a40-b2b5-d44ef92757cd",
+   "title": "Chill-End",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/54225",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=54225&format=mp32",
+   "creator": "St Adam",
+   "creator_url": "https://www.jamendo.com/artist/6038/stadam",
+   "license": "sampling+",
+   "license_version": "1.0",
+   "license_url": "https://creativecommons.org/licenses/sampling+/1.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "disco",
+    "electronic",
+    "funk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrument",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill-End\" by St Adam is licensed under CC Sampling+ 1.0. To view a copy of this license, visit https://creativecommons.org/licenses/sampling+/1.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Adam's Single",
+    "foreign_landing_url": "https://www.jamendo.com/album/6142/adam-s-single",
+    "creator": "St Adam",
+    "creator_url": "https://www.jamendo.com/artist/6038/stadam",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 157000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3504ee3c-f5e1-4a40-b2b5-d44ef92757cd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3504ee3c-f5e1-4a40-b2b5-d44ef92757cd/",
+   "related_url": "https://api.openverse.org/v1/audio/3504ee3c-f5e1-4a40-b2b5-d44ef92757cd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3504ee3c-f5e1-4a40-b2b5-d44ef92757cd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7ccd3e1d-3026-4798-b33a-32f1b7e8315e",
+   "title": "Chill Out Lounge",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1194715",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1194715&format=mp32",
+   "creator": "Stefano Mazzola",
+   "creator_url": "https://www.jamendo.com/artist/441095/Stefano_Mazzola",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ambientchill",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out Lounge\" by Stefano Mazzola is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Riccione Vol.2 | Chill Out Lounge",
+    "foreign_landing_url": "https://www.jamendo.com/album/143781/riccione-vol-2-or-chill-out-lounge",
+    "creator": "Stefano Mazzola",
+    "creator_url": "https://www.jamendo.com/artist/441095/Stefano_Mazzola",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 1087000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7ccd3e1d-3026-4798-b33a-32f1b7e8315e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7ccd3e1d-3026-4798-b33a-32f1b7e8315e/",
+   "related_url": "https://api.openverse.org/v1/audio/7ccd3e1d-3026-4798-b33a-32f1b7e8315e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7ccd3e1d-3026-4798-b33a-32f1b7e8315e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0a8b4055-fd1e-48a6-8be7-eada5f294aa7",
+   "title": "Chill Out Movie",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1067897",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1067897&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out Movie\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/126213/chill-out-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 357000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0a8b4055-fd1e-48a6-8be7-eada5f294aa7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0a8b4055-fd1e-48a6-8be7-eada5f294aa7/",
+   "related_url": "https://api.openverse.org/v1/audio/0a8b4055-fd1e-48a6-8be7-eada5f294aa7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0a8b4055-fd1e-48a6-8be7-eada5f294aa7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2d03dfa4-cc74-42fd-affb-e2e7b8aa40ec",
+   "title": "Funky Chill lovers",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/810099",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=810099&format=mp32",
+   "creator": "Danubio Rodriguez",
+   "creator_url": "https://www.jamendo.com/artist/368880/Danubio_Rodriguez",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Funky Chill lovers\" by Danubio Rodriguez is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Atardecer",
+    "foreign_landing_url": "https://www.jamendo.com/album/94635/atardecer",
+    "creator": "Danubio Rodriguez",
+    "creator_url": "https://www.jamendo.com/artist/368880/Danubio_Rodriguez",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 230000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2d03dfa4-cc74-42fd-affb-e2e7b8aa40ec/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2d03dfa4-cc74-42fd-affb-e2e7b8aa40ec/",
+   "related_url": "https://api.openverse.org/v1/audio/2d03dfa4-cc74-42fd-affb-e2e7b8aa40ec/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2d03dfa4-cc74-42fd-affb-e2e7b8aa40ec/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e4e19551-118a-4760-80b1-8a8619c97e9e",
+   "title": "Chill Out in Ocean",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1067893",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1067893&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out in Ocean\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/126213/chill-out-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 586000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e4e19551-118a-4760-80b1-8a8619c97e9e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e4e19551-118a-4760-80b1-8a8619c97e9e/",
+   "related_url": "https://api.openverse.org/v1/audio/e4e19551-118a-4760-80b1-8a8619c97e9e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e4e19551-118a-4760-80b1-8a8619c97e9e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3c123e60-20b4-4285-970b-4b7573ef5ac7",
+   "title": "Chill Out in Africa",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1067892",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1067892&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out in Africa\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/126213/chill-out-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 412000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3c123e60-20b4-4285-970b-4b7573ef5ac7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3c123e60-20b4-4285-970b-4b7573ef5ac7/",
+   "related_url": "https://api.openverse.org/v1/audio/3c123e60-20b4-4285-970b-4b7573ef5ac7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3c123e60-20b4-4285-970b-4b7573ef5ac7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "87f07510-e908-483c-baaa-33b8358b243e",
+   "title": "Chill Out with Blues",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1067902",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1067902&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "jazz",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out with Blues\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/126213/chill-out-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 316000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/87f07510-e908-483c-baaa-33b8358b243e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/87f07510-e908-483c-baaa-33b8358b243e/",
+   "related_url": "https://api.openverse.org/v1/audio/87f07510-e908-483c-baaa-33b8358b243e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/87f07510-e908-483c-baaa-33b8358b243e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9f878e00-6e68-46d7-9f23-8b78b7063706",
+   "title": "Quincy Ortiz - Arabian Sands ( chill out lounge track 2016)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1355577",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1355577&format=mp32",
+   "creator": "Dj Quincy Ortiz",
+   "creator_url": "https://www.jamendo.com/artist/441841/Dj_Quincy_Ortiz",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "middleeastern"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "downtemp",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "spiritual",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Quincy Ortiz - Arabian Sands ( chill out lounge track 2016)\" by Dj Quincy Ortiz is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Secret Paradise",
+    "foreign_landing_url": "https://www.jamendo.com/album/159784/secret-paradise",
+    "creator": "Dj Quincy Ortiz",
+    "creator_url": "https://www.jamendo.com/artist/441841/Dj_Quincy_Ortiz",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 198000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9f878e00-6e68-46d7-9f23-8b78b7063706/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9f878e00-6e68-46d7-9f23-8b78b7063706/",
+   "related_url": "https://api.openverse.org/v1/audio/9f878e00-6e68-46d7-9f23-8b78b7063706/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9f878e00-6e68-46d7-9f23-8b78b7063706/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "aac2eecc-d3bc-40c0-8ca5-6a88cbdcfc18",
+   "title": "Chill Out with Rock",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1067901",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1067901&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chill Out with Rock\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/126213/chill-out-2",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 392000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/aac2eecc-d3bc-40c0-8ca5-6a88cbdcfc18/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/aac2eecc-d3bc-40c0-8ca5-6a88cbdcfc18/",
+   "related_url": "https://api.openverse.org/v1/audio/aac2eecc-d3bc-40c0-8ca5-6a88cbdcfc18/related/",
+   "waveform": "https://api.openverse.org/v1/audio/aac2eecc-d3bc-40c0-8ca5-6a88cbdcfc18/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "566e8edc-43c8-43f4-a15a-8bad2dc5e84e",
+   "title": "Internal Chill (Remix)",
+   "indexed_on": "2023-07-01T12:41:11.500001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1136480",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1136480&format=mp32",
+   "creator": "LongTriggerMusic",
+   "creator_url": "https://www.jamendo.com/artist/351552/LongTrigger",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Internal Chill (Remix)\" by LongTriggerMusic is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/de/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Barks & Crock - 8",
+    "foreign_landing_url": "https://www.jamendo.com/album/136481/barks-and-crock-8",
+    "creator": "LongTriggerMusic",
+    "creator_url": "https://www.jamendo.com/artist/351552/LongTrigger",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 440000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/566e8edc-43c8-43f4-a15a-8bad2dc5e84e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/566e8edc-43c8-43f4-a15a-8bad2dc5e84e/",
+   "related_url": "https://api.openverse.org/v1/audio/566e8edc-43c8-43f4-a15a-8bad2dc5e84e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/566e8edc-43c8-43f4-a15a-8bad2dc5e84e/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="237.398" data-width="1920" data-height="1080">
+<div id="s5" class="clip scene" data-start="0.000" data-duration="7.280" data-track-index="2" style="z-index:11"><div id="w6" class="sc"><div class="head"><div class="kick">AI video · November 2026</div></div><div id="b7" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i1" class="a bg " style="font-size:170px;text-align:left">Seedance 2.5</div><div id="i2" class="a tx ink2" style="font-size:36px;text-align:left">ByteDance · now in 4K, plus a cheaper Flash version</div><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i3" class="a pill acc" style="">4K</div><div id="i4" class="a pill " style="">Flash</div></div></div></div></div></div>
+<div id="s11" class="clip scene" data-start="7.280" data-duration="5.140" data-track-index="2" style="z-index:12"><div id="w12" class="sc"><div id="b13" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed · “The Missing Pair”, made with Seedance 2.5</div></div></div></div>
+<div id="vw9" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:13"><video id="v8" class="clip" src="assets/clips/seed_film_6d4d5413.mp4" muted playsinline data-start="7.280" data-duration="5.140" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i10" class="a cap acc" style="">30 seconds · video and sound · one generation</div></div></div>
+<div id="s19" class="clip scene" data-start="12.420" data-duration="12.788" data-track-index="2" style="z-index:14"><div id="w20" class="sc"><div class="head"><div class="kick">Seedance 2.5</div><div class="ttl">In this video</div></div><div id="b21" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i14" class="a pill " style="">What it can do</div><div id="i15" class="a pill " style="">Real tests</div><div id="i16" class="a pill bad" style="">Where it breaks</div></div><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i17" class="a pill " style="">vs Google · Kling · Wan</div><div id="i18" class="a pill acc" style="">Cost per clip</div></div></div></div></div></div>
+<div id="s24" class="clip scene" data-start="25.208" data-duration="14.372" data-track-index="2" style="z-index:15"><div id="w25" class="sc"><div class="head"><div class="kick">Background</div><div class="ttl">First, Seedance 2.0</div></div><div id="b26" class="body"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i22" class="a tev " style=""><i class="tdot "></i><div class="tdate">Feb 12</div><div class="tlab">Seedance 2.0 goes viral</div></div><div id="i23" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Feb 13–20</div><div class="tlab">Disney, Paramount, MPA legal letters</div></div></div><div class="tgap">The MPA said 2.0 used US copyrighted works “on a massive scale”.</div></div></div><div class="srcl">Axios · TechCrunch · Variety, Feb 2026</div></div></div>
+<div id="s31" class="clip scene" data-start="39.580" data-duration="14.240" data-track-index="2" style="z-index:16"><div id="w32" class="sc"><div id="b33" class="body clipb"><div class="vframe"></div><div class="vcred">@BytePlusGlobal on X, Nov 17, 2026</div></div></div></div>
+<div id="vw28" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:17"><video id="v27" class="clip" src="assets/clips/x_bp_4k_22077aa8.mp4" muted playsinline data-start="39.580" data-duration="14.240" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i29" class="a cap " style="">Jul 31: Seedance 2.5 (Dreamina, Jimeng, Doubao)</div><div id="i30" class="a cap acc" style="">Nov 17: 4K API opens, after a 20-studio trial</div></div></div>
+<div id="s37" class="clip scene" data-start="53.820" data-duration="6.100" data-track-index="2" style="z-index:18"><div id="w38" class="sc"><div id="b39" class="body clipb"><div class="vframe"></div><div class="vcred">@dreamina_ai on X, Nov 15, 2026</div></div></div></div>
+<div id="vw35" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:19"><video id="v34" class="clip" src="assets/clips/x_flash_c3038f18.mp4" muted playsinline data-start="53.820" data-duration="6.100" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i36" class="a cap acc" style="">Nov 15: Seedance 2.5 Flash · faster, cheaper</div></div></div>
+<div id="s44" class="clip scene" data-start="59.920" data-duration="14.420" data-track-index="2" style="z-index:20"><div id="w45" class="sc"><div id="b46" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed demo · one continuous generation</div></div></div></div>
+<div id="vw41" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:21"><video id="v40" class="clip" src="assets/clips/seed_demo1_d92d878d.mp4" muted playsinline data-start="59.920" data-duration="14.420" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i42" class="a cap acc" style="">Up to 30 s in one generation (2.0: 15 s)</div><div id="i43" class="a cap " style="">Dialogue with lip sync · sound effects · ambience</div></div></div>
+<div id="s53" class="clip scene" data-start="74.340" data-duration="9.783" data-track-index="2" style="z-index:22"><div id="w54" class="sc"><div class="head"><div class="kick">What's new</div><div class="ttl">Feed it a lot of references</div></div><div id="b55" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i49" class="a win" style="width:820px"><div class="wbar"><i></i><i></i><i></i><span>seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5</span></div><div class="wbody" style="height:303px;position:relative"><img id="k47" src="assets/img/seed_blog_9a1f2.jpg" alt="" style="width:820px;height:303px"><div id="hl48" style="position:absolute;left:0px;top:136px;width:820px;height:167px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i51" class="a stat hero" style="flex:1"><div class="slab">References per generation</div><div id="v50" class="sval hero" style="font-size:120px">50</div><div class="ssub">30 images · 10 videos · 10 audio</div></div><div id="i52" class="a tx ink3" style="font-size:32px;text-align:left">Seedance 2.0 allowed 12 in total.</div></div></div></div></div><div class="srcl">ByteDance Seed, “Introducing Seedance 2.5”</div></div></div>
+<div id="s61" class="clip scene" data-start="84.123" data-duration="20.144" data-track-index="2" style="z-index:23"><div id="w62" class="sc"><div id="b63" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed demo · camera edit on an existing shot</div></div></div></div>
+<div id="vw57" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:24"><video id="v56" class="clip" src="assets/clips/seed_demo6_86672fa7.mp4" muted playsinline data-start="84.123" data-duration="20.144" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i58" class="a cap " style="">480p → 4K · six aspect ratios · extend for minutes</div><div id="i59" class="a cap " style="">Timestamp edits · camera angle · green screen</div><div id="i60" class="a cap acc" style="">4K tier: 10-bit color · cheap 480p drafts</div></div></div>
+<div id="s69" class="clip scene" data-start="104.267" data-duration="9.633" data-track-index="2" style="z-index:25"><div id="w70" class="sc"><div class="head"><div class="kick">What's new</div><div class="ttl">The 4K tier</div></div><div id="b71" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i65" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>byteplus.com/en/blog/seedance 2.5</span></div><div class="wbody" style="height:379px;position:relative"><img id="k64" src="assets/img/byteplus_4k_11234.jpg" alt="" style="width:760px;height:379px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i66" class="a tx " style="font-size:34px;text-align:left">4K keeps fine text from references sharp:</div><div id="i67" class="a hd acc" style="font-size:46px">posters · packaging · labels</div><div id="i68" class="a tx ink3" style="font-size:32px;text-align:left">That matters for ads.</div></div></div></div></div><div class="srcl">BytePlus blog, Oct 27, 2026</div></div></div>
+<div id="s81" class="clip scene" data-start="113.900" data-duration="14.331" data-track-index="2" style="z-index:26"><div id="w82" class="sc"><div class="head"><div class="kick">Early testers</div><div class="ttl">Prompt tip: be specific</div></div><div id="b83" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i72" class="a tx " style="font-size:36px;text-align:left">2.5 follows instructions more strictly than 2.0, so vague prompts do worse.</div><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i74" class="a stat " style="flex:1"><div class="slab">Say</div><div id="v73" class="sval " style="font-size:72px">Who</div><div class="ssub">is in the shot</div></div><div id="i76" class="a stat " style="flex:1"><div class="slab">Say</div><div id="v75" class="sval " style="font-size:72px">Where</div><div class="ssub">they are</div></div><div id="i78" class="a stat " style="flex:1"><div class="slab">Say</div><div id="v77" class="sval " style="font-size:72px">Camera</div><div class="ssub">what it does</div></div><div id="i80" class="a stat hero" style="flex:1"><div class="slab">Say</div><div id="v79" class="sval hero" style="font-size:72px">Sound</div><div class="ssub">what we hear</div></div></div></div></div><div class="srcl">Jiemian, early tester reports</div></div></div>
+<div id="s88" class="clip scene" data-start="128.231" data-duration="19.317" data-track-index="2" style="z-index:27"><div id="w89" class="sc"><div id="b90" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed · “The Missing Pair” (4-min short film)</div></div></div></div>
+<div id="vw85" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:28"><video id="v84" class="clip" src="assets/clips/seed_film_32299813.mp4" muted playsinline data-start="128.231" data-duration="19.317" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i86" class="a cap " style="">“The Missing Pair”: made end to end with Seedance 2.5</div><div id="i87" class="a cap bad" style="">Their own showcase, so the best case</div></div></div>
+<div id="s94" class="clip scene" data-start="147.548" data-duration="8.452" data-track-index="2" style="z-index:29"><div id="w95" class="sc"><div id="b96" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed demo · green-screen edit</div></div></div></div>
+<div id="vw92" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:30"><video id="v91" class="clip" src="assets/clips/seed_demo5_48fa01c3.mp4" muted playsinline data-start="147.548" data-duration="8.452" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i93" class="a cap " style="">Green-screen training → real defenders → a goal</div></div></div>
+<div id="s100" class="clip scene" data-start="156.000" data-duration="5.680" data-track-index="2" style="z-index:31"><div id="w101" class="sc"><div id="b102" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed demo · grey 3D model as reference</div></div></div></div>
+<div id="vw98" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:32"><video id="v97" class="clip" src="assets/clips/seed_demo8_8dc0843d.mp4" muted playsinline data-start="156.000" data-duration="5.680" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i99" class="a cap " style="">Grey 3D model → photoreal car</div></div></div>
+<div id="s106" class="clip scene" data-start="161.680" data-duration="6.537" data-track-index="2" style="z-index:33"><div id="w107" class="sc"><div id="b108" class="body clipb"><div class="vframe"></div><div class="vcred">ByteDance Seed demo · references for every performer</div></div></div></div>
+<div id="vw104" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:34"><video id="v103" class="clip" src="assets/clips/seed_demo3_c3d1ea10.mp4" muted playsinline data-start="161.680" data-duration="6.537" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i105" class="a cap acc" style="">A whole orchestra and choir, consistent in one shot</div></div></div>
+<div id="s112" class="clip scene" data-start="168.217" data-duration="8.003" data-track-index="2" style="z-index:35"><div id="w113" class="sc"><div id="b114" class="body clipb"><div class="vframe"></div><div class="vcred">@AIFrontliner on X</div></div></div></div>
+<div id="vw110" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:36"><video id="v109" class="clip" src="assets/clips/x_14shots_746e511b.mp4" muted playsinline data-start="168.217" data-duration="8.003" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i111" class="a cap acc" style="">14 shots in one generation · synced dialogue · a fight</div></div></div>
+<div id="s118" class="clip scene" data-start="176.220" data-duration="5.300" data-track-index="2" style="z-index:37"><div id="w119" class="sc"><div id="b120" class="body clipb"><div class="vframe"></div><div class="vcred">@techhalla on X</div></div></div></div>
+<div id="vw116" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:38"><video id="v115" class="clip" src="assets/clips/x_diner_9040f42a.mp4" muted playsinline data-start="176.220" data-duration="5.300" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i117" class="a cap " style="">1950s diner: time freezes, then rewinds</div></div></div>
+<div id="s124" class="clip scene" data-start="181.520" data-duration="7.760" data-track-index="2" style="z-index:39"><div id="w125" class="sc"><div id="b126" class="body clipb"><div class="vframe"></div><div class="vcred">Justine Moore (@venturetwins) on X, a16z</div></div></div></div>
+<div id="vw122" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:40"><video id="v121" class="clip" src="assets/clips/x_venture_60f9b8d9.mp4" muted playsinline data-start="181.520" data-duration="7.760" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i123" class="a cap acc" style="">Her own face and voice, cloned from references</div></div></div>
+<div id="s130" class="clip scene" data-start="189.280" data-duration="5.411" data-track-index="2" style="z-index:41"><div id="w131" class="sc"><div id="b132" class="body clipb"><div class="vframe"></div><div class="vcred">@Strength04_X on X</div></div></div></div>
+<div id="vw128" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:42"><video id="v127" class="clip" src="assets/clips/x_f1jet_19fa4095.mp4" muted playsinline data-start="189.280" data-duration="5.411" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i129" class="a cap " style="">A whole commercial: F1 car vs fighter jet</div></div></div>
+<div id="s137" class="clip scene" data-start="194.691" data-duration="15.029" data-track-index="2" style="z-index:43"><div id="w138" class="sc"><div id="b139" class="body clipb"><div class="vframe"></div><div class="vcred">Youri van Hofwegen on YouTube, “Kling 4.0 vs Seedance 2.5” · six prompts</div></div></div></div>
+<div id="vw134" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:44"><video id="v133" class="clip" src="assets/clips/yt_youri_breakfast_1c57eb73.mp4" muted playsinline data-start="194.691" data-duration="15.029" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i135" class="a cap " style="">Round 1: a man making breakfast</div><div id="i136" class="a cap acc" style="">Seedance 2.5: 4/5 · one egg cracked, two came out</div></div></div>
+<div id="s144" class="clip scene" data-start="209.720" data-duration="8.985" data-track-index="2" style="z-index:45"><div id="w145" class="sc"><div id="b146" class="body clipb"><div class="vframe"></div><div class="vcred">Youri van Hofwegen on YouTube</div></div></div></div>
+<div id="vw141" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:46"><video id="v140" class="clip" src="assets/clips/yt_youri_breakfast_55fab279.mp4" muted playsinline data-start="209.720" data-duration="8.985" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i142" class="a cap bad" style="">Kling 4.0: 2/5</div><div id="i143" class="a cap " style="">Pot beside the burner · toast never toasted · plastic look</div></div></div>
+<div id="s152" class="clip scene" data-start="218.705" data-duration="18.693" data-track-index="2" style="z-index:47"><div id="w153" class="sc"><div id="b154" class="body clipb"><div class="vframe"></div><div class="vcred">Youri van Hofwegen on YouTube</div></div></div></div>
+<div id="vw148" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:48"><video id="v147" class="clip" src="assets/clips/yt_youri_end_3d4b5057.mp4" muted playsinline data-start="218.705" data-duration="18.693" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i149" class="a cap acc" style="">Final: Seedance 5 rounds, Kling 1 · avg 3.5 vs 2.7</div><div id="i150" class="a cap " style="">Kling: better animation, about half the price</div><div id="i151" class="a cap " style="">Realistic people → Seedance · anime, bulk → Kling</div></div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#i1",{opacity:1,y:0},0.000);
+tl.set("#i2",{opacity:1,y:0},0.000);
+tl.fromTo("#i3",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},2.480);
+tl.fromTo("#i4",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},4.280);
+tl.set("#w6",{opacity:1},0.000);
+tl.to("#w6",{opacity:0,duration:0.25,ease:"power1.in"},7.030);
+tl.fromTo("#b7",{scale:1},{scale:1.015,duration:7.280,ease:"none"},0.000);
+tl.fromTo("#vw9",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},7.280);
+tl.fromTo("#i10",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.580);
+tl.fromTo("#w12",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},7.280);
+tl.to("#w12",{opacity:0,duration:0.25,ease:"power1.in"},12.170);
+tl.to("#vw9",{opacity:0,duration:0.25,ease:"power1.in"},12.170);
+tl.fromTo("#i14",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},14.560);
+tl.fromTo("#i15",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},16.240);
+tl.fromTo("#i16",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},18.020);
+tl.fromTo("#i17",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},19.280);
+tl.fromTo("#i18",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},22.820);
+tl.fromTo("#w20",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},12.420);
+tl.to("#w20",{opacity:0,duration:0.25,ease:"power1.in"},24.958);
+tl.fromTo("#b21",{scale:1},{scale:1.015,duration:12.788,ease:"none"},12.420);
+tl.fromTo("#i22",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},27.320);
+tl.fromTo("#i23",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},32.020);
+tl.fromTo("#w25",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},25.208);
+tl.to("#w25",{opacity:0,duration:0.25,ease:"power1.in"},39.330);
+tl.fromTo("#b26",{scale:1},{scale:1.015,duration:14.372,ease:"none"},25.208);
+tl.fromTo("#vw28",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},39.580);
+tl.fromTo("#i29",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.820);
+tl.fromTo("#i30",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},47.660);
+tl.fromTo("#w32",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},39.580);
+tl.to("#w32",{opacity:0,duration:0.25,ease:"power1.in"},53.570);
+tl.to("#vw28",{opacity:0,duration:0.25,ease:"power1.in"},53.570);
+tl.fromTo("#vw35",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},53.820);
+tl.fromTo("#i36",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},54.020);
+tl.fromTo("#w38",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},53.820);
+tl.to("#w38",{opacity:0,duration:0.25,ease:"power1.in"},59.670);
+tl.to("#vw35",{opacity:0,duration:0.25,ease:"power1.in"},59.670);
+tl.fromTo("#vw41",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},59.920);
+tl.fromTo("#i42",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},61.500);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},68.080);
+tl.fromTo("#w45",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},59.920);
+tl.to("#w45",{opacity:0,duration:0.25,ease:"power1.in"},74.090);
+tl.to("#vw41",{opacity:0,duration:0.25,ease:"power1.in"},74.090);
+tl.fromTo("#hl48",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},76.560);
+tl.fromTo("#i49",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},74.440);
+count("#v50",76.660,0,50,0,"","",1.0);
+tl.fromTo("#i51",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},76.560);
+tl.fromTo("#i52",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},79.560);
+tl.fromTo("#w54",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},74.340);
+tl.to("#w54",{opacity:0,duration:0.25,ease:"power1.in"},83.873);
+tl.fromTo("#b55",{scale:1},{scale:1.015,duration:9.783,ease:"none"},74.340);
+tl.fromTo("#vw57",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},84.123);
+tl.fromTo("#i58",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},84.423);
+tl.fromTo("#i59",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},91.540);
+tl.fromTo("#i60",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},96.880);
+tl.fromTo("#w62",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},84.123);
+tl.to("#w62",{opacity:0,duration:0.25,ease:"power1.in"},104.017);
+tl.to("#vw57",{opacity:0,duration:0.25,ease:"power1.in"},104.017);
+tl.fromTo("#i65",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},104.367);
+tl.fromTo("#i66",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},107.100);
+tl.fromTo("#i67",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},109.960);
+tl.fromTo("#i68",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.260);
+tl.fromTo("#w70",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},104.267);
+tl.to("#w70",{opacity:0,duration:0.25,ease:"power1.in"},113.650);
+tl.fromTo("#b71",{scale:1},{scale:1.015,duration:9.633,ease:"none"},104.267);
+tl.fromTo("#i72",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},114.100);
+tl.fromTo("#i74",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},122.760);
+tl.fromTo("#i76",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},124.120);
+tl.fromTo("#i78",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},125.160);
+tl.fromTo("#i80",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},126.620);
+tl.fromTo("#w82",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},113.900);
+tl.to("#w82",{opacity:0,duration:0.25,ease:"power1.in"},127.981);
+tl.fromTo("#b83",{scale:1},{scale:1.015,duration:14.331,ease:"none"},113.900);
+tl.fromTo("#vw85",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},128.231);
+tl.fromTo("#i86",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},132.200);
+tl.fromTo("#i87",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.940);
+tl.fromTo("#w89",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},128.231);
+tl.to("#w89",{opacity:0,duration:0.25,ease:"power1.in"},147.298);
+tl.to("#vw85",{opacity:0,duration:0.25,ease:"power1.in"},147.298);
+tl.fromTo("#vw92",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},147.548);
+tl.fromTo("#i93",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},149.860);
+tl.fromTo("#w95",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},147.548);
+tl.to("#w95",{opacity:0,duration:0.25,ease:"power1.in"},155.750);
+tl.to("#vw92",{opacity:0,duration:0.25,ease:"power1.in"},155.750);
+tl.fromTo("#vw98",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},156.000);
+tl.fromTo("#i99",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},156.200);
+tl.fromTo("#w101",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},156.000);
+tl.to("#w101",{opacity:0,duration:0.25,ease:"power1.in"},161.430);
+tl.to("#vw98",{opacity:0,duration:0.25,ease:"power1.in"},161.430);
+tl.fromTo("#vw104",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},161.680);
+tl.fromTo("#i105",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.980);
+tl.fromTo("#w107",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},161.680);
+tl.to("#w107",{opacity:0,duration:0.25,ease:"power1.in"},167.967);
+tl.to("#vw104",{opacity:0,duration:0.25,ease:"power1.in"},167.967);
+tl.fromTo("#vw110",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},168.217);
+tl.fromTo("#i111",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},170.580);
+tl.fromTo("#w113",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},168.217);
+tl.to("#w113",{opacity:0,duration:0.25,ease:"power1.in"},175.970);
+tl.to("#vw110",{opacity:0,duration:0.25,ease:"power1.in"},175.970);
+tl.fromTo("#vw116",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},176.220);
+tl.fromTo("#i117",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},176.420);
+tl.fromTo("#w119",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},176.220);
+tl.to("#w119",{opacity:0,duration:0.25,ease:"power1.in"},181.270);
+tl.to("#vw116",{opacity:0,duration:0.25,ease:"power1.in"},181.270);
+tl.fromTo("#vw122",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},181.520);
+tl.fromTo("#i123",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},181.720);
+tl.fromTo("#w125",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},181.520);
+tl.to("#w125",{opacity:0,duration:0.25,ease:"power1.in"},189.030);
+tl.to("#vw122",{opacity:0,duration:0.25,ease:"power1.in"},189.030);
+tl.fromTo("#vw128",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},189.280);
+tl.fromTo("#i129",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},189.480);
+tl.fromTo("#w131",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},189.280);
+tl.to("#w131",{opacity:0,duration:0.25,ease:"power1.in"},194.441);
+tl.to("#vw128",{opacity:0,duration:0.25,ease:"power1.in"},194.441);
+tl.fromTo("#vw134",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},194.691);
+tl.fromTo("#i135",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},202.940);
+tl.fromTo("#i136",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},204.760);
+tl.fromTo("#w138",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},194.691);
+tl.to("#w138",{opacity:0,duration:0.25,ease:"power1.in"},209.470);
+tl.to("#vw134",{opacity:0,duration:0.25,ease:"power1.in"},209.470);
+tl.fromTo("#vw141",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},209.720);
+tl.fromTo("#i142",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},209.820);
+tl.fromTo("#i143",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},211.740);
+tl.fromTo("#w145",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},209.720);
+tl.to("#w145",{opacity:0,duration:0.25,ease:"power1.in"},218.455);
+tl.to("#vw141",{opacity:0,duration:0.25,ease:"power1.in"},218.455);
+tl.fromTo("#vw148",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},218.705);
+tl.fromTo("#i149",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},218.905);
+tl.fromTo("#i150",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},223.780);
+tl.fromTo("#i151",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},230.020);
+tl.fromTo("#w153",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},218.705);
+tl.to("#w153",{opacity:0,duration:0.25,ease:"power1.in"},237.148);
+tl.to("#vw148",{opacity:0,duration:0.25,ease:"power1.in"},237.148);
+tl.fromTo("#vw156",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},237.398);
+tl.fromTo("#w160",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},237.398);
+tl.set({}, {}, 237.398);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "source": "references/deepseek-harness.mp4",
+  "duration": 1072.05,
+  "width": 1280,
+  "height": 720,
+  "fps": 60.0,
+  "has_audio": true,
+  "shots": 1,
+  "avg_shot_sec": 1072.05,
+  "median_shot_sec": 1072.05,
+  "shortest_shot_sec": 1072.05,
+  "longest_shot_sec": 1072.05,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 0.0,
+    "after 5m": 0.0
+  },
+  "loudness": {
+    "integrated_lufs": -20.0,
+    "range_lu": 2.3
+  },
+  "cuts": [],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 22.3
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 357.3,
+      "sec_between_frames": 22.3
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 714.7,
+      "sec_between_frames": 22.3
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

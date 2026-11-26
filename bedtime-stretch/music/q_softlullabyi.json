@@ -1,0 +1,165 @@
+{
+ "result_count": 2,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "a33c8d58-7c84-4651-ad87-7909735ad90a",
+   "title": "Harp Lullaby",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2326403",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2326403&format=mp32",
+   "creator": "KonstantinPazuzuStudio",
+   "creator_url": "https://www.jamendo.com/artist/604385/KonstantinPazuzuStudio",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "harp",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "relaxing",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Harp Lullaby\" by KonstantinPazuzuStudio is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Deep Focus Harp",
+    "foreign_landing_url": "https://www.jamendo.com/album/638460/deep-focus-harp",
+    "creator": "KonstantinPazuzuStudio",
+    "creator_url": "https://www.jamendo.com/artist/604385/KonstantinPazuzuStudio",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 203000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a33c8d58-7c84-4651-ad87-7909735ad90a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a33c8d58-7c84-4651-ad87-7909735ad90a/",
+   "related_url": "https://api.openverse.org/v1/audio/a33c8d58-7c84-4651-ad87-7909735ad90a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a33c8d58-7c84-4651-ad87-7909735ad90a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8b2ff077-d54e-4106-ae29-baab422f0a71",
+   "title": "Solar Wind Lullaby",
+   "indexed_on": "2026-08-01T17:23:15.377185Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2326419",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2326419&format=mp32",
+   "creator": "KonstantinPazuzuStudio",
+   "creator_url": "https://www.jamendo.com/artist/604385/KonstantinPazuzuStudio",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Solar Wind Lullaby\" by KonstantinPazuzuStudio is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Cosmic Mind",
+    "foreign_landing_url": "https://www.jamendo.com/album/638461/cosmic-mind",
+    "creator": "KonstantinPazuzuStudio",
+    "creator_url": "https://www.jamendo.com/artist/604385/KonstantinPazuzuStudio",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 403000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8b2ff077-d54e-4106-ae29-baab422f0a71/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8b2ff077-d54e-4106-ae29-baab422f0a71/",
+   "related_url": "https://api.openverse.org/v1/audio/8b2ff077-d54e-4106-ae29-baab422f0a71/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8b2ff077-d54e-4106-ae29-baab422f0a71/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

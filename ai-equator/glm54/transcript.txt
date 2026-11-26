@@ -1,0 +1,61 @@
+(0:00.00) On November 23rd, one of China's biggest AI labs released a new flagship model, no launch
+(0:05.66) event, no benchmark chart.
+(0:07.86) It started with a single post on X, which hit 800,000 views in a few hours.
+(0:13.08) It's called GLM 5.4, and the strange part is how it got smarter.
+(0:17.70) It reads some of its own layers twice.
+(0:20.92) First, who made it?
+(0:22.22) Jipu AI, now called Z.AI, out of Beijing.
+(0:25.72) In January last year, the U.S. put it on its entity list.
+(0:30.48) This January, it went public in Hong Kong.
+(0:33.22) And through all of that, it kept giving its models away as open weights.
+(0:37.60) The pace has been a little ridiculous.
+(0:39.86) GLM 5 arrived in February, 744 billion parameters, and the first open model to score 50 on the
+(0:47.08) Artificial Analysis Intelligence Index, 5.1 could work on its own for eight hours.
+(0:52.46) 5.2 got a million token memory.
+(0:54.48) 5.3, in August, was all about code.
+(0:59.08) And now, three months later, 5.4.
+(1:02.16) So what's new?
+(1:03.78) It can see, 5.3 could only read text, drop in a screenshot of a broken button, and it finds
+(1:09.74) the bug in your code.
+(1:11.20) It keeps the million token context.
+(1:13.42) Z.AI says coding is stronger across the board, and everyone on the GLM coding plan gets
+(1:18.60) 50% more weekly usage than they had with 5.3.
+(1:22.50) Now, the part I find fascinating.
+(1:25.42) A normal model is a tall stack of layers, and every word goes through each layer once.
+(1:31.00) GLM 5.4 takes 28 of those layers, and runs them twice for every word.
+(1:36.84) It's like rereading a hard paragraph before you answer.
+(1:40.06) The model gets deeper, without getting any bigger.
+(1:43.20) Z.AI calls it their first loop transformer.
+(1:46.40) They didn't train it from scratch either.
+(1:47.88) They took GLM 5, already trained, and taught it to loop.
+(1:52.12) It's about 750 billion parameters, and they claim it thinks like a model with 2 to 3 trillion.
+(1:58.28) It runs up to 200 tokens a second off peak, 70 to 80 when it's busy.
+(2:03.08) And they admit one flaw themselves.
+(2:05.20) Sometimes it gets stuck in what they call marathon thinking.
+(2:08.58) They tested the idea at 1, 430, and finally 750 billion parameters.
+(2:13.86) On the 30 billion test model, same size, about 10% more training, the looped version
+(2:20.26) won on all five tests, 11 points better on the AMA math exam.
+(2:25.34) And it got there using fewer tokens.
+(2:27.74) But that's the small test model, not 5.4.
+(2:31.48) That's the problem.
+(2:33.02) There are no benchmark scores for 5.4, not from Z.AI, and not from anyone else yet.
+(2:38.86) The API isn't open.
+(2:41.12) The weights are promised after safety testing, with no date, so that 2 to 3 trillion claim?
+(2:47.20) Right now it's just a claim, and the replies under the launch post say exactly that.
+(2:52.82) Z.AI's own demos are a lot of fun, a brick building game where you hunt down 12 golden
+(2:58.04) bricks, then head back to the launch pad, a music video starring their little Z mascot,
+(3:03.62) a snowy 3D garden with a bird you can follow, and one independent developer gave five
+(3:08.52) point four and quen for max the same prompt, build a floating island.
+(3:13.24) He liked 5.4's version more, though it thought longer, 58,000 tokens against 43.
+(3:19.76) If you want to try it, it's on the GLM coding plan, starting at $18 a month.
+(3:25.18) It works in Z.AI's own chat and in Z code, and you can plug it into cloud code, codecs,
+(3:31.04) or climb, just set the model to GLM 5.4.
+(3:34.88) I think this one is worth watching, the usual way to make a model smarter is to make it bigger,
+(3:40.66) and bigger means more chips, which is hard when you're on a US blacklist, looping is
+(3:45.40) a cheaper path.
+(3:46.78) If the scores hold up, that changes the math for everyone, and Z.AI says this isn't even
+(3:52.76) the big one, a significantly larger model is, in their words, ready soon.
+(3:58.48) One report says December, so the benchmarks for 5.4 might show up right before its replacement
+(4:04.20) does.
+(4:05.44) Would you trust a model that skipped the scoreboard?
+(4:08.44) Tell me in the comments, this is AI Equator, and I'll see you in the next one.

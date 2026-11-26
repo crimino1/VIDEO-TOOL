@@ -1,0 +1,98 @@
+{
+ "fps": 30,
+ "total_frames": 1222,
+ "shots": [
+  {
+   "name": "K01_Part1",
+   "film_start": 51.28,
+   "film_end": 53.8,
+   "reel_start_f": 0,
+   "frames": 76
+  },
+  {
+   "name": "K02_Part2",
+   "film_start": 170.9,
+   "film_end": 174.4,
+   "reel_start_f": 76,
+   "frames": 105
+  },
+  {
+   "name": "K02_Part3",
+   "film_start": 294.6,
+   "film_end": 298.4,
+   "reel_start_f": 181,
+   "frames": 114
+  },
+  {
+   "name": "K02_Practice",
+   "film_start": 346.7,
+   "film_end": 348.5,
+   "reel_start_f": 295,
+   "frames": 54
+  },
+  {
+   "name": "K03_Part4",
+   "film_start": 379.0,
+   "film_end": 382.2,
+   "reel_start_f": 349,
+   "frames": 96
+  },
+  {
+   "name": "K03_Part5",
+   "film_start": 489.2,
+   "film_end": 492.7,
+   "reel_start_f": 445,
+   "frames": 105
+  },
+  {
+   "name": "K03_Practice",
+   "film_start": 592.0,
+   "film_end": 593.55,
+   "reel_start_f": 550,
+   "frames": 46
+  },
+  {
+   "name": "K04_Part6",
+   "film_start": 628.15,
+   "film_end": 632.0,
+   "reel_start_f": 596,
+   "frames": 116
+  },
+  {
+   "name": "K04_Part7",
+   "film_start": 692.8,
+   "film_end": 695.6,
+   "reel_start_f": 712,
+   "frames": 84
+  },
+  {
+   "name": "K04_Part8",
+   "film_start": 752.9,
+   "film_end": 756.3,
+   "reel_start_f": 796,
+   "frames": 102
+  },
+  {
+   "name": "K07_Part9",
+   "film_start": 1097.45,
+   "film_end": 1100.5,
+   "reel_start_f": 898,
+   "frames": 91
+  },
+  {
+   "name": "K07_Part10",
+   "film_start": 1148.3,
+   "film_end": 1151.0,
+   "reel_start_f": 989,
+   "frames": 81
+  },
+  {
+   "name": "K07_Subscribe",
+   "film_start": 1387.8,
+   "film_end": 1392.85,
+   "reel_start_f": 1070,
+   "frames": 152
+  }
+ ],
+ "clicks": []
+}

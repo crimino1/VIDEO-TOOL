@@ -1,0 +1,107 @@
+(0:00.00) I gave the two smartest AI models in the world the exact same job.
+(0:04.64) One prompt, more than 6,000 characters long, build a photorealistic, real-time 3D simulation
+(0:11.28) of our solar system in a single file.
+(0:14.78) Every planet, the rings, the asteroid belt, comets, real orbital physics.
+(0:21.04) Same words, same settings, no help.
+(0:24.34) One of them finished in about 22 minutes.
+(0:26.12) The other took around half an hour and kept checking its own work the whole time, and one
+(0:31.58) of them needed a reminder halfway through.
+(0:33.90) By the end of this video, you'll see both simulations and you'll know which model actually
+(0:38.38) built the better universe.
+(0:40.36) In one corner, Claude Fable 5.2 from Anthropic, released on November 9th, it's the public
+(0:46.80) version of Mythos 5.2, the same model with extra safeguards for things like cyber and
+(0:52.28) biology.
+(0:53.18) On artificial analysis, the biggest independent leaderboard, it's the smartest model there
+(0:58.34) is right now, with a score of 65.
+(1:01.34) In the other corner, GPT 6.2 Astra, OpenAI's new flagship, released just six days ago,
+(1:08.36) it scores 62 second place.
+(1:11.10) OpenAI calls it the best model in the world for scientists, and by OpenAI's own numbers,
+(1:16.32) it beats Fable by 5.5 points on Agent's last exam, a test of long professional tasks.
+(1:23.66) But here's what makes this test interesting.
+(1:26.58) Artificial analysis also runs a human-graded 3D test, where real people judge interactive
+(1:31.18) 3D experiences, and there, Astra is number one, with 1318 against 1271 for Fable.
+(1:38.84) So on paper, a 3D solar system should be Astra's home turf.
+(1:42.42) They even cost the same per token, $8 per million input tokens, and 40 per million output,
+(1:49.24) Fable actually just got cheaper, down from 10 and 50.
+(1:52.86) So this comes down to one simple question, what do they actually build?
+(1:57.34) Here's the prompt, and I wrote it to be hard, a living sun, with plasma that boils and flares,
+(2:03.74) mercury out to Neptune, plus Pluto, each with its own look, Saturn's rings, with real
+(2:09.70) shadows, 15,000 asteroids between Mars and Jupiter, each on its own orbit, comets whose
+(2:16.58) tails always point away from the sun, real orbital physics using Kepler's equation,
+(2:22.48) so planets speed up as they swing close to the sun, two scale modes, a cinematic camera
+(2:27.72) tour, a time slider, keyboard shortcuts, and all of it in one HTML file.
+(2:34.88) Same prompt, word for word, into both, Fable 5.2 runs inside cloud code, on high effort,
+(2:42.22) Astra runs inside OpenAI's codecs app, also on high.
+(2:46.22) One honest note before we start, the codecs run actually began on GPT 6.2's soul, the
+(2:52.66) cheaper sibling, because I had the wrong model selected, I switched to Astra partway through,
+(2:58.40) and Astra did the final single file rebuild you're about to see.
+(3:01.52) Keep that in mind.
+(3:03.76) On the codec side, the first attempt ignored part of the brief, instead of one file, it started
+(3:09.68) setting up a whole project, with a build tool and separate files.
+(3:14.66) So I told it again, single HTML file, Astra took it from there, rebuilt everything as one
+(3:20.78) file, and then checked its own screenshots of the result.
+(3:24.58) Fable works differently, first it writes itself a checklist, look at the folder, settle the
+(3:29.98) approach, write the sky and the sun, add the planets, moons and rings, then the belts, comets
+(3:35.74) and orbit lines, then the interface, the tour and the shortcuts, and then it does something
+(3:40.88) I really liked, it opens the simulation in a browser by itself and checks it, it notices
+(3:46.66) the asteroids look too big next to Earth, and shrinks them, it smooths the small rocky
+(3:51.68) moons and the cracks on Europa, then it tests realistic scale, clicking the tour and the
+(4:00.68) codecs finished in 22 minutes and 26 seconds, including that restart, Fable was still checking
+(4:06.26) its work at 29 and a half minutes, fun fact, Fable actually writes more than twice as fast
+(4:11.92) as Astra, about 110 tokens a second, it's slower overall because it simply does more work, though
+(4:18.82) speed goes to codecs, now let's see what they made.
+(4:22.82) This is what codecs and Astra built, it calls it solar atlas and the first thing you notice
+(4:27.94) is the design, a loading screen while the shaders compile, a clean title, a planet bar
+(4:33.46) along the top, click a planet and you get a proper page, Jupiter, its size, its mass, its
+(4:40.12) distance from the sun, its day, and its year, its moons, and a fun fact, the sun, burning,
+(4:48.06) mercury, gray and cratered, Venus, Earth, Mars, Jupiter with its great red spot, Saturn with
+(4:57.46) soft rings, Uranus, tipped on its side with faint rings of its own, Neptune, Deep Blue,
+(5:05.04) with its dark spot, honestly, it looks like a polished museum app, but it has gaps, click
+(5:11.60) Pluto and you get a lovely info card, and an empty patch of space where Pluto should be,
+(5:17.06) pull back to the full system view, and the planets shrink into tiny dots on thin orbit
+(5:21.84) lines, and codecs itself admitted that the 60 frames per second target was never actually
+(5:27.70) checked, and this is fables, it feels like flying through space, Mars with craters and
+(5:34.94) a white polar cap, an info panel on the side, and the asteroid belt drifting past as real
+(5:40.34) three-dimensional rocks, Jupiter in the background with its moons, the sun up close with flares
+(5:46.86) rising off it, a comet with its long blue tail streaming behind it, Earth with clouds and city lights,
+(5:55.00) Saturn and its rings, Uranus, Neptune with its dark spot, Pluto cratered and pale,
+(6:02.78) pull all the way back and you see the whole system at once, every orbit, the asteroid belt,
+(6:08.92) and the kiper belt as a faint ring beyond Neptune, it's not a gallery of planets, it's a place,
+(6:15.60) and there's a detail I never asked for, fables set the sky to today's real date,
+(6:21.04) in its notes it points out that Saturn's rings are nearly edge-on to the sun right now,
+(6:25.58) that Halley's comet is near the far end of its orbit with no tail, and that comet
+(6:29.68) Enki is close to the sun, showing both of its tails, that's not decoration, that's the physics
+(6:35.72) actually running, it also measured its own speed, every view rendered in under 17 milliseconds on
+(6:42.44) this laptop's integrated graphics, fast enough for 60 frames per second, it wasn't perfect though,
+(6:48.82) it skipped two optional extras, Ceres and the tiny ice particles and Saturn's rings,
+(6:54.30) and it told me so, it needs internet the first time it loads, because 3.js comes from a CDN,
+(7:00.94) which the prompt allowed, and it took longer, so let's score it, speed, codecs,
+(7:07.82) interface design, codecs, those solar atlas pages are beautiful,
+(7:13.14) following the brief the first time, fable, 3D realism, the feeling of actually being out there,
+(7:19.38) fable, clearly, physics and accuracy, fable, right down to today's sky, and honesty, a tie,
+(7:27.22) both told me exactly what they skipped, on this test fable 5.2 built the better universe,
+(7:33.32) but one test is one test, remember, astra is number one on that human graded 3D benchmark,
+(7:39.64) so let's look at what other people found, and honestly their head to heads look a lot like mine,
+(7:45.74) in a game test on dev.2, astra finished in about 4 minutes but faked the 3D,
+(7:51.14) while fable took around 10 and built the real thing, in a blender test, astra modeled better,
+(7:56.56) and cost about a sixth as much, and youtuber Nate Hurk ran 12 tasks, fable 1.7,
+(8:02.82) astra 5, but astra was cheaper and faster on every single one, on artificial analysis own head to head,
+(8:10.18) fable wins the hardest reasoning tests, 80 on humanities last exam diamond, against 72 for astra,
+(8:17.30) and a clear lead on a physics research benchmark 2, astra wins on real scientific work in a terminal,
+(8:23.82) 78 against 73, and it tops the vowels science index. And then there's the cost. At maximum effort,
+(8:31.90) one task costs about $4 on astra, and about 2650 on fable, astra finishes in 14 minutes, fable in 41,
+(8:40.72) same price per token, but fable uses far more tokens to get there. In real science,
+(8:46.46) the picture splits again, one researcher tested how well the models know real protein sequences,
+(8:52.14) fable predicted the next amino acid 54% of the time, astra was close to zero, protein designer
+(8:58.82) Sergei of chinikov got fable to predict a proteins fold correctly from a simple prompt, and anthropic
+(9:05.50) says fable helped solve two open problems in black hole physics, though those papers aren't peer
+(9:10.94) reviewed yet, and people are building wild things with both, with fable, a Mars rover suspension simulation,
+(9:17.50) a webcam x-ray mirror that shows your skull and muscles, a live weather globe, with astra,
+(9:24.58) ethanmolic space elevator ride in blender and unity, and open AI's own demo, where astra writes
+(9:30.56) a car's physics solver and animates it in blender. So the pattern is clear, fable is the deeper,
+(9:37.58) more careful builder, it reads the whole brief, checks its own work, and gets the details right,
+(9:43.52) astra is the faster, cheaper one, with a great eye for design, and it gets surprisingly close,
+(9:49.86) so which one should you use, if you want something polished, fast, and cheap per task, astra?
+(9:56.10) If you want a model that follows a long, detailed brief, checks its own work, and gets the physics
+(10:01.72) right, fable, the gap at the top is small, and it moves every few weeks, which one would you
+(10:12.92) next. This has been AI Equator.

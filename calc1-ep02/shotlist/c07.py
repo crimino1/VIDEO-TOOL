@@ -1,0 +1,17 @@
+S = [
+    ("18:17.45", "c", "K07_Part9", dict(label="Part 9", title="Your Limit Game Plan", doodle="triangle")),
+    ("18:20.50", "m", "K07_Plan1", {}),
+    ("18:47.40", "m", "K07_Plan2", {}),
+    ("19:08.30", "c", "K07_Part10", dict(label="Part 10", title="The Final Practice", doodle="star")),
+    ("19:11.00", "m", "K07_Q4", {}),
+    ("19:29.68", "m", "K07_Q5", {}),
+    ("19:55.55", "m", "K07_Q6", {}),
+    ("20:34.90", "m", "K07_Q7", {}),
+    ("20:54.60", "m", "K07_Q8", {}),
+    ("21:31.30", "m", "K07_Secret", {}),
+    ("21:55.70", "m", "K07_Sum1", {}),
+    ("22:17.50", "m", "K07_Sum2", {}),
+    ("22:48.30", "m", "K07_Next", {}),
+    ("23:07.80", "s", "K07_Subscribe", dict(line="Next up: Episode 3, Limits at Infinity")),
+    ("23:12.85", "m", "K07_Close", {}),
+]

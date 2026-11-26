@@ -1,0 +1,23 @@
+"""Builder 03: Chapter 4 (special triangles) and Chapter 5 (solving real problems), 8:57.90 - 14:36.08."""
+S = [
+    ("8:57.90", "c", "K03_Card4", dict(num=4, title="The Special Triangles", doodle="triangle")),
+    ("9:00.64", "m", "K03_TwoTri"),
+    ("9:06.66", "m", "K03_FortyFive"),
+    ("9:41.76", "m", "K03_ThirtySixty"),
+    ("10:19.66", "m", "K03_TableTrick"),
+    ("11:07.64", "q", "K03_Practice1", dict(sub="Quick fire: answer out loud!")),
+    ("11:11.20", "m", "K03_QuickFire"),
+    ("11:27.72", "c", "K03_Card5", dict(num=5, title="Solving Real Problems", doodle="star")),
+    ("11:30.94", "p", "K03_Measure", dict(title="Measuring real things", imgs=[("k03_tape", "11:31.50"), ("k03_ladder", "11:35.18")],
+                                          caps=[("A 10 m ladder leans against a wall", "11:35.30")])),
+    ("11:37.92", "m", "K03_Ladder"),
+    ("12:09.08", "m", "K03_ElevDep"),
+    ("12:27.06", "m", "K03_Tree"),
+    ("12:56.00", "p", "K03_Surveyors", dict(imgs=[("k03_surveyor", "12:56.40"), ("k03_mountain", "12:58.70")],
+                                            caps=[("How surveyors measured mountains", "12:57.00")])),
+    ("13:00.76", "m", "K03_Inverse"),
+    ("13:27.94", "m", "K03_Ramp"),
+    ("13:45.66", "q", "K03_Practice2"),
+    ("13:47.34", "m", "K03_PracticeQ"),
+    ("14:08.62", "m", "K03_Answers"),
+]

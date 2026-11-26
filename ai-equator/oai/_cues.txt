@@ -1,0 +1,13 @@
+    (10.28, "pop", 0.08),  # #1 claim card
+    (120.44, "click", 0.08),  # ALE Astra bar
+    (164.54, "pop", 0.09),  # legal: more than double
+    (179.56, "ping", 0.07),  # 3D #1
+    (201.02, "click-soft", 0.1),  # loses cheap
+    (229.64, "ping", 0.07),  # Epoch tie
+    (287.40, "impact-bass-1", 0.07),  # first High rating
+    (316.62, "click", 0.09),  # Critical level
+    (392.02, "whoosh-short", 0.08),  # where it gets messy
+    (412.74, "pop", 0.08),  # 56% slower
+    (444.72, "click", 0.08),  # blocker bar
+    (470.88, "whoosh-short", 0.07),  # verdict
+    (526.10, "whoosh-short", 0.1),  # logo

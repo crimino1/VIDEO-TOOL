@@ -1,0 +1,43 @@
+- [Video toolchain](video-toolchain.md) — FFmpeg full path, .venv, local npm tools, HyperFrames render lock
+- [Senior fitness project](senior-fitness-project.md) — user's choices, Blender 3D pipeline, next steps
+- [Schrödinger project](schrodinger-project.md) — Manim plus HyperFrames film, look not yet approved as a channel style
+- [AI Equator channel](ai-equator-channel.md) — AI news channel: real clips/tweets/CEOs, video log; style moved to white (see next)
+- [AI Equator white style](ai-equator-white-style.md) — 2026-11-18: white bg, no neon, no overlaps (overlap.mjs), cleaned voice with pauses cut
+- [Colossal squid film](squid-project.md) — Unseen Kingdom 20-min doc: Blender plates, HyperFrames parts, audio level rules
+- [Age-faster video](age-faster-project.md) — senior habits video: stock + motion graphics + 2D, Gmail-safe demo crop
+- [Trig course](trig-course-project.md) — 55-min chalkboard trig course: Manim + handwritten LaTeX, HF reel, Enter-click only, no music
+- [Sperm whales like orcas film](spermorca-project.md) — code-only canvas animation from NOAA paintings, wild footage, music test tool
+- [Physics channel](physics-channel.md) — documentary 3D (STYLE v2.1); films: Maxwell, String Theory, Black Holes v2, Electricity (switch off)
+- [Mariana Trench film](trench-project.md) — second channel Unseen By Eye, real diver cut-outs as the human, Kingdom cut from voice
+- [Health workout style](health-workout-style.md) — channel switched to anatomy-figure workouts in Blender; 2 GB AMD iGPU = EEVEE only
+- [Deep-sea predators film](predators-project.md) — 9-min list film, animals animated from real Commons photos, IPv4 download fix
+- [Health voice API](health-voice-api.md) — ai33 key: health channel only, 5k chars/day, via tools/health_tts.py
+- [Why orcas never hunt alone](orcas-project.md) — 15-min film, orca photo cut-outs in orca.js, split-level wave-wash, world_pins zoom fix
+- [Chair workout video](chair-workout-project.md) — user's GLB muscle man rigged; pipeline for anatomy workout videos
+- [Belly workout video](belly-workout-project.md) — 2nd anatomy workout: 6 new core poses, Jamendo CC music, extra motion
+- [Orcas won't hunt humans film](orcahuman-project.md) — 15:41 film, hum.js new scenes; res_super/res_j16 watermark crops
+- [Kegel workout video](kegel-workout-project.md) — 3rd anatomy workout: x-ray pelvic floor panel, sunroom bg, new bg every video
+- [Calculus for beginners](calc-project.md) — 12-min chalkboard calc video, calc/ copy of trig pipeline, strict no-AI-slop motion rules
+- [Chair abs video](abs-workout-project.md) — 4th anatomy workout: thin skin-tone figure um_thin.blend, gym_0 bg, CORE six-pack meter
+- [Leg strength seniors video](leg-workout-project.md) — 5th workout: reused voice clips (budget out), LEG POWER meter, gym_0 reused on request
+- [Balance, back pain, arms videos](three-workouts-project.md) — videos 6-8 in one batch: 17 new poses, per-video meters, clean Pexels rooms
+- [Space channel](space-channel.md) — "Outside Lay": EP1 Saturn, EP2 universe scale, EP3 black holes (GLSL ray-traced black hole kinds_ep3.js); pipeline space/ep3
+- [Calculus 1 series](calc1-series.md) — full Calc 1 course, one folder per episode (calc1-ep01 = Functions), same calm chalk style
+- [Knee, neck, walking videos](batch3-workouts-project.md) — videos 9-11: upgraded figure um_look.blend (hair/eyes/AgX), calm no-slop palette, default now
+- [Bit by Bit channel](bitbybit-channel.md) — CS explainer: pixel CRT engine + mascot "Bit"; EP4 = documentary cut + calm PX.D palette (default now)
+- [Flat cartoon style test](flat-style-test.md) — new Unseen look (flat vector), flat-test rig, APPROVED as the new default
+- [Morning, hip, posture videos](batch4-workouts-project.md) — videos 12-14: 3 lengths, character variants (skin/hair/beard/outfit), own font per video
+- [Great white weakness film](sharkorca-project.md) — Unseen By Eye, first full flat-style film, story.js scenes, Pinterest watermark list
+- [Orcas kill but never eat film](orcakill-project.md) — Unseen By Eye #2 flat film, res.js scenes, clip ranges to avoid
+- [No captions on Unseen By Eye](unseen-no-captions.md) — user removed the white pill captions (2026-11-14); keep title/theory/end cards
+- [Unseen Kingdom 2 style](unseen-kingdom-2-style.md) — long-form tier-list films + 9:16 animated-host shorts (no real human); guide draft, uk2-kit, open questions
+- [Unseen By Eye mix: 70% stock](unseen-mix-70-stock.md) — 2026-11-15 feedback: 20-30% animation only where needed, rest high-quality stock/photos/research
+- [Better at math video](mathbetter-project.md) — 11:43 math film: Bit by Bit pixel style minus mascot + Manim maths, documentary cut, mathbetter/
+- [Cute Face, Killer Brain short](orcashort-project.md) — first vertical short: 9:16 windows from 1080p clips, pauses cut, mix_short.py
+- [Alien Anatoly channel](alien-anatoly-channel.md) — green faceless muscle mascot, white-figure ref style: AI stills + push, dip-to-black, whiteboards
+- [Belly, Tai Chi, feet videos](batch5-workouts-project.md) — videos 15-17: floor/mat + standing poses, cloth shells (um_real.py), real shadows, breathing
+- [You vs 5 Apex Predators short](apexshort-project.md) — delivered 2026-11-19: 4K stock + hud.js survival-clock overlays, preview-then-section downloads
+- [Euler identity video](euler-project.md) — 11:02 Manim-heavy math film, colour-coded cast, trim() cache now mtime-keyed
+- [100 men vs predators film](men100-project.md) — first UK2 long-form: paleoart cut-outs on plates, drawn crowd, counter, tier board, men100/
+- [Real humans, not drawn](real-humans-not-drawn.md) — people in realistic styles = Pexels photo cut-outs; drawn men were rejected
+- [Geometry explained video](geometry-project.md) — 16:06 math film #3: 24 Manim scenes (3D globe), ancient/modern pixel kinds, mncheck cue tool

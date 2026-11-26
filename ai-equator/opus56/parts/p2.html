@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="174.862" data-width="1920" data-height="1080">
+<div id="s155" class="clip scene" data-start="0.000" data-duration="11.792" data-track-index="2" style="z-index:36"><div id="w156" class="sc"><div class="head"><div class="kick">Prediction markets</div><div class="ttl">What the betting markets say</div></div><div id="b157" class="body"><div class="row" style="gap:40px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i145" class="a win" style="width:640px"><div class="wbar"><i></i><i></i><i></i><span>public.com · Kalshi market</span></div><div class="wbody" style="height:296px;position:relative"><img id="k144" src="assets/img/kalshi_pub_dcc2e.jpg" alt="" style="width:640px;height:296px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:14px"><div id="i148" class="a brow" style=""><div class="blab" style="width:230px"><span>Before Dec 1</span></div><div class="btrack" style="height:48px"><div id="bf146" class="bfill" style="width:7.00%"></div></div><div class="bval" style="width:130px"><span id="bv147">0</span></div></div><div id="i151" class="a brow" style=""><div class="blab" style="width:230px"><span>Before Dec 16</span></div><div class="btrack" style="height:48px"><div id="bf149" class="bfill hero" style="width:82.00%"></div></div><div class="bval acc" style="width:130px"><span id="bv150">0</span></div></div><div id="i154" class="a brow" style=""><div class="blab" style="width:230px"><span>Before Jan 1</span></div><div class="btrack" style="height:48px"><div id="bf152" class="bfill" style="width:84.00%"></div></div><div class="bval" style="width:130px"><span id="bv153">0</span></div></div></div><div class="bnote">Kalshi “Yes” price, Nov 25</div></div></div></div></div><div class="srcl">Kalshi via public.com</div></div></div>
+<div id="s166" class="clip scene" data-start="11.792" data-duration="11.321" data-track-index="2" style="z-index:37"><div id="w167" class="sc"><div id="b168" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i162" class="a win" style="width:560px"><div class="wbar"><i></i><i></i><i></i><span>manifold.markets</span></div><div class="wbody" style="height:466px;position:relative"><img id="k158" src="assets/img/manifold_53c9d.jpg" alt="" style="width:560px;height:466px"><div id="hl159" style="position:absolute;left:0px;top:98px;width:560px;height:37px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div><div id="hl160" style="position:absolute;left:0px;top:140px;width:560px;height:37px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div><div id="hl161" style="position:absolute;left:0px;top:182px;width:560px;height:37px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i163" class="a tx ink3" style="font-size:32px;text-align:left">Manifold (play money) is more careful:</div><div id="i164" class="a hd" style="font-size:60px">15% · 64% · 81%</div><div id="i165" class="a verd bad" style="font-size:28px;padding:13px 22px;border-width:3px">“BEFORE NOV 16” RESOLVED NO</div></div></div></div></div><div class="srcl">manifold.markets</div></div></div>
+<div id="s179" class="clip scene" data-start="23.113" data-duration="19.500" data-track-index="2" style="z-index:38"><div id="w180" class="sc"><div class="head"><div class="kick">Prediction markets</div><div class="ttl">Polymarket, the biggest market</div></div><div id="b181" class="body"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div class="bars" style="gap:16px"><div id="i171" class="a brow" style=""><div class="blab" style="width:230px"><span>By Nov 30</span></div><div class="btrack" style="height:52px"><div id="bf169" class="bfill" style="width:4.50%"></div></div><div class="bval" style="width:200px"><span id="bv170">0</span></div></div><div id="i174" class="a brow" style=""><div class="blab" style="width:230px"><span>By Dec 15</span></div><div class="btrack" style="height:52px"><div id="bf172" class="bfill hero" style="width:81.50%"></div></div><div class="bval acc" style="width:200px"><span id="bv173">0</span></div></div><div id="i177" class="a brow" style=""><div class="blab" style="width:230px"><span>By Dec 31</span></div><div class="btrack" style="height:52px"><div id="bf175" class="bfill" style="width:92.00%"></div></div><div class="bval" style="width:200px"><span id="bv176">0</span></div></div></div><div class="bnote">Polymarket, about $58K traded</div><div id="i178" class="a hd" style="font-size:44px">Not this week. Very likely the <b class='acc'>first half of December</b>.</div></div></div><div class="srcl">polymarket.com</div></div></div>
+<div id="s187" class="clip scene" data-start="42.613" data-duration="22.956" data-track-index="2" style="z-index:39"><div id="w188" class="sc"><div class="head"><div class="kick">Competition</div><div class="ttl">Why Anthropic might hurry</div></div><div id="b189" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i182" class="a tev " style=""><i class="tdot "></i><div class="tdate">Nov 9</div><div class="tlab">Claude Fable 5.2</div></div><div id="i183" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Nov 17</div><div class="tlab">GPT-6.2 Astra</div></div><div id="i184" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Nov 18</div><div class="tlab">Gemini 4 Neon · $3 in</div></div></div></div><div class="hrow" style="gap:0px;justify-content:flex-start"><div id="i186" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Opus 5.5 on Artificial Analysis</div><div id="v185" class="sval hero" style="font-size:90px">#1 → #10</div><div class="ssub">launch → today</div></div></div></div></div><div class="srcl">OpenAI · Google · artificialanalysis.ai</div></div></div>
+<div id="s194" class="clip scene" data-start="65.569" data-duration="18.253" data-track-index="2" style="z-index:40"><div id="w195" class="sc"><div id="b196" class="body clipb"><div class="vframe"></div><div class="vcred">@claudeai on X, Sep 22, 2026 (Opus 5.5 launch)</div></div></div></div>
+<div id="vw191" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:41"><video id="v190" class="clip" src="assets/clips/x_opus55_launch_a505cee1.mp4" muted playsinline data-start="65.569" data-duration="18.253" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i192" class="a cap " style="">Opus 5.5: $4 / $20 per 1M tokens · 1M context</div><div id="i193" class="a cap acc" style="">Terminal-Bench 4: 66.4% · OSWorld: 81.8% · AA index: 59</div></div></div>
+<div id="s209" class="clip scene" data-start="83.822" data-duration="8.274" data-track-index="2" style="z-index:42"><div id="w210" class="sc"><div class="head"><div class="kick">Baseline</div><div class="ttl">Even the leak wouldn't be #1</div></div><div id="b211" class="body"><div class="bars" style="gap:16px"><div id="i199" class="a brow" style=""><div class="blab" style="width:470px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:52px"><div id="bf197" class="bfill" style="width:92.86%"></div></div><div class="bval" style="width:200px"><span id="bv198">0</span></div></div><div id="i202" class="a brow" style=""><div class="blab" style="width:470px"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:52px"><div id="bf200" class="bfill" style="width:88.57%"></div></div><div class="bval" style="width:200px"><span id="bv201">0</span></div></div><div id="i205" class="a brow" style=""><div class="blab" style="width:470px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Opus 5.6 (leaked claim)</span></div><div class="btrack" style="height:52px"><div id="bf203" class="bfill hero" style="width:87.14%"></div></div><div class="bval acc" style="width:200px"><span id="bv204">0</span><span class="bsub">unverified</span></div></div><div id="i208" class="a brow" style=""><div class="blab" style="width:470px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Opus 5.5</span></div><div class="btrack" style="height:52px"><div id="bf206" class="bfill" style="width:84.29%"></div></div><div class="bval" style="width:200px"><span id="bv207">0</span></div></div></div><div class="bnote">Artificial Analysis Intelligence Index</div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s218" class="clip scene" data-start="92.096" data-duration="11.811" data-track-index="2" style="z-index:43"><div id="w219" class="sc"><div class="head"><div class="kick">Rumour math</div><div class="ttl">The price cut, if it's real</div></div><div id="b220" class="body"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i213" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Opus 5.5 today</div><div id="v212" class="sval " style="font-size:76px">$4 / $20</div><div class="ssub">per 1M tokens</div></div><div id="i215" class="a stat hero" style="flex:1"><div class="slab">If −20% were real</div><div id="v214" class="sval hero" style="font-size:76px">$3.20 / $16</div><div class="ssub">per 1M tokens</div></div><div id="i217" class="a stat " style="flex:1"><div class="slab">Gemini 4 Neon</div><div id="v216" class="sval " style="font-size:76px">$3 / $15</div><div class="ssub">per 1M tokens</div></div></div></div><div class="srcl">anthropic.com · Google</div></div></div>
+<div id="s224" class="clip scene" data-start="103.907" data-duration="18.389" data-track-index="2" style="z-index:44"><div id="w225" class="sc"><div class="head"><div class="kick">Reality check</div><div class="ttl">Reasons to doubt the hype</div></div><div id="b226" class="body"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i221" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">The “ask about recent events” test</div><div class="ssub" style="margin-top:4px">Opus 5.5's training data already reaches June 2026</div></div><div class="verd bad">PROVES NOTHING</div></div><div id="i222" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Viral demo in the last Opus leak</div></div><div class="verd bad">WAS FAKE</div></div><div id="i223" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">It might not even be called 5.6</div></div><div class="verd warn">5.7? 6?</div></div></div></div></div></div>
+<div id="s230" class="clip scene" data-start="122.296" data-duration="9.860" data-track-index="2" style="z-index:45"><div id="w231" class="sc"><div id="b232" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i227" class="a twc" style="width:680px"><img src="assets/img/tw_berman_100.png" alt="" style="width:680px;height:306px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i228" class="a hd ink3" style="font-size:36px">Matthew Berman:</div><div id="i229" class="a hd" style="font-size:64px">“not real demos”</div></div></div></div></div><div class="srcl">@MatthewBerman on X</div></div></div>
+<div id="s237" class="clip scene" data-start="132.156" data-duration="17.507" data-track-index="2" style="z-index:46"><div id="w238" class="sc"><div class="head"><div class="kick">Watch for</div><div class="ttl">How you'll know it's real</div></div><div id="b239" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i233" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">New model ID in Anthropic's docs</div></div><div class="verd warn">NOT YET</div></div><div id="i234" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Bedrock and Google Cloud model IDs</div></div><div class="verd warn">NOT YET</div></div><div id="i235" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Claude app model picker</div></div><div class="verd warn">NOT YET</div></div><div id="i236" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Official Anthropic post</div></div><div class="verd warn">NOT YET</div></div></div></div></div></div>
+<div id="s248" class="clip scene" data-start="149.663" data-duration="17.309" data-track-index="2" style="z-index:47"><div id="w249" class="sc"><div class="head"><div class="kick">Opus 5.6</div><div class="ttl">My take</div></div><div id="b250" class="body"><div class="hrow" style="gap:16px;justify-content:flex-start"><div id="i241" class="a stat " style="flex:1"><div class="slab">Being tested?</div><div id="v240" class="sval " style="font-size:70px">Likely</div><div class="ssub">something new</div></div><div id="i243" class="a stat " style="flex:1"><div class="slab">On schedule?</div><div id="v242" class="sval " style="font-size:70px">Overdue</div><div class="ssub">64 vs ~60 days</div></div><div id="i245" class="a stat " style="flex:1"><div class="slab">Confirmed?</div><div id="v244" class="sval " style="font-size:70px">No</div><div class="ssub">no ID, no docs</div></div><div id="i247" class="a stat hero" style="flex:1"><div class="slab">My guess</div><div id="v246" class="sval hero" style="font-size:58px">Early–mid Dec</div></div></div></div></div></div>
+<div id="s254" class="clip scene" data-start="166.972" data-duration="5.040" data-track-index="2" style="z-index:48"><div id="w255" class="sc"><div id="b256" class="body full"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i251" class="a hd" style="font-size:76px;text-align:center">When do you think Opus 5.6 drops?</div><div id="i252" class="a tx ink3" style="font-size:40px;text-align:center">Tell me in the comments.</div><div id="i253" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe to catch it the day it drops.</div></div></div></div></div>
+<div id="s259" class="clip scene" data-start="172.012" data-duration="2.850" data-track-index="2" style="z-index:49"><div id="w260" class="sc"><div id="b261" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i257" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i258" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#i145",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},0.100);
+tl.fromTo("#bf146",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},4.112);
+count("#bv147",4.112,0,7,0,"","%",0.9);
+tl.fromTo("#i148",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},4.112);
+tl.fromTo("#bf149",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},6.392);
+count("#bv150",6.392,0,82,0,"","%",0.9);
+tl.fromTo("#i151",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},6.392);
+tl.fromTo("#bf152",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},9.402);
+count("#bv153",9.402,0,84,0,"","%",0.9);
+tl.fromTo("#i154",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},9.402);
+tl.fromTo("#w156",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},0.000);
+tl.to("#w156",{opacity:0,duration:0.25,ease:"power1.in"},11.542);
+tl.fromTo("#b157",{scale:1},{scale:1.015,duration:11.792,ease:"none"},0.000);
+tl.fromTo("#hl159",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},13.832);
+tl.fromTo("#hl160",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},14.332);
+tl.fromTo("#hl161",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},14.832);
+tl.fromTo("#i162",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},11.892);
+tl.fromTo("#i163",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},12.092);
+tl.fromTo("#i164",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},13.832);
+tl.fromTo("#i165",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.632);
+tl.fromTo("#w167",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},11.792);
+tl.to("#w167",{opacity:0,duration:0.25,ease:"power1.in"},22.863);
+tl.fromTo("#b168",{scale:1},{scale:1.015,duration:11.321,ease:"none"},11.792);
+tl.fromTo("#bf169",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},28.152);
+count("#bv170",28.152,0,4.5,1,"","%",0.9);
+tl.fromTo("#i171",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},28.152);
+tl.fromTo("#bf172",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},31.172);
+count("#bv173",31.172,0,81.5,1,"","%",0.9);
+tl.fromTo("#i174",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},31.172);
+tl.fromTo("#bf175",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},33.852);
+count("#bv176",33.852,0,92,1,"","%",0.9);
+tl.fromTo("#i177",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},33.852);
+tl.fromTo("#i178",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},36.312);
+tl.fromTo("#w180",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},23.113);
+tl.to("#w180",{opacity:0,duration:0.25,ease:"power1.in"},42.363);
+tl.fromTo("#b181",{scale:1},{scale:1.015,duration:19.500,ease:"none"},23.113);
+tl.fromTo("#i182",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},42.913);
+tl.fromTo("#i183",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.372);
+tl.fromTo("#i184",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},52.292);
+tl.fromTo("#i186",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},62.112);
+tl.fromTo("#w188",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},42.613);
+tl.to("#w188",{opacity:0,duration:0.25,ease:"power1.in"},65.319);
+tl.fromTo("#b189",{scale:1},{scale:1.015,duration:22.956,ease:"none"},42.613);
+tl.fromTo("#vw191",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},65.569);
+tl.fromTo("#i192",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},68.872);
+tl.fromTo("#i193",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},75.352);
+tl.fromTo("#w195",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},65.569);
+tl.to("#w195",{opacity:0,duration:0.25,ease:"power1.in"},83.572);
+tl.to("#vw191",{opacity:0,duration:0.25,ease:"power1.in"},83.572);
+tl.fromTo("#bf197",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},86.152);
+count("#bv198",86.152,0,65,0,"","",0.9);
+tl.fromTo("#i199",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},86.152);
+tl.fromTo("#bf200",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},90.172);
+count("#bv201",90.172,0,62,0,"","",0.9);
+tl.fromTo("#i202",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},90.172);
+tl.fromTo("#bf203",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},84.022);
+count("#bv204",84.022,0,61,0,"","",0.9);
+tl.fromTo("#i205",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},84.022);
+tl.fromTo("#bf206",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},84.322);
+count("#bv207",84.322,0,59,0,"","",0.9);
+tl.fromTo("#i208",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},84.322);
+tl.fromTo("#w210",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},83.822);
+tl.to("#w210",{opacity:0,duration:0.25,ease:"power1.in"},91.846);
+tl.fromTo("#b211",{scale:1},{scale:1.015,duration:8.274,ease:"none"},83.822);
+tl.fromTo("#i213",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.296);
+tl.fromTo("#i215",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},96.172);
+tl.fromTo("#i217",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},100.652);
+tl.fromTo("#w219",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},92.096);
+tl.to("#w219",{opacity:0,duration:0.25,ease:"power1.in"},103.657);
+tl.fromTo("#b220",{scale:1},{scale:1.015,duration:11.811,ease:"none"},92.096);
+tl.fromTo("#i221",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},107.432);
+tl.fromTo("#i222",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},114.872);
+tl.fromTo("#i223",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},117.772);
+tl.fromTo("#w225",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},103.907);
+tl.to("#w225",{opacity:0,duration:0.25,ease:"power1.in"},122.046);
+tl.fromTo("#b226",{scale:1},{scale:1.015,duration:18.389,ease:"none"},103.907);
+tl.fromTo("#i227",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},122.396);
+tl.fromTo("#i228",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},123.952);
+tl.fromTo("#i229",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},128.652);
+tl.fromTo("#w231",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},122.296);
+tl.to("#w231",{opacity:0,duration:0.25,ease:"power1.in"},131.906);
+tl.fromTo("#b232",{scale:1},{scale:1.015,duration:9.860,ease:"none"},122.296);
+tl.fromTo("#i233",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},135.432);
+tl.fromTo("#i234",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},137.772);
+tl.fromTo("#i235",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},140.352);
+tl.fromTo("#i236",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},141.972);
+tl.fromTo("#w238",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},132.156);
+tl.to("#w238",{opacity:0,duration:0.25,ease:"power1.in"},149.413);
+tl.fromTo("#b239",{scale:1},{scale:1.015,duration:17.507,ease:"none"},132.156);
+tl.fromTo("#i241",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},151.932);
+tl.fromTo("#i243",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},154.472);
+tl.fromTo("#i245",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.152);
+tl.fromTo("#i247",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},164.712);
+tl.fromTo("#w249",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},149.663);
+tl.to("#w249",{opacity:0,duration:0.25,ease:"power1.in"},166.722);
+tl.fromTo("#b250",{scale:1},{scale:1.015,duration:17.309,ease:"none"},149.663);
+tl.fromTo("#i251",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},167.072);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},167.572);
+tl.fromTo("#i253",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},169.432);
+tl.fromTo("#w255",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},166.972);
+tl.to("#w255",{opacity:0,duration:0.25,ease:"power1.in"},171.762);
+tl.fromTo("#i257",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},172.012);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},172.012);
+tl.fromTo("#w260",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},172.012);
+tl.set({}, {}, 174.862);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

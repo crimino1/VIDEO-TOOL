@@ -1,0 +1,21 @@
+# Builder 29: middle of Chapter 10. The 1-litre can solved (r = 5.42 cm, h = 10.84 cm = 2r, live can + S(r)),
+# the closest point on y = x^2 to (0, 3) (live point + W-shaped d^2 graph), the profit hill (x = 30, $800),
+# "try this one" (20 split into two, a live rectangle -> 10 x 10 = 100), then L'Hopital's rule: the 0/0 callback,
+# the rule with a shrinking-window picture (heights -> slopes), not the quotient rule, e^x - 1 over x, sin x over x,
+# x^2 - 9 over x - 3, 1 - cos x over x^2 (twice) and the start of infinity over infinity.
+S = [
+    ("2:58:20.42", "m", "K29_CanSolve", {}),
+    ("2:59:01.20", "m", "K29_CanBest", {}),
+    ("2:59:32.00", "m", "K29_Distance", {}),
+    ("3:00:13.90", "m", "K29_DistAlgebra", {}),
+    ("3:00:56.20", "m", "K29_DistAnswer", {}),
+    ("3:01:27.90", "m", "K29_Profit", {}),
+    ("3:02:03.80", "q", "K29_TryCard", dict(title="Try This One", sub="Pause and try")),
+    ("3:02:05.40", "m", "K29_TryProduct", {}),
+    ("3:02:25.70", "m", "K29_LHIntro", {}),
+    ("3:02:47.40", "m", "K29_Rule", {}),
+    ("3:03:07.80", "m", "K29_Separately", {}),
+    ("3:03:30.20", "m", "K29_ExpEx", {}),
+    ("3:03:51.90", "m", "K29_SinX", {}),
+    ("3:04:28.00", "m", "K29_Twice", {}),
+]

@@ -1,0 +1,25 @@
+from pathlib import Path
+p = Path("blender/build_figure.py"); s = p.read_text(encoding="utf-8")
+s = s.replace("    f = ss(0.15, 0.6, -d.y / ryf) * (1 - ss(-0.8, -1.0, d.z / rzd))", "    f = ss(0.15, 0.6, -d.y / ryf) * (1 - ss(-1.0, -1.25, d.z / rzd))")
+p.write_text(s, encoding="utf-8")
+q = Path("blender/bellies.py"); t = q.read_text(encoding="utf-8")
+t = t.replace('("rect_fem", "quads", "thigh", 0.50, 0.42, 5, 32, 0.011)', '("rect_fem", "quads", "thigh", 0.55, 0.46, 5, 45, 0.011)')
+t = t.replace('("vast_lat", "quads", "thigh", 0.55, 0.40, 62, 38, 0.011)', '("vast_lat", "quads", "thigh", 0.58, 0.42, 72, 45, 0.011)')
+t = t.replace('("vast_med", "quads", "thigh", 0.80, 0.16, -45, 38, 0.013)', '("vast_med", "quads", "thigh", 0.80, 0.20, -50, 45, 0.013)')
+q.write_text(t, encoding="utf-8")
+r = Path("blender/sample_still.py"); u = r.read_text(encoding="utf-8")
+a = u.index("for s, sx in ((\"l\", 1), (\"r\", -1)):"); b = u.index("bpy.context.view_layer.update()")
+u = u[:a] + '''for s, sx in (("l", 1), ("r", -1)):
+    up = s == "r"
+    ankle = (sx * 0.13, -0.36 if up else -0.47, 0.33 if up else 0.085)
+    b.foot(s, ankle, pitch=-15 if up else 0, knee=(sx * 0.15, -1.2, 1.0 if up else 0.6))
+    b.shoulder(s, up=3)
+    sh = b.pos(f"upperarm_{s}")
+    b.hand(s, sh + Vector((sx * 0.56, -0.06, 0.02)), elbow=sh + Vector((sx * 0.3, 0.2, -0.3)), up=(sx, -0.1, 0))
+    b.curl(s, 12)
+''' + u[b:]
+u = u.replace('cam = room.build_camera((1.45, -2.9, 1.0), (0.02, -0.15, 0.70), 38)', 'cam = room.build_camera((-1.25, -2.75, 1.05), (0.0, -0.12, 0.76), 36)')
+u = u.replace('light("key", (-2.0, -1.6, 2.4), 260, 1.2, (1.0, 0.97, 0.93))', 'light("key", (-1.6, -2.2, 2.5), 260, 1.4, (1.0, 0.97, 0.93))')
+u = u.replace('light("fill", (2.4, -2.2, 1.2), 55, 3.0, (0.92, 0.95, 1.0))', 'light("fill", (2.2, -1.4, 1.3), 70, 3.0, (0.92, 0.95, 1.0))')
+u = u.replace('set_muscles(["abs", "obliques", "quads"])', 'set_muscles(["abs", "obliques", "quads", "shoulders"])')
+r.write_text(u, encoding="utf-8"); print("ok")

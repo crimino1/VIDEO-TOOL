@@ -1,0 +1,482 @@
+[0:00.00] Hey everyone, welcome back to the complete Calculus I course.
+[0:04.20] This is episode 2, and today is a big day.
+[0:08.42] Because today, we're learning limits.
+[0:11.22] Limits are the foundation of all of calculus.
+[0:14.02] Derivatives are built on limits.
+[0:16.22] Integrals are built on limits.
+[0:18.44] Everything you'll learn in this course stands on top of the idea we learned today.
+[0:22.76] Last episode, we warmed up with functions.
+[0:25.56] If you haven't watched that one yet, I'd recommend going back to it first, because we'll use functions all the time today.
+[0:32.30] By the end of this video, you'll know what a limit really means, how to read limits from tables and graphs, what one -sided limits are, when a limit does not
+[0:40.76] exist, and how to calculate limits using some clever algebra tricks.
+[0:45.28] And there will be lots of practice questions.
+[0:48.10] Pen and paper ready?
+[0:49.72] Let's begin.
+[0:51.28] Part 1 What is a limit?
+[0:53.74] Imagine you're downloading a big game on your phone.
+[0:56.20] The progress bar says 90%, 99%, 99 .9%, and it just keeps creeping closer and closer to 100.
+[1:07.42] Even before it reaches 100, you know exactly where it's heading.
+[1:11.66] It's heading toward 100%.
+[1:13.46] That's the idea of a limit.
+[1:16.34] A limit is not about where something is.
+[1:18.90] It's about where something is heading.
+[1:21.06] In math, we ask a question like this.
+[1:23.52] As x gets closer and closer to some number, what value does f of x get closer and closer to?
+[1:30.50] Let's try a simple one.
+[1:32.42] Take f of x equals x plus 3.
+[1:34.86] What happens as x gets closer and closer to 2?
+[1:38.18] If x is 1 .9, f of x is 4 .9, if x is 1 .99, f of x is 4 .99, if x is 1 .999, f of x is
+[1:50.54] 4 .999, and from the other side, if x is 2 .1, f of x is 5 .1, if x is 2 .01, f of x is 5 .01.
+[2:02.20] As x gets closer and closer to 2, f of x gets closer and closer to 5, so we say the limit of f of x as x approaches 2 is
+[2:11.38] 5.
+[2:12.46] Here's how we write it.
+[2:13.86] We write the word limb, which is short for limit.
+[2:16.94] Underneath it, we write x arrow 2, which means x approaches 2.
+[2:21.90] Then we write the function and then equals 5.
+[2:25.16] And we read it out loud as the limit as x approaches 2 of x plus 3 equals 5.
+[2:32.22] Now you might be thinking, wait, why not just plug in 2?
+[2:36.62] 2 plus 3 is 5.
+[2:38.50] Same answer.
+[2:39.72] Why do we need all this getting closer business?
+[2:43.14] Great question.
+[2:44.40] For simple functions like this one, plugging in works perfectly.
+[2:48.30] But watch what happens with this next function.
+[2:51.04] Part 2.
+[2:52.56] The function with a hole.
+[2:54.52] Look at this function.
+[2:55.98] f of x equals x squared minus 1 divided by x minus 1.
+[3:00.94] What happens at x equals 1?
+[3:03.26] Let's try plugging in.
+[3:04.92] The top becomes 1 squared minus 1, which is 0.
+[3:08.74] The bottom becomes 1 minus 1, which is also 0.
+[3:12.66] So we get 0 over 0.
+[3:14.40] 0 over 0.
+[3:16.46] Uh -oh.
+[3:17.32] Remember our troublemaker from episode 1?
+[3:19.80] Dividing by 0.
+[3:21.38] The function simply doesn't exist at x equals 1.
+[3:24.48] There's a hole in the graph right there.
+[3:26.56] But here's the amazing part.
+[3:28.84] Even though the function doesn't exist at 1, we can still ask where it's heading.
+[3:33.94] Let's make a table.
+[3:35.50] Let's sneak up on 1 from the left.
+[3:37.82] When x is 0 .9, f of x is 1 .9.
+[3:42.12] When x is 0 .99, f of x is 1 .99.
+[3:47.06] When x is 0 .999, f of x is 1 .999.
+[3:53.20] And now from the right, when x is 1 .1, f of x is 2 .1.
+[3:59.62] When x is 1 .01, f of x is 2 .01.
+[4:04.72] When x is 1 .001, f of x is 2 .01.
+[4:09.74] f of x is 2 .001.
+[4:10.76] Do you see it?
+[4:12.16] From both sides, f of x is 1 .99.
+[4:13.92] f of x is getting closer and closer to 2.
+[4:16.26] So the limit, as x approaches 1, is 2.
+[4:19.56] Even though the function doesn't even exist at 1, that's the power of a limit.
+[4:24.50] It tells you what a function is trying even at a point where it can't actually do it.
+[4:29.00] Picture the graph.
+[4:30.32] It's a straight line, but with a tiny empty circle, a hole, right at the point 1 ,2.
+[4:36.34] The line runs right up to the hole from both sides.
+[4:39.30] The limit is the height of that hole, 2.
+[4:42.54] And this is exactly why limits are so important for calculus.
+[4:46.68] When we learn derivatives, we'll run into 0 over 0 all the time.
+[4:51.46] And limits will rescue us every single time.
+[4:54.70] Part 3.
+[4:55.84] The limit doesn't care about the actual value.
+[4:59.02] Here's something that surprises a lot of students.
+[5:02.08] The limit at a point has nothing to do with what's actually happening at that point.
+[5:06.62] It only cares about what's happening near it.
+[5:08.90] Imagine a graph that's a smooth curve heading toward the height 4 as x approaches 2.
+[5:14.72] But at exactly x equals 2, someone put a single dot way up at 7.
+[5:19.76] So f of 2 equals 7.
+[5:21.96] What's the limit as x approaches 2?
+[5:24.64] It's still 4.
+[5:25.80] The limit only looks at the journey where the function is heading as it gets close.
+[5:30.40] That one weird dot at 7 doesn't change where the curve is heading.
+[5:34.20] So remember, the limit and the actual value can be different.
+[5:38.32] Sometimes they're the same.
+[5:39.80] Sometimes the function doesn't even exist at that point.
+[5:42.98] The limit doesn't care.
+[5:44.46] It only watches the approach.
+[5:46.86] Practice time.
+[5:48.60] Question 1.
+[5:50.02] A graph approaches the height 3 as x approaches 5 from both sides.
+[5:55.52] But there's a hole at that point and a separate dot at 5, 8.
+[5:59.92] What is the limit as x approaches 5?
+[6:02.84] And what is f of 5?
+[6:05.00] Pause and think.
+[6:06.80] The limit is 3 because that's where the graph is heading from both sides.
+[6:11.46] And f of 5 is 8 because that's where the actual dot is.
+[6:15.94] Two different answers and both are correct.
+[6:19.08] Part 4.
+[6:20.36] One -sided limits.
+[6:22.36] So far we've approached from both sides at the same time.
+[6:25.92] But sometimes the left side and the right side head to different places.
+[6:30.50] So we have one -sided limits.
+[6:32.20] The left hand limit means x approaches the number from the left using numbers smaller than it.
+[6:38.36] We write it with a little minus sign up on the number, like x arrow 2 minus.
+[6:43.80] The right hand limit means x approaches from the right using numbers bigger than it.
+[6:48.72] We write it with a little plus sign like x arrow 2 plus.
+[6:52.92] Here's an example.
+[6:54.42] Imagine a function that's made of two pieces.
+[6:57.24] For x less than 2, the rule is x plus 1.
+[7:00.30] For x equal to or bigger than 2 the rule is just 5.
+[7:04.94] Approach 2 from the left.
+[7:06.84] We use the first rule x plus 1.
+[7:09.64] As x gets close to 2, x plus 1 gets close to 3.
+[7:13.98] So the left hand limit is 3.
+[7:16.30] Approach 2 from the right.
+[7:18.04] We use the second rule.
+[7:19.48] It's always 5.
+[7:20.70] So the right hand limit is 5.
+[7:23.10] 3 on one side 5 on the other.
+[7:25.84] The graph jumps.
+[7:26.66] And here's the big rule.
+[7:29.48] The regular two -sided limit only exists if the left hand limit and the right hand limit are equal.
+[7:35.82] Left equals right, the limit exists, and it's that number.
+[7:40.14] Left doesn't equal right, the limit does not exist.
+[7:43.94] So in this example, the limit as x approaches 2 does not exist.
+[7:49.06] We write that as dne does not exist.
+[7:52.72] Think of two friends walking toward each other to meet at a cafe.
+[7:56.48] If they both arrive at the same cafe, they meet.
+[7:59.80] That's a limit.
+[8:01.02] If one goes to a cafe on the left side of town, and the other goes to a different cafe on the right side, they never meet.
+[8:08.14] No limit.
+[8:09.38] Part 5 When does a limit not exist?
+[8:12.84] There are three main ways a limit can fail to exist.
+[8:16.28] Let's meet them.
+[8:17.62] Number 1.
+[8:18.66] The jump.
+[8:19.34] Like the example we just saw.
+[8:21.14] The left side and the right side head toward different heights.
+[8:24.38] The graph jumps and the limit doesn't exist.
+[8:27.52] Number 2.
+[8:29.10] The blow up.
+[8:30.18] Look at the function 1 over x as x approaches 0.
+[8:34.04] From the right, try x equals 0 .1.
+[8:37.58] 1 over 0 .1 is 10.
+[8:40.04] x equals 0 .01 gives 100.
+[8:43.72] 0 .001 gives 1000.
+[8:47.02] It keeps growing bigger and bigger without stopping.
+[8:49.94] It shoots up to infinity.
+[8:51.08] From the left, try negative 0 .1.
+[8:54.96] That gives negative 10.
+[8:56.84] Then negative 100.
+[8:58.64] Negative 1000.
+[9:00.38] It dives down to negative infinity.
+[9:03.10] One side shoots up forever.
+[9:05.28] The other side dives down forever.
+[9:07.64] They don't head to any number at all.
+[9:09.70] So the limit does not exist.
+[9:11.94] Infinity is not a number.
+[9:13.80] It's an idea.
+[9:15.00] Meaning growing without end.
+[9:17.08] We'll explore infinite limits in detail in the next episode.
+[9:20.94] Number 3.
+[9:22.30] The wild wiggle.
+[9:23.86] Some functions wiggle up and down faster and faster as you approach a point and never settle down on any height.
+[9:30.86] A famous example is sine of 1 over x near 0.
+[9:35.36] The graph goes crazy bouncing between negative 1 and 1 infinitely many times.
+[9:40.64] It never settles.
+[9:41.96] So no limit.
+[9:43.46] So, 3 ways to fail.
+[9:45.84] Jump, blow up, wild wiggle.
+[9:48.70] If you see any of these, the limit does not exist.
+[9:52.12] Practice time.
+[9:53.66] Question 2.
+[9:54.80] For a function, the left hand limit as x approaches 3 is 7 and the right hand limit is 7.
+[10:01.34] Does the limit exist?
+[10:03.02] What is it?
+[10:04.16] Question 3.
+[10:05.56] For another function, the left hand limit as x approaches 1 is negative 2 and the right hand limit is 4.
+[10:12.82] Does the limit exist?
+[10:14.46] Pause now.
+[10:15.26] Question 2.
+[10:17.14] Left equals right.
+[10:18.60] Both are 7, so yes, the limit exists and it's 7.
+[10:22.82] Question 3.
+[10:24.20] Negative 2 and 4 are different, so the limit does not exist.
+[10:28.24] Part 6.
+[10:29.48] Limit laws.
+[10:30.74] The rules of the game.
+[10:32.30] Making tables every time would take forever.
+[10:35.22] So mathematicians figured out some rules that make limits much faster.
+[10:39.56] These are called the limit laws.
+[10:41.86] Let's say the limit of f is some number and the limit of g is some number.
+[10:47.32] Then, the limit of a sum is the sum of the limits.
+[10:51.30] You can split it up.
+[10:52.88] The limit of a difference is the difference of the limits.
+[10:55.90] The limit of a constant times a function is the constant times the limit.
+[11:00.20] You can pull numbers out front.
+[11:02.14] The limit of a product is the product of the limits.
+[11:04.98] The limit of a quotient is the quotient of the limits.
+[11:08.12] But only if the limit on the bottom is not 0.
+[11:10.64] And the limit of a power is the power of the limit.
+[11:14.62] In simple words, limits play nicely with adding, subtracting, multiplying, dividing, and powers.
+[11:22.02] You can break a big problem into small pieces, find each limit, and put them back together.
+[11:27.82] He and all of these laws lead us to the most useful trick of all.
+[11:32.80] Part 7.
+[11:34.02] Direct substitution.
+[11:35.74] Just plug it in.
+[11:36.74] For nice smooth functions with no holes, jumps, or breaks, the limit is exactly the same as the value.
+[11:44.10] So you can simply plug the number in.
+[11:46.92] This works for polynomials, always.
+[11:49.52] And it works for fractions, too.
+[11:51.52] As long as the bottom doesn't become 0.
+[11:54.22] Example.
+[11:55.36] The limit as x approaches 3 of x squared plus 2x.
+[11:59.54] Plug in 3.
+[12:00.78] 9 plus 6.
+[12:02.40] 15.
+[12:03.46] Done.
+[12:03.82] 1.
+[12:04.64] Another.
+[12:05.76] The limit as x approaches 2 of 3x minus 1 over x plus 4.
+[12:11.12] Plug in 2.
+[12:12.42] The top is 6 minus 1, 5.
+[12:14.72] The bottom is 2 plus 4, 6.
+[12:17.02] The answer is 5 over 6.
+[12:19.18] So here's your first step for every limit problem.
+[12:22.26] Always try plugging in first.
+[12:24.44] If you get a normal number, congratulations.
+[12:27.10] That's your answer.
+[12:27.90] But if you get 0 over 0, the real fun begins.
+[12:32.90] Part 8.
+[12:34.08] The 0 over 0 puzzle.
+[12:36.50] 0 over 0 is not an answer.
+[12:39.06] It's not 0.
+[12:40.36] It's not 1.
+[12:41.78] It's not undefined the end.
+[12:44.26] 0 over 0 is called an indeterminate form.
+[12:47.68] It means there's a hidden answer in here.
+[12:50.54] You need to do more work to find it.
+[12:52.84] It's like a locked treasure chest.
+[12:54.72] The treasure is there.
+[12:56.44] You just need the right key.
+[12:58.18] And we have 3 keys.
+[13:00.74] Factoring.
+[13:01.74] Simplifying fractions.
+[13:03.46] And the conjugate trick.
+[13:05.92] Let's learn each one.
+[13:07.66] Key number 1.
+[13:09.10] Factoring.
+[13:10.10] Let's go back to our function with the whole.
+[13:12.82] The limit as x approaches 1 of x squared minus 1 over x minus 1.
+[13:18.94] Plugging in gives 0 over 0 locked chest.
+[13:23.06] So let's factor the top.
+[13:25.04] x squared minus 1 is a difference of squares.
+[13:28.04] It factors into x minus 1 times x plus 1.
+[13:31.70] Now look.
+[13:32.70] We have x minus 1 on the top and x minus 1 on the bottom.
+[13:36.88] They cancel out.
+[13:38.46] We're left with just x plus 1.
+[13:41.22] Now plug in 1.
+[13:42.98] 1 plus 1 is 2.
+[13:44.78] The limit is 2.
+[13:46.24] Exactly what our table told us.
+[13:48.28] Wait.
+[13:49.64] Why are we allowed to cancel?
+[13:51.62] Because x minus 1 is only 0 when x is exactly 1.
+[13:55.50] And the limit never looks at x exactly equal to 1.
+[13:58.98] It only looks at x getting close.
+[14:01.44] So near 1, x minus 1 is a tiny number but not 0.
+[14:06.22] And we're allowed to cancel it.
+[14:08.38] That's why the cancelled function and the original function have the same limit.
+[14:12.46] They're the same everywhere.
+[14:13.92] Except for that one whole.
+[14:15.22] Let's do another.
+[14:17.16] The limit as x approaches 3 of x squared minus 9 over x minus 3.
+[14:22.92] Plug in 9 minus 9 over 3 minus 3.
+[14:26.76] 0 over 0.
+[14:28.26] Factor the top.
+[14:29.68] x minus 3 times x plus 3.
+[14:32.58] Cancel the x minus 3.
+[14:34.48] We're left with x plus 3.
+[14:36.52] Plug in 3.
+[14:37.80] 6.
+[14:38.76] One more.
+[14:39.88] The limit as x approaches negative 2 of x squared plus 5x plus 6 over x plus 2.
+[14:46.80] Plug in 4 minus 10 plus 6 is 0.
+[14:50.66] Negative 2 plus 2 is 0.
+[14:53.00] 0 over 0.
+[14:54.48] Factor the top.
+[14:55.94] What 2 numbers multiply to 6 and add to 5?
+[14:59.46] 2 and 3.
+[15:00.60] So x plus 2 times x plus 3.
+[15:03.66] Cancel the x plus 2.
+[15:05.62] Left with x plus 3.
+[15:07.54] Plug in negative 2.
+[15:09.10] The answer is 1.
+[15:10.24] And a slightly harder one.
+[15:12.58] The limit as x approaches 2 of x cubed minus 8 over x minus 2.
+[15:18.34] 0 over 0 again.
+[15:20.94] This top is a difference of cubes.
+[15:23.24] There's a special pattern.
+[15:25.00] A cubed minus b cubed equals a minus b times a squared plus a b plus b squared.
+[15:31.80] So x cubed minus 8 becomes x minus 2 times x squared plus 2x plus 4.
+[15:37.96] Cancel the x minus 2.
+[15:40.48] Plug in 2.
+[15:41.70] 4 plus 4 plus 4.
+[15:43.50] 12.
+[15:44.48] Key number 2.
+[15:45.82] Simplifying fractions inside fractions.
+[15:48.76] Sometimes the problem has small fractions stacked inside a big fraction.
+[15:53.14] Like this one.
+[15:54.56] The limit as x approaches 0 of 1 over x plus 2 minus 1 half.
+[16:00.36] All divided by x.
+[16:02.32] It looks messy.
+[16:03.24] Plugging in 0 gives 1 half minus 1 half over 0.
+[16:08.38] 0 over 0.
+[16:10.28] The key here, combine the small fractions on top into one fraction.
+[16:14.60] The common bottom for 1 over x plus 2 and 1 over 2 is 2 times x plus 2.
+[16:20.72] So the top becomes 2 minus x plus 2 all over 2 times x plus 2.
+[16:26.04] 2 minus x minus 2 is just negative x.
+[16:29.10] So the top is negative x over 2 times x plus 2.
+[16:33.24] Now divide that by x.
+[16:35.60] The x on top cancels with the x on the bottom.
+[16:38.92] We're left with negative 1 over 2 times x plus 2.
+[16:43.56] Plug in 0.
+[16:45.30] Negative 1 over 2 times 2.
+[16:47.68] Negative 1 fourth.
+[16:49.48] A messy problem.
+[16:50.90] Made simple.
+[16:52.44] Key number 3.
+[16:54.08] The conjugate trick.
+[16:55.78] When square roots cause 0 over 0 we use a clever trick called the conjugate.
+[17:01.20] The conjugate of A minus B is A plus B.
+[17:04.96] And here's why it's useful.
+[17:06.92] When you multiply A minus B by A plus B you get A squared minus B squared.
+[17:13.24] So if A is a square root squaring it makes the square root disappear.
+[17:18.18] Let's try it.
+[17:19.56] The limit as x approaches 0 of the square root of x plus 9 minus 3 all over x.
+[17:26.44] Plug in 0.
+[17:27.92] Square root of 9 minus 3 is 0 over 0.
+[17:31.80] Now multiply the top and the bottom by the conjugate.
+[17:36.38] The square root of x plus 9 plus 3.
+[17:39.24] Multiplying top and bottom by the same thing doesn't change the value.
+[17:43.28] It's like multiplying by 1.
+[17:45.38] On top root x plus 9 minus 3 times root x plus 9 plus 3.
+[17:51.08] That's x plus 9 minus 9.
+[17:52.98] Which is just x!
+[17:55.94] On the bottom we have x times the square root of x plus 9 plus 3.
+[18:01.30] Now the x on top cancels with the x on the bottom.
+[18:04.72] We're left with 1 over the square root of x plus 9 plus 3.
+[18:09.22] Plug in 0.
+[18:10.76] 1 over 3 plus 3.
+[18:12.70] 1 sixth.
+[18:14.28] The square root was hiding the answer the whole time.
+[18:17.54] Part 9.
+[18:18.66] Your limit game plan.
+[18:19.72] Let's put it all together into one simple game plan you can use for any limit problem.
+[18:25.16] Step 1.
+[18:26.10] Plug in the number.
+[18:27.56] Step 2.
+[18:28.86] If you get a normal number, that's your answer.
+[18:31.52] Done.
+[18:32.54] Step 3.
+[18:33.68] If you get a non -zero number over 0, like 5 over 0, the function is blowing up.
+[18:39.52] Check both sides.
+[18:41.00] The limit is going to infinity, negative infinity, or does not exist.
+[18:45.64] We'll master these in the next episode.
+[18:47.52] Step 4.
+[18:48.80] If you get 0 over 0, unlock it.
+[18:51.94] Try factoring.
+[18:53.34] If there are fractions inside fractions, combine them.
+[18:56.74] If there are square roots, use the conjugate.
+[18:59.72] Then plug in again.
+[19:01.38] And if there's a graph or a table, read where the function is heading from both sides.
+[19:06.26] Left and right must agree.
+[19:08.40] Part 10.
+[19:09.48] The final practice.
+[19:11.10] 5 questions.
+[19:12.54] Pause after each one, solve it, then check your answer.
+[19:16.60] Question 4.
+[19:17.88] The limit as x approaches 5 of 2x squared minus 3x.
+[19:22.74] He.
+[19:23.74] Plug in.
+[19:24.84] 2 times 25 is 50.
+[19:26.96] Minus 15.
+[19:28.38] 35.
+[19:29.68] Question 5.
+[19:31.10] The limit as x approaches 1 of x squared plus 3x minus 4 over x minus 1.
+[19:38.04] Plug in, and you get 0 over 0.
+[19:41.38] Factor the top.
+[19:42.34] Numbers that multiply to negative 4 and add to 3.
+[19:46.22] 4 and negative 1.
+[19:47.96] So x plus 4 times x minus 1.
+[19:51.30] Cancel the x minus 1.
+[19:53.24] Plug in 1.
+[19:54.38] 5.
+[19:55.52] Question 6.
+[19:57.00] The limit as x approaches 9 of the square root of x minus 3 over x minus 9.
+[20:03.04] 0 over 0.
+[20:04.90] Multiply top and bottom by the conjugate.
+[20:07.46] Root x plus 3.
+[20:08.80] The top becomes x minus 9.
+[20:11.70] Cancel it with the bottom.
+[20:13.34] Left with 1 over root x plus 3.
+[20:16.12] Plug in 9.
+[20:17.42] 1 over 3 plus 3.
+[20:19.38] 1 sixth.
+[20:20.64] By the way, there's a shortcut here too.
+[20:23.56] x minus 9 is a difference of squares.
+[20:26.20] Root x minus 3 times root x plus 3.
+[20:29.70] Factor and cancel.
+[20:31.14] Same answer.
+[20:32.44] Math loves having more than one path.
+[20:35.06] Question 7.
+[20:35.78] A graph approaches 4 from the left as x goes to 2.
+[20:40.34] Approaches 4 from the right.
+[20:42.32] But f of 2 equals 1.
+[20:44.78] What is the limit as x approaches 2?
+[20:47.76] Left and right both head to 4.
+[20:50.08] So the limit is 4.
+[20:51.76] The value f of 2 equals 1 doesn't matter.
+[20:54.78] And question 8.
+[20:56.36] The challenge.
+[20:57.56] The limit as x approaches 0 of x plus 3 squared minus 9 all over x.
+[21:04.08] Plug in 0.
+[21:05.52] 9 minus 9 over 0.
+[21:09.20] 0 over 0.
+[21:11.08] Expand the top.
+[21:12.76] x plus 3 squared is x squared plus 6x plus 9.
+[21:17.24] Minus 9 gives x squared plus 6x.
+[21:20.56] Factor out an x.
+[21:22.24] x times x plus 6.
+[21:24.38] Cancel with the bottom.
+[21:26.00] Left with x plus 6.
+[21:28.26] Plug in 0.
+[21:29.94] 6.
+[21:30.22] And here's a secret.
+[21:32.34] That problem you just solved?
+[21:34.00] It wasn't just a random limit.
+[21:35.86] You actually just calculated your very first derivative.
+[21:39.20] You found how fast x squared is changing at x equals 3.
+[21:42.96] And the answer is 6.
+[21:44.94] Remember from our beginner video?
+[21:47.32] The derivative of x squared is 2x.
+[21:50.10] And 2 times 3 is 6.
+[21:52.96] You just did calculus without even knowing it.
+[21:55.82] Let's sum up everything from today.
+[21:57.68] A limit tells us where a function is heading as x gets closer and closer to a number.
+[22:03.02] Not where it is.
+[22:04.40] Where it's heading.
+[22:05.84] The limit doesn't care about the actual value at the point.
+[22:09.06] Only the approach.
+[22:10.74] One -sided limits look from just the left or just the right.
+[22:14.22] And the full limit exists only if they agree.
+[22:17.76] Limits fail to exist when the graph jumps, blows up, or wiggles wildly.
+[22:22.90] The limit laws let us break problems into pieces.
+[22:25.60] And for nice functions, we simply plug in.
+[22:29.58] Sin.
+[22:30.54] And when we get 0 over 0, we unlock the answer with factoring, simplifying fractions, or the conjugate trick.
+[22:37.94] If anything felt tricky, especially the 0 over 0 part, rewatch it and redo the practice questions.
+[22:44.70] These algebra tricks will show up again and again throughout this course.
+[22:48.52] In the next episode, we'll go even further with limits.
+[22:52.16] What happens when x goes to infinity?
+[22:54.20] What are asymptotes?
+[22:56.56] We'll learn the famous squeeze theorem.
+[22:58.88] Discover why the limit of sin x over x equals 1 and finally learn what it means for a function to be continuous.
+[23:06.32] So if you haven't already, subscribe to the channel and turn on notifications so you don't miss episode 3.
+[23:12.94] And if this video helped you, give it a like and share it with a friend who's studying calculus.
+[23:18.14] Thanks for learning with me today.
+[23:20.12] Keep practicing, and I'll see you in the next episode.

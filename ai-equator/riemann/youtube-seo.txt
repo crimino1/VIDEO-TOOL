@@ -1,0 +1,50 @@
+TITLE (pick one)
+1. AI Just Claimed a Proof of the Riemann Hypothesis
+2. Claude Helped Prove the Riemann Hypothesis? 17 Million Lines Nobody Can Read
+3. A Riemann Hypothesis Proof in 41 Days, and a Human One the Same Day
+Recommended: 1 (your title)
+
+DESCRIPTION
+On Friday, Anthropic mathematician Levent Alpöge posted a four-page note: "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis." He says the same method proves the Generalized Riemann Hypothesis. The written-out version ran past 250,000 pages, so he released the proof only in Lean: 17,374,215 lines that a computer can check step by step. I break down what was claimed, what Claude actually contributed, what Terence Tao and other mathematicians are saying, how the independent checks are going, and the twist: the same day, a fully human 940-page proposed proof by Alessandro Masullo appeared on Ravi Vakil's blog. Plus the skeptical side, why the Clay Institute still lists it as unsolved, and what happens next.
+
+⏱️ CHAPTERS
+0:00 An AI-assisted proof of the Riemann Hypothesis?
+0:38 30 seconds on why it matters
+1:09 Who is claiming it
+1:30 250,000 pages and 17 million lines of Lean
+1:58 41 days: the timeline
+2:15 What Claude contributed
+2:32 Terence Tao: then and now
+3:12 Is it real? The checks
+4:07 The twist: a human proof the same day
+5:02 The skeptical side
+5:18 Officially: still unsolved
+5:32 What happens next
+5:54 My take
+
+🔗 SOURCES
+Levent Alpöge's note: https://alpo.ge/remark.pdf
+Lean proof mirror: https://github.com/Deicyde/riemann-hypothesis
+Line count and theorem statements: https://github.com/vincitamore/riemann-lean-account
+Andrew Sutherland's verification page (MIT): https://math.mit.edu/~drew/grh/
+Terence Tao's blog, Nov 20: https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/
+Numberphile, "No More Heroes" (Oct 15): https://www.youtube.com/watch?v=bAnwMdfcMVw
+Elliot Glazer: https://x.com/ElliotGlazer/status/2123792743503933774
+Thomas Bloom: https://x.com/thomasfbloom/status/2123796489197514945
+Ravi Vakil, "Hurried Announcement": https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/
+Masullo, "The Music of the Primes" (draft): https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf
+Scientific American: https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/
+Clay Mathematics Institute: https://www.claymath.org/millennium/riemann-hypothesis/
+Anthropic on the 41.6% → 67.2% result (Aug 2026): https://www.anthropic.com/research/riemann-zeta
+Al Jazeera, Anthropic IPO: https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo
+
+💬 Does it hold up? Tell me in the comments.
+🔔 Subscribe: when the verification lands, you'll hear it here first.
+
+#RiemannHypothesis #Claude #Anthropic #AINews #Math #Lean #AI #TerenceTao
+
+TAGS (under 500 characters)
+riemann hypothesis,riemann hypothesis proof,riemann hypothesis solved,ai proof,claude ai,anthropic,levent alpoge,generalized riemann hypothesis,lean theorem prover,terence tao,millennium prize,zeta function,prime numbers,ai math,ai news,clay institute,alessandro masullo,ravi vakil,math news,ai equator
+
+PINNED COMMENT
+Source check, shown on screen in the video: "only read the statements in the middle" was a reader's comment on Tao's blog, not Tao. Most independent replays (leanchecker, nanoda, lean4lean) have already passed; the comparator is still running. Masullo's draft is titled just "The Music of the Primes", and it landed about 5 hours after Alpöge's note, not 12. Does it hold up?

@@ -1,0 +1,705 @@
+[0:00.00] Welcome, everyone.
+[0:01.56] Today, we are going to do the full trigonometry.
+[0:04.94] Everything.
+[0:06.04] From the very basics, all the way to very advanced.
+[0:09.98] If you have never understood trigonometry, or you've forgotten all of it, don't worry.
+[0:15.24] By the end of this video, you will understand it completely.
+[0:19.10] Sign, cosine, tangent, the unit circle, graphs, identities, equations, and much more.
+[0:25.94] One video.
+[0:27.02] Start to finish.
+[0:28.44] But first, let me show you why it matters.
+[0:31.82] Imagine you could measure the height of a mountain without ever climbing it.
+[0:36.42] Imagine you could find the distance to the moon while standing in your backyard.
+[0:41.26] And imagine the same math that does all that is also hiding inside your music, your phone signal, the waves of the ocean, and every video game you have ever played.
+[0:51.82] That math has a name, trigonometry.
+[0:54.80] Now, I know.
+[0:56.22] For a lot of people, that word brings back bad memories.
+[0:59.74] Sign, cosine, tangent, a teacher writing strange symbols on the board, and you, sitting in the back, thinking, when will I ever use this?
+[1:10.54] Boo -hoo.
+[1:11.74] I've been there.
+[1:12.80] I once spent an entire night crying over a trigonometry identity that refused to prove itself.
+[1:18.54] But here's the good news.
+[1:20.44] Trigonometry is not hard.
+[1:21.84] It was just explained badly.
+[1:24.26] And today, we're going to fix that.
+[1:27.04] Here's the plan.
+[1:28.60] We will start from absolute zero.
+[1:30.86] What is an angle?
+[1:32.12] What is a triangle?
+[1:33.48] And step by step, we will climb all the way up to the unit circle, graphs, identities, equations, the law of signs and cosines, polar coordinates, complex numbers, and even one of the most beautiful equations in all of mathematics.
+[1:49.32] And along the way, you're going to practice.
+[1:51.20] I'll give you questions.
+[1:53.06] You'll pause the video, you'll solve them, and then we'll check together, because math is not a spectator sport.
+[1:59.58] So grab a pen, grab some paper, and let's begin.
+[2:03.54] Chapter one.
+[2:05.04] What is trigonometry?
+[2:06.48] Really.
+[2:07.76] The word trigonometry comes from Greek.
+[2:10.32] Trigonon means triangle.
+[2:12.34] Metron means measure.
+[2:14.00] So trigonometry literally means triangle measuring.
+[2:17.94] But why would anyone care so much about triangles?
+[2:21.30] Because triangles are everywhere.
+[2:23.80] Any shape with straight edges can be cut into triangles.
+[2:26.88] A bridge is triangles.
+[2:28.48] A roof is triangles.
+[2:30.04] A 3 -D character in a video game.
+[2:32.20] Thousands and thousands of tiny triangles.
+[2:35.20] And triangles have a special property.
+[2:37.56] If you know just a few things about a triangle, you can figure out everything else about it.
+[2:42.50] That's the power of trigonometry.
+[2:44.66] It connects angles to lengths.
+[2:46.94] Let's start with the angle.
+[2:48.16] An angle is just the amount of turn between two lines that meet at a point.
+[2:53.00] That point is called the vertex.
+[2:55.28] We usually measure angles in degrees.
+[2:58.18] A full turn, all the way around, is 360 degrees.
+[3:02.70] Half a turn is 180 degrees.
+[3:05.34] A quarter turn, the corner of a square, is 90 degrees.
+[3:09.00] We call that a right angle.
+[3:11.16] Why 360?
+[3:12.94] Blame the ancient Babylonians.
+[3:14.50] They loved the number 60.
+[3:16.52] And a year is roughly 360 days.
+[3:19.58] So the circle got 360 slices.
+[3:22.60] It's stuck.
+[3:23.80] An angle smaller than 90 degrees is called acute.
+[3:26.92] Exactly 90 is a right angle.
+[3:29.12] Between 90 and 180 is obtuse.
+[3:31.88] And exactly 180 is a straight angle, a straight line.
+[3:36.10] Now one rule you must never forget.
+[3:38.28] The three angles inside any triangle always add up to 180 degrees, always.
+[3:44.28] Big triangle, small triangle, weird triangle, 180.
+[3:49.48] So if a triangle has angles of 50 and 70 degrees, the third angle is 180 minus 120, which is 60 degrees.
+[3:58.80] Easy.
+[4:00.16] Chapter two, the right triangle and the magic word.
+[4:03.54] Trigonometry begins with one special triangle.
+[4:06.42] The right triangle, a triangle with 190 degree angle.
+[4:10.92] Every right triangle has three sides with special names.
+[4:14.64] The longest side, the one directly across from the right angle, is called the hypotenuse.
+[4:20.46] Now pick one of the other two angles.
+[4:22.72] Let's call it theta.
+[4:24.30] Theta is just a Greek letter that mathematicians love to use for angles.
+[4:28.82] From theta's point of view, the side directly across from it is called the opposite side.
+[4:34.28] And the side that touches theta, but is not the hypotenuse, is called the adjacent side.
+[4:40.02] Adjacent just means next to.
+[4:42.48] Here's an important detail.
+[4:44.32] Opposite and adjacent depend on which angle you're looking from.
+[4:48.00] If you switch to the other angle, the opposite and adjacent sides swap.
+[4:52.60] The hypotenuse never changes.
+[4:54.92] And before we go further, remember the Pythagorean theorem.
+[4:58.72] In any right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides.
+[5:05.02] A squared plus B squared equals C squared.
+[5:07.54] A triangle with sides 3, 4, and 5 works perfectly.
+[5:11.74] Because 9 plus 16 equals 25.
+[5:14.78] Okay, now the magic.
+[5:17.66] The ancient mathematicians notice something incredible.
+[5:21.48] If you take a right triangle with an angle of say, 30 degrees, and you divide the opposite side by the hypotenuse, you always get the same number.
+[5:30.98] It doesn't matter if the triangle is the size of your hand or the size of a city.
+[5:35.74] Same angle, same ratio.
+[5:38.58] That ratio depends only on the angle.
+[5:41.38] And so they gave these ratios names.
+[5:43.92] Sign, cosine, and tangent.
+[5:46.84] The sign of an angle is opposite divided by hypotenuse.
+[5:50.66] The cosine of an angle is adjacent divided by hypotenuse.
+[5:55.06] The tangent of an angle is opposite divided by adjacent.
+[5:59.14] And to remember them, there is one magic word that every student on earth learns.
+[6:03.74] Soca toa.
+[6:06.30] S -O -H.
+[6:07.52] Sign equals opposite over hypotenuse.
+[6:10.76] C -A -H, cosine equals adjacent over hypotenuse.
+[6:15.22] T -O -A.
+[6:16.86] Tangent equals opposite over adjacent.
+[6:19.88] Say it with me.
+[6:21.30] S -O -H dot C -A -H, T -O -A.
+[6:25.02] Some people remember it as a sentence.
+[6:27.36] Some old horse caught another horse taking oats away.
+[6:30.76] Use whatever works for you.
+[6:32.06] Let's try one.
+[6:33.84] Picture the 3, 4, 5 triangle.
+[6:37.32] The angle theta sits so that the opposite side is 3, the adjacent side is 4, and the hypotenuse is 5.
+[6:44.88] Sign of theta is opposite over hypotenuse.
+[6:48.02] 3 over 5, cosine of theta is adjacent over hypotenuse.
+[6:52.68] 4 over 5, tangent of theta is opposite over adjacent.
+[6:56.98] 3 over 4.
+[6:58.40] That's it.
+[6:59.40] That's the core of trigonometry.
+[7:01.28] Everything else we do today grows from this one idea.
+[7:04.42] One more thing.
+[7:05.62] Notice that tangent is also sine divided by cosine.
+[7:09.08] 3 5ths divided by 4 5ths is 3 4ths.
+[7:12.16] That's not a coincidence.
+[7:13.72] Tangent always equals sine over cosine.
+[7:16.60] Keep that in your pocket.
+[7:18.34] Practice time.
+[7:20.08] Question 1.
+[7:21.30] A right triangle has a hypotenuse of 13, and the side opposite angle theta is 5.
+[7:27.38] Find the adjacent side, then find cosine and tangent of theta.
+[7:31.78] Pause the video now and try it.
+[7:34.10] Welcome back.
+[7:35.34] First, Pythagoras.
+[7:37.42] 13 squared is 169.
+[7:40.32] 5 squared is 25.
+[7:42.50] 169 minus 25 is 144.
+[7:45.92] The square root of 144 is 12.
+[7:48.70] So the adjacent side is 12.
+[7:50.94] Cosine is adjacent over hypotenuse.
+[7:54.12] 12 over 13.
+[7:56.12] Tangent is opposite over adjacent.
+[7:58.04] 5 over 12.
+[8:00.06] If you got that, give yourself a high five.
+[8:03.30] You're officially doing trigonometry.
+[8:06.02] Chapter 3.
+[8:07.26] The Three Cousins.
+[8:08.72] Sine, cosine, and tangent have three cousins.
+[8:13.04] They're just the flipped versions, the reciprocals.
+[8:16.10] Cosicant is 1 over sine, so it's hypotenuse over opposite.
+[8:20.74] Secant is 1 over cosine, so it's hypotenuse over adjacent.
+[8:25.60] Cotangent is 1 over tangent, so it's adjacent over opposite.
+[8:29.84] Here's the funny part.
+[8:31.72] The names are backwards from what you'd expect.
+[8:34.08] Cosicant goes with sine.
+[8:36.08] Secant goes with cosine.
+[8:37.84] Just remember, each pair has exactly one co between them.
+[8:41.78] Sine and cosecant.
+[8:43.40] Cosine and secant.
+[8:45.14] Tangent and cotangent.
+[8:46.94] For our 3, 4, 5 triangle, cosecant is 5 over 3, secant is 5 over 4, and cotangent is 4 over 3.
+[8:56.36] Just flip them.
+[8:57.90] Chapter 4.
+[8:58.96] The Special Triangles.
+[9:00.64] There are two triangles in trigonometry that are so important, you should know them like your own phone number.
+[9:06.66] The first is the 45 -45 -90 triangle.
+[9:10.52] Take a square with side 1 and cut it diagonally.
+[9:13.80] You get two triangles, each with two 45 -degree angles.
+[9:17.88] The two legs are both 1, and by Pythagoras, the hypotenuse is the square root of 2.
+[9:23.90] So sine of 45 is 1 over root 2, which we usually write as root 2 over 2.
+[9:30.12] That's about 0 .707.
+[9:33.20] Cosine of 45 is the same, root 2 over 2, and tangent of 45 is 1 over 1, which is exactly 1.
+[9:41.76] The second is the 30 -60 -90 triangle.
+[9:45.02] Take an equilateral triangle where every side is 2.
+[9:48.58] Cut it straight down the middle.
+[9:50.38] You get a triangle with angles 30, 60, and 90.
+[9:53.80] The hypotenuse is 2, the short side is 1, and by Pythagoras, the long side is root 3.
+[10:00.60] Now read the ratios.
+[10:02.24] Sine of 30 is 1 over 2, 1 half.
+[10:05.46] Cosine of 30 is root 3 over 2, tangent of 30 is 1 over root 3, or root 3 over 3.
+[10:12.62] Sine of 60 is root 3 over 2, cosine of 60 is 1 half, tangent of 60 is root 3.
+[10:19.66] Want a trick to remember all of them?
+[10:22.04] Write the angles 0, 30, 45, 60, 90.
+[10:27.22] Under them, write the numbers 0, 1, 2, 3, 4.
+[10:32.46] Take the square root of each and divide by 2.
+[10:35.48] Square root of 0 over 2 is 0.
+[10:38.80] That's sine of 0.
+[10:40.44] Square root of 1 over 2 is 1 half.
+[10:43.40] Sine of 30.
+[10:44.22] Square root of 2 over 2, sine of 45.
+[10:48.72] Square root of 3 over 2, sine of 60.
+[10:51.96] Square root of 4 over 2 is 1, sine of 90.
+[10:55.60] And for cosine, just read the same list backwards.
+[10:58.90] Cosine of 0 is 1, cosine of 90 is 0.
+[11:03.24] Isn't that beautiful?
+[11:04.86] A whole table from one tiny pattern.
+[11:07.64] Practice time.
+[11:08.92] Quick fire, answer out loud.
+[11:11.34] Sine of 30, 1 half.
+[11:14.04] Cosine of 45, root 2 over 2.
+[11:17.60] Tangent of 60, root 3.
+[11:20.64] Cosine of 60, 1 half.
+[11:23.94] If you got all four, you're ahead of most students I've ever met.
+[11:27.72] Chapter 5.
+[11:29.04] Solving Real Problems.
+[11:30.94] Now let's use this to actually measure things.
+[11:33.76] Here's a classic.
+[11:35.18] A 10 meter ladder leans against a wall.
+[11:37.92] It makes a 60 degree angle with the ground.
+[11:40.48] How high up the wall does it reach?
+[11:43.44] The ladder is the hypotenuse.
+[11:45.66] 10 meters.
+[11:47.08] The height on the wall is the side opposite to the 60 degree angle.
+[11:51.24] Opposite and hypotenuse means sine.
+[11:54.04] Sine of 60 equals height over 10.
+[11:57.06] So height equals 10 times sine of 60.
+[11:59.72] That's 10 times root 3 over 2, which is 5 root 3.
+[12:03.96] About 8 .66 meters.
+[12:06.44] You just measured a wall without touching it.
+[12:09.08] Now let's talk about angles of elevation and depression.
+[12:12.28] When you look up at something, the angle between the flat ground and your line of sight is the angle of elevation.
+[12:18.78] When you look down at something, from a cliff for example, the angle between the horizontal and your line of sight is the angle of depression.
+[12:27.06] Let's try one.
+[12:28.36] You stand 50 meters away from a tree.
+[12:30.94] You look up to the top of the tree and the angle of elevation is 30 degrees.
+[12:35.86] How tall is the tree?
+[12:37.46] The 50 meters along the ground is adjacent to your angle.
+[12:41.24] The height of the tree is opposite.
+[12:43.24] Opposite and adjacent means tangent.
+[12:45.78] Tangent of 30 equals height over 50.
+[12:48.62] Height equals 50 times tangent of 30.
+[12:51.38] That's 50 over root 3.
+[12:53.72] About 28 .9 meters.
+[12:56.00] This is exactly how surveyors and engineers measured mountains for hundreds of years.
+[13:00.76] But what if you know the sides and want the angle?
+[13:03.88] Then you need inverse trigonometric functions.
+[13:07.30] They work backwards.
+[13:09.10] If sine of theta equals one -half, then theta equals inverse sine of one -half, which is 30 degrees.
+[13:16.48] On your calculator, inverse sine often appears as sin to the minus one.
+[13:21.88] Careful, that minus one does not mean one over sine.
+[13:25.78] It means undo sine.
+[13:27.94] Example, a ramp rises 7 meters over a horizontal distance of 7 meters.
+[13:33.02] What angle does it make?
+[13:35.30] Opposite is 7, adjacent is 7, tangent of theta is 7 over 7, which is 1.
+[13:41.54] Inverse tangent of 1 is 45 degrees.
+[13:45.66] Practice time.
+[13:47.34] Question 1.
+[13:48.66] A kite string is 80 meters long and makes an angle of 30 degrees with the ground.
+[13:53.78] How high is the kite?
+[13:55.50] Question 2.
+[13:56.80] From the top of a lighthouse 40 meters tall, you see a boat at an angle of depression of 45 degrees.
+[14:03.64] How far is the boat from the base of the lighthouse?
+[14:06.64] Pause and solve.
+[14:08.62] Question 1.
+[14:09.88] String is the hypotenuse, height is opposite.
+[14:13.28] Height equals 80 times sine of 30.
+[14:15.96] 80 times one -half is 40 meters.
+[14:19.10] Question 2.
+[14:20.56] With an angle of depression of 45 degrees, the triangle is a 45, 45, 90 triangle.
+[14:27.60] The height and the distance are equal.
+[14:30.02] So the boat is 40 meters away.
+[14:32.48] Beautiful.
+[14:33.88] Now we're ready for the big leap.
+[14:36.08] Chapter 6.
+[14:37.38] The unit circle.
+[14:38.98] So far our angles have been stuck between 0 and 90 degrees because they lived inside a right triangle.
+[14:45.66] But what is the sine of 150 degrees?
+[14:48.86] Or the cosine of 300 degrees?
+[14:51.80] A right triangle can't have those angles.
+[14:54.54] So mathematicians did something brilliant.
+[14:57.34] They moved trigonometry from the triangle to the circle.
+[15:00.80] Picture a circle with its center at the origin of a graph.
+[15:04.38] The point 0, 0.
+[15:06.50] And its radius is exactly 1.
+[15:09.18] That's why we call it the unit circle.
+[15:11.48] Now start at the point 1, 0 on the right side.
+[15:15.08] Rotate counterclockwise by some angle theta.
+[15:17.96] You land on a point on the circle.
+[15:20.24] Here's the secret.
+[15:21.10] The x -coordinate of that point is cosine of theta.
+[15:24.80] And the y -coordinate is sine of theta.
+[15:28.04] That's it!
+[15:28.98] Cosine is x.
+[15:30.44] Sine is y.
+[15:31.94] Every point on the unit circle is cosine theta, sine theta.
+[15:36.28] Why does this work?
+[15:37.86] Draw a line from the center to that point.
+[15:40.46] That's the hypotenuse.
+[15:42.04] Length 1.
+[15:43.12] Drop a line straight down to the x -axis.
+[15:46.36] Now you have a right triangle.
+[15:48.22] The adjacent side is x.
+[15:49.62] The opposite side is y.
+[15:51.80] And the hypotenuse is 1.
+[15:53.80] So cosine is x over 1, which is x.
+[15:57.16] And sine is y over 1, which is y.
+[16:00.50] And tangent?
+[16:01.66] Tangent is y over x.
+[16:03.84] It's also the slope of that line.
+[16:06.22] Now let's walk around the circle.
+[16:08.42] At 0 degrees, you're at 1, 0.
+[16:11.18] Cosine of 0 is 1.
+[16:12.92] Sine of 0 is 0.
+[16:14.52] At 90 degrees, you're at the top.
+[16:16.78] 0, 1.
+[16:17.70] Cosine is 0.
+[16:19.52] Sine is 1.
+[16:20.50] At 180 degrees, you're on the left.
+[16:23.46] Negative 1, 0.
+[16:25.10] Cosine is negative 1.
+[16:26.78] Sine is 0.
+[16:28.04] At 270 degrees, you're at the bottom.
+[16:31.44] 0, negative 1.
+[16:33.30] Cosine is 0.
+[16:34.88] Sine is negative 1.
+[16:36.46] And tangent at 90 degrees?
+[16:38.44] That's 1 over 0.
+[16:40.06] And you can't divide by 0.
+[16:42.00] So tangent of 90 degrees is undefined.
+[16:45.30] Now the circle is divided into four quadrants.
+[16:48.62] Quadrant 1 is the top right.
+[16:50.56] Quadrant 2 is top left.
+[16:52.70] Quadrant 3 is bottom left.
+[16:54.66] Quadrant 4 is bottom right.
+[16:56.94] In quadrant 1, x and y are both positive.
+[17:00.36] So all the functions are positive.
+[17:02.32] In quadrant 2, x is negative, y is positive.
+[17:06.02] So only sine is positive.
+[17:08.22] In quadrant 3, both are negative.
+[17:11.34] So tangent, which is y over x, is positive.
+[17:15.22] In quadrant 4, x is positive, y is negative.
+[17:19.66] So only cosine is positive.
+[17:22.32] To remember this, we use another phrase.
+[17:25.00] All students take calculus.
+[17:27.22] A for all in quadrant 1.
+[17:29.46] S for sine in quadrant 2.
+[17:32.18] T for tangent in quadrant 3.
+[17:34.84] C for cosine in quadrant 4.
+[17:37.60] Now, the most powerful tool on the unit circle, the reference angle.
+[17:42.06] The reference angle is the acute angle between your terminal side and the x -axis.
+[17:47.40] It tells you the size of the answer.
+[17:49.46] The quadrant tells you the sine.
+[17:51.72] Let's find sine of 150 degrees.
+[17:54.84] 150 is in quadrant 2.
+[17:57.14] The distance to 180 is 30.
+[17:59.52] So the reference angle is 30 degrees.
+[18:01.94] Sine of 30 is one -half.
+[18:03.92] And in quadrant 2, sine is positive.
+[18:06.74] So sine of 150 is positive one -half.
+[18:10.08] Let's find cosine of 210 degrees.
+[18:13.54] 210 is in quadrant 3.
+[18:15.54] 210 minus 180 is 30.
+[18:18.20] Reference angle 30.
+[18:19.86] Cosine of 30 is root 3 over 2.
+[18:22.98] In quadrant 3, cosine is negative.
+[18:25.54] So the answer is negative root 3 over 2.
+[18:28.64] Let's find tangent of 315 degrees.
+[18:32.20] Quadrant 4.
+[18:33.62] 360 minus 315 is 45.
+[18:37.06] Tangent of 45 is 1.
+[18:39.20] In quadrant 4, tangent is negative.
+[18:41.94] Answer, negative 1.
+[18:43.84] What about angles bigger than 360?
+[18:46.42] Just keep spinning.
+[18:47.56] 750 degrees is two full turns.
+[18:50.46] 720 plus 30 more.
+[18:53.02] So it lands in the same place as 30 degrees.
+[18:56.04] These are called coderminal angles.
+[18:58.28] Sine of 750 is one -half.
+[19:00.76] And negative angles?
+[19:02.28] A negative angle just means you rotate clockwise.
+[19:05.52] Negative 45 degrees lands in quadrant 4.
+[19:08.60] At the same spot as 315.
+[19:11.06] Cosine of negative 45 is root 2 over 2.
+[19:14.58] Practice time.
+[19:15.84] Find these.
+[19:17.26] 1.
+[19:17.94] Cosine of 120 degrees.
+[19:20.22] 2.
+[19:21.30] Sine of 240 degrees.
+[19:23.32] 2.
+[19:24.26] Sine of 240 degrees.
+[19:25.94] 3.
+[19:27.14] Tangent of 135 degrees.
+[19:29.60] 4.
+[19:30.80] Sine of negative 90 degrees.
+[19:32.42] Pause now.
+[19:34.42] 1.
+[19:35.42] 120 is in quadrant 2.
+[19:37.48] Reference angle 60.
+[19:39.22] Cosine of 60 is one -half.
+[19:41.52] And cosine is negative in quadrant 2.
+[19:43.88] Negative one -half.
+[19:45.58] 2.
+[19:47.08] 240 is in quadrant 3.
+[19:48.82] Reference angle 60.
+[19:50.44] Sine of 60 is root 3 over 2.
+[19:53.14] And sine is negative in quadrant 3.
+[19:55.68] Negative root 3 over 2.
+[19:57.76] 3.
+[19:58.74] 135 is in quadrant 2.
+[20:00.66] Reference angle 45.
+[20:02.82] Tangent is negative there.
+[20:04.68] Negative 1.
+[20:05.80] 4.
+[20:06.84] Negative 90 means rotate clockwise a quarter turn.
+[20:10.30] You land at the bottom of the circle.
+[20:12.42] 0, negative 1.
+[20:14.54] Sine is negative 1.
+[20:16.40] If you nailed those, you've mastered the unit circle.
+[20:19.94] Honestly, that's the hardest mental jump in all of trigonometry.
+[20:24.24] Chapter 7.
+[20:25.58] Radiance.
+[20:26.80] The natural way to measure angles.
+[20:29.04] Degrees are human.
+[20:30.88] Someone just decided a circle has 360 of them.
+[20:34.04] But nature doesn't care about the Babylonians.
+[20:37.10] So mathematicians invented a more natural unit.
+[20:40.34] The radian.
+[20:41.56] Here's the idea.
+[20:42.94] Take a circle, take its radius, like a piece of string, and wrap it along the edge of the circle.
+[20:49.52] The angle that this arc makes at the center is one radian.
+[20:53.90] How many radii fit around the whole circle?
+[20:56.32] The circumference is 2 pi times the radius, so exactly 2 pi radii fit around.
+[21:02.72] That means a full circle is 2 pi radians.
+[21:05.66] So 360 degrees equals 2 pi radians, and 180 degrees equals pi radians.
+[21:12.18] That's the key conversion.
+[21:14.06] Pi radians equals 180 degrees.
+[21:17.24] To convert degrees to radians, multiply by pi over 180.
+[21:21.54] To convert radians to degrees, multiply by 180 over pi.
+[21:25.38] Let's learn the common ones.
+[21:28.04] 90 degrees is pi over 2.
+[21:30.20] 60 degrees is pi over 3.
+[21:33.16] 45 degrees is pi over 4.
+[21:36.26] 30 degrees is pi over 6.
+[21:38.90] 135 degrees is 3 pi over 4.
+[21:42.38] 5 pi over 6 radians is 150 degrees.
+[21:46.20] 3 pi over 2 is 270.
+[21:48.98] Now here's why radians are amazing.
+[21:51.80] Arc length.
+[21:52.86] If a circle has radius r and the angle is theta in radians, the length of the arc is simply r times theta.
+[22:00.50] No messy fractions.
+[22:02.16] And the area of a sector, a pizza slice, is 1 half times r squared times theta.
+[22:08.82] Example, a circle with radius 10 and an angle of pi over 3.
+[22:13.74] The arc length is 10 times pi over 3, about 10 .47.
+[22:18.66] The sector area is 1 half times 100 times pi over 3, which is 50 pi over 3, about 52 .36.
+[22:27.56] Real world, a bicycle wheel with a radius of 0 .3 meters turns 10 full times.
+[22:34.20] Each turn is 2 pi radians, so 10 turns is 20 pi radians.
+[22:38.74] Distance traveled is radius times angle, 0 .3 times 20 pi, which is 6 pi, about 18 .85 meters.
+[22:47.74] From this point on, most advanced math uses radians.
+[22:51.76] Calculus, physics, engineering, if you want to go far, get comfortable with pi over 6, pi over 4, pi over 3, practice time.
+[23:02.02] 1.
+[23:02.94] Convert 225 degrees to radians.
+[23:05.98] 2.
+[23:07.08] Convert 7 pi over 6 to degrees.
+[23:10.08] 3.
+[23:11.50] Find the arc length on a circle of radius 6, with a central angle of pi over 2.
+[23:16.86] Pause now.
+[23:18.90] 1.
+[23:20.18] 225 times pi over 180.
+[23:22.94] Simplify.
+[23:24.40] 225 over 180 is 5 over 4, so 5 pi over 4.
+[23:29.48] 2.
+[23:30.68] 7 pi over 6 times 180 over pi.
+[23:34.04] The pi cancels.
+[23:35.46] 7 times 30 is 210 degrees.
+[23:38.72] 3.
+[23:39.72] Arc length is r theta.
+[23:41.58] 6 times pi over 2 is 3 pi, about 9 .42.
+[23:45.64] 8.
+[23:48.02] Graphs.
+[23:48.98] When trigonometry starts to wave, what happens if we take the sign of every angle and plot it on a graph?
+[23:56.08] Let's walk around the unit circle and track the y -coordinate.
+[24:00.00] At 0, sign is 0.
+[24:02.38] It rises to 1 at pi over 2, falls back to 0 at pi, drops to negative 1 at 3 pi over 2, and comes back to 0 at 2 pi.
+[24:14.12] Plot that, and you get a smooth, beautiful wave, the sine wave.
+[24:19.48] It goes up and down forever, repeating every 2 pi.
+[24:23.60] This is the shape of sound, of light, of alternating current, of ocean waves.
+[24:29.78] Of your heartbeat on a monitor, the cosine graph is exactly the same wave, just shifted.
+[24:36.30] It starts at 1 instead of 0.
+[24:38.74] In fact, cosine of x equals sine of x plus pi over 2.
+[24:42.84] Now let's control the wave.
+[24:45.72] The general form is y equals a times sine of b times x minus c plus d.
+[24:51.84] Each letter does one job.
+[24:54.16] A is the amplitude.
+[24:55.88] It controls the height.
+[24:57.58] The wave goes a units above and below the middle line.
+[25:01.32] If a is negative, the wave flips upside down.
+[25:04.94] B controls the period.
+[25:06.92] The length of one full cycle.
+[25:09.20] The period is 2 pi divided by b.
+[25:11.58] A bigger b squeezes the wave.
+[25:14.76] A smaller b stretches it.
+[25:16.70] C over b is the phase shift.
+[25:19.12] It slides the wave left or right.
+[25:21.26] D is the vertical shift.
+[25:23.16] It moves the whole wave up or down.
+[25:25.50] The middle line becomes y equals d.
+[25:28.20] Let's decode 1.
+[25:29.96] y equals 3 sine of 2x minus pi plus 1.
+[25:34.84] First, factor the inside.
+[25:37.22] 2x minus pi is 2 times x minus pi over 2.
+[25:40.90] The amplitude is 3.
+[25:43.06] The period is 2 pi over 2, which is pi.
+[25:46.40] The phase shift is pi over 2 to the right.
+[25:48.98] The vertical shift is 1 up.
+[25:51.16] So the wave rises to a maximum of 1 plus 3, which is 4, and falls to a minimum of 1 minus 3, which is negative 2.
+[25:59.84] The range is from negative 2 to 4.
+[26:02.10] And what about the tangent graph?
+[26:04.28] Tangent is sine over cosine.
+[26:06.54] Wherever cosine equals 0, tangent explodes.
+[26:09.32] At pi over 2, 3 pi over 2, and so on, the graph has vertical asymptotes.
+[26:16.34] Lines it gets infinitely close to, but never touches.
+[26:19.92] Between them, tangent climbs from negative infinity to positive infinity.
+[26:24.62] And it repeats every pi, not 2 pi.
+[26:27.86] Practice time.
+[26:29.10] For the function y equals negative 2, cosine of 4x plus 3, find the amplitude, the period, and the maximum value.
+[26:38.20] Pause now.
+[26:39.90] Amplitude is the size of a, so 2.
+[26:43.36] The negative sign just flips the wave.
+[26:46.08] The period is 2 pi over 4, which is pi over...
+[26:49.54] The middle line is 3, and the wave goes 2 above it.
+[26:52.78] So the maximum value is 5.
+[26:55.70] Chapter 9.
+[26:57.40] Trigonometric Identities This is the chapter where many students give up.
+[27:01.92] Please don't.
+[27:02.66] Identities are just equations that are true for every angle.
+[27:06.90] They are tools, like keys on a key chain.
+[27:10.10] Once you know which key opens which door, it gets easy.
+[27:14.06] Let's start with the king of all identities, the Pythagorean Identity.
+[27:18.90] On the unit circle, every point is x comma y, with x equals cosine theta, and y equals sine theta.
+[27:26.64] And since the radius is 1, the Pythagorean theorem says x squared plus y squared equals 1, which means sine squared theta plus cosine squared theta equals 1.
+[27:38.86] This is true for every single angle in the universe.
+[27:42.36] Memorize it, love it.
+[27:44.78] If you divide every term by cosine squared, you get tangent squared plus 1 equals secant squared.
+[27:51.36] If you divide every term by sine squared, you get 1 plus cotangent squared equals cosecant squared.
+[27:57.64] Three Pythagorean Identities, all from one circle.
+[28:02.32] Next, the quotient identities.
+[28:04.92] Tangent equals sine over cosine.
+[28:07.50] Cotangent equals cosine over sine.
+[28:10.32] Then the even and odd identities.
+[28:12.54] Cosine is an even function.
+[28:14.76] Cosine of negative theta equals cosine of theta.
+[28:17.90] Sine is odd.
+[28:19.44] Sine of negative theta equals negative sine of theta.
+[28:22.64] Same for tangent.
+[28:24.30] And the co -function identities.
+[28:25.82] Sine of 90 degrees minus theta equals cosine of theta.
+[28:30.08] And cosine of 90 minus theta equals sine of theta.
+[28:33.78] That's actually where the name cosine comes from.
+[28:36.60] Cosine means complement sine.
+[28:39.02] Let's use them.
+[28:40.42] Suppose sine of theta equals three fifths.
+[28:43.02] And theta is in quadrant 2.
+[28:45.00] Find cosine and tangent.
+[28:46.90] Sine squared plus cosine squared equals 1.
+[28:49.82] 9 over 25 plus cosine squared equals 1.
+[28:52.88] So cosine squared equals 16 over 25.
+[28:56.28] Cosine equals plus or minus four fifths.
+[28:58.98] In quadrant 2, cosine is negative.
+[29:02.42] So cosine is negative four fifths.
+[29:05.14] And tangent is sine over cosine, which is negative three fourths.
+[29:09.80] Now let's prove an identity.
+[29:11.84] The rule is simple.
+[29:13.26] Start with the more complicated side and transform it step by step until it looks like the other side.
+[29:19.50] Usually it helps to rewrite everything in terms of sine and cosine.
+[29:23.66] Prove that secant x minus cosine x equals sine x times tangent x.
+[29:29.22] Start with the left side.
+[29:30.92] Secant x is 1 over cosine x.
+[29:33.60] So we have 1 over cosine x minus cosine x.
+[29:37.30] Get a common denominator.
+[29:39.20] 1 minus cosine squared x.
+[29:41.50] All over cosine x.
+[29:43.52] By the Pythagorean identity, 1 minus cosine squared is sine squared.
+[29:47.80] So we have sine squared x over cosine x.
+[29:51.22] Split it.
+[29:52.42] Sine x times sine x over cosine x.
+[29:55.28] And sine over cosine is tangent.
+[29:57.62] So we get sine x times tangent x.
+[30:00.36] Done.
+[30:01.38] That's exactly the right side.
+[30:03.56] See?
+[30:04.30] No crying required this time.
+[30:06.28] Practice time.
+[30:07.80] 1.
+[30:08.76] If cosine theta equals five -thirteenths and theta is in quadrant 4, find sine theta.
+[30:15.22] 2.
+[30:16.12] Simplify.
+[30:16.70] 1 minus sine squared x.
+[30:19.20] Divided by cosine x.
+[30:21.12] Pause now.
+[30:22.52] 1.
+[30:23.28] Sine squared equals 1 minus 25 over 169.
+[30:27.62] Which is 144 over 169.
+[30:30.76] Sine is plus or minus 12 -thirteenths.
+[30:33.78] In quadrant 4, sine is negative.
+[30:36.66] Negative 12 -thirteenths.
+[30:38.72] 2.
+[30:42.58] 1 minus sine squared is cosine squared.
+[30:45.02] Cosine squared over cosine is just cosine x.
+[30:49.10] Chapter 10.
+[30:50.24] Sum, Difference, and Double Angle Formulas.
+[30:53.40] Here's a question.
+[30:54.90] Is sine of 30 plus sine of 45 equal to sine of 75?
+[30:59.46] No!
+[31:00.56] Sine does not work like that.
+[31:02.64] Sine of a plus b is not sine a plus sine b.
+[31:06.56] Many students lose marks right here.
+[31:09.06] Instead, we have the sum and difference formulas.
+[31:11.30] Sine of a plus b equals sine a cosine b.
+[31:15.78] Plus cosine a sine b.
+[31:17.76] Sine of a minus b equals sine a cosine b.
+[31:23.10] Minus cosine a sine b.
+[31:25.42] Cosine of a plus b equals cosine a cosine b.
+[31:29.74] Minus sine a sine b.
+[31:31.92] Cosine of a minus b equals cosine a cosine b.
+[31:35.98] Plus sine a sine b.
+[31:37.88] Notice something sneaky.
+[31:39.20] with cosine the sine flips plus becomes minus and minus becomes plus and tangent of a plus b equals tangent a plus tangent b all over one minus tangent a tangent b now let's find the exact value of sine 75
+[31:57.12] 75 is 45 plus 30 sine 45 cosine 30 plus cosine 45 sine 30 that's root 2 over 2 times root 3 over 2 plus root 2 over 2 times one half root 6 over 4 plus root 2 over 4
+[32:15.12] so sine of 75 degrees is root 6 plus root 2 all over 4 an exact answer without a calculator that's the beauty of it now what happens if a and b are the same angle then we get the double
+[32:29.98] angle formulas sine of 2 theta equals 2 sine theta cosine theta cosine of 2 theta equals cosine squared theta minus sine squared theta and using the Pythagorean identity that can also be written as 2 cosine squared minus 1 or
+[32:46.88] 1 minus 2 sine squared 3 versions choose whichever is most useful tangent of 2 theta equals 2 tangent theta over 1 minus tangent squared theta example if sine theta is 3 5ths and theta is in quadrant 1 then cosine
+[33:05.32] theta is 4 5ths sine of 2 theta is 2 times 3 5ths times 4 5ths which is 24 over 25 cosine of 2 theta is 16 25th minus 9 25ths which is 7 over 25 if you rearrange the double
+[33:22.70] angle formulas you get the half angle formulas sine of theta over 2 equals plus or minus the square root of 1 minus cosine theta over 2 cosine of theta over 2 equals plus or minus the square root of 1
+[33:37.66] plus cosine theta over 2 the sign depends on the quadrant where theta over 2 lives example sine of 22 .5 degrees is the half of 45 so it's the square root of 1 minus root 2 over 2 all over
+[33:52.82] 2 simplify and you get the square root of 2 minus root 2 all over 2 these formulas are also called power reducing tools sine squared x equals 1 minus cosine 2x over 2 cosine squared x equals 1 plus cosine
+[34:09.94] 2x over 2 in calculus these are lifesavers practice time 1 find the exact value of cosine 15 degrees 2 if cosine theta equals 3 5ths and theta is in quadrant 1 find cosine of 2 theta pause now 1 15
+[34:31.34] is 45 minus 30 cosine 45 cosine 30 plus sine 45 sine 30 root 6 over 4 plus root 2 over 4 root 6 plus root 2 over 4 wait that's the same as sine 75 of course it is 15
+[34:50.46] and 75 add up to 90 co -function identity everything connects to use cosine 2 theta equals 2 cosine squared minus 1 2 times 9 over 25 is 18 over 25 minus 1 which is 25 over 25 negative 7 over
+[35:09.52] 25 chapter 11 solving trigonometric equations up to now identities were true for every angle but a trigonometric equation is only true for some angles our job is to find them let's start simple 2 sine x minus 1 equals 0
+[35:27.58] solve for x between 0 and 2 pi add 1 divide by 2 sine x equals 1 half where is sine equal to 1 half sine is positive in quadrants 1 and 2 reference angle pi over 6 so x equals
+[35:43.34] pi over 6 and x equals pi minus pi over 6 which is 5 pi over 6 but here's the thing sine repeats every 2 pi so if we don't restrict the interval there are infinitely many solutions we write the
+[35:58.48] general solution as pi over 6 plus 2k pi and 5 pi over 6 plus 2k pi where k is any integer now a harder one 2 sine squared x minus sine x minus 1 equals 0 don't panic this is
+[36:15.40] just a quadratic equation in disguise pretend sine x is a letter like you then it's 2 u squared minus u minus 1 equals 0 factor it 2 u plus 1 times u minus 1 equals 0 so sine x equals
+[36:31.92] negative 1 half or sine x equals 1 sine x equals 1 at pi over 2 sine x equals negative 1 half in quadrants 3 and 4 with reference angle pi over 6 that's 7 pi over 6 and 11 pi
+[36:47.54] over 6 three solutions pi over 2 7 pi over 6 and 11 pi over 6 one more trick when the angle is doubled be careful solve cosine of 2x equals 1 half between 0 and 2 pi let the angle
+[37:05.26] 2x be the unknown if x goes from 0 to 2 pi then 2x goes from 0 to 4 pi that's 2 full laps cosine equals 1 half at pi over 3 and 5 pi over 3 add another lap 7
+[37:20.06] pi over 3 and 11 pi over 3 now divide all by 2 x equals pi over 6 5 pi over 6 7 pi over 6 and 11 pi over 6 4 solutions forgetting that second lap is the most common
+[37:36.48] mistake in this whole topic now you won't make it practice time 1 solve tangent x equals root 3 for x between 0 and 2 pi 2 solve 2 cosine squared x minus 1 equals 0 for x between 0 and
+[37:52.90] 2 pi pause now 1 tangent is root 3 at pi over 3 tangent repeats every pi so the other answer is pi over 3 plus pi which is 4 pi over 3 2 cosine squared x equals 1 half cosine
+[38:09.90] x equals plus or minus root 2 over 2 that gives the 4 45 degree angles pi over 4 3 pi over 4 5 pi over 4 and 7 pi over 4 chapter 12 inverse trigonometric functions the deep version earlier
+[38:28.00] we used inverse sign to find angles but there's a problem sign of 30 degrees is one half but so is sign of 150 and sign of 390 so what should inverse sign of one half be to make inverse functions
+[38:43.20] work mathematicians restrict the output to one specific range inverse sign also called arc sign gives answers only between negative pi over 2 and pi over 2 inverse cosine or arc cosine gives answers only between 0 and pi inverse tangent
+[39:02.62] or arc tangent gives answers strictly between negative pi over 2 and pi over 2 now watch this trap what is arc sign of sign of 5 pi over 6 you might think the answer is 5 pi over 6 but
+[39:17.74] it's not 5 pi over 6 is outside arc signs range sign of 5 pi over 6 is one half and arc sign of one half is pi over 6 another arc a sign of cosine of negative pi over 3
+[39:32.30] cosine of negative pi over 3 is one half arc a sign of one half in the range 0 to pi is pi over 3 now my favorite type find sign of arc a sign of three -fifths let theta be
+[39:47.34] arcosign of three -fifths that means cosine theta is three -fifths and theta is in quadrant 1 draw a triangle adjacent 3 hypotenuse 5 the opposite side is 4 so sine theta is four -fifths and the advanced version express tangent
+[40:05.76] of arc sign of x in terms of x let theta be arc sign of x then sine theta is x over 1 opposite x hypotenuse 1 the adjacent side is the square root of 1 minus x squared so tangent
+[40:19.54] of theta is x over the square root of 1 minus x squared draw the triangle it always works chapter 13 beyond right triangles the law of signs and the law of cosines everything so far needed a right angle but
+[40:35.04] most triangles in the real world don't have one so what do we do we use two powerful laws first the law of signs in any triangle with sides a b c and opposite angles a b c a over sine
+[40:51.04] a equals b over sine b equals c over sine c use it when you know two angles and a side or two sides and an angle opposite one of them example a equals 40 degrees b equals 60 degrees and
+[41:07.34] side a equals 10 first angle c is 180 minus 100 which is 80 degrees then b equals 10 times sine 60 over sine 40 that's about 10 times 0 .866 over 0 .643 about 13 .47 and c equals 10
+[41:27.48] times sine 80 over sine 40 about 15 .32 second the law of cosines c squared equals a squared plus b squared minus 2 a b cosine c look closely if c is 90 degrees cosine of 90 is 0 and
+[41:46.58] this becomes a squared plus b squared equals c squared the law of cosines is Pythagoras upgraded for every triangle use it when you know two sides and the angle between them or all three sides example sides 5 and 7
+[42:02.46] with a 60 degree angle between them c squared equals 25 plus 49 minus 2 times 5 times 7 times 1 half 74 minus 35 is 39 so c is the square root of 39 about 6 .24 finding an angle
+[42:21.10] a triangle has sides 3 5 and 7 what's the largest angle it's opposite the longest side 7 rearrange cosine c equals a squared plus b squared minus c squared over 2 a b 9 plus 25 minus 49 over 30
+[42:40.52] negative 15 over 30 which is negative one half inverse cosine of negative one half is 120 degrees now a warning the ambiguous case when you know two sides and an angle that is not between them sometimes there are two
+[42:57.42] possible triangles example angle a is 30 degrees side a is 6 and side b is 10 compute the height b times sine a which is 10 times one half which is 5 since side a 6 is longer than the
+[43:15.76] height 5 but shorter than b 10 the side can swing to two different positions two triangles using the law of signs sign b equals 10 times sine 30 over 6 which is about 0 .833 so b is about 56
+[43:33.52] .4 degrees or 180 minus that about 123 .6 degrees both are valid exams love this trap and finally the area of any triangle area equals one half times a times b times sine c two sides and the angle between
+[43:53.66] them example sides 8 and 10 with 30 degrees between them one half times 8 times 10 times one half 20 square units and if you only know the three sides use Herron's formula let s be half the perimeter then
+[44:10.50] area equals the square root of s times s minus a times s minus b times s minus c for a triangle with sides 13 14 15 s is 21 area is the square root of 21 times 8 times 7
+[44:26.38] times 6 which is the square root of 7 ,056 exactly 84 practice time one two sides of a triangle are 6 and 8 with a 90 degree angle between them wait that's too easy let's make it 60 degrees between
+[44:44.26] them find the third side to find the area of a triangle with sides 12 and 9 and an included angle of 150 degrees pause now one c squared equals 36 plus 64 minus 2 times 6 times 8 times one
+[45:03.42] half 100 minus 48 is 52 c equals root 52 which simplifies to 2 root 13 about 7 .21 2 one half times 12 times 9 times sine 150 sine 150 is one half so that's one half times 108 times
+[45:23.96] one half which is 27 square units chapter 14 advanced trigonometry where it gets truly beautiful you now know everything a typical high school course covers but I promised we'd go very advanced so let's go first polar coordinates normally we
+[45:43.14] describe a point with x and y left right up down but there's another way distance and direction how far from the center which we call are and at what angle theta to convert from polar to regular coordinates x equals
+[45:59.88] r cosine theta and y equals r sine theta to go back r equals the square root of x squared plus y squared and tangent theta equals y over x example the point one comma root 3 r is the square
+[46:16.48] root of 1 plus 3 which is 2 tangent theta is root 3 so theta is pi over 3 in polar it's 2 comma pi over 3 with polar coordinates you can draw shapes that are impossible to draw easily with
+[46:31.50] x and y the equation r equals cosine of 3 theta draws a flower with three petals rose curves spirals hearts called cardioids trigonometry becomes art next complex numbers you may know that I is the square root of negative one
+[46:49.34] a complex number like a plus bi can be drawn as a point on a plane and just like before we can describe it by distance and angle so any complex number can be written as r times cosine theta plus
+[47:03.84] i sine theta and now the most beautiful formula in mathematics Euler's formula e to the power i theta equals cosine theta plus i sine theta think about what that means the exponential function which describes growth and the trigonometric functions
+[47:26.06] which describes circles are secretly the same thing and if you put theta equals pi cosine of pi is negative one sine of pi is zero so e to the i pi equals negative one or e to the i pi
+[47:41.56] plus one equals zero five of the most important numbers in mathematics e i pi one and zero in one tiny equation yes I still get goosebumps every time from Euler's formula comes to Moivre's theorem cosine theta plus i sine
+[48:01.30] theta raise to the power n equals cosine of n theta plus i sine of n theta raising to a power just multiplies the angle example one plus i its distance is root two and its angle is 45 degrees raise
+[48:17.96] it to the eighth power the distance becomes root two to the eighth which is 16 the angle becomes eight times 45 which is 360 cosine of 360 is one sine is zero so one plus i to the eighth power
+[48:33.34] equals exactly 16 try doing that by multiplying it out eight times no thank you and de Moivre also finds roots the three cube roots of one are spaced evenly around the unit circle 120 degrees apart one then negative one
+[48:50.60] half plus root three over two i and negative one half minus root three over two i and they form a perfect equilateral triangle these are called roots of unity and a quick glimpse into calculus when the angle is measured
+[49:06.34] in radians and it's very small sine of x is almost exactly equal to x that's why the limit of sine x over x as x approaches zero is exactly one and the rate of change of sine x is cosine
+[49:20.84] x the rate of change of cosine x is negative sine x that's why sine waves appear wherever something swings or vibrates springs pendulums sound light and the final boss Fourier analysis a french mathematician named Joseph Fourier discovered that almost
+[49:39.78] any signal any sound any image can be built by adding together simple sine and cosine waves that idea is inside every mp3 every jpeg every phone call and every wifi signal on the planet so the next time someone asks
+[49:57.56] when will i ever use trigonometry tell them they're using it right now chapter 15 the final challenge time to test everything eight questions from easy to brutal pause after each one solve it and then check question one in a
+[50:16.36] right triangle the opposite side is eight and the hypotenuse is 17 find tangent of the angle answer the adjacent side is the square root of 289 minus 64 which is the square root of 225 which is 15 tangent is
+[50:33.20] 8 over 15 question 2 find the exact value of cosine of 330 degrees answer quadrant 4 reference angle 30 cosine is positive root 3 over 2 question 3 convert 11 pi over 6 to degrees and find its sign answer
+[50:52.82] 11 times 30 is 330 degrees sine is negative in quadrant 4 negative one half question 4 find the period in amplitude of y equals 5 sine of x over 2 answer amplitude 5 period is 2 pi divided by one
+[51:10.22] half which is 4 pi question 5 simplify cosine x times tangent x plus sine x answer cosine times sine over cosine is sine sine plus sine is 2 sine question 6 solve sine of 2x equals cosine x for x
+[51:28.88] between 0 and 2 pi answer use the double angle formula 2 sine x cosine x equals cosine x move everything to one side cosine x times 2 sine x minus 1 equals 0 never divide by cosine or you'll lose
+[51:44.90] solutions cosine x equals 0 gives pi over 2 and 3 pi over 2 sine x equals one half gives pi over 6 and 5 pi over 6 four solutions in total question 7 what is the maximum value of 3
+[52:02.36] sine x plus 4 cosine x answer here's an advanced trick any expression a sine x plus b cosine x can be written as one single sine wave with amplitude equal to the square root of a squared plus b squared
+[52:17.70] the square root of 9 plus 16 is 5 so the maximum value is 5 and question 8 the final boss find the sum sine squared of 1 degree plus sine squared of 2 degrees plus sine squared of 3 degrees
+[52:33.36] all the way up to sine squared of 89 degrees take your time think about co -functions the he answer pair them up sine squared of 1 degree and sine squared of 89 degrees but sine of 89 is cosine of
+[52:49.96] 1 so that pair is sine squared 1 plus cosine squared 1 which equals 1 same with 2 and 88 3 and 87 all the way to 44 and 46 that's 44 pairs each equal to 1 total 44 and 45
+[53:09.08] is left alone in the middle sine squared of 45 is root 2 over 2 squared which is 1 half so the total is 44 and a half if you solve that one on your own you're not a beginner anymore
+[53:22.54] you're a trigonometry master let's look back at how far we've come we started with a single angle we learned so katoa we met the special triangles we measured ladders trees and lighthouses we moved to the unit circle and spun
+[53:39.60] around it we learned radians the language of nature we watched sine turn into a wave we unlocked identities some formulas and double angles we solved equations we tamed inverse functions we conquered every triangle with the law of sines and
+[53:56.76] cosines and we finished with polar coordinates complex numbers and oilers breathtaking formula trigonometry started thousands of years ago with people trying to measure the stars and today it powers almost every piece of technology you touch my advice don't stop
+[54:14.18] here rewatch the chapters that felt hard redo the practice questions without looking and make your own problems that's how real understanding is built and if this course helped you even a little share it with someone who's struggling with math
+[54:28.32] right now maybe tonight they won't have to cry over an identity because they'll know the trick thank you for learning with me keep exploring keep questioning and i'll see you in the next one

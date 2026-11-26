@@ -1,0 +1,16 @@
+S = [
+    ("6:19.00", "c", "K03_Part4", dict(label="Part 4", title="One-Sided Limits", doodle="wave")),
+    ("6:22.20", "m", "K03_OneSided"),
+    ("6:52.80", "m", "K03_Piece"),
+    ("7:26.50", "m", "K03_Rule"),
+    ("7:52.50", "m", "K03_Friends"),
+    ("8:09.20", "c", "K03_Part5", dict(label="Part 5", title="When Does a Limit Not Exist?", doodle="star")),
+    ("8:12.70", "m", "K03_Jump"),
+    ("8:27.30", "m", "K03_BlowUp"),
+    ("9:03.00", "m", "K03_Infinity"),
+    ("9:20.70", "m", "K03_Wiggle"),
+    ("9:43.30", "m", "K03_Summary"),
+    ("9:52.00", "q", "K03_Practice", dict()),
+    ("9:53.55", "m", "K03_Questions"),
+    ("10:15.10", "m", "K03_Answers"),
+]

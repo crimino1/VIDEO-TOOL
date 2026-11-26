@@ -1,0 +1,32 @@
+{
+ "used": 879,
+ "last_request": 1795628043.6313753,
+ "log": [
+  {
+   "time": "2026-11-25T22:52:51",
+   "chars": 148,
+   "task": "7e5a4c6c-089d-4d12-8c76-f44f676a46b2",
+   "out": "ai-equator/opus56/assets/vo/p14.mp3"
+  },
+  {
+   "time": "2026-11-25T22:56:33",
+   "chars": 327,
+   "task": "cbbde56b-e727-4976-bed6-67509153d2ed",
+   "out": "ai-equator/opus56/assets/vo/p15.mp3"
+  },
+  {
+   "time": "2026-11-25T23:00:17",
+   "chars": 266,
+   "task": "924576eb-a55c-40c9-b56c-e9ddd564ab1b",
+   "out": "ai-equator/opus56/assets/vo/p16.mp3"
+  },
+  {
+   "time": "2026-11-25T23:04:04",
+   "chars": 138,
+   "task": "c8ac9417-cbff-4114-b865-5bd5be61367a",
+   "out": "ai-equator/opus56/assets/vo/p17.mp3"
+  }
+ ],
+ "budget": 1000,
+ "model": "eleven_multilingual_v2"
+}

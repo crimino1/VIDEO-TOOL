@@ -1,0 +1,46 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/vidssave.com Chair Workout for Men Over 50 _ Full Body Strength at Home 360P.mp4",
+  "duration": 986.3,
+  "width": 640,
+  "height": 360,
+  "fps": 30.0,
+  "has_audio": true,
+  "shots": 1,
+  "avg_shot_sec": 986.3,
+  "median_shot_sec": 986.3,
+  "shortest_shot_sec": 986.3,
+  "longest_shot_sec": 986.3,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 0.0,
+    "after 5m": 0.0
+  },
+  "loudness": {
+    "integrated_lufs": -43.1,
+    "range_lu": 13.8
+  },
+  "cuts": [],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 20.5
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 328.8,
+      "sec_between_frames": 20.5
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 657.5,
+      "sec_between_frames": 20.5
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

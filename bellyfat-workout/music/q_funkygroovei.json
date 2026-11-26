@@ -1,0 +1,75 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "0978484b-0ab0-4807-90e7-859ea861d49d",
+   "title": "Jazzy Funk (funky,groove,conga,commercial,brass,chill)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1012213",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1012213&format=mp32",
+   "creator": "Pilot K",
+   "creator_url": "https://www.jamendo.com/artist/430957/PilotK",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "funk",
+    "jazzfunk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "funny",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Jazzy Funk (funky,groove,conga,commercial,brass,chill)\" by Pilot K is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Never Going Back",
+    "foreign_landing_url": "https://www.jamendo.com/album/119195/never-going-back",
+    "creator": "Pilot K",
+    "creator_url": "https://www.jamendo.com/artist/430957/PilotK",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 79000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0978484b-0ab0-4807-90e7-859ea861d49d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0978484b-0ab0-4807-90e7-859ea861d49d/",
+   "related_url": "https://api.openverse.org/v1/audio/0978484b-0ab0-4807-90e7-859ea861d49d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0978484b-0ab0-4807-90e7-859ea861d49d/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

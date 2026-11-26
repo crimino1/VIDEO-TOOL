@@ -1,0 +1,121 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=EB+Garamond&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/oct.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="62.233" data-width="1920" data-height="1080">
+<div id="w379" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:176;"><video id="v378" class="clip fit" src="assets/clips/A_fka7z8JSM_54cce5c0.mp4" muted playsinline data-start="0.000" data-duration="0.980" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s380" class="clip scene " data-start="0.000" data-duration="0.980" data-track-index="2" style="z-index:177" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w382" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:178;"><video id="v381" class="clip fit" src="assets/clips/px_diver_0_6df3f105.mp4" muted playsinline data-start="0.980" data-duration="1.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w384" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:179;"><video id="v383" class="clip fit" src="assets/clips/px_diver_1_3a144871.mp4" muted playsinline data-start="2.500" data-duration="2.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w386" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:180;"><video id="v385" class="clip fit" src="assets/clips/EseuJEq6Ly8_0bb00b19.mp4" muted playsinline data-start="5.240" data-duration="1.960" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s387" class="clip scene " data-start="5.240" data-duration="1.960" data-track-index="2" style="z-index:181" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w389" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:182;"><video id="v388" class="clip fit" src="assets/clips/vFSVZcjuXaE_a1d8add1.mp4" muted playsinline data-start="7.200" data-duration="3.320" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s390" class="clip scene " data-start="7.200" data-duration="3.320" data-track-index="2" style="z-index:183" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w392" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:184;"><video id="v391" class="clip fit" src="assets/clips/px_kids_2_21036caf.mp4" muted playsinline data-start="10.520" data-duration="3.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w394" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:185;"><video id="v393" class="clip fit" src="assets/clips/5Nhz473cWnw_1267f106.mp4" muted playsinline data-start="14.300" data-duration="3.500" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s395" class="clip scene " data-start="14.300" data-duration="3.500" data-track-index="2" style="z-index:186" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: hmstate (CC BY) / YouTube</div></div>
+<div id="w397" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:187;"><video id="v396" class="clip fit" src="assets/clips/_YhNkpMCags_4d6d247a.mp4" muted playsinline data-start="17.800" data-duration="5.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s398" class="clip scene " data-start="17.800" data-duration="5.340" data-track-index="2" style="z-index:188" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: WildlifeGannon (CC BY) / YouTube</div></div>
+<div id="w400" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:189;"><video id="v399" class="clip fit" src="assets/clips/23Yw6_1MoFw_16d48363.mp4" muted playsinline data-start="23.140" data-duration="5.320" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s401" class="clip scene " data-start="23.140" data-duration="5.320" data-track-index="2" style="z-index:190" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w403" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:191;"><video id="v402" class="clip fit" src="assets/clips/_YhNkpMCags_fb808365.mp4" muted playsinline data-start="28.460" data-duration="1.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s404" class="clip scene " data-start="28.460" data-duration="1.060" data-track-index="2" style="z-index:192" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: WildlifeGannon (CC BY) / YouTube</div></div>
+<div id="w406" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:193;"><video id="v405" class="clip fit" src="assets/clips/px_hand_0_9b1cc543.mp4" muted playsinline data-start="29.520" data-duration="1.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w408" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:194;"><video id="v407" class="clip fit" src="assets/clips/px_kids_0_e0dd3759.mp4" muted playsinline data-start="30.620" data-duration="1.900" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv409" class="clip" width="1920" height="1080" data-start="32.520" data-duration="5.060" data-track-index="1" style="z-index:195"></canvas>
+<div id="w411" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:196;"><video id="v410" class="clip fit" src="assets/clips/tu0KP7uW_Ic_3e58f98a.mp4" muted playsinline data-start="37.580" data-duration="5.900" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s412" class="clip scene " data-start="37.580" data-duration="5.900" data-track-index="2" style="z-index:197" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: IamWinstonPom (CC BY) / YouTube</div></div>
+<div id="w414" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:198;"><video id="v413" class="clip fit" src="assets/clips/px_reef_1_9d1f350a.mp4" muted playsinline data-start="43.480" data-duration="7.560" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w416" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:199;"><video id="v415" class="clip fit" src="assets/clips/23Yw6_1MoFw_72caa30a.mp4" muted playsinline data-start="51.040" data-duration="4.120" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s417" class="clip scene " data-start="51.040" data-duration="4.120" data-track-index="2" style="z-index:200" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w419" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:201;"><video id="v418" class="clip fit" src="assets/clips/px_hand_1_49b25e81.mp4" muted playsinline data-start="55.160" data-duration="2.474" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv420" class="clip" width="1920" height="1080" data-start="57.634" data-duration="4.600" data-track-index="1" style="z-index:202"></canvas>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v378",{scale:1.0},{scale:1.06,duration:0.98,ease:"none"},0.000);
+tl.fromTo("#v381",{scale:1.0},{scale:1.06,duration:1.52,ease:"none"},0.980);
+tl.fromTo("#v383",{scale:1.0},{scale:1.06,duration:2.74,ease:"none"},2.500);
+tl.fromTo("#v385",{scale:1.0},{scale:1.06,duration:1.96,ease:"none"},5.240);
+tl.fromTo("#v388",{scale:1.0},{scale:1.06,duration:3.32,ease:"none"},7.200);
+tl.fromTo("#v391",{scale:1.0},{scale:1.06,duration:3.78,ease:"none"},10.520);
+tl.fromTo("#v393",{scale:1.0},{scale:1.06,duration:3.5,ease:"none"},14.300);
+tl.fromTo("#v396",{scale:1.0},{scale:1.06,duration:5.34,ease:"none"},17.800);
+tl.fromTo("#v399",{scale:1.0},{scale:1.06,duration:5.32,ease:"none"},23.140);
+tl.fromTo("#v402",{scale:1.0},{scale:1.06,duration:1.06,ease:"none"},28.460);
+tl.fromTo("#v405",{scale:1.0},{scale:1.06,duration:1.1,ease:"none"},29.520);
+tl.fromTo("#v407",{scale:1.0},{scale:1.06,duration:1.9,ease:"none"},30.620);
+{const c=document.getElementById("cv409").getContext("2d");tl.to({},{duration:5.060,ease:"none",onUpdate:function(){SC2.flash(c,this.time(),{"on": 0.3, "d": 5.06});}},32.520);}
+tl.fromTo("#v410",{scale:1.0},{scale:1.06,duration:5.9,ease:"none"},37.580);
+tl.fromTo("#v413",{scale:1.0},{scale:1.06,duration:7.56,ease:"none"},43.480);
+tl.fromTo("#v415",{scale:1.0},{scale:1.06,duration:4.12,ease:"none"},51.040);
+tl.fromTo("#v418",{scale:1.0},{scale:1.06,duration:2.474,ease:"none"},55.160);
+{const c=document.getElementById("cv420").getContext("2d");tl.to({},{duration:4.600,ease:"none",onUpdate:function(){SC2.end(c,this.time(),{"d": 4.6});}},57.634);}
+tl.set({}, {}, 62.233);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

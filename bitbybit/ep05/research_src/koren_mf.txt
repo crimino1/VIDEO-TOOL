@@ -1,0 +1,581 @@
+COVER FEATURE
+
+               MATRIX
+               FACTORIZATION
+               TECHNIQUES FOR
+               RECOMMENDER
+               SYSTEMS
+
+Yehuda Koren, Yahoo Research
+Robert Bell and Chris Volinsky, AT&T Labs--Research
+
+As the Netflix Prize competition has dem-                        Such systems are particularly useful for entertainment
+onstrated, matrix factorization models                        products such as movies, music, and TV shows. Many cus-
+are superior to classic nearest-neighbor                      tomers will view the same movie, and each customer is
+techniques for producing product recom-                       likely to view numerous different movies. Customers have
+mendations, allowing the incorporation                        proven willing to indicate their level of satisfaction with
+of additional information such as implicit                    particular movies, so a huge volume of data is available
+feedback, temporal effects, and confidence                    about which movies appeal to which customers. Com-
+levels.                                                       panies can analyze this data to recommend movies to
+                                                              particular customers.
+M odern consumers are inundated with
+                   choices. Electronic retailers and content  Recommender system strategies
+                   providers offer a huge selection of prod-
+                   ucts, with unprecedented opportunities        Broadly speaking, recommender systems are based
+                   to meet a variety of special needs and     on one of two strategies. The content filtering approach
+tastes. Matching consumers with the most appropriate          creates a profile for each user or product to characterize
+products is key to enhancing user satisfaction and loy-       its nature. For example, a movie profile could include at-
+alty. Therefore, more retailers have become interested in     tributes regarding its genre, the participating actors, its
+recommender systems, which analyze patterns of user           box office popularity, and so forth. User profiles might
+interest in products to provide personalized recommenda-      include demographic information or answers provided
+tions that suit a user's taste. Because good personalized     on a suitable questionnaire. The profiles allow programs
+recommendations can add another dimension to the user         to associate users with matching products. Of course,
+experience, e-commerce leaders like Amazon.com and            content-based strategies require gathering external infor-
+Netflix have made recommender systems a salient part          mation that might not be available or easy to collect.
+of their websites.
+                                                                 A known successful realization of content filtering is
+                                                              the Music Genome Project, which is used for the Internet
+                                                              radio service Pandora.com. A trained music analyst scores
+
+42 computer    Published by the IEEE Computer Society         0018-9162/09/$26.00 © 2009 IEEE
+each song in the Music Genome Project                                                    #3
+
+based on hundreds of distinct musical
+
+characteristics. These attributes, or genes,
+
+capture not only a song's musical identity
+
+but also many significant qualities that are
+
+relevant to understanding listeners' musi-                                               #2
+
+cal preferences.
+
+An alternative to content filtering relies
+
+only on past user behavior--for example,
+
+previous transactions or product ratings--
+
+without requiring the creation of explicit                                               #1
+
+profiles. This approach is known as col-
+
+laborative filtering, a term coined by the      Joe
+
+developers of Tapestry, the first recom-
+
+mender system.1 Collaborative filtering
+
+analyzes relationships between users and                                                 #4
+
+interdependencies among products to
+
+identify new user-item associations.
+
+A major appeal of collaborative fil-
+
+tering is that it is domain free, yet it can
+
+address data aspects that are often elusive     Figure 1. The user-oriented neighborhood method. Joe likes the three
+and difficult to profile using content filter-  movies on the left. To make a prediction for him, the system finds similar
+ing. While generally more accurate than         users who also liked those movies, and then determines which other movies
+content-based techniques, collaborative         they liked. In this case, all three liked Saving Private Ryan, so that is the first
+filtering suffers from what is called the cold  recommendation. Two of them liked Dune, so that is next, and so on.
+
+start problem, due to its inability to ad-
+
+dress the system's new products and users. In this aspect, well-defined dimensions such as depth of character de-
+
+content filtering is superior.                             velopment or quirkiness; or completely uninterpretable
+
+The two primary areas of collaborative filtering are the dimensions. For users, each factor measures how much
+
+neighborhood methods and latent factor models. Neighbor- the user likes movies that score high on the correspond-
+
+hood methods are centered on computing the relationships ing movie factor.
+
+between items or, alternatively, between users. The item-  Figure 2 illustrates this idea for a simplified example
+
+oriented approach evaluates a user's preference for an in two dimensions. Consider two hypothetical dimen-
+
+item based on ratings of "neighboring" items by the same sions characterized as female- versus male-oriented and
+
+user. A product's neighbors are other products that tend serious versus escapist. The figure shows where several
+
+to get similar ratings when rated by the same user. For well-known movies and a few fictitious users might fall on
+
+example, consider the movie Saving Private Ryan. Its these two dimensions. For this model, a user's predicted
+
+neighbors might include war movies, Spielberg movies, rating for a movie, relative to the movie's average rating,
+
+and Tom Hanks movies, among others. To predict a par- would equal the dot product of the movie's and user's lo-
+
+ticular user's rating for Saving Private Ryan, we would look cations on the graph. For example, we would expect Gus
+
+for the movie's nearest neighbors that this user actually to love Dumb and Dumber, to hate The Color Purple, and
+
+rated. As Figure 1 illustrates, the user-oriented approach to rate Braveheart about average. Note that some mov-
+
+identifies like-minded users who can complement each ies--for example, Ocean's 11--and users--for example,
+
+other's ratings.                                           Dave--would be characterized as fairly neutral on these
+
+Latent factor models are an alternative approach two dimensions.
+
+that tries to explain the ratings by characterizing both   Matrix factorization methods
+items and users on, say, 20 to 100 factors inferred from
+
+the ratings patterns. In a sense, such factors comprise a  Some of the most successful realizations of latent factor
+
+computerized alternative to the aforementioned human- models are based on matrix factorization. In its basic form,
+
+created song genes. For movies, the discovered factors matrix factorization characterizes both items and users by
+
+might measure obvious dimensions such as comedy versus vectors of factors inferred from item rating patterns. High
+
+drama, amount of action, or orientation to children; less correspondence between item and user factors leads to a
+
+                                                                            AUGUST 2009 43
+cover F E AT U RE
+
+                                    Serious    Braveheart                             vector qi   f, and each user u is associ-
+                                   Amadeus                                            ated with a vector pu   f. For a given item
+         The Color Purple                                                             i, the elements of qi measure the extent to
+                                                                                      which the item possesses those factors,
+
+                                                                                      positive or negative. For a given user u,
+
+                                               Lethal Weapon                          the elements of pu measure the extent of
+                                                                                      interest the user has in items that are high
+Geared       Sense and             Ocean's 11                   Geared
+toward       Sensibility                                        toward                on the corresponding factors, again, posi-
+females                                                         males
+                                                                                      tive or negative. The resulting dot product,
+                                                                                      qiT pu, captures the interaction between user
+                                                                                      u and item i--the user's overall interest in
+
+                                           Dave                     Dumb and          the item's characteristics. This approximates
+                                   The Lion King                     Dumber           user u's rating of item i, which is denoted by
+                                                                                      rui, leading to the estimate
+                                                  Independence  Gus
+         The Princess                                  Day                            r^ui = qiT pu.                             (1)
+           Diaries
+                                      Escapist
+                                                                                      The major challenge is computing the map-
+
+Figure 2. A simplified illustration of the latent factor approach, which              ping of each item and user to factor vectors
+characterizes both users and movies using two axes--male versus female                qi, pu   f. After the recommender system
+and serious versus escapist.                                                          completes this mapping, it can easily esti-
+
+                                                                                      mate the rating a user will give to any item
+
+                                                                                      by using Equation 1.
+
+recommendation. These methods have become popular in            Such a model is closely related to singular value decom-
+
+recent years by combining good scalability with predictive      position (SVD), a well-established technique for identifying
+
+accuracy. In addition, they offer much flexibility for model-   latent semantic factors in information retrieval. Applying
+
+ing various real-life situations.                               SVD in the collaborative filtering domain requires factoring
+
+Recommender systems rely on different types of                  the user-item rating matrix. This often raises difficulties
+
+input data, which are often placed in a matrix with one         due to the high portion of missing values caused by sparse-
+
+dimension representing users and the other dimension            ness in the user-item ratings matrix. Conventional SVD is
+
+representing items of interest. The most convenient data        undefined when knowledge about the matrix is incom-
+
+is high-quality explicit feedback, which includes explicit      plete. Moreover, carelessly addressing only the relatively
+
+input by users regarding their interest in products. For        few known entries is highly prone to overfitting.
+
+example, Netflix collects star ratings for movies, and TiVo     Earlier systems relied on imputation to fill in missing
+
+users indicate their preferences for TV shows by pressing       ratings and make the rating matrix dense.2 However, im-
+
+thumbs-up and thumbs-down buttons. We refer to explicit         putation can be very expensive as it significantly increases
+
+user feedback as ratings. Usually, explicit feedback com-       the amount of data. In addition, inaccurate imputation
+
+prises a sparse matrix, since any single user is likely to      might distort the data considerably. Hence, more recent
+
+have rated only a small percentage of possible items.           works3-6 suggested modeling directly the observed rat-
+
+One strength of matrix factorization is that it allows          ings only, while avoiding overfitting through a regularized
+
+incorporation of additional information. When explicit          model. To learn the factor vectors (pu and qi), the system
+feedback is not available, recommender systems can infer        minimizes the regularized squared error on the set of
+
+user preferences using implicit feedback, which indirectly      known ratings:
+
+reflects opinion by observing user behavior including pur-
+
+chase history, browsing history, search patterns, or even        min                  (rui - qiTpu)2 + (|| qi ||2 + || pu  ||2)  (2)
+mouse movements. Implicit feedback usually denotes the
+                                                                q *, p*
+                                                                              (u,i )
+
+presence or absence of an event, so it is typically repre-      Here,  is the set of the (u,i) pairs for which rui is known
+sented by a densely filled matrix.                              (the training set).
+
+A BASIC MATRIX FACTORIZATION MODEL                                 The system learns the model by fitting the previously
+                                                                observed ratings. However, the goal is to generalize those
+
+Matrix factorization models map both users and items            previous ratings in a way that predicts future, unknown
+
+to a joint latent factor space of dimensionality f, such that   ratings. Thus, the system should avoid overfitting the
+
+user-item interactions are modeled as inner products in         observed data by regularizing the learned parameters,
+
+that space. Accordingly, each item i is associated with a       whose magnitudes are penalized. The constant  controls
+
+44 computer
+the extent of regularization and is usually determined by        data aspects and other application-specific requirements.
+cross-validation. Ruslan Salakhutdinov and Andriy Mnih's         This requires accommodations to Equation 1 while staying
+"Probabilistic Matrix Factorization"7 offers a probabilistic     within the same learning framework. Equation 1 tries to cap-
+foundation for regularization.                                   ture the interactions between users and items that produce
+                                                                 the different rating values. However, much of the observed
+LEARNING ALGORITHMS                                              variation in rating values is due to effects associated with
+                                                                 either users or items, known as biases or intercepts, indepen-
+   Two approaches to minimizing Equation 2 are stochastic        dent of any interactions. For example, typical collaborative
+gradient descent and alternating least squares (ALS).            filtering data exhibits large systematic tendencies for some
+                                                                 users to give higher ratings than others, and for some items
+Stochastic gradient descent                                      to receive higher ratings than others. After all, some products
+                                                                 are widely perceived as better (or worse) than others.
+   Simon Funk popularized a stochastic gradient descent
+optimization of Equation 2 (http://sifter.org/~simon/               Thus, it would be unwise to explain the full rating value
+journal/20061211.html) wherein the algorithm loops               by an interaction of the form qiTpu. Instead, the system tries
+through all ratings in the training set. For each given          to identify the portion of these values that individual user or
+training case, the system predicts rui and computes the          item biases can explain, subjecting only the true interaction
+associated prediction error                                      portion of the data to factor modeling. A first-order approxi-
+                                                                 mation of the bias involved in rating rui is as follows:
+            def
+                                                                 bui = µ + bi + bu                           (3)
+   eui = rui - qiT pu.
+                                                                    The bias involved in rating rui is denoted by bui and ac-
+   Then it modifies the parameters by a magnitude pro-           counts for the user and item effects. The overall average
+portional to g in the opposite direction of the gradient,        rating is denoted by µ; the parameters bu and bi indicate
+yielding:                                                        the observed deviations of user u and item i, respectively,
+                                                                 from the average. For example, suppose that you want
+   · qi  qi + g  (eui  pu -   qi)                                a first-order estimate for user Joe's rating of the movie
+   · pu  pu + g  (eui  qi -   pu)                                Titanic. Now, say that the average rating over all movies, µ,
+                                                                 is 3.7 stars. Furthermore, Titanic is better than an average
+   This popular approach4-6 combines implementation              movie, so it tends to be rated 0.5 stars above the average.
+ease with a relatively fast running time. Yet, in some cases,    On the other hand, Joe is a critical user, who tends to rate
+it is beneficial to use ALS optimization.                        0.3 stars lower than the average. Thus, the estimate for
+                                                                 Titanic's rating by Joe would be 3.9 stars (3.7 + 0.5 - 0.3).
+Alternating least squares                                        Biases extend Equation 1 as follows:
+
+   Because both qi and pu are unknowns, Equation 2 is not        r^ui = µ+ bi + bu + qiTpu                   (4)
+convex. However, if we fix one of the unknowns, the op-
+timization problem becomes quadratic and can be solved              Here, the observed rating is broken down into its four
+optimally. Thus, ALS techniques rotate between fixing the        components: global average, item bias, user bias, and user-
+qi's and fixing the pu's. When all pu's are fixed, the system    item interaction. This allows each component to explain
+recomputes the qi's by solving a least-squares problem, and      only the part of a signal relevant to it. The system learns
+vice versa. This ensures that each step decreases Equation       by minimizing the squared error function:4,5
+2 until convergence.8
+                                                                  min       (rui - µ - bu - bi - puTqi)2 + 
+   While in general stochastic gradient descent is easier
+and faster than ALS, ALS is favorable in at least two cases.     p*,q *,b*
+The first is when the system can use parallelization. In ALS,    (u,i )
+the system computes each qi independently of the other
+item factors and computes each pu independently of the           (|| pu ||2 + || qi ||2 + bu2 + bi2)         (5)
+other user factors. This gives rise to potentially massive
+parallelization of the algorithm.9 The second case is for           Since biases tend to capture much of the observed
+systems centered on implicit data. Because the training          signal, their accurate modeling is vital. Hence, other works
+set cannot be considered sparse, looping over each single        offer more elaborate bias models.11
+training case--as gradient descent does--would not be
+practical. ALS can efficiently handle such cases.10              ADDITIONAL INPUT SOURCES
+
+ADDING BIASES                                                       Often a system must deal with the cold start problem,
+                                                                 wherein many users supply very few ratings, making it
+   One benefit of the matrix factorization approach to col-
+laborative filtering is its flexibility in dealing with various
+
+                                                                                                             AUGUST 2009 45
+cover F E AT U RE
+
+difficult to reach general conclusions on their taste. A way    prove accuracy. Decomposing ratings into distinct terms
+to relieve this problem is to incorporate additional sources    allows the system to treat different temporal aspects sepa-
+of information about the users. Recommender systems can         rately. Specifically, the following terms vary over time: item
+use implicit feedback to gain insight into user preferences.    biases, bi(t); user biases, bu(t); and user preferences, pu(t).
+Indeed, they can gather behavioral information regardless
+of the user's willingness to provide explicit ratings. A re-       The first temporal effect addresses the fact that an
+tailer can use its customers' purchases or browsing history     item's popularity might change over time. For example,
+to learn their tendencies, in addition to the ratings those     movies can go in and out of popularity as triggered by
+customers might supply.                                         external events such as an actor's appearance in a new
+                                                                movie. Therefore, these models treat the item bias bi as a
+   For simplicity, consider a case with a Boolean implicit      function of time. The second temporal effect allows users
+feedback. N(u) denotes the set of items for which user u        to change their baseline ratings over time. For example, a
+expressed an implicit preference. This way, the system          user who tended to rate an average movie "4 stars" might
+profiles users through the items they implicitly preferred.     now rate such a movie "3 stars." This might reflect several
+Here, a new set of item factors are necessary, where item       factors including a natural drift in a user's rating scale,
+i is associated with xi   f. Accordingly, a user who            the fact that users assign ratings relative to other recent
+showed a preference for items in N(u) is characterized by       ratings, and the fact that the rater's identity within a house-
+the vector                                                      hold can change over time. Hence, in these models, the
+                                                                parameter bu is a function of time.
+     xi .
+                                                                   Temporal dynamics go beyond this; they also affect
+       iN (u)                                                   user preferences and therefore the interaction between
+                                                                users and items. Users change their preferences over time.
+    Normalizing the sum is often beneficial, for example,       For example, a fan of the psychological thrillers genre
+working with                                                    might become a fan of crime dramas a year later. Simi-
+                                                                larly, humans change their perception of certain actors
+ |N(u)|­0.5          xi .4,5                                    and directors. The model accounts for this effect by taking
+                                                                the user factors (the vector pu) as a function of time. On
+             iN (u)                                             the other hand, it specifies static item characteristics, qi,
+                                                                because, unlike humans, items are static in nature.
+   Another information source is known user attributes,
+for example, demographics. Again, for simplicity consider          Exact parameterizations of time-varying parameters11
+Boolean attributes where user u corresponds to the set          lead to replacing Equation 4 with the dynamic prediction
+of attributes A(u), which can describe gender, age group,       rule for a rating at time t:
+Zip code, income level, and so on. A distinct factor vector
+ya   f corresponds to each attribute to describe a user
+through the set of user-associated attributes:
+
+                                                                r^ui (t) = µ + bi(t) + bu(t) + qiT pu(t)  (7)
+
+    ya                                                          INPUTS WITH VARYING CONFIDENCE LEVELS
+
+      a A( u )                                                     In several setups, not all observed ratings deserve the
+                                                                same weight or confidence. For example, massive adver-
+   The matrix factorization model should integrate all          tising might influence votes for certain items, which do
+signal sources, with enhanced user representation:              not aptly reflect longer-term characteristics. Similarly, a
+                                                                system might face adversarial users that try to tilt the rat-
+  r^ui = µ + bi + bu + qiT [pu + |N(u)|­0.5                     ings of certain items.
+                                      xi +            ya ] (6)
+                                                                   Another example is systems built around implicit
+                              iN (u)        a A( u )            feedback. In such systems, which interpret ongoing
+                                                                user behavior, a user's exact preference level is hard to
+   While the previous examples deal with enhancing user         quantify. Thus, the system works with a cruder binary
+representation--where lack of data is more common--             representation, stating either "probably likes the product"
+items can get a similar treatment when necessary.               or "probably not interested in the product." In such cases,
+                                                                it is valuable to attach confidence scores with the esti-
+TEMPORAL DYNAMICS                                               mated preferences. Confidence can stem from available
+                                                                numerical values that describe the frequency of actions,
+   So far, the presented models have been static. In real-      for example, how much time the user watched a certain
+ity, product perception and popularity constantly change        show or how frequently a user bought a certain item. These
+as new selections emerge. Similarly, customers' inclina-        numerical values indicate the confidence in each obser-
+tions evolve, leading them to redefine their taste. Thus,       vation. Various factors that have nothing to do with user
+the system should account for the temporal effects re-
+flecting the dynamic, time-drifting nature of user-item
+interactions.
+
+   The matrix factorization approach lends itself well to
+modeling temporal effects, which can significantly im-
+
+46 computer
+preferences might cause a one-time                          1.5
+
+event; however, a recurring event is                                                                                       NatuKraillSl BBcaoilrrlf:naVJcKuoeillli.lee1nrsDoInHkeeayr-tPBHuounycckha-bDTerheusenkRoLoyavelBTeeinngenJobhaunBLmeMolslsaetlkdinoevTJircoahunrCsiltaitzieonnKane
+                                                                                                                                                The Wizard of Oz
+more likely to reflect user opinion.
+
+The matrix factorization model                              1.0                                                                                                                                                                                                                                 Annie Hall
+                                                                                                                                                                                                                                                                                               TThhTeehSWeoWMpSaahoolytioueoWnn'nssdsetC:roWhuSfoceMekiacrsueeosnic1
+can readily accept varying confidence
+
+levels, which let it give less weight to                                       GFortedFidnygvesrRH.eoJdaaalfsdoBTnarkiped
+
+less meaningful observations. If con-                       0.5
+
+fidence in observing rui is denoted as                                 Freddy
+
+cui, then the model enhances the cost      Factor vector 2  0.0
+function (Equation 5) to account for
+
+confidence as follows:                                                         ThTehFeaLsotnagnedstthYAearmrFduargioeudCsdaotwnomCoaynote Ugly
+
+ min           cui(rui - µ - bu - bi       ­0.5
+
+p*,q *,b*(u,i )                                                                                                                                 Maid in ManRhuantatwanay BrideStepSmisotmer Act
+
+- puTqi)2 +  (|| pu ||2 + || qi ||2        ­1.0
+
++ bu2 + bi2)                          (8)
+
+For information on a real-life ap-         ­1.5
+
+plication involving such schemes,                                ­1.5          ­1.0                                        ­0.5                 0.0  0.5                                                                                                                                       1.0
+refer to "Collaborative Filtering for
+                                                                                                                                 Factor vector 1
+
+Implicit Feedback Datasets."10
+
+                                           Figure 3. The first two vectors from a matrix decomposition of the Netflix Prize
+
+NETFLIX PRIZE                              data. Selected movies are placed at the appropriate spot based on their factor
+COMPETITION                                vectors in two dimensions. The plot reveals distinct genres, including clusters of
+                                           movies with strong female leads, fraternity humor, and quirky independent films.
+   In 2006, the online DVD rental
+
+company Netflix announced a con-
+
+test to improve the state of its recommender system.12 To                            Our winning entries consist of more than 100 differ-
+
+enable this, the company released a training set of more ent predictor sets, the majority of which are factorization
+
+than 100 million ratings spanning about 500,000 anony- models using some variants of the methods described here.
+
+mous customers and their ratings on more than 17,000 Our discussions with other top teams and postings on the
+
+movies, each movie being rated on a scale of 1 to 5 stars. public contest forum indicate that these are the most popu-
+
+Participating teams submit predicted ratings for a test set lar and successful methods for predicting ratings.
+
+of approximately 3 million ratings, and Netflix calculates                           Factorizing the Netflix user-movie matrix allows us
+
+a root-mean-square error (RMSE) based on the held-out to discover the most descriptive dimensions for predict-
+
+truth. The first team that can improve on the Netflix algo- ing movie preferences. We can identify the first few most
+
+rithm's RMSE performance by 10 percent or more wins a important dimensions from a matrix decomposition and
+
+$1 million prize. If no team reaches the 10 percent goal, explore the movies' location in this new space. Figure 3
+
+Netflix gives a $50,000 Progress Prize to the team in first shows the first two factors from the Netflix data matrix
+
+place after each year of the competition.                                      factorization. Movies are placed according to their factor
+
+The contest created a buzz within the collaborative fil- vectors. Someone familiar with the movies shown can see
+
+tering field. Until this point, the only publicly available data clear meaning in the latent factors. The first factor vector
+
+for collaborative filtering research was orders of magni- (x-axis) has on one side lowbrow comedies and horror
+
+tude smaller. The release of this data and the competition's movies, aimed at a male or adolescent audience (Half Baked,
+
+allure spurred a burst of energy and activity. According to Freddy vs. Jason), while the other side contains drama or
+
+the contest website (www.netflixprize.com), more than comedy with serious undertones and strong female leads
+
+48,000 teams from 182 different countries have down- (Sophie's Choice, Moonstruck). The second factorization
+
+loaded the data.                                                               axis (y-axis) has independent, critically acclaimed, quirky
+
+Our team's entry, originally called BellKor, took over films (Punch-Drunk Love, I Heart Huckabees) on the top,
+
+the top spot in the competition in the summer of 2007, and on the bottom, mainstream formulaic films (Armaged-
+
+and won the 2007 Progress Prize with the best score at the don, Runaway Bride). There are interesting intersections
+
+time: 8.43 percent better than Netflix. Later, we aligned between these boundaries: On the top left corner, where
+
+with team Big Chaos to win the 2008 Progress Prize with a indie meets lowbrow, are Kill Bill and Natural Born Kill-
+
+score of 9.46 percent. At the time of this writing, we are still ers, both arty movies that play off violent themes. On the
+
+in first place, inching toward the 10 percent landmark.                        bottom right, where the serious female-driven movies meet
+
+                                                                                                                                                                                                                                                                                               AUGUST 2009 47
+      cover F E AT U RE
+
+      0.91    40                                                                                       M atrix factoriza-
+                                                                                                                          tion techniques
+                      60                                        Plain                                                     have become a
+                                                                With biases                                               dominant meth-
+      0.905               90   128                              With implicit feedback                                    odology within
+                                  180                           With temporal dynamics (v.1)           collaborative filtering recom-
+              50                                                With temporal dynamics (v.2)           menders. Experience with
+                                                                                                       datasets such as the Netflix Prize
+                          100  200
+
+      0.9
+
+      0.895       50
+
+RMSE                        100                                                                        data has shown that they deliver
+                                   200                                                                 accuracy superior to classical
+                                                                                                       nearest-neighbor techniques. At
+      0.89
+
+                                                                                                       the same time, they offer a com-
+
+      0.885                         100 200 500                                                        pact memory-efficient model
+
+      0.88                                       50             500 1,000                              that systems can learn relatively
+                                                       100 200               1,500                     easily. What makes these tech-
+                                                                                                       niques even more convenient is
+
+                                                                                                       that models can integrate natu-
+
+      0.875                    100               1,000          10,000                        100,000  rally many crucial aspects of the
+          10                                                                                           data, such as multiple forms of
+                                                                                                       feedback, temporal dynamics,
+                                        Millions of parameters
+
+Figure 4. Matrix factorization models' accuracy. The plots show the root-mean-square                   and confidence levels.
+
+error of each of four individual factor models (lower is better). Accuracy improves when
+
+the factor model's dimensionality (denoted by numbers on the charts) increases. In                     References
+addition, the more refined factor models, whose descriptions involve more distinct
+sets of parameters, are more accurate. For comparison, the Netflix system achieves                     1. D. Goldberg et al., "Using Col-
+RMSE = 0.9514 on the same dataset, while the grand prize's required accuracy is                         laborative Filtering to Weave
+RMSE = 0.8563.                                                                                          an Information Tapestry,"
+                                                                                                        Comm. ACM, vol. 35, 1992, pp.
+
+                                                                                                        61-70.
+
+the mainstream crowd-pleasers, is The Sound of Music.                   2. B.M. Sarwar et al., "Application of Dimensionality Reduc-
+And smack in the middle, appealing to all types, is The                     tion in Recommender System--A Case Study," Proc. KDD
+Wizard of Oz.                                                               Workshop on Web Mining for e-Commerce: Challenges and
+                                                                            Opportunities (WebKDD), ACM Press, 2000.
+   In this plot, some movies neighboring one another typi-
+cally would not be put together. For example, Annie Hall                3. S. Funk, "Netflix Update: Try This at Home," Dec. 2006;
+and Citizen Kane are next to each other. Although they                      http://sifter.org/~simon/journal/20061211.html.
+are stylistically very different, they have a lot in common
+                                                                        4. Y. Koren, "Factorization Meets the Neighborhood: A Mul-
+                                                                            tifaceted Collaborative Filtering Model," Proc. 14th ACM
+
+as highly regarded classic movies by famous directors.                      SIGKDD Int'l Conf. Knowledge Discovery and Data Mining,
+Indeed, the third dimension in the factorization does end                   ACM Press, 2008, pp. 426-434.
+up separating these two.                                                5. A. Paterek, "Improving Regularized Singular Value De-
+                                                                            composition for Collaborative Filtering," Proc. KDD Cup
+   We tried many different implementations and pa-                          and Workshop, ACM Press, 2007, pp. 39-42.
+rameterizations for factorization. Figure 4 shows how                   6. G. Takács et al., "Major Components of the Gravity Recom-
+different models and numbers of parameters affect the                       mendation System," SIGKDD Explorations, vol. 9, 2007, pp.
+
+RMSE as well as the performance of the factorization's                  80-84.
+
+evolving implementations--plain factorization, adding                   7. R. Salakhutdinov and A. Mnih, "Probabilistic Matrix Fac-
+biases, enhancing user profile with implicit feedback, and                  torization," Proc. Advances in Neural Information Processing
+two variants adding temporal components. The accuracy                       Systems 20 (NIPS 07), ACM Press, 2008, pp. 1257-1264.
+of each of the factor models improves by increasing the
+number of involved parameters, which is equivalent to                   8. R. Bell and Y. Koren, "Scalable Collaborative Filtering with
+increasing the factor model's dimensionality, denoted by                    Jointly Derived Neighborhood Interpolation Weights," Proc.
+                                                                            IEEE Int'l Conf. Data Mining (ICDM 07), IEEE CS Press, 2007,
+                                                                            pp. 43-52.
+
+numbers on the charts.                                                  9. Y. Zhou et al., "Large-Scale Parallel Collaborative Filter-
+
+   The more complex factor models, whose descriptions                ing for the Netflix Prize," Proc. 4th Int'l Conf. Algorithmic
+involve more distinct sets of parameters, are more accu-             Aspects in Information and Management, LNCS 5034,
+rate. In fact, the temporal components are particularly              Springer, 2008, pp. 337-348.
+important to model as there are significant temporal ef-
+fects in the data.                                              10. Y.F. Hu, Y. Koren, and C. Volinsky, "Collaborative Filtering
+                                                                     for Implicit Feedback Datasets," Proc. IEEE Int'l Conf. Data
+                                                                     Mining (ICDM 08), IEEE CS Press, 2008, pp. 263-272.
+
+48 computer
+11. Y. Koren, "Collaborative Filtering with Temporal Dynam-        Robert Bell is a principal member of the technical staff at
+      ics," Proc. 15th ACM SIGKDD Int'l Conf. Knowledge Discovery  AT&T Labs--Research. His research interests are survey
+      and Data Mining (KDD 09), ACM Press, 2009, pp. 447-455.      research methods and statistical learning methods. He re-
+                                                                   ceived a PhD in statistics from Stanford University. Bell is
+12. J. Bennet and S. Lanning, "The Netflix Prize," KDD Cup and     a member of the American Statistical Association and the
+      Workshop, 2007; www.netflixprize.com.                        Institute of Mathematical Statistics. Contact him at rbell@
+                                                                   research.att.com.
+Yehuda Koren is a senior research scientist at Yahoo Re-
+search, Haifa. His research interests are recommender              Chris Volinsky is director of statistics research at AT&T
+systems and information visualization. He received a               Labs--Research. His research interests are large-scale data
+PhD in computer science from the Weizmann Institute of             mining, social networks, and models for fraud detection. He
+Science. Koren is a member of the ACM. Contact him at              received a PhD in statistics from the University of Wash-
+yehuda@yahoo-inc.com.                                              ington. Volinsky is a member of the American Statistical
+                                                                   Association. Contact him at volinsky@research.att.com.
+
+                                                                   AUGUST 2009 49
+

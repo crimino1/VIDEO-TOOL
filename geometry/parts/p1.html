@@ -1,0 +1,136 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="148.520" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v1" class="clip vid" src="assets/clips/pxg_nile_320c1c7e.mp4" muted playsinline data-start="0.000" data-duration="4.220" data-track-index="1" style="z-index:11;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s4" class="clip scene" data-start="0.000" data-duration="4.220" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="c3" class="scene"><div id="pl2" class="place" style="top:850px"><div class="ru"></div><div class="l1">ANCIENT EGYPT</div><div class="l2">the river Nile</div></div></div></div>
+<video id="v5" class="clip vid" src="assets/clips/pxg_fields_e36b0fe1.mp4" muted playsinline data-start="10.380" data-duration="6.360" data-track-index="1" style="z-index:14;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s13" class="clip scene" data-start="10.380" data-duration="6.360" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="c12" class="scene"><div id="k6" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w7" style="opacity:0">a</span> <span id="w8" style="opacity:0">gift:</span> <span id="w9" style="opacity:0">rich,</span> <span id="w10" style="opacity:0">black</span> <span id="w11" style="opacity:0">mud</span></div></div></div>
+<video id="v14" class="clip vid" src="assets/clips/pxg_flood_cd1f41e6.mp4" muted playsinline data-start="16.740" data-duration="5.600" data-track-index="1" style="z-index:17;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s16" class="clip scene" data-start="16.740" data-duration="5.600" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="c15" class="scene"></div></div>
+<div id="s23" class="clip scene" data-start="22.340" data-duration="8.160" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="c22" class="scene"><div id="k17" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w18" style="opacity:0">Whose</span> <span id="w19" style="opacity:0">land</span> <span id="w20" style="opacity:0">was</span> <span id="w21" style="opacity:0">whose?</span></div></div></div>
+<video id="v24" class="clip vid" src="assets/clips/pxg_karnak_e07d2a77.mp4" muted playsinline data-start="42.920" data-duration="5.520" data-track-index="1" style="z-index:21;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s28" class="clip scene" data-start="42.920" data-duration="5.520" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="c27" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="tg25" class="tag" style="left:110px;top:360px;opacity:0"><div class="n">Herodotus</div><div class="r">Greek historian</div></div><div id="pl26" class="place" style="top:850px"><div class="ru"></div><div class="l1">ABOUT 2,400 YEARS AGO</div><div class="l2"></div></div></div></div>
+<div id="s31" class="clip scene" data-start="48.440" data-duration="2.820" data-track-index="2" style="z-index:24" data-layout-allow-overflow data-layout-allow-overlap><div id="c30" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:510px;top:228px;width:900px;height:585px"><img id="ph29" src="assets/gen/herodotus_page_653ae0.jpg" alt="herodotus_page"></div><div class="credit">Herodotus, Histories (Vat. gr. 122), public domain</div></div></div>
+<video id="v32" class="clip vid" src="assets/clips/mn_GeoName_4577fc5b.mp4" muted playsinline data-start="51.260" data-duration="9.000" data-track-index="1" style="z-index:25;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v33" class="clip vid" src="assets/clips/pxg_bridge_37f42fb2.mp4" muted playsinline data-start="69.600" data-duration="3.120" data-track-index="1" style="z-index:27;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s35" class="clip scene" data-start="69.600" data-duration="3.120" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="c34" class="scene"></div></div>
+<video id="v36" class="clip vid" src="assets/clips/pxg_earth_e697375e.mp4" muted playsinline data-start="76.380" data-duration="6.360" data-track-index="1" style="z-index:30;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s38" class="clip scene" data-start="76.380" data-duration="6.360" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="c37" class="scene"></div></div>
+<video id="v39" class="clip vid" src="assets/clips/mn_Roadmap_1fdee3a0.mp4" muted playsinline data-start="82.740" data-duration="9.840" data-track-index="1" style="z-index:33;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v40" class="clip vid" src="assets/clips/pxg_fields_062382e4.mp4" muted playsinline data-start="92.580" data-duration="1.760" data-track-index="1" style="z-index:35;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s44" class="clip scene" data-start="92.580" data-duration="1.760" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="c43" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch41" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; ONE</div><div class="ti">A dot and a line</div><div id="ru42" class="rule"></div></div></div></div>
+<video id="v45" class="clip vid" src="assets/clips/mn_PointLine_ea34fb91.mp4" muted playsinline data-start="94.340" data-duration="39.760" data-track-index="1" style="z-index:38;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s49" class="clip scene" data-start="134.100" data-duration="3.140" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c48" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch46" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; TWO</div><div class="ti">Euclid's castle</div><div id="ru47" class="rule"></div></div></div></div>
+<div id="s52" class="clip scene" data-start="137.240" data-duration="5.840" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="c51" class="scene"><div id="pl50" class="place" style="top:850px"><div class="ru"></div><div class="l1">ALEXANDRIA, EGYPT</div><div class="l2">around 300 BC</div></div></div></div>
+<div id="s55" class="clip scene" data-start="143.080" data-duration="2.500" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="c54" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:410px;top:165px;width:1100px;height:670px"><img id="ph53" src="assets/gen/euclid_papyrus_dd2e84.jpg" alt="euclid_papyrus"></div><div class="credit">Euclid's Elements, papyrus fragment P. Oxy. I 29, public domain</div></div></div>
+</div>
+<script>window.PXS = [[4.22, 10.38, "nile_flood", {"flood": 0.3, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [22.34, 30.5, "nile_flood", {"flood": -9, "cam": {"z": [1.05, 1.15]}, "tin": "zoom", "tout": "zoom"}], [30.5, 42.92, "rope_stretchers", {"stretch": 5.42, "peg": 7.36, "mark": 8.12, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [48.44, 51.26, "rope_stretchers", {"stretch": -9, "peg": -9, "mark": -9, "tin": "fade", "tout": "fade"}], [60.26, 62.2, "rope_stretchers", {"stretch": -9, "peg": -9, "mark": -9, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [62.2, 69.6, "syene_well", {"sun": -9, "measure": 0.6, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [72.72, 76.38, "gps_street", {"sats": -9, "pin": 1.2, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [134.1, 137.24, "euclid_class", {"line": 99, "circle": 99, "tin": "fade", "tout": "fade"}], [137.24, 143.08, "euclid_class", {"line": 99, "circle": 99, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [143.08, 145.58, "euclid_class", {"line": -9, "circle": -9, "tin": "fade", "tout": "fade"}], [145.58, 148.52, "euclid_class", {"line": 0.4, "circle": 99, "cam": {"z": [1.05, 1.15]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/ancient.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/modern.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1",{scale:1.0},{scale:1.08,duration:4.22,ease:"none"},0.000);
+tl.fromTo("#pl2",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},0.600);
+tl.fromTo("#v5",{scale:1.0},{scale:1.06,duration:6.36,ease:"none"},10.380);
+tl.set("#w7",{opacity:1},17.180);
+tl.set("#w8",{opacity:1},17.180);
+tl.set("#w9",{opacity:1},17.180);
+tl.set("#w10",{opacity:1},17.180);
+tl.set("#w11",{opacity:1},32.660);
+tl.fromTo("#v14",{scale:1.0},{scale:1.06,duration:5.6,ease:"none"},16.740);
+tl.set("#w18",{opacity:1},28.800);
+tl.set("#w19",{opacity:1},29.060);
+tl.set("#w20",{opacity:1},29.400);
+tl.set("#w21",{opacity:1},29.600);
+tl.fromTo("#v24",{scale:1.0},{scale:1.06,duration:5.52,ease:"none"},42.920);
+tl.fromTo("#tg25",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},46.480);
+tl.fromTo("#pl26",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},43.020);
+tl.fromTo("#ph29",{scale:1.0},{scale:1.05,duration:2.82,ease:"none"},48.440);
+tl.fromTo("#v33",{scale:1.0},{scale:1.06,duration:3.12,ease:"none"},69.600);
+tl.fromTo("#v36",{scale:1.0},{scale:1.05,duration:6.36,ease:"none"},76.380);
+tl.fromTo("#v40",{scale:1.0},{scale:1.06,duration:1.76,ease:"none"},92.580);
+tl.fromTo("#ch41",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},92.730);
+tl.fromTo("#ru42",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},93.080);
+tl.fromTo("#ch46",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},134.250);
+tl.fromTo("#ru47",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},134.600);
+tl.fromTo("#pl50",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},136.880);
+tl.fromTo("#ph53",{scale:1.0},{scale:1.05,duration:2.5,ease:"none"},143.080);
+tl.set({}, {}, 148.520);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

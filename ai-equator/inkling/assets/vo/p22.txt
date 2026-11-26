@@ -1,0 +1,1 @@
+Memory matters too. The community 4-bit builds on Hugging Face are about 17 to 18 gigs, the 3-bit ones are 13 to 15, and there's even a 2-bit version around 10 gigs that fits on a 16 gig machine. But long context eats memory fast. One tester found that at 131 thousand tokens, it used 31 gigs, where Qwen 3.8 27B used 21. And at 262 thousand tokens, it didn't fit at all.

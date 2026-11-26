@@ -1,0 +1,154 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=EB+Garamond&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/oct.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="155.533" data-width="1920" data-height="1080">
+<canvas id="cv213" class="clip" width="1920" height="1080" data-start="0.000" data-duration="8.020" data-track-index="1" style="z-index:105"></canvas>
+<div id="w215" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:106;"><video id="v214" class="clip fit" src="assets/clips/kHOuP7Z6y40_dc576e7e.mp4" muted playsinline data-start="8.020" data-duration="5.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s216" class="clip scene " data-start="8.020" data-duration="5.060" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: ScenseMe Phytonica (CC BY) / YouTube</div></div>
+<div id="w218" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:108;"><video id="v217" class="clip fit" src="assets/clips/px_nerve_1_41b9d9bd.mp4" muted playsinline data-start="13.080" data-duration="2.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s220" class="clip scene " data-start="13.080" data-duration="2.740" data-track-index="2" style="z-index:109" data-layout-allow-overflow data-layout-allow-overlap><div id="h219" class="chap" style="top:400px;font-size:130px">WHAT IT DOES TO YOU</div></div>
+<canvas id="cv221" class="clip" width="1920" height="1080" data-start="15.820" data-duration="18.780" data-track-index="1" style="z-index:110"></canvas>
+<canvas id="cv222" class="clip" width="1920" height="1080" data-start="34.600" data-duration="12.920" data-track-index="1" style="z-index:111"></canvas>
+<canvas id="cv223" class="clip" width="1920" height="1080" data-start="47.520" data-duration="4.780" data-track-index="1" style="z-index:112"></canvas>
+<div id="w225" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:113;"><video id="v224" class="clip fit" src="assets/clips/px_lungs_2_d03c6795.mp4" muted playsinline data-start="52.300" data-duration="7.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w227" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:114;"><video id="v226" class="clip fit" src="assets/clips/px_ambulance_2_e70f4f32.mp4" muted playsinline data-start="59.660" data-duration="4.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w229" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:115;"><video id="v228" class="clip fit" src="assets/clips/px_hospital_1_a8cdca88.mp4" muted playsinline data-start="63.940" data-duration="3.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w231" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:116;"><video id="v230" class="clip fit" src="assets/clips/px_hospital_2_a07c9b5c.mp4" muted playsinline data-start="67.880" data-duration="7.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<canvas id="cv232" class="clip" width="1920" height="1080" data-start="75.080" data-duration="9.460" data-track-index="1" style="z-index:117"></canvas>
+<div id="w234" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:118;"><video id="v233" class="clip fit" src="assets/clips/px_lungs_1_acce2bea.mp4" muted playsinline data-start="84.540" data-duration="4.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w236" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:119;"><video id="v235" class="clip fit" src="assets/clips/23Yw6_1MoFw_2dc5837a.mp4" muted playsinline data-start="89.140" data-duration="4.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s237" class="clip scene " data-start="89.140" data-duration="4.240" data-track-index="2" style="z-index:120" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<canvas id="cv238" class="clip" width="1920" height="1080" data-start="93.380" data-duration="1.120" data-track-index="1" style="z-index:121"></canvas>
+<div id="w240" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:122;"><video id="v239" class="clip fit" src="assets/clips/px_lungs_0_f945acac.mp4" muted playsinline data-start="94.500" data-duration="5.080" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w242" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:123;"><video id="v241" class="clip fit" src="assets/clips/PsX0yOggYHw_269d371b.mp4" muted playsinline data-start="99.580" data-duration="3.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s244" class="clip scene " data-start="99.580" data-duration="3.200" data-track-index="2" style="z-index:124" data-layout-allow-overflow data-layout-allow-overlap><div id="h243" class="chap" style="top:400px;font-size:130px">A HUNTER</div><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w246" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:125;"><video id="v245" class="clip fit" src="assets/clips/px_rockpool_1_9f5823b2.mp4" muted playsinline data-start="102.780" data-duration="1.460" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w248" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:126;"><video id="v247" class="clip fit" src="assets/clips/px_crab_1_0a3f94d3.mp4" muted playsinline data-start="104.240" data-duration="1.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w250" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:127;"><video id="v249" class="clip fit" src="assets/clips/px_crab_2_8e48ef16.mp4" muted playsinline data-start="105.840" data-duration="2.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w252" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:128;"><video id="v251" class="clip fit" src="assets/clips/px_shrimp_0_b599ddd6.mp4" muted playsinline data-start="108.700" data-duration="2.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w254" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:129;"><video id="v253" class="clip fit" src="assets/clips/px_fish_0_0ad69a81.mp4" muted playsinline data-start="110.800" data-duration="1.720" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w256" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:130;"><video id="v255" class="clip fit" src="assets/clips/px_dawn_0_e08affe0.mp4" muted playsinline data-start="112.520" data-duration="2.380" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w258" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:131;"><video id="v257" class="clip fit" src="assets/clips/px_dusk_1_8c4fc795.mp4" muted playsinline data-start="114.900" data-duration="2.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w260" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:132;"><video id="v259" class="clip fit" src="assets/clips/PsX0yOggYHw_98dc0a23.mp4" muted playsinline data-start="117.120" data-duration="2.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s261" class="clip scene " data-start="117.120" data-duration="2.780" data-track-index="2" style="z-index:133" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w263" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:134;"><video id="v262" class="clip fit" src="assets/clips/5qdExmPcR5Q_afba0a8c.mp4" muted playsinline data-start="119.900" data-duration="2.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s264" class="clip scene " data-start="119.900" data-duration="2.060" data-track-index="2" style="z-index:135" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Adventures Underwater by Henning Laatsch (CC BY) / YouTube</div></div>
+<canvas id="cv265" class="clip" width="1920" height="1080" data-start="121.960" data-duration="10.600" data-track-index="1" style="z-index:136"></canvas>
+<div id="w267" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:137;"><video id="v266" class="clip fit" src="assets/clips/xpN6H5yhM3Q_f1d49e34.mp4" muted playsinline data-start="132.560" data-duration="5.120" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s268" class="clip scene " data-start="132.560" data-duration="5.120" data-track-index="2" style="z-index:138" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: PLOS Media (CC BY) / YouTube</div></div>
+<div id="w270" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:139;"><video id="v269" class="clip fit" src="assets/clips/px_crab_0_b4e6575a.mp4" muted playsinline data-start="137.680" data-duration="3.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w272" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:140;"><video id="v271" class="clip fit" src="assets/clips/A_fka7z8JSM_7b83f6f9.mp4" muted playsinline data-start="140.900" data-duration="4.400" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s273" class="clip scene " data-start="140.900" data-duration="4.400" data-track-index="2" style="z-index:141" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w275" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:142;"><video id="v274" class="clip fit" src="assets/clips/px_fish_1_69645d91.mp4" muted playsinline data-start="145.300" data-duration="4.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w277" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:143;"><video id="v276" class="clip fit" src="assets/clips/vFSVZcjuXaE_7ac339dc.mp4" muted playsinline data-start="149.500" data-duration="4.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s278" class="clip scene " data-start="149.500" data-duration="4.240" data-track-index="2" style="z-index:144" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+<div id="w280" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:145;"><video id="v279" class="clip fit" src="assets/clips/gBruLGMDC_8_4f0e0a1c.mp4" muted playsinline data-start="153.740" data-duration="1.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s281" class="clip scene " data-start="153.740" data-duration="1.780" data-track-index="2" style="z-index:146" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Video: Roser Gari Perez (CC BY) / YouTube</div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+{const c=document.getElementById("cv213").getContext("2d");tl.to({},{duration:8.020,ease:"none",onUpdate:function(){SC2.everywhere(c,this.time(),{"arms": 3.4, "skin": 5.0, "eggs": 6.6, "d": 8.02});}},0.000);}
+tl.fromTo("#v214",{scale:1.0},{scale:1.06,duration:5.06,ease:"none"},8.020);
+tl.fromTo("#v217",{scale:1.0},{scale:1.06,duration:2.74,ease:"none"},13.080);
+tl.fromTo("#h219",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},13.230);
+tl.to("#h219",{opacity:0,duration:0.7,ease:"power1.in"},15.280);
+{const c=document.getElementById("cv221").getContext("2d");tl.to({},{duration:18.780,ease:"none",onUpdate:function(){SC2.nerve(c,this.time(),{"block": 12.76, "d": 18.78});}},15.820);}
+{const c=document.getElementById("cv222").getContext("2d");tl.to({},{duration:12.920,ease:"none",onUpdate:function(){SC2.paralysis(c,this.time(),{"face": 2.5, "arms": 4.6, "legs": 5.0, "chest": 6.6, "labels": {"face": ["FACE AND MOUTH", 540, 260], "arms": ["ARMS", 1430, 470], "legs": ["LEGS", 520, 780], "chest": ["DIAPHRAGM", 1430, 620]}, "d": 12.92});}},34.600);}
+{const c=document.getElementById("cv223").getContext("2d");tl.to({},{duration:4.780,ease:"none",onUpdate:function(){SC2.aware(c,this.time(),{"d": 4.78});}},47.520);}
+tl.fromTo("#v224",{scale:1.0},{scale:1.06,duration:7.36,ease:"none"},52.300);
+tl.fromTo("#v226",{scale:1.0},{scale:1.06,duration:4.28,ease:"none"},59.660);
+tl.fromTo("#v228",{scale:1.0},{scale:1.06,duration:3.94,ease:"none"},63.940);
+tl.fromTo("#v230",{scale:1.0},{scale:1.06,duration:7.2,ease:"none"},67.880);
+{const c=document.getElementById("cv232").getContext("2d");tl.to({},{duration:9.460,ease:"none",onUpdate:function(){SC2.recover(c,this.time(),{"rec": 3.0, "dur": 9.0, "d": 9.46});}},75.080);}
+tl.fromTo("#v233",{scale:1.0},{scale:1.06,duration:4.6,ease:"none"},84.540);
+tl.fromTo("#v235",{scale:1.0},{scale:1.06,duration:4.24,ease:"none"},89.140);
+{const c=document.getElementById("cv238").getContext("2d");tl.to({},{duration:1.120,ease:"none",onUpdate:function(){SC2.flash(c,this.time(),{"on": -2, "off": 0.2, "d": 1.12});}},93.380);}
+tl.fromTo("#v239",{scale:1.0},{scale:1.06,duration:5.08,ease:"none"},94.500);
+tl.fromTo("#v241",{scale:1.0},{scale:1.06,duration:3.2,ease:"none"},99.580);
+tl.fromTo("#h243",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},99.730);
+tl.to("#h243",{opacity:0,duration:0.7,ease:"power1.in"},101.780);
+tl.fromTo("#v245",{scale:1.0},{scale:1.06,duration:1.46,ease:"none"},102.780);
+tl.fromTo("#v247",{scale:1.0},{scale:1.06,duration:1.6,ease:"none"},104.240);
+tl.fromTo("#v249",{scale:1.0},{scale:1.06,duration:2.86,ease:"none"},105.840);
+tl.fromTo("#v251",{scale:1.0},{scale:1.06,duration:2.1,ease:"none"},108.700);
+tl.fromTo("#v253",{scale:1.0},{scale:1.06,duration:1.72,ease:"none"},110.800);
+tl.fromTo("#v255",{scale:1.0},{scale:1.06,duration:2.38,ease:"none"},112.520);
+tl.fromTo("#v257",{scale:1.0},{scale:1.06,duration:2.22,ease:"none"},114.900);
+tl.fromTo("#v259",{scale:1.0},{scale:1.06,duration:2.78,ease:"none"},117.120);
+tl.fromTo("#v262",{scale:1.0},{scale:1.06,duration:2.06,ease:"none"},119.900);
+{const c=document.getElementById("cv265").getContext("2d");tl.to({},{duration:10.600,ease:"none",onUpdate:function(){SC2.hunt(c,this.time(),{"pounce": 0.8, "bite": 5.28, "d": 10.6});}},121.960);}
+tl.fromTo("#v266",{scale:1.0},{scale:1.06,duration:5.12,ease:"none"},132.560);
+tl.fromTo("#v269",{scale:1.0},{scale:1.06,duration:3.22,ease:"none"},137.680);
+tl.fromTo("#v271",{scale:1.0},{scale:1.06,duration:4.4,ease:"none"},140.900);
+tl.fromTo("#v274",{scale:1.0},{scale:1.06,duration:4.2,ease:"none"},145.300);
+tl.fromTo("#v276",{scale:1.0},{scale:1.06,duration:4.24,ease:"none"},149.500);
+tl.fromTo("#v279",{scale:1.0},{scale:1.06,duration:1.78,ease:"none"},153.740);
+tl.set({}, {}, 155.533);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

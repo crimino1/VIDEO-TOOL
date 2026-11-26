@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="626.7" data-width="1920" data-height="1080">
+<div id="s6" class="clip scene" data-start="0.000" data-duration="9.660" data-track-index="2" style="z-index:11"><div id="w7" class="sc"><div id="b8" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i2" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>github.com/deepseek-ai/deepseek-harness</span></div><div class="wbody" style="height:520px"><img id="k1" src="assets/img/gh_repo_e3003.jpg" alt="" style="width:900px;height:520px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div id="i3" class="a lg" style=""><img src="assets/raw/logos/deepseek_logo.png" alt="" style="height:64px"></div><div id="i4" class="a tx " style="font-size:42px;text-align:left">The next big model leaked from DeepSeek's own code on GitHub.</div><div id="i5" class="a tx ink2" style="font-size:34px;text-align:left">Not a stage. Not a blog post. Not a launch event.</div></div></div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness</div></div></div>
+<div id="s13" class="clip scene" data-start="9.660" data-duration="9.060" data-track-index="2" style="z-index:12"><div id="w14" class="sc"><div class="head"><div class="kick">The leak</div><div class="ttl">Three model names</div></div><div id="b15" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i12" class="a codep" style=""><div class="cpath">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts</div><div class="cbody2" style="font-size:30px"><div id="cl9" class="cl acc"><span class="ln">159</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5&#x27; },</span></div><div id="cl10" class="cl acc"><span class="ln">160</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-open&#x27;, ...requires(&#x27;0.0.1&#x27;) },</span></div><div id="cl11" class="cl acc"><span class="ln">161</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-next&#x27;, ...requires(&#x27;99.0.0-alpha.1&#x27;) },</span></div></div></div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness (commit 074889e)</div></div></div>
+<div id="s21" class="clip scene" data-start="18.720" data-duration="10.220" data-track-index="2" style="z-index:13"><div id="w22" class="sc"><div class="head"><div class="kick">The hype</div><div class="ttl">Within hours, X went crazy</div></div><div id="b23" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i16" class="a twc" style="width:520px"><img src="assets/img/tw_glitch_55.png" alt="" style="width:520px;height:392px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i17" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“V5 beats GPT-6 Astra”</div></div><div class="verd warn">CLAIM</div></div><div id="i18" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“V5 drops in November”</div></div><div class="verd warn">CLAIM</div></div><div id="i19" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“2 trillion parameters”</div></div><div class="verd warn">CLAIM</div></div><div id="i20" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“trained fully on Chinese chips”</div></div><div class="verd warn">CLAIM</div></div></div></div></div></div><div class="srcl">@glitch_catAI on X, Sep 26, 2026</div></div></div>
+<div id="s30" class="clip scene" data-start="28.940" data-duration="12.700" data-track-index="2" style="z-index:14"><div id="w31" class="sc"><div class="head"><div class="kick">Today</div><div class="ttl">Every DeepSeek V5 leak, checked</div></div><div id="b32" class="body"><div class="hrow" style="gap:60px;justify-content:flex-start"><div class="col" style="gap:20px;justify-content:center;align-items:flex-start"><div id="i24" class="a verd good" style="font-size:60px;padding:27px 48px;border-width:3px">REAL</div><div id="i25" class="a tx " style="font-size:40px;text-align:left">What's real?</div></div><div class="col" style="gap:20px;justify-content:center;align-items:flex-start"><div id="i26" class="a verd warn" style="font-size:60px;padding:27px 48px;border-width:3px">RUMOR</div><div id="i27" class="a tx " style="font-size:40px;text-align:left">What's a rumor?</div></div><div class="col" style="gap:20px;justify-content:center;align-items:flex-start"><div id="i28" class="a verd bad" style="font-size:60px;padding:27px 48px;border-width:3px">MADE UP</div><div id="i29" class="a tx " style="font-size:40px;text-align:left">What's made up?</div></div></div></div></div></div>
+<div id="s35" class="clip scene" data-start="41.640" data-duration="8.080" data-track-index="2" style="z-index:15"><div id="w36" class="sc"><div id="b37" class="body full"><div class="col" style="gap:46px;justify-content:center;align-items:stretch"><div id="i33" class="a " style=""><div style="display:flex;justify-content:center;align-items:center;gap:90px"><img src="assets/raw/logos/nvidia_logo.png" alt="" style="height:110px"><div class="hd ink3" style="font-size:44px">vs</div><img src="assets/raw/logos/huawei.png" alt="" style="height:96px"></div></div><div id="i34" class="a tx " style="font-size:48px;text-align:center">The real story: <b class="acc">who controls the future of AI chips</b></div></div></div></div></div>
+<div id="s41" class="clip scene" data-start="49.720" data-duration="13.780" data-track-index="2" style="z-index:16"><div id="w42" class="sc"><div class="head"><div class="kick">Why it matters</div><div class="ttl">Go back to January 2025</div></div><div id="b43" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i38" class="a lg" style=""><img src="assets/raw/logos/deepseek_icon.png" alt="" style="height:220px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i40" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/deepseek_icon.png" alt="" class="slogo">Jan 20, 2025</div><div id="v39" class="sval hero" style="font-size:84px">DeepSeek-R1</div><div class="ssub">reasoning model, close to the best US models at a fraction of the cost</div></div></div></div></div></div><div class="srcl">DeepSeek API change log</div></div></div>
+<div id="s49" class="clip scene" data-start="63.500" data-duration="13.340" data-track-index="2" style="z-index:17"><div id="w50" class="sc"><div class="head"><div class="kick">Why it matters</div><div class="ttl">One model from a lab in Hangzhou</div></div><div id="b51" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i45" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>statista.com · Jan 28, 2025</span></div><div class="wbody" style="height:337px"><img id="k44" src="assets/img/n_statista_fba54.jpg" alt="" style="width:760px;height:337px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i47" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/nvidia_logo.png" alt="" class="slogo">Nvidia market value, Jan 27, 2025</div><div id="v46" class="sval bad" style="font-size:96px">−$589B</div><div class="ssub">in one day: the biggest one-day loss in US history at the time</div></div><div id="i48" class="a tx " style="font-size:34px;text-align:left">Since then, every time “DeepSeek” trends, markets get nervous.</div></div></div></div></div><div class="srcl">Statista · Bloomberg ($589B)</div></div></div>
+<div id="s56" class="clip scene" data-start="76.840" data-duration="10.720" data-track-index="2" style="z-index:18"><div id="w57" class="sc"><div class="head"><div class="kick">DeepSeek this year</div><div class="ttl">2026 has been busy</div></div><div id="b58" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i52" class="a tev " style=""><i class="tdot "></i><div class="tdate">Apr 24</div><div class="tlab">V4 Preview · 1.6T total, 49B active</div></div><div id="i53" class="a tev " style=""><i class="tdot "></i><div class="tdate">Aug 13</div><div class="tlab">V4 Pro fully public</div></div><div id="i54" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Sep 10</div><div class="tlab">V4.1 Flash</div></div></div></div><div id="i55" class="a tx ink3" style="font-size:34px;text-align:left">All open weights.</div></div></div><div class="srcl">DeepSeek API news · @deepseek_ai on X</div></div></div>
+<div id="s68" class="clip scene" data-start="87.560" data-duration="18.900" data-track-index="2" style="z-index:19"><div id="w69" class="sc"><div class="head"><div class="kick">DeepSeek this year</div><div class="ttl">DeepSeek V4.1 Flash</div></div><div id="b70" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i59" class="a twc" style="width:520px"><img src="assets/img/tw_v41flash_62.png" alt="" style="width:520px;height:408px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i61" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/deepseek_icon.png" alt="" class="slogo">Mixture of experts</div><div id="v60" class="sval " style="font-size:84px">552B</div><div class="ssub">total parameters</div></div><div id="i63" class="a stat hero" style="flex:1"><div class="slab">Active</div><div id="v62" class="sval hero" style="font-size:84px">8B / 16B</div><div class="ssub">reading input / writing output</div></div></div><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i65" class="a stat " style="flex:1"><div class="slab">Context</div><div id="v64" class="sval " style="font-size:84px">1M</div><div class="ssub">tokens, native image input</div></div><div id="i67" class="a stat " style="flex:1"><div class="slab">Open weights</div><div id="v66" class="sval " style="font-size:84px">MIT</div><div class="ssub">anyone can download and run it</div></div></div></div></div></div></div><div class="srcl">@deepseek_ai on X · Hugging Face model card</div></div></div>
+<div id="s78" class="clip scene" data-start="106.460" data-duration="5.240" data-track-index="2" style="z-index:20"><div id="w79" class="sc"><div class="head"><div class="kick">DeepSeek V4.1 Flash</div><div class="ttl">The price</div></div><div id="b80" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i72" class="a win" style="width:700px"><div class="wbar"><i></i><i></i><i></i><span>api-docs.deepseek.com · pricing</span></div><div class="wbody" style="height:539px"><img id="k71" src="assets/img/ds_pricing_79be6.jpg" alt="" style="width:700px;height:539px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i74" class="a stat hero" style="flex:1"><div class="slab">Input, off-peak</div><div id="v73" class="sval hero" style="font-size:96px">$0.15</div><div class="ssub">per million tokens</div></div><div id="i76" class="a stat " style="flex:1"><div class="slab">Output, off-peak</div><div id="v75" class="sval " style="font-size:96px">$0.60</div><div class="ssub">per million tokens</div></div></div><div id="i77" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Both are off-peak prices. Peak: $0.30 input, $1.20 output.</div></div></div></div></div></div><div class="srcl">api-docs.deepseek.com</div></div></div>
+<div id="s84" class="clip scene" data-start="111.700" data-duration="6.780" data-track-index="2" style="z-index:21"><div id="w85" class="sc"><div id="b86" class="body clipb"><div class="vframe"></div><div class="vcred">@deepseek_ai on X · V4.1-Flash-1017 demos, Oct 17, 2026</div></div></div></div>
+<div id="vw82" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:22"><video id="v81" class="clip" src="assets/clips/grid_1017_e8015f9a.mp4" muted playsinline data-start="111.700" data-duration="6.780" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i83" class="a cap acc" style="">Oct 17 · DeepSeek-V4.1-Flash-1017</div></div></div>
+<div id="s94" class="clip scene" data-start="118.480" data-duration="10.420" data-track-index="2" style="z-index:23"><div id="w95" class="sc"><div id="b96" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i88" class="a win" style="width:720px"><div class="wbar"><i></i><i></i><i></i><span>api-docs.deepseek.com/news · Sep 10, 2026</span></div><div class="wbody" style="height:563px"><img id="k87" src="assets/img/ds_news0910_ffe6c.jpg" alt="" style="width:720px;height:563px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i90" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/deepseek_icon.png" alt="" class="slogo">Next model DeepSeek has named</div><div id="v89" class="sval hero" style="font-size:96px">V4.1 Pro</div></div><div id="i92" class="a stat bad" style="flex:1"><div class="slab">Shipped?</div><div id="v91" class="sval bad" style="font-size:96px">Not yet</div><div class="ssub">pricing still lists V4-Pro-0813</div></div><div id="i93" class="a tx ink3" style="font-size:34px;text-align:left">Remember that. It matters later.</div></div></div></div></div><div class="srcl">DeepSeek API news, Sep 10, 2026</div></div></div>
+<div id="s102" class="clip scene" data-start="128.900" data-duration="16.760" data-track-index="2" style="z-index:24"><div id="w103" class="sc"><div id="b104" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i97" class="a verd " style="">LEAK #1</div><div id="i98" class="a hd" style="font-size:72px;text-align:left">The code</div><div id="i99" class="a tx " style="font-size:36px;text-align:left">Test files that check which models show up in the app, and when the app needs an update.</div></div></div><div class="col" style="flex:none;min-width:0"><div id="i101" class="a win" style="width:860px"><div class="wbar"><i></i><i></i><i></i><span>github.com/deepseek-ai/deepseek-harness</span></div><div class="wbody" style="height:497px"><img id="k100" src="assets/img/gh_repo_e3003.jpg" alt="" style="width:860px;height:497px"></div></div></div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness · public since Aug 13, 2026</div></div></div>
+<div id="s116" class="clip scene" data-start="145.660" data-duration="16.160" data-track-index="2" style="z-index:25"><div id="w117" class="sc"><div class="head"><div class="kick">Leak #1</div><div class="ttl">Three names in the test files</div></div><div id="b118" class="body"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i111" class="a codep" style=""><div class="cpath">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts</div><div class="cbody2" style="font-size:26px"><div id="cl105" class="cl"><span class="ln">157</span><span class="lc">  const server = await listing(json({ data: [</span></div><div id="cl106" class="cl"><span class="ln">158</span><span class="lc">    FLASH,</span></div><div id="cl107" class="cl acc"><span class="ln">159</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5&#x27; },</span></div><div id="cl108" class="cl acc"><span class="ln">160</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-open&#x27;, ...requires(&#x27;0.0.1&#x27;) },</span></div><div id="cl109" class="cl acc"><span class="ln">161</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-next&#x27;, ...requires(&#x27;99.0.0-alpha.1&#x27;) },</span></div><div id="cl110" class="cl"><span class="ln">162</span><span class="lc">    { id: &#x27;deepseek-v4-pro&#x27; },</span></div></div></div><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i113" class="a stat " style="flex:1"><div class="slab">Added</div><div id="v112" class="sval " style="font-size:64px">Sep 24</div><div class="ssub">commit 0a13e89, by a DeepSeek engineer</div></div><div id="i115" class="a stat hero" style="flex:1"><div class="slab">Noticed</div><div id="v114" class="sval hero" style="font-size:64px">Oct 27–28</div><div class="ssub">then it exploded</div></div></div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness · commits 0a13e89 and 7755d97 (Sep 24, 2026)</div></div></div>
+<div id="s123" class="clip scene" data-start="161.820" data-duration="13.720" data-track-index="2" style="z-index:26"><div id="w124" class="sc"><div id="b125" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i119" class="a twc" style="width:520px"><img src="assets/img/tw_viral_62.png" alt="" style="width:520px;height:492px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i121" class="a win" style="width:640px"><div class="wbar"><i></i><i></i><i></i><span>news.mydrivers.com · Oct 28, 2026</span></div><div class="wbody" style="height:324px"><img id="k120" src="assets/img/n_kuaikeji_dddd8.jpg" alt="" style="width:640px;height:324px"></div></div><div id="i122" class="a quote " style=""><div class="qt">“本月应该没戏，要到11月份了 · October is unlikely, it will be November”</div><div class="qwho"><div><b>快科技 (Kuai Keji)</b><span>guessing V5 Pro and V5 Flash in mid-November</span></div></div></div></div></div></div></div><div class="srcl">@0x0SojalSec on X, Oct 28 · 快科技 (mydrivers.com)</div></div></div>
+<div id="s129" class="clip scene" data-start="175.540" data-duration="6.740" data-track-index="2" style="z-index:27"><div id="w130" class="sc"><div class="head"><div class="kick">Leak #1</div><div class="ttl">So, is this real?</div></div><div id="b131" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i126" class="a verd good" style="">REAL</div><div id="i127" class="a hd" style="font-size:84px">The names are real.</div><div id="i128" class="a tx " style="font-size:44px;text-align:left">They're in DeepSeek's official repo. Nobody faked that.</div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness</div></div></div>
+<div id="s144" class="clip scene" data-start="182.280" data-duration="30.940" data-track-index="2" style="z-index:28"><div id="w145" class="sc"><div class="head"><div class="kick">Leak #1</div><div class="ttl">What the tests actually do</div></div><div id="b146" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i142" class="a codep" style=""><div class="cpath">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts</div><div class="cbody2" style="font-size:24px"><div id="cl132" class="cl bad"><span class="ln">159</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5&#x27; },</span></div><div id="cl133" class="cl acc"><span class="ln">160</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-open&#x27;, ...requires(&#x27;0.0.1&#x27;) },</span></div><div id="cl134" class="cl warn"><span class="ln">161</span><span class="lc">    { ...PRO, id: &#x27;deepseek-v5-next&#x27;, ...requires(&#x27;99.0.0-alpha.1&#x27;) },</span></div><div id="cl135" class="cl"><span class="ln">162</span><span class="lc">    { id: &#x27;deepseek-v4-pro&#x27; },</span></div><div id="cl136" class="cl"><span class="ln">163</span><span class="lc">  ] }))</span></div><div id="cl137" class="cl"><span class="ln">164</span><span class="lc">  …</span></div><div id="cl138" class="cl acc"><span class="ln">165</span><span class="lc">  expect(…listModels(…)).toEqual([&#x27;deepseek-flash&#x27;, &#x27;deepseek-v5-open&#x27;])</span></div><div id="cl139" class="cl bad"><span class="ln">166</span><span class="lc">  await expect(…&#x27;deepseek-v5&#x27; …).rejects.toMatchObject({ code: &#x27;MODEL_UNSUPPORTED&#x27; })</span></div><div id="cl140" class="cl"><span class="ln">167</span><span class="lc">  …</span></div><div id="cl141" class="cl warn"><span class="ln">168</span><span class="lc">    .rejects.toMatchObject({ code: &#x27;CLIENT_UPGRADE_REQUIRED&#x27;, …99.0.0-alpha.1 })</span></div></div></div><div id="i143" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Plain deepseek-v5 is refused because it declares no minimum version. Give it requires('0.0.1') and it's accepted. The real Harness is version 0.2.x.</div></div></div></div><div class="srcl">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts L159–171 (excerpted)</div></div></div>
+<div id="s154" class="clip scene" data-start="213.220" data-duration="9.720" data-track-index="2" style="z-index:29"><div id="w155" class="sc"><div class="head"><div class="kick">Leak #1</div><div class="ttl">The context window: 9 tokens</div></div><div id="b156" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i151" class="a codep" style="width:1000px;"><div class="cpath">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts</div><div class="cbody2" style="font-size:22px"><div id="cl147" class="cl warn"><span class="ln">186</span><span class="lc">  modelOverrides: { …, &#x27;deepseek-v5&#x27;: { contextWindow: 9 } }</span></div><div id="cl148" class="cl"><span class="ln">187</span><span class="lc">  …</span></div><div id="cl149" class="cl"><span class="ln">188</span><span class="lc">  …resolveModelInfo(…, &#x27;deepseek-v5&#x27;)</span></div><div id="cl150" class="cl warn"><span class="ln">189</span><span class="lc">    .resolves.toMatchObject({ context: { contextWindow: 9 } })</span></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i152" class="a bg bad" style="font-size:220px;text-align:center">9</div><div id="i153" class="a tx " style="font-size:34px;text-align:center">tokens. Not 9 million. Not 9,000.</div></div></div></div></div><div class="srcl">deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts L186, L195 (excerpted) · also listed-catalog.spec.ts L167</div></div></div>
+<div id="s161" class="clip scene" data-start="222.940" data-duration="9.140" data-track-index="2" style="z-index:30"><div id="w162" class="sc"><div id="b163" class="body full"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div id="i157" class="a hd" style="font-size:56px">Placeholders: dummy names to test the plumbing</div><div class="hrow" style="gap:22px;justify-content:flex-start"><div id="i158" class="a verd bad" style="">NO SPECS</div><div id="i159" class="a verd bad" style="">NO BENCHMARKS</div><div id="i160" class="a verd bad" style="">NO RELEASE DATE</div></div></div></div><div class="srcl">github.com/deepseek-ai/deepseek-harness</div></div></div>
+<div id="s166" class="clip scene" data-start="232.080" data-duration="14.840" data-track-index="2" style="z-index:31"><div id="w167" class="sc"><div class="head"><div class="kick">Leak #1</div><div class="ttl">One point to the hype crowd</div></div><div id="b168" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i164" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">A DeepSeek engineer typed “V5”: they're thinking about it</div></div><div class="verd good">FAIR</div></div><div id="i165" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“V5 launches in November”</div></div><div class="verd bad">NOT IN THE CODE</div></div></div></div></div></div>
+<div id="s176" class="clip scene" data-start="246.920" data-duration="31.500" data-track-index="2" style="z-index:32"><div id="w177" class="sc"><div id="b178" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i169" class="a verd " style="">LEAK #2</div><div id="i170" class="a twc" style="width:520px"><img src="assets/img/tw_glitch_55.png" alt="" style="width:520px;height:392px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i171" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Imminent V5 launch</div></div><div class="verd warn">CLAIM</div></div><div id="i172" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Liang Wenfeng: “biggest bet”</div></div><div class="verd warn">CLAIM</div></div><div id="i173" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">About 2 trillion parameters</div></div><div class="verd warn">CLAIM</div></div><div id="i174" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Trained fully on Huawei Ascend</div></div><div class="verd warn">CLAIM</div></div><div id="i175" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Beats Astra</div></div><div class="verd warn">CLAIM</div></div></div></div></div></div><div class="srcl">@glitch_catAI on X, Sep 26, 2026 · 846K views</div></div></div>
+<div id="s184" class="clip scene" data-start="278.420" data-duration="9.380" data-track-index="2" style="z-index:33"><div id="w185" class="sc"><div class="head"><div class="kick">Leak #2</div><div class="ttl">The proof: a logo</div></div><div id="b186" class="body"><div class="row" style="gap:60px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i180" class="a chartc" style="width:820px"><div class="cbody" style="height:515px"><img id="k179" src="assets/raw/web/p_glitch.jpg" alt="" style="width:820px;height:515px"></div><div class="ccap">The image attached to the post</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:flex-start"><div id="i181" class="a verd bad" style="">NO CHART</div><div id="i182" class="a verd bad" style="">NO TABLE</div><div id="i183" class="a verd bad" style="">NO SCORE</div></div></div></div></div><div class="srcl">@glitch_catAI on X</div></div></div>
+<div id="s190" class="clip scene" data-start="287.800" data-duration="12.920" data-track-index="2" style="z-index:34"><div id="w191" class="sc"><div class="head"><div class="kick">Leak #2</div><div class="ttl">Let's go through it</div></div><div id="b192" class="body"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i187" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“Beats Astra”</div><div class="ssub" style="margin-top:4px">no benchmark, no number</div></div><div class="verd bad">NO SOURCE</div></div><div id="i188" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“Imminent launch”</div><div class="ssub" style="margin-top:4px">later reporting points to 2027</div></div><div class="verd bad">CONTRADICTED</div></div><div id="i189" class="a fix" style=""><div class="fk">Source check</div><div class="ft">The post's headline says “Beats Astra”. It never names GPT-6 or gives a benchmark.</div></div></div></div><div class="srcl">@glitch_catAI on X</div></div></div>
+<div id="s196" class="clip scene" data-start="300.720" data-duration="11.780" data-track-index="2" style="z-index:35"><div id="w197" class="sc"><div id="b198" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i193" class="a twc" style="width:600px"><img src="assets/img/tw_theinfo_40.png" alt="" style="width:600px;height:342px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i194" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“Biggest bet”</div></div><div class="verd warn">OUT OF CONTEXT</div></div><div id="i195" class="a quote " style=""><div class="qt">“training AI models on Huawei chips is one of the company's biggest bets and “has to work””</div><div class="qwho"><div><b>The Information</b><span>Sep 21, 2026: about Huawei chips, not V5</span></div></div></div></div></div></div></div><div class="srcl">@theinformation on X, Sep 21, 2026</div></div></div>
+<div id="s203" class="clip scene" data-start="312.500" data-duration="16.500" data-track-index="2" style="z-index:36"><div id="w204" class="sc"><div class="head"><div class="kick">Leak #2</div><div class="ttl">The parameter counts</div></div><div id="b205" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i200" class="a win" style="width:700px"><div class="wbar"><i></i><i></i><i></i><span>eu.36kr.com · Sep 23, 2026</span></div><div class="wbody" style="height:380px"><img id="k199" src="assets/img/n_36kr8t_0232a.jpg" alt="" style="width:700px;height:380px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i201" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“2 trillion parameters”</div><div class="ssub" style="margin-top:4px">The Standard: the market reads 2T as V4.1 Pro</div></div><div class="verd warn">NOT TIED TO V5</div></div><div id="i202" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">“8 trillion parameters”</div><div class="ssub" style="margin-top:4px">Liang at an investor meeting (36Kr)</div></div><div class="verd warn">FUTURE GOAL</div></div></div></div></div></div><div class="srcl">The Information via The Standard · 36Kr</div></div></div>
+<div id="s213" class="clip scene" data-start="329.000" data-duration="10.560" data-track-index="2" style="z-index:37"><div id="w214" class="sc"><div class="head"><div class="kick">Leak #2</div><div class="ttl">How a leak gets built</div></div><div id="b215" class="body"><div class="row" style="gap:40px;align-items:center"><div class="col" style="flex:none;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:flex-start"><div id="i206" class="a pill" style="">Huawei-chip reporting</div><div id="i207" class="a pill" style="">2T, 8T parameter counts</div><div id="i208" class="a pill" style="">a model name: V5</div></div></div><div class="col" style="flex:none;min-width:0"><div id="i209" class="a " style=""><div class="hd ink3" style="font-size:72px">→</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i211" class="a stat bad" style="flex:1"><div class="slab">The viral post</div><div id="v210" class="sval bad" style="font-size:64px">“V5 beats Astra”</div><div class="ssub">+ a benchmark claim with no benchmark</div></div><div id="i212" class="a tx " style="font-size:40px;text-align:left">Classic leak culture.</div></div></div></div></div></div></div>
+<div id="s222" class="clip scene" data-start="339.560" data-duration="24.200" data-track-index="2" style="z-index:38"><div id="w223" class="sc"><div id="b224" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i217" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>tech.ifeng.com · Caiwen (财闻), Nov 3, 2026</span></div><div class="wbody" style="height:391px"><img id="k216" src="assets/img/n_caiwen_dd217.jpg" alt="" style="width:760px;height:391px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i218" class="a verd good" style="">THE REAL NEWS</div><div id="i220" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/huawei.png" alt="" class="slogo">Nov 3 · Caiwen + Star Market Daily</div><div id="v219" class="sval hero" style="font-size:72px">Huawei Ascend</div><div class="ssub">V5 to be pre-trained on it, citing the chip supply chain</div></div><div id="i221" class="a tx " style="font-size:38px;text-align:left">Caiwen names the chip: <b class="acc">Ascend 950</b>.</div></div></div></div></div><div class="srcl">Caiwen (via ifeng.com) · Star Market Daily · TechNode, Nov 4</div></div></div>
+<div id="s229" class="clip scene" data-start="363.760" data-duration="25.200" data-track-index="2" style="z-index:39"><div id="w230" class="sc"><div class="head"><div class="kick">The real news</div><div class="ttl">What Caiwen reported</div></div><div id="b231" class="body"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i225" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">V5 training</div></div><div class="verd warn">STILL IN SELECTION</div></div><div id="i226" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Parameters, features, date</div></div><div class="verd warn">INTERNAL SECRETS</div></div><div id="i227" class="a hd" style="font-size:60px"><span class="mono ink3" style="font-size:26px">LIKELY RELEASE</span><br><b class="acc">2027</b>, first or second half</div><div id="i228" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Confirmed by DeepSeek or Huawei?</div></div><div class="verd warn">NO · REPORTED PLAN</div></div></div></div><div class="srcl">Caiwen (财闻), Nov 3, 2026</div></div></div>
+<div id="s237" class="clip scene" data-start="388.960" data-duration="15.400" data-track-index="2" style="z-index:40"><div id="w238" class="sc"><div id="b239" class="body clipb"><div class="vframe"></div><div class="vcred">Huawei Ascend 950 SuperPoD at WAIC 2026 (CN.科技发布会 on YouTube)</div></div></div></div>
+<div id="vw233" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:41"><video id="v232" class="clip" src="assets/clips/yt_ascend950_6c40fba1.mp4" muted playsinline data-start="388.960" data-duration="15.400" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i234" class="a cap " style="">Bloomberg, Sep 4: at least 160,000 Ascend 950DT chips</div><div id="i235" class="a cap " style="">for a site in Inner Mongolia (Ulanqab)</div><div id="i236" class="a cap acc" style="">one source: not currently planned for training</div></div></div>
+<div id="s244" class="clip scene" data-start="404.360" data-duration="14.800" data-track-index="2" style="z-index:42"><div id="w245" class="sc"><div class="head"><div class="kick">The real news</div><div class="ttl">The signals all point one way</div></div><div id="b246" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div id="i240" class="a quote " style=""><div class="qt">“training on Huawei chips “has to work””</div><div class="qwho"><div><b>Liang Wenfeng, per The Information</b><span>Sep 21, 2026</span></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i242" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/huawei.png" alt="" class="slogo">The Information, mid-October</div><div id="v241" class="sval hero" style="font-size:84px">End of 2026</div><div class="ssub">pre-training on Ascend 950DT could start as early as then</div></div><div id="i243" class="a tx " style="font-size:34px;text-align:left">Huawei engineers reportedly work inside DeepSeek's offices.</div></div></div></div></div><div class="srcl">The Information (paywalled; via AI Weekly summary)</div></div></div>
+<div id="s253" class="clip scene" data-start="419.160" data-duration="15.000" data-track-index="2" style="z-index:43"><div id="w254" class="sc"><div class="head"><div class="kick">The real news</div><div class="ttl">DeepSeek's own code, ported to Ascend</div></div><div id="b255" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i248" class="a win" style="width:720px"><div class="wbar"><i></i><i></i><i></i><span>github.com/deepseek-ai/FlashMLA</span></div><div class="wbody" style="height:429px"><img id="k247" src="assets/img/gh_flashmla_54659.jpg" alt="" style="width:720px;height:429px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i250" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/raw/logos/huawei.png" alt="" class="slogo">FlashMLA on Ascend 950 · prefill</div><div id="v249" class="sval hero" style="font-size:96px">410 TFLOPS</div><div class="ssub">95% of the chip's peak</div></div><div id="i252" class="a stat " style="flex:1"><div class="slab">Decode</div><div id="v251" class="sval " style="font-size:64px">360 TFLOPS</div><div class="ssub">83% of peak</div></div></div></div></div></div><div class="srcl">FlashMLA README, Sep 30, 2026</div></div></div>
+<div id="s261" class="clip scene" data-start="434.160" data-duration="22.160" data-track-index="2" style="z-index:44"><div id="w262" class="sc"><div class="head"><div class="kick">The real news</div><div class="ttl">Why it's a big deal</div></div><div id="b263" class="body"><div class="row" style="gap:32px;align-items:stretch"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i257" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/huawei.png" alt="" class="slogo">Post-training</div><div id="v256" class="sval " style="font-size:60px">the finishing step</div><div class="ssub">V4 Pro: post-trained on 1,000 Ascend 910C chips by a Huawei-led team</div></div><div id="i258" class="a fix" style=""><div class="fk">Source check</div><div class="ft">That was reported around June 2026, not this autumn.</div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div id="i260" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/nvidia_logo.png" alt="" class="slogo">Pre-training</div><div id="v259" class="sval bad" style="font-size:60px">the giant part</div><div class="ssub">months long, most of the cost, where the model learns. Everyone still does it on Nvidia.</div></div></div></div></div><div class="srcl">Tom's Hardware · SCMP</div></div></div>
+<div id="s267" class="clip scene" data-start="456.320" data-duration="13.020" data-track-index="2" style="z-index:45"><div id="w268" class="sc"><div id="b269" class="body full"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div id="i264" class="a hd" style="font-size:96px;text-align:center">DeepSeek moment #2?</div><div id="i265" class="a tx " style="font-size:46px;text-align:center">Not about cost this time. About China <b class="acc">not needing Nvidia</b>.</div><div id="i266" class="a " style=""><div style="display:flex;justify-content:center;align-items:center;gap:72px"><img src="assets/raw/logos/deepseek_icon.png" alt="" style="height:90px"><img src="assets/raw/logos/huawei.png" alt="" style="height:70px"></div></div></div></div></div></div>
+<div id="s277" class="clip scene" data-start="469.340" data-duration="9.620" data-track-index="2" style="z-index:46"><div id="w278" class="sc"><div class="head"><div class="kick">The real news</div><div class="ttl">And look at the timing</div></div><div id="b279" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i270" class="a pic" style="width:260px"><img src="assets/raw/people/jensen.jpg" alt="" style="width:260px;height:300px;object-fit:cover"><div class="pn">Jensen Huang</div><div class="pr">no longer Nvidia CEO</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i272" class="a stat bad" style="flex:1"><div class="slab"><img src="assets/raw/logos/nvidia_logo.png" alt="" class="slogo">Nov 17–18 · earnings call</div><div id="v271" class="sval bad" style="font-size:56px">No AI chips to China</div><div class="ssub">“no longer shipping licensed Hopper data center products”</div></div><div id="i274" class="a stat " style="flex:1"><div class="slab"><img src="assets/raw/logos/nvidia_logo.png" alt="" class="slogo">Nov 11 · SEC filing</div><div id="v273" class="sval " style="font-size:56px">Interim CEO: Colette Kress</div></div><div id="i276" class="a stat " style="flex:1"><div class="slab">Nov 16 · Commerce Dept.</div><div id="v275" class="sval " style="font-size:56px">Tighter chip rules</div><div class="ssub">closing the remote-access loophole</div></div></div></div></div></div><div class="srcl">SEC 8-K (Nov 11) · CNBC, Bloomberg (Nov 18) · Boston Globe/AP (Nov 16) · photo: Anderseidesvik, CC BY-SA 4.0</div></div></div>
+<div id="s282" class="clip scene" data-start="478.960" data-duration="9.020" data-track-index="2" style="z-index:47"><div id="w283" class="sc"><div id="b284" class="body full"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i280" class="a hd" style="font-size:72px;text-align:center">Not a side detail.</div><div id="i281" class="a tx " style="font-size:48px;text-align:center">Maybe <b class="acc">the most important AI hardware story of 2027</b>.</div></div></div></div></div>
+<div id="s288" class="clip scene" data-start="487.980" data-duration="25.100" data-track-index="2" style="z-index:48"><div id="w289" class="sc"><div class="head"><div class="kick">Timing</div><div class="ttl">So when is V5 actually coming?</div></div><div id="b290" class="body"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i285" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Bank of America: second half of 2026</div><div class="ssub" style="margin-top:4px">analyst note, September (via 36Kr)</div></div><div class="verd warn">OUTDATED</div></div><div id="i286" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">快科技: November 2026</div><div class="ssub" style="margin-top:4px">based on the placeholder code</div></div><div class="verd bad">NOT HAPPENING</div></div><div id="i287" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">财闻 (Caiwen): 2027</div><div class="ssub" style="margin-top:4px">training still being planned</div></div><div class="verd good">LATEST REPORT</div></div></div></div><div class="srcl">36Kr · 快科技 · Caiwen</div></div></div>
+<div id="s296" class="clip scene" data-start="513.080" data-duration="28.780" data-track-index="2" style="z-index:49"><div id="w297" class="sc"><div class="head"><div class="kick">Timing</div><div class="ttl">DeepSeek's own history</div></div><div id="b298" class="body"><div class="col" style="gap:34px;justify-content:center;align-items:stretch"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i291" class="a tev " style=""><i class="tdot "></i><div class="tdate">Dec 2024</div><div class="tlab">V3</div></div><div id="i292" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Apr 2026</div><div class="tlab">V4 · about 16 months later</div></div><div id="i293" class="a tev " style=""><i class="tdot "></i><div class="tdate">between</div><div class="tlab">V3.1, V3.2, V4 Pro, V4.1 Flash</div></div><div id="i294" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">next</div><div class="tlab">V4.1 Pro</div></div></div></div><div id="i295" class="a tx " style="font-size:40px;text-align:left">Waiting for something soon? The realistic answer is <b class="acc">V4.1 Pro</b>, not V5.</div></div></div><div class="srcl">DeepSeek API change log</div></div></div>
+<div id="s305" class="clip scene" data-start="541.860" data-duration="34.800" data-track-index="2" style="z-index:50"><div id="w306" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">The scorecard (screenshot this)</div></div><div id="b307" class="body"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i299" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">V5 names in DeepSeek's code</div></div><div class="verd good">REAL · PLACEHOLDERS</div></div><div id="i300" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">V5 launching in November</div></div><div class="verd bad">NO EVIDENCE</div></div><div id="i301" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">V5 beats GPT-6 Astra</div></div><div class="verd bad">NO SOURCE</div></div><div id="i302" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">2 trillion parameters</div></div><div class="verd warn">NOT TIED TO V5</div></div><div id="i303" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Trained on Huawei Ascend</div></div><div class="verd warn">REPORTED · UNCONFIRMED</div></div><div id="i304" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Open weights</div></div><div class="verd warn">LIKELY · NOT PROMISED</div></div></div></div></div></div>
+<div id="s312" class="clip scene" data-start="576.660" data-duration="17.820" data-track-index="2" style="z-index:51"><div id="w313" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">My take</div></div><div id="b314" class="body"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:6px;justify-content:center;align-items:stretch"><div id="i308" class="a bg ink3" style="font-size:180px;text-align:left">90%</div><div id="i309" class="a tx " style="font-size:36px;text-align:left">noise: test files and a whale logo</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:6px;justify-content:center;align-items:stretch"><div id="i310" class="a bg acc" style="font-size:180px;text-align:left">10%</div><div id="i311" class="a tx " style="font-size:36px;text-align:left">huge: pre-training a frontier model on Chinese chips</div></div></div></div></div></div></div>
+<div id="s321" class="clip scene" data-start="594.480" data-duration="18.320" data-track-index="2" style="z-index:52"><div id="w322" class="sc"><div id="b323" class="body clipb"><div class="vframe"></div><div class="vcred">Bloomberg Television · Huawei AI chip coverage</div></div></div></div>
+<div id="vw316" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:53"><video id="v315" class="clip" src="assets/clips/yt_bbg_huawei_9532662f.mp4" muted playsinline data-start="594.480" data-duration="18.320" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i317" class="a cap " style="">Nvidia: lost its CEO, pulling back from China</div><div id="i318" class="a cap " style="">the next DeepSeek shock: not a price war</div><div id="i319" class="a cap acc" style="">a chip war</div><div id="i320" class="a cap " style="">watch DeepSeek and Huawei closely</div></div></div>
+<div id="s327" class="clip scene" data-start="612.800" data-duration="11.560" data-track-index="2" style="z-index:54"><div id="w328" class="sc"><div id="b329" class="body full"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div id="i324" class="a " style=""><div style="display:flex;justify-content:center;align-items:center;gap:64px"><img src="assets/raw/logos/deepseek_icon.png" alt="" style="height:120px"><img src="assets/raw/logos/huawei.png" alt="" style="height:90px"><div class="hd ink3" style="font-size:44px">without</div><img src="assets/raw/logos/nvidia_logo.png" alt="" style="height:100px"></div></div><div id="i325" class="a hd" style="font-size:60px;text-align:center">Can DeepSeek build a frontier model without Nvidia?</div><div id="i326" class="a tx ink3" style="font-size:34px;text-align:center">Tell me in the comments. I'll cover V5 the day it actually lands.</div></div></div></div></div>
+<div id="s332" class="clip scene" data-start="624.360" data-duration="2.340" data-track-index="2" style="z-index:55"><div id="w333" class="sc"><div id="b334" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i330" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i331" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="626.7" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#k1",{scale:1},{scale:1.035,duration:9.660,ease:"none"},0.000);
+tl.set("#i2",{opacity:1,y:0},0);
+tl.set("#i3",{opacity:1,y:0},0);
+tl.set("#i4",{opacity:1,y:0},0);
+tl.fromTo("#i5",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},3.180);
+tl.set("#w7",{opacity:1},0);
+tl.to("#w7",{opacity:0,duration:0.25,ease:"power1.in"},9.410);
+tl.fromTo("#b8",{scale:1},{scale:1.015,duration:9.660,ease:"none"},0.000);
+tl.fromTo("#cl9",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},10.560);
+tl.fromTo("#cl10",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},14.820);
+tl.fromTo("#cl11",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},16.220);
+tl.fromTo("#i12",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},9.860);
+tl.fromTo("#w14",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},9.660);
+tl.to("#w14",{opacity:0,duration:0.25,ease:"power1.in"},18.470);
+tl.fromTo("#b15",{scale:1},{scale:1.015,duration:9.060,ease:"none"},9.660);
+tl.fromTo("#i16",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},18.720);
+tl.fromTo("#i17",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},21.100);
+tl.fromTo("#i18",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},23.860);
+tl.fromTo("#i19",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.660);
+tl.fromTo("#i20",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},26.560);
+tl.fromTo("#w22",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},18.720);
+tl.to("#w22",{opacity:0,duration:0.25,ease:"power1.in"},28.690);
+tl.fromTo("#b23",{scale:1},{scale:1.015,duration:10.220,ease:"none"},18.720);
+tl.fromTo("#i24",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},33.260);
+tl.fromTo("#i25",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},33.460);
+tl.fromTo("#i26",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},34.260);
+tl.fromTo("#i27",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},34.460);
+tl.fromTo("#i28",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},35.420);
+tl.fromTo("#i29",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},35.620);
+tl.fromTo("#w31",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},28.940);
+tl.to("#w31",{opacity:0,duration:0.25,ease:"power1.in"},41.390);
+tl.fromTo("#b32",{scale:1},{scale:1.015,duration:12.700,ease:"none"},28.940);
+tl.fromTo("#i33",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},41.840);
+tl.fromTo("#i34",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},45.440);
+tl.fromTo("#w36",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},41.640);
+tl.to("#w36",{opacity:0,duration:0.25,ease:"power1.in"},49.470);
+tl.fromTo("#b37",{scale:1},{scale:1.015,duration:8.080,ease:"none"},41.640);
+tl.fromTo("#i38",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.920);
+tl.fromTo("#i40",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},56.760);
+tl.fromTo("#w42",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},49.720);
+tl.to("#w42",{opacity:0,duration:0.25,ease:"power1.in"},63.250);
+tl.fromTo("#b43",{scale:1},{scale:1.015,duration:13.780,ease:"none"},49.720);
+tl.fromTo("#k44",{scale:1},{scale:1.035,duration:13.340,ease:"none"},63.500);
+tl.fromTo("#i45",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},63.500);
+tl.fromTo("#i47",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},63.900);
+tl.fromTo("#i48",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},71.840);
+tl.fromTo("#w50",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},63.500);
+tl.to("#w50",{opacity:0,duration:0.25,ease:"power1.in"},76.590);
+tl.fromTo("#b51",{scale:1},{scale:1.015,duration:13.340,ease:"none"},63.500);
+tl.fromTo("#i52",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},79.220);
+tl.fromTo("#i53",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},81.120);
+tl.fromTo("#i54",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},83.300);
+tl.fromTo("#i55",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},77.340);
+tl.fromTo("#w57",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},76.840);
+tl.to("#w57",{opacity:0,duration:0.25,ease:"power1.in"},87.310);
+tl.fromTo("#b58",{scale:1},{scale:1.015,duration:10.720,ease:"none"},76.840);
+tl.fromTo("#i59",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},87.560);
+tl.fromTo("#i61",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},87.760);
+tl.fromTo("#i63",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},91.560);
+tl.fromTo("#i65",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},97.660);
+tl.fromTo("#i67",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},101.900);
+tl.fromTo("#w69",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},87.560);
+tl.to("#w69",{opacity:0,duration:0.25,ease:"power1.in"},106.210);
+tl.fromTo("#b70",{scale:1},{scale:1.015,duration:18.900,ease:"none"},87.560);
+tl.fromTo("#k71",{scale:1},{scale:1.035,duration:5.240,ease:"none"},106.460);
+tl.fromTo("#i72",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.460);
+tl.fromTo("#i74",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},107.520);
+tl.fromTo("#i76",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},108.420);
+tl.fromTo("#i77",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},109.520);
+tl.fromTo("#w79",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},106.460);
+tl.to("#w79",{opacity:0,duration:0.25,ease:"power1.in"},111.450);
+tl.fromTo("#b80",{scale:1},{scale:1.015,duration:5.240,ease:"none"},106.460);
+tl.fromTo("#vw82",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},111.700);
+tl.fromTo("#i83",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.000);
+tl.fromTo("#w85",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},111.700);
+tl.to("#w85",{opacity:0,duration:0.25,ease:"power1.in"},118.230);
+tl.to("#vw82",{opacity:0,duration:0.25,ease:"power1.in"},118.230);
+tl.fromTo("#k87",{scale:1},{scale:1.035,duration:10.420,ease:"none"},118.480);
+tl.fromTo("#i88",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},118.480);
+tl.fromTo("#i90",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},118.780);
+tl.fromTo("#i92",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},123.480);
+tl.fromTo("#i93",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},126.260);
+tl.fromTo("#w95",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},118.480);
+tl.to("#w95",{opacity:0,duration:0.25,ease:"power1.in"},128.650);
+tl.fromTo("#b96",{scale:1},{scale:1.015,duration:10.420,ease:"none"},118.480);
+tl.fromTo("#i97",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},129.100);
+tl.fromTo("#i98",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},130.960);
+tl.fromTo("#i99",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},137.420);
+tl.fromTo("#k100",{scale:1},{scale:1.035,duration:13.580,ease:"none"},132.080);
+tl.fromTo("#i101",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},132.080);
+tl.fromTo("#w103",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},128.900);
+tl.to("#w103",{opacity:0,duration:0.25,ease:"power1.in"},145.410);
+tl.fromTo("#b104",{scale:1},{scale:1.015,duration:16.760,ease:"none"},128.900);
+tl.fromTo("#cl107",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},146.540);
+tl.fromTo("#cl108",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},150.860);
+tl.fromTo("#cl109",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},153.420);
+tl.fromTo("#i111",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},145.860);
+tl.fromTo("#i113",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},155.240);
+tl.fromTo("#i115",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},158.140);
+tl.fromTo("#w117",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},145.660);
+tl.to("#w117",{opacity:0,duration:0.25,ease:"power1.in"},161.570);
+tl.fromTo("#b118",{scale:1},{scale:1.015,duration:16.160,ease:"none"},145.660);
+tl.fromTo("#i119",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.820);
+tl.fromTo("#i121",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},168.660);
+tl.fromTo("#i122",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},169.260);
+tl.fromTo("#w124",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},161.820);
+tl.to("#w124",{opacity:0,duration:0.25,ease:"power1.in"},175.290);
+tl.fromTo("#b125",{scale:1},{scale:1.015,duration:13.720,ease:"none"},161.820);
+tl.fromTo("#i126",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},177.120);
+tl.fromTo("#i127",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},177.120);
+tl.fromTo("#i128",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},178.760);
+tl.fromTo("#w130",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},175.540);
+tl.to("#w130",{opacity:0,duration:0.25,ease:"power1.in"},182.030);
+tl.fromTo("#b131",{scale:1},{scale:1.015,duration:6.740,ease:"none"},175.540);
+tl.fromTo("#cl132",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-bad)",duration:.35},192.620);
+tl.fromTo("#cl133",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},185.340);
+tl.fromTo("#cl134",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-warn)",duration:.35},197.360);
+tl.fromTo("#cl138",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-acc)",duration:.35},190.660);
+tl.fromTo("#cl139",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-bad)",duration:.35},193.220);
+tl.fromTo("#cl141",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-warn)",duration:.35},199.860);
+tl.fromTo("#i142",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},182.480);
+tl.fromTo("#i143",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},205.320);
+tl.fromTo("#w145",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},182.280);
+tl.to("#w145",{opacity:0,duration:0.25,ease:"power1.in"},212.970);
+tl.fromTo("#b146",{scale:1},{scale:1.015,duration:30.940,ease:"none"},182.280);
+tl.fromTo("#cl147",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-warn)",duration:.35},215.960);
+tl.fromTo("#cl150",{backgroundColor:"rgba(0,0,0,0)"},{backgroundColor:"var(--hl-warn)",duration:.35},216.760);
+tl.fromTo("#i151",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},213.420);
+tl.fromTo("#i152",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},218.220);
+tl.fromTo("#i153",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},218.220);
+tl.fromTo("#w155",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},213.220);
+tl.to("#w155",{opacity:0,duration:0.25,ease:"power1.in"},222.690);
+tl.fromTo("#b156",{scale:1},{scale:1.015,duration:9.720,ease:"none"},213.220);
+tl.fromTo("#i157",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},223.140);
+tl.fromTo("#i158",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},227.640);
+tl.fromTo("#i159",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},228.820);
+tl.fromTo("#i160",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},229.720);
+tl.fromTo("#w162",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},222.940);
+tl.to("#w162",{opacity:0,duration:0.25,ease:"power1.in"},231.830);
+tl.fromTo("#b163",{scale:1},{scale:1.015,duration:9.140,ease:"none"},222.940);
+tl.fromTo("#i164",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},235.340);
+tl.fromTo("#i165",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},243.660);
+tl.fromTo("#w167",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},232.080);
+tl.to("#w167",{opacity:0,duration:0.25,ease:"power1.in"},246.670);
+tl.fromTo("#b168",{scale:1},{scale:1.015,duration:14.840,ease:"none"},232.080);
+tl.fromTo("#i169",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},247.120);
+tl.fromTo("#i170",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},251.300);
+tl.fromTo("#i171",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},260.560);
+tl.fromTo("#i172",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},263.960);
+tl.fromTo("#i173",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},267.660);
+tl.fromTo("#i174",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},270.240);
+tl.fromTo("#i175",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},274.540);
+tl.fromTo("#w177",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},246.920);
+tl.to("#w177",{opacity:0,duration:0.25,ease:"power1.in"},278.170);
+tl.fromTo("#b178",{scale:1},{scale:1.015,duration:31.500,ease:"none"},246.920);
+tl.fromTo("#k179",{scale:1},{scale:1.03,duration:9.180,ease:"none"},278.620);
+tl.fromTo("#i180",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},278.620);
+tl.fromTo("#i181",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},285.060);
+tl.fromTo("#i182",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},285.880);
+tl.fromTo("#i183",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},286.800);
+tl.fromTo("#w185",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},278.420);
+tl.to("#w185",{opacity:0,duration:0.25,ease:"power1.in"},287.550);
+tl.fromTo("#b186",{scale:1},{scale:1.015,duration:9.380,ease:"none"},278.420);
+tl.fromTo("#i187",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},290.480);
+tl.fromTo("#i188",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},295.920);
+tl.fromTo("#i189",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},291.480);
+tl.fromTo("#w191",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},287.800);
+tl.to("#w191",{opacity:0,duration:0.25,ease:"power1.in"},300.470);
+tl.fromTo("#b192",{scale:1},{scale:1.015,duration:12.920,ease:"none"},287.800);
+tl.fromTo("#i193",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},300.720);
+tl.fromTo("#i194",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},301.300);
+tl.fromTo("#i195",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},304.840);
+tl.fromTo("#w197",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},300.720);
+tl.to("#w197",{opacity:0,duration:0.25,ease:"power1.in"},312.250);
+tl.fromTo("#b198",{scale:1},{scale:1.015,duration:11.780,ease:"none"},300.720);
+tl.fromTo("#k199",{scale:1},{scale:1.035,duration:16.500,ease:"none"},312.500);
+tl.fromTo("#i200",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},312.500);
+tl.fromTo("#i201",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},314.480);
+tl.fromTo("#i202",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},320.800);
+tl.fromTo("#w204",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},312.500);
+tl.to("#w204",{opacity:0,duration:0.25,ease:"power1.in"},328.750);
+tl.fromTo("#b205",{scale:1},{scale:1.015,duration:16.500,ease:"none"},312.500);
+tl.fromTo("#i206",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},330.740);
+tl.fromTo("#i207",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},332.040);
+tl.fromTo("#i208",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},333.440);
+tl.fromTo("#i209",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},333.440);
+tl.fromTo("#i211",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},335.280);
+tl.fromTo("#i212",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},337.700);
+tl.fromTo("#w214",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},329.000);
+tl.to("#w214",{opacity:0,duration:0.25,ease:"power1.in"},339.310);
+tl.fromTo("#b215",{scale:1},{scale:1.015,duration:10.560,ease:"none"},329.000);
+tl.fromTo("#k216",{scale:1},{scale:1.035,duration:19.500,ease:"none"},344.260);
+tl.fromTo("#i217",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},344.260);
+tl.fromTo("#i218",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},339.760);
+tl.fromTo("#i220",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},344.260);
+tl.fromTo("#i221",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},359.660);
+tl.fromTo("#w223",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},339.560);
+tl.to("#w223",{opacity:0,duration:0.25,ease:"power1.in"},363.510);
+tl.fromTo("#b224",{scale:1},{scale:1.015,duration:24.200,ease:"none"},339.560);
+tl.fromTo("#i225",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},363.860);
+tl.fromTo("#i226",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},367.240);
+tl.fromTo("#i227",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},378.560);
+tl.fromTo("#i228",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},382.780);
+tl.fromTo("#w230",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},363.760);
+tl.to("#w230",{opacity:0,duration:0.25,ease:"power1.in"},388.710);
+tl.fromTo("#b231",{scale:1},{scale:1.015,duration:25.200,ease:"none"},363.760);
+tl.fromTo("#vw233",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},388.960);
+tl.fromTo("#i234",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},391.680);
+tl.fromTo("#i235",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},398.860);
+tl.fromTo("#i236",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},401.240);
+tl.fromTo("#w238",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},388.960);
+tl.to("#w238",{opacity:0,duration:0.25,ease:"power1.in"},404.110);
+tl.to("#vw233",{opacity:0,duration:0.25,ease:"power1.in"},404.110);
+tl.fromTo("#i240",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},404.560);
+tl.fromTo("#i242",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},408.740);
+tl.fromTo("#i243",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},415.660);
+tl.fromTo("#w245",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},404.360);
+tl.to("#w245",{opacity:0,duration:0.25,ease:"power1.in"},418.910);
+tl.fromTo("#b246",{scale:1},{scale:1.015,duration:14.800,ease:"none"},404.360);
+tl.fromTo("#k247",{scale:1},{scale:1.035,duration:15.000,ease:"none"},419.160);
+tl.fromTo("#i248",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},419.160);
+tl.fromTo("#i250",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},422.740);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},429.320);
+tl.fromTo("#w254",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},419.160);
+tl.to("#w254",{opacity:0,duration:0.25,ease:"power1.in"},433.910);
+tl.fromTo("#b255",{scale:1},{scale:1.015,duration:15.000,ease:"none"},419.160);
+tl.fromTo("#i257",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},438.860);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},440.060);
+tl.fromTo("#i260",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},446.980);
+tl.fromTo("#w262",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},434.160);
+tl.to("#w262",{opacity:0,duration:0.25,ease:"power1.in"},456.070);
+tl.fromTo("#b263",{scale:1},{scale:1.015,duration:22.160,ease:"none"},434.160);
+tl.fromTo("#i264",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},456.420);
+tl.fromTo("#i265",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},463.500);
+tl.fromTo("#i266",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},463.500);
+tl.fromTo("#w268",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},456.320);
+tl.to("#w268",{opacity:0,duration:0.25,ease:"power1.in"},469.090);
+tl.fromTo("#b269",{scale:1},{scale:1.015,duration:13.020,ease:"none"},456.320);
+tl.fromTo("#i270",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},474.460);
+tl.fromTo("#i272",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},470.140);
+tl.fromTo("#i274",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},474.460);
+tl.fromTo("#i276",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},476.660);
+tl.fromTo("#w278",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},469.340);
+tl.to("#w278",{opacity:0,duration:0.25,ease:"power1.in"},478.710);
+tl.fromTo("#b279",{scale:1},{scale:1.015,duration:9.620,ease:"none"},469.340);
+tl.fromTo("#i280",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},479.060);
+tl.fromTo("#i281",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},482.960);
+tl.fromTo("#w283",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},478.960);
+tl.to("#w283",{opacity:0,duration:0.25,ease:"power1.in"},487.730);
+tl.fromTo("#b284",{scale:1},{scale:1.015,duration:9.020,ease:"none"},478.960);
+tl.fromTo("#i285",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},492.840);
+tl.fromTo("#i286",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},501.520);
+tl.fromTo("#i287",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},507.140);
+tl.fromTo("#w289",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},487.980);
+tl.to("#w289",{opacity:0,duration:0.25,ease:"power1.in"},512.830);
+tl.fromTo("#b290",{scale:1},{scale:1.015,duration:25.100,ease:"none"},487.980);
+tl.fromTo("#i291",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},513.180);
+tl.fromTo("#i292",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},515.740);
+tl.fromTo("#i293",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},523.260);
+tl.fromTo("#i294",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},530.080);
+tl.fromTo("#i295",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},534.600);
+tl.fromTo("#w297",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},513.080);
+tl.to("#w297",{opacity:0,duration:0.25,ease:"power1.in"},541.610);
+tl.fromTo("#b298",{scale:1},{scale:1.015,duration:28.780,ease:"none"},513.080);
+tl.fromTo("#i299",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},544.900);
+tl.fromTo("#i300",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},549.840);
+tl.fromTo("#i301",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},555.460);
+tl.fromTo("#i302",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},560.340);
+tl.fromTo("#i303",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},565.920);
+tl.fromTo("#i304",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},571.600);
+tl.fromTo("#w306",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},541.860);
+tl.to("#w306",{opacity:0,duration:0.25,ease:"power1.in"},576.410);
+tl.fromTo("#b307",{scale:1},{scale:1.015,duration:34.800,ease:"none"},541.860);
+tl.fromTo("#i308",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},577.940);
+tl.fromTo("#i309",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},577.940);
+tl.fromTo("#i310",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},585.320);
+tl.fromTo("#i311",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},585.320);
+tl.fromTo("#w313",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},576.660);
+tl.to("#w313",{opacity:0,duration:0.25,ease:"power1.in"},594.230);
+tl.fromTo("#b314",{scale:1},{scale:1.015,duration:17.820,ease:"none"},576.660);
+tl.fromTo("#vw316",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},594.480);
+tl.fromTo("#i317",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},594.680);
+tl.fromTo("#i318",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},602.080);
+tl.fromTo("#i319",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},603.840);
+tl.fromTo("#i320",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},608.740);
+tl.fromTo("#w322",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},594.480);
+tl.to("#w322",{opacity:0,duration:0.25,ease:"power1.in"},612.550);
+tl.to("#vw316",{opacity:0,duration:0.25,ease:"power1.in"},612.550);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},612.900);
+tl.fromTo("#i325",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},613.840);
+tl.fromTo("#i326",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},616.740);
+tl.fromTo("#w328",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},612.800);
+tl.to("#w328",{opacity:0,duration:0.25,ease:"power1.in"},624.110);
+tl.fromTo("#b329",{scale:1},{scale:1.015,duration:11.560,ease:"none"},612.800);
+tl.fromTo("#i330",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},624.360);
+tl.fromTo("#i331",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},624.360);
+tl.fromTo("#w333",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},624.360);
+tl.set({}, {}, 626.7);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

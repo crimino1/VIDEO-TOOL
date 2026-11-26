@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Caveat";src:url("assets/fonts/caveat-600.woff2") format("woff2");font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(900px 600px at 18% 22%,rgba(30,52,110,.45),transparent 70%),radial-gradient(800px 560px at 84% 78%,rgba(22,40,96,.40),transparent 70%),#000}
+.grid{position:absolute;inset:-60px;background-image:linear-gradient(rgba(70,100,180,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(70,100,180,.07) 1.5px,transparent 1.5px);background-size:120px 120px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 80%)}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.h{font-weight:700;letter-spacing:-.025em;line-height:1.08}
+.big{font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.lab{color:#8A8F98;font-weight:400;line-height:1.2}
+.g{color:#8A8F98}
+.blue{color:#5B8FF0}
+.mono{font-family:"JetBrains Mono",monospace}
+.note{font-family:"Caveat",cursive;font-weight:600;color:#F0A818;line-height:1.05;white-space:nowrap}
+.arw{position:absolute;display:block}
+.src{font-size:22px;color:#6B7079}
+.card{background:#0D0F14;border:1.5px solid #2A2E37;border-radius:12px;padding:26px 30px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.card.sel{border-color:#5B8FF0;background:#0B1430}
+.card.red{border-color:rgba(248,81,73,.7);background:#1A0C0E}
+.card.ok{border-color:rgba(63,185,80,.7);background:#0B1A10}
+.card.dash{border-style:dashed;background:rgba(13,15,20,.6)}
+.card.lvl.hi{border-color:#F0A818}
+.card.lvl.crit{border-color:#F85149;background:#1A0C0E}
+.card.lvl.crit .ct{color:#F85149}
+.ct{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cs{font-size:26px;color:#8A8F98;margin-top:10px}
+.li{font-size:36px;font-weight:700;letter-spacing:-.015em}
+.cb{font-size:30px;line-height:1.3;padding:16px 22px;border-radius:16px;margin-top:14px;max-width:560px}
+.cb.u{background:#1E2A44;margin-left:auto;width:max-content}
+.cb.bot{background:#1A1C22;color:#D5D8DE}
+.mac{border-radius:12px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37}
+.mbar{height:44px;background:#1C1D21;position:relative}
+.mbar i{position:absolute;top:15px;width:14px;height:14px;border-radius:50%;background:#3A3C42}
+.mbar i:nth-child(1){left:18px;background:#ff5f57}.mbar i:nth-child(2){left:42px;background:#febc2e}.mbar i:nth-child(3){left:66px;background:#28c840}
+.murl{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:28px;padding:0 70px;background:#121316;border-radius:7px;font-size:16px;line-height:28px;color:#A9ADB5;white-space:nowrap}
+.mbody{overflow:hidden;position:relative}
+.mbody img{display:block}
+.im img,.logo img{display:block;object-fit:contain}
+.meme{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 3px #fff}
+.meme img{display:block;object-fit:cover}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.vcard{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37;background:#000}
+.person img{display:block;border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.pn{font-size:38px;font-weight:700;margin-top:18px}
+.pr{font-size:26px;color:#8A8F98;margin-top:4px}
+.track{position:absolute;height:44px;border-radius:6px;background:#15181F}
+.fill{position:absolute;height:44px;border-radius:6px;background:#4A505C}
+.fill.hero{background:#5B8FF0}
+.bl{font-weight:700;white-space:nowrap}
+.bvl{font-weight:900;font-variant-numeric:tabular-nums}
+.bugrow{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.bugrow i{display:block;width:16px;height:16px;border-radius:50%;background:#3A3E47}
+.codewall{font-size:27px;line-height:1.75;color:#6B7079}
+.cl{padding:0 10px;border-radius:4px;white-space:nowrap}
+.strike{text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:5px}
+.strike2{color:#8A8F98;text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:4px}
+.tline{position:absolute;height:2px;background:#2A2E37}
+.tp i.dot{display:block;width:30px;height:30px;border-radius:50%;background:#0D0F14;border:3px solid #5A606B}
+.prow{display:flex;align-items:baseline;gap:40px;margin-top:26px;font-size:84px;font-weight:900;letter-spacing:-.03em}
+.prow .pl{font-size:34px;font-weight:400;color:#8A8F98;width:150px}
+.prow .new{color:#5B8FF0}
+.tw img{filter:drop-shadow(0 24px 50px rgba(0,0,0,.6))}
+.dimbg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.person0 img{border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.tp i.dot.hero{border-color:#5B8FF0;background:#5B8FF0;box-shadow:0 0 24px #5B8FF0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="427.8" data-width="1920" data-height="1080">
+<div class="bg"><div class="grid" id="grid"></div></div>
+<div id="s6" class="clip scene" data-start="0.000" data-duration="6.480" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="w7" class="sc"><div id="hookimg" class="a person0" style="left:300px;top:200px;width:560px;height:560px"><img src="assets/img/stage.jpg" alt="" style="width:560px;height:560px"></div><div id="c1" class="a im" style="left:960px;top:250px;width:420px;height:77px"><img src="assets/img/nvidia_w.png" alt="" style="width:420px;height:77px"></div><div id="c2" class="a h" style="left:960px;top:360px;font-size:64px">CEO Jensen Huang</div><div id="c3" class="a card sel" style="left:960px;top:480px;width:620px;height:150px;"><div class="mono g" style="font-size:22px">sent a memo to his employees</div><div class="ct" style="margin-top:8px">Nov 8, 2026</div></div><div id="c4" class="a note" style="left:990px;top:680px;font-size:54px">…and it wasn't about GPUs</div><div id="c5" class="a src" style="left:300px;top:780px">Photo: Masaru Kamikura, CC BY 2.0</div></div></div>
+<div id="s12" class="clip scene" data-start="6.080" data-duration="5.500" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div id="w13" class="sc"><div id="c8" class="a h" style="left:0;right:0;top:110px;text-align:center;font-size:72px">He admitted he'd had an <span class="blue">affair</span>.</div><div id="m9" class="a mac" style="left:260px;top:260px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">nvidianews.nvidia.com/news/a-message-to-our-company</div></div><div class="mbody" style="height:291px"><img id="k10" src="assets/img/nv_memo1_47f63.jpg" alt="nv_memo1" style="width:1400px;height:291px"></div></div><div id="c11" class="a src" style="left:0;right:0;top:1000px;text-align:center">Nvidia newsroom · “A Message to Our Company” · Nov 8, 2026</div></div></div>
+<div id="s19" class="clip scene" data-start="11.180" data-duration="6.780" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="w20" class="sc"><div id="m14" class="a mac" style="left:260px;top:160px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">nvidianews.nvidia.com/news/a-message-to-our-company</div></div><div class="mbody" style="height:291px"><img id="k15" src="assets/img/nv_memo2_47f63.jpg" alt="nv_memo2" style="width:1400px;height:291px"></div></div><div id="c16" class="a card" style="left:260px;top:760px;width:520px;height:90px;"><div class="li">hurt his wife and children</div></div><div id="c17" class="a card" style="left:820px;top:760px;width:320px;height:90px;"><div class="li">“no excuse”</div></div><div id="c18" class="a card sel" style="left:1180px;top:760px;width:480px;height:90px;"><div class="li">full responsibility</div></div></div></div>
+<div id="s24" class="clip scene" data-start="17.560" data-duration="5.580" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div id="w25" class="sc"><div id="c21" class="a lab" style="left:0;right:0;top:380px;text-align:center;font-size:56px">normally, a CEO's personal life</div><div id="c22" class="a h" style="left:0;right:0;top:450px;text-align:center;font-size:96px">isn't <span class="blue">tech news</span>.</div><div id="c23" class="a h" style="left:0;right:0;top:620px;text-align:center;font-size:60px">but this one is.</div></div></div>
+<div id="s31" class="clip scene" data-start="22.740" data-duration="5.580" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="w32" class="sc"><div id="vc26" class="a vcard" style="left:360px;top:130px;width:1200px;height:675px"></div><div id="c29" class="a src" style="left:360px;top:819px">CNBC Television · Oct 29, 2026</div><div id="c30" class="a note" style="left:420px;top:880px;font-size:50px">US intelligence reportedly believes: a Chinese spy</div></div></div>
+<div id="vw28" class="vwrap" style="left:360px;top:130px;width:1200px;height:675px;z-index:16"><video id="v27" class="clip" src="assets/clips/yt_cnbc_oct29_6f4df24a.mp4" muted playsinline data-start="22.740" data-duration="5.580" data-track-index="1" style="width:1200px;height:675px;object-fit:cover"></video></div>
+<div id="s39" class="clip scene" data-start="27.920" data-duration="6.660" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="w40" class="sc"><div id="vc33" class="a vcard" style="left:300px;top:150px;width:1100px;height:619px"></div><div id="c36" class="a src" style="left:300px;top:783px">NVIDIA · GTC 2026 keynote</div><div id="c37" class="a im" style="left:1450px;top:300px;width:360px;height:66px"><img src="assets/img/nvidia_w.png" alt="" style="width:360px;height:66px"></div><div id="c38" class="a note" style="left:1440px;top:420px;font-size:46px">the chips behind<br>basically the entire<br>AI industry</div></div></div>
+<div id="vw35" class="vwrap" style="left:300px;top:150px;width:1100px;height:619px;z-index:18"><video id="v34" class="clip" src="assets/clips/yt_gtc_b7e758df.mp4" muted playsinline data-start="27.920" data-duration="6.660" data-track-index="1" style="width:1100px;height:619px;object-fit:cover"></video></div>
+<div id="s46" class="clip scene" data-start="34.180" data-duration="6.850" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="w47" class="sc"><div id="c41" class="a h" style="left:0;right:0;top:200px;text-align:center;font-size:76px">let's go through it <span class="blue">properly</span></div><div id="c42" class="a card sel" style="left:180px;top:440px;width:360px;height:150px;"><div class="mono g" style="font-size:22px">01</div><div class="ct" style="margin-top:6px">the spying side</div></div><div id="c43" class="a card" style="left:580px;top:440px;width:360px;height:150px;"><div class="mono g" style="font-size:22px">02</div><div class="ct" style="margin-top:6px">the GPU side</div></div><div id="c44" class="a card" style="left:980px;top:440px;width:360px;height:150px;"><div class="mono g" style="font-size:22px">03</div><div class="ct" style="margin-top:6px">the stock</div></div><div id="c45" class="a card" style="left:1380px;top:440px;width:360px;height:150px;"><div class="mono g" style="font-size:22px">04</div><div class="ct" style="margin-top:6px">the memes</div></div></div></div>
+<div id="s52" class="clip scene" data-start="40.630" data-duration="6.700" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="w53" class="sc"><div id="c48" class="a h" style="left:300px;top:90px;font-size:30px"><span class="mono g">Oct 29, 2026</span></div><div id="m49" class="a mac" style="left:300px;top:150px;width:1100px"><div class="mbar"><i></i><i></i><i></i><div class="murl">cnbc.com</div></div><div class="mbody" style="height:383px"><img id="k50" src="assets/img/cnbc_oct29_90b6f.jpg" alt="cnbc_oct29" style="width:1100px;height:383px"></div></div><div id="c51" class="a note" style="left:1440px;top:320px;font-size:52px">New York Times report<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s58" class="clip scene" data-start="46.930" data-duration="11.880" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="w59" class="sc"><div id="c54" class="a card sel" style="left:300px;top:260px;width:640px;height:260px;"><div class="mono g" style="font-size:22px">named in the report</div><div class="ct" style="font-size:60px;margin-top:8px">Alice Huang</div><div class="cs">also known as Huang Le</div></div><div id="c55" class="a card red" style="left:1000px;top:260px;width:620px;height:200px;"><div class="mono g" style="font-size:22px">alleged by US intelligence</div><div class="ct" style="margin-top:8px">a Chinese intelligence asset</div></div><div id="c56" class="a h" style="left:300px;top:640px;font-size:64px">not related to <span class="blue">Jensen</span></div><div id="c57" class="a note" style="left:310px;top:750px;font-size:54px">same last name, different family</div></div></div>
+<div id="s64" class="clip scene" data-start="58.410" data-duration="8.670" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div id="w65" class="sc"><div id="m60" class="a mac" style="left:300px;top:130px;width:1050px"><div class="mbar"><i></i><i></i><i></i><div class="murl">megaspeed.ai</div></div><div class="mbody" style="height:627px"><img id="k61" src="assets/img/megaspeed_da78b.jpg" alt="megaspeed" style="width:1050px;height:627px"></div></div><div id="c62" class="a note" style="left:1390px;top:260px;font-size:52px">she's an executive here<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c63" class="a note" style="left:1390px;top:440px;font-size:46px">report: a close<br>relationship with Jensen</div></div></div>
+<div id="s75" class="clip scene" data-start="66.680" data-duration="16.050" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="w76" class="sc"><div id="c66" class="a card sel" style="left:260px;top:220px;width:700px;height:330px;"><div class="mono g" style="font-size:22px">Nvidia spokesperson</div><div class="ct" style="font-size:44px;margin-top:10px">“Jensen's interactions with Ms. Huang are <span class="blue">not unusual or unexpected</span>.”</div></div><svg id="ul67" class="a" style="left:300px;top:560px;opacity:0" width="560" height="18" viewBox="0 0 560 18"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M4 12C168 4 392 4 556 10" fill="none" stroke="#F0A818" stroke-width="4" stroke-linecap="round"/></svg><div id="vc68" class="a vcard" style="left:1020px;top:220px;width:640px;height:360px"></div><div id="c71" class="a src" style="left:1020px;top:594px">Bloomberg Television</div><div id="c72" class="a note" style="left:280px;top:620px;font-size:50px">meeting customers = part of the job</div><div id="c73" class="a h" style="left:280px;top:720px;font-size:40px"><span class="blue">thousands</span> of customer executives a year</div><div id="c74" class="a src" style="left:260px;top:1000px">Statement quoted by TechCrunch and CNBC, Oct 29, 2026</div></div></div>
+<div id="vw70" class="vwrap" style="left:1020px;top:220px;width:640px;height:360px;z-index:24"><video id="v69" class="clip" src="assets/clips/yt_bloom_probe_1ab3575c.mp4" muted playsinline data-start="74.150" data-duration="8.580" data-track-index="1" style="width:640px;height:360px;object-fit:cover"></video></div>
+<div id="s79" class="clip scene" data-start="82.330" data-duration="5.280" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="w80" class="sc"><div id="c77" class="a card" style="left:360px;top:300px;width:1200px;height:200px;"><div class="mono g" style="font-size:22px">Bloomberg · Oct 29, 2026</div><div class="ct" style="font-size:52px;margin-top:10px">Nvidia's Huang defends Megaspeed ties</div></div><div id="c78" class="a note" style="left:1380px;top:540px;font-size:70px">“normal”</div></div></div>
+<div id="s84" class="clip scene" data-start="87.210" data-duration="7.160" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="w85" class="sc"><div id="c81" class="a card" style="left:300px;top:280px;width:620px;height:220px;"><div class="mono g" style="font-size:22px">China's foreign ministry</div><div class="ct" style="font-size:52px;margin-top:10px">“<span class="blue">groundless</span> speculation”</div></div><div id="c82" class="a card red" style="left:1000px;top:280px;width:620px;height:220px;"><div class="mono g" style="font-size:22px">Chinese embassy</div><div class="ct" style="font-size:52px;margin-top:10px">“smears” against China</div></div><div id="c83" class="a src" style="left:0;right:0;top:700px;text-align:center">Sources: SCMP, Oct 30 · TweakTown, Oct 29, 2026</div></div></div>
+<div id="s90" class="clip scene" data-start="93.970" data-duration="8.230" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="w91" class="sc"><div id="c86" class="a h" style="left:0;right:0;top:80px;text-align:center;font-size:56px">then the story <span class="blue">kept growing</span></div><div id="m87" class="a mac" style="left:360px;top:170px;width:1200px"><div class="mbar"><i></i><i></i><i></i><div class="murl">foreignaffairs.house.gov</div></div><div class="mbody" style="height:501px"><img id="k88" src="assets/img/house_5d70d.jpg" alt="house" style="width:1200px;height:501px"></div></div><div id="c89" class="a note" style="left:600px;top:960px;font-size:50px">Nov 4: closed-door briefing request</div></div></div>
+<div id="s98" class="clip scene" data-start="101.800" data-duration="15.650" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="w99" class="sc"><div id="m92" class="a mac" style="left:300px;top:110px;width:760px"><div class="mbar"><i></i><i></i><i></i><div class="murl">techcrunch.com</div></div><div class="mbody" style="height:550px"><img id="k93" src="assets/img/tc_memo_fad4c.jpg" alt="tc_memo" style="width:760px;height:550px"></div></div><div id="c94" class="a h" style="left:1140px;top:220px;font-size:32px"><span class="mono g">Nov 6–7</span></div><div id="c95" class="a card" style="left:1140px;top:280px;width:520px;height:150px;"><div class="ct">FT and NYT report on a government memo</div></div><div id="c96" class="a card red" style="left:1140px;top:470px;width:520px;height:230px;"><div class="mono g" style="font-size:22px">memo reportedly says</div><div class="ct" style="margin-top:8px">China's Ministry of State Security recruited Alice Huang</div></div><div id="c97" class="a note" style="left:1160px;top:740px;font-size:54px">relationship: “romantic”</div></div></div>
+<div id="s103" class="clip scene" data-start="117.050" data-duration="4.120" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="w104" class="sc"><div id="c100" class="a person0" style="left:300px;top:220px;width:400px;height:520px"><img src="assets/img/coons.jpg" alt="" style="width:400px;height:520px"></div><div id="c101" class="a im tw" style="left:800px;top:300px;width:820px;height:477px"><img src="assets/img/tw_coons_100.png" alt="" style="width:820px;height:477px"></div><div id="c102" class="a src" style="left:300px;top:1000px">@ChrisCoons on X · Nov 7, 2026 · Photo: US Senate</div></div></div>
+<div id="s109" class="clip scene" data-start="120.770" data-duration="4.680" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div id="w110" class="sc"><div id="c105" class="a h" style="left:300px;top:120px;font-size:34px"><span class="mono g">Sunday, Nov 8</span></div><div id="c106" class="a h" style="left:300px;top:180px;font-size:76px">…came the <span class="blue">memo</span></div><div id="c107" class="a im tw" style="left:1000px;top:90px;width:660px;height:691px"><img src="assets/img/tw_email_100.png" alt="" style="width:660px;height:691px"></div><div id="c108" class="a src" style="left:1000px;top:1000px">@FearedBuck on X · Nov 9, 2026</div></div></div>
+<div id="s115" class="clip scene" data-start="125.050" data-duration="8.410" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="w116" class="sc"><div class="tline" style="left:300px;top:520px;width:1320px"></div><div id="c111" class="a tp" style="left:280px;top:506px;width:520px"><i class="dot"></i><div class="mono g" style="font-size:26px;margin-top:22px">Oct 29</div><div class="ct" style="font-size:38px;margin-top:6px">“just business meetings”</div></div><div id="c112" class="a tp" style="left:1300px;top:506px;width:520px"><i class="dot hero"></i><div class="mono g" style="font-size:26px;margin-top:22px">Nov 8</div><div class="ct" style="font-size:38px;margin-top:6px"><span class="blue">CEO admits the affair</span></div></div><div id="c113" class="a note" style="left:820px;top:380px;font-size:60px">about 10 days</div><div id="c114" class="a meme" style="left:820px;top:640px;width:320px;height:190px"><img src="assets/img/pikachu.jpg" alt="" style="width:320px;height:190px"></div></div></div>
+<div id="s120" class="clip scene" data-start="133.060" data-duration="5.560" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="w121" class="sc"><div id="c117" class="a h" style="left:0;right:0;top:420px;text-align:center;font-size:30px"><span class="mono g">02</span></div><div id="c118" class="a h" style="left:0;right:0;top:470px;text-align:center;font-size:96px">the <span class="blue">GPU</span> side</div><div id="c119" class="a note" style="left:700px;top:620px;font-size:54px">this is where it gets serious</div></div></div>
+<div id="s127" class="clip scene" data-start="138.220" data-duration="8.280" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap><div id="w128" class="sc"><div id="c122" class="a im" style="left:300px;top:200px;width:760px;height:506px"><img src="assets/img/singapore.jpg" alt="" style="width:760px;height:506px"></div><div id="c123" class="a card sel" style="left:1120px;top:230px;width:540px;height:180px;"><div class="ct" style="font-size:54px">Megaspeed</div><div class="cs">Singapore-based data center company</div></div><div id="c124" class="a card" style="left:1120px;top:450px;width:540px;height:90px;"><div class="li">founded 2023</div></div><div id="c125" class="a card" style="left:1120px;top:570px;width:540px;height:90px;"><div class="li">an Nvidia customer. a big one.</div></div><div id="c126" class="a src" style="left:300px;top:730px">Photo: Marina Bay, Singapore · Wikimedia Commons</div></div></div>
+<div id="s135" class="clip scene" data-start="146.100" data-duration="13.660" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="w136" class="sc"><div id="c129" class="a lab" style="left:300px;top:150px;font-size:40px">according to the New York Times</div><div id="c130" class="a h" style="left:300px;top:230px;font-size:44px">a Megaspeed-linked company in Malaysia bought</div><div id="c131" class="a big" style="left:300px;top:320px;font-size:170px"><span class="blue">$<span id="b48">0.0</span> billion</span></div><div id="c132" class="a lab" style="left:300px;top:520px;font-size:40px">of equipment with Nvidia tech inside (at least)</div><div id="c133" class="a card sel" style="left:300px;top:620px;width:640px;height:90px;"><div class="li">June 2024 → February 2026</div></div><div id="c134" class="a src" style="left:300px;top:1000px">NYT trade records, summarized by Newsweek, Nov 9, 2026</div></div></div>
+<div id="s142" class="clip scene" data-start="159.360" data-duration="13.480" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="w143" class="sc"><div id="m137" class="a mac" style="left:300px;top:140px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">cnbc.com</div></div><div class="mbody" style="height:348px"><img id="k138" src="assets/img/cnbc_mega_90b6f.jpg" alt="cnbc_mega" style="width:1000px;height:348px"></div></div><div id="c139" class="a card red" style="left:1360px;top:200px;width:420px;height:300px;"><div class="mono g" style="font-size:22px">alleged</div><div class="big" style="font-size:80px;margin-top:6px;color:#F85149">~$2B</div><div class="cs">of AI chips smuggled into China via Malaysia</div></div><div id="c140" class="a note" style="left:1360px;top:560px;font-size:46px">Commerce Dept probe reported</div><div id="c141" class="a note" style="left:1360px;top:640px;font-size:54px">no finding announced</div></div></div>
+<div id="s148" class="clip scene" data-start="172.440" data-duration="4.960" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="w149" class="sc"><div id="vc144" class="a vcard" style="left:300px;top:160px;width:1000px;height:562px"></div><div id="c147" class="a card sel" style="left:1360px;top:300px;width:420px;height:200px;"><div class="mono g" style="font-size:22px">reportedly</div><div class="ct" style="margin-top:8px">rents computing power to Alibaba</div></div></div></div>
+<div id="vw146" class="vwrap" style="left:300px;top:160px;width:1000px;height:562px;z-index:37"><video id="v145" class="clip" src="assets/clips/px_datacenter_0_ad35deaf.mp4" muted playsinline data-start="172.440" data-duration="4.960" data-track-index="1" style="width:1000px;height:562px;object-fit:cover"></video></div>
+<div id="s154" class="clip scene" data-start="177.000" data-duration="8.960" data-track-index="2" style="z-index:38" data-layout-allow-overflow data-layout-allow-overlap><div id="w155" class="sc"><div id="m150" class="a mac" style="left:300px;top:150px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">cnbc.com</div></div><div class="mbody" style="height:348px"><img id="k151" src="assets/img/cnbc_oct29_90b6f.jpg" alt="cnbc_oct29" style="width:1000px;height:348px"></div></div><div id="c152" class="a note" style="left:1340px;top:320px;font-size:46px">Nvidia: Megaspeed<br>has no ties to China</div><div id="c153" class="a note" style="left:1340px;top:470px;font-size:42px">diversion claims<br>“investigated and debunked”</div></div></div>
+<div id="s163" class="clip scene" data-start="185.560" data-duration="13.580" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="w164" class="sc"><div id="c156" class="a h" style="left:0;right:0;top:80px;text-align:center;font-size:64px">so why does this <span class="blue">matter</span> so much?</div><div id="vc157" class="a vcard" style="left:260px;top:220px;width:760px;height:427px"></div><div id="c160" class="a card" style="left:1080px;top:230px;width:580px;height:140px;"><div class="li">the US restricts which AI chips can be sold to China</div></div><div id="c161" class="a card sel" style="left:1080px;top:400px;width:580px;height:140px;"><div class="li">Jensen: one of the <span class="blue">loudest voices</span> to loosen those rules</div></div><div id="c162" class="a card" style="left:1080px;top:570px;width:580px;height:90px;"><div class="li">close to President Trump</div></div></div></div>
+<div id="vw159" class="vwrap" style="left:260px;top:220px;width:760px;height:427px;z-index:40"><video id="v158" class="clip" src="assets/clips/px_chip_0_01eb99c9.mp4" muted playsinline data-start="187.780" data-duration="11.360" data-track-index="1" style="width:760px;height:427px;object-fit:cover"></video></div>
+<div id="s168" class="clip scene" data-start="198.740" data-duration="6.700" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="w169" class="sc"><div id="m165" class="a mac" style="left:300px;top:150px;width:1100px"><div class="mbar"><i></i><i></i><i></i><div class="murl">cnbc.com</div></div><div class="mbody" style="height:383px"><img id="k166" src="assets/img/cnbc_h200_90b6f.jpg" alt="cnbc_h200" style="width:1100px;height:383px"></div></div><div id="c167" class="a note" style="left:300px;top:900px;font-size:46px">January: some H200s allowed for select Chinese buyers</div></div></div>
+<div id="s173" class="clip scene" data-start="205.040" data-duration="7.250" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="w174" class="sc"><div id="vc170" class="a vcard" style="left:0px;top:0px;width:1920px;height:1080px"></div></div></div>
+<div id="vw172" class="vwrap" style="left:0px;top:0px;width:1920px;height:1080px;z-index:43"><video id="v171" class="clip" src="assets/clips/px_capitol_0_f43ea008.mp4" muted playsinline data-start="205.040" data-duration="7.250" data-track-index="1" style="width:1920px;height:1080px;object-fit:cover"></video></div>
+<div id="s177" class="clip scene" data-start="205.040" data-duration="7.250" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="w178" class="sc"><div class="dimbg"></div><div id="c175" class="a card dash" style="left:360px;top:330px;width:1200px;height:170px;"><div class="ct">if a foreign spy got close to the person lobbying on that exact issue…</div></div><div id="c176" class="a note" style="left:760px;top:560px;font-size:64px">Washington gets nervous</div></div></div>
+<div id="s189" class="clip scene" data-start="211.890" data-duration="16.470" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="w190" class="sc"><div id="c179" class="a lab" style="left:0;right:0;top:80px;text-align:center;font-size:40px">the part a lot of videos will skip</div><div id="c180" class="a h" style="left:0;right:0;top:140px;text-align:center;font-size:76px">a lot of this is still <span class="blue">unconfirmed</span></div><div id="c181" class="a card" style="left:360px;top:300px;width:1200px;height:100px;"><div class="li">the intelligence memo hasn't been released</div></div><div id="c182" class="a " style="left:1500px;top:318px"><span class="big" style="font-size:44px;color:#F0A818">?</span></div><div id="c183" class="a card" style="left:360px;top:430px;width:1200px;height:100px;"><div class="li">no public proof Alice Huang was actually recruited</div></div><div id="c184" class="a " style="left:1500px;top:448px"><span class="big" style="font-size:44px;color:#F0A818">?</span></div><div id="c185" class="a card" style="left:360px;top:560px;width:1200px;height:100px;"><div class="li">no public proof she got any secrets</div></div><div id="c186" class="a " style="left:1500px;top:578px"><span class="big" style="font-size:44px;color:#F0A818">?</span></div><div id="c187" class="a card" style="left:360px;top:690px;width:1200px;height:100px;"><div class="li">no proof Jensen shared anything confidential</div></div><div id="c188" class="a " style="left:1500px;top:708px"><span class="big" style="font-size:44px;color:#F0A818">?</span></div></div></div>
+<div id="s195" class="clip scene" data-start="227.960" data-duration="9.610" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="w196" class="sc"><div id="c191" class="a card ok" style="left:300px;top:130px;width:620px;height:100px;"><div class="li">not charged with anything</div></div><div id="m192" class="a mac" style="left:300px;top:280px;width:1320px"><div class="mbar"><i></i><i></i><i></i><div class="murl">aa.com.tr</div></div><div class="mbody" style="height:305px"><img id="k193" src="assets/img/aa_noreason_912aa.jpg" alt="aa_noreason" style="width:1320px;height:305px"></div></div><div id="c194" class="a note" style="left:1000px;top:150px;font-size:54px">Nvidia's board</div></div></div>
+<div id="s199" class="clip scene" data-start="237.170" data-duration="10.120" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="w200" class="sc"><div id="c197" class="a card ok" style="left:260px;top:240px;width:680px;height:400px;"><div class="mono g" style="font-size:24px">confirmed</div><div class="li" style="margin-top:18px">the affair (he admitted it)</div><div class="li" style="margin-top:12px">the investigations</div><div class="li" style="margin-top:12px">the letters from Congress</div></div><div id="c198" class="a card red" style="left:1000px;top:240px;width:660px;height:400px;"><div class="mono g" style="font-size:24px">still an allegation</div><div class="ct" style="font-size:60px;margin-top:22px"><span class="blue">everything else</span></div></div></div></div>
+<div id="s207" class="clip scene" data-start="246.890" data-duration="9.230" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="w208" class="sc"><div id="c201" class="a h" style="left:300px;top:80px;font-size:60px">now, the <span class="blue">board</span></div><div id="m202" class="a mac" style="left:300px;top:170px;width:960px"><div class="mbar"><i></i><i></i><i></i><div class="murl">nvidianews.nvidia.com</div></div><div class="mbody" style="height:614px"><img id="k203" src="assets/img/nv_board_ddcdd.jpg" alt="nv_board" style="width:960px;height:614px"></div></div><div id="c204" class="a card sel" style="left:1320px;top:260px;width:440px;height:90px;"><div class="li">independent investigation</div></div><div id="c205" class="a card" style="left:1320px;top:380px;width:440px;height:130px;"><div class="li">committee of independent directors</div></div><div id="c206" class="a card" style="left:1320px;top:540px;width:440px;height:90px;"><div class="li">outside lawyers</div></div></div></div>
+<div id="s212" class="clip scene" data-start="255.720" data-duration="6.700" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="w213" class="sc"><div id="c209" class="a lab" style="left:0;right:0;top:230px;text-align:center;font-size:44px">it's focused on whether Jensen was</div><div id="c210" class="a h" style="left:0;right:0;top:300px;text-align:center;font-size:72px">the target of a <span class="blue">foreign intelligence operation</span></div><div id="c211" class="a h strike2" style="left:0;right:0;top:460px;text-align:center;font-size:52px">not on the affair itself</div></div></div>
+<div id="s221" class="clip scene" data-start="262.020" data-duration="9.200" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div id="w222" class="sc"><div id="vc214" class="a vcard" style="left:260px;top:180px;width:900px;height:506px"></div><div id="c217" class="a src" style="left:260px;top:700px">Bloomberg Television</div><div id="c218" class="a card ok" style="left:1220px;top:220px;width:480px;height:130px;"><div class="li">board: still has confidence in him</div></div><div id="c219" class="a card" style="left:1220px;top:380px;width:480px;height:90px;"><div class="li">he stays on as CEO</div></div><div id="c220" class="a note" style="left:1220px;top:530px;font-size:56px">“will not slow NVIDIA”</div></div></div>
+<div id="vw216" class="vwrap" style="left:260px;top:180px;width:900px;height:506px;z-index:51"><video id="v215" class="clip" src="assets/clips/yt_bloom_probe_460e8303.mp4" muted playsinline data-start="262.020" data-duration="9.200" data-track-index="1" style="width:900px;height:506px;object-fit:cover"></video></div>
+<div id="s231" class="clip scene" data-start="270.820" data-duration="16.200" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div id="w232" class="sc"><div id="c223" class="a h" style="left:300px;top:90px;font-size:60px">let's talk <span class="blue">stock</span></div><div id="c224" class="a h" style="left:300px;top:190px;font-size:32px"><span class="mono g">Nov 5, 2026</span></div><div id="c225" class="a card" style="left:300px;top:270px;width:620px;height:300px;"><img src="assets/img/nvidia_w.png" alt="" style="width:240px;height:44px;object-fit:contain"><div class="big" style="font-size:120px;color:#F85149;margin-top:20px">−9.3%</div></div><div id="c226" class="a card red" style="left:1000px;top:270px;width:620px;height:300px;"><img src="assets/img/amd_w.png" alt="" style="width:200px;height:48px;object-fit:contain"><div class="big" style="font-size:120px;color:#F85149;margin-top:16px">−17.3%</div></div><div id="c227" class="a note" style="left:320px;top:620px;font-size:50px">a wider AI chip sell-off</div><div id="c228" class="a note" style="left:1020px;top:620px;font-size:50px">can't blame all of that on Jensen</div><div id="c229" class="a meme" style="left:1240px;top:720px;width:400px;height:194px"><img src="assets/img/thisisfine.jpg" alt="" style="width:400px;height:194px"></div><div id="c230" class="a src" style="left:300px;top:1000px">Sources: CNBC, Trefis</div></div></div>
+<div id="s239" class="clip scene" data-start="286.620" data-duration="5.760" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="w240" class="sc"><div id="vc233" class="a vcard" style="left:300px;top:150px;width:1100px;height:619px"></div><div id="c236" class="a src" style="left:300px;top:783px">CNBC Television · Nov 9, 2026</div><div id="c237" class="a note" style="left:300px;top:840px;font-size:44px">after the memo: down 2%+ after hours (reported)</div><div id="c238" class="a note" style="left:300px;top:910px;font-size:44px">Monday premarket: about −5% (CNBC)</div></div></div>
+<div id="vw235" class="vwrap" style="left:300px;top:150px;width:1100px;height:619px;z-index:54"><video id="v234" class="clip" src="assets/clips/yt_cnbc_invest_831a89b8.mp4" muted playsinline data-start="286.620" data-duration="5.760" data-track-index="1" style="width:1100px;height:619px;object-fit:cover"></video></div>
+<div id="s248" class="clip scene" data-start="291.980" data-duration="13.220" data-track-index="2" style="z-index:55" data-layout-allow-overflow data-layout-allow-overlap><div id="w249" class="sc"><div id="vc241" class="a vcard" style="left:260px;top:150px;width:900px;height:506px"></div><div id="c244" class="a src" style="left:260px;top:670px">CNBC International · Dan Ives</div><div id="c245" class="a im tw" style="left:1220px;top:150px;width:500px;height:444px"><img src="assets/img/tw_ives2_100.png" alt="" style="width:500px;height:444px"></div><div id="c246" class="a note" style="left:260px;top:760px;font-size:50px">a risk Jensen could be removed as CEO</div><div id="c247" class="a note" style="left:260px;top:850px;font-size:46px">“Jensen basically is the Nvidia story”</div></div></div>
+<div id="vw243" class="vwrap" style="left:260px;top:150px;width:900px;height:506px;z-index:56"><video id="v242" class="clip" src="assets/clips/yt_ives_612e805a.mp4" muted playsinline data-start="291.980" data-duration="13.220" data-track-index="1" style="width:900px;height:506px;object-fit:cover"></video></div>
+<div id="s259" class="clip scene" data-start="304.800" data-duration="14.970" data-track-index="2" style="z-index:57" data-layout-allow-overflow data-layout-allow-overlap><div id="w260" class="sc"><div id="c250" class="a h" style="left:300px;top:80px;font-size:56px">that's the real <span class="blue">business risk</span></div><div id="vc251" class="a vcard" style="left:260px;top:180px;width:1000px;height:562px"></div><div id="c254" class="a src" style="left:260px;top:756px">NVIDIA · GTC 2026 keynote</div><div id="c255" class="a card sel" style="left:1320px;top:220px;width:420px;height:100px;"><div class="ct">the <span class="blue">face</span> of the AI boom</div></div><div id="c256" class="a card" style="left:1320px;top:350px;width:420px;height:90px;"><div class="li">on stage at every launch</div></div><div id="c257" class="a card" style="left:1320px;top:460px;width:420px;height:90px;"><div class="li">does the deals</div></div><div id="c258" class="a card" style="left:1320px;top:570px;width:420px;height:90px;"><div class="li">meets the presidents</div></div></div></div>
+<div id="vw253" class="vwrap" style="left:260px;top:180px;width:1000px;height:562px;z-index:58"><video id="v252" class="clip" src="assets/clips/yt_gtc_6d757096.mp4" muted playsinline data-start="307.700" data-duration="12.070" data-track-index="1" style="width:1000px;height:562px;object-fit:cover"></video></div>
+<div id="s264" class="clip scene" data-start="319.370" data-duration="6.980" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="w265" class="sc"><div id="c261" class="a h" style="left:0;right:0;top:420px;text-align:center;font-size:30px"><span class="mono g">04</span></div><div id="c262" class="a h" style="left:0;right:0;top:470px;text-align:center;font-size:96px">the <span class="blue">memes</span></div><div id="c263" class="a note" style="left:560px;top:640px;font-size:48px">the Jensen meme universe existed long before this</div></div></div>
+<div id="s270" class="clip scene" data-start="325.950" data-duration="7.720" data-track-index="2" style="z-index:60" data-layout-allow-overflow data-layout-allow-overlap><div id="w271" class="sc"><div id="m266" class="a mac" style="left:300px;top:200px;width:1320px"><div class="mbar"><i></i><i></i><i></i><div class="murl">tomshardware.com</div></div><div class="mbody" style="height:343px"><img id="k267" src="assets/img/toms_61067.jpg" alt="toms" style="width:1320px;height:343px"></div></div><div id="c268" class="a note" style="left:300px;top:800px;font-size:50px">his own 2016 Reddit AMA</div><div id="c269" class="a note" style="left:300px;top:880px;font-size:44px">“the guy in the leather jacket who repeats things three times”</div></div></div>
+<div id="s277" class="clip scene" data-start="333.270" data-duration="12.160" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div id="w278" class="sc"><div id="c272" class="a im tw" style="left:300px;top:60px;width:600px;height:602px"><img src="assets/img/tw_jacket_62.png" alt="" style="width:600px;height:602px"></div><div id="c273" class="a note" style="left:1000px;top:300px;font-size:46px">people tracked his jacket prices vs the stock</div><div id="c274" class="a big" style="left:1000px;top:420px;font-size:90px">both down <span class="blue">23%</span></div><div id="c275" class="a note" style="left:1010px;top:560px;font-size:64px">coincidence?</div><div id="c276" class="a src" style="left:300px;top:1000px">@WangUWS on X · March 2025</div></div></div>
+<div id="s286" class="clip scene" data-start="345.030" data-duration="13.650" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><div id="w287" class="sc"><div id="vc279" class="a vcard" style="left:1220px;top:300px;width:520px;height:292px"></div><div id="m282" class="a mac" style="left:260px;top:160px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">overclock3d.net</div></div><div class="mbody" style="height:251px"><img id="k283" src="assets/img/oc3d_f7d51.jpg" alt="oc3d" style="width:900px;height:251px"></div></div><div id="c284" class="a note" style="left:1220px;top:640px;font-size:46px">gamers: roasting him for years</div><div id="c285" class="a note" style="left:1220px;top:720px;font-size:44px">approval with gamers: lower than 2017?</div></div></div>
+<div id="vw281" class="vwrap" style="left:1220px;top:300px;width:520px;height:292px;z-index:63"><video id="v280" class="clip" src="assets/clips/px_chip_1_04c9d645.mp4" muted playsinline data-start="345.030" data-duration="13.650" data-track-index="1" style="width:520px;height:292px;object-fit:cover"></video></div>
+<div id="s293" class="clip scene" data-start="358.280" data-duration="8.140" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="w294" class="sc"><div id="c288" class="a h" style="left:0;right:0;top:80px;text-align:center;font-size:48px">a <span class="blue">spy thriller</span> around the world's most valuable chip company</div><div id="c289" class="a im tw" style="left:160px;top:220px;width:520px;height:591px"><img src="assets/img/tw_spygf_100.png" alt="" style="width:520px;height:591px"></div><div id="c290" class="a im tw" style="left:720px;top:200px;width:460px;height:630px"><img src="assets/img/tw_monday_100.png" alt="" style="width:460px;height:630px"></div><div id="c291" class="a im tw" style="left:1240px;top:240px;width:520px;height:462px"><img src="assets/img/tw_elon_100.png" alt="" style="width:520px;height:462px"></div><div id="c292" class="a note" style="left:680px;top:900px;font-size:50px">people didn't exactly hold back</div></div></div>
+<div id="s298" class="clip scene" data-start="366.020" data-duration="7.370" data-track-index="2" style="z-index:65" data-layout-allow-overflow data-layout-allow-overlap><div id="w299" class="sc"><div id="c295" class="a h" style="left:0;right:0;top:220px;text-align:center;font-size:56px">but I'll keep it to the situation,</div><div id="c296" class="a h" style="left:0;right:0;top:300px;text-align:center;font-size:84px"><span class="blue">not his family.</span></div><div id="c297" class="a card" style="left:360px;top:480px;width:1200px;height:230px;"><div class="ct" style="font-size:40px">“My family bears no responsibility for my choices. I do. Please give them privacy.”</div><div class="cs" style="margin-top:14px">— Jensen Huang's memo, Nov 8, 2026</div></div></div></div>
+<div id="s306" class="clip scene" data-start="372.990" data-duration="17.660" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="w307" class="sc"><div id="c300" class="a h" style="left:0;right:0;top:90px;text-align:center;font-size:70px">so what happens <span class="blue">next</span>?</div><div id="c301" class="a lab" style="left:0;right:0;top:190px;text-align:center;font-size:36px">three dates to watch</div><div class="tline" style="left:300px;top:420px;width:1320px"></div><div id="c302" class="a tp" style="left:280px;top:406px;width:500px"><i class="dot"></i><div class="big" style="font-size:56px;margin-top:24px">Nov 11</div><div class="ct" style="font-size:34px;margin-top:6px">today</div><div class="cs">deadline to respond to the House request</div></div><div id="c303" class="a tp" style="left:840px;top:406px;width:500px"><i class="dot"></i><div class="big" style="font-size:56px;margin-top:24px">Nov 17</div><div class="ct" style="font-size:34px;margin-top:6px">earnings</div><div class="cs">Nvidia's Q3 results</div></div><div id="c304" class="a tp" style="left:1400px;top:406px;width:500px"><i class="dot hero"></i><div class="big" style="font-size:56px;margin-top:24px"><span class="blue">Nov 18</span></div><div class="ct" style="font-size:34px;margin-top:6px">closed-door briefing</div><div class="cs">Congress wants him there</div></div><div id="c305" class="a src" style="left:0;right:0;top:1000px;text-align:center">Sources: House committee letter (Nov 4) · Nvidia investor relations</div></div></div>
+<div id="s313" class="clip scene" data-start="390.250" data-duration="15.310" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="w314" class="sc"><div id="c308" class="a h" style="left:300px;top:80px;font-size:64px">my <span class="blue">take</span></div><div id="c309" class="a card" style="left:300px;top:220px;width:620px;height:200px;"><div class="mono g" style="font-size:22px">the affair</div><div class="ct" style="margin-top:8px">his personal life, between him and his family</div></div><div id="c310" class="a card sel" style="left:1000px;top:220px;width:620px;height:200px;"><div class="mono g" style="font-size:22px">the real question</div><div class="ct" style="margin-top:8px"><span class="blue">national security</span></div></div><div id="c311" class="a h" style="left:300px;top:500px;width:1320px;font-size:46px">did a foreign intelligence service get close to the most important person in AI hardware?</div><div id="c312" class="a h" style="left:300px;top:660px;font-size:70px">and did anything <span class="blue">leak</span>?</div></div></div>
+<div id="s321" class="clip scene" data-start="405.160" data-duration="14.460" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap><div id="w322" class="sc"><div id="c315" class="a h" style="left:0;right:0;top:120px;text-align:center;font-size:50px">right now, nobody has publicly shown that anything did.</div><div id="c316" class="a note" style="left:640px;top:220px;font-size:54px">but the investigations are just starting</div><div id="c317" class="a lab" style="left:300px;top:380px;font-size:36px">what could depend on what they find:</div><div id="c318" class="a card" style="left:300px;top:460px;width:420px;height:100px;"><div class="li">Nvidia's China business</div></div><div id="c319" class="a card" style="left:760px;top:460px;width:400px;height:100px;"><div class="li">US export rules</div></div><div id="c320" class="a card red" style="left:1200px;top:460px;width:420px;height:100px;"><div class="li">maybe even <span class="blue">Jensen's job</span></div></div></div></div>
+<div id="s328" class="clip scene" data-start="419.220" data-duration="6.660" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div id="w329" class="sc"><div id="c323" class="a lab" style="left:0;right:0;top:200px;text-align:center;font-size:56px">what do you think?</div><div id="c324" class="a h" style="left:0;right:0;top:280px;text-align:center;font-size:70px">should Jensen <span class="blue">stay as CEO</span> while this plays out?</div><div id="c325" class="a card ok" style="left:560px;top:480px;width:380px;height:120px;"><div class="ct" style="text-align:center">yes, he stays</div></div><div id="c326" class="a card red" style="left:980px;top:480px;width:380px;height:120px;"><div class="ct" style="text-align:center">no, step aside</div></div><div id="c327" class="a note" style="left:720px;top:680px;font-size:56px">let me know in the comments</div></div></div>
+<div id="s332" class="clip scene" data-start="425.480" data-duration="2.320" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="w333" class="sc"><div id="c330" class="a im" style="left:760px;top:230px;width:400px;height:400px"><img src="assets/img/aiequator.png" alt="" style="width:400px;height:400px"></div><div id="c331" class="a lab" style="left:0;right:0;top:680px;text-align:center;font-size:40px">subscribe for more AI news</div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="427.8" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -60, duration: 427.8, ease: "none" }, 0);
+tl.fromTo("#hookimg",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.000);
+tl.fromTo("#c1",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.300);
+tl.fromTo("#c2",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},1.140);
+tl.fromTo("#c3",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},1.980);
+tl.fromTo("#c4",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},4.380);
+tl.fromTo("#c5",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.400);
+tl.set("#w7",{opacity:1},0);
+tl.to("#w7",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},6.080);
+tl.set("#hookimg",{opacity:1},0);
+tl.fromTo("#c8",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},6.080);
+tl.fromTo("#m9",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},8.040);
+tl.fromTo("#k10",{scale:1},{scale:1.035,duration:3.140,ease:"none"},8.040);
+tl.fromTo("#c11",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},8.300);
+tl.fromTo("#w13",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},6.080);
+tl.to("#w13",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},11.180);
+tl.fromTo("#m14",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},11.180);
+tl.fromTo("#k15",{scale:1},{scale:1.035,duration:6.380,ease:"none"},11.180);
+tl.fromTo("#c16",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},11.980);
+tl.fromTo("#c17",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},13.220);
+tl.fromTo("#c18",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},15.140);
+tl.fromTo("#w20",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},11.180);
+tl.to("#w20",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},17.560);
+tl.fromTo("#c21",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},17.560);
+tl.fromTo("#c22",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},18.600);
+tl.fromTo("#c23",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},21.340);
+tl.fromTo("#w25",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},17.560);
+tl.to("#w25",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},22.740);
+tl.fromTo("#vc26",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},22.740);
+tl.fromTo("#vw28",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},22.740);
+tl.fromTo("#c29",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},22.740);
+tl.fromTo("#c30",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},24.520);
+tl.fromTo("#w32",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},22.740);
+tl.to("#w32",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},27.920);
+tl.to("#vw28",{opacity:0,duration:.4,ease:"power2.in"},27.920);
+tl.fromTo("#vc33",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.920);
+tl.fromTo("#vw35",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.920);
+tl.fromTo("#c36",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.920);
+tl.fromTo("#c37",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},28.500);
+tl.fromTo("#c38",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},30.380);
+tl.fromTo("#w40",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},27.920);
+tl.to("#w40",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},34.180);
+tl.to("#vw35",{opacity:0,duration:.4,ease:"power2.in"},34.180);
+tl.fromTo("#c41",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},34.180);
+tl.fromTo("#c42",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},36.000);
+tl.fromTo("#c43",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},37.040);
+tl.fromTo("#c44",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},38.140);
+tl.fromTo("#c45",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},39.400);
+tl.fromTo("#w47",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},34.180);
+tl.to("#w47",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},40.630);
+tl.fromTo("#c48",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},40.630);
+tl.fromTo("#m49",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},42.210);
+tl.fromTo("#k50",{scale:1},{scale:1.035,duration:4.720,ease:"none"},42.210);
+tl.fromTo("#c51",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},43.530);
+tl.fromTo("#w53",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},40.630);
+tl.to("#w53",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},46.930);
+tl.fromTo("#c54",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},46.930);
+tl.fromTo("#c55",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},49.990);
+tl.fromTo("#c56",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},53.090);
+tl.fromTo("#c57",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},55.830);
+tl.fromTo("#w59",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},46.930);
+tl.to("#w59",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},58.410);
+tl.fromTo("#m60",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},58.410);
+tl.fromTo("#k61",{scale:1},{scale:1.035,duration:8.270,ease:"none"},58.410);
+tl.fromTo("#c62",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},58.900);
+tl.fromTo("#c63",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},61.850);
+tl.fromTo("#w65",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},58.410);
+tl.to("#w65",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},66.680);
+tl.fromTo("#c66",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},66.680);
+tl.set("#ul67",{opacity:1},71.330);
+tl.fromTo("#ul67 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.4,stagger:0,ease:"power2.out"},71.330);
+tl.fromTo("#vc68",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},74.150);
+tl.fromTo("#vw70",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},74.150);
+tl.fromTo("#c71",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},74.150);
+tl.fromTo("#c72",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},75.070);
+tl.fromTo("#c73",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},78.310);
+tl.fromTo("#c74",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},67.000);
+tl.fromTo("#w76",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},66.680);
+tl.to("#w76",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},82.330);
+tl.to("#vw70",{opacity:0,duration:.4,ease:"power2.in"},82.330);
+tl.fromTo("#c77",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},82.330);
+tl.fromTo("#c78",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.240);
+tl.fromTo("#w80",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},82.330);
+tl.to("#w80",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},87.210);
+tl.fromTo("#c81",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},87.210);
+tl.fromTo("#c82",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},90.150);
+tl.fromTo("#c83",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},87.500);
+tl.fromTo("#w85",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},87.210);
+tl.to("#w85",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},93.970);
+tl.fromTo("#c86",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},93.970);
+tl.fromTo("#m87",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},95.950);
+tl.fromTo("#k88",{scale:1},{scale:1.035,duration:5.850,ease:"none"},95.950);
+tl.fromTo("#c89",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},98.000);
+tl.fromTo("#w91",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},93.970);
+tl.to("#w91",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},101.800);
+tl.fromTo("#m92",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},101.800);
+tl.fromTo("#k93",{scale:1},{scale:1.035,duration:15.250,ease:"none"},101.800);
+tl.fromTo("#c94",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},102.390);
+tl.fromTo("#c95",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},103.500);
+tl.fromTo("#c96",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},108.290);
+tl.fromTo("#c97",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},114.210);
+tl.fromTo("#w99",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},101.800);
+tl.to("#w99",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},117.050);
+tl.fromTo("#c100",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.050);
+tl.fromTo("#c101",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.300);
+tl.fromTo("#c102",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.300);
+tl.fromTo("#w104",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},117.050);
+tl.to("#w104",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},120.770);
+tl.fromTo("#c105",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},120.770);
+tl.fromTo("#c106",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},121.200);
+tl.fromTo("#c107",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},120.900);
+tl.fromTo("#c108",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},121.000);
+tl.fromTo("#w110",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},120.770);
+tl.to("#w110",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},125.050);
+tl.fromTo("#c111",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},125.050);
+tl.fromTo("#c112",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},128.330);
+tl.fromTo("#c113",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},131.230);
+tl.fromTo("#c114",{opacity:0,scale:.86,rotation:-6},{opacity:1,scale:1,rotation:-2,duration:.22,ease:"back.out(2)"},131.400);
+tl.fromTo("#w116",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},125.050);
+tl.to("#w116",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},133.060);
+tl.fromTo("#c117",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},133.060);
+tl.fromTo("#c118",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},133.160);
+tl.fromTo("#c119",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},135.560);
+tl.fromTo("#w121",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},133.060);
+tl.to("#w121",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},138.220);
+tl.fromTo("#c122",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},138.220);
+tl.fromTo("#c123",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},139.200);
+tl.fromTo("#c124",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},141.200);
+tl.fromTo("#c125",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},143.260);
+tl.fromTo("#c126",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},138.500);
+tl.fromTo("#w128",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},138.220);
+tl.to("#w128",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},146.100);
+tl.fromTo("#c129",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},146.100);
+tl.fromTo("#c130",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},147.600);
+tl.fromTo("#c131",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},150.400);
+tl.fromTo("#c132",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},152.000);
+tl.fromTo("#c133",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},155.580);
+tl.fromTo("#c134",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},147.000);
+tl.fromTo("#w136",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},146.100);
+tl.to("#w136",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},159.360);
+count("#b48",150.400,0,4.8,1,"","",1.4);
+tl.fromTo("#m137",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},159.360);
+tl.fromTo("#k138",{scale:1},{scale:1.035,duration:13.080,ease:"none"},159.360);
+tl.fromTo("#c139",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},160.220);
+tl.fromTo("#c140",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},167.140);
+tl.fromTo("#c141",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},169.400);
+tl.fromTo("#w143",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},159.360);
+tl.to("#w143",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},172.440);
+tl.fromTo("#vc144",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},172.440);
+tl.fromTo("#vw146",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},172.440);
+tl.fromTo("#c147",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},173.340);
+tl.fromTo("#w149",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},172.440);
+tl.to("#w149",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},177.000);
+tl.to("#vw146",{opacity:0,duration:.4,ease:"power2.in"},177.000);
+tl.fromTo("#m150",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},177.000);
+tl.fromTo("#k151",{scale:1},{scale:1.035,duration:8.560,ease:"none"},177.000);
+tl.fromTo("#c152",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},178.360);
+tl.fromTo("#c153",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},181.360);
+tl.fromTo("#w155",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},177.000);
+tl.to("#w155",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},185.560);
+tl.fromTo("#c156",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},185.560);
+tl.fromTo("#vc157",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},187.780);
+tl.fromTo("#vw159",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},187.780);
+tl.fromTo("#c160",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},187.780);
+tl.fromTo("#c161",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},191.780);
+tl.fromTo("#c162",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},196.560);
+tl.fromTo("#w164",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},185.560);
+tl.to("#w164",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},198.740);
+tl.to("#vw159",{opacity:0,duration:.4,ease:"power2.in"},198.740);
+tl.fromTo("#m165",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},198.740);
+tl.fromTo("#k166",{scale:1},{scale:1.035,duration:6.300,ease:"none"},198.740);
+tl.fromTo("#c167",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},199.720);
+tl.fromTo("#w169",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},198.740);
+tl.to("#w169",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},205.040);
+tl.fromTo("#vc170",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},205.040);
+tl.fromTo("#vw172",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},205.040);
+tl.fromTo("#w174",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},205.040);
+tl.to("#w174",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},211.890);
+tl.to("#vw172",{opacity:0,duration:.4,ease:"power2.in"},211.890);
+tl.fromTo("#c175",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},205.040);
+tl.fromTo("#c176",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},209.660);
+tl.fromTo("#w178",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},205.040);
+tl.to("#w178",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},211.890);
+tl.fromTo("#c179",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},211.890);
+tl.fromTo("#c180",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},214.510);
+tl.fromTo("#c181",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},217.180);
+tl.fromTo("#c182",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},217.380);
+tl.fromTo("#c183",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},219.920);
+tl.fromTo("#c184",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},220.120);
+tl.fromTo("#c185",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},223.200);
+tl.fromTo("#c186",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},223.400);
+tl.fromTo("#c187",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},225.580);
+tl.fromTo("#c188",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},225.780);
+tl.fromTo("#w190",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},211.890);
+tl.to("#w190",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},227.960);
+tl.fromTo("#c191",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},227.960);
+tl.fromTo("#m192",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},230.100);
+tl.fromTo("#k193",{scale:1},{scale:1.035,duration:7.070,ease:"none"},230.100);
+tl.fromTo("#c194",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},230.600);
+tl.fromTo("#w196",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},227.960);
+tl.to("#w196",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},237.170);
+tl.fromTo("#c197",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},237.170);
+tl.fromTo("#c198",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},243.970);
+tl.fromTo("#w200",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},237.170);
+tl.to("#w200",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},246.890);
+tl.fromTo("#c201",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},246.890);
+tl.fromTo("#m202",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},248.130);
+tl.fromTo("#k203",{scale:1},{scale:1.035,duration:7.590,ease:"none"},248.130);
+tl.fromTo("#c204",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},249.550);
+tl.fromTo("#c205",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},251.070);
+tl.fromTo("#c206",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},253.950);
+tl.fromTo("#w208",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},246.890);
+tl.to("#w208",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},255.720);
+tl.fromTo("#c209",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},255.720);
+tl.fromTo("#c210",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},256.680);
+tl.fromTo("#c211",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},259.960);
+tl.fromTo("#w213",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},255.720);
+tl.to("#w213",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},262.020);
+tl.fromTo("#vc214",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.020);
+tl.fromTo("#vw216",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.020);
+tl.fromTo("#c217",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.020);
+tl.fromTo("#c218",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.800);
+tl.fromTo("#c219",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},264.640);
+tl.fromTo("#c220",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},266.820);
+tl.fromTo("#w222",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},262.020);
+tl.to("#w222",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},270.820);
+tl.to("#vw216",{opacity:0,duration:.4,ease:"power2.in"},270.820);
+tl.fromTo("#c223",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},270.820);
+tl.fromTo("#c224",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},272.220);
+tl.fromTo("#c225",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},273.620);
+tl.fromTo("#c226",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},279.660);
+tl.fromTo("#c227",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},277.080);
+tl.fromTo("#c228",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},283.360);
+tl.fromTo("#c229",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},284.000);
+tl.fromTo("#c230",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},274.000);
+tl.fromTo("#w232",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},270.820);
+tl.to("#w232",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},286.620);
+tl.fromTo("#vc233",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},286.620);
+tl.fromTo("#vw235",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},286.620);
+tl.fromTo("#c236",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},286.620);
+tl.fromTo("#c237",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},287.400);
+tl.fromTo("#c238",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},289.200);
+tl.fromTo("#w240",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},286.620);
+tl.to("#w240",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},291.980);
+tl.to("#vw235",{opacity:0,duration:.4,ease:"power2.in"},291.980);
+tl.fromTo("#vc241",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.980);
+tl.fromTo("#vw243",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.980);
+tl.fromTo("#c244",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},291.980);
+tl.fromTo("#c245",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},293.000);
+tl.fromTo("#c246",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},294.540);
+tl.fromTo("#c247",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},301.140);
+tl.fromTo("#w249",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},291.980);
+tl.to("#w249",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},304.800);
+tl.to("#vw243",{opacity:0,duration:.4,ease:"power2.in"},304.800);
+tl.fromTo("#c250",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},304.800);
+tl.fromTo("#vc251",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},307.700);
+tl.fromTo("#vw253",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},307.700);
+tl.fromTo("#c254",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},307.700);
+tl.fromTo("#c255",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},311.140);
+tl.fromTo("#c256",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},313.920);
+tl.fromTo("#c257",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},315.780);
+tl.fromTo("#c258",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},317.140);
+tl.fromTo("#w260",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},304.800);
+tl.to("#w260",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},319.370);
+tl.to("#vw253",{opacity:0,duration:.4,ease:"power2.in"},319.370);
+tl.fromTo("#c261",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},319.370);
+tl.fromTo("#c262",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},319.470);
+tl.fromTo("#c263",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},321.990);
+tl.fromTo("#w265",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},319.370);
+tl.to("#w265",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},325.950);
+tl.fromTo("#m266",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},325.950);
+tl.fromTo("#k267",{scale:1},{scale:1.035,duration:7.320,ease:"none"},325.950);
+tl.fromTo("#c268",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},327.650);
+tl.fromTo("#c269",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},329.950);
+tl.fromTo("#w271",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},325.950);
+tl.to("#w271",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},333.270);
+tl.fromTo("#c272",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},333.270);
+tl.fromTo("#c273",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},334.870);
+tl.fromTo("#c274",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},341.350);
+tl.fromTo("#c275",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},343.230);
+tl.fromTo("#c276",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},333.500);
+tl.fromTo("#w278",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},333.270);
+tl.to("#w278",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},345.030);
+tl.fromTo("#vc279",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},345.030);
+tl.fromTo("#vw281",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},345.030);
+tl.fromTo("#m282",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},345.030);
+tl.fromTo("#k283",{scale:1},{scale:1.035,duration:13.250,ease:"none"},345.030);
+tl.fromTo("#c284",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},346.250);
+tl.fromTo("#c285",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},351.710);
+tl.fromTo("#w287",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},345.030);
+tl.to("#w287",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},358.280);
+tl.to("#vw281",{opacity:0,duration:.4,ease:"power2.in"},358.280);
+tl.fromTo("#c288",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},358.280);
+tl.fromTo("#c289",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},361.200);
+tl.fromTo("#c290",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},362.400);
+tl.fromTo("#c291",{opacity:0,scale:.86,rotation:-4},{opacity:1,scale:1,rotation:0,duration:.22,ease:"back.out(2)"},363.600);
+tl.fromTo("#c292",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},363.780);
+tl.fromTo("#w294",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},358.280);
+tl.to("#w294",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},366.020);
+tl.fromTo("#c295",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},366.020);
+tl.fromTo("#c296",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},367.980);
+tl.fromTo("#c297",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},369.300);
+tl.fromTo("#w299",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},366.020);
+tl.to("#w299",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},372.990);
+tl.fromTo("#c300",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},372.990);
+tl.fromTo("#c301",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},374.770);
+tl.fromTo("#c302",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},377.270);
+tl.fromTo("#c303",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.610);
+tl.fromTo("#c304",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},386.670);
+tl.fromTo("#c305",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},375.000);
+tl.fromTo("#w307",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},372.990);
+tl.to("#w307",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},390.250);
+tl.fromTo("#c308",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},390.250);
+tl.fromTo("#c309",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},391.110);
+tl.fromTo("#c310",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},395.320);
+tl.fromTo("#c311",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},398.460);
+tl.fromTo("#c312",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},403.420);
+tl.fromTo("#w314",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},390.250);
+tl.to("#w314",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},405.160);
+tl.fromTo("#c315",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},405.160);
+tl.fromTo("#c316",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},409.160);
+tl.fromTo("#c317",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},411.000);
+tl.fromTo("#c318",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},412.480);
+tl.fromTo("#c319",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},413.720);
+tl.fromTo("#c320",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},415.660);
+tl.fromTo("#w322",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},405.160);
+tl.to("#w322",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},419.220);
+tl.fromTo("#c323",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},419.220);
+tl.fromTo("#c324",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},420.260);
+tl.fromTo("#c325",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},421.600);
+tl.fromTo("#c326",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},421.900);
+tl.fromTo("#c327",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},423.440);
+tl.fromTo("#w329",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},419.220);
+tl.to("#w329",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},425.480);
+tl.fromTo("#c330",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},425.480);
+tl.fromTo("#c331",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},425.480);
+tl.fromTo("#w333",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},425.480);
+tl.set({}, {}, 427.8);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

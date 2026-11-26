@@ -1,0 +1,872 @@
+{
+ "result_count": 12,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "cf4f5ff6-309d-4426-8012-8ddfa6abf216",
+   "title": "Pop, Soda Pop!",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1375976",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1375976&format=mp32",
+   "creator": "Blik",
+   "creator_url": "https://www.jamendo.com/artist/352114/Blik",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "filmscore",
+    "newwave",
+    "synthpop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cocacola",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricpiano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Pop, Soda Pop!\" by Blik is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "New Wave Vol.1",
+    "foreign_landing_url": "https://www.jamendo.com/album/161759/new-wave-vol-1",
+    "creator": "Blik",
+    "creator_url": "https://www.jamendo.com/artist/352114/Blik",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 147000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cf4f5ff6-309d-4426-8012-8ddfa6abf216/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cf4f5ff6-309d-4426-8012-8ddfa6abf216/",
+   "related_url": "https://api.openverse.org/v1/audio/cf4f5ff6-309d-4426-8012-8ddfa6abf216/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cf4f5ff6-309d-4426-8012-8ddfa6abf216/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3d2e7e62-6c95-4b2b-8e7a-2656ff20d794",
+   "title": "Super Power Pop Rock",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1163228",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1163228&format=mp32",
+   "creator": "Kara Square",
+   "creator_url": "https://www.jamendo.com/artist/455057/Kara_Square_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "filmscore",
+    "folk",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "love",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "ukulele",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Super Power Pop Rock\" by Kara Square is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ukulele Duels",
+    "foreign_landing_url": "https://www.jamendo.com/album/139770/ukulele-duels",
+    "creator": "Kara Square",
+    "creator_url": "https://www.jamendo.com/artist/455057/Kara_Square_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 188000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3d2e7e62-6c95-4b2b-8e7a-2656ff20d794/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3d2e7e62-6c95-4b2b-8e7a-2656ff20d794/",
+   "related_url": "https://api.openverse.org/v1/audio/3d2e7e62-6c95-4b2b-8e7a-2656ff20d794/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3d2e7e62-6c95-4b2b-8e7a-2656ff20d794/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "24bb7e37-2d89-454b-8c17-96bf2b7a87a5",
+   "title": "TEMA 09 - POP Chicas guapas",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1204906",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1204906&format=mp32",
+   "creator": "Luis Chocano",
+   "creator_url": "https://www.jamendo.com/artist/463465/Luis_Chocano_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "moda",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"TEMA 09 - POP Chicas guapas\" by Luis Chocano is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pop Lucho Chocano",
+    "foreign_landing_url": "https://www.jamendo.com/album/144739/pop-lucho-chocano",
+    "creator": "Luis Chocano",
+    "creator_url": "https://www.jamendo.com/artist/463465/Luis_Chocano_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 378000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/24bb7e37-2d89-454b-8c17-96bf2b7a87a5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/24bb7e37-2d89-454b-8c17-96bf2b7a87a5/",
+   "related_url": "https://api.openverse.org/v1/audio/24bb7e37-2d89-454b-8c17-96bf2b7a87a5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/24bb7e37-2d89-454b-8c17-96bf2b7a87a5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "03c472fc-a3e6-43a1-993c-aa4e5276a7af",
+   "title": "TEMA 10 - POP El telefono",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1204917",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1204917&format=mp32",
+   "creator": "Luis Chocano",
+   "creator_url": "https://www.jamendo.com/artist/463465/Luis_Chocano_(2)",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "electropop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "moda",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"TEMA 10 - POP El telefono\" by Luis Chocano is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pop Lucho Chocano",
+    "foreign_landing_url": "https://www.jamendo.com/album/144739/pop-lucho-chocano",
+    "creator": "Luis Chocano",
+    "creator_url": "https://www.jamendo.com/artist/463465/Luis_Chocano_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 359000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/03c472fc-a3e6-43a1-993c-aa4e5276a7af/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/03c472fc-a3e6-43a1-993c-aa4e5276a7af/",
+   "related_url": "https://api.openverse.org/v1/audio/03c472fc-a3e6-43a1-993c-aa4e5276a7af/related/",
+   "waveform": "https://api.openverse.org/v1/audio/03c472fc-a3e6-43a1-993c-aa4e5276a7af/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1ffdc117-c4b5-4e79-8e28-04bd0304e8bc",
+   "title": "The Moon",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1218092",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1218092&format=mp32",
+   "creator": "Reocken",
+   "creator_url": "https://www.jamendo.com/artist/467542/Reocken",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dubstep",
+    "electronic",
+    "electronik",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "pops",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Moon\" by Reocken is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Moon",
+    "foreign_landing_url": "https://www.jamendo.com/album/146130/the-moon",
+    "creator": "Reocken",
+    "creator_url": "https://www.jamendo.com/artist/467542/Reocken",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 193000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1ffdc117-c4b5-4e79-8e28-04bd0304e8bc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1ffdc117-c4b5-4e79-8e28-04bd0304e8bc/",
+   "related_url": "https://api.openverse.org/v1/audio/1ffdc117-c4b5-4e79-8e28-04bd0304e8bc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1ffdc117-c4b5-4e79-8e28-04bd0304e8bc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3313ab17-e765-4d35-a051-ebea7f2fee3d",
+   "title": "Pop Corn",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1424266",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1424266&format=mp32",
+   "creator": "Toucan",
+   "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "punk",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Pop Corn\" by Toucan is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Smoking Dragon",
+    "foreign_landing_url": "https://www.jamendo.com/album/166099/smoking-dragon",
+    "creator": "Toucan",
+    "creator_url": "https://www.jamendo.com/artist/497536/Toucan",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 151000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3313ab17-e765-4d35-a051-ebea7f2fee3d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3313ab17-e765-4d35-a051-ebea7f2fee3d/",
+   "related_url": "https://api.openverse.org/v1/audio/3313ab17-e765-4d35-a051-ebea7f2fee3d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3313ab17-e765-4d35-a051-ebea7f2fee3d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "58f29d0e-9043-4c9a-9d1d-173499af684c",
+   "title": "Road 66",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1218067",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1218067&format=mp32",
+   "creator": "Reocken",
+   "creator_url": "https://www.jamendo.com/artist/467542/Reocken",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "drumnbass",
+    "electronic",
+    "electronik",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "pops",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Road 66\" by Reocken is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Moon",
+    "foreign_landing_url": "https://www.jamendo.com/album/146130/the-moon",
+    "creator": "Reocken",
+    "creator_url": "https://www.jamendo.com/artist/467542/Reocken",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 254000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/58f29d0e-9043-4c9a-9d1d-173499af684c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/58f29d0e-9043-4c9a-9d1d-173499af684c/",
+   "related_url": "https://api.openverse.org/v1/audio/58f29d0e-9043-4c9a-9d1d-173499af684c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/58f29d0e-9043-4c9a-9d1d-173499af684c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7cc378aa-fa05-4f5c-a895-8e875cca4219",
+   "title": "Pop dawn",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1213980",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1213980&format=mp32",
+   "creator": "PequenasAlegrias",
+   "creator_url": "https://www.jamendo.com/artist/442228/PequenasAlegrias",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Pop dawn\" by PequenasAlegrias is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "the hallucinogen experiment",
+    "foreign_landing_url": "https://www.jamendo.com/album/145688/the-hallucinogen-experiment",
+    "creator": "PequenasAlegrias",
+    "creator_url": "https://www.jamendo.com/artist/442228/PequenasAlegrias",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 79000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7cc378aa-fa05-4f5c-a895-8e875cca4219/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7cc378aa-fa05-4f5c-a895-8e875cca4219/",
+   "related_url": "https://api.openverse.org/v1/audio/7cc378aa-fa05-4f5c-a895-8e875cca4219/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7cc378aa-fa05-4f5c-a895-8e875cca4219/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c8d25701-257a-49b9-89a7-5ac62882170a",
+   "title": "A DREAM DAY",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1326336",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1326336&format=mp32",
+   "creator": "BAAL ANAMELECH",
+   "creator_url": "https://www.jamendo.com/artist/348573/baal_anamelech",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "pops",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A DREAM DAY\" by BAAL ANAMELECH is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "BEYOND BORDERS",
+    "foreign_landing_url": "https://www.jamendo.com/album/157025/beyond-borders",
+    "creator": "BAAL ANAMELECH",
+    "creator_url": "https://www.jamendo.com/artist/348573/baal_anamelech",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 279000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c8d25701-257a-49b9-89a7-5ac62882170a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c8d25701-257a-49b9-89a7-5ac62882170a/",
+   "related_url": "https://api.openverse.org/v1/audio/c8d25701-257a-49b9-89a7-5ac62882170a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c8d25701-257a-49b9-89a7-5ac62882170a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "90143f32-d05e-4c79-865e-6bb443fcbe76",
+   "title": "Autopista Pop",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1265991",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1265991&format=mp32",
+   "creator": "Nubra",
+   "creator_url": "https://www.jamendo.com/artist/477129/Nubra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "breakbeat",
+    "electronic",
+    "synthpop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sintetizers",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Autopista Pop\" by Nubra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "H\u013aBRIDO",
+    "foreign_landing_url": "https://www.jamendo.com/album/151294/hlbrido",
+    "creator": "Nubra",
+    "creator_url": "https://www.jamendo.com/artist/477129/Nubra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 333000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/90143f32-d05e-4c79-865e-6bb443fcbe76/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/90143f32-d05e-4c79-865e-6bb443fcbe76/",
+   "related_url": "https://api.openverse.org/v1/audio/90143f32-d05e-4c79-865e-6bb443fcbe76/related/",
+   "waveform": "https://api.openverse.org/v1/audio/90143f32-d05e-4c79-865e-6bb443fcbe76/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "648dba34-d8ad-46c7-82a7-85ed0f1560ef",
+   "title": "2. Spy Prelude / Electronic Pop *Synth Crystals",
+   "indexed_on": "2025-06-01T16:50:55.087809Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2230432",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2230432&format=mp32",
+   "creator": "Micha\u0142 Ja\u0142ochowski",
+   "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "disco",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "slideguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"2. Spy Prelude / Electronic Pop *Synth Crystals\" by Micha\u0142 Ja\u0142ochowski is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Spy Prelude / Pop Accordion",
+    "foreign_landing_url": "https://www.jamendo.com/album/592522/spy-prelude-pop-accordion",
+    "creator": "Micha\u0142 Ja\u0142ochowski",
+    "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 375000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/",
+   "related_url": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/related/",
+   "waveform": "https://api.openverse.org/v1/audio/648dba34-d8ad-46c7-82a7-85ed0f1560ef/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0ab2078b-f58f-45dd-b430-117da820d387",
+   "title": "1. Spy Prelude / Pop Accordion *Bandoneon",
+   "indexed_on": "2025-06-01T16:50:55.087809Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/2230431",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=2230431&format=mp32",
+   "creator": "Micha\u0142 Ja\u0142ochowski",
+   "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "easylistening",
+    "electropop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "accordion",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "acousticbass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"1. Spy Prelude / Pop Accordion *Bandoneon\" by Micha\u0142 Ja\u0142ochowski is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Spy Prelude / Pop Accordion",
+    "foreign_landing_url": "https://www.jamendo.com/album/592522/spy-prelude-pop-accordion",
+    "creator": "Micha\u0142 Ja\u0142ochowski",
+    "creator_url": "https://www.jamendo.com/artist/441157/Michal_Jalochowski",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 340000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0ab2078b-f58f-45dd-b430-117da820d387/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0ab2078b-f58f-45dd-b430-117da820d387/",
+   "related_url": "https://api.openverse.org/v1/audio/0ab2078b-f58f-45dd-b430-117da820d387/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0ab2078b-f58f-45dd-b430-117da820d387/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+S = [
+    ("35:10.22", "c", "K08_card11", dict(num=11, title="Solving Trig Equations", doodle="circle")),
+    ("35:14.30", "m", "K08_IdVsEq"),
+    ("35:23.48", "m", "K08_Simple"),
+    ("36:06.34", "m", "K08_Quad1"),
+    ("36:13.28", "g", "K08_panic", dict(clip="k08_panic", cap="Don't panic!")),
+    ("36:15.26", "m", "K08_Quad2"),
+    ("36:54.72", "m", "K08_TwoLaps"),
+    ("37:39.42", "q", "K08_practice"),
+    ("37:41.40", "m", "K08_Practice"),
+    ("38:22.04", "c", "K08_card12", dict(num=12, title="Inverse Trig: The Deep Version", doodle="wave")),
+    ("38:26.98", "m", "K08_Problem"),
+    ("38:47.28", "m", "K08_Ranges"),
+    ("39:08.56", "m", "K08_Trap"),
+    ("39:40.76", "m", "K08_Triangles"),
+]

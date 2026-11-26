@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.6)}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9;text-shadow:0 2px 6px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.55)}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="171.280" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s1" class="clip" data-start="0.000" data-duration="8.160" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s1k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o2" class="cap" style="opacity:0">2 August 1932 · Pasadena, California</div></div>
+<div id="s3" class="clip" data-start="8.160" data-duration="3.340" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:612px"><img id="kb4" src="assets/img_s/anderson.jpg" alt="anderson"></div><div id="pn5" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:848px">Carl Anderson</div><div class="pmeta" style="left:160px;top:530px">Physicist · Caltech</div></div></div>
+<div id="s6" class="clip" data-start="11.500" data-duration="3.480" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s6k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o7" class="cap" style="opacity:0">cosmic rays</div></div>
+<div id="s8" class="clip" data-start="14.980" data-duration="6.860" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s8k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o9" class="cap" style="opacity:0">a cloud chamber</div></div>
+<div id="s10" class="clip" data-start="21.840" data-duration="3.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s10k"></div><div class="vig"></div></div>
+<video id="s11v" class="clip" src="assets/clips/contrail_25.mp4" muted playsinline data-start="25.540" data-duration="3.060" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s11" class="clip" data-start="25.540" data-duration="3.060" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s11k"></div><div class="vig"></div></div>
+<div id="s12" class="clip" data-start="28.600" data-duration="4.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s12k"></div><div class="vig"></div></div>
+<div id="s13" class="clip" data-start="32.600" data-duration="4.020" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s13k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o14" class="cap" style="opacity:0">electrons · negative charge</div></div>
+<div id="s15" class="clip" data-start="36.620" data-duration="6.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s15k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o16" class="line" style="opacity:0">But one trail curved the other way.</div></div>
+<div id="s17" class="clip" data-start="42.620" data-duration="4.860" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb18" style="position:absolute;left:585px;top:130px;width:750px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/positron.jpg" alt="positron" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o19" class="cap" style="opacity:0">Anderson&#x27;s photograph · 2 August 1932</div></div>
+<video id="s20v" class="clip" src="assets/clips/england_47.mp4" muted playsinline data-start="47.480" data-duration="4.620" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s20" class="clip" data-start="47.480" data-duration="4.620" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s20k"></div><div class="vig"></div></div>
+<div id="s21" class="clip" data-start="52.100" data-duration="6.820" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s21k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o22" class="line" style="opacity:0">No telescope. No laboratory. An equation.</div></div>
+<div id="s23" class="clip" data-start="58.920" data-duration="6.260" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s23k"></div><div class="vig"></div></div>
+<div id="s24" class="clip" data-start="65.180" data-duration="4.320" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s24k"></div><div class="vig"></div></div>
+<div id="s25" class="clip" data-start="69.500" data-duration="6.600" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s25k"></div><div class="vig"></div><div id="o26" class="big" style="opacity:0">antimatter</div></div>
+<div id="s27" class="clip" data-start="76.100" data-duration="4.860" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s27k"></div><div class="vig"></div></div>
+<video id="s28v" class="clip" src="assets/clips/nightsky_80.mp4" muted playsinline data-start="80.960" data-duration="8.540" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s28" class="clip" data-start="80.960" data-duration="8.540" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s28k"></div><div class="fadeb"></div><div class="vig"></div><div id="o29" class="title" style="opacity:0"><div class="t1">Nobody explained it like this</div><div class="t2">The Dirac Equation</div><div class="t3">How an equation predicted antimatter</div></div></div>
+<div id="s30" class="clip" data-start="89.500" data-duration="4.100" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:569px"><img id="kb31" src="assets/img_s/dirac.jpg" alt="dirac"></div><div id="pn32" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:891px">Paul Dirac</div><div class="pmeta" style="left:160px;top:530px">Born 1902 · Bristol, England</div></div></div>
+<video id="s33v" class="clip" src="assets/clips/bristol_93.mp4" muted playsinline data-start="93.600" data-duration="2.780" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s33" class="clip" data-start="93.600" data-duration="2.780" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s33k"></div><div class="vig"></div></div>
+<video id="s34v" class="clip" src="assets/clips/engineering_96.mp4" muted playsinline data-start="96.380" data-duration="5.180" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s34" class="clip" data-start="96.380" data-duration="5.180" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s34k"></div><div class="fadeb"></div><div class="vig"></div><div id="o35" class="cap" style="opacity:0">electrical engineering · graduated at 19</div></div>
+<video id="s36v" class="clip" src="assets/clips/cambridge_101.mp4" muted playsinline data-start="101.560" data-duration="3.840" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s36" class="clip" data-start="101.560" data-duration="3.840" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s36k"></div><div class="vig"></div></div>
+<div id="s37" class="clip" data-start="105.400" data-duration="6.060" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb38" style="position:absolute;left:690px;top:130px;width:539px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/dirac61.jpg" alt="dirac61" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o39" class="line" style="opacity:0">A single word, or not at all.</div></div>
+<div id="s40" class="clip" data-start="111.460" data-duration="8.940" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s40k"></div><div class="vig"></div><div id="o41" class="big" style="opacity:0">1 dirac<small>= one word per hour</small></div></div>
+<div id="s42" class="clip" data-start="120.400" data-duration="9.080" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s42k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o43" class="cap" style="opacity:0">the late 1920s</div></div>
+<div id="s44" class="clip" data-start="129.480" data-duration="5.360" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb45" style="position:absolute;left:422px;top:130px;width:1075px;height:739px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/solvay27.jpg" alt="solvay27" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o46" class="cap" style="opacity:0">Physics, 1927: two great theories</div></div>
+<div id="s47" class="clip" data-start="134.840" data-duration="5.300" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="pn48" style="opacity:0"><div class="pname" style="left:160px;top:430px;width:1520px;font-size:84px">Albert Einstein</div><div class="pmeta" style="left:160px;top:540px">Special relativity · 1905</div></div></div>
+<div id="s49" class="clip" data-start="140.140" data-duration="4.260" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s49k"></div><div class="vig"></div></div>
+<div id="s50" class="clip" data-start="144.400" data-duration="5.600" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s50k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o51" class="cap" style="opacity:0">clocks run slow · lengths shrink</div></div>
+<div id="s52" class="clip" data-start="150.000" data-duration="3.180" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s52k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o53" class="eqw" style="opacity:0"><div class="eq">E = mc²</div><div class="eqs">mass and energy are the same thing</div></div></div>
+<div id="s54" class="clip" data-start="153.180" data-duration="11.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s54k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o55" class="cap" style="opacity:0">quantum mechanics</div></div>
+<div id="s56" class="clip" data-start="164.180" data-duration="4.620" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:608px"><img id="kb57" src="assets/img_s/schro.jpg" alt="schro"></div><div id="pn58" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:852px">Erwin Schrödinger</div><div class="pmeta" style="left:160px;top:530px">His wave equation · 1926</div></div></div>
+<div id="s59" class="clip" data-start="168.800" data-duration="2.480" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s59k"></div><div class="vig"></div></div>
+<div id="fin" class="black" style="z-index:9"></div>
+</div>
+<script>window.LAB = [[0.0, 8.16, "chamber", {"mode": "photo", "FT0": 0.0}], [11.5, 14.98, "chamber", {"mode": "rays", "FT0": 11.5}], [14.98, 21.84, "chamber", {"mode": "box", "FT0": 14.98}], [21.84, 25.54, "chamber", {"mode": "trail", "FT0": 21.84}], [28.6, 32.6, "chamber", {"mode": "bend", "FT0": 28.6}], [32.6, 36.62, "chamber", {"mode": "bend2", "FT0": 32.6}], [36.62, 42.62, "chamber", {"mode": "other", "FT0": 36.62}], [52.1, 58.92, "eqpaper", {"mode": "reveal", "FT0": 52.1}], [58.92, 65.18, "eqpaper", {"mode": "strange", "FT0": 58.92}], [65.18, 69.5, "sea", {"mode": "twins", "FT0": 65.18}], [69.5, 76.1, "cosmos", {"mode": "flash", "FT0": 69.5}], [76.1, 80.96, "eqpaper", {"mode": "symbols", "FT0": 76.1}], [111.46, 120.4, "eqpaper", {"mode": "clock", "FT0": 111.46000000000001}], [120.4, 129.48, "eqpaper", {"mode": "mind", "FT0": 120.4}], [140.14, 144.4, "theories", {"mode": "fast", "FT0": 140.14}], [144.4, 150.0, "theories", {"mode": "clock", "FT0": 144.4}], [150.0, 153.18, "theories", {"mode": "mass", "FT0": 150.0}], [153.18, 164.18, "theories", {"mode": "quantum", "FT0": 153.18}], [168.8, 171.28, "theories", {"mode": "wave", "FT0": 168.8}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_0shared.js"></script>
+<script src="assets/js/k_chamber.js"></script>
+<script src="assets/js/k_cosmos.js"></script>
+<script src="assets/js/k_desk.js"></script>
+<script src="assets/js/k_math.js"></script>
+<script src="assets/js/k_sea.js"></script>
+<script src="assets/js/k_theory.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s1k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#o2",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},0.800);
+tl.to("#o2",{opacity:0,duration:0.5,ease:"power1.inOut"},6.900);
+tl.fromTo("#kb4",{scale:1.0,x:0},{scale:1.10,x:-18,duration:3.340,ease:"none"},8.160);
+tl.fromTo("#pn5",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},8.510);
+tl.fromTo("#s3",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},8.160);
+tl.fromTo("#s6k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},11.500);
+tl.fromTo("#o7",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},12.200);
+tl.to("#o7",{opacity:0,duration:0.5,ease:"power1.inOut"},14.300);
+tl.fromTo("#s8k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},14.980);
+tl.fromTo("#o9",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},17.600);
+tl.to("#o9",{opacity:0,duration:0.5,ease:"power1.inOut"},21.100);
+tl.fromTo("#s10k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},21.840);
+tl.fromTo("#s11k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},25.540);
+tl.fromTo("#s12k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},28.600);
+tl.fromTo("#s13k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},32.600);
+tl.fromTo("#o14",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},33.000);
+tl.to("#o14",{opacity:0,duration:0.5,ease:"power1.inOut"},35.900);
+tl.fromTo("#s15k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},36.620);
+tl.fromTo("#o16",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},37.000);
+tl.to("#o16",{opacity:0,duration:0.5,ease:"power1.inOut"},40.500);
+tl.fromTo("#kb18",{scale:1.0,y:6},{scale:1.09,y:-6,duration:4.860,ease:"sine.inOut"},42.620);
+tl.fromTo("#s17",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},42.620);
+tl.fromTo("#o19",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},43.000);
+tl.to("#o19",{opacity:0,duration:0.5,ease:"power1.inOut"},46.800);
+tl.fromTo("#s20k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},47.480);
+tl.fromTo("#s21k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},52.100);
+tl.fromTo("#o22",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},53.200);
+tl.to("#o22",{opacity:0,duration:0.5,ease:"power1.inOut"},58.100);
+tl.fromTo("#s23k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},58.920);
+tl.fromTo("#s24k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},65.180);
+tl.fromTo("#s25k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},69.500);
+tl.fromTo("#o26",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},73.600);
+tl.to("#o26",{opacity:0,duration:0.5,ease:"power1.inOut"},75.500);
+tl.fromTo("#s27k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},76.100);
+tl.fromTo("#s28k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},80.960);
+tl.fromTo("#o29",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},81.600);
+tl.to("#o29",{opacity:0,duration:0.5,ease:"power1.inOut"},88.700);
+tl.fromTo("#kb31",{scale:1.0,x:0},{scale:1.10,x:-18,duration:4.100,ease:"none"},89.500);
+tl.fromTo("#pn32",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},89.850);
+tl.fromTo("#s30",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},89.500);
+tl.fromTo("#s33k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},93.600);
+tl.fromTo("#s34k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},96.380);
+tl.fromTo("#o35",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},96.800);
+tl.to("#o35",{opacity:0,duration:0.5,ease:"power1.inOut"},100.800);
+tl.fromTo("#s36k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},101.560);
+tl.fromTo("#kb38",{scale:1.0,y:6},{scale:1.09,y:-6,duration:6.060,ease:"sine.inOut"},105.400);
+tl.fromTo("#s37",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},105.400);
+tl.fromTo("#o39",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},107.400);
+tl.to("#o39",{opacity:0,duration:0.5,ease:"power1.inOut"},110.800);
+tl.fromTo("#s40k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},111.460);
+tl.fromTo("#o41",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},115.800);
+tl.to("#o41",{opacity:0,duration:0.5,ease:"power1.inOut"},119.700);
+tl.fromTo("#s42k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},120.400);
+tl.fromTo("#o43",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},123.000);
+tl.to("#o43",{opacity:0,duration:0.5,ease:"power1.inOut"},128.100);
+tl.fromTo("#kb45",{scale:1.0,y:6},{scale:1.09,y:-6,duration:5.360,ease:"sine.inOut"},129.480);
+tl.fromTo("#s44",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},129.480);
+tl.fromTo("#o46",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},130.000);
+tl.to("#o46",{opacity:0,duration:0.5,ease:"power1.inOut"},134.100);
+tl.fromTo("#pn48",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},135.190);
+tl.fromTo("#pn48",{scale:0.97},{scale:1.04,duration:5.300,ease:"none"},134.840);
+tl.fromTo("#s47",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},134.840);
+tl.fromTo("#s49k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},140.140);
+tl.fromTo("#s50k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},144.400);
+tl.fromTo("#o51",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},145.000);
+tl.to("#o51",{opacity:0,duration:0.5,ease:"power1.inOut"},149.300);
+tl.fromTo("#s52k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},150.000);
+tl.fromTo("#o53",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},150.300);
+tl.to("#o53",{opacity:0,duration:0.5,ease:"power1.inOut"},152.500);
+tl.fromTo("#s54k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},153.180);
+tl.fromTo("#o55",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},154.000);
+tl.to("#o55",{opacity:0,duration:0.5,ease:"power1.inOut"},158.100);
+tl.fromTo("#kb57",{scale:1.0,x:0},{scale:1.10,x:-18,duration:4.620,ease:"none"},164.180);
+tl.fromTo("#pn58",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},164.530);
+tl.fromTo("#s56",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},164.180);
+tl.fromTo("#s59k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},168.800);
+tl.fromTo("#fin",{opacity:1},{opacity:0,duration:1.6,ease:"power1.inOut"},0);
+tl.set({}, {}, 171.280);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

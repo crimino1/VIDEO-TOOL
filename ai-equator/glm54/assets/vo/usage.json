@@ -1,0 +1,98 @@
+{
+ "used": 4174,
+ "last_request": 1795434992.4497614,
+ "log": [
+  {
+   "time": "2026-11-23T17:18:48",
+   "chars": 215,
+   "task": "1b3d528e-fd29-4c54-a531-6eb97695b2b3",
+   "out": "ai-equator/glm54/assets/vo/p12.mp3"
+  },
+  {
+   "time": "2026-11-23T17:21:06",
+   "chars": 321,
+   "task": "bd6f4b4d-0ed6-41fa-a2ec-582cf3de6b60",
+   "out": "ai-equator/glm54/assets/vo/p01.mp3"
+  },
+  {
+   "time": "2026-11-23T17:21:27",
+   "chars": 234,
+   "task": "086dded2-55f1-49bb-ae51-ae30db797d78",
+   "out": "ai-equator/glm54/assets/vo/p02.mp3"
+  },
+  {
+   "time": "2026-11-23T17:21:41",
+   "chars": 329,
+   "task": "bf38f2ac-75ee-4ceb-8acb-1c6d978d9d23",
+   "out": "ai-equator/glm54/assets/vo/p03.mp3"
+  },
+  {
+   "time": "2026-11-23T17:21:57",
+   "chars": 318,
+   "task": "8cf93c9c-b762-42d8-9e63-84352a2d174d",
+   "out": "ai-equator/glm54/assets/vo/p04.mp3"
+  },
+  {
+   "time": "2026-11-23T17:22:12",
+   "chars": 320,
+   "task": "a514b36c-2309-433f-a838-e8322b95c9b7",
+   "out": "ai-equator/glm54/assets/vo/p05.mp3"
+  },
+  {
+   "time": "2026-11-23T17:22:25",
+   "chars": 427,
+   "task": "193838e7-5ee7-413d-84ea-5b32f8ebc616",
+   "out": "ai-equator/glm54/assets/vo/p06.mp3"
+  },
+  {
+   "time": "2026-11-23T17:22:54",
+   "chars": 269,
+   "task": "ee77e5d7-3b4b-445f-be71-d33596b1f646",
+   "out": "ai-equator/glm54/assets/vo/p07.mp3"
+  },
+  {
+   "time": "2026-11-23T17:23:31",
+   "chars": 316,
+   "task": "57607814-db63-4caa-b2d1-b74b84605b1c",
+   "out": "ai-equator/glm54/assets/vo/p08.mp3"
+  },
+  {
+   "time": "2026-11-23T17:23:50",
+   "chars": 422,
+   "task": "d4330b0c-aa3e-4433-9b3d-771a4a3b0267",
+   "out": "ai-equator/glm54/assets/vo/p09.mp3"
+  },
+  {
+   "time": "2026-11-23T17:24:21",
+   "chars": 217,
+   "task": "6208ab33-4fb2-4334-8d3b-30207bf117b5",
+   "out": "ai-equator/glm54/assets/vo/p10.mp3"
+  },
+  {
+   "time": "2026-11-23T17:24:36",
+   "chars": 265,
+   "task": "7951fe00-eaca-403d-933f-369de0986291",
+   "out": "ai-equator/glm54/assets/vo/p11.mp3"
+  },
+  {
+   "time": "2026-11-23T17:24:47",
+   "chars": 131,
+   "task": "e8e92752-675f-4a8d-b59a-ef3ae3a4ac49",
+   "out": "ai-equator/glm54/assets/vo/p13.mp3"
+  },
+  {
+   "time": "2026-11-23T17:26:04",
+   "chars": 69,
+   "task": "0db35610-e191-48c6-b4b1-65bcca4a4620",
+   "out": "ai-equator/glm54/assets/vo/bak/p03b.mp3"
+  },
+  {
+   "time": "2026-11-23T17:26:33",
+   "chars": 321,
+   "task": "38526cda-09b4-46dc-9c2a-711a93577ec8",
+   "out": "ai-equator/glm54/assets/vo/p07.mp3"
+  }
+ ],
+ "budget": 4900,
+ "model": "eleven_v3"
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="126.800" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v67" class="clip vid" src="assets/clips/mn_MeetE_3bb9b769.mp4" muted playsinline data-start="0.000" data-duration="4.820" data-track-index="1" style="z-index:45;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v68" class="clip vid" src="assets/clips/pxe_counting_0ba9c874.mp4" muted playsinline data-start="4.820" data-duration="1.760" data-track-index="1" style="z-index:47;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s70" class="clip scene" data-start="4.820" data-duration="1.760" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c69" class="scene"></div></div>
+<div id="s77" class="clip scene" data-start="6.580" data-duration="4.920" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div id="c76" class="scene"><div id="k71" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w72" style="opacity:0">100%</span> <span id="w73" style="opacity:0">interest</span> <span id="w74" style="opacity:0">per</span> <span id="w75" style="opacity:0">year</span></div></div></div>
+<video id="v78" class="clip vid" src="assets/clips/mn_Interest_6a0892db.mp4" muted playsinline data-start="11.500" data-duration="44.780" data-track-index="1" style="z-index:51;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s84" class="clip scene" data-start="56.280" data-duration="4.200" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="c83" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf80" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt79" src="assets/gen/bernoulli_0daea1.jpg" alt="bernoulli"></div><div id="tg81" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Jacob Bernoulli</div><div class="r">Mathematician</div></div><div id="pl82" class="place" style="top:850px"><div class="ru"></div><div class="l1">BASEL, SWITZERLAND</div><div class="l2">1683</div></div></div></div>
+<div id="s93" class="clip scene" data-start="60.480" data-duration="4.180" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div id="c92" class="scene"><div id="k85" class="kw " style="left:210px;width:1500px;text-align:center;top:120px;font-size:64px;line-height:1.08;color:#fff"><span id="w86" style="opacity:0">e</span> <span id="w87" style="opacity:0">is</span> <span id="w88" style="opacity:0">the</span> <span id="w89" style="opacity:0">number</span> <span id="w90" style="opacity:0">of</span> <span id="w91" style="opacity:0">growth</span></div></div></div>
+<video id="v94" class="clip vid" src="assets/clips/mn_Squares_d7a1d4d4.mp4" muted playsinline data-start="64.660" data-duration="28.080" data-track-index="1" style="z-index:55;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s97" class="clip scene" data-start="92.740" data-duration="7.020" data-track-index="2" style="z-index:57" data-layout-allow-overflow data-layout-allow-overlap><div id="c96" class="scene"><div id="pl95" class="place" style="top:850px"><div class="ru"></div><div class="l1">ITALY</div><div class="l2">1500s</div></div></div></div>
+<div id="s100" class="clip scene" data-start="99.760" data-duration="2.120" data-track-index="2" style="z-index:58" data-layout-allow-overflow data-layout-allow-overlap><div id="c99" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:680px;top:114px;width:560px;height:852px"><img id="ph98" src="assets/gen/hist_arsmagna1545_title_0f6fe8.jpg" alt="hist_arsmagna1545_title"></div><div class="credit">Cardano, Ars Magna (1545), public domain</div></div></div>
+<div id="s106" class="clip scene" data-start="101.880" data-duration="3.360" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="c105" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf102" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt101" src="assets/gen/descartes_d00704.jpg" alt="descartes"></div><div id="tg103" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">René Descartes</div><div class="r">Philosopher</div></div><div id="pl104" class="place" style="top:850px"><div class="ru"></div><div class="l1">FRANCE</div><div class="l2">1637</div></div></div></div>
+<div id="s115" class="clip scene" data-start="105.240" data-duration="7.700" data-track-index="2" style="z-index:60" data-layout-allow-overflow data-layout-allow-overlap><div id="c114" class="scene"><div id="k107" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w108" style="opacity:0">We</span> <span id="w109" style="opacity:0">still</span> <span id="w110" style="opacity:0">call</span> <span id="w111" style="opacity:0">them</span> <span id="w112" style="opacity:0">imaginary</span> <span id="w113" style="opacity:0">today.</span></div></div></div>
+<video id="v116" class="clip vid" src="assets/clips/mn_Recap_e71b4986.mp4" muted playsinline data-start="112.940" data-duration="13.860" data-track-index="1" style="z-index:61;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[6.58, 11.5, "bank", {"give": 0.4, "grow": 2.52, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [56.28, 60.48, "basel", {"calc": -9, "eureka": 99, "tin": "fade", "tout": "fade"}], [60.48, 64.66, "basel", {"calc": 0.1, "eureka": 1.62, "tin": "zoom", "tout": "zoom"}], [92.74, 99.76, "italy", {"trick": 5.48, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [99.76, 101.88, "italy", {"trick": -9, "tin": "fade", "tout": "fade"}], [101.88, 105.24, "descartes", {"word": 99, "tin": "fade", "tout": "fade"}], [105.24, 112.94, "descartes", {"word": 0.72, "cam": {"z": [1.0, 1.12]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dread.js"></script>
+<script src="assets/js/scenes/history.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/story.js"></script>
+<script src="assets/js/scenes/world.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v68",{scale:1.0},{scale:1.06,duration:1.76,ease:"none"},4.820);
+tl.set("#w72",{opacity:1},9.100);
+tl.set("#w73",{opacity:1},9.980);
+tl.set("#w74",{opacity:1},10.400);
+tl.set("#w75",{opacity:1},10.700);
+tl.fromTo("#pt79",{scale:1.0},{scale:1.04,duration:4.2,ease:"none"},56.280);
+tl.fromTo("#pf80",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},56.280);
+tl.fromTo("#tg81",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},57.280);
+tl.fromTo("#pl82",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},59.180);
+tl.set("#w86",{opacity:1},62.980);
+tl.set("#w87",{opacity:1},63.220);
+tl.set("#w88",{opacity:1},63.420);
+tl.set("#w89",{opacity:1},63.540);
+tl.set("#w90",{opacity:1},63.760);
+tl.set("#w91",{opacity:1},63.940);
+tl.fromTo("#pl95",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},95.100);
+tl.fromTo("#ph98",{scale:1.0},{scale:1.05,duration:2.12,ease:"none"},99.760);
+tl.fromTo("#pt101",{scale:1.0},{scale:1.04,duration:3.36,ease:"none"},101.880);
+tl.fromTo("#pf102",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},101.880);
+tl.fromTo("#tg103",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},104.900);
+tl.fromTo("#pl104",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},102.460);
+tl.set("#w108",{opacity:1},110.540);
+tl.set("#w109",{opacity:1},110.740);
+tl.set("#w110",{opacity:1},110.980);
+tl.set("#w111",{opacity:1},111.220);
+tl.set("#w112",{opacity:1},111.400);
+tl.set("#w113",{opacity:1},111.860);
+tl.set({}, {}, 126.800);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

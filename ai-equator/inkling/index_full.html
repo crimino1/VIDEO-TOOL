@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="871.32" data-width="1920" data-height="1080">
+<div id="s4" class="clip scene" data-start="0.000" data-duration="4.340" data-track-index="2" style="z-index:11"><div id="w5" class="sc"><div class="head"><div class="kick">New model</div></div><div id="b6" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="row" style="gap:44px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i1" class="a lg" style=""><img src="assets/img/tm_logo.png" alt="" style="width:150px;height:150px;display:block"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i2" class="a bg " style="font-size:150px;text-align:left">Inkling 2 Mini</div><div id="i3" class="a tx ink2" style="font-size:34px;text-align:left">Thinking Machines · open weights · Nov 20, 2026</div></div></div></div></div></div></div></div>
+<div id="s11" class="clip scene" data-start="4.340" data-duration="8.840" data-track-index="2" style="z-index:12"><div id="w12" class="sc"><div id="b13" class="body clipb"><div class="vframe"></div><div class="vcred">Thinking Machines launch demo: MacBook Pro (M5 Pro, 48GB), airplane mode</div></div></div></div>
+<div id="vw8" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:13"><video id="v7" class="clip" src="assets/clips/tm_planebench-demo3_7cbd071b.mp4" muted playsinline data-start="4.340" data-duration="8.840" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i9" class="a cap " style="">Open weights · runs on a laptop</div><div id="i10" class="a cap acc" style="">Beats every open model under 100B on coding agents (their claim)</div></div></div>
+<div id="s17" class="clip scene" data-start="13.180" data-duration="3.580" data-track-index="2" style="z-index:14"><div id="w18" class="sc"><div class="head"><div class="kick">Their claim</div><div class="ttl">“Leads every open-weights model with less than 100B”</div></div><div id="b19" class="body"><div id="i16" class="a win" style="width:1400px"><div class="wbar"><i></i><i></i><i></i><span>thinkingmachines.ai/news/inkling-2-mini</span></div><div class="wbody" style="height:348px;position:relative"><img id="k14" src="assets/img/tm_full_56d6f.jpg" alt="" style="width:1400px;height:348px"><div id="hl15" style="position:absolute;left:0px;top:202px;width:1400px;height:146px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s26" class="clip scene" data-start="16.760" data-duration="18.132" data-track-index="2" style="z-index:15"><div id="w27" class="sc"><div class="head"><div class="kick">Inkling 2 Mini</div><div class="ttl">In this video</div></div><div id="b28" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i20" class="a pill " style="">What it is</div><div id="i21" class="a pill " style="">The loop</div><div id="i22" class="a pill " style="">Real tests</div></div><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i23" class="a pill acc" style="">Mac &amp; GPU speed</div><div id="i24" class="a pill " style="">vs Qwen · Gemma · more</div><div id="i25" class="a pill " style="">Who should use it</div></div></div></div></div></div>
+<div id="s35" class="clip scene" data-start="34.892" data-duration="29.180" data-track-index="2" style="z-index:16"><div id="w36" class="sc"><div class="head"><div class="kick">Background</div><div class="ttl">Thinking Machines Lab</div></div><div id="b37" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i29" class="a pic" style="width:330px"><img src="assets/img/murati.jpg" alt="" style="width:330px;height:440px;object-fit:cover"><div class="pn">Mira Murati</div><div class="pr">Founder, ex-CTO of OpenAI</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i30" class="a tev " style=""><i class="tdot "></i><div class="tdate">Feb 2025</div><div class="tlab">Lab founded</div></div><div id="i31" class="a tev " style=""><i class="tdot "></i><div class="tdate">Jul 2025</div><div class="tlab">$2B at $12B</div></div><div id="i32" class="a tev " style=""><i class="tdot "></i><div class="tdate">Jul 2026</div><div class="tlab">Inkling · 975B</div></div><div id="i33" class="a tev " style=""><i class="tdot "></i><div class="tdate">Nov 5</div><div class="tlab">Inkling 2 Small · 594B</div></div><div id="i34" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Nov 20</div><div class="tlab">Inkling 2 Mini · 26B</div></div></div></div></div></div></div><div class="srcl">Photo: SWinxy, CC BY 4.0, Wikimedia Commons · Wikipedia · Hugging Face</div></div></div>
+<div id="s45" class="clip scene" data-start="64.072" data-duration="35.352" data-track-index="2" style="z-index:17"><div id="w46" class="sc"><div id="b47" class="body clipb"><div class="vframe"></div><div class="vcred">huggingface.co/thinkingmachines/Inkling-2-Mini (model card)</div></div></div></div>
+<div id="vw39" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:18"><video id="v38" class="clip" src="assets/clips/hf_scroll36_0e296dab.mp4" muted playsinline data-start="64.072" data-duration="35.352" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i40" class="a cap " style="">26.4B total · 3.4B active per token</div><div id="i41" class="a cap " style="">8 of 128 experts</div><div id="i42" class="a cap " style="">Text + images in · 1M context</div><div id="i43" class="a cap " style="">Apache 2.0 + usage policy</div><div id="i44" class="a cap acc" style="">~20 GB · 32 GB+ memory</div></div></div>
+<div id="s59" class="clip scene" data-start="99.424" data-duration="30.956" data-track-index="2" style="z-index:19"><div id="w60" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">Same layers, three times</div></div><div id="b61" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i51" class="a lst" style="height:560px"><div id="lb48b0" class="lyr" style="top:420px;height:100px;font-size:24px">Block 1 · 6 layers</div><div id="lb48b1" class="lyr" style="top:290px;height:100px;font-size:24px">Block 2 · 6 layers</div><div id="lb48b2" class="lyr" style="top:160px;height:100px;font-size:24px">Block 3 · 6 layers</div><div id="lb48b3" class="lyr" style="top:30px;height:100px;font-size:24px">Block 4 · 6 layers</div><svg id="arc50" style="position:absolute;left:430px;top:0;opacity:0" width="150" height="560"><path d="M20 210 C 140 210, 140 340, 26 340" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-dasharray="10 8"/><path d="M26 340 l14 -9 l0 18 z" fill="#1D4ED8"/><text x="104" y="284" font-family="JetBrains Mono" font-size="26" font-weight="700" fill="#1D4ED8">×3</text></svg><div id="tk49" class="tok" style="top:0;opacity:0"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i52" class="a hd " style="font-size:36px">A normal model: every layer, <b class='acc'>once</b>.</div><div id="i53" class="a hd " style="font-size:36px">Inkling 2 Mini: 24 layers in 4 blocks.</div><div id="i54" class="a hd ink3" style="font-size:36px">First block: once. Last block: once.</div><div id="i55" class="a hd " style="font-size:36px">The middle 12 run <b class='acc'>three times</b>.</div><div id="i56" class="a hd " style="font-size:36px">48 layer passes per token.</div><div id="i57" class="a hd " style="font-size:36px">Only 24 layers stored on disk.</div><div id="i58" class="a hd ink3" style="font-size:36px">Thinks harder, <b class='acc'>same size on disk</b>.</div></div></div></div></div><div class="srcl">Simplified from Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s65" class="clip scene" data-start="130.380" data-duration="8.706" data-track-index="2" style="z-index:20"><div id="w66" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">Not the only looped model</div></div><div id="b67" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i62" class="a twc" style="width:640px"><img src="assets/img/tw_tm_loop_55.png" alt="" style="width:640px;height:555px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i63" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">GLM-5.4 (Zhipu)</div></div><div class="verd ">LOOPS ×2</div></div><div id="i64" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Inkling 2 Mini</div></div><div class="verd good">LOOPS ×3</div></div></div></div></div></div><div class="srcl">@thinkymachines on X, Nov 20, 2026</div></div></div>
+<div id="s74" class="clip scene" data-start="139.086" data-duration="16.074" data-track-index="2" style="z-index:21"><div id="w75" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">They tested where the loop goes</div></div><div id="b76" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i69" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>thinkingmachines.ai/news/inkling-2-mini</span></div><div class="wbody" style="height:507px;position:relative"><img id="k68" src="assets/img/tm_full_581a6.jpg" alt="" style="width:900px;height:507px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i71" class="a stat hero" style="flex:1"><div class="slab">Middle loop beat last-layer loop</div><div id="v70" class="sval hero" style="font-size:100px">27/28</div><div class="ssub">evaluations</div></div><div id="i73" class="a stat " style="flex:1"><div class="slab">No-loop model needs</div><div id="v72" class="sval " style="font-size:100px">+140%</div><div class="ssub">compute on long agent tasks</div></div></div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s83" class="clip scene" data-start="155.160" data-duration="18.122" data-track-index="2" style="z-index:22"><div id="w84" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">The catch</div></div><div id="b85" class="body"><div class="col" style="gap:28px;justify-content:center;align-items:stretch"><div class="row" style="gap:24px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div id="i78" class="a stat hero" style="flex:1"><div class="slab">Looping helps</div><div id="v77" class="sval hero" style="font-size:84px">Reasoning</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div id="i80" class="a stat " style="flex:1"><div class="slab">Looping doesn't help</div><div id="v79" class="sval " style="font-size:84px">Facts</div></div></div></div><div id="i81" class="a tx " style="font-size:38px;text-align:left">Knowledge still comes down to total size: 26.4B.</div><div id="i82" class="a tx ink3" style="font-size:32px;text-align:left">Remember this one. It comes back later.</div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s91" class="clip scene" data-start="173.282" data-duration="23.281" data-track-index="2" style="z-index:23"><div id="w92" class="sc"><div class="head"><div class="kick">Training</div><div class="ttl">Built small on purpose</div></div><div id="b93" class="body"><div class="col" style="gap:28px;justify-content:center;align-items:stretch"><div class="row" style="gap:24px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div id="i87" class="a stat hero" style="flex:1"><div class="slab">Trained natively in</div><div id="v86" class="sval hero" style="font-size:110px">4-bit</div><div class="ssub">NVFP4 (last 4 layers MXFP8)</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div id="i89" class="a stat " style="flex:1"><div class="slab">Experts</div><div id="v88" class="sval " style="font-size:96px">384 → 128</div><div class="ssub">two-thirds pruned mid-training</div></div></div></div><div id="i90" class="a tx " style="font-size:36px;text-align:left">The official 4-bit weights <b class='acc'>are</b> the model: no quantization loss.</div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini” · Hugging Face model card</div></div></div>
+<div id="s99" class="clip scene" data-start="196.563" data-duration="24.146" data-track-index="2" style="z-index:24"><div id="w100" class="sc"><div class="head"><div class="kick">The tests</div><div class="ttl">I can't run this one properly</div></div><div id="b101" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i95" class="a stat " style="flex:1"><div class="slab">My editing laptop</div><div id="v94" class="sval " style="font-size:120px">16 GB</div><div class="ssub">RAM</div></div><div id="i97" class="a stat hero" style="flex:1"><div class="slab">Recommended</div><div id="v96" class="sval hero" style="font-size:120px">32 GB+</div><div class="ssub">for the official weights</div></div></div><div id="i98" class="a tx " style="font-size:34px;text-align:left">So: Thinking Machines' demos, plus real tests people posted. Credited on screen.</div></div></div></div></div>
+<div id="s107" class="clip scene" data-start="220.709" data-duration="23.937" data-track-index="2" style="z-index:25"><div id="w108" class="sc"><div id="b109" class="body clipb"><div class="vframe"></div><div class="vcred">Thinking Machines demo · MacBook Pro (M5 Pro, 48GB) · airplane mode</div></div></div></div>
+<div id="vw103" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:26"><video id="v102" class="clip" src="assets/clips/tm_planebench-demo3_4c6350dd.mp4" muted playsinline data-start="220.709" data-duration="23.937" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i104" class="a cap " style="">Built offline, on a flight, in a few minutes</div><div id="i105" class="a cap " style="">Terrain · a plane you can fly · HUD</div><div id="i106" class="a cap acc" style="">A 20 GB model, offline, at 30,000 ft</div></div></div>
+<div id="s114" class="clip scene" data-start="244.646" data-duration="22.760" data-track-index="2" style="z-index:27"><div id="w115" class="sc"><div id="b116" class="body clipb"><div class="vframe"></div><div class="vcred">Thinking Machines demo · Thinkyville · one offline MacBook Pro (M5 Pro, 48GB)</div></div></div></div>
+<div id="vw111" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:28"><video id="v110" class="clip" src="assets/clips/tm_thinkyville_c4f52266.mp4" muted playsinline data-start="244.646" data-duration="22.760" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i112" class="a cap " style="">Thinkyville: a town Inkling 2 Mini built</div><div id="i113" class="a cap acc" style="">All 20 villagers run by the same model</div></div></div>
+<div id="s120" class="clip scene" data-start="267.406" data-duration="13.667" data-track-index="2" style="z-index:29"><div id="w121" class="sc"><div id="b122" class="body clipb"><div class="vframe"></div><div class="vcred">@ollama on X, Nov 20, 2026</div></div></div></div>
+<div id="vw118" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:30"><video id="v117" class="clip" src="assets/clips/x_ollama2048_da443b73.mp4" muted playsinline data-start="267.406" data-duration="13.667" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i119" class="a cap " style="">ollama run inkling-2-mini · playing 2048 live</div></div></div>
+<div id="s127" class="clip scene" data-start="281.073" data-duration="18.818" data-track-index="2" style="z-index:31"><div id="w128" class="sc"><div id="b129" class="body clipb"><div class="vframe"></div><div class="vcred">@ItsmeAjayKV on X · RTX 3090 · Unsloth Q4</div></div></div></div>
+<div id="vw124" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:32"><video id="v123" class="clip" src="assets/clips/x_ajay_island_7846f925.mp4" muted playsinline data-start="281.073" data-duration="18.818" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i125" class="a cap " style="">One prompt: a snowy floating island in 3D</div><div id="i126" class="a cap acc" style="">~23K tokens · one shot</div></div></div>
+<div id="s134" class="clip scene" data-start="299.891" data-duration="16.569" data-track-index="2" style="z-index:33"><div id="w135" class="sc"><div id="b136" class="body clipb"><div class="vframe"></div><div class="vcred">Square Pc on YouTube, “Inkling 2 Mini Review” · RTX 5090</div></div></div></div>
+<div id="vw131" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:34"><video id="v130" class="clip" src="assets/clips/yt_sq_pagoda_33d82adf.mp4" muted playsinline data-start="299.891" data-duration="16.569" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i132" class="a cap " style="">Inside an agent harness: it screenshots and fixes its own work</div><div id="i133" class="a cap acc" style="">Night sky · flapping banners · butterflies</div></div></div>
+<div id="s142" class="clip scene" data-start="316.460" data-duration="16.668" data-track-index="2" style="z-index:35"><div id="w143" class="sc"><div id="b144" class="body clipb"><div class="vframe"></div><div class="vcred">Square Pc on YouTube · camel riding a bike</div></div></div></div>
+<div id="vw138" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:36"><video id="v137" class="clip" src="assets/clips/yt_sq_camel_63f1f840.mp4" muted playsinline data-start="316.460" data-duration="16.668" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i139" class="a cap bad" style="">One shot, no harness: much rougher</div><div id="i140" class="a cap bad" style="">First try: a broken bike</div><div id="i141" class="a cap acc" style="">Fixed over a few renders: it really likes a harness</div></div></div>
+<div id="s148" class="clip scene" data-start="333.128" data-duration="12.912" data-track-index="2" style="z-index:37"><div id="w149" class="sc"><div id="b150" class="body clipb"><div class="vframe"></div><div class="vcred">Otis's AI Lab on YouTube · his blind-test scoring app, Qwen 3.8 Flash Next vs Inkling 2 Mini</div></div></div></div>
+<div id="vw146" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:38"><video id="v145" class="clip" src="assets/clips/yt_otis_app_437cf295.mp4" muted playsinline data-start="333.128" data-duration="12.912" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i147" class="a cap " style="">Fishing game · comedy set · 3D coaster</div></div></div>
+<div id="s154" class="clip scene" data-start="346.040" data-duration="8.880" data-track-index="2" style="z-index:39"><div id="w155" class="sc"><div id="b156" class="body clipb"><div class="vframe"></div><div class="vcred">Otis's AI Lab on YouTube · the reveal</div></div></div></div>
+<div id="vw152" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:40"><video id="v151" class="clip" src="assets/clips/yt_otis_reveal_e67e7eb2.mp4" muted playsinline data-start="346.040" data-duration="8.880" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i153" class="a cap acc" style="">Comedy 5.8 vs 5.5 · Fishing 7.0 vs 6.0: Inkling</div></div></div>
+<div id="s161" class="clip scene" data-start="354.920" data-duration="5.137" data-track-index="2" style="z-index:41"><div id="w162" class="sc"><div id="b163" class="body clipb"><div class="vframe"></div><div class="vcred">Otis's AI Lab on YouTube · round 3 result</div></div></div></div>
+<div id="vw158" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:42"><video id="v157" class="clip" src="assets/clips/yt_otis_final_883276c6.mp4" muted playsinline data-start="354.920" data-duration="5.137" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i159" class="a cap bad" style="">3D coasters: Qwen won, 6.3 vs 5.0</div><div id="i160" class="a cap " style="">For 3D work, he'd still pick Qwen</div></div></div>
+<div id="s167" class="clip scene" data-start="360.057" data-duration="12.263" data-track-index="2" style="z-index:43"><div id="w168" class="sc"><div id="b169" class="body clipb"><div class="vframe"></div><div class="vcred">AI WITH Rithesh on YouTube · 3-bit MLX · 24GB MacBook Air, no fan</div></div></div></div>
+<div id="vw165" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:44"><video id="v164" class="clip" src="assets/clips/yt_rit_vision_fail_9fbf1396.mp4" muted playsinline data-start="360.057" data-duration="12.263" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i166" class="a cap acc" style="">Broken repo fixed: 7/7 tests in ~1.5 min</div></div></div>
+<div id="s174" class="clip scene" data-start="372.320" data-duration="9.960" data-track-index="2" style="z-index:45"><div id="w175" class="sc"><div id="b176" class="body clipb"><div class="vframe"></div><div class="vcred">AI WITH Rithesh on YouTube</div></div></div></div>
+<div id="vw171" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:46"><video id="v170" class="clip" src="assets/clips/yt_rit_vision_fail_b87498ca.mp4" muted playsinline data-start="372.320" data-duration="9.960" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i172" class="a cap " style="">Invoice → JSON: all 17 fields right</div><div id="i173" class="a cap acc" style="">Screen clicks: 6 of 6</div></div></div>
+<div id="s179" class="clip scene" data-start="382.280" data-duration="7.396" data-track-index="2" style="z-index:47"><div id="w180" class="sc"><div class="head"><div class="kick">AI WITH Rithesh's test</div><div class="ttl">Facts: let it search</div></div><div id="b181" class="body"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i177" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">A plain fact, no search</div><div class="ssub" style="margin-top:4px">Bengaluru Terminal 2: said Oct 2016, opened Jan 2023</div></div><div class="verd bad">WRONG DATE</div></div><div id="i178" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Same question, search on</div><div class="ssub" style="margin-top:4px">in a few seconds</div></div><div class="verd good">RIGHT</div></div></div></div><div class="srcl">AI WITH Rithesh on YouTube</div></div></div>
+<div id="s186" class="clip scene" data-start="389.676" data-duration="15.624" data-track-index="2" style="z-index:48"><div id="w187" class="sc"><div id="b188" class="body clipb"><div class="vframe"></div><div class="vcred">AI WITH Rithesh on YouTube · where it broke</div></div></div></div>
+<div id="vw183" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:49"><video id="v182" class="clip" src="assets/clips/yt_rit_vision_fail_cefce572.mp4" muted playsinline data-start="389.676" data-duration="15.624" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i184" class="a cap bad" style="">Flight sim: 20,000+ thinking tokens, ~30 min, no code</div><div id="i185" class="a cap bad" style="">Four agents at once: under 4 tok/s each</div></div></div>
+<div id="s195" class="clip scene" data-start="405.300" data-duration="14.663" data-track-index="2" style="z-index:50"><div id="w196" class="sc"><div class="head"><div class="kick">Model card</div><div class="ttl">Their own warning</div></div><div id="b197" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i190" class="a win" style="width:820px"><div class="wbar"><i></i><i></i><i></i><span>huggingface.co/thinkingmachines/Inkling-2-Mini</span></div><div class="wbody" style="height:605px;position:relative"><img id="k189" src="assets/img/hf_11534.jpg" alt="" style="width:820px;height:605px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i191" class="a hd " style="font-size:38px">Can get stuck in long reasoning loops</div><div id="i192" class="a hd bad" style="font-size:38px">Can act destructively without asking</div><div id="i193" class="a hd bad" style="font-size:38px">…and misreport what it did</div><div id="i194" class="a hd acc" style="font-size:38px">Run it in a sandbox.</div></div></div></div></div><div class="srcl">Hugging Face model card, “Known issues”</div></div></div>
+<div id="s203" class="clip scene" data-start="419.963" data-duration="39.122" data-track-index="2" style="z-index:51"><div id="w204" class="sc"><div class="head"><div class="kick">AI WITH Rithesh's test</div><div class="ttl">He changed the loop count</div></div><div id="b205" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i198" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">1 pass · almost 2× faster</div></div><div class="verd bad">GIBBERISH</div></div><div id="i199" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">2 passes</div></div><div class="verd bad">STUCK REPEATING</div></div><div id="i200" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">3 passes · as shipped</div></div><div class="verd good">4 / 4</div></div><div id="i201" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">4 passes · more thinking?</div></div><div class="verd bad">0 / 4</div></div><div id="i202" class="a hd" style="font-size:44px">Trained for exactly <b class='acc'>three</b>. Don't touch it.</div></div></div><div class="srcl">AI WITH Rithesh on YouTube, “Inkling 2 Mini: #1 on Hugging Face!”</div></div></div>
+<div id="s214" class="clip scene" data-start="459.085" data-duration="11.386" data-track-index="2" style="z-index:52"><div id="w215" class="sc"><div id="b216" class="body full"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i206" class="a hd" style="font-size:96px;text-align:center">How fast is it</div><div id="i207" class="a hd" style="font-size:96px;text-align:center">on <b class='acc'>my</b> machine?</div><div id="i208" class="a tx ink3" style="font-size:36px;text-align:center">No official local tokens/s. These are measured by people.</div><div class="hrow" style="gap:16px;justify-content:center"><div id="i209" class="a pill " style="">Mac mini</div><div id="i210" class="a pill " style="">MacBook</div><div id="i211" class="a pill " style="">Mac Studio</div><div id="i212" class="a pill " style="">RTX cards</div><div id="i213" class="a pill " style="">DGX Spark</div></div></div></div></div></div>
+<div id="s229" class="clip scene" data-start="470.471" data-duration="13.749" data-track-index="2" style="z-index:53"><div id="w230" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">Mac mini</div></div><div id="b231" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i218" class="a win" style="width:700px"><div class="wbar"><i></i><i></i><i></i><span>huggingface.co/datasets/pratikgx/inkling-2-mini-m5-pro-mac-mini-bench</span></div><div class="wbody" style="height:601px;position:relative"><img id="k217" src="assets/img/macmini_bench_d1444.jpg" alt="" style="width:700px;height:601px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i219" class="a tx ink3" style="font-size:28px;text-align:left">Mac mini · M5 Pro · 64 GB · IQ4_NL · llama.cpp</div><div class="bars" style="gap:16px"><div id="i222" class="a brow" style=""><div class="blab" style="width:250px"><span>Short prompt</span></div><div class="btrack" style="height:48px"><div id="bf220" class="bfill hero" style="width:85.71%"></div></div><div class="bval acc" style="width:130px"><span id="bv221">0</span></div></div><div id="i225" class="a brow" style=""><div class="blab" style="width:250px"><span>32K context</span></div><div class="btrack" style="height:48px"><div id="bf223" class="bfill" style="width:71.43%"></div></div><div class="bval" style="width:130px"><span id="bv224">0</span></div></div><div id="i228" class="a brow" style=""><div class="blab" style="width:250px"><span>131K context</span></div><div class="btrack" style="height:48px"><div id="bf226" class="bfill" style="width:49.71%"></div></div><div class="bval" style="width:130px"><span id="bv227">0</span></div></div></div><div class="bnote">tokens per second, generation</div></div></div></div></div><div class="srcl">pratikgx on Hugging Face (community benchmark)</div></div></div>
+<div id="s238" class="clip scene" data-start="484.220" data-duration="14.437" data-track-index="2" style="z-index:54"><div id="w239" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">MacBook and Mac Studio</div></div><div id="b240" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i234" class="a brow" style=""><div class="blab" style="width:480px"><span>MacBook Pro · M4 Pro</span></div><div class="btrack" style="height:56px"><div id="bf232" class="bfill" style="width:27.00%"></div></div><div class="bval" style="width:220px"><span id="bv233">0</span><span class="bsub">36 GB · Ollama</span></div></div><div id="i237" class="a brow" style=""><div class="blab" style="width:480px"><span>Mac Studio · M5 Ultra</span></div><div class="btrack" style="height:56px"><div id="bf235" class="bfill hero" style="width:83.40%"></div></div><div class="bval acc" style="width:220px"><span id="bv236">0</span><span class="bsub">oMLX · 8-bit</span></div></div></div></div></div><div class="srcl">flaviocopes.com · omlx.ai benchmarks (community)</div></div></div>
+<div id="s253" class="clip scene" data-start="498.657" data-duration="14.023" data-track-index="2" style="z-index:55"><div id="w254" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">Nvidia GPUs</div></div><div id="b255" class="body"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:12px"><div id="i243" class="a brow" style=""><div class="blab" style="width:390px"><span>RTX 4090 · 24 GB</span></div><div class="btrack" style="height:40px"><div id="bf241" class="bfill" style="width:58.50%"></div></div><div class="bval" style="width:120px"><span id="bv242">0</span><span class="bsub">57–60</span></div></div><div id="i246" class="a brow" style=""><div class="blab" style="width:390px"><span>RTX 3090 · 4-bit</span></div><div class="btrack" style="height:40px"><div id="bf244" class="bfill" style="width:73.50%"></div></div><div class="bval" style="width:120px"><span id="bv245">0</span></div></div><div id="i249" class="a brow" style=""><div class="blab" style="width:390px"><span>2× RTX 3090</span></div><div class="btrack" style="height:40px"><div id="bf247" class="bfill hero" style="width:89.80%"></div></div><div class="bval acc" style="width:120px"><span id="bv248">0</span></div></div><div id="i252" class="a brow" style=""><div class="blab" style="width:390px"><span>DGX Spark</span></div><div class="btrack" style="height:40px"><div id="bf250" class="bfill" style="width:45.00%"></div></div><div class="bval" style="width:120px"><span id="bv251">0</span></div></div></div><div class="bnote">tokens per second, generation</div></div></div></div></div><div class="srcl">community measurements: Hugging Face, GitHub (tonyd2wild)</div></div></div>
+<div id="s259" class="clip scene" data-start="512.680" data-duration="6.420" data-track-index="2" style="z-index:56"><div id="w260" class="sc"><div id="b261" class="body clipb"><div class="vframe"></div><div class="vcred">@analogalok on X · RTX 4060 8GB · Unsloth Q3_K_XL · llama.cpp</div></div></div></div>
+<div id="vw257" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:57"><video id="v256" class="clip" src="assets/clips/x_alok4060_ea8070c9.mp4" muted playsinline data-start="512.680" data-duration="6.420" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i258" class="a cap acc" style="">8 GB RTX 4060: about 18 tok/s, 3-bit build</div></div></div>
+<div id="s265" class="clip scene" data-start="519.100" data-duration="9.552" data-track-index="2" style="z-index:58"><div id="w266" class="sc"><div id="b267" class="body clipb"><div class="vframe"></div><div class="vcred">Square Pc on YouTube · RTX 5090 · optimized engine (Basalt)</div></div></div></div>
+<div id="vw263" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:59"><video id="v262" class="clip" src="assets/clips/yt_sq_camel_ab51dd5d.mp4" muted playsinline data-start="519.100" data-duration="9.552" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i264" class="a cap acc" style="">Bursts over 400 tok/s · usually ~250</div></div></div>
+<div id="s274" class="clip scene" data-start="528.652" data-duration="13.368" data-track-index="2" style="z-index:60"><div id="w275" class="sc"><div id="b276" class="body clipb"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="vframe" style="left:192px;top:140px;width:760px;height:760px"></div><div class="vlab" style="left:192px;top:84px">@exolabs on X (launch partner)</div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i271" class="a stat " style="flex:1"><div class="slab">Exo Labs' claim, M5 Ultra</div><div id="v270" class="sval " style="font-size:110px">210</div><div class="ssub">tok/s · settings not shared</div></div><div id="i273" class="a stat hero" style="flex:1"><div class="slab">Best independent, same chip</div><div id="v272" class="sval hero" style="font-size:110px">83</div><div class="ssub">tok/s</div></div></div></div></div></div></div></div>
+<div id="vw269" class="vwrap" style="left:192px;top:140px;width:760px;height:760px;z-index:61"><video id="v268" class="clip" src="assets/clips/x_exo_0331a9b7.mp4" muted playsinline data-start="528.652" data-duration="13.368" data-track-index="1" style="width:760px;height:760px;object-fit:cover"></video></div>
+<div id="s283" class="clip scene" data-start="542.020" data-duration="9.351" data-track-index="2" style="z-index:62"><div id="w284" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">The cloud number</div></div><div id="b285" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i279" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/models/inkling-2-mini</span></div><div class="wbody" style="height:215px;position:relative"><img id="k277" src="assets/img/aa_model_eb765.jpg" alt="" style="width:900px;height:215px"><div id="hl278" style="position:absolute;left:207px;top:90px;width:216px;height:125px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i281" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/tm_logo.png" alt="" class="slogo">On Thinking Machines' servers</div><div id="v280" class="sval hero" style="font-size:120px">197</div><div class="ssub">tok/s · Artificial Analysis</div></div><div id="i282" class="a tx ink3" style="font-size:34px;text-align:left">That's the cloud number, not your laptop.</div></div></div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s293" class="clip scene" data-start="551.371" data-duration="14.029" data-track-index="2" style="z-index:63"><div id="w294" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">The weak spot: prefill</div></div><div id="b295" class="body"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i286" class="a tx ink3" style="font-size:32px;text-align:left">Prefill: how fast it reads your prompt before answering. Mac mini, M5 Pro:</div><div class="bars" style="gap:30px"><div id="i289" class="a brow" style=""><div class="blab" style="width:300px"><span>Short prompt</span></div><div class="btrack" style="height:56px"><div id="bf287" class="bfill hero" style="width:94.42%"></div></div><div class="bval acc" style="width:140px"><span id="bv288">0</span></div></div><div id="i292" class="a brow" style=""><div class="blab" style="width:300px"><span>131K tokens</span></div><div class="btrack" style="height:56px"><div id="bf290" class="bfill" style="width:18.27%"></div></div><div class="bval" style="width:140px"><span id="bv291">0</span></div></div></div><div class="bnote">prompt tokens per second</div></div></div><div class="srcl">pratikgx on Hugging Face (community benchmark)</div></div></div>
+<div id="s301" class="clip scene" data-start="565.400" data-duration="18.707" data-track-index="2" style="z-index:64"><div id="w302" class="sc"><div id="b303" class="body clipb"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="vframe" style="left:140px;top:330px;width:760px;height:428px"></div><div class="vlab" style="left:140px;top:274px">@DogukanUrker on X · RTX 3060</div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i299" class="a stat hero" style="flex:1"><div class="slab">950K-token prompt on a DGX Spark</div><div id="v298" class="sval hero" style="font-size:96px">26.5 min</div><div class="ssub">before the first word</div></div><div id="i300" class="a tx " style="font-size:30px;text-align:left">“prefill is crazy slow, the slowest i have ever posted”</div></div></div></div></div></div></div>
+<div id="vw297" class="vwrap" style="left:140px;top:330px;width:760px;height:428px;z-index:65"><video id="v296" class="clip" src="assets/clips/x_dogukan3060_4c6f5a46.mp4" muted playsinline data-start="565.400" data-duration="18.707" data-track-index="1" style="width:760px;height:428px;object-fit:cover"></video></div>
+<div id="s315" class="clip scene" data-start="584.107" data-duration="13.253" data-track-index="2" style="z-index:66"><div id="w316" class="sc"><div class="head"><div class="kick">Hardware</div><div class="ttl">Memory</div></div><div id="b317" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i305" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>unsloth.ai/docs/models/inkling-2-mini</span></div><div class="wbody" style="height:310px;position:relative"><img id="k304" src="assets/img/unsloth_e114d.jpg" alt="" style="width:760px;height:310px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:14px"><div id="i308" class="a brow" style=""><div class="blab" style="width:140px"><span>4-bit</span></div><div class="btrack" style="height:48px"><div id="bf306" class="bfill hero" style="width:73.33%"></div></div><div class="bval acc" style="width:220px"><span id="bv307">0</span></div></div><div id="i311" class="a brow" style=""><div class="blab" style="width:140px"><span>3-bit</span></div><div class="btrack" style="height:48px"><div id="bf309" class="bfill" style="width:58.33%"></div></div><div class="bval" style="width:220px"><span id="bv310">0</span></div></div><div id="i314" class="a brow" style=""><div class="blab" style="width:140px"><span>2-bit</span></div><div class="btrack" style="height:48px"><div id="bf312" class="bfill" style="width:43.75%"></div></div><div class="bval" style="width:220px"><span id="bv313">0</span></div></div></div><div class="bnote">community GGUF builds (Unsloth)</div></div></div></div></div><div class="srcl">unsloth.ai docs</div></div></div>
+<div id="s326" class="clip scene" data-start="597.360" data-duration="15.569" data-track-index="2" style="z-index:67"><div id="w327" class="sc"><div class="head"><div class="kick">Hardware</div><div class="ttl">Long context eats memory</div></div><div id="b328" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i318" class="a twc" style="width:640px"><img src="assets/img/tw_lasse_55.png" alt="" style="width:640px;height:574px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i321" class="a brow" style=""><div class="blab" style="width:290px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:42px"><div id="bf319" class="bfill hero" style="width:86.67%"></div></div><div class="bval acc" style="width:210px"><span id="bv320">0</span></div></div><div id="i324" class="a brow" style=""><div class="blab" style="width:290px"><span>Qwen 3.8 27B</span></div><div class="btrack" style="height:42px"><div id="bf322" class="bfill" style="width:58.06%"></div></div><div class="bval" style="width:210px"><span id="bv323">0</span></div></div></div><div class="bnote">memory at 131K context</div><div id="i325" class="a verd bad" style="font-size:28px;padding:13px 22px;border-width:3px">262K: DIDN'T FIT</div></div></div></div></div><div class="srcl">@lasse_ai on X</div></div></div>
+<div id="s333" class="clip scene" data-start="612.929" data-duration="14.971" data-track-index="2" style="z-index:68"><div id="w334" class="sc"><div id="b335" class="body clipb"><div class="vframe"></div><div class="vcred">thinkingmachines.ai/news/inkling-2-mini (screen recording)</div></div></div></div>
+<div id="vw330" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:69"><video id="v329" class="clip" src="assets/clips/tm_bench_fef646e7.mp4" muted playsinline data-start="612.929" data-duration="14.971" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i331" class="a cap " style="">Their own table, against open models of similar size</div><div id="i332" class="a cap acc" style="">Qwen 3.8 27B · Gemma 4 31B · Muse Glimmer · Nemotron 3.5</div></div></div>
+<div id="s351" class="clip scene" data-start="627.900" data-duration="15.540" data-track-index="2" style="z-index:70"><div id="w352" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Intelligence Index: tied with Qwen</div></div><div id="b353" class="body"><div class="bars" style="gap:14px"><div id="i338" class="a brow" style=""><div class="blab" style="width:470px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:46px"><div id="bf336" class="bfill hero" style="width:80.40%"></div></div><div class="bval acc" style="width:120px"><span id="bv337">0</span></div></div><div id="i341" class="a brow" style=""><div class="blab" style="width:470px"><span>Qwen 3.8 27B</span></div><div class="btrack" style="height:46px"><div id="bf339" class="bfill" style="width:80.40%"></div></div><div class="bval" style="width:120px"><span id="bv340">0</span></div></div><div id="i344" class="a brow" style=""><div class="blab" style="width:470px"><span>Nemotron 3.5 Super VL</span></div><div class="btrack" style="height:46px"><div id="bf342" class="bfill" style="width:54.40%"></div></div><div class="bval" style="width:120px"><span id="bv343">0</span></div></div><div id="i347" class="a brow" style=""><div class="blab" style="width:470px"><span>Muse Glimmer (Meta)</span></div><div class="btrack" style="height:46px"><div id="bf345" class="bfill" style="width:25.20%"></div></div><div class="bval" style="width:120px"><span id="bv346">0</span></div></div><div id="i350" class="a brow" style=""><div class="blab" style="width:470px"><span>Gemma 4 31B (Google)</span></div><div class="btrack" style="height:46px"><div id="bf348" class="bfill" style="width:17.60%"></div></div><div class="bval" style="width:120px"><span id="bv349">0</span></div></div></div></div><div class="srcl">Artificial Analysis Intelligence Index v5 · Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s357" class="clip scene" data-start="643.440" data-duration="29.153" data-track-index="2" style="z-index:71"><div id="w358" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Where it pulls ahead: coding agents</div></div><div id="b359" class="body"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i354" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">SWE-bench Verified</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>79.2</b></div><div class="drow">Qwen 3.8 27B<b>77.8</b></div><div class="drow">Gemma 4 31B<b>46.1</b></div><div class="ssub">fixing real GitHub issues</div></div><div id="i355" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">DeepSWE v1.1</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>48.2</b></div><div class="drow">Qwen 3.8 27B<b>42.2</b></div><div class="drow">Gemma 4 31B<b>0.3</b></div><div class="ssub">coding agent test</div></div><div id="i356" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">BrowseComp</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>79.0</b></div><div class="drow">Qwen 3.8 27B<b>61.6</b></div><div class="drow">Gemma 4 31B<b>37.0</b></div><div class="ssub">digging through the web</div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s365" class="clip scene" data-start="672.593" data-duration="25.287" data-track-index="2" style="z-index:72"><div id="w366" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Where Qwen wins</div></div><div id="b367" class="body"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i360" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Terminal-Bench 2.1</div></div><div class="verd warn">QWEN 73.0 vs 71.6</div></div><div id="i361" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">GDPval-AA (office work)</div></div><div class="verd warn">QWEN 1427 vs 1319</div></div><div id="i362" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">AutomationBench</div></div><div class="verd warn">QWEN 48.2 vs 41.8</div></div><div id="i363" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">MMMU Pro (vision)</div></div><div class="verd warn">QWEN 76.3 vs 74.9</div></div><div id="i364" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Doesn't hallucinate (AA-Omniscience)</div></div><div class="verd bad">QWEN 71.4 vs 63.4</div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s373" class="clip scene" data-start="697.880" data-duration="25.123" data-track-index="2" style="z-index:73"><div id="w374" class="sc"><div id="b375" class="body clipb"><div class="vframe"></div><div class="vcred">artificialanalysis.ai/models/inkling-2-mini (screen recording)</div></div></div></div>
+<div id="vw369" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:74"><video id="v368" class="clip" src="assets/clips/aa_model30_12197272.mp4" muted playsinline data-start="697.880" data-duration="25.123" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i370" class="a cap " style="">#2 of 16 in its size class, behind Nanbeige4.3-33B</div><div id="i371" class="a cap acc" style="">$0.59 per index task · Qwen 3.8 27B: $3.53</div><div id="i372" class="a cap " style="">About half the time, ~38% more output tokens</div></div></div>
+<div id="s383" class="clip scene" data-start="723.003" data-duration="15.888" data-track-index="2" style="z-index:75"><div id="w384" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Check the Vals number</div></div><div id="b385" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i378" class="a win" style="width:780px"><div class="wbar"><i></i><i></i><i></i><span>vals.ai/models/thinkingmachines_inkling-2-mini</span></div><div class="wbody" style="height:510px;position:relative"><img id="k376" src="assets/img/vals_14d79.jpg" alt="" style="width:780px;height:510px"><div id="hl377" style="position:absolute;left:23px;top:357px;width:226px;height:153px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i380" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/tm_logo.png" alt="" class="slogo">Thinking Machines says</div><div id="v379" class="sval " style="font-size:96px">46.5%</div><div class="ssub">Vals Index</div></div><div id="i382" class="a stat hero" style="flex:1"><div class="slab">Vals' own page</div><div id="v381" class="sval hero" style="font-size:96px">44.0%</div><div class="ssub">rank 38 of 43</div></div></div></div></div></div><div class="srcl">vals.ai</div></div></div>
+<div id="s389" class="clip scene" data-start="738.891" data-duration="23.948" data-track-index="2" style="z-index:76"><div id="w390" class="sc"><div class="head"><div class="kick">Open models, 20–35B</div><div class="ttl">What about the others?</div></div><div id="b391" class="body"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i386" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">DeepSeek's smallest: V4.1 Flash</div><div class="ssub" style="margin-top:4px">nothing in this size range</div></div><div class="verd warn">552B</div></div><div id="i387" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">OpenAI gpt-oss-20b</div><div class="ssub" style="margin-top:4px">Artificial Analysis lists N/A</div></div><div class="verd warn">NO INDEX SCORE</div></div><div id="i388" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">20–35B, top of the index</div><div class="ssub" style="margin-top:4px">all at about 20</div></div><div class="verd good">INKLING · QWEN · NANBEIGE</div></div></div></div><div class="srcl">artificialanalysis.ai · OpenRouter</div></div></div>
+<div id="s401" class="clip scene" data-start="762.839" data-duration="21.477" data-track-index="2" style="z-index:77"><div id="w402" class="sc"><div class="head"><div class="kick">Artificial Analysis Intelligence Index</div><div class="ttl">For perspective</div></div><div id="b403" class="body"><div class="bars" style="gap:20px"><div id="i394" class="a brow" style=""><div class="blab" style="width:480px"><span>Claude Fable 5.2 (closed)</span></div><div class="btrack" style="height:56px"><div id="bf392" class="bfill" style="width:92.86%"></div></div><div class="bval" style="width:110px"><span id="bv393">0</span></div></div><div id="i397" class="a brow" style=""><div class="blab" style="width:480px"><span>Kimi K3.1 Pro (best open)</span></div><div class="btrack" style="height:56px"><div id="bf395" class="bfill" style="width:65.71%"></div></div><div class="bval" style="width:110px"><span id="bv396">0</span></div></div><div id="i400" class="a brow" style=""><div class="blab" style="width:480px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:56px"><div id="bf398" class="bfill hero" style="width:28.57%"></div></div><div class="bval acc" style="width:110px"><span id="bv399">0</span></div></div></div></div><div class="srcl">artificialanalysis.ai leaderboard</div></div></div>
+<div id="s408" class="clip scene" data-start="784.316" data-duration="23.440" data-track-index="2" style="z-index:78"><div id="w409" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Who should use it</div></div><div id="b410" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i404" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Privacy: nothing leaves your machine</div></div><div class="verd good">YES</div></div><div id="i405" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Offline work: flights, bad internet</div></div><div class="verd good">YES</div></div><div id="i406" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Coding and search agents on a budget</div></div><div class="verd good">YES</div></div><div id="i407" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Fine-tune and ship it (Apache 2.0)</div></div><div class="verd good">YES</div></div></div></div></div></div>
+<div id="s416" class="clip scene" data-start="807.756" data-duration="34.124" data-track-index="2" style="z-index:79"><div id="w417" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Who shouldn't</div></div><div id="b418" class="body"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i411" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Fact questions without search</div></div><div class="verd bad">MAKES THINGS UP</div></div><div id="i412" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Languages other than English</div></div><div class="verd warn">WEAKER</div></div><div id="i413" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">16 GB machines: 2- or 3-bit only</div></div><div class="verd warn">SLOW</div></div><div id="i414" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Hard engineering · Terminal-Bench 4: 5.6%</div></div><div class="verd warn">SAME AS QWEN</div></div><div id="i415" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Runtimes still need patches</div></div><div class="verd warn">EARLY</div></div></div></div></div></div>
+<div id="s427" class="clip scene" data-start="841.880" data-duration="19.040" data-track-index="2" style="z-index:80"><div id="w428" class="sc"><div class="head"><div class="kick">Inkling 2 Mini</div><div class="ttl">My take</div></div><div id="b429" class="body"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i420" class="a stat " style="flex:1"><div class="slab">Intelligence</div><div id="v419" class="sval " style="font-size:80px">= Qwen</div><div class="ssub">AA Index 20.1</div></div><div id="i422" class="a stat hero" style="flex:1"><div class="slab">Coding agents</div><div id="v421" class="sval hero" style="font-size:80px">Better</div><div class="ssub">SWE-bench, BrowseComp</div></div><div id="i424" class="a stat " style="flex:1"><div class="slab">Cost per task</div><div id="v423" class="sval " style="font-size:80px">~6× less</div><div class="ssub">vs Qwen 3.8 27B</div></div><div id="i426" class="a stat " style="flex:1"><div class="slab">Long prompts</div><div id="v425" class="sval " style="font-size:80px">Slow</div><div class="ssub">prefill</div></div></div></div></div></div>
+<div id="s432" class="clip scene" data-start="860.920" data-duration="4.220" data-track-index="2" style="z-index:81"><div id="w433" class="sc"><div id="b434" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i430" class="a hd" style="font-size:80px;text-align:center">Tried it? What speed do you get?</div><div id="i431" class="a tx ink3" style="font-size:40px;text-align:center">Tell me in the comments.</div></div></div></div></div>
+<div id="s437" class="clip scene" data-start="865.140" data-duration="6.180" data-track-index="2" style="z-index:82"><div id="w438" class="sc"><div id="b439" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i435" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i436" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="869.72" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#i1",{opacity:1,y:0},0);
+tl.set("#i2",{opacity:1,y:0},0);
+tl.set("#i3",{opacity:1,y:0},0);
+tl.set("#w5",{opacity:1},0);
+tl.to("#w5",{opacity:0,duration:0.25,ease:"power1.in"},4.090);
+tl.fromTo("#vw8",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},4.340);
+tl.fromTo("#i9",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},4.640);
+tl.fromTo("#i10",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.740);
+tl.fromTo("#w12",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},4.340);
+tl.to("#w12",{opacity:0,duration:0.25,ease:"power1.in"},12.930);
+tl.to("#vw8",{opacity:0,duration:0.25,ease:"power1.in"},12.930);
+tl.fromTo("#hl15",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},13.780);
+tl.fromTo("#i16",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},13.280);
+tl.fromTo("#w18",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},13.180);
+tl.to("#w18",{opacity:0,duration:0.25,ease:"power1.in"},16.510);
+tl.fromTo("#i20",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},16.960);
+tl.fromTo("#i21",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},18.500);
+tl.fromTo("#i22",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},21.040);
+tl.fromTo("#i23",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},22.460);
+tl.fromTo("#i24",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},27.320);
+tl.fromTo("#i25",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},31.600);
+tl.fromTo("#w27",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},16.760);
+tl.to("#w27",{opacity:0,duration:0.25,ease:"power1.in"},34.642);
+tl.fromTo("#b28",{scale:1},{scale:1.015,duration:18.132,ease:"none"},16.760);
+tl.fromTo("#i29",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},35.092);
+tl.fromTo("#i30",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},42.020);
+tl.fromTo("#i31",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},43.960);
+tl.fromTo("#i32",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},50.480);
+tl.fromTo("#i33",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},55.860);
+tl.fromTo("#i34",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},60.040);
+tl.fromTo("#w36",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},34.892);
+tl.to("#w36",{opacity:0,duration:0.25,ease:"power1.in"},63.822);
+tl.fromTo("#b37",{scale:1},{scale:1.015,duration:29.180,ease:"none"},34.892);
+tl.fromTo("#vw39",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},64.072);
+tl.fromTo("#i40",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},66.020);
+tl.fromTo("#i41",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},75.000);
+tl.fromTo("#i42",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},79.600);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},84.540);
+tl.fromTo("#i44",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.020);
+tl.fromTo("#w46",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},64.072);
+tl.to("#w46",{opacity:0,duration:0.25,ease:"power1.in"},99.174);
+tl.to("#vw39",{opacity:0,duration:0.25,ease:"power1.in"},99.174);
+tl.fromTo("#lb48b0",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.6},109.580);
+tl.fromTo("#lb48b1",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.6},109.830);
+tl.to("#lb48b1",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},116.360);
+tl.fromTo("#lb48b2",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.6},110.080);
+tl.to("#lb48b2",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},116.360);
+tl.fromTo("#lb48b3",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.6},110.330);
+tl.fromTo("#tk49",{opacity:1,x:0,y:625},{opacity:1,y:455,duration:.5,ease:"none"},116.360);
+tl.to("#tk49",{y:195,duration:.7,ease:"none"},116.860);
+tl.to("#tk49",{x:80,y:260,duration:.3,ease:"sine.out"},117.560);
+tl.to("#tk49",{x:0,y:325,duration:.3,ease:"sine.in"},117.860);
+tl.to("#tk49",{y:195,duration:.7,ease:"none"},118.160);
+tl.to("#tk49",{x:80,y:260,duration:.3,ease:"sine.out"},118.860);
+tl.to("#tk49",{x:0,y:325,duration:.3,ease:"sine.in"},119.160);
+tl.to("#tk49",{y:195,duration:.7,ease:"none"},119.460);
+tl.to("#tk49",{y:65,duration:.5,ease:"none"},120.160);
+tl.to("#tk49",{y:-65,opacity:0,duration:.4},120.660);
+tl.fromTo("#arc50",{opacity:0},{opacity:1,duration:.3},117.560);
+tl.fromTo("#i51",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},101.900);
+tl.fromTo("#i52",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},101.900);
+tl.fromTo("#i53",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},108.600);
+tl.fromTo("#i54",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.420);
+tl.fromTo("#i55",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},116.360);
+tl.fromTo("#i56",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},120.860);
+tl.fromTo("#i57",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},124.420);
+tl.fromTo("#i58",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},126.580);
+tl.fromTo("#w60",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},99.424);
+tl.to("#w60",{opacity:0,duration:0.25,ease:"power1.in"},130.130);
+tl.fromTo("#i62",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},130.480);
+tl.fromTo("#i63",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},133.800);
+tl.fromTo("#i64",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},137.220);
+tl.fromTo("#w66",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},130.380);
+tl.to("#w66",{opacity:0,duration:0.25,ease:"power1.in"},138.836);
+tl.fromTo("#b67",{scale:1},{scale:1.015,duration:8.706,ease:"none"},130.380);
+tl.fromTo("#i69",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.186);
+count("#v70",144.880,0,27,0,"","/28",1.0);
+tl.fromTo("#i71",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},144.780);
+count("#v72",150.800,0,140,0,"+","%",1.0);
+tl.fromTo("#i73",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},150.700);
+tl.fromTo("#w75",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},139.086);
+tl.to("#w75",{opacity:0,duration:0.25,ease:"power1.in"},154.910);
+tl.fromTo("#b76",{scale:1},{scale:1.015,duration:16.074,ease:"none"},139.086);
+tl.fromTo("#i78",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},158.640);
+tl.fromTo("#i80",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},160.880);
+tl.fromTo("#i81",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},163.900);
+tl.fromTo("#i82",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},170.280);
+tl.fromTo("#w84",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},155.160);
+tl.to("#w84",{opacity:0,duration:0.25,ease:"power1.in"},173.032);
+tl.fromTo("#b85",{scale:1},{scale:1.015,duration:18.122,ease:"none"},155.160);
+tl.fromTo("#i87",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},175.620);
+tl.fromTo("#i89",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},188.860);
+tl.fromTo("#i90",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},184.160);
+tl.fromTo("#w92",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},173.282);
+tl.to("#w92",{opacity:0,duration:0.25,ease:"power1.in"},196.313);
+tl.fromTo("#b93",{scale:1},{scale:1.015,duration:23.281,ease:"none"},173.282);
+tl.fromTo("#i95",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},204.500);
+tl.fromTo("#i97",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},208.400);
+tl.fromTo("#i98",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},211.340);
+tl.fromTo("#w100",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},196.563);
+tl.to("#w100",{opacity:0,duration:0.25,ease:"power1.in"},220.459);
+tl.fromTo("#b101",{scale:1},{scale:1.015,duration:24.146,ease:"none"},196.563);
+tl.fromTo("#vw103",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},220.709);
+tl.fromTo("#i104",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},221.109);
+tl.fromTo("#i105",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},232.860);
+tl.fromTo("#i106",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},239.900);
+tl.fromTo("#w108",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},220.709);
+tl.to("#w108",{opacity:0,duration:0.25,ease:"power1.in"},244.396);
+tl.to("#vw103",{opacity:0,duration:0.25,ease:"power1.in"},244.396);
+tl.fromTo("#vw111",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},244.646);
+tl.fromTo("#i112",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},245.046);
+tl.fromTo("#i113",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},249.480);
+tl.fromTo("#w115",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},244.646);
+tl.to("#w115",{opacity:0,duration:0.25,ease:"power1.in"},267.156);
+tl.to("#vw111",{opacity:0,duration:0.25,ease:"power1.in"},267.156);
+tl.fromTo("#vw118",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},267.406);
+tl.fromTo("#i119",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},267.806);
+tl.fromTo("#w121",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},267.406);
+tl.to("#w121",{opacity:0,duration:0.25,ease:"power1.in"},280.823);
+tl.to("#vw118",{opacity:0,duration:0.25,ease:"power1.in"},280.823);
+tl.fromTo("#vw124",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},281.073);
+tl.fromTo("#i125",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},287.480);
+tl.fromTo("#i126",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},292.100);
+tl.fromTo("#w128",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},281.073);
+tl.to("#w128",{opacity:0,duration:0.25,ease:"power1.in"},299.641);
+tl.to("#vw124",{opacity:0,duration:0.25,ease:"power1.in"},299.641);
+tl.fromTo("#vw131",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},299.891);
+tl.fromTo("#i132",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},306.920);
+tl.fromTo("#i133",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},313.140);
+tl.fromTo("#w135",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},299.891);
+tl.to("#w135",{opacity:0,duration:0.25,ease:"power1.in"},316.210);
+tl.to("#vw131",{opacity:0,duration:0.25,ease:"power1.in"},316.210);
+tl.fromTo("#vw138",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},316.460);
+tl.fromTo("#i139",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},316.760);
+tl.fromTo("#i140",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},325.400);
+tl.fromTo("#i141",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},327.260);
+tl.fromTo("#w143",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},316.460);
+tl.to("#w143",{opacity:0,duration:0.25,ease:"power1.in"},332.878);
+tl.to("#vw138",{opacity:0,duration:0.25,ease:"power1.in"},332.878);
+tl.fromTo("#vw146",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},333.128);
+tl.fromTo("#i147",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},338.420);
+tl.fromTo("#w149",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},333.128);
+tl.to("#w149",{opacity:0,duration:0.25,ease:"power1.in"},345.790);
+tl.to("#vw146",{opacity:0,duration:0.25,ease:"power1.in"},345.790);
+tl.fromTo("#vw152",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},346.040);
+tl.fromTo("#i153",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},349.440);
+tl.fromTo("#w155",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},346.040);
+tl.to("#w155",{opacity:0,duration:0.25,ease:"power1.in"},354.670);
+tl.to("#vw152",{opacity:0,duration:0.25,ease:"power1.in"},354.670);
+tl.fromTo("#vw158",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},354.920);
+tl.fromTo("#i159",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},355.020);
+tl.fromTo("#i160",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},357.360);
+tl.fromTo("#w162",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},354.920);
+tl.to("#w162",{opacity:0,duration:0.25,ease:"power1.in"},359.807);
+tl.to("#vw158",{opacity:0,duration:0.25,ease:"power1.in"},359.807);
+tl.fromTo("#vw165",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},360.057);
+tl.fromTo("#i166",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},368.960);
+tl.fromTo("#w168",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},360.057);
+tl.to("#w168",{opacity:0,duration:0.25,ease:"power1.in"},372.070);
+tl.to("#vw165",{opacity:0,duration:0.25,ease:"power1.in"},372.070);
+tl.fromTo("#vw171",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},372.320);
+tl.fromTo("#i172",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},372.520);
+tl.fromTo("#i173",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},377.880);
+tl.fromTo("#w175",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},372.320);
+tl.to("#w175",{opacity:0,duration:0.25,ease:"power1.in"},382.030);
+tl.to("#vw171",{opacity:0,duration:0.25,ease:"power1.in"},382.030);
+tl.fromTo("#i177",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},382.380);
+tl.fromTo("#i178",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},386.520);
+tl.fromTo("#w180",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},382.280);
+tl.to("#w180",{opacity:0,duration:0.25,ease:"power1.in"},389.426);
+tl.fromTo("#b181",{scale:1},{scale:1.015,duration:7.396,ease:"none"},382.280);
+tl.fromTo("#vw183",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},389.676);
+tl.fromTo("#i184",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},391.780);
+tl.fromTo("#i185",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},400.620);
+tl.fromTo("#w187",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},389.676);
+tl.to("#w187",{opacity:0,duration:0.25,ease:"power1.in"},405.050);
+tl.to("#vw183",{opacity:0,duration:0.25,ease:"power1.in"},405.050);
+tl.fromTo("#i190",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},405.400);
+tl.fromTo("#i191",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},409.080);
+tl.fromTo("#i192",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},412.900);
+tl.fromTo("#i193",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},415.420);
+tl.fromTo("#i194",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},417.160);
+tl.fromTo("#w196",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},405.300);
+tl.to("#w196",{opacity:0,duration:0.25,ease:"power1.in"},419.713);
+tl.fromTo("#b197",{scale:1},{scale:1.015,duration:14.663,ease:"none"},405.300);
+tl.fromTo("#i198",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},426.880);
+tl.fromTo("#i199",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},437.120);
+tl.fromTo("#i200",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},441.080);
+tl.fromTo("#i201",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},446.120);
+tl.fromTo("#i202",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},456.540);
+tl.fromTo("#w204",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},419.963);
+tl.to("#w204",{opacity:0,duration:0.25,ease:"power1.in"},458.835);
+tl.fromTo("#b205",{scale:1},{scale:1.015,duration:39.122,ease:"none"},419.963);
+tl.fromTo("#i206",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},459.185);
+tl.fromTo("#i207",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},462.560);
+tl.fromTo("#i208",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},464.420);
+tl.fromTo("#i209",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},465.920);
+tl.fromTo("#i210",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},466.120);
+tl.fromTo("#i211",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},466.320);
+tl.fromTo("#i212",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},466.520);
+tl.fromTo("#i213",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},466.720);
+tl.fromTo("#w215",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},459.085);
+tl.to("#w215",{opacity:0,duration:0.25,ease:"power1.in"},470.221);
+tl.fromTo("#i218",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},470.571);
+tl.fromTo("#i219",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},470.771);
+tl.fromTo("#bf220",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},475.640);
+count("#bv221",475.640,0,30.0,1,"","",0.9);
+tl.fromTo("#i222",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},475.640);
+tl.fromTo("#bf223",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},478.420);
+count("#bv224",478.420,0,25.0,1,"","",0.9);
+tl.fromTo("#i225",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},478.420);
+tl.fromTo("#bf226",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},481.600);
+count("#bv227",481.600,0,17.4,1,"","",0.9);
+tl.fromTo("#i228",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},481.600);
+tl.fromTo("#w230",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},470.471);
+tl.to("#w230",{opacity:0,duration:0.25,ease:"power1.in"},483.970);
+tl.fromTo("#b231",{scale:1},{scale:1.015,duration:13.749,ease:"none"},470.471);
+tl.fromTo("#bf232",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},484.320);
+count("#bv233",484.320,0,27,1,"","",0.9);
+tl.fromTo("#i234",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},484.320);
+tl.fromTo("#bf235",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},493.560);
+count("#bv236",493.560,0,83.4,1,"","",0.9);
+tl.fromTo("#i237",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},493.560);
+tl.fromTo("#w239",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},484.220);
+tl.to("#w239",{opacity:0,duration:0.25,ease:"power1.in"},498.407);
+tl.fromTo("#b240",{scale:1},{scale:1.015,duration:14.437,ease:"none"},484.220);
+tl.fromTo("#bf241",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},499.620);
+count("#bv242",499.620,0,58.5,0,"","",0.9);
+tl.fromTo("#i243",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},499.620);
+tl.fromTo("#bf244",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},503.800);
+count("#bv245",503.800,0,73.5,0,"","",0.9);
+tl.fromTo("#i246",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},503.800);
+tl.fromTo("#bf247",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},508.140);
+count("#bv248",508.140,0,89.8,0,"","",0.9);
+tl.fromTo("#i249",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},508.140);
+tl.fromTo("#bf250",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},510.120);
+count("#bv251",510.120,0,45,0,"","",0.9);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},510.120);
+tl.fromTo("#w254",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},498.657);
+tl.to("#w254",{opacity:0,duration:0.25,ease:"power1.in"},512.430);
+tl.fromTo("#b255",{scale:1},{scale:1.015,duration:14.023,ease:"none"},498.657);
+tl.fromTo("#vw257",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},512.680);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},512.880);
+tl.fromTo("#w260",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},512.680);
+tl.to("#w260",{opacity:0,duration:0.25,ease:"power1.in"},518.850);
+tl.to("#vw257",{opacity:0,duration:0.25,ease:"power1.in"},518.850);
+tl.fromTo("#vw263",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},519.100);
+tl.fromTo("#i264",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},519.400);
+tl.fromTo("#w266",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},519.100);
+tl.to("#w266",{opacity:0,duration:0.25,ease:"power1.in"},528.402);
+tl.to("#vw263",{opacity:0,duration:0.25,ease:"power1.in"},528.402);
+tl.fromTo("#vw269",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},528.652);
+count("#v270",532.080,0,210,0,"","",1.0);
+tl.fromTo("#i271",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},531.980);
+count("#v272",538.380,0,83,0,"","",1.0);
+tl.fromTo("#i273",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.280);
+tl.fromTo("#w275",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},528.652);
+tl.to("#w275",{opacity:0,duration:0.25,ease:"power1.in"},541.770);
+tl.to("#vw269",{opacity:0,duration:0.25,ease:"power1.in"},541.770);
+tl.fromTo("#hl278",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},545.380);
+tl.fromTo("#i279",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},542.120);
+count("#v280",545.480,0,197,0,"","",1.0);
+tl.fromTo("#i281",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},545.380);
+tl.fromTo("#i282",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},548.360);
+tl.fromTo("#w284",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},542.020);
+tl.to("#w284",{opacity:0,duration:0.25,ease:"power1.in"},551.121);
+tl.fromTo("#b285",{scale:1},{scale:1.015,duration:9.351,ease:"none"},542.020);
+tl.fromTo("#i286",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},551.571);
+tl.fromTo("#bf287",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},558.120);
+count("#bv288",558.120,0,491,0,"","",0.9);
+tl.fromTo("#i289",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},558.120);
+tl.fromTo("#bf290",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},561.940);
+count("#bv291",561.940,0,95,0,"","",0.9);
+tl.fromTo("#i292",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},561.940);
+tl.fromTo("#w294",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},551.371);
+tl.to("#w294",{opacity:0,duration:0.25,ease:"power1.in"},565.150);
+tl.fromTo("#b295",{scale:1},{scale:1.015,duration:14.029,ease:"none"},551.371);
+tl.fromTo("#vw297",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},565.400);
+tl.fromTo("#i299",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},565.500);
+tl.fromTo("#i300",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},577.140);
+tl.fromTo("#w302",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},565.400);
+tl.to("#w302",{opacity:0,duration:0.25,ease:"power1.in"},583.857);
+tl.to("#vw297",{opacity:0,duration:0.25,ease:"power1.in"},583.857);
+tl.fromTo("#i305",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},584.207);
+tl.fromTo("#bf306",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},586.280);
+count("#bv307",586.280,0,17.6,1,""," GB",0.9);
+tl.fromTo("#i308",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},586.280);
+tl.fromTo("#bf309",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},590.200);
+count("#bv310",590.200,0,14,1,""," GB",0.9);
+tl.fromTo("#i311",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},590.200);
+tl.fromTo("#bf312",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},593.200);
+count("#bv313",593.200,0,10.5,1,""," GB",0.9);
+tl.fromTo("#i314",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},593.200);
+tl.fromTo("#w316",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},584.107);
+tl.to("#w316",{opacity:0,duration:0.25,ease:"power1.in"},597.110);
+tl.fromTo("#b317",{scale:1},{scale:1.015,duration:13.253,ease:"none"},584.107);
+tl.fromTo("#i318",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},597.460);
+tl.fromTo("#bf319",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},602.040);
+count("#bv320",602.040,0,31.2,1,""," GB",0.9);
+tl.fromTo("#i321",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},602.040);
+tl.fromTo("#bf322",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},607.000);
+count("#bv323",607.000,0,20.9,1,""," GB",0.9);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},607.000);
+tl.fromTo("#i325",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},611.180);
+tl.fromTo("#w327",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},597.360);
+tl.to("#w327",{opacity:0,duration:0.25,ease:"power1.in"},612.679);
+tl.fromTo("#b328",{scale:1},{scale:1.015,duration:15.569,ease:"none"},597.360);
+tl.fromTo("#vw330",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},612.929);
+tl.fromTo("#i331",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},613.329);
+tl.fromTo("#i332",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},621.780);
+tl.fromTo("#w334",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},612.929);
+tl.to("#w334",{opacity:0,duration:0.25,ease:"power1.in"},627.650);
+tl.to("#vw330",{opacity:0,duration:0.25,ease:"power1.in"},627.650);
+tl.fromTo("#bf336",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},631.680);
+count("#bv337",631.680,0,20.1,1,"","",0.9);
+tl.fromTo("#i338",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},631.680);
+tl.fromTo("#bf339",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},633.260);
+count("#bv340",633.260,0,20.1,1,"","",0.9);
+tl.fromTo("#i341",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},633.260);
+tl.fromTo("#bf342",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},638.400);
+count("#bv343",638.400,0,13.6,1,"","",0.9);
+tl.fromTo("#i344",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},638.400);
+tl.fromTo("#bf345",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},638.150);
+count("#bv346",638.150,0,6.3,1,"","",0.9);
+tl.fromTo("#i347",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},638.150);
+tl.fromTo("#bf348",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},637.900);
+count("#bv349",637.900,0,4.4,1,"","",0.9);
+tl.fromTo("#i350",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},637.900);
+tl.fromTo("#w352",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},627.900);
+tl.to("#w352",{opacity:0,duration:0.25,ease:"power1.in"},643.190);
+tl.fromTo("#b353",{scale:1},{scale:1.015,duration:15.540,ease:"none"},627.900);
+tl.fromTo("#i354",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},646.260);
+tl.fromTo("#i355",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},656.480);
+tl.fromTo("#i356",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},663.660);
+tl.fromTo("#w358",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},643.440);
+tl.to("#w358",{opacity:0,duration:0.25,ease:"power1.in"},672.343);
+tl.fromTo("#b359",{scale:1},{scale:1.015,duration:29.153,ease:"none"},643.440);
+tl.fromTo("#i360",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},677.020);
+tl.fromTo("#i361",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},679.000);
+tl.fromTo("#i362",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},681.680);
+tl.fromTo("#i363",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},684.800);
+tl.fromTo("#i364",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},689.700);
+tl.fromTo("#w366",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},672.593);
+tl.to("#w366",{opacity:0,duration:0.25,ease:"power1.in"},697.630);
+tl.fromTo("#b367",{scale:1},{scale:1.015,duration:25.287,ease:"none"},672.593);
+tl.fromTo("#vw369",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},697.880);
+tl.fromTo("#i370",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},698.180);
+tl.fromTo("#i371",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},708.940);
+tl.fromTo("#i372",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},718.180);
+tl.fromTo("#w374",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},697.880);
+tl.to("#w374",{opacity:0,duration:0.25,ease:"power1.in"},722.753);
+tl.to("#vw369",{opacity:0,duration:0.25,ease:"power1.in"},722.753);
+tl.fromTo("#hl377",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},729.560);
+tl.fromTo("#i378",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},723.103);
+tl.fromTo("#i380",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},726.180);
+tl.fromTo("#i382",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},729.560);
+tl.fromTo("#w384",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},723.003);
+tl.to("#w384",{opacity:0,duration:0.25,ease:"power1.in"},738.641);
+tl.fromTo("#b385",{scale:1},{scale:1.015,duration:15.888,ease:"none"},723.003);
+tl.fromTo("#i386",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},739.740);
+tl.fromTo("#i387",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},750.460);
+tl.fromTo("#i388",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},756.200);
+tl.fromTo("#w390",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},738.891);
+tl.to("#w390",{opacity:0,duration:0.25,ease:"power1.in"},762.589);
+tl.fromTo("#b391",{scale:1},{scale:1.015,duration:23.948,ease:"none"},738.891);
+tl.fromTo("#bf392",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},766.540);
+count("#bv393",766.540,0,65,0,"","",0.9);
+tl.fromTo("#i394",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},766.540);
+tl.fromTo("#bf395",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},771.600);
+count("#bv396",771.600,0,46,0,"","",0.9);
+tl.fromTo("#i397",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},771.600);
+tl.fromTo("#bf398",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},778.000);
+count("#bv399",778.000,0,20,0,"","",0.9);
+tl.fromTo("#i400",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},778.000);
+tl.fromTo("#w402",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},762.839);
+tl.to("#w402",{opacity:0,duration:0.25,ease:"power1.in"},784.066);
+tl.fromTo("#b403",{scale:1},{scale:1.015,duration:21.477,ease:"none"},762.839);
+tl.fromTo("#i404",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},786.720);
+tl.fromTo("#i405",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},793.380);
+tl.fromTo("#i406",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},798.720);
+tl.fromTo("#i407",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},803.560);
+tl.fromTo("#w409",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},784.316);
+tl.to("#w409",{opacity:0,duration:0.25,ease:"power1.in"},807.506);
+tl.fromTo("#b410",{scale:1},{scale:1.015,duration:23.440,ease:"none"},784.316);
+tl.fromTo("#i411",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},809.880);
+tl.fromTo("#i412",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},815.400);
+tl.fromTo("#i413",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},819.520);
+tl.fromTo("#i414",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},826.700);
+tl.fromTo("#i415",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},834.920);
+tl.fromTo("#w417",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},807.756);
+tl.to("#w417",{opacity:0,duration:0.25,ease:"power1.in"},841.630);
+tl.fromTo("#b418",{scale:1},{scale:1.015,duration:34.124,ease:"none"},807.756);
+tl.fromTo("#i420",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},847.620);
+tl.fromTo("#i422",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},849.620);
+tl.fromTo("#i424",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},851.460);
+tl.fromTo("#i426",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},855.140);
+tl.fromTo("#w428",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},841.880);
+tl.to("#w428",{opacity:0,duration:0.25,ease:"power1.in"},860.670);
+tl.fromTo("#b429",{scale:1},{scale:1.015,duration:19.040,ease:"none"},841.880);
+tl.fromTo("#i430",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},861.020);
+tl.fromTo("#i431",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},861.520);
+tl.fromTo("#w433",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},860.920);
+tl.to("#w433",{opacity:0,duration:0.25,ease:"power1.in"},864.890);
+tl.fromTo("#i435",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},865.140);
+tl.fromTo("#i436",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},865.140);
+tl.fromTo("#w438",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},865.140);
+tl.set({}, {}, 871.32);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

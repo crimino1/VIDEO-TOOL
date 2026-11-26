@@ -1,0 +1,8 @@
+ok K10_Polar 151s 
+FAIL K10_Rose (1): │    12                                                                       │ | │    13                                                                       │ | └─────────────────────────────────────────────────────────────────────────────┘ | ValueError: operands could not be broadcast together with shapes (2,) (3,)
+ok K10_Complex 87s 
+ok K10_Euler 112s !! K10_Euler: late by 0.36s for 2831.64 !! K10_Euler: late by 0.25s for 2867.95
+ok K10_DeMoivre 118s !! K10_DeMoivre: late by 0.25s for 2907.3
+ok K10_Roots 101s 
+ok K10_Calculus 92s 
+ok K10_Fourier 85s 

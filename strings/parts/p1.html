@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="219.200" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s1" class="clip" data-start="0.000" data-duration="3.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s1k"></div><div class="vig"></div><div id="o2" class="capt" style="opacity:0">1968</div></div>
+<div id="s3" class="clip" data-start="3.700" data-duration="5.420" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:680px"><img id="kb4" src="assets/img_s/veneziano.jpg" alt="veneziano"></div><div id="pn5" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:780px">Gabriele Veneziano</div><div class="pmeta" style="left:160px;top:530px">Physicist · CERN · 1968</div></div></div>
+<div id="s6" class="clip" data-start="9.120" data-duration="4.580" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s6k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o7" class="cap" style="opacity:0">A formula from the 1700s</div></div>
+<div id="s8" class="clip" data-start="13.700" data-duration="3.880" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:649px"><img id="kb9" src="assets/img_s/euler.jpg" alt="euler"></div><div id="pn10" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:811px">Leonhard Euler</div><div class="pmeta" style="left:160px;top:530px">Mathematician · 1707–1783</div></div></div>
+<div id="s11" class="clip" data-start="17.580" data-duration="4.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s11k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o12" class="eqw" style="opacity:0"><div class="eq">B(x, y) = <span class='frac'><span>Γ(x) Γ(y)</span><span>Γ(x + y)</span></span></div><div class="eqs">Euler&#x27;s beta function</div></div></div>
+<div id="s13" class="clip" data-start="21.580" data-duration="19.840" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s13k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o14" class="line" style="opacity:0">The answer sounded ridiculous.</div><div id="o15" class="title" style="opacity:0"><div class="t1">Nobody explained</div><div class="t2">String Theory</div><div class="t3">like this</div></div></div>
+<div id="s16" class="clip" data-start="41.420" data-duration="6.100" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s16k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o17" class="line" style="opacity:0">“Everything is made of tiny vibrating strings.”</div></div>
+<div id="s18" class="clip" data-start="47.520" data-duration="11.280" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o19" class="big" style="opacity:0">And that sentence explains nothing.</div><div id="o20" class="big" style="opacity:0"><span style='font-size:76px'>What does string theory claim —<br>and is there any reason to think it's right?</span></div></div>
+<div id="s21" class="clip" data-start="58.800" data-duration="6.320" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s21k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o22" class="cap" style="opacity:0">Two rule books</div></div>
+<div id="s23" class="clip" data-start="65.120" data-duration="5.160" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:639px"><img id="kb24" src="assets/img_s/einstein1915.jpg" alt="einstein1915"></div><div id="pn25" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:821px">Albert Einstein</div><div class="pmeta" style="left:160px;top:530px">General relativity · 1915</div></div></div>
+<div id="s26" class="clip" data-start="70.280" data-duration="9.220" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s26k"></div><div class="vig"></div></div>
+<div id="s27" class="clip" data-start="79.500" data-duration="7.580" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s27k"></div><div class="vig"></div></div>
+<div id="s28" class="clip" data-start="87.080" data-duration="2.960" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s28k"></div><div class="vig"></div></div>
+<div id="s29" class="clip" data-start="90.040" data-duration="8.880" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s29k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o30" class="cap" style="opacity:0">Quantum mechanics · the small stuff</div></div>
+<div id="s31" class="clip" data-start="98.920" data-duration="3.500" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb32" style="position:absolute;inset:0"><img src="assets/img_s/chip.jpg" alt="chip"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o33" class="cap" style="opacity:0">Every chip depends on quantum mechanics</div></div>
+<div id="s34" class="clip" data-start="102.420" data-duration="5.060" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s34k"></div><div class="vig"></div></div>
+<div id="s35" class="clip" data-start="107.480" data-duration="7.920" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb36" style="position:absolute;inset:0"><img src="assets/img_s/galaxy.jpg" alt="galaxy"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o37" class="cap" style="opacity:0">Big things · general relativity</div></div>
+<div id="s38" class="clip" data-start="115.400" data-duration="1.760" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s38k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o39" class="cap" style="opacity:0">Small things · quantum mechanics</div></div>
+<div id="s40" class="clip" data-start="117.160" data-duration="8.080" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s40k"></div><div class="vig"></div></div>
+<div id="s41" class="clip" data-start="125.240" data-duration="2.500" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s41k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o42" class="cap" style="opacity:0">The first instant of the Big Bang</div></div>
+<div id="s43" class="clip" data-start="127.740" data-duration="10.280" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s43k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o44" class="eqw" style="opacity:0"><div class="eq"><span style='font-size:150px;font-style:normal'>∞</span></div></div><div id="o45" class="line" style="opacity:0">In physics, infinity means the math has broken.</div></div>
+<div id="s46" class="clip" data-start="138.020" data-duration="6.120" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:630px"><img id="kb47" src="assets/img_s/einstein_old.jpg" alt="einstein_old"></div><div id="pn48" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:830px">Albert Einstein</div><div class="pmeta" style="left:160px;top:530px">1879–1955</div></div><div id="o49" class="line" style="opacity:0">One theory to cover everything.</div></div>
+<div id="s50" class="clip" data-start="144.140" data-duration="9.240" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb51" style="position:absolute;inset:0"><img src="assets/img_s/princeton.jpg" alt="princeton"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o52" class="cap" style="opacity:0">Princeton · 1955</div><div id="o53" class="line" style="opacity:0">He never found it.</div></div>
+<div id="s54" class="clip" data-start="153.380" data-duration="24.900" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s54k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o55" class="line" style="opacity:0">Why 17?</div><div id="o56" class="line" style="opacity:0">Why does each weigh what it weighs?</div></div>
+<div id="s57" class="clip" data-start="178.280" data-duration="12.620" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s57k"></div><div class="vig"></div></div>
+<div id="s58" class="clip" data-start="190.900" data-duration="11.400" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s58k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o59" class="line" style="opacity:0">One string, many notes.</div></div>
+<div id="s60" class="clip" data-start="202.300" data-duration="16.900" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s60k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o61" class="line" style="opacity:0">Seventeen things become one thing playing seventeen tunes.</div></div>
+<div id="fin" class="black" style="z-index:9"></div>
+</div>
+<script>window.LAB = [[0.0, 3.7, "atomzoom", {"mode": "nucleus", "FT0": 0.0}], [9.12, 13.7, "oldpage", {"mode": "write", "FT0": 9.12}], [17.58, 21.58, "oldpage", {"mode": "close", "FT0": 17.58}], [21.58, 41.42, "rubberband", {"mode": "full", "FT0": 21.58}], [41.42, 47.52, "notes", {"mode": "one", "FT0": 41.42}], [58.8, 65.12, "books", {"mode": "intro", "FT0": 58.8}], [70.28, 79.5, "trampoline", {"mode": "full", "FT0": 70.28}], [79.5, 87.08, "orbitgps", {"mode": "full", "FT0": 79.5}], [87.08, 90.04, "books", {"mode": "quantum", "FT0": 87.08}], [90.04, 98.92, "jitter", {"mode": "atom", "FT0": 90.04}], [102.42, 107.48, "books", {"mode": "clash", "FT0": 102.42}], [115.4, 117.16, "jitter", {"mode": "electron", "FT0": 115.4}], [117.16, 125.24, "blackhole", {"mode": "hole", "FT0": 117.16}], [125.24, 127.74, "blackhole", {"mode": "bang", "FT0": 125.24}], [127.74, 138.02, "blackhole", {"mode": "infinity", "FT0": 127.74}], [153.38, 178.28, "particles17", {"mode": "dots", "FT0": 153.38}], [178.28, 190.9, "atomzoom", {"mode": "full", "FT0": 178.28}], [190.9, 202.3, "guitar", {"mode": "full", "FT0": 190.9}], [202.3, 219.2, "notes", {"mode": "particles", "FT0": 202.3}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_cosmos.js"></script>
+<script src="assets/js/k_dims.js"></script>
+<script src="assets/js/k_ideas.js"></script>
+<script src="assets/js/k_micro.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s1k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#o2",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},0.400);
+tl.to("#o2",{opacity:0,duration:0.5,ease:"power1.inOut"},3.000);
+tl.fromTo("#kb4",{scale:1.0},{scale:1.05,duration:5.420,ease:"none"},3.700);
+tl.fromTo("#pn5",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},4.050);
+tl.fromTo("#s3",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},3.700);
+tl.fromTo("#s6k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},9.120);
+tl.fromTo("#o7",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},10.600);
+tl.to("#o7",{opacity:0,duration:0.5,ease:"power1.inOut"},13.100);
+tl.fromTo("#kb9",{scale:1.0},{scale:1.05,duration:3.880,ease:"none"},13.700);
+tl.fromTo("#pn10",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},14.050);
+tl.fromTo("#s8",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},13.700);
+tl.fromTo("#s11k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},17.580);
+tl.fromTo("#o12",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},17.900);
+tl.to("#o12",{opacity:0,duration:0.5,ease:"power1.inOut"},20.900);
+tl.fromTo("#s13k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},21.580);
+tl.fromTo("#o14",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},26.920);
+tl.to("#o14",{opacity:0,duration:0.5,ease:"power1.inOut"},29.100);
+tl.fromTo("#o15",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},36.300);
+tl.to("#o15",{opacity:0,duration:0.5,ease:"power1.inOut"},40.700);
+tl.fromTo("#s16k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},41.420);
+tl.fromTo("#o17",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},43.880);
+tl.to("#o17",{opacity:0,duration:0.5,ease:"power1.inOut"},46.800);
+tl.fromTo("#s18",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},47.520);
+tl.fromTo("#o19",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},47.700);
+tl.to("#o19",{opacity:0,duration:0.5,ease:"power1.inOut"},49.500);
+tl.fromTo("#o20",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},50.300);
+tl.to("#o20",{opacity:0,duration:0.5,ease:"power1.inOut"},58.100);
+tl.fromTo("#s21k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},58.800);
+tl.fromTo("#o22",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},62.500);
+tl.to("#o22",{opacity:0,duration:0.5,ease:"power1.inOut"},64.500);
+tl.fromTo("#kb24",{scale:1.0},{scale:1.05,duration:5.160,ease:"none"},65.120);
+tl.fromTo("#pn25",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},65.470);
+tl.fromTo("#s23",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},65.120);
+tl.fromTo("#s26k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},70.280);
+tl.fromTo("#s27k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},79.500);
+tl.fromTo("#s28k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},87.080);
+tl.fromTo("#s29k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},90.040);
+tl.fromTo("#o30",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},90.400);
+tl.to("#o30",{opacity:0,duration:0.5,ease:"power1.inOut"},94.100);
+tl.fromTo("#kb32",{scale:1.0},{scale:1.06,duration:3.500,ease:"none"},98.920);
+tl.fromTo("#s31",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},98.920);
+tl.fromTo("#o33",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},99.300);
+tl.fromTo("#s34k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},102.420);
+tl.fromTo("#kb36",{scale:1.0},{scale:1.06,duration:7.920,ease:"none"},107.480);
+tl.fromTo("#s35",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},107.480);
+tl.fromTo("#o37",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},110.000);
+tl.fromTo("#s38k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},115.400);
+tl.fromTo("#o39",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},115.600);
+tl.fromTo("#s40k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},117.160);
+tl.fromTo("#s41k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},125.240);
+tl.fromTo("#o42",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},125.500);
+tl.fromTo("#s43k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},127.740);
+tl.fromTo("#o44",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},131.900);
+tl.to("#o44",{opacity:0,duration:0.5,ease:"power1.inOut"},133.000);
+tl.fromTo("#o45",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},133.620);
+tl.to("#o45",{opacity:0,duration:0.5,ease:"power1.inOut"},137.300);
+tl.fromTo("#kb47",{scale:1.0},{scale:1.05,duration:6.120,ease:"none"},138.020);
+tl.fromTo("#pn48",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},138.370);
+tl.fromTo("#s46",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},138.020);
+tl.fromTo("#o49",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},141.000);
+tl.to("#o49",{opacity:0,duration:0.5,ease:"power1.inOut"},143.400);
+tl.fromTo("#kb51",{scale:1.0},{scale:1.06,duration:9.240,ease:"none"},144.140);
+tl.fromTo("#s50",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},144.140);
+tl.fromTo("#o52",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},144.400);
+tl.to("#o52",{opacity:0,duration:0.5,ease:"power1.inOut"},150.900);
+tl.fromTo("#o53",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},151.680);
+tl.fromTo("#s54k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},153.380);
+tl.fromTo("#o55",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},171.480);
+tl.to("#o55",{opacity:0,duration:0.5,ease:"power1.inOut"},172.400);
+tl.fromTo("#o56",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},173.040);
+tl.to("#o56",{opacity:0,duration:0.5,ease:"power1.inOut"},177.400);
+tl.fromTo("#s57k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},178.280);
+tl.fromTo("#s58k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},190.900);
+tl.fromTo("#o59",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},199.500);
+tl.to("#o59",{opacity:0,duration:0.5,ease:"power1.inOut"},201.600);
+tl.fromTo("#s60k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},202.300);
+tl.fromTo("#o61",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},214.260);
+tl.to("#o61",{opacity:0,duration:0.5,ease:"power1.inOut"},218.500);
+tl.fromTo("#fin",{opacity:1},{opacity:0,duration:1.6,ease:"power1.inOut"},0);
+tl.set({}, {}, 219.200);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

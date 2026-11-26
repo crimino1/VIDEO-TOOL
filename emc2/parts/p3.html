@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.6)}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9;text-shadow:0 2px 6px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.55)}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="161.220" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s72" class="clip" data-start="0.000" data-duration="7.160" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s72k"></div><div class="vig"></div><div id="o73" class="big" style="opacity:0">≈ 99%<small>of your weight is energy locked in place</small></div></div>
+<video id="s74v" class="clip" src="assets/clips/bathscale_330.mp4" muted playsinline data-start="7.160" data-duration="6.560" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s74" class="clip" data-start="7.160" data-duration="6.560" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s74k"></div><div class="fadeb"></div><div class="vig"></div><div id="o75" class="eqw" style="opacity:0"><div class="eq">m = E ÷ c²</div></div></div>
+<video id="s76v" class="clip" src="assets/clips/cambridge_337.mp4" muted playsinline data-start="13.720" data-duration="13.060" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s76" class="clip" data-start="13.720" data-duration="13.060" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s76k"></div><div class="fadeb"></div><div class="vig"></div><div id="o77" class="cap" style="opacity:0">Cambridge, England</div><div id="o78" class="cap" style="opacity:0">John Cockcroft and Ernest Walton · 1932</div></div>
+<div id="s79" class="clip" data-start="26.780" data-duration="12.360" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s79k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o80" class="line" style="opacity:0">The energy matched the missing mass.</div></div>
+<video id="s81v" class="clip" src="assets/clips/snowforest_362.mp4" muted playsinline data-start="39.140" data-duration="4.580" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s81" class="clip" data-start="39.140" data-duration="4.580" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s81k"></div><div class="vig"></div></div>
+<video id="s82v" class="clip" src="assets/clips/berlin_367.mp4" muted playsinline data-start="43.720" data-duration="4.500" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s82" class="clip" data-start="43.720" data-duration="4.500" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s82k"></div><div class="fadeb"></div><div class="vig"></div><div id="o83" class="cap" style="opacity:0">Lise Meitner · physicist, Berlin</div></div>
+<video id="s84v" class="clip" src="assets/clips/lab_371.mp4" muted playsinline data-start="48.220" data-duration="4.480" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s84" class="clip" data-start="48.220" data-duration="4.480" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s84k"></div><div class="vig"></div></div>
+<video id="s85v" class="clip" src="assets/clips/train_376.mp4" muted playsinline data-start="52.700" data-duration="8.020" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s85" class="clip" data-start="52.700" data-duration="8.020" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s85k"></div><div class="vig"></div></div>
+<video id="s86v" class="clip" src="assets/clips/snowtown_384.mp4" muted playsinline data-start="60.720" data-duration="3.760" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s86" class="clip" data-start="60.720" data-duration="3.760" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s86k"></div><div class="vig"></div></div>
+<video id="s87v" class="clip" src="assets/clips/snowtown2_388.mp4" muted playsinline data-start="64.480" data-duration="5.080" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s87" class="clip" data-start="64.480" data-duration="5.080" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s87k"></div><div class="fadeb"></div><div class="vig"></div><div id="o88" class="cap" style="opacity:0">Otto Frisch · her nephew · Christmas 1938</div></div>
+<video id="s89v" class="clip" src="assets/clips/letter_393.mp4" muted playsinline data-start="69.560" data-duration="3.800" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s89" class="clip" data-start="69.560" data-duration="3.800" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s89k"></div><div class="fadeb"></div><div class="vig"></div><div id="o90" class="cap" style="opacity:0">A letter from chemist Otto Hahn in Berlin</div></div>
+<div id="s91" class="clip" data-start="73.360" data-duration="10.580" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s91k"></div><div class="vig"></div></div>
+<video id="s92v" class="clip" src="assets/clips/ski_407.mp4" muted playsinline data-start="83.940" data-duration="7.240" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s92" class="clip" data-start="83.940" data-duration="7.240" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s92k"></div><div class="vig"></div></div>
+<div id="s93" class="clip" data-start="91.180" data-duration="4.680" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s93k"></div><div class="vig"></div></div>
+<div id="s94" class="clip" data-start="95.860" data-duration="13.280" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s94k"></div><div class="vig"></div><div id="o95" class="big" style="opacity:0">≈ 200 million eV<small>from every single split</small></div></div>
+<div id="s96" class="clip" data-start="109.140" data-duration="13.940" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s96k"></div><div class="vig"></div></div>
+<div id="s97" class="clip" data-start="123.080" data-duration="9.300" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s97k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o98" class="eqw" style="opacity:0"><div class="eq">Δm × c² ≈ 200 MeV</div></div><div id="o99" class="line" style="opacity:0">The numbers matched.</div></div>
+<div id="s100" class="clip" data-start="132.380" data-duration="4.560" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s100k"></div><div class="vig"></div></div>
+<div id="s101" class="clip" data-start="136.940" data-duration="2.000" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o102" class="big" style="opacity:0">Fission.</div></div>
+<video id="s103v" class="clip" src="assets/clips/hiroshima_462.mp4" muted playsinline data-start="138.940" data-duration="8.720" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s103" class="clip" data-start="138.940" data-duration="8.720" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s103k"></div><div class="fadeb"></div><div class="vig"></div><div id="o104" class="cap" style="opacity:0">Hiroshima · the A-Bomb Dome today</div></div>
+<div id="s105" class="clip" data-start="147.660" data-duration="13.560" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s105k"></div><div class="vig"></div><div id="o106" class="big" style="opacity:0">≈ 0.7 g<small>the mass that truly vanished</small></div></div>
+
+</div>
+<script>window.LAB = [[0.0, 7.16, "atom", {"mode": "pullback", "FT0": 323.74}], [26.78, 39.14, "lithium", {"mode": "split", "FT0": 350.52}], [73.36, 83.94, "fission", {"mode": "barium", "FT0": 397.1}], [91.18, 95.86, "snow", {"mode": "trunk", "FT0": 414.92}], [95.86, 109.14, "fission", {"mode": "split", "FT0": 419.6}], [109.14, 123.08, "fission", {"mode": "mass", "FT0": 432.88}], [123.08, 132.38, "snow", {"mode": "calc", "FT0": 446.82}], [132.38, 136.94, "fission", {"mode": "match", "FT0": 456.12}], [147.66, 161.22, "hiroshima", {"mode": "mass", "FT0": 471.4}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_0shared.js"></script>
+<script src="assets/js/k_atom.js"></script>
+<script src="assets/js/k_chai.js"></script>
+<script src="assets/js/k_history.js"></script>
+<script src="assets/js/k_rate.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s72k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#o73",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},0.260);
+tl.to("#o73",{opacity:0,duration:0.5,ease:"power1.inOut"},6.360);
+tl.fromTo("#s74k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},7.160);
+tl.fromTo("#o75",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},7.660);
+tl.to("#o75",{opacity:0,duration:0.5,ease:"power1.inOut"},12.960);
+tl.fromTo("#s76k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},13.720);
+tl.fromTo("#o77",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},17.660);
+tl.to("#o77",{opacity:0,duration:0.5,ease:"power1.inOut"},21.560);
+tl.fromTo("#o78",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},22.360);
+tl.to("#o78",{opacity:0,duration:0.5,ease:"power1.inOut"},26.060);
+tl.fromTo("#s79k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},26.780);
+tl.fromTo("#o80",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},34.260);
+tl.to("#o80",{opacity:0,duration:0.5,ease:"power1.inOut"},38.360);
+tl.fromTo("#s81k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},39.140);
+tl.fromTo("#s82k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},43.720);
+tl.fromTo("#o83",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},43.960);
+tl.fromTo("#s84k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},48.220);
+tl.fromTo("#s85k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},52.700);
+tl.fromTo("#s86k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},60.720);
+tl.fromTo("#s87k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},64.480);
+tl.fromTo("#o88",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},64.760);
+tl.fromTo("#s89k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},69.560);
+tl.fromTo("#o90",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},69.760);
+tl.fromTo("#s91k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},73.360);
+tl.fromTo("#s92k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},83.940);
+tl.fromTo("#s93k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},91.180);
+tl.fromTo("#s94k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},95.860);
+tl.fromTo("#o95",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},104.960);
+tl.to("#o95",{opacity:0,duration:0.5,ease:"power1.inOut"},108.460);
+tl.fromTo("#s96k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},109.140);
+tl.fromTo("#s97k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},123.080);
+tl.fromTo("#o98",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},126.660);
+tl.to("#o98",{opacity:0,duration:0.5,ease:"power1.inOut"},130.360);
+tl.fromTo("#o99",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},130.960);
+tl.to("#o99",{opacity:0,duration:0.5,ease:"power1.inOut"},131.760);
+tl.fromTo("#s100k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},132.380);
+tl.fromTo("#s101",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},136.940);
+tl.fromTo("#o102",{scale:0.97},{scale:1.04,duration:2.700,ease:"none"},137.060);
+tl.fromTo("#o102",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},137.060);
+tl.to("#o102",{opacity:0,duration:0.5,ease:"power1.inOut"},138.360);
+tl.fromTo("#s103k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},138.940);
+tl.fromTo("#o104",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},142.660);
+tl.fromTo("#s105k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},147.660);
+tl.fromTo("#o106",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},154.560);
+tl.to("#o106",{opacity:0,duration:0.5,ease:"power1.inOut"},160.460);
+tl.set({}, {}, 161.220);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

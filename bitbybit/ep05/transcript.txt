@@ -1,0 +1,163 @@
+[0:00.00] your phone is not listening to you.
+[0:02.44] I know.
+[0:03.42] You talked about hiking boots once, out loud, and an hour later there was an ad for hiking boots.
+[0:09.86] Everyone has that story.
+[0:11.76] So in 2018, researchers at Northeastern University tested it.
+[0:17.16] They ran more than 17 ,000 Android apps, the popular ones included, and watched everything those apps sent out.
+[0:25.14] Not one of them switched on the microphone in secret.
+[0:28.16] Not one sent out audio.
+[0:30.34] They were careful to say, that doesn't prove it never happens.
+[0:34.26] But they went looking, hard, and found nothing.
+[0:38.62] Which leaves a worse question.
+[0:40.76] If nothing was listening, how did it know?
+[0:44.08] The answer is that it never needed to hear you.
+[0:47.32] Somewhere a system took a few thousand tiny things you did, and worked out the boots on its own.
+[0:53.74] And the way it does that is one of the most elegant ideas in computer science.
+[0:58.30] It's also a little hard to sleep after.
+[1:00.96] Welcome to bit by bit.
+[1:03.18] Today, we're going to build a recommendation system from scratch, in your head, one piece at a time.
+[1:08.94] By the end, you'll know exactly what your feed knows about you, and how it found out.
+[1:14.12] Start with the simplest version.
+[1:16.26] Picture a giant spreadsheet.
+[1:18.12] Every row is a person.
+[1:19.88] Every column is a video.
+[1:21.64] If you watched it and liked it, there's a one in that box.
+[1:25.70] Now find your row.
+[1:27.34] Then look for other rows that match yours.
+[1:30.18] Somewhere there's a stranger, maybe in Brazil, maybe in Poland, whose row looks almost exactly like yours.
+[1:37.78] Same 40 videos.
+[1:39.82] But they also loved one you've never seen.
+[1:42.82] That's your next recommendation.
+[1:45.40] This is called collaborative filtering.
+[1:47.66] And notice what's strange about it.
+[1:50.76] The system has no idea what any of those videos are about.
+[1:54.84] It never watched them.
+[1:56.38] It doesn't know what cooking is, or football, or sadness.
+[2:00.72] It only knows that people who behave like you tend to end up in the same places.
+[2:05.22] You're being recommended to by a crowd of strangers who will never meet you.
+[2:09.48] But the spreadsheet has a problem.
+[2:11.56] It's almost completely empty.
+[2:13.58] In 2006, Netflix published a real one.
+[2:17.44] 100 million movie ratings from 480 ,000 customers across about 18 ,000 movies.
+[2:25.22] That sounds enormous.
+[2:26.86] But multiply the rows by the columns, and around 99 % of the boxes are blank.
+[2:32.44] Nobody has seen most movies.
+[2:34.82] So your perfect twin in Brazil probably doesn't exist.
+[2:38.32] There just isn't enough overlap.
+[2:40.56] So Netflix did something unusual.
+[2:43.06] They put up a million dollars.
+[2:44.98] Beat our own system by 10%, they said.
+[2:47.82] And it's yours.
+[2:49.44] It took almost three years.
+[2:51.70] Thousands of teams.
+[2:53.42] The leaders got stuck around 8%, so rival teams started merging.
+[2:58.18] And merging again.
+[2:59.74] At the very end, two super teams posted nearly identical scores.
+[3:05.16] The winners got the million because they had submitted about 20 minutes earlier.
+[3:09.84] And the idea that carried that whole contest is the one I want you to keep.
+[3:14.80] Stop trying to fill in the giant spreadsheet.
+[3:17.84] Shrink it instead.
+[3:19.80] Give every person a short list of numbers.
+[3:22.62] Say, 50 of them.
+[3:24.44] Give every movie 50 numbers too.
+[3:26.94] To guess how much you'd like a movie, line up your list against the movie's list, multiply them pair by pair, and add it all up.
+[3:34.32] Big total, you'll love it.
+[3:36.40] Small total, skip it.
+[3:38.08] So where do the numbers come from?
+[3:40.70] Nobody writes them.
+[3:41.98] The computer starts with random ones, checks its guesses against the ratings that do exist, and nudges every number a little in the direction that makes the guesses less wrong.
+[3:52.22] Then it does that again.
+[3:54.26] Billions of times.
+[3:56.06] And here's the part I find wild.
+[3:58.66] When researchers looked at what those numbers had turned into, they meant something.
+[4:03.76] One had quietly become serious versus silly.
+[4:07.66] Another made for kids versus made for adults.
+[4:11.42] Another, big explosions versus long conversations.
+[4:15.92] Nobody told the machine those ideas exist.
+[4:19.02] It found them, because they were the most useful way to explain what people chose.
+[4:24.30] Which means that inside one of these systems, you are a point.
+[4:28.50] A dot in a space with 50 directions.
+[4:31.50] People like you are dots nearby.
+[4:34.28] Videos you'd like sit close to.
+[4:36.80] And recommending something is just walking a short distance from where you are.
+[4:41.50] Somewhere on a server, there's a dot that is you.
+[4:45.12] And it moves every time you do anything.
+[4:48.34] Now you don't rate things anymore.
+[4:50.60] Nobody gives stars.
+[4:52.46] So how does the dot keep moving?
+[4:54.84] In 2021, the Wall Street Journal ran an experiment on TikTok.
+[4:59.54] They built more than 100 fake accounts, bots, and gave each one a secret interest.
+[5:06.02] Dogs.
+[5:06.92] Dancing.
+[5:07.82] Astrology.
+[5:09.04] The bots never searched for anything and never typed a word.
+[5:12.94] All they did was pause a little longer on videos that matched their interest.
+[5:17.42] That was enough.
+[5:18.56] TikTok had most of them figured out in under two hours, some in under 40 minutes.
+[5:23.88] So, the signal isn't the like button.
+[5:26.26] It's hesitation.
+[5:27.86] You can lie with a like.
+[5:29.56] You can't really lie with your attention.
+[5:31.84] Every half second you stay on something is a vote, and you're casting them all day without noticing.
+[5:38.04] The last piece is speed.
+[5:40.04] YouTube can't compare your dot against every video ever uploaded each time you open the app.
+[5:45.76] So it works in two stages, and its engineers describe them in a paper in 2016.
+[5:51.94] The first stage is rough and fast.
+[5:54.80] It grabs a few hundred videos that sit near you in that space.
+[5:58.76] The second stage is slow and careful.
+[6:01.48] It takes those few hundred and predicts one number for each.
+[6:05.10] How long you will watch.
+[6:07.40] Not whether you'll click.
+[6:08.88] They tried clicks.
+[6:10.20] And clicks reward clickbait.
+[6:12.18] So the target became watch time.
+[6:14.40] And it works frighteningly well.
+[6:15.96] YouTube has said about 70 % of everything people watch there comes from recommendations.
+[6:22.46] Okay,
+[6:23.66] now the creepy part.
+[6:25.56] A system that can place you in that space can read things off your position that you never told anyone.
+[6:31.82] In 2015, researchers at Cambridge and Stanford tested this with 86 ,000 volunteers.
+[6:39.18] Each took a long personality test.
+[6:41.94] Then a computer tried to predict the results using only the pages they had liked on Facebook.
+[6:48.16] With 10 likes, the computer judged your personality better than a coworker could.
+[6:53.54] With 70, better than a friend.
+[6:56.00] With 150, better than your family.
+[6:58.88] And with 300 likes, it edged out your husband or wife.
+[7:03.26] It never asked you a question.
+[7:05.10] It just knew where your dot was, and what dots in that neighborhood are usually like.
+[7:09.78] I want to be fair here, because this is where videos like this one get dramatic.
+[7:14.26] The system doesn't understand you.
+[7:16.56] There's no little person in there forming opinions.
+[7:19.72] It's arithmetic, and it's often wrong.
+[7:22.14] You've been recommended plenty of garbage.
+[7:24.86] But there's a real catch, and it's in that target.
+[7:28.36] The system is trained to find what you'll keep watching.
+[7:31.64] That's not always what you're glad you watched.
+[7:34.42] Those are two different lists, and only one of them gets measured.
+[7:38.86] In that TikTok experiment, one bot was set to linger on sad videos.
+[7:44.24] After about 36 minutes of watching, its feed had filled up with them.
+[7:48.78] Nothing was broken.
+[7:50.40] The system was doing exactly what it was built to do.
+[7:54.06] So here's the useful part.
+[7:56.24] If your attention is the training data, then you're the one doing the training.
+[8:00.56] The not interested button is the strongest vote you have, and almost nobody presses it.
+[8:06.48] Clearing or pausing your watch history really does move the dot.
+[8:11.14] Searching for something on purpose counts for more than drifting into it, and if you want more of something, finish it.
+[8:18.06] Finishing is the loudest signal there is.
+[8:20.90] One more thing you can now explain.
+[8:23.40] That one completely random video in your feed?
+[8:26.26] The woodworking one, when you've never touched wood?
+[8:29.04] That's not a mistake.
+[8:30.74] The system is spending one slot to ask you a question.
+[8:34.46] It's checking whether there's a part of you it hasn't found yet.
+[8:38.14] Engineers call it exploring.
+[8:40.48] Scroll past, and the answer is no.
+[8:43.76] So let's go back to the hiking boots.
+[8:46.02] Nobody heard you say it.
+[8:48.04] But maybe your friend searched for trails that morning on the same Wi -Fi.
+[8:52.28] Maybe you paused on a mountain photo for two seconds, and maybe people near your dot tend to buy boots in spring.
+[8:58.80] Your phone isn't listening.
+[9:00.30] It's paying attention to what you pay attention to, and that turns out to be plenty.
+[9:05.48] It learned you the same way this channel teaches anything, bit by bit.
+[9:09.84] And if you watch this far, the algorithm already knows you like the video, so you might as well make it official and subscribe to bit by bit.
+[9:17.88] Then tell me in the comments, what's the strangest thing your feed ever got right about you?

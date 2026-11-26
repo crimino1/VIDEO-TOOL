@@ -1,0 +1,1 @@
+On the Codex side, the first attempt ignored part of the brief. Instead of one file, it started setting up a whole project, with a build tool and separate files. So I told it again: single HTML file. Astra took it from there, rebuilt everything as one file, and then checked its own screenshots of the result.

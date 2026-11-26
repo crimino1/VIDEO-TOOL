@@ -1,0 +1,1331 @@
+{
+ "result_count": 49,
+ "page_count": 3,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "e7989474-8c49-4be2-90bf-2b884a24b2f9",
+   "title": "Dance of the Zen Master",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/40611",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=40611&format=mp32",
+   "creator": "Krayne",
+   "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dance of the Zen Master\" by Krayne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "c0ntact",
+    "foreign_landing_url": "https://www.jamendo.com/album/5002/c0ntact",
+    "creator": "Krayne",
+    "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 150000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e7989474-8c49-4be2-90bf-2b884a24b2f9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e7989474-8c49-4be2-90bf-2b884a24b2f9/",
+   "related_url": "https://api.openverse.org/v1/audio/e7989474-8c49-4be2-90bf-2b884a24b2f9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e7989474-8c49-4be2-90bf-2b884a24b2f9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "204a207a-ddaa-4e6a-894c-30ed05bb4b51",
+   "title": "pido-perdon-v-zen-bea-eunice-instrumental-el-puto-coke",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1210775",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1210775&format=mp32",
+   "creator": "En 3 palabras",
+   "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rnb",
+    "soul"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"pido-perdon-v-zen-bea-eunice-instrumental-el-puto-coke\" by En 3 palabras is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "en tr3s palabras 2015",
+    "foreign_landing_url": "https://www.jamendo.com/album/145428/en-tr3s-palabras-2015",
+    "creator": "En 3 palabras",
+    "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 179000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/204a207a-ddaa-4e6a-894c-30ed05bb4b51/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/204a207a-ddaa-4e6a-894c-30ed05bb4b51/",
+   "related_url": "https://api.openverse.org/v1/audio/204a207a-ddaa-4e6a-894c-30ed05bb4b51/related/",
+   "waveform": "https://api.openverse.org/v1/audio/204a207a-ddaa-4e6a-894c-30ed05bb4b51/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2bec96dc-c429-41f1-ad5c-afba092929f6",
+   "title": "A Zen Dub",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/20943",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=20943&format=mp32",
+   "creator": "King Dubby",
+   "creator_url": "https://www.jamendo.com/artist/1025/king.dubby",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dub",
+    "electronic",
+    "reggae"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "holiday",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "rootsreggae",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Zen Dub\" by King Dubby is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "First Dubs",
+    "foreign_landing_url": "https://www.jamendo.com/album/2931/first-dubs",
+    "creator": "King Dubby",
+    "creator_url": "https://www.jamendo.com/artist/1025/king.dubby",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 168000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2bec96dc-c429-41f1-ad5c-afba092929f6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2bec96dc-c429-41f1-ad5c-afba092929f6/",
+   "related_url": "https://api.openverse.org/v1/audio/2bec96dc-c429-41f1-ad5c-afba092929f6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2bec96dc-c429-41f1-ad5c-afba092929f6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6f0f0797-a1f9-423a-a5e0-0d67d1ec7121",
+   "title": "baby (eunice,v-zen,gloria & bea ) feat anitek",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/894335",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=894335&format=mp32",
+   "creator": "En 3 palabras",
+   "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "groovy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"baby (eunice,v-zen,gloria & bea ) feat anitek\" by En 3 palabras is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "el lenguaje del alma ( demo )",
+    "foreign_landing_url": "https://www.jamendo.com/album/105203/el-lenguaje-del-alma-demo",
+    "creator": "En 3 palabras",
+    "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 217000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6f0f0797-a1f9-423a-a5e0-0d67d1ec7121/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6f0f0797-a1f9-423a-a5e0-0d67d1ec7121/",
+   "related_url": "https://api.openverse.org/v1/audio/6f0f0797-a1f9-423a-a5e0-0d67d1ec7121/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6f0f0797-a1f9-423a-a5e0-0d67d1ec7121/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7f8ee3eb-503f-4757-a48a-2d99e79d718a",
+   "title": "yo ben2 zen",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1295968",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1295968&format=mp32",
+   "creator": "Les Zin Zin",
+   "creator_url": "https://www.jamendo.com/artist/432279/ZIN_ZEN_(3)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidhouse",
+    "acidjazz",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "minimal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "perfect",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"yo ben2 zen\" by Les Zin Zin is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "PEACE",
+    "foreign_landing_url": "https://www.jamendo.com/album/154273/peace",
+    "creator": "Les Zin Zin",
+    "creator_url": "https://www.jamendo.com/artist/432279/ZIN_ZEN_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 463000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7f8ee3eb-503f-4757-a48a-2d99e79d718a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7f8ee3eb-503f-4757-a48a-2d99e79d718a/",
+   "related_url": "https://api.openverse.org/v1/audio/7f8ee3eb-503f-4757-a48a-2d99e79d718a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7f8ee3eb-503f-4757-a48a-2d99e79d718a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "6f1ca0c3-c77c-4882-ad07-65a8c4c77e88",
+   "title": "8. racismo - balle doble h,valtonyc,v-zen,gloria,monty montana,luis asn,breogan,eunice,roko,pakito xl,beatriz pulido - en 3 pal",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1387144",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1387144&format=mp32",
+   "creator": "En 3 palabras",
+   "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "reivindicativo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"8. racismo - balle doble h,valtonyc,v-zen,gloria,monty montana,luis asn,breogan,eunice,roko,pakito xl,beatriz pulido - en 3 pal\" by En 3 palabras is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "error de sistema",
+    "foreign_landing_url": "https://www.jamendo.com/album/162708/error-de-sistema",
+    "creator": "En 3 palabras",
+    "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 543000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/6f1ca0c3-c77c-4882-ad07-65a8c4c77e88/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/6f1ca0c3-c77c-4882-ad07-65a8c4c77e88/",
+   "related_url": "https://api.openverse.org/v1/audio/6f1ca0c3-c77c-4882-ad07-65a8c4c77e88/related/",
+   "waveform": "https://api.openverse.org/v1/audio/6f1ca0c3-c77c-4882-ad07-65a8c4c77e88/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8f706ca1-b333-44f5-8926-0d76087e8987",
+   "title": "Zen Flute-PIP",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/866038",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=866038&format=mp32",
+   "creator": "Zen flute",
+   "creator_url": "https://www.jamendo.com/artist/373692/Zen_flute",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen Flute-PIP\" by Zen flute is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Attack",
+    "foreign_landing_url": "https://www.jamendo.com/album/101487/attack",
+    "creator": "Zen flute",
+    "creator_url": "https://www.jamendo.com/artist/373692/Zen_flute",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 150000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8f706ca1-b333-44f5-8926-0d76087e8987/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8f706ca1-b333-44f5-8926-0d76087e8987/",
+   "related_url": "https://api.openverse.org/v1/audio/8f706ca1-b333-44f5-8926-0d76087e8987/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8f706ca1-b333-44f5-8926-0d76087e8987/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dd193159-8095-46ac-9d01-71cc81030342",
+   "title": "EL AMANTE ZEN (pedrozo-scotti)",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/707654",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=707654&format=mp32",
+   "creator": "LA PEQUE\u00d1A LULU Y LOS CINCO DE GORKA",
+   "creator_url": "https://www.jamendo.com/artist/365587/LA_PEQUE_A_LULU_Y_LOS_CINCO_DE_GORKA",
+   "license": "by",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/ar/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"EL AMANTE ZEN (pedrozo-scotti)\" by LA PEQUE\u00d1A LULU Y LOS CINCO DE GORKA is licensed under CC BY 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.5/ar/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "CIUDAD DE ROSARIO",
+    "foreign_landing_url": "https://www.jamendo.com/album/82543/ciudad-de-rosario",
+    "creator": "LA PEQUE\u00d1A LULU Y LOS CINCO DE GORKA",
+    "creator_url": "https://www.jamendo.com/artist/365587/LA_PEQUE_A_LULU_Y_LOS_CINCO_DE_GORKA",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 188000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dd193159-8095-46ac-9d01-71cc81030342/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dd193159-8095-46ac-9d01-71cc81030342/",
+   "related_url": "https://api.openverse.org/v1/audio/dd193159-8095-46ac-9d01-71cc81030342/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dd193159-8095-46ac-9d01-71cc81030342/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fe1296f6-aa43-4239-92a9-9be786df30c6",
+   "title": "Zen",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1132161",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1132161&format=mp32",
+   "creator": "Kenny690",
+   "creator_url": "https://www.jamendo.com/artist/441699/Kenny690",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "8bit",
+    "electronic",
+    "reggae"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "square",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen\" by Kenny690 is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Renewal Of Life",
+    "foreign_landing_url": "https://www.jamendo.com/album/135763/the-renewal-of-life",
+    "creator": "Kenny690",
+    "creator_url": "https://www.jamendo.com/artist/441699/Kenny690",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 112000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fe1296f6-aa43-4239-92a9-9be786df30c6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fe1296f6-aa43-4239-92a9-9be786df30c6/",
+   "related_url": "https://api.openverse.org/v1/audio/fe1296f6-aa43-4239-92a9-9be786df30c6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fe1296f6-aa43-4239-92a9-9be786df30c6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9db06bd7-8730-450a-babc-5dcf6f4be164",
+   "title": "Till-Zen",
+   "indexed_on": "2023-05-04T00:05:01.880122Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/125168",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=125168&format=mp32",
+   "creator": "michael wehr",
+   "creator_url": "https://www.jamendo.com/artist/337799/michael_wehr",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Till-Zen\" by michael wehr is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/de/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Japaan",
+    "foreign_landing_url": "https://www.jamendo.com/album/17475/japaan",
+    "creator": "michael wehr",
+    "creator_url": "https://www.jamendo.com/artist/337799/michael_wehr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 224000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9db06bd7-8730-450a-babc-5dcf6f4be164/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9db06bd7-8730-450a-babc-5dcf6f4be164/",
+   "related_url": "https://api.openverse.org/v1/audio/9db06bd7-8730-450a-babc-5dcf6f4be164/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9db06bd7-8730-450a-babc-5dcf6f4be164/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "62e74139-cc0a-4a7d-93c8-f114e444d1cc",
+   "title": "E ZEN - P.A.F. meets SHAN A SHAN",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/591437",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=591437&format=mp32",
+   "creator": "PhOniAndFlOrE",
+   "creator_url": "https://www.jamendo.com/artist/339690/phoniandflore",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"E ZEN - P.A.F. meets SHAN A SHAN\" by PhOniAndFlOrE is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "DUBSTEP TEMPTATION VOL . 2",
+    "foreign_landing_url": "https://www.jamendo.com/album/68302/dubstep-temptation-vol-2",
+    "creator": "PhOniAndFlOrE",
+    "creator_url": "https://www.jamendo.com/artist/339690/phoniandflore",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 360000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/62e74139-cc0a-4a7d-93c8-f114e444d1cc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/62e74139-cc0a-4a7d-93c8-f114e444d1cc/",
+   "related_url": "https://api.openverse.org/v1/audio/62e74139-cc0a-4a7d-93c8-f114e444d1cc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/62e74139-cc0a-4a7d-93c8-f114e444d1cc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "aa273f20-fc46-4528-bebe-8e715f4204fe",
+   "title": "Dance of the Mischievous Zen Master",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/40614",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=40614&format=mp32",
+   "creator": "Krayne",
+   "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dance of the Mischievous Zen Master\" by Krayne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "c0ntact",
+    "foreign_landing_url": "https://www.jamendo.com/album/5002/c0ntact",
+    "creator": "Krayne",
+    "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 100000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/aa273f20-fc46-4528-bebe-8e715f4204fe/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/aa273f20-fc46-4528-bebe-8e715f4204fe/",
+   "related_url": "https://api.openverse.org/v1/audio/aa273f20-fc46-4528-bebe-8e715f4204fe/related/",
+   "waveform": "https://api.openverse.org/v1/audio/aa273f20-fc46-4528-bebe-8e715f4204fe/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d2f4e7d3-ec4e-4f43-bf9f-9d9ae76cc5f6",
+   "title": "la-flor-de-mi-jardin-v-zen-instrumental-v-zen (1)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1210924",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1210924&format=mp32",
+   "creator": "En 3 palabras",
+   "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "hiphop",
+    "rap"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "energetic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "poema",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "poetry",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"la-flor-de-mi-jardin-v-zen-instrumental-v-zen (1)\" by En 3 palabras is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "en tr3s palabras 2015",
+    "foreign_landing_url": "https://www.jamendo.com/album/145428/en-tr3s-palabras-2015",
+    "creator": "En 3 palabras",
+    "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 236000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d2f4e7d3-ec4e-4f43-bf9f-9d9ae76cc5f6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d2f4e7d3-ec4e-4f43-bf9f-9d9ae76cc5f6/",
+   "related_url": "https://api.openverse.org/v1/audio/d2f4e7d3-ec4e-4f43-bf9f-9d9ae76cc5f6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d2f4e7d3-ec4e-4f43-bf9f-9d9ae76cc5f6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "78d60f5e-b1d2-4cea-b5f2-b01b190cdec0",
+   "title": "Zen",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1740769",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1740769&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "mystery",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "nature",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Salt Lounge - Spa &amp; Wellness",
+    "foreign_landing_url": "https://www.jamendo.com/album/191948/salt-lounge-spa-and-wellness",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 303000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/",
+   "related_url": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e92412cf-7379-4d31-a018-92f2948ae1b5",
+   "title": "Quiero Zaum Zaum Zen",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/713809",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=713809&format=mp32",
+   "creator": "Mthymusik",
+   "creator_url": "https://www.jamendo.com/artist/362009/Mthy_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Quiero Zaum Zaum Zen\" by Mthymusik is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "dj bon song",
+    "foreign_landing_url": "https://www.jamendo.com/album/83339/dj-bon-song",
+    "creator": "Mthymusik",
+    "creator_url": "https://www.jamendo.com/artist/362009/Mthy_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 272000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e92412cf-7379-4d31-a018-92f2948ae1b5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e92412cf-7379-4d31-a018-92f2948ae1b5/",
+   "related_url": "https://api.openverse.org/v1/audio/e92412cf-7379-4d31-a018-92f2948ae1b5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e92412cf-7379-4d31-a018-92f2948ae1b5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cec37ab8-c26f-4599-8472-49f8a69b1791",
+   "title": "CANELA EN RAMA ( v zen,eunice,gloria beatriz ) feat anitek",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/968073",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=968073&format=mp32",
+   "creator": "En 3 palabras",
+   "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"CANELA EN RAMA ( v zen,eunice,gloria beatriz ) feat anitek\" by En 3 palabras is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2012",
+    "foreign_landing_url": "https://www.jamendo.com/album/113908/2012",
+    "creator": "En 3 palabras",
+    "creator_url": "https://www.jamendo.com/artist/377603/en_3_palabras",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 222000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cec37ab8-c26f-4599-8472-49f8a69b1791/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cec37ab8-c26f-4599-8472-49f8a69b1791/",
+   "related_url": "https://api.openverse.org/v1/audio/cec37ab8-c26f-4599-8472-49f8a69b1791/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cec37ab8-c26f-4599-8472-49f8a69b1791/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ff077657-b960-4f82-b083-09dcf6063562",
+   "title": "Dance of the Fallen Zen Master",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/40617",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=40617&format=mp32",
+   "creator": "Krayne",
+   "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dance of the Fallen Zen Master\" by Krayne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "c0ntact",
+    "foreign_landing_url": "https://www.jamendo.com/album/5002/c0ntact",
+    "creator": "Krayne",
+    "creator_url": "https://www.jamendo.com/artist/5734/krayne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 127000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ff077657-b960-4f82-b083-09dcf6063562/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ff077657-b960-4f82-b083-09dcf6063562/",
+   "related_url": "https://api.openverse.org/v1/audio/ff077657-b960-4f82-b083-09dcf6063562/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ff077657-b960-4f82-b083-09dcf6063562/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a605ce1b-2fb7-4f30-9fe7-0502ad88e05d",
+   "title": "Zen Men - Hold Me",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1395984",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1395984&format=mp32",
+   "creator": "Gelbriseok",
+   "creator_url": "https://www.jamendo.com/artist/495163/Sunset_Lounge",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "loungebar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen Men - Hold Me\" by Gelbriseok is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Sunset Lounge (Gold Collection)",
+    "foreign_landing_url": "https://www.jamendo.com/album/163502/sunset-lounge-gold-collection",
+    "creator": "Gelbriseok",
+    "creator_url": "https://www.jamendo.com/artist/495163/Sunset_Lounge",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 278000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a605ce1b-2fb7-4f30-9fe7-0502ad88e05d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a605ce1b-2fb7-4f30-9fe7-0502ad88e05d/",
+   "related_url": "https://api.openverse.org/v1/audio/a605ce1b-2fb7-4f30-9fe7-0502ad88e05d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a605ce1b-2fb7-4f30-9fe7-0502ad88e05d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "289fec1f-d0e2-40da-b4b8-16ce5c1145ff",
+   "title": "Zen Flute-massive bass",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/866039",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=866039&format=mp32",
+   "creator": "Zen flute",
+   "creator_url": "https://www.jamendo.com/artist/373692/Zen_flute",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen Flute-massive bass\" by Zen flute is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Attack",
+    "foreign_landing_url": "https://www.jamendo.com/album/101487/attack",
+    "creator": "Zen flute",
+    "creator_url": "https://www.jamendo.com/artist/373692/Zen_flute",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 112000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/289fec1f-d0e2-40da-b4b8-16ce5c1145ff/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/289fec1f-d0e2-40da-b4b8-16ce5c1145ff/",
+   "related_url": "https://api.openverse.org/v1/audio/289fec1f-d0e2-40da-b4b8-16ce5c1145ff/related/",
+   "waveform": "https://api.openverse.org/v1/audio/289fec1f-d0e2-40da-b4b8-16ce5c1145ff/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f0ffba4c-f2c9-443e-ab31-638a37a26083",
+   "title": "Zen Cities (For Joi)",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/38922",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=38922&format=mp32",
+   "creator": "DJ Blackwidow",
+   "creator_url": "https://www.jamendo.com/artist/5466/dj.blackwidow",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen Cities (For Joi)\" by DJ Blackwidow is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Zen Cities",
+    "foreign_landing_url": "https://www.jamendo.com/album/4772/zen-cities",
+    "creator": "DJ Blackwidow",
+    "creator_url": "https://www.jamendo.com/artist/5466/dj.blackwidow",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 244000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f0ffba4c-f2c9-443e-ab31-638a37a26083/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f0ffba4c-f2c9-443e-ab31-638a37a26083/",
+   "related_url": "https://api.openverse.org/v1/audio/f0ffba4c-f2c9-443e-ab31-638a37a26083/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f0ffba4c-f2c9-443e-ab31-638a37a26083/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

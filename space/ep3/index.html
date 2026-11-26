@@ -1,0 +1,104 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="178.080" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s2" class="clip scene " data-start="0.000" data-duration="20.040" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="c1" class="scene"><div id="fadein0" class="black"></div></div></div>
+<div id="w3" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:12"><video id="v4" class="clip fit" src="assets/clips/px_magnify_0_1aea86f1.mp4" muted playsinline data-start="20.040" data-duration="3.660" data-track-index="1"></video></div>
+<div id="s7" class="clip scene " data-start="55.540" data-duration="10.720" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="c6" class="scene"><div id="ti5" class="title" style="left:150px;top:620px;font-size:86px;opacity:0">The Most Terrifying<br>Types of Black Holes</div></div></div>
+<div id="s10" class="clip scene " data-start="82.920" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c9" class="scene"><div id="dip8" class="black" style="opacity:0"></div></div></div>
+<div id="s15" class="clip scene " data-start="83.620" data-duration="3.560" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="c14" class="scene"><div class="black"></div><div class="tcard"><div id="rk11" class="tk" style="opacity:0">NUMBER EIGHT</div><div id="rk13" class="trule" style="transform:scaleX(0)"></div><div id="rk12" class="tn" style="opacity:0">The Silent One</div></div></div></div>
+<div id="s18" class="clip scene " data-start="112.080" data-duration="10.140" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="c17" class="scene"><img id="ph16" class="fill" src="assets/gen/gaia_spacecraft_4c6975.jpg" alt="gaia_spacecraft" style="transform-origin:70% 65%"></div></div>
+<div id="s21" class="clip scene " data-start="143.060" data-duration="12.600" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="c20" class="scene"><img id="ph19" class="fill" src="assets/gen/gaia_bh3_art_dbdf04.jpg" alt="gaia_bh3_art" style="transform-origin:35% 50%"></div></div>
+<div id="s24" class="clip scene " data-start="177.380" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c23" class="scene"><div id="dip22" class="black" style="opacity:0"></div></div></div>
+<div id="w25" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:19"><video id="v26" class="clip fit" src="assets/clips/px_nightsky_0_6fd774df.mp4" muted playsinline data-start="166.160" data-duration="11.920" data-track-index="1"></video></div>
+<div id="s65" class="clip scene " data-start="0.000" data-duration="178.080" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c64" class="scene"><div class="vign"></div><div id="grain63" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+<div id="s67" class="clip scene " data-start="177.730" data-duration="0.350" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c66" class="scene"><div id="seamout" class="black" style="opacity:0"></div></div></div>
+</div>
+<script>
+window.SPS = [[0.0, 20.04, "bh", {"bhK": [[0, 0]], "starDir": [0.02, 0.01, -1], "starKK": [[0, 3], [9.0, 30], [6.379999999999999, 30], [9.379999999999999, 4]], "dist": 24, "el": 2, "az0": -1.5, "az1": 1.5, "fovK": [[0, 36], [20, 27]]}], [23.7, 35.44, "bh", {"disk": 0, "starDir": [0.0, 0.0, -1], "star": 34, "dist": 24, "el": 2, "az0": -5, "az1": 5, "fovK": [[0, 36], [11.7, 30]], "shiftX": 280, "rollK": [[0, 0], [11.7, 3]]}], [35.44, 40.86, "bh", {"disk": 0, "glow": 0, "starDir": [0.0, 0.0, -1], "starKK": [[0, 34], [2.5, 0]], "dist0": 24, "dist1": 18, "el": 3, "az0": 5, "az1": 9, "fov": 34, "shiftX": -260}], [40.86, 51.57, "bh", {"disk": 0, "dist0": 30, "dist1": 25, "el": 4, "az0": 20, "az1": 70, "fov": 40, "roll": -5, "skyRot": 0.12}], [51.57, 55.54, "galaxy", {"art": "assets/img/milkyway_art.jpg", "artOp": 0.5, "dist0": 170, "dist1": 135, "el0": 62, "el1": 48, "az0": 0, "az1": 18, "sx": -180}], [55.54, 66.26, "bh", {"dist0": 36, "dist1": 26, "el0": 3, "el1": 6, "az0": -14, "az1": 4, "shiftX": 310, "diskIn": 3.0, "diskOut": 14}], [66.26, 79.82, "bh", {"dist0": 82, "dist1": 62, "el0": 16, "el1": 9, "az0": 30, "az1": 58, "jet": 0.8, "shiftX": -220, "diskIn": 3.0, "diskOut": 14}], [79.82, 83.62, "bh", {"dist": 34, "el": 5, "az0": 0, "az1": 8, "fovK": [[0, 18], [3.8, 14]], "diskIn": 3.0, "diskOut": 14}], [87.18, 106.82, "bh", {"dist0": 33, "dist1": 26, "el": 4, "az0": -22, "az1": -8, "shiftX": 290, "roll": -5, "glow": 0, "diskIn": 3.0, "diskOut": 14, "diskK": [[0, 1], [11.039999999999992, 1], [13.719999999999995, 0]]}], [106.82, 112.08, "bh", {"disk": 0, "distK": [[0, 28], [5.2, 25]], "elK": [[0, 10], [5.2, 18]], "az0": 0, "az1": 12, "shiftX": -230, "comp": {"a": 7.5, "r": 0.9, "sp": 15, "ph": 0}}], [122.22, 133.88, "bh", {"disk": 0, "dist": 36, "el": 34, "az0": 0, "az1": 16, "comp": {"a": 8, "r": 0.95, "sp": 30, "ph": -40}}], [133.88, 143.06, "bh", {"disk": 0, "dist": 42, "el": 12, "az0": -10, "az1": 4, "fov": 26, "shiftX": 240, "comp": {"a": 8, "r": 0.95, "sp": 12, "ph": -30}}], [155.66, 166.16, "bh", {"disk": 0, "dist": 32, "el": 5, "az0": 40, "az1": 52, "fov": 18, "look0": [2.6, 0, 0], "look1": [2.0, 0.2, 0]}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#fadein0",{opacity:1},{opacity:0,duration:2.2,ease:"power1.inOut"},0.000);
+tl.fromTo("#v4",{scale:1.0},{scale:1.06,duration:3.66,ease:"none"},20.040);
+tl.fromTo("#ti5",{opacity:0},{opacity:1,duration:1.6,ease:"power1.inOut"},60.400);
+tl.to("#ti5",{opacity:0,duration:1.0,ease:"power1.inOut"},65.260);
+tl.fromTo("#dip8",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},82.920);
+tl.fromTo("#rk11",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},83.920);
+tl.fromTo("#rk12",{opacity:0},{opacity:1,duration:1.2,ease:"power1.inOut"},84.320);
+tl.fromTo("#rk13",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},84.120);
+tl.to("#rk11",{opacity:0,duration:0.5,ease:"power2.out"},86.580);
+tl.to("#rk12",{opacity:0,duration:0.5,ease:"power2.out"},86.580);
+tl.fromTo("#ph16",{scale:1.0},{scale:1.1,duration:10.14,ease:"none"},112.080);
+tl.fromTo("#ph19",{scale:1.0},{scale:1.1,duration:12.6,ease:"none"},143.060);
+tl.fromTo("#dip22",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},177.380);
+tl.fromTo("#v26",{scale:1.0},{scale:1.06,duration:11.92,ease:"none"},166.160);
+tl.fromTo("#grain63",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:158101,backgroundPositionY:226469,duration:178.08,ease:"steps(4273)"},0.000);
+tl.fromTo("#seamout",{opacity:0},{opacity:1,duration:0.35,ease:"power1.in"},177.730);
+tl.set({}, {}, 178.080);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

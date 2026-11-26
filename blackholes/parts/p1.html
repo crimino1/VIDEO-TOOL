@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="220.200" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<video id="s1v" class="clip" src="assets/clips/telescope_0.mp4" muted playsinline data-start="0.000" data-duration="3.600" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s1" class="clip" data-start="0.000" data-duration="3.600" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s1k"></div><div class="vig"></div></div>
+<div id="s2" class="clip" data-start="3.600" data-duration="2.900" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s2k"></div><div class="vig"></div></div>
+<video id="s3v" class="clip" src="assets/clips/nightsky_6.mp4" muted playsinline data-start="6.500" data-duration="2.700" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s3" class="clip" data-start="6.500" data-duration="2.700" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s3k"></div><div class="vig"></div></div>
+<div id="s4" class="clip" data-start="9.200" data-duration="14.220" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s4k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o5" class="cap" style="opacity:0">The equations of gravity</div></div>
+<div id="s6" class="clip" data-start="23.420" data-duration="6.120" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb7" style="position:absolute;left:438px;top:130px;width:1044px;height:739px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/cygx1art.jpg" alt="cygx1art" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o8" class="cap" style="opacity:0">Cygnus X-1 · artist&#x27;s impression (NASA)</div></div>
+<div id="s9" class="clip" data-start="29.540" data-duration="6.960" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb10" style="position:absolute;left:590px;top:130px;width:740px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/m87.jpg" alt="m87" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o11" class="cap" style="opacity:0">The first image · Event Horizon Telescope · 2019</div></div>
+<div id="s12" class="clip" data-start="36.500" data-duration="4.180" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s12k"></div><div class="vig"></div></div>
+<div id="s13" class="clip" data-start="40.680" data-duration="10.020" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s13k"></div><div class="vig"></div></div>
+<div id="s14" class="clip" data-start="50.700" data-duration="42.460" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s14k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o15" class="big" style="opacity:0">11.2 km/s<small>Earth&#x27;s escape velocity</small></div><div id="o16" class="line" style="opacity:0">The stronger the gravity, the faster you must go to escape it.</div></div>
+<div id="s17" class="clip" data-start="93.160" data-duration="46.740" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s17k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o18" class="cap" style="opacity:0">Earth squeezed to the size of a marble</div><div id="o19" class="line" style="opacity:0">Not a stone, not a rocket, not light itself.</div></div>
+<div id="s20" class="clip" data-start="139.900" data-duration="7.100" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o21" class="big" style="opacity:0">That is where the idea of a black hole was born.</div><div id="o22" class="big" style="opacity:0">But an idea isn't a discovery.</div></div>
+<video id="s23v" class="clip" src="assets/clips/observatory2_147.mp4" muted playsinline data-start="147.000" data-duration="8.740" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s23" class="clip" data-start="147.000" data-duration="8.740" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s23k"></div><div class="fadeb"></div><div class="vig"></div><div id="o24" class="line" style="opacity:0">How did a strange thought become real black holes in space?</div></div>
+<video id="s25v" class="clip" src="assets/clips/stargaze_155.mp4" muted playsinline data-start="155.740" data-duration="6.560" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s25" class="clip" data-start="155.740" data-duration="6.560" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s25k"></div><div class="vig"></div></div>
+<video id="s26v" class="clip" src="assets/clips/church_162.mp4" muted playsinline data-start="162.300" data-duration="10.680" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s26" class="clip" data-start="162.300" data-duration="10.680" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s26k"></div><div class="fadeb"></div><div class="vig"></div><div id="o27" class="capt" style="opacity:0">Yorkshire, England · 1783</div></div>
+<div id="s28" class="clip" data-start="172.980" data-duration="7.100" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="pn29" style="opacity:0"><div class="pname" style="left:160px;top:430px;width:1520px;font-size:84px">John Michell</div><div class="pmeta" style="left:160px;top:540px">Clergyman and natural philosopher · 1724–1793</div></div></div>
+<div id="s30" class="clip" data-start="180.080" data-duration="23.960" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s30k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o31" class="line" style="opacity:0">He called these objects dark stars.</div></div>
+<div id="s32" class="clip" data-start="204.040" data-duration="16.160" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s32k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o33" class="line" style="opacity:0">A star moving around nothing.</div></div>
+<div id="fin" class="black" style="z-index:9"></div>
+</div>
+<script>window.LAB = [[3.6, 6.5, "eyepiece", {"mode": "open", "FT0": 3.6}], [9.2, 23.42, "notebook", {"mode": "field", "FT0": 9.2}], [36.5, 40.68, "escape", {"mode": "intro", "FT0": 36.5}], [40.68, 50.7, "escape", {"mode": "toss", "FT0": 40.68}], [50.7, 93.16, "escape", {"mode": "throws", "FT0": 50.7}], [93.16, 139.9, "shrink", {"mode": "full", "FT0": 93.16}], [180.08, 204.04, "darkstar", {"mode": "light", "FT0": 180.08}], [204.04, 220.2, "darkstar", {"mode": "binary", "FT0": 204.04}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_collapse.js"></script>
+<script src="assets/js/k_cygnus.js"></script>
+<script src="assets/js/k_gravity.js"></script>
+<script src="assets/js/k_scope.js"></script>
+<script src="assets/js/k_waves.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s1k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.fromTo("#s2k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},3.600);
+tl.fromTo("#s3k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},6.500);
+tl.fromTo("#s4k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},9.200);
+tl.fromTo("#o5",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},12.600);
+tl.to("#o5",{opacity:0,duration:0.5,ease:"power1.inOut"},18.700);
+tl.fromTo("#kb7",{scale:1.0,y:6},{scale:1.09,y:-6,duration:6.120,ease:"sine.inOut"},23.420);
+tl.fromTo("#s6",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},23.420);
+tl.fromTo("#o8",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},24.200);
+tl.fromTo("#kb10",{scale:1.0,y:6},{scale:1.09,y:-6,duration:6.960,ease:"sine.inOut"},29.540);
+tl.fromTo("#s9",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},29.540);
+tl.fromTo("#o11",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},31.000);
+tl.fromTo("#s12k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},36.500);
+tl.fromTo("#s13k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},40.680);
+tl.fromTo("#s14k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},50.700);
+tl.fromTo("#o15",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},69.300);
+tl.to("#o15",{opacity:0,duration:0.5,ease:"power1.inOut"},76.300);
+tl.fromTo("#o16",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},89.400);
+tl.to("#o16",{opacity:0,duration:0.5,ease:"power1.inOut"},92.500);
+tl.fromTo("#s17k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},93.160);
+tl.fromTo("#o18",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},123.800);
+tl.to("#o18",{opacity:0,duration:0.5,ease:"power1.inOut"},131.000);
+tl.fromTo("#o19",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},136.000);
+tl.to("#o19",{opacity:0,duration:0.5,ease:"power1.inOut"},139.200);
+tl.fromTo("#s20",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},139.900);
+tl.fromTo("#o21",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},140.100);
+tl.to("#o21",{opacity:0,duration:0.5,ease:"power1.inOut"},143.800);
+tl.fromTo("#o22",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},144.600);
+tl.fromTo("#s23k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},147.000);
+tl.fromTo("#o24",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},147.300);
+tl.to("#o24",{opacity:0,duration:0.5,ease:"power1.inOut"},152.700);
+tl.fromTo("#s25k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},155.740);
+tl.fromTo("#s26k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},162.300);
+tl.fromTo("#o27",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},164.900);
+tl.fromTo("#pn29",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},173.330);
+tl.fromTo("#s28",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},172.980);
+tl.fromTo("#s30k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},180.080);
+tl.fromTo("#o31",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},200.900);
+tl.to("#o31",{opacity:0,duration:0.5,ease:"power1.inOut"},203.400);
+tl.fromTo("#s32k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},204.040);
+tl.fromTo("#o33",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},211.400);
+tl.to("#o33",{opacity:0,duration:0.5,ease:"power1.inOut"},216.900);
+tl.fromTo("#fin",{opacity:1},{opacity:0,duration:1.6,ease:"power1.inOut"},0);
+tl.set({}, {}, 220.200);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

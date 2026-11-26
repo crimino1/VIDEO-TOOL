@@ -1,0 +1,432 @@
+[
+ {
+  "nn": "01",
+  "start": 0.0,
+  "end": 407.65,
+  "chapter": "Intro + Chapter 1",
+  "chapter_title": "Functions, the warm-up",
+  "part": "1/3",
+  "opening": "Hey, welcome! So this video is the entire Calculus I course. Start to finish in one place. Limits, derivatives, all the applications, integrals, the fundamental theorem, everything a normal first semester of calculus covers. It's long. A few hours long. But that's kind of the point. You don't have to jump between 20 different videos and wonder what you missed. It's all here, in order. Before we st",
+  "card": {
+   "label": "Chapter 1",
+   "title": "Functions, the Warm-up",
+   "at": 76.2
+  }
+ },
+ {
+  "nn": "02",
+  "start": 407.65,
+  "end": 812.53,
+  "chapter": "Intro + Chapter 1",
+  "chapter_title": "Functions, the warm-up",
+  "part": "2/3",
+  "opening": "So for the square root of x minus five, whatever's under the root has to be zero or bigger. x minus five has to be at least zero, so x has to be at least five. Range is sometimes a little harder to see. For x squared, you can square any number you want, but the answer is never negative. So the range is all y values from zero upward. Try these two. What's the domain of three over x plus four? And w"
+ },
+ {
+  "nn": "03",
+  "start": 812.53,
+  "end": 1218.08,
+  "chapter": "Intro + Chapter 1",
+  "chapter_title": "Functions, the warm-up",
+  "part": "3/3",
+  "opening": "So ln of a times b equals ln a plus ln b. The log of a quotient is the difference. ln of a over b is ln a minus ln b. And the log of a power lets you bring the power down in front. ln of a to the n is n times ln a. A few other facts to keep handy. ln of one is zero, because e to the zero is one. ln of e is one, and e to the ln x just gives you back x, because they undo each other. That last power "
+ },
+ {
+  "nn": "04",
+  "start": 1218.08,
+  "end": 1603.41,
+  "chapter": "Chapter 2",
+  "chapter_title": "Limits",
+  "part": "1/3",
+  "opening": "Chapter 2 Limits Every big idea in calculus is built on limits. Derivatives are limits. Integrals are limits. So this chapter is kind of the foundation of the whole house. I'm going to take it slowly. Let me start with an everyday picture. You're downloading something big. The bar says 90%, then 99, then 99 .9. It hasn't hit 100 yet, but you already know where it's going. It's heading toward 100. ",
+  "card": {
+   "label": "Chapter 2",
+   "title": "Limits",
+   "at": 1218.08
+  }
+ },
+ {
+  "nn": "05",
+  "start": 1603.41,
+  "end": 1988.61,
+  "chapter": "Chapter 2",
+  "chapter_title": "Limits",
+  "part": "2/3",
+  "opening": "That's a limit. If one goes to a cafe on one side of town and the other goes somewhere else they never meet. No limit. There are basically three ways a limit can fail to exist. Let's go through them. The first is a jump like the one we just saw. The left and the right head to different heights. The second is when the function blows up. Look at 1 over x as x approaches 0. From the right plug in 0 ."
+ },
+ {
+  "nn": "06",
+  "start": 1988.61,
+  "end": 2373.08,
+  "chapter": "Chapter 2",
+  "chapter_title": "Limits",
+  "part": "3/3",
+  "opening": "Cancel the x plus 2. Left with x plus 3. Plug in negative 2. 1 and 1 that's a little trickier. The limit as x approaches 2 of x cubed minus 8 over x minus 2. 0 over 0 again. The top is a difference of cubes. There's a pattern for that. A cubed minus b cubed equals a minus b times a squared plus a b plus b squared. So x cubed minus 8 is x minus 2 times x squared plus 2x plus 4. Cancel the x minus 2"
+ },
+ {
+  "nn": "07",
+  "start": 2373.08,
+  "end": 2779.37,
+  "chapter": "Chapter 3",
+  "chapter_title": "Infinity, Trig Limits and Continuity",
+  "part": "1/3",
+  "opening": "Chapter 3 Infinity. A famous trig limit and continuity. In the last chapter I kept saying when you get a number over 0, we'll handle that later. Well, now it's later. In this chapter we'll look at limits that blow up. Limits where x itself goes off to infinity. A really important limit involving sine. And then a word you'll hear constantly in calculus, which is continuity. Let's start with infinit",
+  "card": {
+   "label": "Chapter 3",
+   "title": "Infinity, Trig Limits and Continuity",
+   "at": 2373.08
+  }
+ },
+ {
+  "nn": "08",
+  "start": 2779.37,
+  "end": 3180.31,
+  "chapter": "Chapter 3",
+  "chapter_title": "Infinity, Trig Limits and Continuity",
+  "part": "2/3",
+  "opening": "The biggest power wins. That gives us a quick shortcut for rational functions as x goes to infinity. Compare the highest power on top with the highest power on the bottom. If they're the same, the limit is the ratio of the numbers in front, like we just saw, 3 over 2. If the bottom has the bigger power, the limit is 0. The bottom grows faster and crushes the fraction. For example, 4x plus 1 over x"
+ },
+ {
+  "nn": "09",
+  "start": 3180.31,
+  "end": 3583.86,
+  "chapter": "Chapter 3",
+  "chapter_title": "Infinity, Trig Limits and Continuity",
+  "part": "3/3",
+  "opening": "So the answer is 3 halves. And tangent x over x. Tangent is sine over cosine so that's sine x over x times 1 over cosine x. The first part goes to 1. Cosine of 0 is 1 so the second part goes to 1. Answer 1. There's one more you should know. 1 minus cosine x over x as x approaches 0. That limit is 0. You can show it by multiplying by the conjugate 1 plus cosine x and using sine squared plus cosine "
+ },
+ {
+  "nn": "10",
+  "start": 3583.86,
+  "end": 3940.77,
+  "chapter": "Chapter 4",
+  "chapter_title": "What a Derivative Actually Is",
+  "part": "1/3",
+  "opening": "Chapter 4 What a derivative actually is. Okay, this is the chapter where calculus really begins. Everything up to now was getting ready for this. The derivative answers one question. How fast is something changing right now at this exact moment? Let me start with something you already understand. Average speed. Say you drive 120 kilometers in two hours. Your average speed is 120 divided by 260 kil",
+  "card": {
+   "label": "Chapter 4",
+   "title": "What a Derivative Actually Is",
+   "at": 3583.86
+  }
+ },
+ {
+  "nn": "11",
+  "start": 3940.77,
+  "end": 4297.93,
+  "chapter": "Chapter 4",
+  "chapter_title": "What a Derivative Actually Is",
+  "part": "2/3",
+  "opening": "Let h go to 0. 2x. So the derivative of x squared is 2x. That means at x equals 3 the slope is 2 times 3, which is 6. At x equals 1 the slope is 2. At x equals 0 the slope is 0. Which makes sense, because that's the bottom of the parabola, where it's flat. At x equals negative 2 the slope is negative 4. So the curve is going downhill there. One formula, and it tells you the slope everywhere. Let's"
+ },
+ {
+  "nn": "12",
+  "start": 4297.93,
+  "end": 4654.0,
+  "chapter": "Chapter 4",
+  "chapter_title": "What a Derivative Actually Is",
+  "part": "3/3",
+  "opening": "The point f of 1 is 1 minus 4 negative 3. So the point is 1 comma negative 3. The slope, f prime of x is 2x minus 4 at 1 that's negative 2. y minus negative 3 equals negative 2 times x minus 1. So y plus 3 equals negative 2x plus 2. Subtract 3 y equals negative 2x minus 1. Let's talk about notation. Because there are a few different ways to write a derivative and you'll see all of them. f prime of"
+ },
+ {
+  "nn": "13",
+  "start": 4654.0,
+  "end": 5030.89,
+  "chapter": "Chapter 5",
+  "chapter_title": "The Derivative Rules",
+  "part": "1/3",
+  "opening": "Chapter 5 The Derivative Rules In the last chapter every derivative took a whole page of algebra. Expand cancel, divide by h take the limit. It works but if you had to do that for every problem you'd go crazy. The good news is mathematicians have already worked out shortcuts. Rules that come straight from the definition so you don't have to redo the limit every time. Once you learn these most deri",
+  "card": {
+   "label": "Chapter 5",
+   "title": "The Derivative Rules",
+   "at": 4654.0
+  }
+ },
+ {
+  "nn": "14",
+  "start": 5030.89,
+  "end": 5390.72,
+  "chapter": "Chapter 5",
+  "chapter_title": "The Derivative Rules",
+  "part": "2/3",
+  "opening": "It's its own derivative. Out of every function there is, apart from just 0, e to the x and its constant multiples are the only ones that equal their own derivative. What does that mean? It means that at every point the slope of the graph equals the height of the graph. At x equals 0 the height is 1 and the slope is 1. At x equals 1 the height is about 2 .7 and so is the slope. The higher it gets, "
+ },
+ {
+  "nn": "15",
+  "start": 5390.72,
+  "end": 5786.25,
+  "chapter": "Chapter 5",
+  "chapter_title": "The Derivative Rules",
+  "part": "3/3",
+  "opening": "Next the quotient rule for one function divided by another If you have f over g the derivative is f prime g minus fg prime all over g squared The order here really matters because of the minus sign if you swap the terms you get the wrong sign So there's a little rhyme people use low d high minus high d low over the square of what's below low is the bottom function high is the top function and d me"
+ },
+ {
+  "nn": "16",
+  "start": 5786.25,
+  "end": 6116.56,
+  "chapter": "Chapter 6",
+  "chapter_title": "Trig Derivatives and the Chain Rule",
+  "part": "1/3",
+  "opening": "chapter 6 trig derivatives and the chain rule this chapter has two parts first the derivatives of sine cosine and the other trig functions then the chain rule which if I had to pick is probably the most important derivative rule of all almost every real derivative you'll ever take uses it somewhere let's start with sine the derivative of sine x is cosine x before I show you where that comes from l",
+  "card": {
+   "label": "Chapter 6",
+   "title": "Trig Derivatives and the Chain Rule",
+   "at": 5786.25
+  }
+ },
+ {
+  "nn": "17",
+  "start": 6116.56,
+  "end": 6472.92,
+  "chapter": "Chapter 6",
+  "chapter_title": "Trig Derivatives and the Chain Rule",
+  "part": "2/3",
+  "opening": "product rule 3x squared tangent x plus x cubed secant squared x okay the chain rule so far every function we've differentiated has been pretty simple powers of x e to the x sine of x but what about something like sine of x squared or 3x plus 1 to the fifth or e to the 5x these are functions inside functions compositions like we talked about back in chapter 1 and that's what the chain rule is for l"
+ },
+ {
+  "nn": "18",
+  "start": 6472.92,
+  "end": 6826.13,
+  "chapter": "Chapter 6",
+  "chapter_title": "Trig Derivatives and the Chain Rule",
+  "part": "3/3",
+  "opening": "and x squared minus 3x to the 4th 4 times x squared minus 3x cubed times the inside derivative 2x minus 3 try a few on your own 4x minus 1 cubed cosine of x cubed and e to the negative 2x first one 3 times 4x minus 1 squared times 4 12 times 4x minus 1 squared second one negative sine of x cubed times 3x squared negative 3x squared sine of x cubed third e to the negative 2x times negative 2"
+ },
+ {
+  "nn": "19",
+  "start": 6826.13,
+  "end": 7165.08,
+  "chapter": "Chapter 7",
+  "chapter_title": "Implicit Differentiation, Inverses and Logs",
+  "part": "1/3",
+  "opening": "Chapter 7 Implicit differentiation, inverse functions and a trick with logs. Up to now, every function we've differentiated was written as y equals something with x, y equals x squared, y equals sin x. The y is all by itself on one side. That's called an explicit function. But not every curve can be written that way. Take a circle. x squared plus y squared equals 25. That's a circle centred at the",
+  "card": {
+   "label": "Chapter 7",
+   "title": "Implicit Differentiation, Inverses and Logs",
+   "at": 6826.13
+  }
+ },
+ {
+  "nn": "20",
+  "start": 7165.08,
+  "end": 7505.18,
+  "chapter": "Chapter 7",
+  "chapter_title": "Implicit Differentiation, Inverses and Logs",
+  "part": "2/3",
+  "opening": "So 3x squared plus 3y squared y prime equals 6y plus 6xy prime. Get the y primes on the left. 3y squared y prime minus 6xy prime equals 6y minus 3x squared. Factor out y prime. y prime times 3y squared minus 6x equals 6y minus 3x squared. Divide. And everything has a 3 in it. So cancel that too. y prime equals 2y minus x squared over y squared minus 2x. At 3 comma 3. Top is 6 minus 9 negative 3. B"
+ },
+ {
+  "nn": "21",
+  "start": 7505.18,
+  "end": 7842.37,
+  "chapter": "Chapter 7",
+  "chapter_title": "Implicit Differentiation, Inverses and Logs",
+  "part": "3/3",
+  "opening": "Solving x cubed plus x equals y for x is really hard. So we don't. Instead, find which input gives 2. Try x equals 1. 1 plus 1 is 2. So f of 1 is 2. That means the inverse takes 2 back to 1. Now f prime of x is 3x squared plus 1. At 1 that's 4. So the derivative of the inverse at 2 is 1 over 4. We never even found a formula for the inverse. One more implicit thing briefly. You can find second deri"
+ },
+ {
+  "nn": "22",
+  "start": 7842.37,
+  "end": 8240.04,
+  "chapter": "Chapter 8",
+  "chapter_title": "Motion, Related Rates and Approximations",
+  "part": "1/3",
+  "opening": "Chapter 8. Motion, Related Rates, and Approximations. Okay. We've spent a long time learning how to take derivatives. Now let's actually use them. This chapter is about three kinds of problems. Things moving along a line. Things changing together, which is called related rates. And using tangent lines to estimate numbers. These are some of the most common word problems you'll see. Let's start with",
+  "card": {
+   "label": "Chapter 8",
+   "title": "Motion, Related Rates and Approximations",
+   "at": 7842.37
+  }
+ },
+ {
+  "nn": "23",
+  "start": 8240.04,
+  "end": 8635.18,
+  "chapter": "Chapter 8",
+  "chapter_title": "Motion, Related Rates and Approximations",
+  "part": "2/3",
+  "opening": "And how fast is it going when it lands? v of four is 20 minus 40, negative 20 meters per second. Same speed it was thrown at, just pointing down. Which makes sense if you ignore air resistance. Okay, related rates. These are some of the most famous word problems in calculus. They look scary at first, but once you know the steps, they're actually pretty predictable. The idea is, you have two or mor"
+ },
+ {
+  "nn": "24",
+  "start": 8635.18,
+  "end": 9031.57,
+  "chapter": "Chapter 8",
+  "chapter_title": "Motion, Related Rates and Approximations",
+  "part": "3/3",
+  "opening": "So dhdt equals two over four pi, which is one over two pi. About 0 .16 meters per minute. One more. Two cars start from the same point. One drives north at 60 kilometers per hour and the other drives east at 80 kilometers per hour. How fast is the distance between them increasing after two hours? Call the north distance a, the east distance b, and the distance between them d. They form a right tri"
+ },
+ {
+  "nn": "25",
+  "start": 9031.57,
+  "end": 9456.64,
+  "chapter": "Chapter 9",
+  "chapter_title": "Max, Min and Curve Sketching",
+  "part": "1/3",
+  "opening": "Chapter 9. What derivatives tell you about the shape of a graph? Here's something really useful. If you know a function's derivatives, you can figure out basically everything about what its graph looks like. Where it goes up, where it goes down, where the hills and valleys are, and which way it bends. You don't need a graphing calculator. The derivatives tell you the whole story. This chapter cove",
+  "card": {
+   "label": "Chapter 9",
+   "title": "Max, Min and Curve Sketching",
+   "at": 9031.57
+  }
+ },
+ {
+  "nn": "26",
+  "start": 9456.64,
+  "end": 9876.74,
+  "chapter": "Chapter 9",
+  "chapter_title": "Max, Min and Curve Sketching",
+  "part": "2/3",
+  "opening": "You pass the first booth, and an hour and a half later, you pass the second one. Your average speed was 150 divided by 1 .5, which is 100 kilometers per hour. If the speed limit is 80, the police can give you a ticket, even if nobody saw you speeding. Because of the mean value theorem, at some moment your speedometer had to say exactly a hundred. You can't average a hundred without hitting a hundr"
+ },
+ {
+  "nn": "27",
+  "start": 9876.74,
+  "end": 10301.89,
+  "chapter": "Chapter 9",
+  "chapter_title": "Max, Min and Curve Sketching",
+  "part": "3/3",
+  "opening": "f of negative 1 is negative 2 minus 3 plus 12 plus 5, which is 12. So the local max is at negative 1 comma 12. At 2, the second derivative is 18. Positive, so local min dot f of 2 is 16 minus 12 minus 24 plus 5 negative 15. Local min at 2 comma negative 15. Inflection, 12x minus 6 equals 0 at x equals 1 half. And it changes sign there, from negative to positive. So there's an inflection point at x"
+ },
+ {
+  "nn": "28",
+  "start": 10301.89,
+  "end": 10700.42,
+  "chapter": "Chapter 10",
+  "chapter_title": "Optimization and L'Hopital's Rule",
+  "part": "1/3",
+  "opening": "Chapter 10, Optimization and L 'Opital's Rule. This is where calculus starts feeling really practical. Optimization means finding the best possible answer. The biggest area, the smallest cost, the shortest distance, the most profit. Companies, engineers and scientists solve problems like this every day, and the tool they use is exactly what we built in the last chapter. Find the critical points an",
+  "card": {
+   "label": "Chapter 10",
+   "title": "Optimization and L'Hopital's Rule",
+   "at": 10301.89
+  }
+ },
+ {
+  "nn": "29",
+  "start": 10700.42,
+  "end": 11103.52,
+  "chapter": "Chapter 10",
+  "chapter_title": "Optimization and L'Hopital's Rule",
+  "part": "2/3",
+  "opening": "The 2 pi r h part becomes 2 pi r times 1000 over pi r squared. The pi cancels, 1 r cancels. 2000 over r. So s equals 2 pi r squared plus 2000 over r. Derivative. 4 pi r minus 2000 over r squared. Set it to zero. 4 pi r equals 2000 over r squared. Multiply both sides by r squared. 4 pi r cubed equals 2000. r cubed equals 500 over pi. r equals the cube root of 500 over pi. That's about 5 .42 centime"
+ },
+ {
+  "nn": "30",
+  "start": 11103.52,
+  "end": 11502.17,
+  "chapter": "Chapter 10",
+  "chapter_title": "Optimization and L'Hopital's Rule",
+  "part": "3/3",
+  "opening": "Both go to infinity. Lopital. 1 over x over 1. That's 1 over x which goes to 0. So x grows faster than ln x. Way faster actually. The limit as x goes to infinity of x squared over e to the x. Infinity over infinity. Lopital. 2x over e to the x. Still infinity over infinity. Again. 2 over e to the x. And now the top is just 2, while the bottom goes to infinity. So 0. That shows something really use"
+ },
+ {
+  "nn": "31",
+  "start": 11502.17,
+  "end": 11927.24,
+  "chapter": "Chapter 11",
+  "chapter_title": "Antiderivatives and the Area Problem",
+  "part": "1/3",
+  "opening": "Integrals. Chapter 11. Anti -derivatives and the area problem. Welcome to the second half of calculus. Everything so far has been about derivatives, breaking change down into tiny instance. Now we go the other way, building things up from tiny pieces. That's integration. And there are two separate ideas in this chapter that, at first, seem to have nothing to do with each other. The first is undoin",
+  "card": {
+   "label": "Chapter 11",
+   "title": "Antiderivatives and the Area Problem",
+   "at": 11502.17
+  }
+ },
+ {
+  "nn": "32",
+  "start": 11927.24,
+  "end": 12356.18,
+  "chapter": "Chapter 11",
+  "chapter_title": "Antiderivatives and the Area Problem",
+  "part": "2/3",
+  "opening": "The derivative of negative x to the negative two is negative times negative two x to the negative three. Two x to the negative three. That's two over x cubed. Correct. The integral of two sine x plus three e to the x. Two times negative cosine x plus three e to the x plus c. So negative two cosine x plus three e to the x plus c. The integral of x squared plus one over x. Split the fraction. x plus"
+ },
+ {
+  "nn": "33",
+  "start": 12356.18,
+  "end": 12785.37,
+  "chapter": "Chapter 11",
+  "chapter_title": "Antiderivatives and the Area Problem",
+  "part": "3/3",
+  "opening": "The i -th one is at two i over n. The height of the i -th rectangle is that squared. Four i squared over n squared. So the area of the i -th rectangle is height times width. Four i squared over n squared times two over n. That's eight i squared over n cubed. Now we need to add up all n of them. Mathematicians use the Greek letter sigma for add up. So the total is the sum from i equals one to n of "
+ },
+ {
+  "nn": "34",
+  "start": 12785.37,
+  "end": 13155.84,
+  "chapter": "Chapter 12",
+  "chapter_title": "The Fundamental Theorem and Substitution",
+  "part": "1/3",
+  "opening": "Chapter 12, The Fundamental Theorem of Calculus and Substitution. At the end of the last chapter, we had two ideas that seemed completely separate. Anti -derivatives, which undo derivatives. And definite integrals, which give us the area under a curve defined as a limit of rectangle sums. And finding even one area with rectangles took us a whole page. This chapter connects them. And once you see t",
+  "card": {
+   "label": "Chapter 12",
+   "title": "The Fundamental Theorem and Substitution",
+   "at": 12785.37
+  }
+ },
+ {
+  "nn": "35",
+  "start": 13155.84,
+  "end": 13526.72,
+  "chapter": "Chapter 12",
+  "chapter_title": "The Fundamental Theorem and Substitution",
+  "part": "2/3",
+  "opening": "1 minus negative 1. 2. So the area under one hump of the sine wave is exactly 2. That's a pretty surprising clean answer. The integral from 1 to e of 1 over x. Antiderivative lnx. ln of e minus ln of 1. 1 minus 0, 1. The integral from 0 to 1 of e to the x. e to the 1 minus e to the 0. e minus 1. The integral from 1 to 4 of root x. Antiderivative 2 thirds x to the 3 halves. At 4, 4 to the 3 halves "
+ },
+ {
+  "nn": "36",
+  "start": 13526.72,
+  "end": 13893.77,
+  "chapter": "Chapter 12",
+  "chapter_title": "The Fundamental Theorem and Substitution",
+  "part": "3/3",
+  "opening": "Exponentials work really nicely. The integral of E to the 5x. Let U equal 5x. du equals 5 dx. So dx is one fifth du. One fifth times the integral of E to the U. One fifth E to the U. So E to the 5x over 5 plus C. There's a quick pattern there. When the inside is just a number times x, you integrate as normal and divide by that number. So the integral of cosine 4x is sine 4x over 4 plus C. And the "
+ },
+ {
+  "nn": "37",
+  "start": 13893.77,
+  "end": 14341.68,
+  "chapter": "Chapter 13",
+  "chapter_title": "Using Integrals",
+  "part": "1/2",
+  "opening": "Chapter 13. Using integrals. This is the last teaching chapter. We'll use integrals to answer real questions. How much total change happened? How far something actually travelled? What the average value of a function is? And the area between two curves. Let's start with a simple but really powerful idea. It's called the net change theorem. And it's basically the fundamental theorem. Looked at from",
+  "card": {
+   "label": "Chapter 13",
+   "title": "Using Integrals",
+   "at": 13893.77
+  }
+ },
+ {
+  "nn": "38",
+  "start": 14341.68,
+  "end": 14790.75,
+  "chapter": "Chapter 13",
+  "chapter_title": "Using Integrals",
+  "part": "2/2",
+  "opening": "So its height is the top function minus the bottom function. Its width is dx then add them all up with an integral. So the area between two curves is the integral from a to b of top minus bottom dx. And usually the problem doesn't tell you a and b. You have to find where the curves cross by setting them equal to each other. Let's find the area between y equals x and y equals x squared. Where do th"
+ },
+ {
+  "nn": "39",
+  "start": 14790.75,
+  "end": 15093.06,
+  "chapter": "Chapter 14",
+  "chapter_title": "The Final Exam",
+  "part": "1/2",
+  "opening": "Chapter 14. The final exam. Okay, you made it to the end. Before I let you go, let's put everything together with a final exam. 16 questions, covering the whole course, roughly in the order we learned things. Here's how I'd do it. After I read each question, pause the video and work it out on paper. Don't just think about it in your head, actually write it down. Then come back and check. If you ge",
+  "card": {
+   "label": "Chapter 14",
+   "title": "The Final Exam",
+   "at": 14790.75
+  }
+ },
+ {
+  "nn": "40",
+  "start": 15093.06,
+  "end": 15398.13,
+  "chapter": "Chapter 14",
+  "chapter_title": "The Final Exam",
+  "part": "2/2",
+  "opening": "Which is 2x plus 200 over x. Derivative 2 minus 200 over x squared. Set to 0. x squared equals 100. x equals 10. Then y is 10. A 10 by 10 square. With a perimeter of 40. Square again. Chapter 10. Question 12. Find the limit as x approaches 0 of e to the 2x minus 1. Over x. 0 over 0. L 'Hopital. 2e to the 2x over 1. At 0, 2. Chapter 10. Question 13. Find the integral of 4x cubed minus 6x plus 2."
+ }
+]

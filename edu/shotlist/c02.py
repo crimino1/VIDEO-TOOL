@@ -1,0 +1,22 @@
+# Builder 02: Chapter 2 (right triangle, SOH CAH TOA) and Chapter 3 (the three cousins). 4:00.16 - 8:57.90
+S = [
+    ("4:00.16", "c", "K02_Card2", dict(num=2, title="The Right Triangle", doodle="triangle")),
+    ("4:03.54", "m", "K02_Parts"),
+    ("4:42.48", "m", "K02_Swap"),
+    ("4:54.92", "p", "K02_Pythagoras", dict(imgs=[("k02_pythagoras", "4:55.20")], title="Pythagoras", caps=[("the Pythagorean theorem", "4:57.06")])),
+    ("4:58.72", "m", "K02_Pythag"),
+    ("5:14.78", "m", "K02_Magic"),
+    ("5:30.98", "p", "K02_HandCity", dict(imgs=[("k02_hand", "5:33.10"), ("k02_city", "5:34.60")], title="Hand-sized or city-sized?")),
+    ("5:35.74", "m", "K02_Names"),
+    ("5:59.14", "m", "K02_Soh"),
+    ("6:32.06", "m", "K02_Example"),
+    ("7:04.42", "m", "K02_TanRatio"),
+    ("7:18.34", "q", "K02_Practice"),
+    ("7:20.08", "m", "K02_Q1"),
+    ("7:34.10", "m", "K02_Q1Ans"),
+    ("8:00.06", "g", "K02_HighFive", dict(clip="k02_highfive", cap="You're officially doing trigonometry!")),
+    ("8:06.02", "c", "K02_Card3", dict(num=3, title="The Three Cousins", doodle="star")),
+    ("8:08.72", "m", "K02_Cousins"),
+    ("8:29.84", "m", "K02_CoPairs"),
+    ("8:46.94", "m", "K02_Flip345"),
+]

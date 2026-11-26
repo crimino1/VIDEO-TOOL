@@ -1,0 +1,301 @@
+{
+ "result_count": 4,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "1735498a-6737-4e67-8491-15747fe09315",
+   "title": "CYBER SHAKUHACHI",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/312139",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=312139&format=mp32",
+   "creator": "michalko wawrzyn",
+   "creator_url": "https://www.jamendo.com/artist/348800/michalko_wawrzyn",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"CYBER SHAKUHACHI\" by michalko wawrzyn is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "ORIENT TRON",
+    "foreign_landing_url": "https://www.jamendo.com/album/42256/orient-tron",
+    "creator": "michalko wawrzyn",
+    "creator_url": "https://www.jamendo.com/artist/348800/michalko_wawrzyn",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 77000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1735498a-6737-4e67-8491-15747fe09315/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1735498a-6737-4e67-8491-15747fe09315/",
+   "related_url": "https://api.openverse.org/v1/audio/1735498a-6737-4e67-8491-15747fe09315/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1735498a-6737-4e67-8491-15747fe09315/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4605a6e7-3b3c-4629-bf95-ca43f189d051",
+   "title": "Cylvi M at Buddha's Foot, Kyoto [Japan]",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1059807",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1059807&format=mp32",
+   "creator": "Fiffdimension",
+   "creator_url": "https://www.jamendo.com/artist/7708/fiffdimension",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "spokenword",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "shakuhachi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Cylvi M at Buddha's Foot, Kyoto [Japan]\" by Fiffdimension is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "First Time Around: East Asia",
+    "foreign_landing_url": "https://www.jamendo.com/album/125001/first-time-around-east-asia",
+    "creator": "Fiffdimension",
+    "creator_url": "https://www.jamendo.com/artist/7708/fiffdimension",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 136000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4605a6e7-3b3c-4629-bf95-ca43f189d051/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4605a6e7-3b3c-4629-bf95-ca43f189d051/",
+   "related_url": "https://api.openverse.org/v1/audio/4605a6e7-3b3c-4629-bf95-ca43f189d051/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4605a6e7-3b3c-4629-bf95-ca43f189d051/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "278dd2ee-5d4f-4560-9dc1-fc757b8d711a",
+   "title": "Morning in Gosford",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1044908",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1044908&format=mp32",
+   "creator": "Fiffdimension",
+   "creator_url": "https://www.jamendo.com/artist/7708/fiffdimension",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "experimental",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "banjo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "shakuhachi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Morning in Gosford\" by Fiffdimension is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "After Maths & Sciences",
+    "foreign_landing_url": "https://www.jamendo.com/album/123047/after-maths-and-sciences",
+    "creator": "Fiffdimension",
+    "creator_url": "https://www.jamendo.com/artist/7708/fiffdimension",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 297000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/278dd2ee-5d4f-4560-9dc1-fc757b8d711a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/278dd2ee-5d4f-4560-9dc1-fc757b8d711a/",
+   "related_url": "https://api.openverse.org/v1/audio/278dd2ee-5d4f-4560-9dc1-fc757b8d711a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/278dd2ee-5d4f-4560-9dc1-fc757b8d711a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a49855f0-460d-4a6d-8b73-d524527529c5",
+   "title": "Om Mani Padme Hum",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1505591",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1505591&format=mp32",
+   "creator": "Motokiyo",
+   "creator_url": "https://www.jamendo.com/artist/505626/Motokiyo",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chansonfrancaise",
+    "experimental",
+    "singersongwriter"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "koto",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "percussion",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "shakuhachi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Om Mani Padme Hum\" by Motokiyo is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "2014",
+    "foreign_landing_url": "https://www.jamendo.com/album/173301/2014",
+    "creator": "Motokiyo",
+    "creator_url": "https://www.jamendo.com/artist/505626/Motokiyo",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 247000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/",
+   "related_url": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a49855f0-460d-4a6d-8b73-d524527529c5/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

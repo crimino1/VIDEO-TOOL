@@ -1,0 +1,516 @@
+HOME
+TV SCHEDULE
+SUPPORT
+SHOP
+WATCH ONLINE
+TEACHERS
+PODCASTS
+RSS
+"THE PROOF"
+
+PBS Airdate: October 28, 1997
+Go to the companion Web site
+
+ANNOUNCER: Tonight, on NOVA. He conquered the impossible.
+
+ANDREW WILES: Suddenly, totally unexpectedly, I had this incredible revelation.
+
+PETER SARNAK: I was flabbergasted, excited, disturbed.
+
+ANNOUNCER: How did this man solve an enigma that mystified the greatest minds for centuries?
+
+ANDREW WILES: I believed I solved Fermat's Last Theorem.
+
+ANNOUNCER: The Proof.
+
+Major funding for NOVA is provided by the Park Foundation, dedicated to education and quality television...by the Corporation for Public Broadcasting, and viewers like you.
+
+ANDREW WILES: Perhaps I could best describe my experience of doing mathematics in terms of entering a dark mansion. One goes into the first room, and it's dark, completely dark. One stumbles around bumping into the furniture, and gradually, you learn where each piece of furniture is, and finally, after six months or so, you find the light switch. You turn it on, and suddenly, it's all illuminated. You can see exactly where you were. At the beginning of September, I was sitting here at this desk, when suddenly, totally unexpectedly, I had this incredible revelation. It was the most—the most important moment of my working life. Nothing I ever do again will. . . I'm sorry.
+
+STACY KEACH (NARRATOR): For seven years, Princeton professor Andrew Wiles worked in complete secrecy, struggling to solve the world's greatest mathematical problem. This obsession, which began when he was a child, would later bring him both fame and regret.
+
+ANDREW WILES: So, I came to this. I was a ten-year-old, and one day I happened to be looking in my local public library, and I found a book on math and it told a bit about the history of this problem, that someone had resolved this problem 300 years ago, but no one had ever seen the proof. No one knew if there was a proof. And people ever since had looked for the proof. And here was a problem that I, a ten-year-old, could understand, that none of the great mathematicians in the past had been able to resolve. And from that moment, of course, I just tried to solve it myself. It was such a challenge, such a beautiful problem. This problem was Fermat's last theorem.
+
+JOHN CONWAY: Pierre de Fermat was, by profession, a lawyer. He was Councilor to the Parliament of Toulouse in France. But, of course, that's not what he's really remembered for. What he's really remembered for is his mathematics.
+
+STACY KEACH (NARRATOR): Pierre de Fermat was a 17th-century French mathematician who made some of the greatest breakthroughs in the history of numbers. His inspiration came from studying the Arithmetica, an Ancient Greek text.
+
+JOHN CONWAY: Fermat owned a copy of this book, which is a book about numbers with lots of problems, which presumably, Fermat had to solve. He studied it; he wrote notes in the margins.
+
+STACY KEACH (NARRATOR): Fermat's original notes were lost, but they can still be read in a book published by his son. It was one of these notes that was Fermat's greatest legacy.
+
+JOHN CONWAY: And this is the fantastic observation of master Pierre de Fermat which caused all the trouble. "Cubum autem in duos cubos."
+
+STACY KEACH (NARRATOR): This tiny note is the world's hardest mathematical problem. It's been unsolved for centuries, yet it begins with an equation so simple that children know it by heart.
+
+CHILDREN: The square of the hypotenuse is equal to the sum of the squares of the other two sides.
+
+JOHN CONWAY: Yeah. Well, that's Pythagoras's theorem, isn't it? That's what we all did at school. So, Pythagoras's theorem, the clever thing about it is that it tells us when three numbers are the sides of a right-angle triangle. That happens just when X squared plus Y squared equals Z squared.
+
+ANDREW WILES: X squared plus Y squared equals Z squared. And you can ask, "Well, what are the whole number solutions of this equation?" You quickly find there's a solution 3 squared plus 4 squared equals 5 squared. Another one is 5 squared plus 12 squared is 13 squared. And you go on looking, and you find more and more. So then, a natural question is, the question Fermat raised: Supposing you change from squares. Supposing you replace the 2 by 3, by 4, by 5, by 6, by any whole number "n," and Fermat said simply that you'll never find any solutions. However far you look, you'll never find a solution.
+
+STACY KEACH (NARRATOR): If "n" is greater than 2, you will never find numbers that fit this equation. That's what Fermat said. What's more, he said he could prove it. But instead, he scribbled a most enigmatic note.
+
+JOHN CONWAY: Written in Latin, he says he has a truly wonderful proof, "Demonstrationem mirabilem," of this fact. And then, the last words are, "Hanc marginis exigiutas non caperet." "This margin is too small to contain it."
+
+STACY KEACH (NARRATOR): So Fermat said he had a proof, but he never said what it was.
+
+JOHN CONWAY: Fermat made lots of marginal notes. People took them as challenges, and over the centuries, every single one of them has been disposed of, and the last one to be disposed of is this one. That's why it's called the last theorem.
+
+STACY KEACH (NARRATOR): Rediscovering Fermat's proof became the ultimate challenge, a challenge which would baffle mathematicians for the next 300 years.
+
+JOHN CONWAY: Gauss, the greatest mathematician in the world. . .
+
+BARRY MAZUR: Oh, yes. Galois. . .
+
+JOHN COATES: Kummer, of course.
+
+KEN RIBET: Well, in the 18th century, Euler didn't prove it.
+
+JOHN CONWAY: Well, you know there's only been the one woman, really.
+
+KEN RIBET: Sophie Germain.
+
+BARRY MAZUR: Oh, there are millions. There are lots of people.
+
+PETER SARNAK: But, nobody had any idea where to start.
+
+ANDREW WILES: Well, mathematicians just love a challenge, and this problem, this particular problem, just looked so simple. It just looked as if it had to have a solution. And of course, it's very special because Fermat said he had a solution.
+
+JOHN CONWAY: This thing has been there like a beacon in front of us. I mean, if you give up, you just get the feeling you've given up. It's like Everest; it won't go away. It still stays there. And so, one person can give up, but another person is still just trying to get a little bit further.
+
+STACY KEACH (NARRATOR): The task was to prove that no numbers, other than 2, fit the equation. But when computers came along, couldn't they check each number one by one and show that none of them worked?
+
+JOHN CONWAY: Well, how many numbers are there to be dealt with? You've got to do it for infinitely many numbers. So, after you've done it for one, how much closer have you got? Well, there's still infinitely many left. After you've done it for a thousand numbers, how many, how much closer have you got? Well, there's still infinitely many left. After you've done it for a million, well, there's still infinitely many left. In fact, you haven't done very many, have you?
+
+STACY KEACH (NARRATOR): A computer can never check every number. Instead, what's needed is a mathematical proof.
+
+PETER SARNAK: A mathematician is not happy until the proof is complete and considered complete by the standards of mathematics.
+
+NICK KATZ: In mathematics, there's the concept of proving something, of knowing it with absolute certainty.
+
+PETER SARNAK: Which—Well, it's called "rigorous proof."
+
+KEN RIBET: Well, a rigorous proof is a series of arguments. . .
+
+PETER SARNAK: . . .based on logical deductions. . .
+
+KEN RIBET: Which just build one upon another. . .
+
+PETER SARNAK: . . .step by step. . .
+
+KEN RIBET: . . .until you get to. . .
+
+PETER SARNAK: . . .a complete proof.
+
+NICK KATZ: That's what mathematics is about.
+
+STACY KEACH (NARRATOR): A proof provides a logical demonstration of why no numbers fit the equation without having to check every number. After centuries of failing to come up with such a proof, mathematicians began to abandon Fermat. In the '70s, Fermat was no longer in fashion. At the same time, Andrew Wiles was just beginning his career as a mathematician. He went to Cambridge University as a research student under the supervision of Professor John Coates.
+
+JOHN COATES: I've been very fortunate to have Andrew as a student, and even as a research student, he was a wonderful person to work with. He had very deep ideas then, and it was always clear he was a mathematician who would do great things.
+
+STACY KEACH (NARRATOR): But not with Fermat. Everyone thought Fermat's last theorem was impossible, so Professor Coates encouraged Andrew to forget his childhood dream and work on more mainstream math.
+
+ANDREW WILES: The problem with working on Fermat is that you could spend years getting nothing. It's fine to work on any problem so long as it generates mathematics. Almost the definition of a good mathematical problem is the mathematics it generates, rather than the problem itself.
+
+JOHN CONWAY: You know, not all mathematical problems are useless. Fermat's one really is useless, I think, in a certain sense. It's got no practical value whatsoever.
+
+PETER SARNAK: If it's true, it doesn't imply anything profound, that any of us know. It doesn't lead to anything that's useful, that any of us know. It, by itself, is sort of on the outskirts. It's not what you would consider a mainstream, important, central question in modern mathematics.
+
+ANDREW WILES: And that point, I really put aside Fermat. It's not that I forgot about it; it was always there. I always remembered it, but I realized the only techniques we had to tackle it had been around for 130 years, and it didn't seem they were really getting to the root of the problem. So, when I went to Cambridge, my advisor, John Coates, was working on Iwasawa theory and elliptic curves, and I started working with him.
+
+STACY KEACH (NARRATOR): For Andrew's advisor, and a host of other mathematicians, elliptic curves were the "in" thing to study.
+
+BARRY MAZUR: You may never have heard of elliptic curves, but they're extremely important.
+
+JOHN CONWAY: OK. So, what's an elliptic curve?
+
+BARRY MAZUR: Elliptic curves. They're not ellipses. They're cubic curves whose solution have a shape that looks like a doughnut.
+
+PETER SARNAK: They look so simple, yet the complexity, especially arithmetic complexity, is immense.
+
+STACY KEACH (NARRATOR): Every point on the doughnut is the solution to an equation. Andrew Wiles now studied these elliptic equations and set aside his dream. What he didn't realize was that on the other side of the world, elliptic curves and Fermat's last theorem were becoming inextricably linked.
+
+GORO SHIMURA: I entered the University of Tokyo in 1949, and that was four years after the War, but almost all professors were tired and the lectures were not inspiring.
+
+STACY KEACH (NARRATOR): Goro Shimura and his fellow students had to rely on each other for inspiration. In particular, he formed a remarkable partnership with a young man by the name of Utaka Taniyama.
+
+GORO SHIMURA: That was when I became very close to Taniyama. Taniyama was not a very careful person as a mathematician. He made a lot of mistakes, but he made mistakes in a good direction, and so eventually, he got right answers, and I tried to imitate him, but I found out that it is very difficult to make good mistakes.
+
+STACY KEACH (NARRATOR): Together, Taniyama and Shimura worked on the complex mathematics of modular functions.
+
+NICK KATZ: I really can't explain what a modular function is in one sentence. I can try and give you a few sentences to explain. I really can't do it in one sentence.
+
+PETER SARNAK: Oh, it's impossible.
+
+ANDREW WILES: There's a saying attributed to Eichler that there are five fundamental operations of arithmetic: addition, subtraction, multiplication, division, and modular forms.
+
+BARRY MAZUR: Modular forms are functions on the complex plane that are inordinately symmetric. They satisfy so many internal symmetries that their mere existence seem like accidents. But they do exist.
+
+STACY KEACH (NARRATOR): This image is merely a shadow of a modular form. To see one properly, your TV screen would have to be stretched into something called hyperbolic space. Bizarre modular forms seem to have nothing whatsoever to do with the humdrum world of elliptic curves. But what Taniyama and Shimura suggested shocked everyone.
+
+GORO SHIMURA: In 1955, there was an international symposium, and Taniyama posed two or three problems.
+
+STACY KEACH (NARRATOR): The problems posed by Taniyama led to the extraordinary claim that every elliptic curve was really a modular form in disguise. It became knows as the Taniyama-Shimura conjecture.
+
+JOHN CONWAY: What the Taniyama-Shimura conjecture says, it says that every rational elliptic curve is modular, and that's so hard to explain.
+
+BARRY MAZUR: So, let me explain. Over here, you have the elliptic world, the elliptic curves, these doughnuts. And over here, you have the modular world, modular forms with their many, many symmetries. The Shimura-Taniyama conjecture makes a bridge between these two worlds. These worlds live on different planets. It's a bridge. It's more than a bridge; it's really a dictionary, a dictionary where questions, intuitions, insights, theorems in the one world get translated to questions, intuitions in the other world.
+
+KEN RIBET: I think that when Shimura and Taniyama first started talking about the relationship between elliptic curves and modular forms, people were very incredulous. I wasn't studying mathematics yet. By the time I was a graduate student in 1969 or 1970, people were coming to believe the conjecture.
+
+STACY KEACH (NARRATOR): In fact, Taniyama-Shimura became a foundation for other theories which all came to depend on it. But Taniyama-Shimura was only a conjecture, an unproven idea, and until it could be proven, all the mathematics which relied on it were under threat.
+
+ANDREW WILES: We built more and more conjectures stretched further and further into the future, but they would all be completely ridiculous if Taniyama-Shimura was not true.
+
+STACY KEACH (NARRATOR): Proving the conjecture became crucial, but tragically, the man whose idea inspired it didn't live to see the enormous impact of his work. In 1958, Taniyama committed suicide.
+
+GORO SHIMURA: I was very much puzzled. Puzzlement may be the best word. Of course, I was sad that—See, it was so sudden, and I was unable to make sense out of this. Some people suggested he lost confidence in himself. That may be so, but I think it was more complex. I don't really know. Confidence in himself, but not mathematically.
+
+STACY KEACH (NARRATOR): Taniyama-Shimura went on to become one of the great unproven conjectures, a foundation for many important mathematical ideas. But what did it have to do with Fermat's last theorem?
+
+ANDREW WILES: At that time, no one had any idea that Taniyama-Shimura could have anything to do with Fermat. Of course, in the '80s, that all changed completely.
+
+STACY KEACH (NARRATOR): But what was the bridge between the two ideas? Taniyama-Shimura says, "Every elliptic curve is modular," and Fermat says, "No numbers fit this equation." What was the connection?
+
+KEN RIBET: Well, on the face of it, the Shimura-Taniyama conjecture, which is about elliptic curves, and Fermat's last theorem have nothing to do with each other, because there's no connection between Fermat and elliptic curves. But in 1985, Gerhard Frey had this amazing idea.
+
+STACY KEACH (NARRATOR): Frey, a German mathematician, considered the unthinkable. What would happen if Fermat was wrong and there was a solution to this equation after all?
+
+PETER SARNAK: Frey showed how starting with a fictitious solution to Fermat's last equation—if, indeed, such a horrible beast existed—he could make an elliptic curve with some very weird properties.
+
+KEN RIBET: That elliptic curve seems to be not modular. But Shimura-Taniyama says that every elliptic curve is modular.
+
+STACY KEACH (NARRATOR): So, if there is a solution to this equation, it creates such a weird elliptic curve it defies Taniyama-Shimura.
+
+KEN RIBET: So, in other words, if Fermat is false, so is Shimura-Taniyama. Or, said differently, if Shimura-Taniyama is correct, so is Fermat's last theorem.
+
+STACY KEACH (NARRATOR): Fermat and Taniyama-Shimura were now linked, apart from just one thing.
+
+KEN RIBET: The problem is that Frey didn't really prove that his elliptic curve was not modular. He gave a plausibility argument, which he hoped could be filled in by experts, and then the experts started working on it.
+
+STACY KEACH (NARRATOR): In theory, you could prove Fermat by proving Taniyama, but only if Frey was right. Frey's idea became known as the epsilon conjecture, and everyone tried to check it. One year later, in San Francisco, there was a breakthrough.
+
+KEN RIBET: I saw Barry Mazur on the campus, and I said, "Let's go for a cup of coffee." And we sat down for cappuccinos at this cafe, and I looked at Barry and I said, "You know, I'm trying to generalize what I've done so that we can prove the full strength of Serre's epsilon conjecture." And Barry looked at me and said, "But you've done it already. All you have to do is add on some extra gamma zero of m structure and run through your argument, and it still works, and that gives everything you need." And this had never occurred to me, as simple as it sounds. I looked at Barry, I looked at my cappucino, I looked back at Barry, and I said, "My God. You're absolutely right.
+
+BARRY MAZUR: Ken's idea was brilliant.
+
+KEN RIBET: And I was completely enthralled. I just sort of wandered back to my apartment in a cloud, and I sat down and I ran through my argument, and it worked. It really worked. And at the conference, I started telling a few people that I'd done this, and soon, large groups of people knew, and they were running up to me, and they said, "Is it true that you've proved the epsilon conjecture?" And I had to think for a minute, and all of a sudden, I said, "Yes. I have."
+
+ANDREW WILES: I was at a friend's house sipping iced tea early in the evening, and he just mentioned casually in the middle of a conversation, "By the way, did you hear that Ken has proved the epsilon conjecture?" And I was just electrified. I knew that moment the course of my life was changing, because this meant that to prove Fermat's last theorem, I just had to prove Taniyama-Shimura conjecture. From that moment, that was what I was working on. I just knew I would go home and work on the Taniyama-Shimura conjecture.
+
+STACY KEACH (NARRATOR): Andrew abandoned all his other research. He cut himself off from the rest of the world, and for the next seven years, he concentrated solely on his childhood passion.
+
+ANDREW WILES: I never use a computer. I sometimes might scribble. I do doodles. I start trying to find patterns, really, so I'm doing calculations which try to explain some little piece of mathematics, and I'm trying to fit it in with some previous broad conceptual understanding of some branch of mathematics. Sometimes, that'll involve going and looking up in a book to see how it's done there. Sometimes, it's a question of modifying things a bit, sometimes, doing a little extra calculation. And sometimes, you realize that nothing that's ever been done before is any use at all, and you just have to find something completely new. And it's a mystery where it comes from.
+
+JOHN COATES: I must confess, I did not think that the Shimura-Taniyama conjecture was accessible to proof at present. I thought I probably wouldn't see a proof in my lifetime.
+
+KEN RIBET: I was one of the vast majority of people who believed that the Shimura-Taniyama conjecture was just completely inaccessible, and I didn't bother to prove it—even think about trying to prove it. Andrew Wiles is probably one of the few people on earth who had the audacity to dream that you could actually go and prove this conjecture.
+
+ANDREW WILES: In this case, certainly the first several years, I had no fear of competition. I simply didn't think I or anyone else had any real idea how to do it. But I realized after a while that talking to people casually about Fermat was impossible, because it just generates too much interest, and you can't really focus yourself for years unless you have this kind of undivided concentration, which too many spectators would have destroyed.
+
+STACY KEACH (NARRATOR): Andrew decided that he would work in secrecy and isolation.
+
+PETER SARNAK: I often wondered, myself, what he was working on.
+
+NICK KATZ: Didn't have an inkling.
+
+JOHN CONWAY: No, I suspected nothing.
+
+KEN RIBET: This is probably the only case I know where someone worked for such a long time without divulging what he was doing, without talking about the progress he had made. It's just unprecedented.
+
+STACY KEACH (NARRATOR): Andrew was embarking on one of the most complex calculations in history. For the first two years, he did nothing but immerse himself in the problem, trying to find a strategy which might work.
+
+ANDREW WILES: So, it was now known that Taniyama-Shimura implied Fermat's last theorem. What does Taniyama-Shimura say? It says that all elliptic curves should be modular. Well, this was an old problem, been around for twenty years, and lots of people had tried to solve it.
+
+KEN RIBET: Now, one way of looking at it is that you have all elliptic curves, and then you have the modular elliptic curves, and you want to prove that there are the same number of each. Now, of course, you're talking about infinite sets, so you can't just count them, per se, but you can divide them into packets, and you can try to count each packet and see how things go. And this proves to be a very attractive idea for about thirty seconds, but you can't really get much further than that. And the big question on the subject was how you could possibly count, and in effect, Wiles introduced the correct technique.
+
+STACY KEACH (NARRATOR): Andrew Wiles hoped to solve the problem of counting elliptic curves by converting them into something called Galois representations. Although no less complex than elliptic curves, they were easier to count. So, it was Galois representations, not elliptic curves, that Andrew would now compare with modular forms.
+
+ANDREW WILES: Now, you might ask, and it's an obvious question, why can't you do this with elliptic curves and modular forms? Why couldn't you count elliptic curves, count modular forms, show they're the same number? Well, the answer is, people tried and they never found a way of counting them, and this was why this is they key breakthrough, that I had found the way to count not the original problem, but the modified problem. I'd found a way to count modular forms and Galois representations.
+
+STACY KEACH (NARRATOR): This was only the first step, and already, it had taken three years of Andrew's life.
+
+ANDREW WILES: My wife's only known me while I've been working on Fermat. I told her a few days after we got married. I decided that I really only had time for my problem and my family, and when I was concentrating very hard, and I found that with young children, that's the best possible way to relax. When you're talking to young children, they simply aren't interested in Fermat, at least at this age. They want to hear a children's story, and they're not going to let you do anything else. So, I'd found this wonderful counting mechanism, and I started thinking about this concrete problem in terms of Iwasawa theory. Iwasawa theory was the subject I'd studied as a graduate student, and, in fact, with my advisor, John Coates, I'd used it to analyze elliptic curves.
+
+STACY KEACH (NARRATOR): Iwasawa theory, Andrew hoped, would be the key to completing his counting strategy.
+
+ANDREW WILES: Now, I tried to use Iwasawa theory in this context, but I ran into trouble. I seemed to be up against a wall. I just didn't seem to be able to get past it. Well, sometimes when I can't see what to do next, I often come here by the lake. Walking has a very good effect in that you're in this state of concentration, but at the same time, you're relaxing; you're allowing the subconscious to work on you.
+
+STACY KEACH (NARRATOR): Andrew struggled for months using Iwasawa theory in an effort to create something called a Class Number Formula. Without this critical formula, he would have nowhere left to go.
+
+ANDREW WILES: So, at the end of the summer of '91, I was at a conference, and John Coates told me about a wonderful new paper of Matthias Flach, a student of his, in which he had tackled the class number formula, in fact, exactly the class number formula I needed. So, Flach, using ideas Kolyvagin, had made a very significant first step in actually producing the class number formula. So, at that point, I thought, 'This is just what I need. This is tailor-made for the problem.' I put aside the completely the old approach I'd been trying, and I devoted myself day and night to extending his result.
+
+STACY KEACH (NARRATOR): Andrew was almost there, but this breakthrough was risky and complicated. After six years of secrecy, he needed to confide in someone.
+
+NICK KATZ: January of 1993, Andrew came up to me one day at tea, asked me if I could come up to his office; there was something he wanted to talk to me about. I had no idea what this could be. I went up to his office. He closed the door. He said he thought he would be able to prove Taniyama-Shimura. I was just amazed. This was fantastic.
+
+ANDREW WILES: It involved a kind of mathematics that Nick Katz is an expert in.
+
+NICK KATZ: I think another reason he asked me was that he was sure I would not tell other people, I would keep my mouth shut. Which I did.
+
+JOHN CONWAY: Andrew Wiles and Nick Katz had been spending rather a lot of time huddled over a coffee table at the far end of the common room working on some problem or other. We never knew what it was.
+
+STACY KEACH (NARRATOR): To avoid any more suspicion, Andrew decided to check his proof by disguising it in a series of lectures at Princeton, which Nick Katz could attend.
+
+ANDREW WILES: Well, I explained at the beginning of the course that Flach had written this beautiful paper and I wanted to try to extend it to prove the full class number formula. The only thing I didn't explain was that proving the class number formula was most of the way to Fermat's last theorem.
+
+NICK KATZ: So, this course was announced. It said "Calculations on Elliptic Curves," which could mean anything. It didn't mention Fermat, it didn't mention Taniyama-Shimura. There was no way in the world anyone could have guessed that it was about that, if you didn't already know. None of the graduate students knew, and in a few weeks, they just drifted off, because it's impossible to follow stuff if you don't know what it's for, pretty much. It's pretty hard even if you do know what it's for. But after a few weeks, I was the only guy in the audience.
+
+STACY KEACH (NARRATOR): The lectures revealed no errors, and still, none of his colleagues suspected why Andrew was being so secretive.
+
+PETER SARNAK: Maybe he's run out of ideas. That's why he's quiet. You never know why they're quiet.
+
+STACY KEACH (NARRATOR): The proof was still missing a vital ingredient, but Andrew now felt confident. It was time to tell one more person.
+
+ANDREW WILES: So, I called up Peter and asked him if I could come 'round and talk to him about something.
+
+PETER SARNAK: I got a phone call from Andrew saying that he had something very important he wanted to chat to me about. And sure enough, he had some very exciting news.
+
+ANDREW WILES: I said, "I think you better sit down for this." He sat down. I said, "I think I'm about to prove Fermat's last theorem."
+
+PETER SARNAK: I was flabbergasted, excited, disturbed. I mean, I remember that night finding it quite difficult to sleep.
+
+ANDREW WILES: But, there was still a problem. Late in the spring of '93, I was in this very awkward position that I thought I'd got most of the curves being modular, so that was nearly enough to be content to have Fermat's last theorem, but there were these few families of elliptic curves that had escaped the net. I was sitting here at my desk in May of '93, still wondering about this problem, and I was casually glancing at a paper of Barry Mazur's, and there was just one sentence which made a reference to actually what's a 19th century construction, and I just instantly realized that there was a trick that I could use, that I could switch from the families of elliptic curves I'd been using. I'd been studying them using the prime three. I could switch and study them using the prime five. It looked more complicated, but I could switch from these awkward curves that I couldn't prove were modular to a different set of curves, which I'd already proved were modular, and use that information to just go that one last step. And, I just kept working out the details, and time went by, and I forgot to go down to lunch, and it got to about tea-time, and I went down and Nada was very surprised that I'd arrived so late, and then she—I told her that I believed I'd solved Fermat's last theorem. I was convinced that I had Fermat in my hands, and there was a conference in Cambridge organized by my advisor, John Coates. I thought that would be a wonderful place. It's my old hometown, and I'd been a graduate student there. It would be a wonderful place to talk about it if I could get it in good shape.
+
+JOHN COATES: The name of the lectures that he announced was simply "Elliptic Curves and Modular Forms." There was no mention of Fermat's last theorem.
+
+KEN RIBET: Well, I was at this conference on L functions and elliptic curves, and it was kind of a standard conference and all of the people were there. Didn't seem to be anything out of the ordinary, until people started telling me that they'd been hearing weird rumors about Andrew Wiles's proposed series of lectures. I started talking to people and I got more and more precise information. I have no idea how it was spread.
+
+PETER SARNAK: Not from me. Not from me.
+
+JOHN CONWAY: Whenever any piece of mathematical news had been in the air, Peter would say, "Oh, that's nothing. Wait until you hear the big news. There's something big going to break."
+
+PETER SARNAK: Maybe some hints, yeah.
+
+ANDREW WILES: People would ask me, leading up to my lectures, what exactly I was going to say. And I said, "Well, come to my lecture and see."
+
+KEN RIBET: It's a very charged atmosphere. A lot of the major figures of arithmetical, algebraic geometry were there. Richard Taylor and John Coates. Barry Mazur.
+
+BARRY MAZUR: Well, I'd never seen a lecture series in mathematics like that before. What was unique about those lectures were the glorious ideas, how many new ideas were presented, and the constancy of its dramatic build-up. It was suspenseful until the end.
+
+KEN RIBET: There was this marvelous moment when we were coming close to a proof of Fermat's last theorem. The tension had built up, and there was only one possible punch line.
+
+ANDREW WILES: So, after I'd explained the 3/5 switch on the blackboard, I then just wrote up a statement of Fermat's last theorem, said I'd proved it, said, "I think I'll stop there."
+
+JOHN COATES: The next day, what was totally unexpected was that we were deluged by inquiries from newspapers, journalists from all around the world.
+
+ANDREW WILES: It was a wonderful feeling after seven years to have really solved my problem. I'd finally done it. Only later did it come out that there was a problem at the end.
+
+NICK KATZ: Now, it was time for it to be refereed, which is to say, for people appointed by the journal to go through and make sure that the thing was really correct. So, for two months, July and August, I literally did nothing but go through this manuscript line by line, and what this meant concretely was that essentially every day, sometimes twice a day, I would e-mail Andrew with a question: "I don't understand what you say on this page, on this line. It seems to be wrong," or "I just don't understand."
+
+ANDREW WILES: So, Nick was sending me e-mails, and at the end of the summer, he sent one that seemed innocent at first, and I tried to resolve it.
+
+NICK KATZ: It's a little bit complicated, so he sends me a fax, but the fax doesn't seem to answer the question, so I e-mail him back, and I get another fax, which I'm still not satisfied with. And this, in fact, turned into the error that turned out to be a fundamental error, and that we had completely missed when he was lecturing in the spring.
+
+ANDREW WILES: That's where the problem was, in the method of Flach and Kolyvagin that I'd extended. So, once I realized that at the end of September, that there was really a problem with the way I'd made the construction, I spent the fall trying to think what kind of modifications could be made to the construction. There are lots of simple and rather natural modifications that any one of which might work.
+
+PETER SARNAK: And every time he would try and fix it in one corner, it would sort of—Some other difficulty would add up in another corner. It was like he was trying to put a carpet in a room where the carpet had more size than the room, but he could put it in in any corner, and then when he ran to the other corners, it would pop up in this corner. And whether you could not put the carpet in the room was not something that he was able to decide.
+
+ANDREW WILES: So, in September '93, when the proof was running into problems, Nada said to me, "The only thing I want for my birthday is the correct proof." Her birthday is on October 6. I had two or three weeks, and I failed to deliver.
+
+NICK KATZ: I think he externally appeared normal, but at this point, he was keeping a secret from the world, and I think he must have been, in fact, pretty uncomfortable about it.
+
+ANDREW WILES: Towards the end of November, it didn't seem to be working. I sent out an e-mail message announcing that there was a problem with this part of the argument.
+
+JOHN CONWAY: Well, you know, we were behaving a little bit like Kremlinologists. Nobody actually liked to come out and ask him how he's getting on with the proof. So, somebody would say, "I saw Andrew this morning." "Did he smile?" "Well, yes. But he didn't look too happy."
+
+ANDREW WILES: The first seven years I'd worked on this problem, I loved every minute of it. However hard it had been, there'd been setbacks often, there'd been things that had seemed insurmountable, but it was a kind of private and very personal battle I was engaged in. And then, after there was a problem with it, doing mathematics in that kind of rather over-exposed way is certainly not my style, and I have no wish to repeat it.
+
+STACY KEACH (NARRATOR): After months of failure, Andrew was about to admit defeat. In desperation, he decided to ask for help, and a former student, Richard Taylor, came to Princeton.
+
+ANDREW WILES: Richard and I spent three months at the beginning of '94 trying to analyze all the possible modifications, and at the end of that period, I was convinced that none of them was really going to give the answer. In September, I decided to go back and look one more time at the original structure of Flach and Kolyvagin to try and pinpoint exactly why it wasn't working, try and formulate it precisely. One can never really do that in mathematics, but I just wanted to set my mind to rest that it really couldn't be made to work. And I was sitting here at this desk. It was a Monday morning, September 19, and I was trying, convincing myself that it didn't work, just seeing exactly what the problem was, when suddenly, totally unexpectedly, I had this incredible revelation. I realized what was holding me up was exactly what would resolve the problem I had had in my Iwasawa theory attempt three years earlier, was—It was the most—the most important moment of my working life. It was so indescribably beautiful; it was so simple and so elegant, and I just stared in disbelief for twenty minutes. Then, during the day, I walked around the department. I'd keep coming back to my desk and looking to see if it was still there. It was still there. Almost what seemed to be stopping the method of Flach and Kolyvagin was exactly what would make horizontal Iwasawa theory. My original approach to the problem from three years before would make exactly that work. So, out of the ashes seemed to rise the true answer to the problem. So, the first night, I went back and slept on it. I checked through it again the next morning, and by eleven o'clock, I was satisfied and I went down and told my wife, "I've got it. I think I've got it. I've found it." And it was so unexpected, I think she thought I was talking about a children's toy or something and said, "Got what?" And I said, "I've fixed my proof. I've got it."
+
+JOHN COATES: I think it will always stand as one of the high achievements of number theory.
+
+BARRY MAZUR: It was magnificent.
+
+JOHN CONWAY: It's not every day that you hear the proof of the century.
+
+GORO SHIMURA: Well, my first reaction was, "I told you so."
+
+STACY KEACH (NARRATOR): The Taniyama-Shimura conjecture is no longer a conjecture, and as a result, Fermat's last theorem has been proved. But is Andrew's proof the same as Fermat's?
+
+JOHN CONWAY: Fermat's proof was just too big to fit into this margin. Andrew's was 200 pages long. It's not the same proof.
+
+ANDREW WILES: Fermat couldn't possibly have had this proof. It's a 20th century proof. There's no way this could have been done before the 20th century.
+
+JOHN CONWAY: I'm relieved that this result is now settled. But I'm sad in some ways, because Fermat's last theorem has been responsible for so much. What will we find to take its place?
+
+ANDREW WILES: There's no other problem that will mean the same to me. I had this very rare privilege of being able to pursue in my adult life what had been my childhood dream. I know it's a rare privilege, but if one can do this, if one can really tackle something in adult life that means that much to you, it's more rewarding than anything I could imagine.
+
+BARRY MAZUR: One of the great things about this work is it embraces the ideas of so many mathematicians. I've made a partial list. Klein, Fricke, Hurwitz, Hecke, Dirichlet, Dedekind. . .
+
+KEN RIBET: The proof by Langlands and Tunnell. . .
+
+JOHN COATES: Deligne, Rapoport, Katz. . .
+
+NICK KATZ: Mazur's idea of using the deformation theory of Galois representations. . .
+
+BARRY MAZUR: Igusa, Eichler, Shimura, Taniyama. . .
+
+PETER SARNAK: Frey's reduction. . .
+
+NICK KATZ: The list goes on and on.
+
+BARRY MAZUR: Bloch, Kato, Selmer, Frey, Fermat.
+
+ANNOUNCER: There was another player in the Fermat game. She lived during the French Revolution and pretended to be a man in order to pursue her passion for mathematics. At NOVA's website, meet Sophie Germain at www.pbs.org.
+
+Educators can order this show for $19.95, plus shipping and handling, by calling 1-800-949-8670. And, to learn more about how science can solve the mysteries of our world, ask about our many other NOVA videos.
+
+JOHN CONWAY: It's like effortless; it won't go away. It still stays there.
+
+ANDREW WILES: Well, mathematicians just love a challenge, and this problem, this particular problem, just looked so simple, it just looked as if it had to have a solution.
+
+KEN RIBET: Andrew Wiles is probably one of the few people on earth who had the audacity to dream that you could actually go and prove this conjecture.
+
+ANNOUNCER: NOVA is a production of WGBH, Boston.
+
+Major funding for NOVA is provided by the Park Foundation, dedicated to education and quality television.
+
+..by the Corporation for Public Broadcasting, and viewers like you.
+
+This is PBS.
+
+To learn more about this subject, you can order Fermat's Enigma, the companion book to this program, by calling 1-800-949-8670. This hardcover edition is $23 plus shipping and handling.
+
+
+
+
+PRODUCTION CREDITS
+
+The Proof
+
+Written and Produced by
+John Lynch
+
+Directed by
+Simon Singh
+
+Narrator
+Stacy Keach
+
+Editor
+Horacio Queiro
+
+Photography
+Joe Vitagliano
+Randall Love
+Rickie Gauld
+
+Sound Recording
+John Cameron
+David Lezynski
+Damon Osborne
+
+Sound Mix
+Colin Martin
+Richard Bock
+
+Graphics
+Lesley Marr
+Computer Artworks Ltd
+A.K. Peters
+The Geometry Centre
+Spektrum Videothek
+
+Production Assistant
+Alexandra McLeod
+
+Unit Manager
+Shirley Escott
+
+Executive Editor, BBC/Horizon
+John Lynch
+
+Special Thanks
+Firestone Library
+Princeton University
+Brown University Library
+ICL
+Unisys
+Mitsuo Sugiura
+Akademie Verlag, Berlin
+Lauros-Giraudon
+Bibliotheque Nationale
+
+NOVA Series Graphics
+National Ministry of Design
+
+NOVA Theme
+Mason Daring
+Martin Brody
+
+Closed Captioning
+The Caption Center
+
+Production Secretaries
+Queene Coyne
+Linda Callahan
+
+Publicity
+Stella Giamassi
+Paul Marotta
+Lisa Cerqueira
+
+Paralegal
+Nancy Marshall
+
+Post Production Associate
+Sandra Rizkallah
+
+Post Production Editor
+Rebecca Nieto
+
+Post Production Online Editors
+Mark Steele
+Jim Deering
+
+Post Production Director
+Alison M. White
+
+Unit Managers
+Laurie Cahalane
+Amy Trahant
+
+Business Manager
+Carolyn Birmingham
+
+Science Editor
+Lauren S. Aguirre
+
+Senior Producer
+Coproductions and Aquisitions
+Melanie Wallace
+
+Series Producer
+Beth Hoppe
+
+Managing Director
+Alan Ritsko
+
+Executive Producer
+Paula S. Apsell
+
+A BBC TV/WGBH Boston Co-Production
+
+© 1997 WGBH Educational Foundation
+All rights reserved 
+
+	
+ 
+
+
+About NOVA | NOVA Homepage | Support NOVA
+
+	
+
+© | Created September 2006
+
+ABOUT
+ARCHIVE
+FEEDBACK
+SUBSCRIBE
+TRANSCRIPTS
+FAQS

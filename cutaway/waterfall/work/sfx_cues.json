@@ -1,0 +1,334 @@
+{
+ "video": "C:/Users/daggu222105/VIDEO-TOOL/cutaway/waterfall/render/picture_v2.mp4",
+ "cues": [
+  {
+   "t": 0.0,
+   "label": "falls roar (hook)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/waterfall/huge-waterfall_58018390.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 3.4,
+   "fade_in": 0.05,
+   "fade_out": 1.2,
+   "gain_db": 13.0
+  },
+  {
+   "t": 8.82,
+   "label": "falls roar (through curtain)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/waterfall/huge-waterfall_58018390.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 2.6,
+   "fade_in": 0.5,
+   "fade_out": 0.9,
+   "gain_db": 12.0,
+   "slice": [
+    6.0,
+    2.6
+   ]
+  },
+  {
+   "t": 35.42,
+   "label": "falls roar (loudest part)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/waterfall/huge-waterfall_58018390.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 3.2,
+   "fade_in": 0.6,
+   "fade_out": 1.0,
+   "gain_db": 11.0,
+   "slice": [
+    12.0,
+    3.2
+   ]
+  },
+  {
+   "t": 38.82,
+   "label": "falls roar (louder than a street)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/waterfall/huge-waterfall_58018390.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 3.6,
+   "fade_in": 0.4,
+   "fade_out": 1.4,
+   "gain_db": 10.0,
+   "slice": [
+    18.0,
+    3.6
+   ]
+  },
+  {
+   "t": 0.15,
+   "label": "wading",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/wade/walk-wet_358539b0.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 3.9,
+   "fade_out": 0.6,
+   "gain_db": 5.0
+  },
+  {
+   "t": 6.975,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/dig-wet-sand-04-wav_67f0f283.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 6.0,
+   "pitch": 0
+  },
+  {
+   "t": 7.875,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-1_e20b0666.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -1
+  },
+  {
+   "t": 8.775,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-2_c8e26951.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 6.0,
+   "pitch": 1
+  },
+  {
+   "t": 9.675,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/dig-wet-sand-04-wav_67f0f283.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -2
+  },
+  {
+   "t": 10.575,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-1_e20b0666.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 6.0,
+   "pitch": 0
+  },
+  {
+   "t": 11.475,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-2_c8e26951.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -1
+  },
+  {
+   "t": 12.375,
+   "label": "pick strike",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/dig-wet-sand-04-wav_67f0f283.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 6.0,
+   "pitch": 1
+  },
+  {
+   "t": 34.875,
+   "label": "pick strike (lower room)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-1_e20b0666.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -1
+  },
+  {
+   "t": 35.775,
+   "label": "pick strike (lower room)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-2_c8e26951.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": 1
+  },
+  {
+   "t": 36.675,
+   "label": "pick strike (lower room)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/dig-wet-sand-04-wav_67f0f283.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": 0
+  },
+  {
+   "t": 37.575,
+   "label": "pick strike (lower room)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-1_e20b0666.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -2
+  },
+  {
+   "t": 38.475,
+   "label": "pick strike (lower room)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/digging/digging-in-wet-course-sand-2_c8e26951.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "gain_db": 5.0,
+   "pitch": -1
+  },
+  {
+   "t": 16.35,
+   "label": "dirt into the falls",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/splash/rock-in-water-splash-plop-3-aif_195a9550.mp3",
+   "role": "water",
+   "anchor": "arrive",
+   "max_dur": 1.6,
+   "gain_db": 7.0
+  },
+  {
+   "t": 18.860000000000003,
+   "label": "dog sniff",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/dogsniff/dog-sniffing-wav_92895aca.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 2.4,
+   "fade_out": 0.5,
+   "gain_db": 8.0
+  },
+  {
+   "t": 19.310000000000002,
+   "label": "through the falls (out)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/splash/tiny-splash_d34abd9e.mp3",
+   "role": "water",
+   "anchor": "arrive",
+   "max_dur": 1.2,
+   "gain_db": 5.0
+  },
+  {
+   "t": 22.36,
+   "label": "through the falls (back in)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/splash/water-splash-5-wav_bce7f4bc.mp3",
+   "role": "water",
+   "anchor": "arrive",
+   "max_dur": 1.4,
+   "gain_db": 4.0
+  },
+  {
+   "t": 24.92,
+   "label": "cough",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/cough/cough-female_7332514d.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 1.1,
+   "gain_db": 8.0
+  },
+  {
+   "t": 26.46,
+   "label": "chisel clink",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/chisel/tiny-hammer-on-stone-wav_3782c8f8.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "slice": [
+    1.494,
+    0.12
+   ],
+   "gain_db": 6.0
+  },
+  {
+   "t": 26.96,
+   "label": "chisel clink",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/chisel/tiny-hammer-on-stone-wav_3782c8f8.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "slice": [
+    2.189,
+    0.045
+   ],
+   "gain_db": 4.0
+  },
+  {
+   "t": 27.46,
+   "label": "chisel clink",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/chisel/tiny-hammer-on-stone-wav_3782c8f8.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "slice": [
+    0.729,
+    0.12
+   ],
+   "gain_db": 6.0
+  },
+  {
+   "t": 27.96,
+   "label": "chisel clink",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/chisel/tiny-hammer-on-stone-wav_3782c8f8.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "slice": [
+    1.084,
+    0.12
+   ],
+   "gain_db": 4.0
+  },
+  {
+   "t": 28.46,
+   "label": "chisel clink",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/chisel/stone-hit_9cee8fc7.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "pitch": 4,
+   "gain_db": 5.0
+  },
+  {
+   "t": 31.2,
+   "label": "campfire crackle",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/campfire/r09-73-campfire-crackle-wav_89acb452.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 3.6,
+   "fade_in": 0.4,
+   "fade_out": 1.0,
+   "gain_db": 7.0
+  },
+  {
+   "t": 40.120000000000005,
+   "label": "snore",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snore/fast-snore-wav_0b72d643.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 2.6,
+   "fade_out": 0.6,
+   "gain_db": 3.0
+  },
+  {
+   "t": 45.23,
+   "label": "otter pops up",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/splash/water-splash_40fae45f.mp3",
+   "role": "water",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "gain_db": 3.0
+  },
+  {
+   "t": 46.47,
+   "label": "fish grabbed",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/splash/tiny-splash_d34abd9e.mp3",
+   "role": "water",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "gain_db": 4.0,
+   "pitch": 2
+  }
+ ]
+}

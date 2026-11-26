@@ -1,0 +1,20 @@
+# Builder 02: Chapter 1 part 2/3 - domain of a root, range, practice, piecewise, absolute value,
+# transformations, the families (linear, point-slope, quadratic, polynomial, rational, exponential, e, logs).
+S = [
+    ("6:47.65", "m", "K02_Root", {}),
+    ("6:58.90", "m", "K02_Range", {}),
+    ("7:11.60", "q", "K02_TryCard", dict(title="Try These Two", sub="Pause and try")),
+    ("7:13.20", "m", "K02_Practice", {}),
+    ("7:35.30", "m", "K02_Piecewise", {}),
+    ("8:15.90", "m", "K02_Abs", {}),
+    ("8:52.80", "m", "K02_ShiftUp", {}),
+    ("9:18.10", "m", "K02_ShiftSide", {}),
+    ("9:43.20", "m", "K02_FlipStretch", {}),
+    ("10:09.70", "m", "K02_Linear", {}),
+    ("10:43.70", "m", "K02_TwoPoints", {}),
+    ("11:15.00", "m", "K02_LineExample", {}),
+    ("11:43.90", "m", "K02_QuadPoly", {}),
+    ("12:14.20", "m", "K02_Rational", {}),
+    ("12:35.70", "m", "K02_Exp", {}),
+    ("13:09.30", "m", "K02_Log", {}),
+]

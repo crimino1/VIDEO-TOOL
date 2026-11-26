@@ -1,0 +1,76 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "remotion",
+        "studio",
+        "src/index.jsx",
+        "--port=3001",
+        "--no-open"
+      ],
+      "port": 3001
+    },
+    {
+      "name": "render-progress",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "senior-fitness/progress.py",
+        "--port=3010"
+      ],
+      "port": 3010
+    },
+    {
+      "name": "squid-progress",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "squid/progress.py"
+      ],
+      "port": 3011
+    },
+    {
+      "name": "space-ep1-static",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "space/ep1"
+      ],
+      "port": 8765
+    },
+    {
+      "name": "sharkorca-static",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8766",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "sharkorca"
+      ],
+      "port": 8766
+    },
+    {
+      "name": "space-ep2-static",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8766",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "space/ep2"
+      ],
+      "port": 8766
+    }
+  ]
+}

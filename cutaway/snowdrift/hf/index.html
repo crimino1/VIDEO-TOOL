@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/js/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"./assets/lib/three/build/three.module.js","three/addons/":"./assets/lib/three/jsm/"}}</script>
+<style>
+@font-face { font-family: "Fredoka"; src: url("assets/fonts/Fredoka.ttf"); font-weight: 300 700; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
+#root { position:relative; width:1080px; height:1920px; font-family:"Fredoka", sans-serif; }
+#g3 { position:absolute; left:0; top:0; width:1080px; height:1920px; }
+.cap { position:absolute; left:0; width:1080px; top:1110px; text-align:center; z-index:20; }
+.cap .w { display:inline-block; font-weight:700; font-size:84px; color:#fff; letter-spacing:0.5px;
+  text-shadow:0 4px 0 rgba(0,0,0,.45), 0 0 18px rgba(0,0,0,.55); -webkit-text-stroke:2px rgba(0,0,0,.35); }
+.cap .y { color:#F5C531; }
+#t1 { position:absolute; left:0; width:1080px; top:118px; text-align:center; z-index:21; font-weight:700; font-size:74px; line-height:1.08;
+  color:#fff; text-shadow:0 4px 0 rgba(0,0,0,.5), 0 0 16px rgba(0,0,0,.6); -webkit-text-stroke:2.5px rgba(0,0,0,.55); }
+#t1 .y { color:#F5C531; }
+.anch { position:absolute; width:0; height:0; z-index:22; }
+.lead { position:absolute; overflow:visible; }
+.lead line { stroke:#F5C531; stroke-width:4; }
+.dot { position:absolute; left:-9px; top:-9px; width:18px; height:18px; border-radius:50%; background:#F5C531; box-shadow:0 0 0 3px rgba(0,0,0,.35); }
+.tag { position:absolute; white-space:nowrap; background:#F5C531; color:#111; font-weight:700; font-size:44px; padding:6px 20px 4px; border-radius:6px;
+  box-shadow:0 5px 0 rgba(0,0,0,.35); }
+.temp { position:absolute; transform:translate(-50%,-50%); font-weight:700; font-size:62px; padding:4px 18px 2px; border-radius:10px; color:#fff;
+  -webkit-text-stroke:2px rgba(0,0,0,.35); box-shadow:0 5px 0 rgba(0,0,0,.3); white-space:nowrap; }
+.temp.cold { background:#3f8fd8; } .temp.warm { background:#e8902f; }
+.burst { position:absolute; width:300px; height:220px; margin:-110px 0 0 -150px; }
+.burst .star { position:absolute; inset:0; width:300px; height:220px; overflow:visible; }
+.burst polygon { fill:#F5C531; stroke:#111; stroke-width:6; stroke-linejoin:round; }
+.burst b { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:60px; color:#fff;
+  -webkit-text-stroke:3px #111; paint-order:stroke fill; }
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="52.14" data-width="1080" data-height="1920">
+<canvas id="g3" width="1080" height="1920"></canvas>
+<div id="t1" class="clip" data-start="0" data-duration="3.0">THEY'RE FOLLOWING<br><span class="y">YOUR TRACKS</span></div>
+<div id="c0" class="clip cap" data-start="0.000" data-duration="0.140"><span class="w">If</span></div>
+<div id="c1" class="clip cap" data-start="0.140" data-duration="0.100"><span class="w">You</span></div>
+<div id="c2" class="clip cap" data-start="0.240" data-duration="0.280"><span class="w">Hide</span></div>
+<div id="c3" class="clip cap" data-start="0.520" data-duration="0.140"><span class="w">In</span></div>
+<div id="c4" class="clip cap" data-start="0.660" data-duration="0.080"><span class="w">The</span></div>
+<div id="c5" class="clip cap" data-start="0.740" data-duration="0.680"><span class="w">Snow</span></div>
+<div id="c6" class="clip cap" data-start="1.420" data-duration="0.080"><span class="w">Your</span></div>
+<div id="c7" class="clip cap" data-start="1.460" data-duration="0.320"><span class="w y">Footprints</span></div>
+<div id="c8" class="clip cap" data-start="1.780" data-duration="0.480"><span class="w">Lead</span></div>
+<div id="c9" class="clip cap" data-start="2.260" data-duration="0.180"><span class="w">Them</span></div>
+<div id="c10" class="clip cap" data-start="2.440" data-duration="0.280"><span class="w">Right</span></div>
+<div id="c11" class="clip cap" data-start="2.720" data-duration="0.260"><span class="w">To</span></div>
+<div id="c12" class="clip cap" data-start="2.980" data-duration="0.380"><span class="w">You</span></div>
+<div id="c13" class="clip cap" data-start="3.360" data-duration="0.120"><span class="w">So</span></div>
+<div id="c14" class="clip cap" data-start="3.480" data-duration="0.120"><span class="w">You</span></div>
+<div id="c15" class="clip cap" data-start="3.600" data-duration="0.200"><span class="w">Walk</span></div>
+<div id="c16" class="clip cap" data-start="3.800" data-duration="0.460"><span class="w">Backwards</span></div>
+<div id="c17" class="clip cap" data-start="4.260" data-duration="0.360"><span class="w">And</span></div>
+<div id="c18" class="clip cap" data-start="4.620" data-duration="0.240"><span class="w">Brush</span></div>
+<div id="c19" class="clip cap" data-start="4.860" data-duration="0.220"><span class="w">Your</span></div>
+<div id="c20" class="clip cap" data-start="5.080" data-duration="0.260"><span class="w">Tracks</span></div>
+<div id="c21" class="clip cap" data-start="5.340" data-duration="0.320"><span class="w">Away</span></div>
+<div id="c22" class="clip cap" data-start="5.660" data-duration="0.220"><span class="w">With</span></div>
+<div id="c23" class="clip cap" data-start="5.880" data-duration="0.080"><span class="w">A</span></div>
+<div id="c24" class="clip cap" data-start="5.960" data-duration="0.200"><span class="w">Pine</span></div>
+<div id="c25" class="clip cap" data-start="6.160" data-duration="0.660"><span class="w">Branch</span></div>
+<div id="c26" class="clip cap" data-start="6.820" data-duration="0.080"><span class="w">But</span></div>
+<div id="c27" class="clip cap" data-start="6.900" data-duration="0.120"><span class="w">Out</span></div>
+<div id="c28" class="clip cap" data-start="7.020" data-duration="0.480"><span class="w">Here</span></div>
+<div id="c29" class="clip cap" data-start="7.500" data-duration="0.160"><span class="w">You&#x27;ll</span></div>
+<div id="c30" class="clip cap" data-start="7.660" data-duration="0.300"><span class="w y">Freeze</span></div>
+<div id="c31" class="clip cap" data-start="7.960" data-duration="0.260"><span class="w">By</span></div>
+<div id="c32" class="clip cap" data-start="8.220" data-duration="0.520"><span class="w">Morning</span></div>
+<div id="c33" class="clip cap" data-start="8.740" data-duration="0.120"><span class="w">So</span></div>
+<div id="c34" class="clip cap" data-start="8.860" data-duration="0.140"><span class="w">You</span></div>
+<div id="c35" class="clip cap" data-start="9.000" data-duration="0.200"><span class="w">Dig</span></div>
+<div id="c36" class="clip cap" data-start="9.200" data-duration="0.220"><span class="w">Into</span></div>
+<div id="c37" class="clip cap" data-start="9.420" data-duration="0.140"><span class="w">A</span></div>
+<div id="c38" class="clip cap" data-start="9.560" data-duration="0.200"><span class="w">Snow</span></div>
+<div id="c39" class="clip cap" data-start="9.760" data-duration="0.260"><span class="w y">Drift</span></div>
+<div id="c40" class="clip cap" data-start="10.020" data-duration="0.280"><span class="w">And</span></div>
+<div id="c41" class="clip cap" data-start="10.300" data-duration="0.280"><span class="w">Hollow</span></div>
+<div id="c42" class="clip cap" data-start="10.580" data-duration="0.220"><span class="w">It</span></div>
+<div id="c43" class="clip cap" data-start="10.800" data-duration="0.440"><span class="w">Out</span></div>
+<div id="c44" class="clip cap" data-start="11.240" data-duration="0.240"><span class="w">Outside</span></div>
+<div id="c45" class="clip cap" data-start="11.480" data-duration="0.400"><span class="w">It&#x27;s</span></div>
+<div id="c46" class="clip cap" data-start="11.880" data-duration="0.180"><span class="w y">30</span></div>
+<div id="c47" class="clip cap" data-start="12.060" data-duration="0.680"><span class="w">Below</span></div>
+<div id="c48" class="clip cap" data-start="12.740" data-duration="0.080"><span class="w">But</span></div>
+<div id="c49" class="clip cap" data-start="12.800" data-duration="0.120"><span class="w">In</span></div>
+<div id="c50" class="clip cap" data-start="12.920" data-duration="0.460"><span class="w">Here</span></div>
+<div id="c51" class="clip cap" data-start="13.380" data-duration="0.080"><span class="w">It</span></div>
+<div id="c52" class="clip cap" data-start="13.460" data-duration="0.280"><span class="w">Stays</span></div>
+<div id="c53" class="clip cap" data-start="13.740" data-duration="0.260"><span class="w">Near</span></div>
+<div id="c54" class="clip cap" data-start="14.000" data-duration="0.740"><span class="w y">Freezing</span></div>
+<div id="c55" class="clip cap" data-start="14.740" data-duration="0.100"><span class="w">This</span></div>
+<div id="c56" class="clip cap" data-start="14.840" data-duration="0.120"><span class="w">Is</span></div>
+<div id="c57" class="clip cap" data-start="14.960" data-duration="0.100"><span class="w">A</span></div>
+<div id="c58" class="clip cap" data-start="15.060" data-duration="0.200"><span class="w">Snow</span></div>
+<div id="c59" class="clip cap" data-start="15.260" data-duration="0.320"><span class="w">Cave</span></div>
+<div id="c60" class="clip cap" data-start="15.580" data-duration="0.380"><span class="w">But</span></div>
+<div id="c61" class="clip cap" data-start="15.960" data-duration="0.160"><span class="w">Now</span></div>
+<div id="c62" class="clip cap" data-start="16.120" data-duration="0.180"><span class="w">The</span></div>
+<div id="c63" class="clip cap" data-start="16.300" data-duration="0.200"><span class="w">Air</span></div>
+<div id="c64" class="clip cap" data-start="16.500" data-duration="0.200"><span class="w">Goes</span></div>
+<div id="c65" class="clip cap" data-start="16.700" data-duration="0.380"><span class="w y">Stale</span></div>
+<div id="c66" class="clip cap" data-start="17.080" data-duration="0.360"><span class="w">So</span></div>
+<div id="c67" class="clip cap" data-start="17.440" data-duration="0.100"><span class="w">You</span></div>
+<div id="c68" class="clip cap" data-start="17.540" data-duration="0.200"><span class="w">Push</span></div>
+<div id="c69" class="clip cap" data-start="17.740" data-duration="0.160"><span class="w">A</span></div>
+<div id="c70" class="clip cap" data-start="17.900" data-duration="0.200"><span class="w y">Stick</span></div>
+<div id="c71" class="clip cap" data-start="18.100" data-duration="0.180"><span class="w">Up</span></div>
+<div id="c72" class="clip cap" data-start="18.280" data-duration="0.180"><span class="w">Through</span></div>
+<div id="c73" class="clip cap" data-start="18.460" data-duration="0.100"><span class="w">The</span></div>
+<div id="c74" class="clip cap" data-start="18.560" data-duration="0.500"><span class="w">Roof</span></div>
+<div id="c75" class="clip cap" data-start="19.060" data-duration="0.160"><span class="w">This</span></div>
+<div id="c76" class="clip cap" data-start="19.220" data-duration="0.140"><span class="w">Is</span></div>
+<div id="c77" class="clip cap" data-start="19.360" data-duration="0.160"><span class="w">Your</span></div>
+<div id="c78" class="clip cap" data-start="19.520" data-duration="0.180"><span class="w">Air</span></div>
+<div id="c79" class="clip cap" data-start="19.700" data-duration="0.480"><span class="w">Vent</span></div>
+<div id="c80" class="clip cap" data-start="20.180" data-duration="0.100"><span class="w">But</span></div>
+<div id="c81" class="clip cap" data-start="20.280" data-duration="0.120"><span class="w">At</span></div>
+<div id="c82" class="clip cap" data-start="20.400" data-duration="0.500"><span class="w">Night</span></div>
+<div id="c83" class="clip cap" data-start="20.900" data-duration="0.080"><span class="w">Your</span></div>
+<div id="c84" class="clip cap" data-start="20.940" data-duration="0.240"><span class="w">Candle</span></div>
+<div id="c85" class="clip cap" data-start="21.180" data-duration="0.300"><span class="w">Makes</span></div>
+<div id="c86" class="clip cap" data-start="21.480" data-duration="0.220"><span class="w">The</span></div>
+<div id="c87" class="clip cap" data-start="21.700" data-duration="0.160"><span class="w">Whole</span></div>
+<div id="c88" class="clip cap" data-start="21.860" data-duration="0.260"><span class="w y">Drift</span></div>
+<div id="c89" class="clip cap" data-start="22.120" data-duration="0.600"><span class="w y">Glow</span></div>
+<div id="c90" class="clip cap" data-start="22.720" data-duration="0.160"><span class="w">So</span></div>
+<div id="c91" class="clip cap" data-start="22.880" data-duration="0.120"><span class="w">You</span></div>
+<div id="c92" class="clip cap" data-start="23.000" data-duration="0.180"><span class="w">Only</span></div>
+<div id="c93" class="clip cap" data-start="23.180" data-duration="0.320"><span class="w">Light</span></div>
+<div id="c94" class="clip cap" data-start="23.500" data-duration="0.140"><span class="w">It</span></div>
+<div id="c95" class="clip cap" data-start="23.640" data-duration="0.140"><span class="w">By</span></div>
+<div id="c96" class="clip cap" data-start="23.780" data-duration="0.580"><span class="w">Day</span></div>
+<div id="c97" class="clip cap" data-start="24.360" data-duration="0.100"><span class="w">Then</span></div>
+<div id="c98" class="clip cap" data-start="24.460" data-duration="0.140"><span class="w">The</span></div>
+<div id="c99" class="clip cap" data-start="24.600" data-duration="0.220"><span class="w y">Soldiers</span></div>
+<div id="c100" class="clip cap" data-start="24.820" data-duration="0.320"><span class="w">Come</span></div>
+<div id="c101" class="clip cap" data-start="25.140" data-duration="0.240"><span class="w">Back</span></div>
+<div id="c102" class="clip cap" data-start="25.380" data-duration="0.200"><span class="w">With</span></div>
+<div id="c103" class="clip cap" data-start="25.580" data-duration="0.200"><span class="w">Long</span></div>
+<div id="c104" class="clip cap" data-start="25.780" data-duration="0.400"><span class="w">Steel</span></div>
+<div id="c105" class="clip cap" data-start="26.180" data-duration="0.280"><span class="w y">Poles</span></div>
+<div id="c106" class="clip cap" data-start="26.460" data-duration="0.440"><span class="w">And</span></div>
+<div id="c107" class="clip cap" data-start="26.900" data-duration="0.240"><span class="w">Stab</span></div>
+<div id="c108" class="clip cap" data-start="27.140" data-duration="0.380"><span class="w">Every</span></div>
+<div id="c109" class="clip cap" data-start="27.520" data-duration="0.540"><span class="w y">Drift</span></div>
+<div id="c110" class="clip cap" data-start="28.060" data-duration="0.180"><span class="w">So</span></div>
+<div id="c111" class="clip cap" data-start="28.240" data-duration="0.120"><span class="w">You</span></div>
+<div id="c112" class="clip cap" data-start="28.360" data-duration="0.160"><span class="w">Line</span></div>
+<div id="c113" class="clip cap" data-start="28.520" data-duration="0.200"><span class="w">Your</span></div>
+<div id="c114" class="clip cap" data-start="28.720" data-duration="0.220"><span class="w">Roof</span></div>
+<div id="c115" class="clip cap" data-start="28.940" data-duration="0.160"><span class="w">With</span></div>
+<div id="c116" class="clip cap" data-start="29.100" data-duration="0.240"><span class="w y">Logs</span></div>
+<div id="c117" class="clip cap" data-start="29.340" data-duration="0.480"><span class="w">And</span></div>
+<div id="c118" class="clip cap" data-start="29.820" data-duration="0.200"><span class="w">Every</span></div>
+<div id="c119" class="clip cap" data-start="30.020" data-duration="0.260"><span class="w">Pole</span></div>
+<div id="c120" class="clip cap" data-start="30.280" data-duration="0.280"><span class="w">Just</span></div>
+<div id="c121" class="clip cap" data-start="30.560" data-duration="0.260"><span class="w">Hits</span></div>
+<div id="c122" class="clip cap" data-start="30.820" data-duration="0.580"><span class="w y">Wood</span></div>
+<div id="c123" class="clip cap" data-start="31.400" data-duration="0.080"><span class="w">But</span></div>
+<div id="c124" class="clip cap" data-start="31.420" data-duration="0.080"><span class="w">A</span></div>
+<div id="c125" class="clip cap" data-start="31.480" data-duration="0.240"><span class="w y">Storm</span></div>
+<div id="c126" class="clip cap" data-start="31.720" data-duration="0.180"><span class="w">Is</span></div>
+<div id="c127" class="clip cap" data-start="31.900" data-duration="0.520"><span class="w">Coming</span></div>
+<div id="c128" class="clip cap" data-start="32.420" data-duration="0.080"><span class="w">And</span></div>
+<div id="c129" class="clip cap" data-start="32.480" data-duration="0.140"><span class="w">They&#x27;ll</span></div>
+<div id="c130" class="clip cap" data-start="32.620" data-duration="0.240"><span class="w">Search</span></div>
+<div id="c131" class="clip cap" data-start="32.860" data-duration="0.280"><span class="w">Every</span></div>
+<div id="c132" class="clip cap" data-start="33.140" data-duration="0.260"><span class="w y">Drift</span></div>
+<div id="c133" class="clip cap" data-start="33.400" data-duration="0.260"><span class="w">On</span></div>
+<div id="c134" class="clip cap" data-start="33.660" data-duration="0.080"><span class="w">The</span></div>
+<div id="c135" class="clip cap" data-start="33.720" data-duration="0.640"><span class="w">Mountain</span></div>
+<div id="c136" class="clip cap" data-start="34.360" data-duration="0.140"><span class="w">So</span></div>
+<div id="c137" class="clip cap" data-start="34.500" data-duration="0.140"><span class="w">You</span></div>
+<div id="c138" class="clip cap" data-start="34.640" data-duration="0.200"><span class="w">Dig</span></div>
+<div id="c139" class="clip cap" data-start="34.840" data-duration="0.140"><span class="w">A</span></div>
+<div id="c140" class="clip cap" data-start="34.980" data-duration="0.120"><span class="w">New</span></div>
+<div id="c141" class="clip cap" data-start="35.100" data-duration="0.300"><span class="w">Room</span></div>
+<div id="c142" class="clip cap" data-start="35.400" data-duration="0.300"><span class="w">Under</span></div>
+<div id="c143" class="clip cap" data-start="35.700" data-duration="0.180"><span class="w">The</span></div>
+<div id="c144" class="clip cap" data-start="35.880" data-duration="0.240"><span class="w y">Path</span></div>
+<div id="c145" class="clip cap" data-start="36.120" data-duration="0.260"><span class="w">They</span></div>
+<div id="c146" class="clip cap" data-start="36.380" data-duration="0.260"><span class="w">Walk</span></div>
+<div id="c147" class="clip cap" data-start="36.640" data-duration="0.240"><span class="w">Every</span></div>
+<div id="c148" class="clip cap" data-start="36.880" data-duration="0.660"><span class="w">Day</span></div>
+<div id="c149" class="clip cap" data-start="37.540" data-duration="0.360"><span class="w">That&#x27;s</span></div>
+<div id="c150" class="clip cap" data-start="37.900" data-duration="0.160"><span class="w">Not</span></div>
+<div id="c151" class="clip cap" data-start="38.060" data-duration="0.100"><span class="w">A</span></div>
+<div id="c152" class="clip cap" data-start="38.160" data-duration="0.860"><span class="w">Mistake</span></div>
+<div id="c153" class="clip cap" data-start="39.020" data-duration="0.160"><span class="w">Packed</span></div>
+<div id="c154" class="clip cap" data-start="39.180" data-duration="0.280"><span class="w">Snow</span></div>
+<div id="c155" class="clip cap" data-start="39.460" data-duration="0.300"><span class="w">Sets</span></div>
+<div id="c156" class="clip cap" data-start="39.760" data-duration="0.460"><span class="w">Almost</span></div>
+<div id="c157" class="clip cap" data-start="40.220" data-duration="0.240"><span class="w">As</span></div>
+<div id="c158" class="clip cap" data-start="40.460" data-duration="0.260"><span class="w">Hard</span></div>
+<div id="c159" class="clip cap" data-start="40.720" data-duration="0.140"><span class="w">As</span></div>
+<div id="c160" class="clip cap" data-start="40.860" data-duration="0.260"><span class="w y">Ice</span></div>
+<div id="c161" class="clip cap" data-start="41.120" data-duration="0.400"><span class="w">And</span></div>
+<div id="c162" class="clip cap" data-start="41.520" data-duration="0.320"><span class="w">Nobody</span></div>
+<div id="c163" class="clip cap" data-start="41.840" data-duration="0.580"><span class="w">Stabs</span></div>
+<div id="c164" class="clip cap" data-start="42.420" data-duration="0.100"><span class="w">The</span></div>
+<div id="c165" class="clip cap" data-start="42.520" data-duration="0.180"><span class="w">Ground</span></div>
+<div id="c166" class="clip cap" data-start="42.700" data-duration="0.240"><span class="w">They&#x27;re</span></div>
+<div id="c167" class="clip cap" data-start="42.940" data-duration="0.300"><span class="w">Standing</span></div>
+<div id="c168" class="clip cap" data-start="43.240" data-duration="0.560"><span class="w">On</span></div>
+<div id="c169" class="clip cap" data-start="43.800" data-duration="0.080"><span class="w">Add</span></div>
+<div id="c170" class="clip cap" data-start="43.880" data-duration="0.080"><span class="w">A</span></div>
+<div id="c171" class="clip cap" data-start="43.960" data-duration="0.200"><span class="w">Bed</span></div>
+<div id="c172" class="clip cap" data-start="44.160" data-duration="0.120"><span class="w">Of</span></div>
+<div id="c173" class="clip cap" data-start="44.280" data-duration="0.200"><span class="w">Pine</span></div>
+<div id="c174" class="clip cap" data-start="44.480" data-duration="0.860"><span class="w">Branches</span></div>
+<div id="c175" class="clip cap" data-start="45.340" data-duration="0.080"><span class="w">A</span></div>
+<div id="c176" class="clip cap" data-start="45.380" data-duration="0.600"><span class="w">Candle</span></div>
+<div id="c177" class="clip cap" data-start="45.980" data-duration="0.080"><span class="w">And</span></div>
+<div id="c178" class="clip cap" data-start="46.040" data-duration="0.100"><span class="w">An</span></div>
+<div id="c179" class="clip cap" data-start="46.140" data-duration="0.320"><span class="w">Arctic</span></div>
+<div id="c180" class="clip cap" data-start="46.460" data-duration="0.260"><span class="w y">Fox</span></div>
+<div id="c181" class="clip cap" data-start="46.720" data-duration="0.300"><span class="w">Who</span></div>
+<div id="c182" class="clip cap" data-start="47.020" data-duration="0.160"><span class="w">Keeps</span></div>
+<div id="c183" class="clip cap" data-start="47.180" data-duration="0.320"><span class="w">Sleeping</span></div>
+<div id="c184" class="clip cap" data-start="47.500" data-duration="0.260"><span class="w">In</span></div>
+<div id="c185" class="clip cap" data-start="47.760" data-duration="0.100"><span class="w">Your</span></div>
+<div id="c186" class="clip cap" data-start="47.860" data-duration="1.160"><span class="w">Tunnel</span></div>
+<div id="c187" class="clip cap" data-start="49.020" data-duration="0.740"><span class="w">Congratulations</span></div>
+<div id="c188" class="clip cap" data-start="49.760" data-duration="0.100"><span class="w">You</span></div>
+<div id="c189" class="clip cap" data-start="49.860" data-duration="0.140"><span class="w">Have</span></div>
+<div id="c190" class="clip cap" data-start="50.000" data-duration="0.240"><span class="w">Built</span></div>
+<div id="c191" class="clip cap" data-start="50.240" data-duration="0.160"><span class="w">A</span></div>
+<div id="c192" class="clip cap" data-start="50.400" data-duration="0.200"><span class="w">Snow</span></div>
+<div id="c193" class="clip cap" data-start="50.600" data-duration="0.640"><span class="w y">Bunker</span></div>
+<div id="cs" class="clip anch" data-start="14.740" data-duration="2.3" style="left:clamp(170px,var(--cave-x),910px);top:clamp(260px,var(--cave-y),1700px)"><svg class="lead" width="600" height="400" style="left:-300px;top:-200px"><line id="csl" x1="300" y1="200" x2="360" y2="56" /></svg><div id="csd" class="dot"></div><div id="cst" class="tag" style="left:60px;top:-190px">SNOW CAVE</div></div>
+<div id="cv" class="clip anch" data-start="19.060" data-duration="2.2" style="left:clamp(170px,var(--vent-x),910px);top:clamp(260px,var(--vent-y),1700px)"><svg class="lead" width="600" height="400" style="left:-300px;top:-200px"><line id="cvl" x1="300" y1="200" x2="360" y2="96" /></svg><div id="cvd" class="dot"></div><div id="cvt" class="tag" style="left:60px;top:-150px">AIR VENT</div></div>
+<div id="b1" class="clip anch" data-start="7.650" data-duration="0.95" style="left:clamp(170px,var(--hero-x),910px);top:clamp(260px,var(--hero-y),1700px)"><div id="b1i" class="burst" style="left:70px;top:-120px;rotate:-8deg"><svg viewBox='-100 -100 200 200' class='star'><polygon points='92.0,0.0 55.7,12.4 77.4,37.8 38.0,33.3 38.2,63.7 8.3,43.6 -13.1,69.3 -24.1,40.0 -60.2,52.9 -48.8,23.8 -88.3,19.7 -58.0,0.0 -88.3,-19.7 -48.8,-23.8 -60.2,-52.9 -24.1,-40.0 -13.1,-69.3 8.3,-43.6 38.2,-63.7 38.0,-33.3 77.4,-37.8 55.7,-12.4' /></svg><b>BRRR!</b></div></div>
+<div id="b2" class="clip anch" data-start="30.360" data-duration="0.95" style="left:clamp(170px,var(--pole-x),910px);top:clamp(260px,var(--pole-y),1700px)"><div id="b2i" class="burst" style="left:-60px;top:-40px;rotate:7deg"><svg viewBox='-100 -100 200 200' class='star'><polygon points='92.0,0.0 55.7,12.4 77.4,37.8 38.0,33.3 38.2,63.7 8.3,43.6 -13.1,69.3 -24.1,40.0 -60.2,52.9 -48.8,23.8 -88.3,19.7 -58.0,0.0 -88.3,-19.7 -48.8,-23.8 -60.2,-52.9 -24.1,-40.0 -13.1,-69.3 8.3,-43.6 38.2,-63.7 38.0,-33.3 77.4,-37.8 55.7,-12.4' /></svg><b>CLUNK!</b></div></div>
+<div id="b3" class="clip anch" data-start="31.010" data-duration="0.95" style="left:clamp(170px,var(--pole-x),910px);top:clamp(260px,var(--pole-y),1700px)"><div id="b3i" class="burst" style="left:80px;top:30px;rotate:-6deg"><svg viewBox='-100 -100 200 200' class='star'><polygon points='92.0,0.0 55.7,12.4 77.4,37.8 38.0,33.3 38.2,63.7 8.3,43.6 -13.1,69.3 -24.1,40.0 -60.2,52.9 -48.8,23.8 -88.3,19.7 -58.0,0.0 -88.3,-19.7 -48.8,-23.8 -60.2,-52.9 -24.1,-40.0 -13.1,-69.3 8.3,-43.6 38.2,-63.7 38.0,-33.3 77.4,-37.8 55.7,-12.4' /></svg><b>CLUNK!</b></div></div>
+<div id="b4" class="clip anch" data-start="31.720" data-duration="0.95" style="left:clamp(170px,var(--lip-x),910px);top:clamp(260px,var(--lip-y),1700px)"><div id="b4i" class="burst" style="left:0px;top:-260px;rotate:-5deg"><svg viewBox='-100 -100 200 200' class='star'><polygon points='92.0,0.0 55.7,12.4 77.4,37.8 38.0,33.3 38.2,63.7 8.3,43.6 -13.1,69.3 -24.1,40.0 -60.2,52.9 -48.8,23.8 -88.3,19.7 -58.0,0.0 -88.3,-19.7 -48.8,-23.8 -60.2,-52.9 -24.1,-40.0 -13.1,-69.3 8.3,-43.6 38.2,-63.7 38.0,-33.3 77.4,-37.8 55.7,-12.4' /></svg><b>WHOOSH!</b></div></div>
+<div id="tout" class="clip anch" data-start="11.240" data-duration="4.100" style="left:clamp(150px,var(--out-x),930px);top:clamp(300px,var(--out-y),1650px)"><div id="toutb" class="temp cold">-30°C</div></div>
+<div id="tin" class="clip anch" data-start="12.740" data-duration="2.600" style="left:clamp(150px,var(--in-x),930px);top:clamp(300px,var(--in-y),1650px)"><div id="tinb" class="temp warm">0°C</div></div>
+</div>
+<script src="assets/js/cues.js"></script>
+<script type="module" src="assets/js/world.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#cst",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25,ease:"power2.out"},14.740);
+tl.fromTo("#csl",{opacity:0},{opacity:1,duration:0.2},14.740);
+tl.fromTo("#csd",{scale:0},{scale:1,duration:0.18,ease:"power2.out"},14.740);
+tl.fromTo("#cvt",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25,ease:"power2.out"},19.060);
+tl.fromTo("#cvl",{opacity:0},{opacity:1,duration:0.2},19.060);
+tl.fromTo("#cvd",{scale:0},{scale:1,duration:0.18,ease:"power2.out"},19.060);
+tl.fromTo("#b1i",{scale:0.3,opacity:1},{scale:1,duration:0.1,ease:"power2.out"},7.650);
+tl.to("#b1i",{opacity:0,duration:0.2},8.370);
+tl.fromTo("#b2i",{scale:0.3,opacity:1},{scale:1,duration:0.1,ease:"power2.out"},30.360);
+tl.to("#b2i",{opacity:0,duration:0.2},31.080);
+tl.fromTo("#b3i",{scale:0.3,opacity:1},{scale:1,duration:0.1,ease:"power2.out"},31.010);
+tl.to("#b3i",{opacity:0,duration:0.2},31.730);
+tl.fromTo("#b4i",{scale:0.3,opacity:1},{scale:1,duration:0.1,ease:"power2.out"},31.720);
+tl.to("#b4i",{opacity:0,duration:0.2},32.440);
+tl.fromTo("#c0 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.000);
+tl.fromTo("#c1 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.140);
+tl.fromTo("#c2 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.240);
+tl.fromTo("#c3 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.520);
+tl.fromTo("#c4 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.660);
+tl.fromTo("#c5 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},0.740);
+tl.fromTo("#c6 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},1.420);
+tl.fromTo("#c7 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},1.460);
+tl.fromTo("#c8 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},1.780);
+tl.fromTo("#c9 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},2.260);
+tl.fromTo("#c10 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},2.440);
+tl.fromTo("#c11 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},2.720);
+tl.fromTo("#c12 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},2.980);
+tl.fromTo("#c13 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},3.360);
+tl.fromTo("#c14 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},3.480);
+tl.fromTo("#c15 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},3.600);
+tl.fromTo("#c16 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},3.800);
+tl.fromTo("#c17 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},4.260);
+tl.fromTo("#c18 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},4.620);
+tl.fromTo("#c19 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},4.860);
+tl.fromTo("#c20 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},5.080);
+tl.fromTo("#c21 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},5.340);
+tl.fromTo("#c22 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},5.660);
+tl.fromTo("#c23 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},5.880);
+tl.fromTo("#c24 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},5.960);
+tl.fromTo("#c25 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},6.160);
+tl.fromTo("#c26 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},6.820);
+tl.fromTo("#c27 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},6.900);
+tl.fromTo("#c28 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},7.020);
+tl.fromTo("#c29 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},7.500);
+tl.fromTo("#c30 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},7.660);
+tl.fromTo("#c31 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},7.960);
+tl.fromTo("#c32 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},8.220);
+tl.fromTo("#c33 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},8.740);
+tl.fromTo("#c34 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},8.860);
+tl.fromTo("#c35 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},9.000);
+tl.fromTo("#c36 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},9.200);
+tl.fromTo("#c37 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},9.420);
+tl.fromTo("#c38 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},9.560);
+tl.fromTo("#c39 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},9.760);
+tl.fromTo("#c40 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},10.020);
+tl.fromTo("#c41 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},10.300);
+tl.fromTo("#c42 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},10.580);
+tl.fromTo("#c43 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},10.800);
+tl.fromTo("#c44 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},11.240);
+tl.fromTo("#c45 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},11.480);
+tl.fromTo("#c46 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},11.880);
+tl.fromTo("#c47 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},12.060);
+tl.fromTo("#c48 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},12.740);
+tl.fromTo("#c49 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},12.800);
+tl.fromTo("#c50 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},12.920);
+tl.fromTo("#c51 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},13.380);
+tl.fromTo("#c52 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},13.460);
+tl.fromTo("#c53 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},13.740);
+tl.fromTo("#c54 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},14.000);
+tl.fromTo("#c55 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},14.740);
+tl.fromTo("#c56 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},14.840);
+tl.fromTo("#c57 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},14.960);
+tl.fromTo("#c58 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},15.060);
+tl.fromTo("#c59 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},15.260);
+tl.fromTo("#c60 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},15.580);
+tl.fromTo("#c61 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},15.960);
+tl.fromTo("#c62 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},16.120);
+tl.fromTo("#c63 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},16.300);
+tl.fromTo("#c64 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},16.500);
+tl.fromTo("#c65 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},16.700);
+tl.fromTo("#c66 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},17.080);
+tl.fromTo("#c67 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},17.440);
+tl.fromTo("#c68 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},17.540);
+tl.fromTo("#c69 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},17.740);
+tl.fromTo("#c70 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},17.900);
+tl.fromTo("#c71 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},18.100);
+tl.fromTo("#c72 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},18.280);
+tl.fromTo("#c73 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},18.460);
+tl.fromTo("#c74 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},18.560);
+tl.fromTo("#c75 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},19.060);
+tl.fromTo("#c76 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},19.220);
+tl.fromTo("#c77 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},19.360);
+tl.fromTo("#c78 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},19.520);
+tl.fromTo("#c79 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},19.700);
+tl.fromTo("#c80 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},20.180);
+tl.fromTo("#c81 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},20.280);
+tl.fromTo("#c82 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},20.400);
+tl.fromTo("#c83 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},20.900);
+tl.fromTo("#c84 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},20.940);
+tl.fromTo("#c85 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},21.180);
+tl.fromTo("#c86 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},21.480);
+tl.fromTo("#c87 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},21.700);
+tl.fromTo("#c88 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},21.860);
+tl.fromTo("#c89 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},22.120);
+tl.fromTo("#c90 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},22.720);
+tl.fromTo("#c91 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},22.880);
+tl.fromTo("#c92 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},23.000);
+tl.fromTo("#c93 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},23.180);
+tl.fromTo("#c94 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},23.500);
+tl.fromTo("#c95 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},23.640);
+tl.fromTo("#c96 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},23.780);
+tl.fromTo("#c97 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},24.360);
+tl.fromTo("#c98 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},24.460);
+tl.fromTo("#c99 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},24.600);
+tl.fromTo("#c100 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},24.820);
+tl.fromTo("#c101 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},25.140);
+tl.fromTo("#c102 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},25.380);
+tl.fromTo("#c103 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},25.580);
+tl.fromTo("#c104 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},25.780);
+tl.fromTo("#c105 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},26.180);
+tl.fromTo("#c106 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},26.460);
+tl.fromTo("#c107 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},26.900);
+tl.fromTo("#c108 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},27.140);
+tl.fromTo("#c109 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},27.520);
+tl.fromTo("#c110 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.060);
+tl.fromTo("#c111 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.240);
+tl.fromTo("#c112 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.360);
+tl.fromTo("#c113 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.520);
+tl.fromTo("#c114 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.720);
+tl.fromTo("#c115 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},28.940);
+tl.fromTo("#c116 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},29.100);
+tl.fromTo("#c117 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},29.340);
+tl.fromTo("#c118 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},29.820);
+tl.fromTo("#c119 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},30.020);
+tl.fromTo("#c120 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},30.280);
+tl.fromTo("#c121 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},30.560);
+tl.fromTo("#c122 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},30.820);
+tl.fromTo("#c123 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},31.400);
+tl.fromTo("#c124 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},31.420);
+tl.fromTo("#c125 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},31.480);
+tl.fromTo("#c126 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},31.720);
+tl.fromTo("#c127 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},31.900);
+tl.fromTo("#c128 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},32.420);
+tl.fromTo("#c129 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},32.480);
+tl.fromTo("#c130 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},32.620);
+tl.fromTo("#c131 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},32.860);
+tl.fromTo("#c132 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},33.140);
+tl.fromTo("#c133 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},33.400);
+tl.fromTo("#c134 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},33.660);
+tl.fromTo("#c135 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},33.720);
+tl.fromTo("#c136 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},34.360);
+tl.fromTo("#c137 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},34.500);
+tl.fromTo("#c138 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},34.640);
+tl.fromTo("#c139 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},34.840);
+tl.fromTo("#c140 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},34.980);
+tl.fromTo("#c141 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},35.100);
+tl.fromTo("#c142 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},35.400);
+tl.fromTo("#c143 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},35.700);
+tl.fromTo("#c144 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},35.880);
+tl.fromTo("#c145 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},36.120);
+tl.fromTo("#c146 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},36.380);
+tl.fromTo("#c147 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},36.640);
+tl.fromTo("#c148 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},36.880);
+tl.fromTo("#c149 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},37.540);
+tl.fromTo("#c150 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},37.900);
+tl.fromTo("#c151 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},38.060);
+tl.fromTo("#c152 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},38.160);
+tl.fromTo("#c153 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},39.020);
+tl.fromTo("#c154 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},39.180);
+tl.fromTo("#c155 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},39.460);
+tl.fromTo("#c156 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},39.760);
+tl.fromTo("#c157 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},40.220);
+tl.fromTo("#c158 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},40.460);
+tl.fromTo("#c159 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},40.720);
+tl.fromTo("#c160 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},40.860);
+tl.fromTo("#c161 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},41.120);
+tl.fromTo("#c162 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},41.520);
+tl.fromTo("#c163 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},41.840);
+tl.fromTo("#c164 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},42.420);
+tl.fromTo("#c165 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},42.520);
+tl.fromTo("#c166 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},42.700);
+tl.fromTo("#c167 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},42.940);
+tl.fromTo("#c168 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},43.240);
+tl.fromTo("#c169 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},43.800);
+tl.fromTo("#c170 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},43.880);
+tl.fromTo("#c171 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},43.960);
+tl.fromTo("#c172 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},44.160);
+tl.fromTo("#c173 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},44.280);
+tl.fromTo("#c174 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},44.480);
+tl.fromTo("#c175 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},45.340);
+tl.fromTo("#c176 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},45.380);
+tl.fromTo("#c177 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},45.980);
+tl.fromTo("#c178 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},46.040);
+tl.fromTo("#c179 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},46.140);
+tl.fromTo("#c180 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},46.460);
+tl.fromTo("#c181 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},46.720);
+tl.fromTo("#c182 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},47.020);
+tl.fromTo("#c183 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},47.180);
+tl.fromTo("#c184 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},47.500);
+tl.fromTo("#c185 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},47.760);
+tl.fromTo("#c186 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},47.860);
+tl.fromTo("#c187 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},49.020);
+tl.fromTo("#c188 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},49.760);
+tl.fromTo("#c189 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},49.860);
+tl.fromTo("#c190 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},50.000);
+tl.fromTo("#c191 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},50.240);
+tl.fromTo("#c192 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},50.400);
+tl.fromTo("#c193 span",{scale:0.86},{scale:1,duration:0.07,ease:"power2.out"},50.600);
+tl.fromTo("#toutb",{scale:0.4,opacity:0},{scale:1,opacity:1,duration:0.18,ease:"power2.out"},11.240);
+tl.fromTo("#tinb",{scale:0.4,opacity:0},{scale:1,opacity:1,duration:0.18,ease:"power2.out"},12.740);
+tl.fromTo("#t1",{opacity:0,y:-14},{opacity:1,y:0,duration:0.18,ease:"power2.out"},0.05);
+tl.to("#t1",{opacity:0,duration:0.2},2.75);
+tl.set({}, {}, 52.14);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

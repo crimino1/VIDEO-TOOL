@@ -1,0 +1,51 @@
+TITLE (pick one)
+1. GLM-5.4 Just Dropped: China's AI That Thinks Twice
+2. Z.ai's GLM-5.4 Runs Its Own Layers Twice. Here's Why That Matters
+3. GLM-5.4: No Benchmarks, 750B Parameters, and a Brand-New Trick
+Recommended: 1
+
+DESCRIPTION
+Z.ai (Zhipu AI) released GLM-5.4 on November 23, 2026, with no launch event and no benchmark chart, just one post on X. It's their first "Loop Transformer": instead of adding parameters, it runs 28 layers of GLM-5 twice for every token. That makes it deeper without making it bigger. In this video: who Zhipu is, the GLM release pace this year, what's new in 5.4 (vision, a 1M-token context, 50% more Coding Plan quota), how the loop works, the one test Z.ai did publish (a 30B test model), what's still missing (benchmarks, API, open weights), the official demos, how to try it, and what's coming next.
+
+Note: Z.ai has not published GLM-5.4 benchmark scores. The +11.3 AIME number in this video is from their 30B test model, not GLM-5.4. The "matches 2–3T models" line is Z.ai's own claim. The December date for the next model comes from a single report and is unconfirmed.
+
+⏱️ CHAPTERS
+0:00 GLM-5.4 drops with no benchmarks
+0:20 Who made it: Zhipu AI / Z.ai
+0:37 A new GLM every two months
+1:02 What's new: vision, 1M context, +50% quota
+1:22 The Loop Transformer, explained
+2:08 How they tested it
+2:31 What's missing
+2:52 The demos
+3:20 How to try it
+3:35 Why this one matters
+3:50 What's next
+
+🔗 SOURCES
+Z.ai blog, "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer": https://z.ai/blog/glm-5.4
+Zixuan Li's announcement: https://x.com/ZixuanLi_/status/2124719275864670681
+Z.ai launch post: https://x.com/Zai_org/status/2124811995912286352
+TechNode, GLM-5.4 with vision and million-token context: https://technode.com/2026/11/23/zhipu-rolls-out-glm-5-4-with-vision-and-million-token-context/
+The Next Web, loop transformer write-up: https://thenextweb.com/news/zai-glm-5-4-loop-transformer-coding-model
+GLM Coding Plan docs: https://docs.z.ai/devpack/overview
+Z.ai release notes (GLM-5 to 5.3 dates): https://docs.z.ai/release-notes/new-released
+Artificial Analysis on GLM-5: https://artificialanalysis.ai/articles/glm-5-everything-you-need-to-know
+Zhipu's Hong Kong listing (TechNode): https://technode.com/2026/01/08/zhipu-ai-becomes-the-worlds-first-public-company-centered-on-agi-foundation-models-with-hong-kong-listing/
+US entity list addition (Federal Register): https://www.govinfo.gov/content/pkg/FR-2025-01-16/html/2025-00704.htm
+Vision guide (@Mileson07): https://x.com/Mileson07/status/2124758294388789312
+GLM-5.4 vs Qwen4-Max test (@ItsmeAjayKV): https://x.com/ItsmeAjayKV/status/2124763173526094324
+Reactions: https://x.com/karanC_12/status/2124722646625726664 · https://x.com/they_bash/status/2124812596125823294 · https://x.com/deshiou0604/status/2124815680243724645
+Next-model report (GLM-5.5 in December, unconfirmed, KuCoin flash news): https://www.kucoin.com/news/flash/zhipu-to-launch-glm-5-4-with-70b-parameters-next-week-300b-glm-5-5-expected-in-december
+Brick game demo (also posted by @louszbd): https://x.com/louszbd/status/2124763783805694457
+
+💬 Would you trust a model that skipped the scoreboard?
+🔔 Subscribe for more AI news.
+
+#GLM54 #Zai #Zhipu #AINews #OpenSourceAI #LoopTransformer #AI
+
+TAGS (under 500 characters)
+glm 5.4,glm-5.4,z.ai,zhipu ai,glm coding plan,loop transformer,chinese ai model,open weights ai,glm 5,ai news,new ai model,zcode,claude code glm,ai coding model,glm vs qwen,ai equator
+
+PINNED COMMENT
+Quick note: GLM-5.4 has no published benchmarks yet. The +11.3 AIME result shown is Z.ai's 30B test model, not 5.4 itself. I'll update when real scores land. Would you try it before the numbers are out?

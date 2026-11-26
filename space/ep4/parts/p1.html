@@ -1,0 +1,146 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="123.200" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="w1" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:11"><video id="v2" class="clip fit" src="assets/clips/nasa_launchpad_n_0886f4b0.mp4" muted playsinline data-start="0.000" data-duration="2.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s4" class="clip scene " data-start="0.000" data-duration="2.220" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div id="c3" class="scene"><div id="fadein0" class="black"></div></div></div>
+<div id="w5" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:13"><video id="v6" class="clip fit" src="assets/clips/px_friends_hug_0_935aa5fe.mp4" muted playsinline data-start="2.220" data-duration="3.540" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w7" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:14"><video id="v8" class="clip fit" src="assets/clips/px_friends_hug_1_db51cbc6.mp4" muted playsinline data-start="5.760" data-duration="4.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w9" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:15"><video id="v10" class="clip fit" src="assets/clips/nasa_engines_22186521.mp4" muted playsinline data-start="9.860" data-duration="0.980" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w11" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:16"><video id="v12" class="clip fit" src="assets/clips/nasa_ignite_019d8392.mp4" muted playsinline data-start="10.840" data-duration="0.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w13" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:17"><video id="v14" class="clip fit" src="assets/clips/nasa_earth_window_1d948add.mp4" muted playsinline data-start="11.580" data-duration="1.900" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w15" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:18"><video id="v16" class="clip fit" src="assets/clips/nasa_orion_earth_fc2974c4.mp4" muted playsinline data-start="17.980" data-duration="1.960" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="ow17" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:19;mix-blend-mode:screen;opacity:1.0"><video id="ov18" class="clip fit" src="assets/clips/nasa_orion_earth_247caf91.mp4" muted playsinline data-start="41.000" data-duration="3.640" data-track-index="3" style="transform:translate(-380px,60px) scale(0.72)"></video></div>
+<div id="w19" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:20"><video id="v20" class="clip fit" src="assets/clips/nasa_iss_float_725b8a34.mp4" muted playsinline data-start="49.120" data-duration="2.380" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w21" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:21"><video id="v22" class="clip fit" src="assets/clips/nasa_iss_module_f6d5cc0a.mp4" muted playsinline data-start="51.500" data-duration="1.660" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w23" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:22"><video id="v24" class="clip fit" src="assets/clips/px_wallclock_0_72fc440e.mp4" muted playsinline data-start="53.160" data-duration="3.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w25" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:23"><video id="v26" class="clip fit" src="assets/clips/nasa_orion_crescent_98e177a0.mp4" muted playsinline data-start="56.380" data-duration="2.800" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w27" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:24"><video id="v28" class="clip fit" src="assets/clips/nasa_splash_aedad646.mp4" muted playsinline data-start="59.180" data-duration="2.660" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w29" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:25"><video id="v30" class="clip fit" src="assets/clips/px_city_future_1_fec630c6.mp4" muted playsinline data-start="61.840" data-duration="1.640" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w31" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:26"><video id="v32" class="clip fit" src="assets/clips/px_phonemap_0_c6dfdeb0.mp4" muted playsinline data-start="63.480" data-duration="1.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w33" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:27"><video id="v34" class="clip fit" src="assets/clips/px_crowd_1_66dcb216.mp4" muted playsinline data-start="65.240" data-duration="2.020" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w35" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:28"><video id="v36" class="clip fit" src="assets/clips/px_standing_0_face33e5.mp4" muted playsinline data-start="67.260" data-duration="5.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w37" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:29"><video id="v38" class="clip fit" src="assets/clips/px_oldman_1_c87237cc.mp4" muted playsinline data-start="72.480" data-duration="1.340" data-track-index="1" style="transform-origin:55% 35%"></video></div>
+<div id="w39" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:30"><video id="v40" class="clip fit" src="assets/clips/px_whitehair_0_ad2fda6c.mp4" muted playsinline data-start="73.820" data-duration="1.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w41" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:31"><video id="v42" class="clip fit" src="assets/clips/px_oldhands_0_6f1afb68.mp4" muted playsinline data-start="75.120" data-duration="1.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w43" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:32"><video id="v44" class="clip fit" src="assets/clips/px_grandkids_0_e4fcc69d.mp4" muted playsinline data-start="76.460" data-duration="2.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w45" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:33"><video id="v46" class="clip fit" src="assets/clips/px_hourglass_1_ece3d66e.mp4" muted playsinline data-start="78.940" data-duration="1.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w47" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:34"><video id="v48" class="clip fit" src="assets/clips/px_whitehair_1_ec4b9eb1.mp4" muted playsinline data-start="80.800" data-duration="3.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w49" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:35"><video id="v50" class="clip fit" src="assets/clips/px_screenwatch_1_df7dc0f9.mp4" muted playsinline data-start="87.700" data-duration="7.800" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w51" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:36"><video id="v52" class="clip fit" src="assets/clips/px_screenwatch_0_87ad172f.mp4" muted playsinline data-start="95.500" data-duration="2.620" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w53" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:37"><video id="v54" class="clip fit" src="assets/clips/px_graduation_0_ea9d15ef.mp4" muted playsinline data-start="98.120" data-duration="1.400" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w55" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:38"><video id="v56" class="clip fit" src="assets/clips/px_wedding_1_d47dcaa6.mp4" muted playsinline data-start="99.520" data-duration="1.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w57" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:39"><video id="v58" class="clip fit" src="assets/clips/px_baby_0_4a75fd61.mp4" muted playsinline data-start="100.760" data-duration="1.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w59" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:40"><video id="v60" class="clip fit" src="assets/clips/px_hourglass_0_d187b037.mp4" muted playsinline data-start="102.060" data-duration="2.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w61" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:41"><video id="v62" class="clip fit" src="assets/clips/px_crowd_0_4a5a70a2.mp4" muted playsinline data-start="110.360" data-duration="4.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s65" class="clip scene " data-start="122.500" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c64" class="scene"><div id="dip63" class="black" style="opacity:0"></div></div></div>
+<div id="s68" class="clip scene " data-start="114.600" data-duration="8.600" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="c67" class="scene"><div id="ti66" class="title" style="left:150px;top:640px;font-size:78px;opacity:0">What If You Traveled to a Black Hole<br>and Came Back to Earth?</div></div></div>
+<div id="s101" class="clip scene " data-start="0.000" data-duration="123.200" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c100" class="scene"><div class="vign"></div><div id="grain99" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+</div>
+<script>
+window.SPS = [[13.48, 17.98, "earth", {"distK": [[0, 1.9], [2.2, 6.5], [4.5, 70]], "el": 6, "az0": 40, "az1": 60, "sun": [-55, 8], "fov": 30}], [19.94, 23.36, "bh", {"bhK": [[0, 0]], "disk": 0, "starDir": [0.03, 0.01, -1], "starKK": [[0, 40], [3.2, 5]], "dist": 24, "el": 2, "az0": -2, "az1": 2, "fov": 34, "shiftX": -200}], [23.36, 30.18, "bh", {"disk": 0, "starDir": [0.0, 0.0, -1], "star": 6, "bhK": [[0, 0], [4.479999999999999, 0], [6.279999999999999, 1]], "dist": 26, "el": 2, "az0": -4, "az1": 4, "fovK": [[0, 38], [6.8, 30]], "shiftX": 240}], [30.18, 34.72, "bh", {"dist0": 34, "dist1": 28, "el0": 3, "el1": 5, "az0": -12, "az1": 2, "shiftX": 300, "diskIn": 3.0, "diskOut": 14}], [34.72, 41.0, "bh", {"disk": 0, "dist": 22, "el": 3, "az0": 10, "az1": 22, "fov": 42, "skyRotSp": 0.018, "roll": -6}], [41.0, 44.64, "bh", {"dist0": 36, "dist1": 33, "el": 3, "az0": -8, "az1": -2, "shiftX": 470, "diskIn": 3.0, "diskOut": 14}], [44.64, 49.12, "bh", {"dist": 30, "el": 2, "az0": 6, "az1": 10, "fov": 19, "look0": [3.0, 0, 0], "look1": [2.7, 0.1, 0], "roll": -3, "diskIn": 3.0, "diskOut": 14}], [83.84, 87.7, "bh", {"dist0": 80, "dist1": 66, "el0": 14, "el1": 8, "az0": 20, "az1": 40, "shiftX": -240, "spin": 1.3, "diskIn": 3.0, "diskOut": 18}], [104.98, 109.08, "bh", {"dist": 28, "el": 2, "az0": 30, "az1": 36, "fov": 18, "look0": [3.2, 0, 0], "look1": [2.8, 0, 0], "diskIn": 3.0, "diskOut": 14}], [109.08, 110.36, "bh", {"dist0": 44, "dist1": 38, "el": 6, "az0": -20, "az1": -10, "shiftX": -280, "roll": 4, "diskIn": 3.0, "diskOut": 14}], [114.6, 123.2, "bh", {"dist0": 62, "dist1": 50, "el0": 10, "el1": 6, "az0": -30, "az1": -12, "shiftX": 300, "diskIn": 3.0, "diskOut": 18}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script src="assets/js/kinds_ep4.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v2",{scale:1.0},{scale:1.08,duration:2.22,ease:"none"},0.000);
+tl.fromTo("#fadein0",{opacity:1},{opacity:0,duration:2.0,ease:"power1.inOut"},0.000);
+tl.fromTo("#v6",{scale:1.0},{scale:1.05,duration:3.54,ease:"none"},2.220);
+tl.fromTo("#v8",{scale:1.02},{scale:1.08,duration:4.1,ease:"none"},5.760);
+tl.fromTo("#v10",{scale:1.0},{scale:1.04,duration:0.98,ease:"none"},9.860);
+tl.fromTo("#v12",{scale:1.0},{scale:1.05,duration:0.74,ease:"none"},10.840);
+tl.fromTo("#v14",{scale:1.0},{scale:1.06,duration:1.9,ease:"none"},11.580);
+tl.fromTo("#v16",{scale:1.0},{scale:1.05,duration:1.96,ease:"none"},17.980);
+tl.fromTo("#ov18",{x:-380,y:60,scale:0.72},{x:-350,y:50,duration:3.64,ease:"none"},41.000);
+tl.fromTo("#v20",{scale:1.0},{scale:1.05,duration:2.38,ease:"none"},49.120);
+tl.fromTo("#v22",{scale:1.0},{scale:1.06,duration:1.66,ease:"none"},51.500);
+tl.fromTo("#v24",{scale:1.0},{scale:1.1,duration:3.22,ease:"none"},53.160);
+tl.fromTo("#v26",{scale:1.0},{scale:1.05,duration:2.8,ease:"none"},56.380);
+tl.fromTo("#v28",{scale:1.0},{scale:1.06,duration:2.66,ease:"none"},59.180);
+tl.fromTo("#v30",{scale:1.0},{scale:1.06,duration:1.64,ease:"none"},61.840);
+tl.fromTo("#v32",{scale:1.0},{scale:1.06,duration:1.76,ease:"none"},63.480);
+tl.fromTo("#v34",{scale:1.0},{scale:1.04,duration:2.02,ease:"none"},65.240);
+tl.fromTo("#v36",{scale:1.0},{scale:1.08,duration:5.22,ease:"none"},67.260);
+tl.fromTo("#v38",{scale:1.0},{scale:1.08,duration:1.34,ease:"none"},72.480);
+tl.fromTo("#v40",{scale:1.0},{scale:1.06,duration:1.3,ease:"none"},73.820);
+tl.fromTo("#v42",{scale:1.0},{scale:1.06,duration:1.34,ease:"none"},75.120);
+tl.fromTo("#v44",{scale:1.0},{scale:1.06,duration:2.48,ease:"none"},76.460);
+tl.fromTo("#v46",{scale:1.0},{scale:1.06,duration:1.86,ease:"none"},78.940);
+tl.fromTo("#v48",{scale:1.0},{scale:1.06,duration:3.04,ease:"none"},80.800);
+tl.fromTo("#v50",{scale:1.0},{scale:1.08,duration:7.8,ease:"none"},87.700);
+tl.fromTo("#v52",{scale:1.0},{scale:1.06,duration:2.62,ease:"none"},95.500);
+tl.fromTo("#v54",{scale:1.0},{scale:1.06,duration:1.4,ease:"none"},98.120);
+tl.fromTo("#v56",{scale:1.0},{scale:1.06,duration:1.24,ease:"none"},99.520);
+tl.fromTo("#v58",{scale:1.0},{scale:1.06,duration:1.3,ease:"none"},100.760);
+tl.fromTo("#v60",{scale:1.0},{scale:1.06,duration:2.92,ease:"none"},102.060);
+tl.fromTo("#v62",{scale:1.0},{scale:1.06,duration:4.24,ease:"none"},110.360);
+tl.fromTo("#dip63",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},122.500);
+tl.fromTo("#ti66",{opacity:0},{opacity:1,duration:1.6,ease:"power1.inOut"},115.600);
+tl.to("#ti66",{opacity:0,duration:1.0,ease:"power1.inOut"},122.200);
+tl.fromTo("#grain99",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:109372,backgroundPositionY:156668,duration:123.2,ease:"steps(2956)"},0.000);
+tl.set({}, {}, 123.200);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

@@ -1,0 +1,59 @@
+TITLE (pick one)
+1. DeepSeek V5 Leaked? What's Real, What's Hype (And the Huawei Twist)
+2. DeepSeek V5: Every Leak Fact-Checked
+3. DeepSeek V5 Won't Beat Astra Next Week. Here's the Real Story.
+Recommended: 1
+
+DESCRIPTION
+DeepSeek V5 "leaked", and X lost its mind: V5 beats GPT-6 Astra, V5 drops in November, 2 trillion parameters, trained fully on Chinese chips. I went through every claim. The model names really are in DeepSeek's own GitHub code, but they're test placeholders (one has a 9-token context window). The viral "beats Astra" post had no benchmark, just a logo. The real story is bigger: two Chinese outlets report V5 will be pre-trained on Huawei Ascend 950 chips, likely for a 2027 release. That would be a first for a top Chinese model, and it lands in the same month Nvidia stopped shipping AI chips to China and lost its CEO. Here's what's real, what's rumour, what's made up, and when V5 is actually coming.
+
+⏱️ CHAPTERS
+0:00 DeepSeek V5 leaked from its own code
+0:49 Why one model name moves markets
+1:16 DeepSeek in 2026: V4, V4 Pro, V4.1 Flash
+2:08 Leak #1: the GitHub test files
+3:02 What the tests actually do
+3:33 The 9-token context window
+4:06 Leak #2: the viral "beats Astra" post
+4:47 Fact-checking the post
+5:39 The real news: V5 on Huawei Ascend
+6:28 Bloomberg, The Information and FlashMLA
+7:14 Pre-training vs post-training
+7:49 Nvidia's week: China, CEO, chip rules
+8:07 So when is V5 coming?
+9:01 The scorecard
+9:36 My take
+
+🔗 SOURCES
+DeepSeek Harness test file (the leak): https://github.com/deepseek-ai/deepseek-harness/blob/074889ed60ac1f1ca73dd7700f078cb33485577e/packages/llm/llm-deepseek-account/tests/provider.spec.ts#L154-L196
+DeepSeek API news (V4.1 Flash, V4.1 Pro named): https://api-docs.deepseek.com/news/news260910
+DeepSeek API pricing: https://api-docs.deepseek.com/quick_start/pricing
+DeepSeek V4.1 Flash model card: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+DeepSeek on X (V4.1 Flash): https://x.com/deepseek_ai/status/2097930608790167907
+DeepSeek on X (V4.1-Flash-1017): https://x.com/deepseek_ai/status/2111375646223933650
+Viral leak post: https://x.com/0x0SojalSec/status/2115561842588471541
+"Beats Astra" post: https://x.com/glitch_catAI/status/2103699253273247809
+快科技 (Kuai Keji): https://news.mydrivers.com/1/1161/1161225.htm
+The Information on X: https://x.com/theinformation/status/2102057805582676366
+36Kr (8T goal): https://eu.36kr.com/en/p/3995936178229120
+The Standard (2T figure): https://www.thestandard.com.hk/innovation/article/343489/
+Caiwen report, Nov 3 (via ifeng): https://tech.ifeng.com/c/8xj7jf0n9fW
+TechNode, Nov 4: https://technode.com/2026/11/04/deepseek-reportedly-plans-to-train-v5-model-on-huawei-ascend-chips/
+Bloomberg, Sep 4 (Ascend 950DT order): https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center
+FlashMLA on Ascend 950: https://github.com/deepseek-ai/FlashMLA
+Tom's Hardware (910C post-training): https://www.tomshardware.com/tech-industry/artificial-intelligence/huawei-led-team-claims-it-post-trained-deepseeks-1-6-trillion-parameter-models-on-ascend-910c-chips
+Statista (Nvidia's $589B day): https://www.statista.com/chart/26779/biggest-single-day-market-cap-losses
+Nvidia SEC 8-K (Nov 11): https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvda-20261111.htm
+CNBC (Kress interview): https://www.cnbc.com/2026/11/18/nvidia-interim-ceo-colette-kress-talks-earnings-china-transcript.html
+36Kr (Bank of America forecast): https://eu.36kr.com/en/p/3965947797954056
+
+💬 Can DeepSeek build a frontier model without Nvidia? Tell me in the comments.
+🔔 Subscribe to AI Equator: I'll cover V5 the day it actually lands.
+
+#DeepSeek #DeepSeekV5 #Huawei #Nvidia #AINews #AI #LLM #ChinaAI
+
+TAGS (under 500 characters)
+deepseek v5,deepseek,deepseek v5 leak,deepseek v5 release date,deepseek v4.1,deepseek huawei,huawei ascend 950,ascend 950,nvidia china,deepseek vs openai,gpt 6 astra,china ai chips,ai chip war,deepseek news,ai news,liang wenfeng,open source ai,nvidia ceo,ai equator
+
+PINNED COMMENT
+Source check, shown on screen in the video: the V5 test names are real but they're placeholders (plain v5 is refused because it declares no minimum version). The Sep 26 post says "Beats Astra", with no benchmark. The V4 Pro post-training on Ascend 910C was reported around June, not this autumn. Jensen Huang's exit was filed Nov 11. Can DeepSeek do it without Nvidia?

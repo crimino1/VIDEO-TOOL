@@ -1,0 +1,70 @@
+TITLE (pick one, all under 70 characters)
+1. Gemini 4 Carbon Review: It Worked 20 Hours Straight (Real Tests)
+2. Gemini 4 Carbon vs Claude Fable 5.2 vs GPT-6: Who Actually Wins?
+3. Gemini 4 Carbon Is Here: Benchmarks, Real Tests & The Catch
+4. Google's Gemini 4 Carbon Tested: Great Deal, Big Problems
+
+Recommended: 1 (curiosity + "review" + "real tests" keywords)
+
+DESCRIPTION
+Gemini 4 Carbon is finally public, and people are testing it for real. Google's new frontier model rebuilt a historic fort in 3D over 20 hours, found real zero-day security holes in under two hours, and ran a vending machine business better than GPT-6 and Claude. But it's slow, it hallucinates more than Gemini 4 Argon, and the price doubles on December 1.
+
+In this Gemini 4 Carbon review: what it is, the full benchmarks, Gemini 4 Carbon vs Claude Fable 5.2, Claude Opus 5.5 and GPT-6 Astra, independent results from Artificial Analysis, Vals AI and ARC Prize, what people built with it (3D, games, apps), and the problems nobody puts in their thumbnails.
+
+⏱️ CHAPTERS
+0:00 The fort that took 20 hours
+0:45 Timeline: Fairwind to general release
+1:16 What Gemini 4 Carbon actually is
+2:02 Price (doubles December 1)
+2:45 Google's benchmarks
+4:07 Cybersecurity results
+5:03 Independent tests: Artificial Analysis, Vals AI, ARC Prize
+6:55 The hallucination problem
+7:31 What people built
+10:08 The 20-hour long-run experiments
+11:42 Real zero-days found
+12:03 The complaints: speed and limits
+12:34 Safety
+12:57 Who should actually use it
+13:43 My take
+
+📌 KEY NUMBERS
+• Terminal-Bench 4.0: 65.2% · ExploitGym: 54.8% · SEC-bench Pro: 88.2%
+• Vending-Bench 2: $16,484 (GPT-6 Astra $15,515, Opus 5.5 $9,235)
+• Artificial Analysis Intelligence Index: 60 (Fable 5.2: 65) · about $7.76 per task
+• ARC-AGI-2: 94.2% · ARC-AGI-3: 65.1%
+• Hallucination rate: 4% (Argon) → 11% (Carbon)
+• Price: $2 / $10 per million tokens until Nov 30, then $4 / $20
+Google's benchmark numbers are company-reported.
+
+🔗 SOURCES
+Google: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
+Google (now available): https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+Artificial Analysis: https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1
+VentureBeat: https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited
+OfficeChai: https://officechai.com/ai/gemini-4-carbon-benchmarks/
+Vals AI: https://x.com/ValsAI/status/2119869713782378658
+ARC Prize: https://arcprize.org/leaderboard
+The Decoder: https://the-decoder.com/gemini-4-carbon-arrives-just-in-time-to-feel-like-yesterdays-news-in-the-fastest-model-cycle-yet/
+dev.to review: https://dev.to/hamzaahmadaslam/gemini-4-carbon-review-googles-claims-independent-results-and-what-testers-found-45lb
+Every vibe check: https://every.to/vibe-check/vibe-check-gemini-4-carbon-doesn-t-know-when-to-stop
+Prompt Engineering (fort, galaxies, robot, Breakout demos): https://www.youtube.com/watch?v=lQ6wwLHqDAg
+Paweł Huryn: https://x.com/PawelHuryn/status/2120283296550547618
+Dan Shipper: https://x.com/danshipper/status/2120187507396530309
+Stefan 3D AI: https://x.com/Stefan_3D_AI/status/2120408024678629622
+Chetaslua: https://x.com/chetaslua/status/2116082604151914668
+Pankaj Kumar: https://x.com/pankajkumar_dev/status/2118058662350766542
+Lumina: https://x.com/LuminaBench/status/2113963313591705768
+Hacker News: https://news.ycombinator.com/item?id=50444914
+MindStudio: https://www.mindstudio.ai/blog/gemini-4-carbon-overview
+
+💬 Have you tried Gemini 4 Carbon yet? Tell me what you built in the comments.
+🔔 Subscribe to AI Equator for AI news, reviews and benchmarks every week.
+
+#Gemini4Carbon #GoogleGemini #AINews #Gemini #ArtificialIntelligence #ClaudeFable #GPT6 #AIBenchmarks
+
+TAGS (comma-separated, 445 characters, paste into YouTube's tag box)
+gemini 4 carbon,gemini 4 carbon review,gemini carbon,google gemini 4,gemini 4,gemini 4 argon,gemini 4 carbon vs claude,gemini 4 carbon benchmarks,gemini 4 carbon price,claude fable 5.2,claude opus 5.5,gpt 6 astra,google ai,new ai model,ai news,ai news today,best ai model,ai benchmarks,artificial analysis,arc agi,google antigravity,ai coding,ai model comparison,gemini vs claude,gemini vs gpt,ai review,frontier model,google deepmind,ai equator
+
+PINNED COMMENT
+Biggest surprise for me: Carbon matched Fable 5.2 on a 105-bug test for $31 instead of $140. But that 11% hallucination rate… would you trust it for real work? 👇

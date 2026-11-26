@@ -1,0 +1,1800 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 45,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 3 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 19 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 11 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "gsap_repeated_fromto_without_baseline",
+        "severity": "warning",
+        "message": "22 tl.fromTo() calls target \"proxy (unresolved DOM association)\" with no stable baseline. The last-authored fromTo \"from\" values become the element's resting state for any seek before the first tween actually runs, because GSAP applies fromTo from-values at authoring time (immediateRender), not at tween position.",
+        "selector": "proxy (unresolved DOM association)",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add `immediateRender: false` to every fromTo except the earliest-positioned one (at 120.44s), so pre-first-tween seeks keep its \"from\" values. A hiding `tl.set(..., 0)` baseline trips gsap_timeline_set_initial_hide, and a `gsap.set` authored before the fromTo calls is overwritten by them."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 362 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 2 has 38 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s6\"> is a timeline element that contains nested <div id=\"w7\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s6",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s6\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s14\"> is a timeline element that contains nested <div id=\"w15\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s14",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s14\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s19\"> is a timeline element that contains nested <div id=\"w20\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s19",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s19\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s27\"> is a timeline element that contains nested <div id=\"w28\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s27",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s27\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s36\"> is a timeline element that contains nested <div id=\"w37\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s36",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s36\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s45\"> is a timeline element that contains nested <div id=\"w46\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s45",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s45\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s51\"> is a timeline element that contains nested <div id=\"w52\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s51",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s51\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s58\"> is a timeline element that contains nested <div id=\"w59\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s58",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s58\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s67\"> is a timeline element that contains nested <div id=\"w68\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s67",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s67\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s77\"> is a timeline element that contains nested <div id=\"w78\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s77",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s77\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s92\"> is a timeline element that contains nested <div id=\"w93\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s92",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s92\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s107\"> is a timeline element that contains nested <div id=\"w108\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s107",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s107\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s117\"> is a timeline element that contains nested <div id=\"w118\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s117",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s117\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s124\"> is a timeline element that contains nested <div id=\"w125\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s124",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s124\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s134\"> is a timeline element that contains nested <div id=\"w135\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s134",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s134\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s144\"> is a timeline element that contains nested <div id=\"w145\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s144",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s144\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s161\"> is a timeline element that contains nested <div id=\"w162\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s161",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s161\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s170\"> is a timeline element that contains nested <div id=\"w171\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s170",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s170\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s176\"> is a timeline element that contains nested <div id=\"w177\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s176",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s176\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s185\"> is a timeline element that contains nested <div id=\"w186\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s185",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s185\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s193\"> is a timeline element that contains nested <div id=\"w194\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s193",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s193\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s201\"> is a timeline element that contains nested <div id=\"w202\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s201",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s201\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s207\"> is a timeline element that contains nested <div id=\"w208\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s207",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s207\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s215\"> is a timeline element that contains nested <div id=\"w216\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s215",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s215\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s222\"> is a timeline element that contains nested <div id=\"w223\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s222",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s222\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s231\"> is a timeline element that contains nested <div id=\"w232\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s231",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s231\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s239\"> is a timeline element that contains nested <div id=\"w240\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s239",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s239\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s246\"> is a timeline element that contains nested <div id=\"w247\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s246",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s246\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s254\"> is a timeline element that contains nested <div id=\"w255\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s254",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s254\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s259\"> is a timeline element that contains nested <div id=\"w260\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s259",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s259\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s269\"> is a timeline element that contains nested <div id=\"w270\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s269",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s269\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s275\"> is a timeline element that contains nested <div id=\"w276\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s275",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s275\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s292\"> is a timeline element that contains nested <div id=\"w293\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s292",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s292\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s297\"> is a timeline element that contains nested <div id=\"w298\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s297",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s297\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s303\"> is a timeline element that contains nested <div id=\"w304\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s303",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s303\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s310\"> is a timeline element that contains nested <div id=\"w311\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s310",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s310\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s316\"> is a timeline element that contains nested <div id=\"w317\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s316",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s316\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s321\"> is a timeline element that contains nested <div id=\"w322\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s321",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s321\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 146.817,
+        "selector": "#k95",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 131.92,
+          "top": 299.38,
+          "right": 903.51,
+          "bottom": 901.43,
+          "width": 771.59,
+          "height": 602.04
+        },
+        "containerSelector": "#i96 > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 135.74,
+          "top": 302.36,
+          "right": 899.69,
+          "bottom": 898.45,
+          "width": 763.95,
+          "height": 596.08
+        },
+        "overflow": {
+          "left": 3.82,
+          "right": 3.82,
+          "top": 2.98,
+          "bottom": 2.98
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "k95",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 131.92,
+          "y": 299.38,
+          "width": 771.59,
+          "height": 602.04
+        },
+        "firstSeen": 146.817,
+        "lastSeen": 146.817,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          146.817
+        ]
+      }
+    ],
+    "duration": 528.54,
+    "samples": [
+      29.363,
+      88.09,
+      146.817,
+      205.543,
+      264.27,
+      322.997,
+      381.723,
+      440.45,
+      499.177
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 1,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      29.363,
+      146.817,
+      264.27,
+      381.723,
+      499.177
+    ],
+    "checked": 42,
+    "passed": 42
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 107 text elements stay under it for 0.5 s or more, the smallest \"artificialanalysis.ai/articles\" at 15 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "artificialanalysis.ai/articles",
+        "selector": "#i180 > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 426.19,
+          "y": 395.39,
+          "width": 187.18,
+          "height": 19.01
+        },
+        "time": 245.299,
+        "times": [
+          0.882,
+          10.588,
+          10.588,
+          10.588,
+          21.177,
+          21.177,
+          23.824,
+          24.706,
+          28.236,
+          30.883,
+          31.765,
+          32.648,
+          37.06,
+          37.942,
+          42.354,
+          58.236,
+          58.236,
+          63.531,
+          76.766,
+          76.766,
+          85.59,
+          85.59,
+          101.473,
+          101.473,
+          114.708,
+          114.708,
+          115.591,
+          120.885,
+          127.061,
+          135.885,
+          142.944,
+          142.944,
+          142.944,
+          146.474,
+          155.297,
+          155.297,
+          160.591,
+          162.356,
+          168.533,
+          168.533,
+          174.709,
+          174.709,
+          176.474,
+          188.827,
+          188.827,
+          204.71,
+          204.71,
+          209.122,
+          225.005,
+          225.005,
+          232.063,
+          233.828,
+          238.24,
+          242.652,
+          245.299,
+          245.299,
+          245.299,
+          262.064,
+          262.064,
+          262.946,
+          270.005,
+          277.947,
+          277.947,
+          282.359,
+          285.006,
+          285.006,
+          285.006,
+          285.006,
+          295.594,
+          307.947,
+          316.771,
+          316.771,
+          316.771,
+          316.771,
+          316.771,
+          316.771,
+          318.536,
+          337.948,
+          343.242,
+          343.242,
+          350.301,
+          364.419,
+          371.478,
+          371.478,
+          371.478,
+          374.125,
+          384.714,
+          384.714,
+          384.714,
+          389.125,
+          392.655,
+          392.655,
+          397.067,
+          412.949,
+          417.361,
+          417.361,
+          417.361,
+          427.067,
+          431.479,
+          436.773,
+          436.773,
+          436.773,
+          451.774,
+          457.95,
+          457.95,
+          471.186,
+          502.951
+        ],
+        "fontPx": 15.01,
+        "floorPx": 28,
+        "seconds": 16.765,
+        "elements": [
+          {
+            "selector": "#i180 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "artificialanalysis.ai/articles",
+            "fontPx": 15.01,
+            "time": 245.299,
+            "seconds": 16.765
+          },
+          {
+            "selector": "#i121 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "openai.com/index/astra-law-6-2",
+            "fontPx": 15.03,
+            "time": 168.533,
+            "seconds": 5.294
+          },
+          {
+            "selector": "#i197 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "deploymentsafety.openai.com/gpt-6-2-astra-sol",
+            "fontPx": 15.05,
+            "time": 282.359,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#b8 > div:nth-of-type(2)",
+            "text": "OpenAI · GPT-6.2 Astra and Sol launch film, Nov 17, 2026",
+            "fontPx": 21,
+            "time": 0.882,
+            "seconds": 9.706
+          },
+          {
+            "selector": "#b224 > div:nth-of-type(2)",
+            "text": "@OpenAIDevs on X · building 3D video sets with GPT-6.2 Astra",
+            "fontPx": 21,
+            "time": 337.948,
+            "seconds": 5.294
+          },
+          {
+            "selector": "#b241 > div:nth-of-type(2)",
+            "text": "@OpenAIDevs on X · RC buggy assembly guide made by GPT-6.2 Astra",
+            "fontPx": 21,
+            "time": 350.301,
+            "seconds": 14.118
+          },
+          {
+            "selector": "#b248 > div:nth-of-type(2)",
+            "text": "@emollick on X, Nov 17, 2026",
+            "fontPx": 21,
+            "time": 364.419,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#i81 > div:nth-of-type(2)",
+            "text": "OpenAI chart: score vs cost per task",
+            "fontPx": 21.01,
+            "time": 115.591,
+            "seconds": 27.353
+          },
+          {
+            "selector": "#i96 > div:nth-of-type(2)",
+            "text": "OpenAI chart: Terminal-Bench Science 0.1",
+            "fontPx": 21.01,
+            "time": 142.944,
+            "seconds": 12.353
+          },
+          {
+            "selector": "#i189 > div:nth-of-type(2)",
+            "text": "OpenAI chart: FrontierCode 2.0 (Cognition)",
+            "fontPx": 21.03,
+            "time": 262.946,
+            "seconds": 14.118
+          },
+          {
+            "selector": "#i211 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.03,
+            "time": 318.536,
+            "seconds": 18.529
+          },
+          {
+            "selector": "#i133 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.06,
+            "time": 176.474,
+            "seconds": 12.353
+          },
+          {
+            "selector": "#i192 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.17,
+            "time": 270.005,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#i44 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.18,
+            "time": 63.531,
+            "seconds": 5.294
+          },
+          {
+            "selector": "#i268 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.26,
+            "time": 412.949,
+            "seconds": 4.412
+          },
+          {
+            "selector": "#w15 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "GPT-6.2 Astra",
+            "fontPx": 22,
+            "time": 10.588,
+            "seconds": 10.589
+          },
+          {
+            "selector": "#w20 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Reactions",
+            "fontPx": 22,
+            "time": 21.177,
+            "seconds": 6.176
+          },
+          {
+            "selector": "#w28 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "GPT-6.2 Astra",
+            "fontPx": 22,
+            "time": 28.236,
+            "seconds": 14.117
+          },
+          {
+            "selector": "#w46 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Availability",
+            "fontPx": 22,
+            "time": 58.236,
+            "seconds": 10.589
+          },
+          {
+            "selector": "#w59 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Context",
+            "fontPx": 22,
+            "time": 76.766,
+            "seconds": 8.824
+          },
+          {
+            "selector": "#w68 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Cost",
+            "fontPx": 22,
+            "time": 85.59,
+            "seconds": 15
+          },
+          {
+            "selector": "#w78 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Cost",
+            "fontPx": 22,
+            "time": 101.473,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w93 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · multi-step professional work",
+            "fontPx": 22,
+            "time": 114.708,
+            "seconds": 28.236
+          },
+          {
+            "selector": "#w108 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · scientific work in a terminal",
+            "fontPx": 22,
+            "time": 142.944,
+            "seconds": 12.353
+          },
+          {
+            "selector": "#w118 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · Harvey LAB-AA",
+            "fontPx": 22,
+            "time": 155.297,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w135 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · Artificial Analysis AA-3D",
+            "fontPx": 22,
+            "time": 174.709,
+            "seconds": 14.118
+          },
+          {
+            "selector": "#w145 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · computer-aided design",
+            "fontPx": 22,
+            "time": 188.827,
+            "seconds": 15.883
+          },
+          {
+            "selector": "#w162 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Independent",
+            "fontPx": 22,
+            "time": 204.71,
+            "seconds": 19.412
+          },
+          {
+            "selector": "#w171 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Independent",
+            "fontPx": 22,
+            "time": 225.005,
+            "seconds": 7.058
+          },
+          {
+            "selector": "#w177 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Benchmarks · summary",
+            "fontPx": 22,
+            "time": 232.063,
+            "seconds": 13.236
+          },
+          {
+            "selector": "#w186 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Coding",
+            "fontPx": 22,
+            "time": 245.299,
+            "seconds": 16.765
+          },
+          {
+            "selector": "#w194 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Coding",
+            "fontPx": 22,
+            "time": 262.064,
+            "seconds": 15
+          },
+          {
+            "selector": "#w202 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Preparedness Framework",
+            "fontPx": 22,
+            "time": 277.947,
+            "seconds": 24.706
+          },
+          {
+            "selector": "#w216 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Preparedness Framework",
+            "fontPx": 22,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#w232 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "What people built",
+            "fontPx": 22,
+            "time": 343.242,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#w255 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "What testers said",
+            "fontPx": 22,
+            "time": 371.478,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w260 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "What testers said",
+            "fontPx": 22,
+            "time": 384.714,
+            "seconds": 7.941
+          },
+          {
+            "selector": "#w270 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "What testers said",
+            "fontPx": 22,
+            "time": 392.655,
+            "seconds": 24.706
+          },
+          {
+            "selector": "#w276 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "What testers said",
+            "fontPx": 22,
+            "time": 417.361,
+            "seconds": 19.412
+          },
+          {
+            "selector": "#w293 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "From OpenAI's own safety report",
+            "fontPx": 22,
+            "time": 436.773,
+            "seconds": 21.177
+          },
+          {
+            "selector": "#w304 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Verdict",
+            "fontPx": 22,
+            "time": 471.186,
+            "seconds": 31.765
+          },
+          {
+            "selector": "#w311 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Verdict",
+            "fontPx": 22,
+            "time": 502.951,
+            "seconds": 16.765
+          },
+          {
+            "selector": "#i84 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "~$3 / task",
+            "fontPx": 22.07,
+            "time": 120.885,
+            "seconds": 22.059
+          },
+          {
+            "selector": "#i153 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "2nd",
+            "fontPx": 22.08,
+            "time": 209.122,
+            "seconds": 15
+          },
+          {
+            "selector": "#i102 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "third-party harness",
+            "fontPx": 22.11,
+            "time": 146.474,
+            "seconds": 8.823
+          },
+          {
+            "selector": "#i87 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "~$60 / task",
+            "fontPx": 22.15,
+            "time": 127.061,
+            "seconds": 15.883
+          },
+          {
+            "selector": "#i112 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "~$6 / task",
+            "fontPx": 22.15,
+            "time": 160.591,
+            "seconds": 7.941
+          },
+          {
+            "selector": "#i115 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "~$40 / task",
+            "fontPx": 22.19,
+            "time": 162.356,
+            "seconds": 6.176
+          },
+          {
+            "selector": "#i90 > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "~$4.50 / task",
+            "fontPx": 22.25,
+            "time": 135.885,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#w15 > div:nth-of-type(3)",
+            "text": "Artificial Analysis · OpenAI GPT-6.2 system card · photo: TechCrunch, CC BY 2.0",
+            "fontPx": 23,
+            "time": 10.588,
+            "seconds": 10.589
+          },
+          {
+            "selector": "#w20 > div:nth-of-type(3)",
+            "text": "x.com/mweinbach · x.com/theo",
+            "fontPx": 23,
+            "time": 21.177,
+            "seconds": 6.176
+          },
+          {
+            "selector": "#w37 > div:nth-of-type(2)",
+            "text": "@OpenAI on X, Nov 17, 2026",
+            "fontPx": 23,
+            "time": 42.354,
+            "seconds": 15
+          },
+          {
+            "selector": "#w46 > div:nth-of-type(3)",
+            "text": "@OpenAIDevs on X · OpenAI launch post",
+            "fontPx": 23,
+            "time": 58.236,
+            "seconds": 10.589
+          },
+          {
+            "selector": "#w59 > div:nth-of-type(3)",
+            "text": "SecurityWeek, Nov 12, 2026",
+            "fontPx": 23,
+            "time": 76.766,
+            "seconds": 8.824
+          },
+          {
+            "selector": "#w68 > div:nth-of-type(3)",
+            "text": "Artificial Analysis · OpenAI API pricing · Fable price from third-party listings",
+            "fontPx": 23,
+            "time": 85.59,
+            "seconds": 15
+          },
+          {
+            "selector": "#w78 > div:nth-of-type(3)",
+            "text": "OpenAI launch post",
+            "fontPx": 23,
+            "time": 101.473,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w93 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 launch charts (values read from chart, approximate)",
+            "fontPx": 23,
+            "time": 114.708,
+            "seconds": 28.236
+          },
+          {
+            "selector": "#w108 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 launch charts (approximate)",
+            "fontPx": 23,
+            "time": 142.944,
+            "seconds": 12.353
+          },
+          {
+            "selector": "#w118 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 launch charts (approximate) · bars drawn to a 20% scale",
+            "fontPx": 23,
+            "time": 155.297,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w125 > div:nth-of-type(2)",
+            "text": "openai.com, Nov 17, 2026",
+            "fontPx": 23,
+            "time": 168.533,
+            "seconds": 5.294
+          },
+          {
+            "selector": "#w135 > div:nth-of-type(3)",
+            "text": "artificialanalysis.ai",
+            "fontPx": 23,
+            "time": 174.709,
+            "seconds": 14.118
+          },
+          {
+            "selector": "#w145 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 launch charts (approximate)",
+            "fontPx": 23,
+            "time": 188.827,
+            "seconds": 15.883
+          },
+          {
+            "selector": "#w162 > div:nth-of-type(3)",
+            "text": "@ArtificialAnlys on X, Nov 17, 2026",
+            "fontPx": 23,
+            "time": 204.71,
+            "seconds": 19.412
+          },
+          {
+            "selector": "#w171 > div:nth-of-type(3)",
+            "text": "@EpochAIResearch on X, Nov 18, 2026 · CC BY",
+            "fontPx": 23,
+            "time": 225.005,
+            "seconds": 7.058
+          },
+          {
+            "selector": "#w186 > div:nth-of-type(3)",
+            "text": "Artificial Analysis, Nov 17, 2026",
+            "fontPx": 23,
+            "time": 245.299,
+            "seconds": 16.765
+          },
+          {
+            "selector": "#w194 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 launch charts · Artificial Analysis",
+            "fontPx": 23,
+            "time": 262.064,
+            "seconds": 15
+          },
+          {
+            "selector": "#w202 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 system card, Nov 17, 2026",
+            "fontPx": 23,
+            "time": 277.947,
+            "seconds": 24.706
+          },
+          {
+            "selector": "#w216 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 system card",
+            "fontPx": 23,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#w232 > div:nth-of-type(3)",
+            "text": "OpenAI launch post (described there; no standalone clip published)",
+            "fontPx": 23,
+            "time": 343.242,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#w255 > div:nth-of-type(3)",
+            "text": "x.com/theo (X article, Nov 18, 2026)",
+            "fontPx": 23,
+            "time": 371.478,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#w260 > div:nth-of-type(3)",
+            "text": "x.com/danshipper · x.com/mweinbach",
+            "fontPx": 23,
+            "time": 384.714,
+            "seconds": 7.941
+          },
+          {
+            "selector": "#w270 > div:nth-of-type(3)",
+            "text": "x.com/theo",
+            "fontPx": 23,
+            "time": 392.655,
+            "seconds": 24.706
+          },
+          {
+            "selector": "#w276 > div:nth-of-type(3)",
+            "text": "x.com/danshipper · x.com/emollick · x.com/mattshumer_ (Shipper's praise and criticism are in the same post)",
+            "fontPx": 23,
+            "time": 417.361,
+            "seconds": 19.412
+          },
+          {
+            "selector": "#w293 > div:nth-of-type(3)",
+            "text": "OpenAI GPT-6.2 system card · Alignment section · bars drawn to a 30% scale",
+            "fontPx": 23,
+            "time": 436.773,
+            "seconds": 21.177
+          },
+          {
+            "selector": "#w298 > div:nth-of-type(2)",
+            "text": "OpenAI GPT-6.2 system card (the standard Codex developer prompt reduces both failures)",
+            "fontPx": 23,
+            "time": 457.95,
+            "seconds": 13.236
+          },
+          {
+            "selector": "#i210 > div:nth-of-type(2) > i:nth-of-type(1)",
+            "text": "Low",
+            "fontPx": 24.01,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#i210 > div:nth-of-type(2) > i:nth-of-type(2)",
+            "text": "Medium",
+            "fontPx": 24.01,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#i210 > div:nth-of-type(2) > i:nth-of-type(3)",
+            "text": "High",
+            "fontPx": 24.01,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "i.crit",
+            "text": "Critical",
+            "fontPx": 24.01,
+            "time": 316.771,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#i272 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Every, on X, Nov 17",
+            "fontPx": 24.01,
+            "time": 417.361,
+            "seconds": 19.412
+          },
+          {
+            "selector": "#i295 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "GPT-6.2 system card",
+            "fontPx": 24.02,
+            "time": 457.95,
+            "seconds": 13.236
+          },
+          {
+            "selector": "#i257 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Every, on X",
+            "fontPx": 24.03,
+            "time": 384.714,
+            "seconds": 7.941
+          },
+          {
+            "selector": "#i263 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "X article",
+            "fontPx": 24.07,
+            "time": 397.067,
+            "seconds": 20.294
+          },
+          {
+            "selector": "#i250 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "X article, “Why I hate GPT-6.2 Astra”",
+            "fontPx": 24.09,
+            "time": 374.125,
+            "seconds": 10.588
+          },
+          {
+            "selector": "#i198 > div:nth-of-type(2) > i:nth-of-type(1)",
+            "text": "Low",
+            "fontPx": 24.11,
+            "time": 285.006,
+            "seconds": 17.647
+          },
+          {
+            "selector": "#i198 > div:nth-of-type(2) > i:nth-of-type(2)",
+            "text": "Medium",
+            "fontPx": 24.11,
+            "time": 285.006,
+            "seconds": 17.647
+          },
+          {
+            "selector": "i.on",
+            "text": "High",
+            "fontPx": 24.11,
+            "time": 285.006,
+            "seconds": 17.647
+          },
+          {
+            "selector": "#i198 > div:nth-of-type(2) > i:nth-of-type(4)",
+            "text": "Critical",
+            "fontPx": 24.11,
+            "time": 285.006,
+            "seconds": 17.647
+          },
+          {
+            "selector": "#i205 > span:nth-of-type(1)",
+            "text": "EARLIER ON AI EQUATOR",
+            "fontPx": 24.14,
+            "time": 307.947,
+            "seconds": 8.824
+          },
+          {
+            "selector": "#i17 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "on X, Nov 17",
+            "fontPx": 24.17,
+            "time": 23.824,
+            "seconds": 3.529
+          },
+          {
+            "selector": "#i273 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "on X, Nov 17",
+            "fontPx": 24.19,
+            "time": 427.067,
+            "seconds": 9.706
+          },
+          {
+            "selector": "#i18 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "on X, Nov 17",
+            "fontPx": 24.22,
+            "time": 24.706,
+            "seconds": 2.647
+          },
+          {
+            "selector": "#i258 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "on X",
+            "fontPx": 24.23,
+            "time": 389.125,
+            "seconds": 3.53
+          },
+          {
+            "selector": "#i200 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "compared with its researchers' 2024 baseline",
+            "fontPx": 24.26,
+            "time": 295.594,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#i274 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "on X, Nov 17",
+            "fontPx": 24.28,
+            "time": 431.479,
+            "seconds": 5.294
+          },
+          {
+            "selector": "#i249 > div:nth-of-type(2)",
+            "text": "t3.gg · T3 Code",
+            "fontPx": 25.01,
+            "time": 371.478,
+            "seconds": 13.235
+          },
+          {
+            "selector": "#i9 > div:nth-of-type(2)",
+            "text": "CEO, OpenAI",
+            "fontPx": 25.02,
+            "time": 10.588,
+            "seconds": 10.589
+          },
+          {
+            "selector": "#i278 > div:nth-of-type(1)",
+            "text": "Blocker Deception: hits an obstacle (like a missing file) and leaves it out of the final answer",
+            "fontPx": 26.02,
+            "time": 436.773,
+            "seconds": 21.177
+          },
+          {
+            "selector": "#i173 > span:nth-of-type(1)",
+            "text": "ON PAPER",
+            "fontPx": 26.06,
+            "time": 233.828,
+            "seconds": 11.471
+          },
+          {
+            "selector": "#i22 > span:nth-of-type(1)",
+            "text": "01",
+            "fontPx": 26.09,
+            "time": 30.883,
+            "seconds": 11.47
+          },
+          {
+            "selector": "#i23 > span:nth-of-type(1)",
+            "text": "02",
+            "fontPx": 26.12,
+            "time": 31.765,
+            "seconds": 10.588
+          },
+          {
+            "selector": "#i24 > span:nth-of-type(1)",
+            "text": "03",
+            "fontPx": 26.14,
+            "time": 32.648,
+            "seconds": 9.705
+          },
+          {
+            "selector": "#i174 > span:nth-of-type(1)",
+            "text": "RIGHT BEHIND",
+            "fontPx": 26.19,
+            "time": 238.24,
+            "seconds": 7.059
+          },
+          {
+            "selector": "#i25 > span:nth-of-type(1)",
+            "text": "04",
+            "fontPx": 26.26,
+            "time": 37.06,
+            "seconds": 5.293
+          },
+          {
+            "selector": "#i26 > span:nth-of-type(1)",
+            "text": "05",
+            "fontPx": 26.28,
+            "time": 37.942,
+            "seconds": 4.411
+          },
+          {
+            "selector": "#i285 > div:nth-of-type(1)",
+            "text": "Broken Search Tool: fails to say it could not search",
+            "fontPx": 26.29,
+            "time": 451.774,
+            "seconds": 6.176
+          },
+          {
+            "selector": "#i175 > span:nth-of-type(1)",
+            "text": "COST",
+            "fontPx": 26.33,
+            "time": 242.652,
+            "seconds": 2.647
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"rendered in Blender\" (3 words) is on screen 0.88 s (±0.03 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "rendered in Blender",
+        "selector": "#i230 > div:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1297.53,
+          "y": 629.95,
+          "width": 264.8299999999999,
+          "height": 34.5
+        },
+        "time": 348.702,
+        "words": 3,
+        "seconds": 0.883,
+        "floorSeconds": 1.05
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Subscribe for more AI news\" (5 words) is on screen 1.96 s (±0.03 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Subscribe for more AI news",
+        "selector": "#i320",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 711.3,
+          "y": 674.71,
+          "width": 497.3900000000001,
+          "height": 46
+        },
+        "time": 526.61,
+        "words": 5,
+        "seconds": 1.958,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.882000000000005,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "320adc06-f9a9-4b5a-8837-f8dcf3c1da5e",
+    "revision": "9c7dca01-622a-40f2-8f66-59b113db58d9",
+    "report": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\oai\\.hyperframes\\artifacts\\checks\\320adc06-f9a9-4b5a-8837-f8dcf3c1da5e.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.16",
+    "latestVersion": "0.9.64",
+    "updateAvailable": true,
+    "checkedAt": "2026-11-17T22:39:20.463Z",
+    "skillsOutdated": 0,
+    "skillsMissing": 0
+  }
+}

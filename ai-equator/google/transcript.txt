@@ -1,0 +1,120 @@
+(0:00.00) Seven months ago, people were asking a question that would have sounded crazy a few years earlier.
+(0:05.62) Has Google lost the AI race?
+(0:07.92) The company that invented the technology behind chat GPT had gone more than seven months without a new top-tier model.
+(0:15.08) Its big summer release got cancelled, its AI lab got reshuffled, and OpenAI and Anthropic kept shipping again and again.
+(0:23.72) Now look at the last nine days.
+(0:25.96) November 10th, Gemini 4 Carbon opens to the public.
+(0:29.30) November 12th, Gemini 4 Hydrogen goes live in Google search for everyone on Earth.
+(0:35.46) November 18th, Gemini 4 Neon drops.
+(0:38.88) And today, Google has two of the four smartest models in the world, on one of the biggest independent leaderboards.
+(0:45.74) So today, let's talk about Google's comeback, how it happened, what every one of these new models does,
+(0:51.86) how they stack up against OpenAI and Anthropic, and whether Google is actually back.
+(0:56.42) Let's rewind first, because the comeback only makes sense if you know how bad it got.
+(1:02.02) At the end of last year, Google was doing great, Gemini 3 Pro launched in November 2025,
+(1:08.62) and Gemini 3.1 Pro even sat at number one on artificial analysis for a few weeks.
+(1:14.70) Then, things went quiet.
+(1:16.90) Google promised Gemini 3.5 Pro for June 2026.
+(1:21.42) June came, and it didn't ship.
+(1:22.84) Eventually, Google confirmed it had canceled 3.5 Pro completely, and moved straight to Gemini 4 Point.
+(1:29.56) Meanwhile, OpenAI released GPT-6 Astra, and Anthropic released Fable 5.1, then Opus 5.5,
+(1:37.32) and Google's own messaging quietly shifted, from we're the smartest to we're the cheapest.
+(1:44.34) That's usually not what a leader sounds like.
+(1:46.96) Then, on September 30th, Google finally hit back.
+(1:50.46) Model 1, Gemini 4 Argon.
+(1:53.76) Argon was Google's first Frontier model in more than seven months.
+(1:58.28) And Google picked a new naming system, chemical elements, Argon, Carbon, Hydrogen, Neon,
+(2:05.32) Goodbye Pro, and Flash.
+(2:07.26) On Google's own numbers, Argon led on 14 of the 19 most common benchmarks,
+(2:12.54) including the top score on DeepSWE, a big coding agent test.
+(2:17.24) But the independent picture was more modest.
+(2:19.26) Artificial analysis gave it a 53, tied with GPT-6 Astra, and behind Anthropic's best.
+(2:26.70) And at first, almost nobody could even use it, because it was going through testing by the US government.
+(2:32.42) Still, analysts called it what it was.
+(2:35.12) Google was back among the top three labs.
+(2:38.44) Not leading, but in the race again.
+(2:40.98) Model 2, Gemini 4 Carbon.
+(2:43.68) Announced October 28th, and opened to the public on November 10th.
+(2:47.48) Carbon is Google's heavyweight.
+(2:50.14) It's built on Argon and pushed harder on two things.
+(2:54.00) Cybersecurity and long-running tasks that take hours or even days.
+(2:58.84) And this is the moment the comeback became real.
+(3:01.82) At launch, Carbon went straight to number one on the Artificial Analysis Intelligence Index.
+(3:07.24) For the first time in months, Google had the smartest model in the world on that leaderboard.
+(3:11.86) It held that crown for about 12 days, until Anthropic released Fable 5.2 on November 9th.
+(3:18.96) But the point was made, Google can build a number one model again.
+(3:23.00) If you want the full breakdown of Carbon, its tests, and what people built with it, I made a whole video on it.
+(3:29.60) Links up there!
+(3:31.08) Model 3, Gemini 4 Hydrogen.
+(3:33.70) Two days after Carbon went public, on November 12th, Google released Hydrogen.
+(3:37.96) And honestly, this might be the most important launch of all of them, because of where it went.
+(3:43.96) Hydrogen replaced Gemini 3.8 Flash.
+(3:47.36) It's now the model powering Google Search for every user worldwide.
+(3:51.70) It's in the Gemini app, and free users get it automatically when it's the right model for the job.
+(3:57.12) Think about the reach there.
+(3:58.64) More people will use Hydrogen this month than most AI models will ever touch.
+(4:02.58) It's fast and cheap, $1.50 per million input tokens, and $7.50 per million output.
+(4:09.70) And on Terminal Bench 4.1, a coding test, it's scored 57%.
+(4:14.60) The old 3.8 Flash scored 18.2.
+(4:18.20) That's more than three times better in one generation.
+(4:21.72) Google also built something clever around it, called Orchestrator.
+(4:25.72) In Google's coding tool, Antigravity, Carbon does the thinking and planning, and Hydrogen does the routine work,
+(4:31.90) like writing code, updating packages, and running tests.
+(4:36.18) Google says that gets you close to Carbon's success rate, while using 24% less quota, and finishing 19% faster.
+(4:44.92) Model 4, the newest one, Gemini 4 Neon.
+(4:48.82) Neon launched yesterday, November 18th, and it's the model that ties this whole comeback together.
+(4:55.00) Neon is adapted from Carbon, and Google positions it right between Hydrogen and Carbon.
+(4:59.78) The pitch is simple. Carbon level intelligence at much faster speeds, and on the numbers, it delivers.
+(5:07.14) On the Artificial Analysis Intelligence Index, Neon scores 61.
+(5:12.00) That's above Carbon at 60, above Claude Opus 5.5 at 59, and above GPT 6.2 Sol at 57.
+(5:20.88) Only two models score higher, Fable 5.2 at 65, and GPT 6.2 Astra at 62.
+(5:27.38) So Neon, which Google treats as its mid-sized model, lands third in the world on that index.
+(5:34.04) On the Vals Index, Neon scores 70.9% ahead of Opus 5.5 and Sol, and just behind Fable 5.2 at 71.3.
+(5:44.28) Some wins are big.
+(5:46.02) On Automation Bench, a business workflow test, Neon gets 56.3% against 42.5 for Opus.
+(5:53.44) On Agents Last Exam, it gets 75.8 against 71.6 for Opus, and 73 for Sol.
+(6:01.50) And on a long-context test called Graph Walks, it scores 95.2% against 66.8 for Opus.
+(6:09.20) It doesn't win everything. It trails Opus 5.5 slightly on Terminal Bench and Frontier Code,
+(6:15.16) and Sol beats it on chart reading, and these are Google's own comparisons.
+(6:18.60) On Arena, where real people vote, Neon is third on text, and second on the Agent Leaderboard,
+(6:25.68) behind only Fable 5.2.
+(6:28.36) Google's Logan Kilpatrick put it like this.
+(6:31.36) Neon feels like the right mix of intelligence, speed, and usability, punching well above its model class.
+(6:37.80) In the Gemini app, Neon now replaces Argon for Pro and Ultra subscribers,
+(6:42.66) and the old Gemini 3.1 Pro is finally gone.
+(6:45.78) Now, the price, because there's a catch, Neon costs $3 per million input tokens and 15 per million output.
+(6:54.42) Right now, that's actually 50% more per token than Carbon, because Carbon is on a launch discount.
+(7:00.60) But on December 1, Carbon's price doubles to 4 and 20.
+(7:04.88) From then on, Neon becomes the cheaper option.
+(7:08.08) Google also says that, at its default setting, Neon matches Carbon's score at 32% lower cost per task,
+(7:15.20) because it uses fewer tokens.
+(7:17.76) Okay, so let's put it all together.
+(7:20.58) Fifty days ago, Google had no frontier model on the market.
+(7:24.66) Today it has a full lineup, Carbon for the hardest long jobs, Neon for fast, high-level reasoning,
+(7:31.76) Hydrogen for speed and scale, running inside Google Search for billions of people,
+(7:36.62) and on artificial analysis, Neon and Carbon sit at number 3 and number 4 in the world.
+(7:42.60) But let's be fair to the other side.
+(7:44.18) Google is not number 1 right now.
+(7:46.94) Fable 5.2 still leads artificial analysis by 4 points over Neon.
+(7:51.76) GPT 6.2 Astra is ahead too.
+(7:54.82) Carbon's number 1 spot lasted less than 2 weeks.
+(7:58.02) And Google's own safety report says some unresolved risk thresholds for biosecurity and cybersecurity
+(8:03.14) carried over from Argon to Neon.
+(8:06.20) The other thing is speed of competition.
+(8:08.84) OpenAI shipped GPT 6.2 days ago.
+(8:12.24) Anthropic shipped Fable 5.2 10 days ago.
+(8:16.34) So any lead in this race lasts weeks, not months.
+(8:19.98) So is Google back?
+(8:21.96) My answer?
+(8:23.06) Yes.
+(8:23.90) Not as the clear leader, but as a real threat at the very top again.
+(8:28.22) And Google has something OpenAI and Anthropic don't.
+(8:32.76) Search, Android, Chrome, Workspace.
+(8:36.38) When Google ships a good model, it can put it in front of billions of people the same day.
+(8:40.54) That's exactly what it just did with Hydrogen.
+(8:44.02) Seven months ago, people were writing Google off.
+(8:46.92) Now it's shipping faster than anyone, and its mid-sized model is beating Claude Opus
+(8:51.68) and GPT 6.2 Saul on the big leaderboards.
+(8:55.46) The race isn't a two-horse race anymore.
+(8:58.06) Do you think Google can take the number one spot back before the end of the year?
+(9:02.32) Let me know in the comments.
+(9:03.98) This has been AI Equator.

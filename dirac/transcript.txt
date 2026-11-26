@@ -1,0 +1,283 @@
+[   0.00] On the 2nd of August, 1932, a young physicist in California held a photograph up to the light.
+[   8.16] His name was Carl Anderson. For months, he'd been photographing cosmic rays – tiny particles
+[  14.98] that rained down on Earth from space. He caught them in a box filled with cold, misty vapour.
+[  21.84] Every particle that streaked through left a thin trail of droplets,
+[  25.54] like the white line a jet leaves across the sky. A magnet around the box made the trails bend.
+[  32.60] Electrons carry a negative charge, so they always curved one way.
+[  36.62] But on this photograph, one trail curved the other way. It looked exactly like an electron.
+[  42.62] Same size, same kind of track. Except it was positive.
+[  47.48] Anderson didn't know it yet, but a quiet man in England had predicted that particle
+[  52.10] four years earlier. He hadn't used a telescope or a laboratory. He'd used an equation.
+[  58.92] That equation told him something so strange that, at first, even he didn't believe it.
+[  65.18] It said that every bit of matter in the universe has a mirror twin.
+[  69.50] And if the two ever meet, they destroy each other in a flash of pure energy – antimatter.
+[  76.10] So how did a few symbols on paper predict a kind of matter nobody had ever seen?
+[  80.96] What is antimatter, really? And why does the fact that you exist at all
+[  86.24] still have physicists scratching their heads?
+[  89.50] The man behind the equation was Paul Dirac. He was born in Bristol, England in 1902.
+[  96.38] He trained first as an electrical engineer and graduated at just 19.
+[ 101.56] Then he switched to mathematics and ended up at Cambridge.
+[ 105.40] Dirac was famously quiet. He'd answer questions with a single word, or not at all.
+[ 111.46] His colleagues joked that the unit of speech should be called a dirac,
+[ 115.78] meaning one word per hour. But inside that silence was one of the sharpest minds of the
+[ 121.88] century. And in the late 1920s, he set his mind on a problem that had defeated everyone else.
+[ 129.48] At the time, physics had two great theories. They refused to work together.
+[ 134.84] The first was Einstein's Special Relativity, from 1905.
+[ 140.14] It describes things moving very fast, close to the speed of light.
+[ 144.40] At those speeds, strange things happen. Clocks run slow. Lengths shrink.
+[ 150.00] Mass and energy turn out to be the same thing.
+[ 153.18] The second was the brand new quantum mechanics. It describes the tiny world of atoms and
+[ 158.82] electrons, where particles behave like waves and nothing is ever quite certain.
+[ 164.18] In 1926, Erwin Schrödinger wrote down an equation that described electrons beautifully.
+[ 171.28] It predicted the colours of light that atoms give off.
+[ 174.60] It explained chemistry. But it had a blind spot.
+[ 177.98] It ignored relativity. It treated electrons as if they were always moving slowly.
+[ 184.10] And electrons aren't always slow. In a heavy atom like gold,
+[ 188.80] the innermost electrons race around at more than half the speed of light.
+[ 192.80] At those speeds, relativity matters. It even changes what you see.
+[ 198.78] Those fast moving electrons are a big part of why gold is yellow,
+[ 203.36] instead of silvery like most other metals.
+[ 206.42] So physics needed a new equation, one that described electrons as quantum waves,
+[ 212.10] and also obeyed Einstein's rules for speed. People tried.
+[ 216.68] Their attempts gave strange results, including probabilities that came out negative.
+[ 221.58] That's like saying there's a minus 30% chance of rain. It makes no sense.
+[ 227.62] Dirac wanted to do it properly.
+[ 229.90] Here's where we need one piece of Einstein's thinking.
+[ 233.34] You might know E equals mc squared.
+[ 236.96] That tells you the energy locked inside a particle when it's sitting still.
+[ 241.54] But a moving particle has extra energy from its motion.
+[ 245.32] Einstein's full formula ties the two together.
+[ 248.26] And it does it in a surprising way.
+[ 250.92] Picture a right triangle.
+[ 253.72] One short side is the energy a particle has just from its mass, sitting still.
+[ 259.66] The other short side comes from its motion, its momentum.
+[ 263.48] And the long side, across from the right angle, is its total energy.
+[ 268.90] It's the Pythagorean theorem, hiding inside relativity.
+[ 273.50] The square of the total energy equals the squares of the other two, added together.
+[ 278.54] And that creates a problem.
+[ 281.28] The formula doesn't give you energy directly.
+[ 284.04] It gives you energy squared.
+[ 286.24] To get the actual energy, you have to take a square root.
+[ 290.16] Dirac believed the right equation for an electron had to be simple in how it treated time.
+[ 295.26] No squares.
+[ 296.60] Just the plain first power.
+[ 299.02] Which meant he somehow had to take the square root of that whole sum
+[ 302.56] inside the equation itself.
+[ 305.62] Try it with ordinary numbers, and it doesn't work.
+[ 308.54] The square root of a sum isn't the sum of square roots.
+[ 312.26] The square root of 9 plus 16 is 5, not 3 plus 4.
+[ 317.14] So Dirac did something bold.
+[ 319.44] He decided the pieces of his equation didn't have to be ordinary numbers.
+[ 324.66] Instead, he used grids of numbers called matrices.
+[ 328.54] And matrices have a strange property.
+[ 331.24] When you multiply them, the order matters.
+[ 334.38] Think about getting dressed.
+[ 335.68] Socks, then shoes, works fine.
+[ 339.02] Shoes, then socks.
+[ 340.66] Gives you a very different result.
+[ 342.88] Same two steps.
+[ 344.10] Different order.
+[ 345.16] Different outcome.
+[ 346.70] With ordinary numbers, 3 times 4 and 4 times 3 are the same.
+[ 351.50] With matrices, A times B can be completely different from B times A.
+[ 356.70] That quirk was exactly what Dirac needed.
+[ 359.62] With the right set of matrices, the messy square root came out perfectly.
+[ 363.92] But the smallest grids that worked were 4 by 4.
+[ 367.20] And that meant something physical.
+[ 369.06] The wave describing an electron couldn't be one simple wave anymore.
+[ 373.04] It had to come in four parts, stacked together.
+[ 376.82] Four parts.
+[ 378.22] For one electron.
+[ 380.08] What on earth were they?
+[ 382.02] Two of them turned out to be a gift.
+[ 384.68] Electrons have a property called spin.
+[ 387.28] It makes each electron act like a tiny bar magnet, pointing either up or down.
+[ 393.74] Physicists knew spin was real.
+[ 396.22] Experiments had shown it.
+[ 398.12] But nobody understood where it came from.
+[ 400.84] In the old equations, it had to be bolted on by hand,
+[ 404.72] like a spare part that didn't quite belong.
+[ 407.54] In Dirac's equation, spin simply appeared.
+[ 411.10] Nobody put it there.
+[ 412.64] It fell out of the mathematics on its own,
+[ 415.36] with exactly the right strength to match experiments.
+[ 419.00] Dirac published his equation in early 1928.
+[ 422.28] Physicists were stunned.
+[ 424.54] One who was working in Germany at the time later recalled the mood.
+[ 428.64] Doing physics that way just wasn't done, he said.
+[ 431.92] And yet the equation was immediately recognised as the answer.
+[ 436.00] So two of the four parts covered spin.
+[ 438.84] Up and down.
+[ 440.66] Which left the other two.
+[ 442.56] Remember that square root.
+[ 444.70] Every square root hides a second answer.
+[ 447.20] You know 3 times 3 is 9.
+[ 449.54] But minus 3 times minus 3 is also 9.
+[ 452.28] So the square root of 9 is 3, or minus 3.
+[ 456.54] Usually scientists just throw the negative answer away.
+[ 459.98] If you're working out how long a ball takes to fall,
+[ 462.94] and the math says minus 2 seconds, you ignore it.
+[ 466.30] Time doesn't run backward.
+[ 468.52] But in Dirac's equation, the negative answers wouldn't go away.
+[ 472.16] The other two parts described electrons with negative energy.
+[ 476.16] Less than nothing.
+[ 477.94] And this was a disaster.
+[ 479.22] In nature, things tend to fall to the lowest energy they can reach.
+[ 483.98] A ball rolls downhill.
+[ 485.80] Heat flows out of a hot cup.
+[ 488.02] If negative energy states existed,
+[ 490.42] an ordinary electron in an atom could drop into one, giving off light.
+[ 494.78] Then drop deeper and deeper, forever.
+[ 498.22] There'd be no bottom.
+[ 500.06] Every atom in the universe would collapse in a tiny fraction of a second,
+[ 504.92] blazing out light as it went.
+[ 507.08] Yet here you are.
+[ 508.30] Atoms are fine.
+[ 510.24] So either the equation was wrong,
+[ 512.52] or something was stopping electrons from falling.
+[ 515.86] Dirac's answer in 1929 was one of the strangest ideas in the history of science.
+[ 522.80] What if all those negative energy places are already full?
+[ 527.18] There's a rule in quantum physics, discovered by Wolfgang Pauli.
+[ 531.96] No two electrons can sit in exactly the same state.
+[ 535.62] It's like seats in a cinema.
+[ 537.78] Once a seat is taken, nobody else can sit there.
+[ 541.82] So imagine that the whole of empty space is secretly packed with electrons
+[ 545.94] in every negative energy seat.
+[ 548.54] A bottomless, completely full sea.
+[ 551.34] Your ordinary electron can't fall in,
+[ 554.12] because there's no empty seat to fall into.
+[ 557.24] We never notice this sea,
+[ 559.10] because it's perfectly smooth and the same everywhere.
+[ 562.70] Fish don't notice water.
+[ 564.68] But what if you knocked one electron out of the sea,
+[ 568.02] you'd see a normal electron appear,
+[ 570.30] and you'd leave behind a gap, a hole in the sea.
+[ 574.10] Think of a bubble rising through a bottle of water.
+[ 577.20] It's really just a gap where water isn't,
+[ 580.04] but it moves, and it acts like a thing of its own.
+[ 583.92] Dirac realised the hole would act like a particle too,
+[ 587.62] and because it's a missing negative electron,
+[ 590.12] it would behave like something with a positive charge.
+[ 593.42] So what was this positive particle?
+[ 596.26] In 1929, scientists knew of only one positive particle,
+[ 601.52] the proton, in the centre of every atom.
+[ 604.94] So Dirac guessed the holes were protons.
+[ 607.62] It didn't work.
+[ 609.08] Other physicists, including Robert Oppenheimer
+[ 611.58] and the German mathematician Hermann Weyl, pointed out the problem.
+[ 615.80] A hole would have to weigh exactly the same as an electron.
+[ 619.06] A proton is nearly 2,000 times heavier.
+[ 623.88] Oppenheimer spotted something worse.
+[ 626.50] If an electron fell into its hole,
+[ 629.00] the two would cancel out, turning into a burst of energy.
+[ 633.06] If holes were protons,
+[ 635.18] every hydrogen atom would destroy itself almost instantly.
+[ 639.76] So in 1931, Dirac took the leap.
+[ 643.60] The hole wasn't a proton.
+[ 645.18] It was a brand new particle, never seen.
+[ 647.70] It would have the same mass as an electron,
+[ 651.24] but the opposite charge, an anti-electron.
+[ 655.34] He even suggested the proton might have an anti-version of its own.
+[ 659.64] He was predicting a whole new kind of matter,
+[ 662.20] using nothing but the logic of an equation.
+[ 665.34] Now, back to California.
+[ 667.48] Back to Carl Anderson and his photograph.
+[ 670.56] Anderson faced a puzzle.
+[ 672.34] A track curving the wrong way could mean a positive particle.
+[ 675.84] Or it could just be an ordinary electron,
+[ 679.16] travelling backward up through his chamber instead of down.
+[ 682.88] So he put a thin plate of lead across the middle of the chamber.
+[ 686.80] Any particle passing through the plate would lose energy and slow down.
+[ 691.46] And slower particles curve more tightly in a magnet.
+[ 695.20] On the photograph from August 2nd,
+[ 697.68] the track was gently curved on one side of the plate,
+[ 701.24] and curved more tightly on the other.
+[ 703.16] That told him which way the particle had been travelling.
+[ 707.10] It had been moving upward, and curving that way, it had to be positive.
+[ 712.76] But it was far too light to be a proton.
+[ 715.50] It was electron-sized.
+[ 717.66] Anderson called it the positron.
+[ 719.98] He hadn't been hunting for antimatter at all.
+[ 722.80] Only later did the connection to Dirac's prediction become clear.
+[ 726.74] He wasn't the only one who'd seen these tracks either.
+[ 729.98] Teams in England and France had spotted similar ones.
+[ 733.90] They just hadn't realised what they were.
+[ 736.86] In 1933, Patrick Blackett and Giuseppe Occhialini,
+[ 741.64] working in Cambridge, confirmed the positron.
+[ 745.26] They tied it straight back to Dirac.
+[ 747.88] The anti-electron was real.
+[ 751.00] That same year, Dirac was awarded the Nobel Prize in Physics.
+[ 755.52] At just 31.
+[ 756.72] He was the youngest theorist ever to win it.
+[ 760.72] His first reaction was to turn it down.
+[ 763.94] He hated publicity.
+[ 766.10] Then Ernest Rutherford told him that refusing a Nobel Prize
+[ 770.12] would bring him far more attention than accepting it.
+[ 773.44] So he went to Stockholm.
+[ 775.02] He brought his mother.
+[ 776.86] Anderson won the Nobel Prize three years later, also at 31.
+[ 781.48] So what is antimatter, exactly?
+[ 784.56] Today we understand that almost every kind of particle has an antiparticle.
+[ 789.68] Same mass, opposite charge, opposite in other properties too.
+[ 794.46] The electron has the positron, the proton has the antiproton,
+[ 798.44] which scientists finally created in 1955.
+[ 802.18] Put an antiproton and a positron together, and you get anti-hydrogen.
+[ 807.16] The first atoms of it were made in 1995, at CERN near Geneva.
+[ 812.08] And when matter and antimatter meet, they annihilate.
+[ 816.04] Both vanish completely, turning their entire mass into energy,
+[ 820.86] exactly as E equals mc squared says.
+[ 824.68] In 2023, researchers at CERN answered a question people had wondered about for decades.
+[ 831.56] Does antimatter fall down or up?
+[ 834.88] They dropped anti-hydrogen atoms and watched.
+[ 838.24] It falls down.
+[ 839.44] Antimatter isn't only made in laboratories.
+[ 843.28] Bananas make it.
+[ 844.66] They contain a slightly radioactive form of potassium,
+[ 848.46] which now and then gives off a single positron.
+[ 851.70] Thunderstorms make it too.
+[ 853.74] Satellites have caught bursts of antimatter shooting up from lightning.
+[ 858.02] Making it is incredibly hard.
+[ 860.46] Even after decades of work, all the antimatter ever made at CERN
+[ 864.56] adds up to only a tiny fraction of a gram.
+[ 867.92] And the old picture of an infinite, invisible sea of electrons?
+[ 872.62] Physics eventually moved past it.
+[ 875.14] Later theories describe antimatter more cleanly, without needing a sea at all.
+[ 880.40] But the prediction it led to was exactly right.
+[ 883.78] Which leaves the biggest mystery of all.
+[ 886.42] According to our best theories,
+[ 888.32] the Big Bang should have made matter and antimatter in equal amounts, one for one.
+[ 894.06] And if that's what happened, every particle would have met its antiparticle.
+[ 898.98] They'd have annihilated each other, leaving behind nothing but light.
+[ 903.54] No stars, no planets, no people.
+[ 907.46] But the universe is full of matter, so something tipped the balance.
+[ 912.54] Physicists estimate that for roughly every billion particles of antimatter,
+[ 917.12] there was one extra particle of matter.
+[ 919.60] Just one.
+[ 920.90] The billion pairs destroyed each other.
+[ 923.42] And the leftover one in a billion became everything you've ever seen.
+[ 928.36] The sun, the earth, the air you breathe, and you.
+[ 933.06] Why was there that tiny extra bit of matter?
+[ 936.62] Nobody knows.
+[ 938.10] It's one of the biggest open questions in physics.
+[ 941.24] And it was Dirac's equation that first made it a question at all.
+[ 945.78] Paul Dirac died in 1984, in Florida.
+[ 949.62] In 1995, a stone in his memory was set into the floor of Westminster Abbey in London,
+[ 956.22] close to the monument of Isaac Newton.
+[ 959.02] Carved into it is his equation, written in a modern shorthand that
+[ 962.98] fits on a single short line.
+[ 965.28] A handful of symbols.
+[ 967.32] And inside them, an electron spin, a mirror world of antimatter,
+[ 972.22] and a question about why the universe has anything in it at all.
+[ 976.24] So how did an equation predict antimatter?
+[ 978.98] Dirac set out to describe the electron in a way that obeyed both quantum mechanics
+[ 983.80] and Einstein's relativity.
+[ 986.36] To do that, he had to take a square root.
+[ 989.34] And every square root has two answers.
+[ 992.46] He refused to throw the second one away.
+[ 995.28] He followed the math wherever it went,
+[ 997.78] even when it pointed somewhere nobody had ever looked.
+[1001.44] And four years later, a track in a cloud chamber proved the math was right.
+[1006.94] The next time you look at the night sky, full of stars,
+[1010.48] remember what you're really seeing.
+[1012.78] The tiny bit of matter that survived.
+[1015.68] The one in a billion that didn't meet its twin.

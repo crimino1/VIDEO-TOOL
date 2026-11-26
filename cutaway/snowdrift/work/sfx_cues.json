@@ -1,0 +1,248 @@
+{
+ "video": "C:/Users/daggu222105/VIDEO-TOOL/cutaway/snowdrift/render/draft_15fps.mp4",
+ "cues": [
+  {
+   "t": 0.0,
+   "label": "snow steps (walk in)",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowsteps/walking-on-snow_b5ffb096.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 4.5,
+   "fade_out": 0.5,
+   "gain_db": 4.0
+  },
+  {
+   "t": 4.5200000000000005,
+   "label": "steps backwards + brush",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowsteps/snow-walk_8b7644c8.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 2.8,
+   "fade_out": 0.6,
+   "gain_db": 1.0
+  },
+  {
+   "t": 4.82,
+   "label": "branch sweep",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowdig/snow-shovel-driveway-wav_e6b65b6a.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "slice": [
+    1.0,
+    2.4
+   ],
+   "fade_out": 0.5,
+   "gain_db": -1.0
+  },
+  {
+   "t": 7.2,
+   "label": "cold gust",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/windgust/wind-gust_72f441df.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 2.4,
+   "fade_in": 0.3,
+   "fade_out": 0.9,
+   "gain_db": 7.0
+  },
+  {
+   "t": 9.675,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_15848b7b.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": 0,
+   "gain_db": 5.0
+  },
+  {
+   "t": 10.575,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowdig/shovel-sand-gravel-snow_3f4501af.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": -1,
+   "gain_db": 5.0
+  },
+  {
+   "t": 11.475,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_a1d49325.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": 1,
+   "gain_db": 5.0
+  },
+  {
+   "t": 12.375,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_15848b7b.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": -2,
+   "gain_db": 5.0
+  },
+  {
+   "t": 13.275,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowdig/shovel-sand-gravel-snow_3f4501af.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": 0,
+   "gain_db": 5.0
+  },
+  {
+   "t": 14.175,
+   "label": "dig snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_a1d49325.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": -1,
+   "gain_db": 5.0
+  },
+  {
+   "t": 18.04,
+   "label": "stick through snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/footstep-in-the-snow-04-raw_4a429fd8.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": 3,
+   "gain_db": 4.0
+  },
+  {
+   "t": 24.16,
+   "label": "soldiers' steps",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowsteps/footsteps-mountain-boots-snow-walk-mono-_dbd596fc.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 2.6,
+   "fade_out": 0.6,
+   "gain_db": 2.0
+  },
+  {
+   "t": 27.45,
+   "label": "pole stabs snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/footstep-in-the-snow-03-raw_7ab11a2f.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "pitch": 0,
+   "gain_db": 3.0
+  },
+  {
+   "t": 28.55,
+   "label": "pole stabs snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/footstep-in-the-snow-03-raw_7ab11a2f.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "pitch": 0,
+   "gain_db": 3.0
+  },
+  {
+   "t": 29.65,
+   "label": "pole hits wood",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/woodknock/wood-knock-clean-close-wav_47aa1d50.mp3",
+   "role": "hit",
+   "anchor": "arrive",
+   "pitch": -2,
+   "gain_db": 6.0
+  },
+  {
+   "t": 30.75,
+   "label": "pole hits wood",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/woodknock/wood-knock_4f353076.mp3",
+   "role": "hit",
+   "anchor": "arrive",
+   "pitch": -2,
+   "gain_db": 6.0
+  },
+  {
+   "t": 28.0,
+   "label": "pole stabs snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/footstep-in-the-snow-03-raw_7ab11a2f.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "pitch": 1,
+   "gain_db": 3.0
+  },
+  {
+   "t": 29.1,
+   "label": "pole stabs snow",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/footstep-in-the-snow-03-raw_7ab11a2f.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.7,
+   "pitch": 1,
+   "gain_db": 3.0
+  },
+  {
+   "t": 30.2,
+   "label": "pole hits wood",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/woodknock/wood-knock_4f353076.mp3",
+   "role": "hit",
+   "anchor": "arrive",
+   "pitch": -3,
+   "gain_db": 6.0
+  },
+  {
+   "t": 31.32,
+   "label": "storm gust",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/windgust/blizzard-looped-aif_3e186348.mp3",
+   "role": "ambience",
+   "anchor": "start",
+   "max_dur": 3.4,
+   "fade_in": 0.4,
+   "fade_out": 1.4,
+   "gain_db": 9.0
+  },
+  {
+   "t": 34.875,
+   "label": "dig new room",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowdig/shovel-sand-gravel-snow_3f4501af.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": -1,
+   "gain_db": 4.0
+  },
+  {
+   "t": 35.775,
+   "label": "dig new room",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_a1d49325.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": 0,
+   "gain_db": 4.0
+  },
+  {
+   "t": 36.675,
+   "label": "dig new room",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowcrunch/snow-block-of-snow-igloo-brick-put-down-_15848b7b.mp3",
+   "role": "foley",
+   "anchor": "arrive",
+   "max_dur": 0.9,
+   "pitch": -2,
+   "gain_db": 4.0
+  },
+  {
+   "t": 38.620000000000005,
+   "label": "steps on the packed path",
+   "file": "C:/Users/daggu222105/VIDEO-TOOL/sfx-library/openverse/snowsteps/footsteps-snow-20-degrees-c-aif_7879b7ad.mp3",
+   "role": "foley",
+   "anchor": "start",
+   "max_dur": 4.2,
+   "fade_in": 0.3,
+   "fade_out": 0.8,
+   "gain_db": 1.0
+  }
+ ]
+}

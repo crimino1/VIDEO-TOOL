@@ -1,0 +1,176 @@
+{
+ "video": "C:/Users/daggu222105/VIDEO-TOOL/ai-equator/riemann/sfxtest/clip40.mp4",
+ "keep_audio": "auto",
+ "cues": [
+  {
+   "t": 5.9,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.6,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0
+  },
+  {
+   "t": 12.38,
+   "label": "wipe",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.7,
+    "max_dur": 1.4,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -4.0
+  },
+  {
+   "t": 21.48,
+   "label": "hit",
+   "_g": 1.0,
+   "pick": {
+    "role": "hit",
+    "punchy": true,
+    "max_dur": 1.3
+   },
+   "gain_db": 0.0
+  },
+  {
+   "t": 21.58,
+   "label": "tick",
+   "_g": 1.0,
+   "pick": {
+    "role": "click",
+    "max_dur": 0.25,
+    "bright": true,
+    "onsets_max": 1
+   },
+   "gain_db": -2.0
+  },
+  {
+   "t": 25.6,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.5,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": -2
+  },
+  {
+   "t": 27.0,
+   "label": "pop x0.70",
+   "_g": 0.7,
+   "pick": {
+    "role": "pop",
+    "max_dur": 0.6,
+    "onsets_max": 1
+   },
+   "gain_db": -3.1
+  },
+  {
+   "t": 28.64,
+   "label": "pop x0.70",
+   "_g": 0.7,
+   "pick": {
+    "role": "pop",
+    "max_dur": 0.6,
+    "onsets_max": 1
+   },
+   "gain_db": -3.1,
+   "pitch": -2
+  },
+  {
+   "t": 30.32,
+   "label": "pop x0.70",
+   "_g": 0.7,
+   "pick": {
+    "role": "pop",
+    "max_dur": 0.6,
+    "onsets_max": 1
+   },
+   "gain_db": -3.1,
+   "pitch": 2
+  },
+  {
+   "t": 34.66,
+   "label": "pop x0.70",
+   "_g": 0.7,
+   "pick": {
+    "role": "pop",
+    "max_dur": 0.6,
+    "onsets_max": 1
+   },
+   "gain_db": -3.1,
+   "pitch": -3
+  },
+  {
+   "t": 38.3,
+   "label": "wipe",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.7,
+    "max_dur": 1.4,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -4.0,
+   "pitch": -2
+  }
+ ],
+ "_draft": {
+  "source": "C:/Users/daggu222105/VIDEO-TOOL/ai-equator/riemann/sfxtest/events.json",
+  "events": 10,
+  "thinned": 0,
+  "thinned_by_kind": {},
+  "fused": 0,
+  "routed": {
+   "whoosh": 2,
+   "wipe": 2,
+   "hit": 1,
+   "tick": 1,
+   "pop": 4
+  },
+  "unmapped": {},
+  "sync": {
+   "verdict": "mismatch",
+   "total": 3,
+   "matched": 3,
+   "median_offset_s": -0.0,
+   "within_tol": 0.33,
+   "within_after_shift": 0.33,
+   "quarters": [],
+   "drift": false
+  },
+  "stems": null,
+  "voice": null,
+  "retimed": null,
+  "baked": {
+   "share": 0.0,
+   "chance": 0.25,
+   "at_db": 3.26,
+   "shifted_db": 6.84,
+   "quiet": 0.14
+  },
+  "baked_strong": false,
+  "keep_audio_decision": null,
+  "declared": 10,
+  "voiced": 10,
+  "clamped_quiet": 0,
+  "layer_lufs": null,
+  "base_kind": null,
+  "screen_rec": false,
+  "music_ref": [],
+  "reference_layer": [],
+  "typing_runs": [],
+  "first_event_t": 5.9,
+  "time_map": null,
+  "unlisted_synth_onsets": [],
+  "kinds_user": null
+ }
+}

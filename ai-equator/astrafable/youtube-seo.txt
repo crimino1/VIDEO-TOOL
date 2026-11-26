@@ -1,0 +1,57 @@
+TITLE (pick one)
+1. GPT-6.2 Astra vs Claude Fable 5.2: I Made Them Build Our Solar System
+2. Fable 5.2 vs GPT-6.2 Astra: Same Prompt, Two Very Different Universes
+3. I Gave the Two Smartest AIs the Same 3D Solar System Prompt
+Recommended: 1
+
+DESCRIPTION
+I gave GPT-6.2 Astra and Claude Fable 5.2 the exact same 6,194-character prompt: build a photorealistic, real-time 3D simulation of our solar system in one HTML file, with a living Sun, every planet, Saturn's rings with real shadows, 15,000 asteroids, comets and real Kepler orbits. Astra ran in OpenAI's Codex app, Fable in Claude Code, both on high. You see both builds, how each model worked (Fable wrote its own checklist and tested in a browser; Astra needed a reminder to stick to one file), the time each took, and a scorecard. Then: what other testers found, the benchmarks where each model wins, cost per task, real-science tests like protein sequences, and the wild things people are building with both.
+
+Honest note: the Codex run started on GPT-6.2 Sol because the wrong model was selected. I switched to Astra partway through, and Astra did the final single-file rebuild you see. No Sol footage is shown.
+
+⏱️ CHAPTERS
+0:00 Same job, two models
+0:40 The contenders: Fable 5.2 and GPT-6.2 Astra
+1:23 On paper, 3D is Astra's home turf
+1:57 The prompt
+2:34 Same prompt into both
+2:46 One honest note
+3:03 How each model built it
+4:00 Time
+4:22 Astra's result: Solar Atlas
+5:29 Fable's result
+6:15 The sky on today's date
+7:04 Scorecard and verdict
+7:42 What other testers found
+8:07 Benchmarks and cost
+8:45 Real science: proteins and black holes
+9:12 What people are building
+9:34 Which one should you use?
+
+🔗 SOURCES
+Artificial Analysis, Fable 5.2 vs GPT-6.2 Astra: https://artificialanalysis.ai/models/comparisons/claude-fable-5-2-vs-gpt-6-2-astra
+Fable 5.2 launch (Anthropic): https://x.com/claudeai/status/2119867114450268322
+Fable price and Mythos note: https://x.com/claudeai/status/2119867138987176141
+GPT-6.2 Astra launch (OpenAI): https://x.com/OpenAI/status/2122750124543926515
+dev.to game test: https://dev.to/otterdev3/we-gave-claude-fable-52-and-gpt-62-the-same-game-prompt-results-1k81
+Blender test (Amir Mušić): https://x.com/AmirMushich/status/2122815524124152216
+Nate Herk's 12-task test (Geeky Gadgets): https://www.geeky-gadgets.com/astra-6-2-vs-fable-5-2/
+Protein-sequence test (Xinming Tu): https://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/
+Sergey Ovchinnikov on protein folds: https://x.com/sokrypton/status/2122929243260608651
+Anthropic, black-hole physics: https://www.anthropic.com/research/claude-black-hole-physics
+Mars rover sim (Dilum Sanjaya): https://x.com/DilumSanjaya/status/2120561077385867663
+X-ray mirror (Hashem Al-Ghaili): https://x.com/HashemGhaili/status/2120202746121085321
+Live weather globe (Matt Shumer): https://x.com/mattshumer_/status/2119877065701036047
+Space elevator ride (Ethan Mollick): https://x.com/emollick/status/2122755693191287009
+Car physics solver demo: https://x.com/AngryTomtweets/status/2122816282986738029
+
+💬 Which one would you trust with your next project? And what should I make them build next?
+🔔 Subscribe for more AI news.
+
+#GPT62 #Fable52 #Claude #OpenAI #Anthropic #AINews #AI #Codex #ClaudeCode
+
+TAGS (under 500 characters)
+gpt 6.2 astra,claude fable 5.2,fable 5.2 vs gpt 6.2,astra vs fable,gpt-6.2,claude fable,ai comparison,solar system simulation,3d solar system,ai coding test,claude code,openai codex,anthropic,openai,ai benchmark,artificial analysis,best ai model,ai news,three.js,ai equator
+
+PINNED COMMENT
+Full disclosure: the Codex run started on GPT-6.2 Sol (wrong model selected); I switched to Astra partway, and Astra did the final single-file rebuild shown. Fable's timer was 29m 36s and still checking; Codex finished at 22m 26s including the restart. Which build do you think wins?

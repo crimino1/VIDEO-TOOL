@@ -1,0 +1,1 @@
+Now, the part I find fascinating. [thoughtful] A normal model is a tall stack of layers, and every word goes through each layer once. GLM-5.4 takes twenty-eight of those layers, and runs them twice for every word. It's like rereading a hard paragraph before you answer. The model gets deeper, without getting any bigger.

@@ -1,0 +1,270 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#000e26;--violet:#6f1cee;--neon:#deef45;--pink:#ff2d55;--orange:#f7941d;--grey:#e6e6e6;--ring:#5c6472}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:#fff}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:#fff}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:#fff}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:#f2f2f2;color:#111;padding:2px 10px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:7px solid #fff;background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:4px solid #fff;opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="239.760" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s3" class="clip scene " data-start="0.000" data-duration="3.760" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="c2" class="scene"><div id="fadein0" class="black"></div><div id="t1" class="stmt w" style="top:900px;font-size:70px">MARCH 2025</div></div></div>
+<div id="w4" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:12"><video id="v5" class="clip fit" src="assets/clips/px_telescope_2_a20e3713.mp4" muted playsinline data-start="3.760" data-duration="3.640" data-track-index="1"></video></div>
+<div id="s8" class="clip scene " data-start="3.760" data-duration="3.640" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="c7" class="scene"><div class="shade"></div><div class="lab w" style="left:60px;top:1000px;font-size:24px;"><span id="l6" style="display:inline-block;opacity:0">TELESCOPES ON EARTH</span></div></div></div>
+<div id="s14" class="clip scene " data-start="7.100" data-duration="9.700" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div id="c13" class="scene"><div class="lab w" style="left:960px;top:780px;font-size:24px;transform:translateX(-50%);"><span id="l9" style="display:inline-block;opacity:0">A PALE YELLOWISH BALL</span></div><div class="lab" style="left:1350px;top:530px;font-size:22px;"><span id="l10" style="display:inline-block;opacity:0">← WHERE THE RINGS USED TO BE</span></div><div id="ls11" class="lens" style="left:1410px;top:70px;width:380px;height:380px"><img src="assets/gen/hubble_rpx3_fb855f.jpg" alt=""></div><div class="lab w" style="left:1600px;top:470px;font-size:18px;transform:translateX(-50%);"><span id="l12" style="display:inline-block;opacity:0">HUBBLE · RINGS EDGE-ON</span></div></div></div>
+<div id="s18" class="clip scene " data-start="16.800" data-duration="7.020" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="c17" class="scene"><div id="t15" class="stmt" style="top:900px;font-size:80px">AN ILLUSION</div><div class="lab w" style="left:960px;top:1000px;font-size:24px;transform:translateX(-50%);"><span id="l16" style="display:inline-block;opacity:0">THE RINGS ARE COMING BACK</span></div></div></div>
+<div id="s21" class="clip scene " data-start="23.820" data-duration="7.580" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="c20" class="scene"><div id="t19" class="stmt" style="top:900px;font-size:70px">THE RINGS REALLY ARE DISAPPEARING</div></div></div>
+<div id="s26" class="clip scene " data-start="31.400" data-duration="7.440" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="c25" class="scene"><div class="lab w" style="left:60px;top:980px;font-size:24px;"><span id="l22" style="display:inline-block;opacity:0">SATURN IS EATING THEM</span></div><div id="n23" class="num" style="left:60px;top:880px"><b id="nv24" style="font-size:80px">0+</b><span>TONS EVERY SECOND</span></div></div></div>
+<div id="s30" class="clip scene " data-start="38.840" data-duration="5.380" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="c29" class="scene"><img id="ph27" class="fill" src="assets/gen/rings_closeup_625eb6.jpg" alt="rings_closeup" style="transform-origin:50% 50%"><div class="shade"></div><div id="t28" class="stmt w" style="top:900px;font-size:70px">HOW LONG DO THEY HAVE LEFT?</div></div></div>
+<div id="s38" class="clip scene " data-start="43.720" data-duration="8.540" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="c37" class="scene"><div class="navy"></div><img id="du31" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h32" class="hdr">TWO QUESTIONS</div><svg class="full" viewBox="0 0 1920 1080"><g id="d33" style="transform-origin:300px 440px;transform-box:view-box" opacity="0"><circle cx="300" cy="440" r="46" fill="#deef45"/><text x="300" y="440" text-anchor="middle" dominant-baseline="central" font-family="Space Mono" font-size="44" letter-spacing="2" fill="#000e26">1</text></g><g id="d34" style="transform-origin:300px 650px;transform-box:view-box" opacity="0"><circle cx="300" cy="650" r="46" fill="#deef45"/><text x="300" y="650" text-anchor="middle" dominant-baseline="central" font-family="Space Mono" font-size="44" letter-spacing="2" fill="#000e26">2</text></g></svg><div id="t35" class="stmt w" style="left:390px;right:auto;width:1400px;text-align:left;top:400px;font-size:66px">WHY DID THE RINGS VANISH IN 2025?</div><div id="t36" class="stmt w" style="left:390px;right:auto;width:1400px;text-align:left;top:610px;font-size:66px">WHY WILL THEY VANISH FOR REAL?</div></div></div>
+<div id="s48" class="clip scene " data-start="51.760" data-duration="11.420" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="c47" class="scene"><div class="navy"></div><img id="du39" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h40" class="hdr">ALONG THE WAY</div><div id="ls41" class="lens" style="left:210px;top:290px;width:420px;height:420px"><img src="assets/gen/mimas_0cd0c3.jpg" alt=""></div><div class="lab" style="left:420px;top:740px;font-size:24px;transform:translateX(-50%);"><span id="l42" style="display:inline-block;opacity:0">A MOON THAT MAY HAVE DIED</span></div><div id="ls43" class="lens" style="left:750px;top:290px;width:420px;height:420px"><img src="assets/gen/cassini_art_298397.jpg" alt=""></div><div class="lab" style="left:960px;top:740px;font-size:24px;transform:translateX(-50%);"><span id="l44" style="display:inline-block;opacity:0">A SPACECRAFT THAT DESTROYED ITSELF</span></div><div id="ls45" class="lens" style="left:1290px;top:290px;width:420px;height:420px"><img src="assets/gen/cassini_equinox_750a3a.jpg" alt=""></div><div class="lab" style="left:1500px;top:740px;font-size:24px;transform:translateX(-50%);"><span id="l46" style="display:inline-block;opacity:0">A SPLIT IN PLANETARY SCIENCE</span></div></div></div>
+<div id="s51" class="clip scene " data-start="62.880" data-duration="6.620" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="c50" class="scene"><div id="h49" class="hdr">SATURN</div></div></div>
+<div id="s57" class="clip scene " data-start="69.500" data-duration="3.300" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div id="c56" class="scene"><div class="lab w" style="left:500px;top:790px;font-size:26px;transform:translateX(-50%);"><span id="l52" style="display:inline-block;opacity:0">SATURN</span></div><div class="lab w" style="left:1440px;top:590px;font-size:22px;transform:translateX(-50%);"><span id="l53" style="display:inline-block;opacity:0">EARTH</span></div><div id="n54" class="num" style="left:1150px;top:820px"><b id="nv55" style="font-size:96px">1.0×</b><span>TIMES WIDER</span></div></div></div>
+<div id="s62" class="clip scene " data-start="72.800" data-duration="12.020" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="c61" class="scene"><div id="h58" class="hdr">HOW MANY EARTHS?</div><div id="n59" class="num" style="left:1080px;top:860px"><b id="nv60" style="font-size:96px">0</b><span>EARTHS FIT INSIDE</span></div></div></div>
+<div id="s75" class="clip scene " data-start="84.820" data-duration="7.720" data-track-index="2" style="z-index:24" data-layout-allow-overflow data-layout-allow-overlap><div id="c74" class="scene"><div class="navy"></div><img id="du63" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h64" class="hdr">VOLUME VS WEIGHT</div><svg class="full" viewBox="0 0 1920 1080"><rect id="br65" x="360" y="400" width="1100.0" height="70" fill="#6f1cee" style="transform-origin:360px 400px;transform-box:view-box"/><rect id="br66" x="360" y="560" width="137.5" height="70" fill="#deef45" style="transform-origin:360px 560px;transform-box:view-box"/></svg><div class="lab w" style="left:360px;top:360px;font-size:22px;"><span id="l67" style="display:inline-block;opacity:0">VOLUME</span></div><div id="n68" class="num" style="left:380px;top:404px"><b id="nv69" style="font-size:56px">0</b><span>EARTHS FIT INSIDE</span></div><div class="lab w" style="left:360px;top:520px;font-size:22px;"><span id="l70" style="display:inline-block;opacity:0">WEIGHT</span></div><div id="n71" class="num" style="left:520px;top:564px"><b id="nv72" style="font-size:56px">0</b><span>EARTHS OF MASS</span></div><div id="t73" class="stmt" style="top:820px;font-size:62px">LEAST DENSE PLANET IN THE SOLAR SYSTEM</div></div></div>
+<div id="s85" class="clip scene " data-start="92.040" data-duration="6.640" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="c84" class="scene"><div class="navy"></div><img id="du79" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h80" class="hdr">SATURN WOULD FLOAT</div><svg class="full" viewBox="0 0 1920 1080"><g id="g81" opacity="0"><path d="M230,470 L230,950 Q230,980 260,980 L1660,980 Q1690,980 1690,950 L1690,470" fill="none" stroke="#fff" stroke-width="6"/><rect x="260" y="610" width="1400" height="330" fill="#6f1cee" opacity=".55"/><line x1="260" y1="610" x2="1660" y2="610" stroke="#b9a0ff" stroke-width="3"/></g><g id="fs77"><g id="si78" opacity="0" style="transform-origin:960px 590px;transform-box:view-box"><g transform="rotate(-12 960 590)"><path d="M586.0,590 A374.00000000000006,93.50000000000001 0 0,1 1334.0,590" fill="none" stroke="#deef45" stroke-width="10.2" opacity=".9"/><circle cx="960" cy="590" r="170" fill="#f7941d"/><path d="M586.0,590 A374.00000000000006,93.50000000000001 0 0,0 1334.0,590" fill="none" stroke="#deef45" stroke-width="10.2"/></g><text x="960" y="590" text-anchor="middle" dominant-baseline="central" font-family="Space Mono" font-size="34" letter-spacing="2" fill="#fff">SATURN</text></g></g></svg><div class="lab w" style="left:1700px;top:640px;font-size:22px;transform:translateX(-100%);"><span id="l82" style="display:inline-block;opacity:0">WATER · 1.00 G/CM³</span></div><div class="lab" style="left:1180px;top:420px;font-size:22px;"><span id="l83" style="display:inline-block;opacity:0">SATURN · 0.69 G/CM³</span></div></div></div>
+<div id="s88" class="clip scene " data-start="98.380" data-duration="4.800" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="c87" class="scene"><div id="h86" class="hdr">THE RINGS</div></div></div>
+<div id="s106" class="clip scene " data-start="103.180" data-duration="10.460" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="c105" class="scene"><div class="navy"></div><img id="du89" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h90" class="hdr">THE MAIN RINGS</div><svg class="full" viewBox="0 0 1920 1080"><g id="si91" opacity="0" style="transform-origin:960px 420px;transform-box:view-box"><g transform="rotate(0 960 420)"><path d="M696.0,420 A264.0,66.0 0 0,1 1224.0,420" fill="none" stroke="#deef45" stroke-width="7.2" opacity=".9"/><circle cx="960" cy="420" r="120" fill="#6f1cee"/><path d="M696.0,420 A264.0,66.0 0 0,0 1224.0,420" fill="none" stroke="#deef45" stroke-width="7.2"/></g></g><line id="ln92" x1="696" y1="560" x2="1224" y2="560" stroke="#deef45" stroke-width="3" stroke-linecap="round" stroke-dasharray="528.0" stroke-dashoffset="528.0" opacity="1.0"/><line id="ln93" x1="696" y1="545" x2="696" y2="575" stroke="#deef45" stroke-width="3" stroke-linecap="round" stroke-dasharray="30.0" stroke-dashoffset="30.0" opacity="1.0"/><line id="ln94" x1="1224" y1="545" x2="1224" y2="575" stroke="#deef45" stroke-width="3" stroke-linecap="round" stroke-dasharray="30.0" stroke-dashoffset="30.0" opacity="1.0"/><g id="d95" style="transform-origin:240px 800px;transform-box:view-box" opacity="0"><circle cx="240" cy="800" r="26" fill="#3a7bd5"/></g><g id="d96" style="transform-origin:1680px 800px;transform-box:view-box" opacity="0"><circle cx="1680" cy="800" r="9" fill="#e6e6e6"/></g><line id="ln97" x1="268" y1="800" x2="1670" y2="800" stroke="#5c6472" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 8" opacity="0"/><rect id="br98" x="240" y="850" width="1048.907388137357" height="14" fill="#deef45" style="transform-origin:240px 850px;transform-box:view-box"/></svg><div id="n99" class="num" style="left:0;right:0;top:600px;justify-content:center"><b id="nv100" style="font-size:70px">0</b><span>KM EDGE TO EDGE</span></div><div class="lab w" style="left:240px;top:740px;font-size:22px;transform:translateX(-50%);"><span id="l101" style="display:inline-block;opacity:0">EARTH</span></div><div class="lab w" style="left:1680px;top:740px;font-size:22px;transform:translateX(-50%);"><span id="l102" style="display:inline-block;opacity:0">MOON</span></div><div class="lab" style="left:960px;top:760px;font-size:22px;transform:translateX(-50%);"><span id="l103" style="display:inline-block;opacity:0">384,400 KM</span></div><div class="lab" style="left:240px;top:880px;font-size:22px;"><span id="l104" style="display:inline-block;opacity:0">RINGS · 3/4 OF THE WAY</span></div></div></div>
+<div id="s116" class="clip scene " data-start="113.140" data-duration="7.700" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="c115" class="scene"><div class="navy"></div><img id="du107" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h108" class="hdr">BUT HOW THICK?</div><svg class="full" viewBox="0 0 1920 1080"><line id="ln109" x1="120" y1="950" x2="1000" y2="950" stroke="#deef45" stroke-width="6" stroke-linecap="round" stroke-dasharray="880.0" stroke-dashoffset="880.0" opacity="1.0"/><g id="g110" opacity="0"><rect x="1250" y="650" width="230" height="300" fill="none" stroke="#fff" stroke-width="5"/><rect x="1280" y="680" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1280" y="780" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1280" y="880" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1350" y="680" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1350" y="780" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1350" y="880" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1420" y="680" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1420" y="780" width="40" height="55" fill="#deef45" opacity=".85"/><rect x="1420" y="880" width="40" height="55" fill="#deef45" opacity=".85"/><line x1="1150" y1="650" x2="1185" y2="650" stroke="#fff" stroke-width="2"/><line x1="1150" y1="680" x2="1170" y2="680" stroke="#fff" stroke-width="2"/><line x1="1150" y1="710" x2="1170" y2="710" stroke="#fff" stroke-width="2"/><line x1="1150" y1="740" x2="1170" y2="740" stroke="#fff" stroke-width="2"/><line x1="1150" y1="770" x2="1170" y2="770" stroke="#fff" stroke-width="2"/><line x1="1150" y1="800" x2="1185" y2="800" stroke="#fff" stroke-width="2"/><line x1="1150" y1="830" x2="1170" y2="830" stroke="#fff" stroke-width="2"/><line x1="1150" y1="860" x2="1170" y2="860" stroke="#fff" stroke-width="2"/><line x1="1150" y1="890" x2="1170" y2="890" stroke="#fff" stroke-width="2"/><line x1="1150" y1="920" x2="1170" y2="920" stroke="#fff" stroke-width="2"/><line x1="1150" y1="950" x2="1185" y2="950" stroke="#fff" stroke-width="2"/><line x1="1150" y1="650" x2="1150" y2="950" stroke="#fff" stroke-width="2"/></g></svg><div id="n111" class="num" style="left:140px;top:820px"><b id="nv112" style="font-size:96px">0</b><span>METRES THICK</span></div><div class="lab w" style="left:120px;top:975px;font-size:18px;"><span id="l113" style="display:inline-block;opacity:0">RING PLANE (NOT TO SCALE)</span></div><div class="lab" style="left:1365px;top:600px;font-size:22px;transform:translateX(-50%);"><span id="l114" style="display:inline-block;opacity:0">≈ 3-STOREY BUILDING</span></div></div></div>
+<div id="s119" class="clip scene " data-start="120.540" data-duration="2.460" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="c118" class="scene"><div id="t117" class="stmt w" style="top:900px;font-size:64px">WIDTH VS THICKNESS</div></div></div>
+<div id="w120" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:30"><video id="v121" class="clip fit" src="assets/clips/px_football_1_2b210e8f.mp4" muted playsinline data-start="123.000" data-duration="4.320" data-track-index="1"></video></div>
+<div id="s124" class="clip scene " data-start="123.000" data-duration="4.320" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="c123" class="scene"><div class="shade"></div><div id="t122" class="stmt" style="top:880px;font-size:64px">SHRINK THE RINGS TO A FOOTBALL FIELD</div></div></div>
+<div id="w125" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:32"><video id="v126" class="clip fit" src="assets/clips/px_hair_1_eee4a631.mp4" muted playsinline data-start="126.820" data-duration="3.540" data-track-index="1"></video></div>
+<div id="s130" class="clip scene " data-start="126.820" data-duration="3.540" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap><div id="c129" class="scene"><div class="shade"></div><div id="n127" class="num" style="left:0;right:0;top:860px;justify-content:center"><b id="nv128" style="font-size:110px">1×</b><span>TIMES THINNER THAN A HUMAN HAIR</span></div></div></div>
+<div id="s135" class="clip scene " data-start="130.060" data-duration="8.680" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="c134" class="scene"><div id="t131" class="stmt w" style="top:900px;font-size:80px">NOT SOLID</div><div id="t132" class="stmt" style="top:980px;font-size:54px">NOT EVEN ONE RING</div><div class="lab w" style="left:60px;top:980px;font-size:24px;"><span id="l133" style="display:inline-block;opacity:0">BILLIONS OF SEPARATE PIECES</span></div></div></div>
+<div id="s141" class="clip scene " data-start="138.740" data-duration="8.420" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="c140" class="scene"><div class="lab w" style="left:60px;top:60px;font-size:24px;"><span id="l136" style="display:inline-block;opacity:0">ALMOST PURE WATER ICE</span></div><div style="position:absolute;left:60px;top:880px;"><div id="b137" class="box " style="position:relative">GRAINS SMALLER THAN SAND</div></div><div style="position:absolute;left:60px;top:940px;"><div id="b138" class="box v" style="position:relative">CHUNKS THE SIZE OF A MOUNTAIN</div></div><div id="t139" class="stmt" style="top:900px;font-size:64px">AN INCREDIBLY FLAT DISK</div></div></div>
+<div id="s154" class="clip scene " data-start="147.160" data-duration="19.760" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="c153" class="scene"><div class="navy"></div><img id="du149" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h150" class="hdr r">THE RINGS, INSIDE OUT</div><svg class="full" viewBox="0 0 1920 1080"><g id="g151" opacity="0"><circle cx="0" cy="560" r="330" fill="#f7941d"/><g id="ra142" opacity="0"><path d="M0,180.50000000000006 A379.49999999999994,379.49999999999994 0 0,1 0,939.5" fill="none" stroke="#d8d0ff" stroke-width="10" opacity="0.25"/><text x="398" y="566" font-family="Anton" font-size="54" fill="#deef45">D</text></g><g id="ra143" opacity="0"><path d="M0,98.00000000000006 A461.99999999999994,461.99999999999994 0 0,1 0,1022.0" fill="none" stroke="#d8d0ff" stroke-width="26" opacity="0.45"/><text x="489" y="566" font-family="Anton" font-size="54" fill="#deef45">C</text></g><g id="ra144" opacity="0"><path d="M0,-17.5 A577.5,577.5 0 0,1 0,1137.5" fill="none" stroke="#deef45" stroke-width="40" opacity="0.95"/><text x="612" y="566" font-family="Anton" font-size="54" fill="#deef45">B</text></g><g id="ra145" opacity="0"><path d="M0,-139.60000000000002 A699.6,699.6 0 0,1 0,1259.6" fill="none" stroke="#deef45" stroke-width="28" opacity="0.75"/><text x="728" y="566" font-family="Anton" font-size="54" fill="#deef45">A</text></g><g id="ra146" opacity="0"><path d="M0,-208.89999999999998 A768.9,768.9 0 0,1 0,1328.9" fill="none" stroke="#d8d0ff" stroke-width="4" opacity="0.9"/><text x="785" y="566" font-family="Anton" font-size="54" fill="#deef45">F</text></g><g id="ra147" opacity="0"><path d="M0,-363.9999999999999 A923.9999999999999,923.9999999999999 0 0,1 0,1484.0" fill="none" stroke="#d8d0ff" stroke-width="6" opacity="0.35"/><text x="941" y="566" font-family="Anton" font-size="54" fill="#deef45">G</text></g><g id="ra148" opacity="0"><path d="M0,-940 A1500,1500 0 0,1 0,2060" fill="none" stroke="#d8d0ff" stroke-width="70" opacity="0.18"/><text x="1454" y="566" font-family="Anton" font-size="54" fill="#deef45">E</text></g></g></svg><div id="t152" class="stmt w" style="top:930px;font-size:58px">NAMED IN ORDER OF DISCOVERY</div></div></div>
+<div id="s157" class="clip scene " data-start="166.620" data-duration="3.100" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="c156" class="scene"><div id="h155" class="hdr">THE WEIGHT OF THE RINGS</div></div></div>
+<div id="s168" class="clip scene " data-start="169.720" data-duration="14.000" data-track-index="2" style="z-index:38" data-layout-allow-overflow data-layout-allow-overlap><div id="c167" class="scene"><div class="navy"></div><img id="du159" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="h160" class="hdr">WEIGHING THE RINGS</div><div id="ls161" class="lens" style="left:330px;top:330px;width:460px;height:460px"><img src="assets/gen/mimas_2bdc34.jpg" alt=""></div><div class="lab w" style="left:560px;top:820px;font-size:22px;transform:translateX(-50%);"><span id="l162" style="display:inline-block;opacity:0">MIMAS · ~400 KM WIDE</span></div><svg class="full" viewBox="0 0 1920 1080"><g id="g163" opacity="0"><circle cx="1360" cy="560" r="210" fill="#e6e6e6" opacity=".18"/><circle id="pie158" cx="1360" cy="560" r="105.0" fill="none" stroke="#ff2d55" stroke-width="210" stroke-dasharray="659.7" stroke-dashoffset="659.7" transform="rotate(-90 1360 560)"/></g></svg><div id="n164" class="num" style="left:1220px;top:820px"><b id="nv165" style="font-size:96px">0%</b><span>OF MIMAS</span></div><div class="lab" style="left:1360px;top:300px;font-size:22px;transform:translateX(-50%);"><span id="l166" style="display:inline-block;opacity:0">ALL THE RINGS COMBINED</span></div></div></div>
+<div id="s172" class="clip scene " data-start="183.220" data-duration="9.580" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="c171" class="scene"><img id="ph169" class="fill" src="assets/gen/cassini_equinox_f9b76e.jpg" alt="cassini_equinox" style="transform-origin:50% 50%"><div class="shade"></div><div class="lab w" style="left:60px;top:1010px;font-size:20px;"><span id="l170" style="display:inline-block;opacity:0">CASSINI · SATURN AT EQUINOX</span></div></div></div>
+<div id="s175" class="clip scene " data-start="192.500" data-duration="4.380" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c174" class="scene"><div id="t173" class="stmt w" style="top:900px;font-size:64px">THAT THINNESS IS WHY THEY VANISH</div></div></div>
+<div id="s181" class="clip scene " data-start="196.880" data-duration="3.860" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="c180" class="scene"><div class="navy"></div><img id="du177" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="ph176" class="card" style="left:637px;top:130px;width:645px;height:820px;opacity:1"><img src="assets/gen/galileo_portrait_0f3717.jpg" alt="galileo_portrait"></div><div class="shade"></div><div id="h178" class="hdr">THE FIRST TO NOTICE</div><div class="lab w" style="left:960px;top:990px;font-size:26px;transform:translateX(-50%);"><span id="l179" style="display:inline-block;opacity:0">GALILEO GALILEI</span></div></div></div>
+<div id="s187" class="clip scene " data-start="200.240" data-duration="7.980" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="c186" class="scene"><div class="navy"></div><img id="du183" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="ph182" class="card" style="left:449px;top:190px;width:1022px;height:700px;opacity:1"><img src="assets/gen/galileo_sketch_d82a35.jpg" alt="galileo_sketch"></div><div class="shade"></div><div id="h184" class="hdr">1610</div><div class="lab" style="left:960px;top:990px;font-size:26px;transform:translateX(-50%);"><span id="l185" style="display:inline-block;opacity:0">TWO STRANGE LUMPS</span></div></div></div>
+<div id="s190" class="clip scene " data-start="207.920" data-duration="3.260" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="c189" class="scene"><div class="lab w" style="left:960px;top:760px;font-size:26px;transform:translateX(-50%);"><span id="l188" style="display:inline-block;opacity:0">TWO GIANT MOONS?</span></div></div></div>
+<div id="s194" class="clip scene " data-start="211.180" data-duration="7.380" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="c193" class="scene"><div id="h191" class="hdr">1612</div><div class="lab" style="left:960px;top:760px;font-size:26px;transform:translateX(-50%);"><span id="l192" style="display:inline-block;opacity:0">THE LUMPS WERE GONE</span></div></div></div>
+<div id="s199" class="clip scene " data-start="218.560" data-duration="10.700" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="c198" class="scene"><img id="ph195" class="fill" src="assets/gen/saturn_devouring_cedcac.jpg" alt="saturn_devouring" style="transform-origin:50% 35%"><div class="shade"></div><div class="lab w" style="left:60px;top:1010px;font-size:20px;"><span id="l196" style="display:inline-block;opacity:0">SATURN DEVOURING HIS SON · RUBENS</span></div><div id="t197" class="stmt" style="top:880px;font-size:64px">DID SATURN EAT ITS CHILDREN?</div></div></div>
+<div id="s202" class="clip scene " data-start="228.960" data-duration="2.320" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="c201" class="scene"><div class="lab w" style="left:960px;top:760px;font-size:26px;transform:translateX(-50%);"><span id="l200" style="display:inline-block;opacity:0">A FEW YEARS LATER: BACK</span></div></div></div>
+<div id="s208" class="clip scene " data-start="231.280" data-duration="8.480" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="c207" class="scene"><div class="navy"></div><img id="du204" class="dust" src="assets/gen/dust_1_420.png" alt=""><div id="ph203" class="card" style="left:647px;top:130px;width:625px;height:820px;opacity:1"><img src="assets/gen/huygens_portrait_aea6ed.jpg" alt="huygens_portrait"></div><div class="shade"></div><div id="h205" class="hdr">1650s</div><div class="lab w" style="left:960px;top:990px;font-size:26px;transform:translateX(-50%);"><span id="l206" style="display:inline-block;opacity:0">CHRISTIAAN HUYGENS</span></div></div></div>
+</div>
+<script>
+window.SPS = [[0.0, 3.76, "sat", {"sun": [-62, 12], "dist": 7.5, "elK": [[0, 14], [3.4, 0.25]], "az0": -8, "az1": 4, "roll": -6}], [7.1, 16.8, "sat", {"sun": [-50, 6], "dist": 6.4, "dist1": 5.6, "el": 0.12, "az0": -4, "az1": 4}], [16.8, 23.82, "sat", {"sun": [-62, 12], "dist": 6.2, "elK": [[0, 0.15], [2.6, 0.15], [7.0, 9]], "az0": 0, "az1": 14, "roll": -4}], [23.82, 31.4, "sat", {"sun": [-120, 8], "dist": 5.2, "dist1": 4.6, "el": 11, "az0": 30, "az1": 40, "roll": -10}], [31.4, 38.84, "sat_rain", {"dist": 4.4, "dist1": 4.0, "el": 12, "az0": 10, "az1": 22, "sun": [-55, 14], "lt0": 0.2, "tg": 0.8, "grains": 1400}], [62.88, 69.5, "sat", {"sun": [-62, 12], "distK": [[0, 46], [5.5, 7.5]], "el0": 28, "el1": 16, "az0": 70, "az1": 18, "roll": -8, "ease": "out"}], [69.5, 72.8, "row", {"items": [{"k": "saturn", "r": 1, "x": -1.0}, {"k": "earth", "r": 0.106, "x": 3.1, "rot0": 2}], "dist": 10.5, "cx0": 0.9, "cx1": 1.1, "cy": 1.3, "sunV": [-1, 0.3, 0.8]}], [72.8, 84.82, "earths", {"fill0": 0.6, "fillT": 5.5, "dist0": 4.6, "dist1": 4.0, "el": 14, "az0": -10, "az1": 12, "sx": -260, "solid": [[0, 0], [8.5, 0], [9.4, 1]]}], [98.38, 103.18, "sat", {"sun": [-62, 12], "dist0": 5.2, "dist1": 3.9, "el0": 30, "el1": 13, "az0": -36, "az1": 8, "sx": 120, "roll": -8}], [120.54, 123.0, "sat", {"sun": [-40, 10], "dist": 5.5, "el0": 3.5, "el1": 1.2, "az0": -8, "az1": 0}], [130.06, 138.74, "fly", {"speed": 2.2, "y": 0.35}], [138.74, 147.16, "fly", {"speed": 1.6, "y": 1.4, "look": 0.25, "z": -30}], [166.62, 169.72, "sat", {"sun": [-62, 12], "dist0": 11, "dist1": 9.5, "el": 16, "az0": 20, "az1": 34, "moons": [{"k": "mimas", "r": 0.033, "a": 3.08, "ph": 200, "sp": 6}]}], [192.5, 196.88, "sat", {"sun": [-62, 12], "dist": 6.8, "elK": [[0, 12], [4.3, 0.5]], "az0": -10, "az1": 0}], [207.92, 211.18, "sat", {"sun": [-62, 12], "dist": 34, "el": 6, "az": 0}], [211.18, 218.56, "sat", {"sun": [-62, 12], "dist": 34, "el0": 2.0, "el1": 0.1, "az": 0}], [228.96, 231.28, "sat", {"sun": [-62, 12], "dist": 34, "el0": 0.2, "el1": 7, "az": 0}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#fadein0",{opacity:1},{opacity:0,duration:1.4,ease:"power1.inOut"},0.000);
+tl.fromTo("#t1",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},0.600);
+tl.to("#t1",{opacity:0,duration:0.3,ease:"power2.out"},3.150);
+tl.fromTo("#v5",{scale:1.0},{scale:1.07,duration:3.64,ease:"none"},3.760);
+tl.fromTo("#w4",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},3.760);
+tl.to("#w4",{opacity:0,duration:0.55,ease:"power1.inOut"},6.850);
+tl.fromTo("#l6",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},4.200);
+tl.fromTo("#c7",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},3.760);
+tl.to("#c7",{opacity:0,duration:0.55,ease:"power1.inOut"},6.850);
+tl.fromTo("#l9",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},8.760);
+tl.fromTo("#l10",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},12.700);
+tl.fromTo("#ls11",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},14.140);
+tl.fromTo("#l12",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},14.440);
+tl.fromTo("#t15",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},20.680);
+tl.to("#t15",{opacity:0,duration:0.3,ease:"power2.out"},23.250);
+tl.fromTo("#l16",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},22.700);
+tl.fromTo("#t19",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},28.980);
+tl.to("#t19",{opacity:0,duration:0.3,ease:"power2.out"},30.950);
+tl.fromTo("#l22",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},34.260);
+tl.fromTo("#n23",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},36.700);
+tl.fromTo({v:0},{v:0},{v:1,duration:0.1,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv24").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"+";}},36.700);
+tl.fromTo("#ph27",{scale:1.0},{scale:1.12,duration:5.38,ease:"none"},38.840);
+tl.fromTo("#t28",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},41.320);
+tl.fromTo("#c29",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},38.840);
+tl.fromTo("#du31",{x:0,y:0},{x:-40,y:-14,duration:8.54,ease:"none"},43.720);
+tl.fromTo("#h32",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},43.820);
+tl.fromTo("#d33",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},46.300);
+tl.fromTo("#d34",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},49.460);
+tl.fromTo("#t35",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},46.300);
+tl.fromTo("#t36",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},49.460);
+tl.fromTo("#c37",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},43.720);
+tl.fromTo("#du39",{x:0,y:0},{x:-40,y:-14,duration:11.42,ease:"none"},51.760);
+tl.fromTo("#h40",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},51.860);
+tl.fromTo("#ls41",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},53.120);
+tl.fromTo("#l42",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},53.370);
+tl.fromTo("#ls43",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},55.620);
+tl.fromTo("#l44",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},55.870);
+tl.fromTo("#ls45",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},58.800);
+tl.fromTo("#l46",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},59.050);
+tl.fromTo("#c47",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},51.760);
+tl.to("#c47",{opacity:0,duration:0.55,ease:"power1.inOut"},62.630);
+tl.fromTo("#h49",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},63.600);
+tl.fromTo("#l52",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},70.000);
+tl.fromTo("#l53",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},70.600);
+tl.fromTo("#n54",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},70.360);
+tl.fromTo({v:1},{v:1},{v:9.5,duration:1.0,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv55").textContent=""+(Math.round(v*10)/10).toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1})+"×";}},70.360);
+tl.fromTo("#h58",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},72.900);
+tl.fromTo("#n59",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},78.280);
+tl.fromTo({v:0},{v:0},{v:760,duration:1.4,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv60").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},78.280);
+tl.fromTo("#du63",{x:0,y:0},{x:-40,y:-14,duration:7.72,ease:"none"},84.820);
+tl.fromTo("#h64",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},84.920);
+tl.fromTo("#br65",{scaleX:0},{scaleX:1,duration:1.2,ease:"power3.out"},85.100);
+tl.fromTo("#br66",{scaleX:0},{scaleX:1,duration:0.8,ease:"power3.out"},87.020);
+tl.fromTo("#l67",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},85.100);
+tl.fromTo("#n68",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},85.300);
+tl.fromTo({v:0},{v:0},{v:760,duration:1.2,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv69").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},85.300);
+tl.fromTo("#l70",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},87.020);
+tl.fromTo("#n71",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},87.220);
+tl.fromTo({v:0},{v:0},{v:95,duration:0.9,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv72").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},87.220);
+tl.fromTo("#t73",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},88.660);
+tl.fromTo("#c74",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},84.820);
+tl.fromTo({p:0},{p:0},{p:1,duration:6.640,ease:"none",onUpdate:function(){var p=this.targets()[0].p;var y=Math.sin(p*6.64*1.6)*10;document.getElementById("fs77").setAttribute("transform","translate(0,"+y.toFixed(1)+")");}},92.040);
+tl.fromTo("#si78",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"back.out(1.3)"},96.720);
+tl.fromTo("#du79",{x:0,y:0},{x:-40,y:-14,duration:6.64,ease:"none"},92.040);
+tl.fromTo("#h80",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},92.140);
+tl.fromTo("#g81",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.240);
+tl.fromTo("#l82",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},92.840);
+tl.fromTo("#l83",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},97.320);
+tl.fromTo("#c84",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},92.040);
+tl.to("#c84",{opacity:0,duration:0.55,ease:"power1.inOut"},98.130);
+tl.fromTo("#h86",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},98.480);
+tl.fromTo("#du89",{x:0,y:0},{x:-40,y:-14,duration:10.46,ease:"none"},103.180);
+tl.fromTo("#h90",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},103.280);
+tl.fromTo("#si91",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"back.out(1.3)"},103.280);
+tl.fromTo("#ln92",{strokeDashoffset:528.0},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},106.660);
+tl.fromTo("#ln93",{strokeDashoffset:30.0},{strokeDashoffset:0,duration:0.2,ease:"power2.inOut"},106.660);
+tl.fromTo("#ln94",{strokeDashoffset:30.0},{strokeDashoffset:0,duration:0.2,ease:"power2.inOut"},106.660);
+tl.fromTo("#d95",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},111.680);
+tl.fromTo("#d96",{scale:0,opacity:0},{scale:1,opacity:1.0,duration:0.6,ease:"back.out(1.4)"},111.980);
+tl.fromTo("#ln97",{opacity:0},{opacity:1.0,duration:0.4,ease:"power2.out"},111.880);
+tl.fromTo("#br98",{scaleX:0},{scaleX:1,duration:1.0,ease:"power3.out"},112.880);
+tl.fromTo("#n99",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.660);
+tl.fromTo({v:0},{v:0},{v:280000,duration:1.2,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv100").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},106.660);
+tl.fromTo("#l101",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},111.680);
+tl.fromTo("#l102",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},111.980);
+tl.fromTo("#l103",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},112.180);
+tl.fromTo("#l104",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},113.280);
+tl.fromTo("#c105",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},103.180);
+tl.fromTo("#du107",{x:0,y:0},{x:-40,y:-14,duration:7.7,ease:"none"},113.140);
+tl.fromTo("#h108",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},113.240);
+tl.fromTo("#ln109",{strokeDashoffset:880.0},{strokeDashoffset:0,duration:1.0,ease:"power2.inOut"},113.440);
+tl.fromTo("#g110",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},118.820);
+tl.fromTo("#n111",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},113.740);
+tl.fromTo({v:0},{v:0},{v:10,duration:0.8,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv112").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"";}},113.740);
+tl.fromTo("#l113",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},113.740);
+tl.fromTo("#l114",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},119.120);
+tl.fromTo("#c115",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},113.140);
+tl.to("#c115",{opacity:0,duration:0.55,ease:"power1.inOut"},120.290);
+tl.fromTo("#t117",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},121.000);
+tl.fromTo("#v121",{scale:1.0},{scale:1.07,duration:4.32,ease:"none"},123.000);
+tl.fromTo("#w120",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},123.000);
+tl.fromTo("#t122",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},123.300);
+tl.fromTo("#c123",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},123.000);
+tl.fromTo("#v126",{scale:1.0},{scale:1.07,duration:3.54,ease:"none"},126.820);
+tl.fromTo("#w125",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},126.820);
+tl.to("#w125",{opacity:0,duration:0.55,ease:"power1.inOut"},129.810);
+tl.fromTo("#n127",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},127.420);
+tl.fromTo({v:1},{v:1},{v:20,duration:0.9,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv128").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"×";}},127.420);
+tl.fromTo("#c129",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},126.820);
+tl.to("#c129",{opacity:0,duration:0.55,ease:"power1.inOut"},129.810);
+tl.fromTo("#t131",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},130.400);
+tl.to("#t131",{opacity:0,duration:0.3,ease:"power2.out"},134.150);
+tl.fromTo("#t132",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},133.020);
+tl.to("#t132",{opacity:0,duration:0.3,ease:"power2.out"},134.250);
+tl.fromTo("#l133",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},134.980);
+tl.fromTo("#l136",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},135.460);
+tl.fromTo("#b137",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},139.380);
+tl.fromTo("#b138",{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3,ease:"power2.out"},142.460);
+tl.fromTo("#t139",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},145.620);
+tl.fromTo("#ra142",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},151.060);
+tl.fromTo("#ra143",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},152.220);
+tl.fromTo("#ra144",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},153.100);
+tl.fromTo("#ra145",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},153.960);
+tl.fromTo("#ra146",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},154.740);
+tl.fromTo("#ra147",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},155.500);
+tl.fromTo("#ra148",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},157.520);
+tl.fromTo("#du149",{x:0,y:0},{x:-40,y:-14,duration:19.76,ease:"none"},147.160);
+tl.fromTo("#h150",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},147.260);
+tl.fromTo("#g151",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},147.260);
+tl.fromTo("#t152",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},160.500);
+tl.fromTo("#c153",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},147.160);
+tl.to("#c153",{opacity:0,duration:0.55,ease:"power1.inOut"},166.370);
+tl.fromTo("#h155",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},166.720);
+tl.fromTo("#pie158",{strokeDashoffset:659.7344572538566},{strokeDashoffset:395.84067435231395,duration:1.2,ease:"power2.out"},175.580);
+tl.fromTo("#du159",{x:0,y:0},{x:-40,y:-14,duration:14.0,ease:"none"},169.720);
+tl.fromTo("#h160",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},169.820);
+tl.fromTo("#ls161",{opacity:0,scale:0.6,x:0},{opacity:1,scale:1,x:0,duration:0.55,ease:"back.out(1.3)"},177.200);
+tl.fromTo("#l162",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},177.500);
+tl.fromTo("#g163",{opacity:0,y:0},{opacity:1,y:0,duration:0.4,ease:"power2.out"},175.380);
+tl.fromTo("#n164",{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:"power2.out"},175.580);
+tl.fromTo({v:0},{v:0},{v:40,duration:1.2,ease:"power2.out",onUpdate:function(){var v=this.targets()[0].v;document.getElementById("nv165").textContent=""+(Math.round(v*1)/1).toLocaleString("en-US",{minimumFractionDigits:0,maximumFractionDigits:0})+"%";}},175.580);
+tl.fromTo("#l166",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},175.980);
+tl.fromTo("#c167",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},169.720);
+tl.fromTo("#ph169",{scale:1.0},{scale:1.1,duration:9.58,ease:"none"},183.220);
+tl.fromTo("#l170",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},183.600);
+tl.fromTo("#c171",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},183.220);
+tl.to("#c171",{opacity:0,duration:0.55,ease:"power1.inOut"},192.250);
+tl.fromTo("#t173",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},193.000);
+tl.fromTo("#ph176",{scale:1.0},{scale:1.04,duration:3.86,ease:"none"},196.880);
+tl.fromTo("#du177",{x:0,y:0},{x:-40,y:-14,duration:3.86,ease:"none"},196.880);
+tl.fromTo("#h178",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},196.980);
+tl.fromTo("#l179",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},197.600);
+tl.fromTo("#c180",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},196.880);
+tl.fromTo("#ph182",{scale:1.0},{scale:1.05,duration:7.98,ease:"none"},200.240);
+tl.fromTo("#du183",{x:0,y:0},{x:-40,y:-14,duration:7.98,ease:"none"},200.240);
+tl.fromTo("#h184",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},200.340);
+tl.fromTo("#l185",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},206.200);
+tl.fromTo("#c186",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},200.240);
+tl.to("#c186",{opacity:0,duration:0.55,ease:"power1.inOut"},207.670);
+tl.fromTo("#l188",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},208.400);
+tl.fromTo("#h191",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},211.280);
+tl.fromTo("#l192",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},215.100);
+tl.fromTo("#ph195",{scale:1.0},{scale:1.12,duration:10.7,ease:"none"},218.560);
+tl.fromTo("#l196",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},219.000);
+tl.fromTo("#t197",{opacity:0,y:20},{opacity:1,y:0,duration:0.45,ease:"power2.out"},224.380);
+tl.fromTo("#c198",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},218.560);
+tl.to("#c198",{opacity:0,duration:0.55,ease:"power1.inOut"},228.710);
+tl.fromTo("#l200",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},229.400);
+tl.fromTo("#ph203",{scale:1.0},{scale:1.04,duration:8.48,ease:"none"},231.280);
+tl.fromTo("#du204",{x:0,y:0},{x:-40,y:-14,duration:8.48,ease:"none"},231.280);
+tl.fromTo("#h205",{opacity:0,x:-24},{opacity:1,x:0,duration:0.45,ease:"power2.out"},231.380);
+tl.fromTo("#l206",{opacity:0},{opacity:1,duration:0.35,ease:"power2.out"},231.800);
+tl.fromTo("#c207",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},231.280);
+tl.set({}, {}, 239.760);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

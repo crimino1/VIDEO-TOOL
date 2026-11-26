@@ -1,0 +1,611 @@
+Artificial Analysis
+Models
+Coding Agents
+Image, Speech, Video
+Inference
+Leaderboards
+About
+AI Trends
+Premium
+Log in
+K
+Google
+•
+Gemini 4 Carbon
+high
+•
+
+Proprietary model
+
+•
+
+Released October 2026
+
+Gemini 4 Carbon (High) Intelligence, Performance & Price Analysis
+Compare
+Try it out
+API Provider Benchmarks
+Model summary
+IntelligenceUpdated
+#1 / 69
+60
+Artificial Analysis Intelligence Index
+4 out of 4 units for Intelligence.
+Performance
+#61 / 68
+Time to first answer token 68.04s
+Output speed 67 tok/s
+30.7
+Time per Intelligence Index task (minutes)
+4 out of 4 units for Performance.
+Cost
+#59 / 68
+In $4.00
+Out $20.00
+Cache discount 95%
+$7.76
+Cost per Intelligence Index task
+4 out of 4 units for Cost.
+Verbosity
+#66 / 68
+Input tokens 7.62B
+Output/input 2.686%
+205M
+Output tokens from Intelligence Index
+4 out of 4 units for Verbosity.
+Comparison Summary
+
+Gemini 4 Carbon (High) is amongst the leading models in intelligence, but somewhat expensive when comparing to other models of similar price. It's also notably slow per task and very verbose. The model supports text, image, speech, and video input, outputs text, and has a 1M tokens context window.
+
+Gemini 4 Carbon (High) scores 60 on the Artificial Analysis Intelligence Index, placing it well above average among comparable models (median: 37). When evaluating the Intelligence Index, it generated 205M tokens, which is very verbose in comparison to the median of 72.6M.
+
+Pricing for Gemini 4 Carbon (High) is $4.00 per 1M input tokens (somewhat expensive, median: $2.00) and $20.00 per 1M output tokens (expensive, median: $10.00). On average, it costs $7.76 per task to evaluate Gemini 4 Carbon (High) on the Intelligence Index.
+
+At 30.7 minutes per Intelligence Index task, Gemini 4 Carbon (High) is notably slow compared with the median of 12.8 minutes for comparable models (lower is better).
+
+Technical specifications
+Reasoning	Yes
+
+This page shows the reasoning version of this model.
+
+A non-reasoning variant may also exist.
+
+
+Input modality	
+
+Supports: text, image, speech, and video
+
+
+Output modality	
+
+Supports: text
+
+
+Context window	1M
+~1500 A4 pages of size 12 Arial font
+232 models in this class
+Model Comparison
+API Provider Benchmarks
+Updated
+Intelligence
+Artificial Analysis Intelligence Index · Higher is better
+No publicly available API
+Gemini 4 Carbon (high)
+Claude Opus 5.5 (max)
+GPT-6 Astra (max)
+GPT-6.1 Sol (max)
+Muse Wonder Full (max)
+Claude Fable 5.1 (max)
+Kimi K3.1 Pro
+Muse Wonder (max)
+Grok 4.7 (xhigh)
+DeepSeek V4.1 Flash 1017 (max)
+GLM-5.3 (max)
+MiMo-V2.6-Pro
+60
+59
+57
+55
+50
+49
+46
+44
+35
+33
+32
+30
+Time per Task
+Inference time (minutes) per Intelligence Index task · Lower is better
+No publicly available API
+Muse Wonder (max)
+DeepSeek V4.1 Flash 1017 (max)
+GPT-6 Astra (max)
+GPT-6.1 Sol (max)
+Claude Fable 5.1 (max)
+Grok 4.7 (xhigh)
+Claude Opus 5.5 (max)
+Gemini 4 Carbon (high)
+GLM-5.3 (max)
+Kimi K3.1 Pro
+MiMo-V2.6-Pro
+12.9
+13.6
+20.8
+21.9
+22.5
+24.3
+26.7
+30.7
+31.3
+36.6
+45.0
+Cost per Task
+Weighted average cost (USD) per Intelligence Index task · Lower is better
+No publicly available API
+MiMo-V2.6-Pro
+DeepSeek V4.1 Flash 1017 (max)
+GPT-6.1 Sol (max)
+Kimi K3.1 Pro
+GLM-5.3 (max)
+GPT-6 Astra (max)
+Muse Wonder (max)
+Gemini 4 Carbon (high)
+Grok 4.7 (xhigh)
+Claude Opus 5.5 (max)
+Claude Fable 5.1 (max)
+$0.26
+$0.60
+$1.27
+$3.68
+$5.01
+$6.24
+$6.95
+$7.76
+$7.77
+$10.04
+$12.99
+IntelligenceUpdated
+Capability Indexes
+Benchmarks
+Token Use
+Cost
+Context Window
+Performance
+Intelligence
+Updated
+Artificial Analysis Intelligence Index
+Artificial Analysis Intelligence Index v5.0.1 incorporates 9 evaluations: AA-Briefcase v1.1, AutomationBench-AA, Terminal-Bench 4.0, FrontierCode 2.0, AA-Omniscience v1.1, GDP.pdf, HLE-Diamond, CritPt v2 (Hard Subset), and Terminal-Bench-Science 0.1
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Gemini 4 Carbon (high)
+Claude Opus 5.5 (max)
+GPT-6 Astra (max)
+GPT-6.1 Sol (max)
+Claude Sonnet 5.5 (max)
+GPT-6.1 Terra (max)
+Muse Wonder Full (max)
+Claude Fable 5.1 (max)
+Kimi K3.1 Pro
+Muse Wonder (max)
+Claude Haiku 5.5 (max)
+Grok 4.7 (xhigh)
+Tencent Hy4
+Qwen3.8 Max (0902)
+DeepSeek V4.1 Flash 1017 (max)
+GLM-5.3 (max)
+Gemini 3.8 Flash (high)
+Inkling 2 Small
+MiMo-V2.6-Pro
+Ling 3.1 Flash 1019
+MiniMax-M3.1-Flash
+GPT-6 Luna (max)
+Mistral Large 4 (high)
+Muse Spark Open (xhigh)
+Qwen3.8 27B (xhigh)
+K2 Horizon 375B A23B
+Beam 1.0
+Nemotron 3.5 Super VL
+60
+59
+57
+55
+55
+51
+50
+49
+46
+44
+36
+35
+35
+34
+33
+32
+31
+31
+30
+30
+29
+28
+26
+25
+20
+18
+18
+14
+Artificial Analysis Intelligence Index
+Open Weights / Proprietary
+Reasoning / Non-Reasoning
+Text Only / Multimodal Inputs
+Artificial Analysis Intelligence Index by Open Weights / Proprietary
+Artificial Analysis Intelligence Index v5.0.1 incorporates 9 evaluations: AA-Briefcase v1.1, AutomationBench-AA, Terminal-Bench 4.0, FrontierCode 2.0, AA-Omniscience v1.1, GDP.pdf, HLE-Diamond, CritPt v2 (Hard Subset), and Terminal-Bench-Science 0.1
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Proprietary
+Open Weights (Commercial Use Restricted)
+Open Weights
+Artificial Analysis Intelligence Index
+Open Weights
+Intelligence Index vs. Cost per Task
+Intelligence Index vs. Time per Task
+Intelligence Index vs. Output Tokens per Task
+Intelligence Index vs. Cost per Task
+Artificial Analysis Intelligence Index · Weighted average cost (USD) per Artificial Analysis Intelligence Index task
+28 of 726 models
+Most attractive quadrant
+Pareto line
+Xiaomi
+OpenAI
+Anthropic
+Meta
+InclusionAI
+SpaceXAI
+Kimi
+Reflection
+Google
+Alibaba
+Z AI
+Tencent
+MiniMax
+NVIDIA
+Thinking Machines
+Mistral
+DeepSeek
+Cost per Intelligence Index Task
+Artificial Analysis Intelligence Index
+Capability Indexes
+
+Measures the performance of models on specific capabilities and industries
+
+Finance & Accounting
+Strategy & Ops
+Legal
+Engineering
+Economics
+Artificial Analysis Finance & Accounting Index
+Incorporates 5 evaluations: AA-Briefcase v1.1, AA-Omniscience v1.1, HLE-Diamond, AutomationBench-AA, GDP.pdf · Higher is better
+28 of 119 models
+Add model from specific provider
+No publicly available API
+Benchmarks
+Evaluations
+Evaluations measured independently by Artificial Analysis · AA-PersonalityBench scores are percentile ranks from 1 to 100
+Coding
+Agentic
+Tool Use
+Private Dataset
+User Interaction
+Finance
+Medical
+Legal
+Intelligence Index
+Personality
+Long Context
+Multimodal
+Instruction Following
+Faithfulness
+Writing
+Business
+See more
+23 of 44 evaluations
+28 of 726 models
+Add model from specific provider
+No publicly available API
+AA-Briefcase v1.1
+
+Agentic knowledge work, Elo
+
+AA-Omniscience v1.1 Accuracy
+Updated
+
+Knowledge
+
+AA-Omniscience v1.1 Non-Hallucination Rate
+Updated
+
+1 - hallucination rate
+
+AutomationBench-AA
+
+Agentic SaaS workflows
+
+Terminal-Bench-Science 0.1
+NEW
+
+Agentic scientific research workflows in a terminal
+
+FrontierCode 2.0
+NEW
+
+Agentic software engineering in open-source repositories
+
+HLE-Diamond
+NEW
+
+Reasoning & knowledge
+
+GDP.pdf
+
+Professional document reasoning, All-pass
+
+Terminal-Bench 4.0
+
+Agentic coding & terminal use
+
+CritPt v2 (Hard Subset)
+
+Physics reasoning
+
+AA-AnalystAgent
+
+Quantitative analysis on spreadsheets & documents
+
+Harvey LAB-AA v1.1
+Updated
+
+Legal agentic work, Hallucination-Gated All-Pass Rate
+
+EnterpriseOps-Gym-AA
+
+Agentic business operations
+
+GDPval-AA v2.1
+
+Agentic real-world work tasks, Elo
+
+AA-3D
+NEW
+
+Agentic interactive 3D experiences, Elo
+
+Code2Video-AA
+NEW
+
+Product and brand videos designed in code, Elo
+
+ITBench-AA
+
+Kubernetes incident root-cause analysis
+
+MLCR-AA
+Updated
+
+Medical long context reasoning
+
+MMMU-Pro
+
+Visual reasoning
+
+AA-PersonalityBench: Expressiveness Score
+NEW
+
+Rich, varied, well-crafted language
+
+AA-PersonalityBench: Organization Score
+NEW
+
+Well-structured, scannable, answer-first
+
+AA-PersonalityBench: Transparency Score
+NEW
+
+Truthful, acknowledges uncertainty, non-sycophantic
+
+AA-PersonalityBench: Slop Score
+NEW
+
+Use of filler and generic language
+
+Intelligence Evaluation Relevance
+Artificial Analysis Intelligence Index
+AA-Briefcase v1.1
+AA-Briefcase Elo
+AA-Briefcase Rubric Score
+Analytical Quality & Presentation Elo
+AA-Briefcase Elo
+AA-Briefcase v1.1 is an agentic knowledge work benchmark developed by Artificial Analysis. AA-Briefcase Elo is a combined metric that aggregates rubric pass rate, analytical quality Elo and presentation Elo · Higher is better
+28 of 254 models
+Add model from specific provider
+No publicly available API
+AA-Briefcase Elo
+AA-Omniscience v1.1
+AA-Omniscience Net Score
+AA-Omniscience Accuracy
+AA-Omniscience Hallucination Rate
+AA-Omniscience Net Score
+AA-Omniscience v1.1 Net Score (higher is better) measures knowledge reliability and hallucination. It rewards correct answers, penalizes hallucinations, and has no penalty for refusing to answer. Scores range from -100 to 100, where 0 means as many correct as incorrect answers, and negative scores mean more incorrect than correct.
+28 of 124 models
+Add model from specific provider
+No publicly available API
+AA-Omniscience Net Score
+Token Use
+Output Tokens per Task
+Intelligence Index vs. Output Tokens per Task
+Intelligence Index Token Use
+Intelligence Index vs. Token Use
+Output Tokens per Intelligence Index Task
+Weighted average number of output tokens used to run one task in the Artificial Analysis Intelligence Index
+28 of 726 models
+No publicly available API
+Answer
+Reasoning
+Output Tokens per Intelligence Index Task
+Cost
+Cost per Task
+Intelligence Index vs. Cost per Task
+Evaluation Breakdown
+Cost per Intelligence Index Task
+Weighted average cost (USD) per Intelligence Index task · Segmented by token type · Lower is better
+28 of 726 models
+No publicly available API
+Answer
+Reasoning
+Cache Write
+Cache Hit
+Input
+Cost per Intelligence Index Task
+Intelligence Index Total Cost
+Intelligence Index vs. Total Cost
+Cost to Run Artificial Analysis Intelligence Index
+Cost (USD) to run all evaluations in the Artificial Analysis Intelligence Index
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Output
+Reasoning
+Cache Write
+Cache Read
+Non-Cache Input
+Cost to Run Artificial Analysis Intelligence Index
+Cache Hit, Input, and Output Pricing
+Blended Price
+Blended Price (Stacked)
+Cache Discount
+Intelligence Index vs. Price
+Intelligence Index vs. Price (Log, Inverted)
+Image Input Pricing
+Pricing: Cache Hit, Input, and Output
+Price (USD per M Tokens)
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Cache Hit
+Input
+Output
+Cache Hit
+4 more notes
+Context Window
+Context Window
+Intelligence Index vs. Context Window
+Context Window
+Context window: tokens limit · Higher is better
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Context Window for RAG
+Context Window
+Performance
+
+Measured by time per task (minutes), output speed (tokens per second), time to first answer token and time to first token (seconds)
+
+Time per Task
+Intelligence Index vs. Time per Task
+Cost vs. Time per Task
+Time per Intelligence Index Task
+Output tokens divided by end-to-end output speed (minutes per Intelligence Index task) · Speed at the model's own endpoint or the median across providers · Lower is better
+28 of 726 models
+No publicly available API
+Time per Intelligence Index Task
+Time Period
+Output Speed
+Output Speed Over Time
+Output Speed vs. Price
+Latency vs. Output Speed
+Output Speed
+Output tokens divided by total request time, including time to first token · Higher is better
+28 of 726 models
+Add model from specific provider
+No publicly available API
+End-to-End Output Speed
+2 more notes
+Time to First Answer Token
+Time to First Token
+Time to First Token by Workload
+Time to First Answer Token
+Seconds to first answer token received · Accounts for reasoning model 'thinking' time
+28 of 726 models
+Add model from specific provider
+No publicly available API
+Input processing
+Thinking (reasoning models, when applicable)
+Time to First Answer Token
+2 more notes
+Frequently Asked Questions
+
+Common questions about Gemini 4 Carbon (High)
+
+When was Gemini 4 Carbon (High) released?
+Who created Gemini 4 Carbon (High)?
+How intelligent is Gemini 4 Carbon (High)?
+How fast is Gemini 4 Carbon (High)?
+What is the latency of Gemini 4 Carbon (High)?
+How much does Gemini 4 Carbon (High) cost?
+What is Gemini 4 Carbon (High) API pricing?
+How verbose is Gemini 4 Carbon (High)?
+Is Gemini 4 Carbon (High) a reasoning model?
+What input modalities does Gemini 4 Carbon (High) support?
+What output modalities does Gemini 4 Carbon (High) support?
+Can Gemini 4 Carbon (High) process images?
+Is Gemini 4 Carbon (High) multimodal?
+What is the context window of Gemini 4 Carbon (High)?
+Is Gemini 4 Carbon (High) open source?
+How many parameters does Gemini 4 Carbon (High) have?
+How does Gemini 4 Carbon (High) perform on benchmarks?
+Is Gemini 4 Carbon (High) available via API?
+Where can I use Gemini 4 Carbon (High)?
+
+Get notified about new articles
+
+Email address
+Subscribe
+
+Artificial Analysis
+
+Explore
+
+LLM Leaderboard
+Image Arena
+Video Arena
+AI Agents
+Evaluations
+
+Products
+
+Optima
+MicroEvals
+Model Recommender
+Data Playground
+Image Lab
+
+Company
+
+About
+Methodology
+Contact
+Articles
+Careers
+X
+LinkedIn
+YouTube
+Rednote
+Discord
+
+© 2026 Artificial Analysis
+
+Terms of Use
+Data Platform Terms
+Privacy Policy
+English
+13

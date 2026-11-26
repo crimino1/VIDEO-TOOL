@@ -1,0 +1,18 @@
+S = [
+    ("40:25.68", "c", "K09_card", dict(num=13, title="Beyond Right Triangles", doodle="triangle")),
+    ("40:29.04", "m", "K09_Intro"),
+    ("40:35.04", "p", "K09_real", dict(imgs=[("k09_truss", "40:35.20")], caps=[("Most real triangles have no right angle", "40:35.60")])),
+    ("40:38.00", "m", "K09_SinesLaw"),
+    ("41:02.12", "m", "K09_SinesEx"),
+    ("41:31.88", "m", "K09_CosLaw"),
+    ("41:59.34", "m", "K09_CosEx"),
+    ("42:19.30", "m", "K09_CosAngle"),
+    ("42:48.80", "m", "K09_Ambig"),
+    ("43:40.82", "g", "K09_trap", dict(clip="k09_evil", cap="exams love this trap")),
+    ("43:42.90", "m", "K09_Area"),
+    ("44:06.16", "p", "K09_heron", dict(imgs=[("k09_heron", "44:06.30")], title="Heron of Alexandria")),
+    ("44:08.36", "m", "K09_Heron"),
+    ("44:32.80", "q", "K09_practice"),
+    ("44:34.38", "m", "K09_Practice"),
+    ("44:55.34", "m", "K09_Answers"),
+]

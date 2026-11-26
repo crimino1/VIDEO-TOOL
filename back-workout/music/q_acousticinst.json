@@ -1,0 +1,1285 @@
+{
+ "result_count": 46,
+ "page_count": 3,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "d5910900-f460-4ac8-8caa-4ad918115ece",
+   "title": "Vintage (Acoustic)",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/283598",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=283598&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "swing"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Vintage (Acoustic)\" by Daniel Bautista is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Madera Y Bronce",
+    "foreign_landing_url": "https://www.jamendo.com/album/39593/madera-y-bronce",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 191000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d5910900-f460-4ac8-8caa-4ad918115ece/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d5910900-f460-4ac8-8caa-4ad918115ece/",
+   "related_url": "https://api.openverse.org/v1/audio/d5910900-f460-4ac8-8caa-4ad918115ece/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d5910900-f460-4ac8-8caa-4ad918115ece/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7dc26ad8-5869-46b5-9415-e7a4f58bcc17",
+   "title": "Acoustic - NG4C",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/769892",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=769892&format=mp32",
+   "creator": "NG4C - Audio Production",
+   "creator_url": "https://www.jamendo.com/artist/368450/NG4C_-_Audio_Production",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic - NG4C\" by NG4C - Audio Production is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Trilhas Sonora - NG4C",
+    "foreign_landing_url": "https://www.jamendo.com/album/90197/trilhas-sonora-ng4c",
+    "creator": "NG4C - Audio Production",
+    "creator_url": "https://www.jamendo.com/artist/368450/NG4C_-_Audio_Production",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 49000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7dc26ad8-5869-46b5-9415-e7a4f58bcc17/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7dc26ad8-5869-46b5-9415-e7a4f58bcc17/",
+   "related_url": "https://api.openverse.org/v1/audio/7dc26ad8-5869-46b5-9415-e7a4f58bcc17/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7dc26ad8-5869-46b5-9415-e7a4f58bcc17/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d6f72cef-f838-4948-94ad-8e50ccccd281",
+   "title": "Dif\u00edcil (Acoustic)",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/283541",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=283541&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dif\u00edcil (Acoustic)\" by Daniel Bautista is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Madera Y Bronce",
+    "foreign_landing_url": "https://www.jamendo.com/album/39593/madera-y-bronce",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 162000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d6f72cef-f838-4948-94ad-8e50ccccd281/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d6f72cef-f838-4948-94ad-8e50ccccd281/",
+   "related_url": "https://api.openverse.org/v1/audio/d6f72cef-f838-4948-94ad-8e50ccccd281/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d6f72cef-f838-4948-94ad-8e50ccccd281/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "df5341e9-50e5-468e-a085-293c50cdb6c9",
+   "title": "In The Desert (Acoustic)",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/283557",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=283557&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"In The Desert (Acoustic)\" by Daniel Bautista is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Madera Y Bronce",
+    "foreign_landing_url": "https://www.jamendo.com/album/39593/madera-y-bronce",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 254000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/df5341e9-50e5-468e-a085-293c50cdb6c9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/df5341e9-50e5-468e-a085-293c50cdb6c9/",
+   "related_url": "https://api.openverse.org/v1/audio/df5341e9-50e5-468e-a085-293c50cdb6c9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/df5341e9-50e5-468e-a085-293c50cdb6c9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "21e3c1e9-93d2-4a62-a6c1-024b1ab21c41",
+   "title": "Love Theme (Acoustic)",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/283542",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=283542&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Love Theme (Acoustic)\" by Daniel Bautista is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Madera Y Bronce",
+    "foreign_landing_url": "https://www.jamendo.com/album/39593/madera-y-bronce",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 193000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/21e3c1e9-93d2-4a62-a6c1-024b1ab21c41/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/21e3c1e9-93d2-4a62-a6c1-024b1ab21c41/",
+   "related_url": "https://api.openverse.org/v1/audio/21e3c1e9-93d2-4a62-a6c1-024b1ab21c41/related/",
+   "waveform": "https://api.openverse.org/v1/audio/21e3c1e9-93d2-4a62-a6c1-024b1ab21c41/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1bc35d8f-2c58-4e9b-aa5b-12a21e4a2a44",
+   "title": "BARCELONA (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/994896",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=994896&format=mp32",
+   "creator": "Bane Djakovic",
+   "creator_url": "https://www.jamendo.com/artist/429137/Bane_Djakovic",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "percussion",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"BARCELONA (acoustic)\" by Bane Djakovic is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TRAVEL MEMORIES",
+    "foreign_landing_url": "https://www.jamendo.com/album/116991/travel-memories",
+    "creator": "Bane Djakovic",
+    "creator_url": "https://www.jamendo.com/artist/429137/Bane_Djakovic",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 209000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1bc35d8f-2c58-4e9b-aa5b-12a21e4a2a44/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1bc35d8f-2c58-4e9b-aa5b-12a21e4a2a44/",
+   "related_url": "https://api.openverse.org/v1/audio/1bc35d8f-2c58-4e9b-aa5b-12a21e4a2a44/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1bc35d8f-2c58-4e9b-aa5b-12a21e4a2a44/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5760d7b2-12d7-4a1a-a816-55712f02dbb6",
+   "title": "Acoustic Chill Out Guitar",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1137475",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1137475&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "out",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic Chill Out Guitar\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out - Episode 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/136616/chill-out-episode-3",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 433000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/",
+   "related_url": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5760d7b2-12d7-4a1a-a816-55712f02dbb6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8df4af8c-6ac9-4820-86a8-7723728baf68",
+   "title": "Fairest of them all (Acoustic ver.)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/872169",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=872169&format=mp32",
+   "creator": "K4MMERER",
+   "creator_url": "https://www.jamendo.com/artist/341642/newmad",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical",
+    "filmscore",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drama",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "emotional",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Fairest of them all (Acoustic ver.)\" by K4MMERER is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Fairest of them all (acoustic)",
+    "foreign_landing_url": "https://www.jamendo.com/album/102327/fairest-of-them-all-acoustic",
+    "creator": "K4MMERER",
+    "creator_url": "https://www.jamendo.com/artist/341642/newmad",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 213000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8df4af8c-6ac9-4820-86a8-7723728baf68/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8df4af8c-6ac9-4820-86a8-7723728baf68/",
+   "related_url": "https://api.openverse.org/v1/audio/8df4af8c-6ac9-4820-86a8-7723728baf68/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8df4af8c-6ac9-4820-86a8-7723728baf68/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "717c9dfd-3783-4d6b-bca8-0335f2262428",
+   "title": "Acoustic Chill Out Piano",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1137465",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1137465&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "out",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic Chill Out Piano\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chill Out - Episode 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/136616/chill-out-episode-3",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 360000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/717c9dfd-3783-4d6b-bca8-0335f2262428/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/717c9dfd-3783-4d6b-bca8-0335f2262428/",
+   "related_url": "https://api.openverse.org/v1/audio/717c9dfd-3783-4d6b-bca8-0335f2262428/related/",
+   "waveform": "https://api.openverse.org/v1/audio/717c9dfd-3783-4d6b-bca8-0335f2262428/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fe7c6346-c9d8-47ef-a976-6c49d4b4f670",
+   "title": "Acoustic song",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/907944",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=907944&format=mp32",
+   "creator": "Pidelta sound",
+   "creator_url": "https://www.jamendo.com/artist/370953/Pidelta_sound",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic song\" by Pidelta sound is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Psicodramma",
+    "foreign_landing_url": "https://www.jamendo.com/album/107365/psicodramma",
+    "creator": "Pidelta sound",
+    "creator_url": "https://www.jamendo.com/artist/370953/Pidelta_sound",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 123000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fe7c6346-c9d8-47ef-a976-6c49d4b4f670/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fe7c6346-c9d8-47ef-a976-6c49d4b4f670/",
+   "related_url": "https://api.openverse.org/v1/audio/fe7c6346-c9d8-47ef-a976-6c49d4b4f670/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fe7c6346-c9d8-47ef-a976-6c49d4b4f670/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "bb28a997-c363-449c-bdb7-6cf60ad4f251",
+   "title": "group 8 acoustic guitar (master)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/465206",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=465206&format=mp32",
+   "creator": "Stellar Art Wars Free License",
+   "creator_url": "https://www.jamendo.com/artist/349483/Stellar_Art_Wars_Free_License",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"group 8 acoustic guitar (master)\" by Stellar Art Wars Free License is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "4 Real Workshop",
+    "foreign_landing_url": "https://www.jamendo.com/album/55292/4-real-workshop",
+    "creator": "Stellar Art Wars Free License",
+    "creator_url": "https://www.jamendo.com/artist/349483/Stellar_Art_Wars_Free_License",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 188000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/",
+   "related_url": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bb28a997-c363-449c-bdb7-6cf60ad4f251/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b5d2d74d-a9b2-4a47-b06b-cbdc44bfae64",
+   "title": "ACOUSTIC SUMMER BLUES",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1122201",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1122201&format=mp32",
+   "creator": "ProfesorJ",
+   "creator_url": "https://www.jamendo.com/artist/443622/ProfesorJ",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "blues"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitarmusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ACOUSTIC SUMMER BLUES\" by ProfesorJ is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Joaquin Blue Blue Feelings and Cosmic Guitars",
+    "foreign_landing_url": "https://www.jamendo.com/album/134110/joaquin-blue-blue-feelings-and-cosmic-guitars",
+    "creator": "ProfesorJ",
+    "creator_url": "https://www.jamendo.com/artist/443622/ProfesorJ",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 144000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b5d2d74d-a9b2-4a47-b06b-cbdc44bfae64/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b5d2d74d-a9b2-4a47-b06b-cbdc44bfae64/",
+   "related_url": "https://api.openverse.org/v1/audio/b5d2d74d-a9b2-4a47-b06b-cbdc44bfae64/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b5d2d74d-a9b2-4a47-b06b-cbdc44bfae64/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a0e3a85d-4adb-4755-8b8e-7cee9dac288c",
+   "title": "the invisible galaxy (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1116541",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1116541&format=mp32",
+   "creator": "Benjamin Lambert",
+   "creator_url": "https://www.jamendo.com/artist/440884/Benjamin_Lambert",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"the invisible galaxy (acoustic)\" by Benjamin Lambert is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Invisible Galaxy",
+    "foreign_landing_url": "https://www.jamendo.com/album/133397/the-invisible-galaxy",
+    "creator": "Benjamin Lambert",
+    "creator_url": "https://www.jamendo.com/artist/440884/Benjamin_Lambert",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 214000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/",
+   "related_url": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ea4ef155-35a9-46bb-b136-4e4f8f2223d9",
+   "title": "Lucky Acoustic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1540859",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1540859&format=mp32",
+   "creator": "Jesse Keller",
+   "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "corporate",
+    "filmscore",
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "advertising",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lucky Acoustic\" by Jesse Keller is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "One Mans Journey",
+    "foreign_landing_url": "https://www.jamendo.com/album/176305/one-mans-journey",
+    "creator": "Jesse Keller",
+    "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 202000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/",
+   "related_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4a0c052f-c5c0-48f5-9a0b-8205a24b5755",
+   "title": "SWING MENOR JAZZY ACOUSTIC",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1122209",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1122209&format=mp32",
+   "creator": "ProfesorJ",
+   "creator_url": "https://www.jamendo.com/artist/443622/ProfesorJ",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "blues"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitarmusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"SWING MENOR JAZZY ACOUSTIC\" by ProfesorJ is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Joaquin Blue Blue Feelings and Cosmic Guitars",
+    "foreign_landing_url": "https://www.jamendo.com/album/134110/joaquin-blue-blue-feelings-and-cosmic-guitars",
+    "creator": "ProfesorJ",
+    "creator_url": "https://www.jamendo.com/artist/443622/ProfesorJ",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 152000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4a0c052f-c5c0-48f5-9a0b-8205a24b5755/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4a0c052f-c5c0-48f5-9a0b-8205a24b5755/",
+   "related_url": "https://api.openverse.org/v1/audio/4a0c052f-c5c0-48f5-9a0b-8205a24b5755/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4a0c052f-c5c0-48f5-9a0b-8205a24b5755/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ad008b44-f643-439a-9480-f68f748146ae",
+   "title": "Acoustic Viridity- The Sound of GREEN",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/378183",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=378183&format=mp32",
+   "creator": "This Side Up!",
+   "creator_url": "https://www.jamendo.com/artist/347301/This_Side_Up_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "indie",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic Viridity- The Sound of GREEN\" by This Side Up! is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Flight to Elysium",
+    "foreign_landing_url": "https://www.jamendo.com/album/48168/flight-to-elysium",
+    "creator": "This Side Up!",
+    "creator_url": "https://www.jamendo.com/artist/347301/This_Side_Up_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 297000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ad008b44-f643-439a-9480-f68f748146ae/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ad008b44-f643-439a-9480-f68f748146ae/",
+   "related_url": "https://api.openverse.org/v1/audio/ad008b44-f643-439a-9480-f68f748146ae/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ad008b44-f643-439a-9480-f68f748146ae/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9219051e-fe6f-4299-ba55-857ce9542cb6",
+   "title": "Acoustic Medley",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/788372",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=788372&format=mp32",
+   "creator": "Dreamworld",
+   "creator_url": "https://www.jamendo.com/artist/369211/Dreamworld_(ex-Dark_Eternity)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Acoustic Medley\" by Dreamworld is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "\u041e\u0442\u0440\u0430\u0436\u0435\u043d\u0438\u0435 (Reflection)",
+    "foreign_landing_url": "https://www.jamendo.com/album/92474/otrazhenie-reflection",
+    "creator": "Dreamworld",
+    "creator_url": "https://www.jamendo.com/artist/369211/Dreamworld_(ex-Dark_Eternity)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 109000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9219051e-fe6f-4299-ba55-857ce9542cb6/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9219051e-fe6f-4299-ba55-857ce9542cb6/",
+   "related_url": "https://api.openverse.org/v1/audio/9219051e-fe6f-4299-ba55-857ce9542cb6/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9219051e-fe6f-4299-ba55-857ce9542cb6/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "52c23368-2c70-428c-beef-be9fff8574a4",
+   "title": "Words From A Seraph [Live Acoustic Version]",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/157365",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=157365&format=mp32",
+   "creator": "Wooden Horse",
+   "creator_url": "https://www.jamendo.com/artist/339252/Wooden_Horse_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Words From A Seraph [Live Acoustic Version]\" by Wooden Horse is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Taste Of Wooden Horse",
+    "foreign_landing_url": "https://www.jamendo.com/album/23280/a-taste-of-wooden-horse",
+    "creator": "Wooden Horse",
+    "creator_url": "https://www.jamendo.com/artist/339252/Wooden_Horse_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 244000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/52c23368-2c70-428c-beef-be9fff8574a4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/52c23368-2c70-428c-beef-be9fff8574a4/",
+   "related_url": "https://api.openverse.org/v1/audio/52c23368-2c70-428c-beef-be9fff8574a4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/52c23368-2c70-428c-beef-be9fff8574a4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8a5df0a3-9e68-49a9-b3ca-d124a3f4899d",
+   "title": "Nickveas - Sonata to cloudy day (acoustic version) (2011)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/981685",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=981685&format=mp32",
+   "creator": "Nickveas",
+   "creator_url": "https://www.jamendo.com/artist/424040/Nickveas",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Nickveas - Sonata to cloudy day (acoustic version) (2011)\" by Nickveas is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Muzic",
+    "foreign_landing_url": "https://www.jamendo.com/album/115616/muzic",
+    "creator": "Nickveas",
+    "creator_url": "https://www.jamendo.com/artist/424040/Nickveas",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 176000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8a5df0a3-9e68-49a9-b3ca-d124a3f4899d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8a5df0a3-9e68-49a9-b3ca-d124a3f4899d/",
+   "related_url": "https://api.openverse.org/v1/audio/8a5df0a3-9e68-49a9-b3ca-d124a3f4899d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8a5df0a3-9e68-49a9-b3ca-d124a3f4899d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2f7fedf8-c6a9-4b19-9e00-092fb211b66a",
+   "title": "\u00c9milie Theme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1501644",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1501644&format=mp32",
+   "creator": "Daniel Bautista",
+   "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "alternativerock",
+    "filmscore",
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acoustical",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"\u00c9milie Theme\" by Daniel Bautista is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le Petit Monde du \u00c9milie OST",
+    "foreign_landing_url": "https://www.jamendo.com/album/172959/le-petit-monde-du-emilie-ost",
+    "creator": "Daniel Bautista",
+    "creator_url": "https://www.jamendo.com/artist/8236/daniel.bautista",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 202000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2f7fedf8-c6a9-4b19-9e00-092fb211b66a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2f7fedf8-c6a9-4b19-9e00-092fb211b66a/",
+   "related_url": "https://api.openverse.org/v1/audio/2f7fedf8-c6a9-4b19-9e00-092fb211b66a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2f7fedf8-c6a9-4b19-9e00-092fb211b66a/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

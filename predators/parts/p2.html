@@ -1,0 +1,182 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/ocean.js"></script><script src="assets/js/deep.js"></script><script src="assets/js/sc.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="115.467" data-width="1920" data-height="1080">
+<img id="img_swordfish" class="hid" src="assets/cut/swordfish.png" alt=""><img id="img_viper" class="hid" src="assets/cut/viper.png" alt=""><img id="img_loosejaw2" class="hid" src="assets/cut/loosejaw2.png" alt=""><img id="img_dragon" class="hid" src="assets/cut/dragon.png" alt=""><img id="img_angler" class="hid" src="assets/cut/angler.png" alt=""><img id="img_fangtooth" class="hid" src="assets/cut/fangtooth.png" alt=""><img id="img_swallower" class="hid" src="assets/cut/swallower.png" alt=""><img id="img_swallower_full" class="hid" src="assets/cut/swallower_full.png" alt=""><img id="img_gulper" class="hid" src="assets/cut/gulper.png" alt=""><img id="img_goblin" class="hid" src="assets/cut/goblin.png" alt=""><img id="img_frilled" class="hid" src="assets/cut/frilled.png" alt=""><img id="img_greenland" class="hid" src="assets/cut/greenland.png" alt=""><img id="img_giantsquid" class="hid" src="assets/cut/giantsquid.png" alt=""><img id="img_humboldt2" class="hid" src="assets/cut/humboldt2.png" alt=""><img id="img_dumbo" class="hid" src="assets/cut/dumbo.png" alt=""><img id="img_lantern" class="hid" src="assets/cut/lantern.png" alt=""><img id="img_tunicate" class="hid" src="assets/cut/tunicate.png" alt=""><img id="img_harp" class="hid" src="assets/cut/harp.png" alt=""><img id="img_sperm" class="hid" src="assets/cut/il_sperm.png" alt=""><img id="img_snail" class="hid" src="assets/cut/snailfish.png" alt="">
+<canvas id="cv292" class="clip" width="1920" height="1080" data-start="0.000" data-duration="5.060" data-track-index="1" style="z-index:79"></canvas>
+<div id="s295" class="clip scene " data-start="0.000" data-duration="5.060" data-track-index="2" style="z-index:80" data-layout-allow-overflow data-layout-allow-overlap><div id="c293" class="big" style="top:330px;opacity:0">1,000 M</div><div class="bigsub" style="top:600px;letter-spacing:8px"><span id="tx294" style="opacity:0">THE MIDNIGHT ZONE</span></div></div>
+<div id="w297" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:81;"><video id="v296" class="clip fit" src="assets/clips/dragon_black_96271500.mp4" muted playsinline data-start="5.060" data-duration="3.400" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s298" class="clip scene " data-start="5.060" data-duration="3.400" data-track-index="2" style="z-index:82" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: MBARI</div></div>
+<div id="s300" class="clip scene " data-start="5.060" data-duration="3.400" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:850px;text-align:center"><span id="t299" class="stamp" style="font-size:120px">BLACK DRAGONFISH</span></div></div>
+<canvas id="cv301" class="clip" width="1920" height="1080" data-start="8.460" data-duration="11.160" data-track-index="1" style="z-index:84"></canvas>
+<div id="s305" class="clip scene " data-start="8.460" data-duration="11.160" data-track-index="2" style="z-index:85" data-layout-allow-overflow data-layout-allow-overlap><div id="c302" class="big" style="top:330px;opacity:0">99.5%</div><div class="bigsub" style="top:600px;letter-spacing:8px"><span id="tx303" style="opacity:0">OF THE LIGHT THAT HITS THEM, ABSORBED</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t304" class="stamp" style="font-size:76px">SHINE A LIGHT: IT BARELY SHOWS</span></div></div>
+<div id="w307" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:86;"><video id="v306" class="clip fit" src="assets/clips/dragon_black_fbb2e256.mp4" muted playsinline data-start="19.620" data-duration="2.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s308" class="clip scene " data-start="19.620" data-duration="2.480" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: MBARI</div></div>
+<div id="s310" class="clip scene " data-start="19.620" data-duration="2.480" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t309" class="stamp" style="font-size:76px">A HOLE CUT INTO THE DARK</span></div></div>
+<div id="s313" class="clip scene " data-start="22.100" data-duration="6.050" data-track-index="2" style="z-index:89" data-layout-allow-overflow data-layout-allow-overlap><img id="ph311" class="fill" src="assets/gen/dragon_head_c4a620.jpg" alt="dragon_head" style="transform-origin:40% 60%"><div id="l312" class="label left" style="left:760px;top:600px;font-size:50px"><i class="tri"></i><span>TRANSPARENT TEETH</span></div></div>
+<div id="w315" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:90;"><video id="v314" class="clip fit" src="assets/clips/angler_pair_2d3c9cc5.mp4" muted playsinline data-start="28.150" data-duration="1.930" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s316" class="clip scene " data-start="28.150" data-duration="1.930" data-track-index="2" style="z-index:91" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Kirchgessner / Rebikoff-Niggeler Foundation</div></div>
+<div id="s318" class="clip scene " data-start="28.150" data-duration="1.930" data-track-index="2" style="z-index:92" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:850px;text-align:center"><span id="t317" class="stamp" style="font-size:120px">ANGLERFISH</span></div></div>
+<canvas id="cv319" class="clip" width="1920" height="1080" data-start="30.080" data-duration="4.360" data-track-index="1" style="z-index:93"></canvas>
+<div id="s321" class="clip scene " data-start="30.080" data-duration="4.360" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><div id="l320" class="label left" style="left:1080px;top:300px;font-size:50px"><i class="tri"></i><span>FULL OF GLOWING BACTERIA</span></div></div>
+<canvas id="cv322" class="clip" width="1920" height="1080" data-start="34.440" data-duration="5.380" data-track-index="1" style="z-index:95"></canvas>
+<div id="s323" class="clip scene " data-start="34.440" data-duration="5.380" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w325" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:97;"><video id="v324" class="clip fit" src="assets/clips/angler_pair_7a473a3e.mp4" muted playsinline data-start="39.820" data-duration="9.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s326" class="clip scene " data-start="39.820" data-duration="9.300" data-track-index="2" style="z-index:98" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Kirchgessner / Rebikoff-Niggeler Foundation</div></div>
+<div id="s328" class="clip scene " data-start="39.820" data-duration="9.300" data-track-index="2" style="z-index:99" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t327" class="stamp" style="font-size:76px">THE TINY MALE FUSES WITH HER FOR LIFE</span></div></div>
+<div id="w330" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:100;"><video id="v329" class="clip fit" src="assets/clips/fang_mbari_575f0b5b.mp4" muted playsinline data-start="49.120" data-duration="1.820" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s331" class="clip scene " data-start="49.120" data-duration="1.820" data-track-index="2" style="z-index:101" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: MBARI</div></div>
+<div id="s333" class="clip scene " data-start="49.120" data-duration="1.820" data-track-index="2" style="z-index:102" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:850px;text-align:center"><span id="t332" class="stamp" style="font-size:120px">FANGTOOTH</span></div></div>
+<div id="w335" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:103;"><video id="v334" class="clip fit" src="assets/clips/fang_noc_d8cfb810.mp4" muted playsinline data-start="50.940" data-duration="2.110" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s336" class="clip scene " data-start="50.940" data-duration="2.110" data-track-index="2" style="z-index:104" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: National Oceanography Centre</div></div>
+<div id="s338" class="clip scene " data-start="50.940" data-duration="2.110" data-track-index="2" style="z-index:105" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t337" class="stamp" style="font-size:76px">ABOUT THE SIZE OF YOUR HAND</span></div></div>
+<canvas id="cv339" class="clip" width="1920" height="1080" data-start="53.050" data-duration="5.490" data-track-index="1" style="z-index:106"></canvas>
+<div id="s341" class="clip scene " data-start="53.050" data-duration="5.490" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><div id="l340" class="label left" style="left:760px;top:650px;font-size:50px"><i class="tri"></i><span>BIGGEST TEETH FOR ITS SIZE</span></div></div>
+<canvas id="cv342" class="clip" width="1920" height="1080" data-start="58.540" data-duration="5.890" data-track-index="1" style="z-index:108"></canvas>
+<div id="s344" class="clip scene " data-start="58.540" data-duration="5.890" data-track-index="2" style="z-index:109" data-layout-allow-overflow data-layout-allow-overlap><div id="l343" class="label left" style="left:960px;top:380px;font-size:50px"><i class="tri"></i><span>SOCKETS BESIDE THE BRAIN</span></div></div>
+<div id="w346" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:110;"><video id="v345" class="clip fit" src="assets/clips/swallow_ok_e4740e5d.mp4" muted playsinline data-start="64.430" data-duration="2.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s347" class="clip scene " data-start="64.430" data-duration="2.340" data-track-index="2" style="z-index:111" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: NOAA Okeanos Explorer / Inner Space Center</div></div>
+<div id="s349" class="clip scene " data-start="64.430" data-duration="2.340" data-track-index="2" style="z-index:112" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:850px;text-align:center"><span id="t348" class="stamp" style="font-size:120px">BLACK SWALLOWER</span></div></div>
+<div id="s356" class="clip scene " data-start="66.770" data-duration="6.530" data-track-index="2" style="z-index:113" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 90% 80% at 50% 25%,#0d2a3b 0%,#061520 45%,#02070c 100%)"></div><img id="sn350" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn351" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><line x1="160" y1="880" x2="1760" y2="880" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="160" y1="880" x2="160" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="160" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">0 CM</text><line x1="260" y1="880" x2="260" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="360" y1="880" x2="360" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="360" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">10 CM</text><line x1="460" y1="880" x2="460" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="560" y1="880" x2="560" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="560" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">20 CM</text><line x1="660" y1="880" x2="660" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="760" y1="880" x2="760" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="760" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">30 CM</text><line x1="860" y1="880" x2="860" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="960" y1="880" x2="960" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="960" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">40 CM</text><line x1="1060" y1="880" x2="1060" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="1160" y1="880" x2="1160" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="1160" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">50 CM</text><line x1="1260" y1="880" x2="1260" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="1360" y1="880" x2="1360" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="1360" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">60 CM</text><line x1="1460" y1="880" x2="1460" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="1560" y1="880" x2="1560" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="1560" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">70 CM</text><line x1="1660" y1="880" x2="1660" y2="894" stroke="rgba(220,235,245,.7)" stroke-width="3"/><line x1="1760" y1="880" x2="1760" y2="906" stroke="rgba(220,235,245,.7)" stroke-width="3"/><text x="1760" y="946" text-anchor="middle" font-family="Inter" font-weight="700" fill="#c9d6dc" font-size="30">80 CM</text></svg><img id="sz352" src="assets/gen/cut_swallower.png" alt="swallower" style="position:absolute;left:160px;top:737px;width:500px;height:129px;opacity:0;filter:drop-shadow(0 16px 30px rgba(0,0,0,.6))"><div class="row" style="left:60px;width:700px;text-align:center;top:651px"><span id="sl353" class="stamp" style="font-size:56px">SWALLOWER · 25 CM</span></div><img id="sz354" src="assets/gen/cut_lantern.png" alt="lantern" style="position:absolute;left:740px;top:552px;width:1100px;height:314px;opacity:0;filter:drop-shadow(0 16px 30px rgba(0,0,0,.6))"><div class="row" style="left:640px;width:1300px;text-align:center;top:466px"><span id="sl355" class="stamp" style="font-size:56px">ITS PREY · OVER TWICE AS LONG</span></div></div>
+<canvas id="cv357" class="clip" width="1920" height="1080" data-start="73.300" data-duration="4.100" data-track-index="1" style="z-index:114"></canvas>
+<div id="s360" class="clip scene " data-start="77.400" data-duration="3.220" data-track-index="2" style="z-index:115" data-layout-allow-overflow data-layout-allow-overlap><img id="ph358" class="fill" src="assets/gen/swallower_full_395325.jpg" alt="swallower_full" style="transform-origin:50% 50%"><div id="l359" class="label left" style="left:900px;top:760px;font-size:50px"><i class="tri"></i><span>THE PREY, CURLED INSIDE</span></div></div>
+<canvas id="cv361" class="clip" width="1920" height="1080" data-start="80.620" data-duration="6.120" data-track-index="1" style="z-index:116"></canvas>
+<div id="s363" class="clip scene " data-start="80.620" data-duration="6.120" data-track-index="2" style="z-index:117" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t362" class="stamp" style="font-size:76px">THE MEAL CAN ROT BEFORE IT IS DIGESTED</span></div></div>
+<canvas id="cv364" class="clip" width="1920" height="1080" data-start="86.740" data-duration="8.060" data-track-index="1" style="z-index:118"></canvas>
+<div id="s366" class="clip scene " data-start="86.740" data-duration="8.060" data-track-index="2" style="z-index:119" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t365" class="stamp" style="font-size:76px">FOUND DEAD AT THE SURFACE</span></div></div>
+<div id="w368" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:120;"><video id="v367" class="clip fit" src="assets/clips/gulper_naut_e53c105f.mp4" muted playsinline data-start="94.800" data-duration="3.000" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s369" class="clip scene " data-start="94.800" data-duration="3.000" data-track-index="2" style="z-index:121" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Exploration Trust / Nautilus Live</div></div>
+<div id="s371" class="clip scene " data-start="94.800" data-duration="3.000" data-track-index="2" style="z-index:122" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:850px;text-align:center"><span id="t370" class="stamp" style="font-size:120px">GULPER EEL</span></div></div>
+<div id="w373" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:123;"><video id="v372" class="clip fit" src="assets/clips/gulper_naut_e67c26a6.mp4" muted playsinline data-start="97.800" data-duration="5.240" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s374" class="clip scene " data-start="97.800" data-duration="5.240" data-track-index="2" style="z-index:124" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Exploration Trust / Nautilus Live</div></div>
+<canvas id="cv375" class="clip" width="1920" height="1080" data-start="103.040" data-duration="7.740" data-track-index="1" style="z-index:125"></canvas>
+<div id="s377" class="clip scene " data-start="103.040" data-duration="7.740" data-track-index="2" style="z-index:126" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t376" class="stamp" style="font-size:76px">MOSTLY SMALL SHRIMP</span></div></div>
+<div id="w379" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:127;"><video id="v378" class="clip fit" src="assets/clips/gulper_naut_1d74f9bb.mp4" muted playsinline data-start="110.780" data-duration="4.700" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s380" class="clip scene " data-start="110.780" data-duration="4.700" data-track-index="2" style="z-index:128" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Exploration Trust / Nautilus Live</div></div>
+<div id="s382" class="clip scene " data-start="110.780" data-duration="4.700" data-track-index="2" style="z-index:129" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t381" class="stamp" style="font-size:76px">LESS A WEAPON, MORE A NET</span></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+{const c=document.getElementById("cv292").getContext("2d");tl.to({},{duration:5.060,ease:"none",onUpdate:function(){SC.descend(c,this.time(),{"d0": 0.7, "d1": 1.0, "rise": 40, "d": 5.06});}},0.000);}
+tl.fromTo("#c293",{opacity:0,scale:1.2},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},0.200);
+tl.to("#tx294",{opacity:1,duration:0.5,ease:"power2.out"},2.200);
+tl.to("#c293",{opacity:0,duration:0.4,ease:"power2.out"},4.610);
+tl.to("#tx294",{opacity:0,duration:0.4,ease:"power2.out"},4.610);
+tl.fromTo("#v296",{scale:1.0},{scale:1.06,duration:3.4,ease:"none"},5.060);
+tl.fromTo("#t299",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},5.900);
+tl.to("#t299",{opacity:0,duration:0.3,ease:"power2.out"},8.110);
+{const c=document.getElementById("cv301").getContext("2d");tl.to({},{duration:11.160,ease:"none",onUpdate:function(){SC.ultrablack(c,this.time(),{"depth": 1.0, "biolum": 40, "snow": 220, "hero": {"img": "img_dragon", "len": 1100, "headRight": false, "bend": 0.5, "amp": 0.015, "beat": 0.4, "x": 960, "y": 540}, "lamp0": [300, 400], "lamp1": [1650, 620], "lampR": 460, "cam": {"z0": 1.0, "z1": 1.05}, "d": 11.16});}},8.460);}
+tl.fromTo("#c302",{opacity:0,scale:1.2},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},11.120);
+tl.to("#tx303",{opacity:1,duration:0.5,ease:"power2.out"},12.200);
+tl.to("#c302",{opacity:0,duration:0.4,ease:"power2.out"},15.750);
+tl.to("#tx303",{opacity:0,duration:0.4,ease:"power2.out"},15.750);
+tl.fromTo("#t304",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},16.600);
+tl.to("#t304",{opacity:0,duration:0.3,ease:"power2.out"},19.150);
+tl.fromTo("#v306",{scale:1.0},{scale:1.06,duration:2.48,ease:"none"},19.620);
+tl.fromTo("#t309",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},19.900);
+tl.to("#t309",{opacity:0,duration:0.3,ease:"power2.out"},21.650);
+tl.fromTo("#ph311",{scale:1.0},{scale:1.15,duration:6.05,ease:"none"},22.100);
+tl.fromTo("#l312",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},24.100);
+tl.fromTo("#v314",{scale:1.0},{scale:1.06,duration:1.93,ease:"none"},28.150);
+tl.fromTo("#t317",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},28.400);
+tl.to("#t317",{opacity:0,duration:0.3,ease:"power2.out"},29.730);
+{const c=document.getElementById("cv319").getContext("2d");tl.to({},{duration:4.360,ease:"none",onUpdate:function(){SC.lure(c,this.time(),{"depth": 1.0, "biolum": 40, "snow": 220, "hero": {"img": "img_angler", "len": 760, "headRight": false, "bend": 0.65, "amp": 0.025, "beat": 0.35, "rim": [110, 150, 160, 0.35], "lo": 0.25, "x": 1050, "y": 620}, "lure": [0.04, 0.27, 18, [120, 230, 255]], "mouth": [0.06, 0.42], "prey": [], "cam": {"z0": 1.0, "z1": 1.45, "x1": 520, "y1": 160}, "d": 4.36});}},30.080);}
+tl.fromTo("#l320",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},31.400);
+{const c=document.getElementById("cv322").getContext("2d");tl.to({},{duration:5.380,ease:"none",onUpdate:function(){SC.lure(c,this.time(),{"depth": 1.0, "biolum": 40, "snow": 220, "hero": {"img": "img_angler", "len": 760, "headRight": false, "bend": 0.65, "amp": 0.025, "beat": 0.35, "rim": [110, 150, 160, 0.35], "lo": 0.25, "x": 1100, "y": 580}, "lure": [0.04, 0.27, 18, [120, 230, 255]], "mouth": [0.06, 0.42], "tStrike": 2.46, "lungeDx": -120, "prey": [{"t0": 0.2, "x0": 200, "y0": 360, "x1": 800, "y1": 470, "len": 70, "flip": false, "eat": 1, "flee": -600}, {"t0": 0.6, "x0": 100, "y0": 700, "x1": 640, "y1": 620, "len": 60, "flip": false, "flee": -600}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 5.38});}},34.440);}
+tl.fromTo("#v324",{scale:1.0},{scale:1.06,duration:9.3,ease:"none"},39.820);
+tl.fromTo("#t327",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},43.600);
+tl.to("#t327",{opacity:0,duration:0.3,ease:"power2.out"},48.550);
+tl.fromTo("#v329",{scale:1.0},{scale:1.06,duration:1.82,ease:"none"},49.120);
+tl.fromTo("#t332",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},49.400);
+tl.to("#t332",{opacity:0,duration:0.3,ease:"power2.out"},50.590);
+tl.fromTo("#v334",{scale:1.0},{scale:1.06,duration:2.11,ease:"none"},50.940);
+tl.fromTo("#t337",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},51.200);
+tl.to("#t337",{opacity:0,duration:0.3,ease:"power2.out"},52.550);
+{const c=document.getElementById("cv339").getContext("2d");tl.to({},{duration:5.490,ease:"none",onUpdate:function(){SC.swim(c,this.time(),{"depth": 1.0, "biolum": 40, "snow": 220, "heroes": [{"img": "img_fangtooth", "len": 1500, "headRight": false, "bend": 0.55, "amp": 0.035, "beat": 0.6, "rim": [150, 120, 110, 0.3], "x": 1000, "y": 540}], "lamp": [700, 500, 700], "cam": {"z0": 1.0, "z1": 1.35, "x1": 560, "y1": 60}, "d": 5.49});}},53.050);}
+tl.fromTo("#l340",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},54.600);
+{const c=document.getElementById("cv342").getContext("2d");tl.to({},{duration:5.890,ease:"none",onUpdate:function(){SC.swim(c,this.time(),{"depth": 1.0, "biolum": 40, "snow": 220, "heroes": [{"img": "img_fangtooth", "len": 1700, "headRight": false, "bend": 0.55, "amp": 0.035, "beat": 0.6, "rim": [150, 120, 110, 0.3], "x": 1100, "y": 560, "glows": [[0.16, 0.31, 18, [255, 170, 90], 1.0, 0.5, 2.6], [0.24, 0.3, 14, [255, 170, 90], 1.0, 0.5, 2.6]]}], "lamp": [700, 500, 700], "cam": {"z0": 1.1, "z1": 1.25, "x0": 500, "x1": 600, "y0": 80, "y1": 120}, "d": 5.89});}},58.540);}
+tl.fromTo("#l343",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},61.200);
+tl.fromTo("#v345",{scale:1.0},{scale:1.06,duration:2.34,ease:"none"},64.430);
+tl.fromTo("#t348",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},65.200);
+tl.to("#t348",{opacity:0,duration:0.3,ease:"power2.out"},66.420);
+tl.fromTo("#sn350",{y:0,x:0},{y:-90,x:-20,duration:6.53,ease:"none"},66.770);
+tl.fromTo("#sn351",{y:0,x:0},{y:-170,x:30,duration:6.53,ease:"none"},66.770);
+tl.fromTo("#sz352",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power2.out"},67.000);
+tl.fromTo("#sl353",{opacity:0,y:15},{opacity:1,y:0,duration:0.5,ease:"power2.out"},67.300);
+tl.fromTo("#sz354",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power2.out"},70.600);
+tl.fromTo("#sl355",{opacity:0,y:15},{opacity:1,y:0,duration:0.5,ease:"power2.out"},70.900);
+{const c=document.getElementById("cv357").getContext("2d");tl.to({},{duration:4.100,ease:"none",onUpdate:function(){SC.swallow(c,this.time(),{"depth": 0.85, "biolum": 30, "snow": 260, "hero": {"img": "img_swallower", "len": 1250, "headRight": true, "bend": 0.5, "amp": 0.035, "beat": 0.6, "rim": [110, 130, 150, 0.35], "x": 1000, "y": 470}, "prey": {"img": "img_lantern", "len": 1000, "x0": 2200, "headRight": false}, "belly": [0.55, 0.62], "bellyR": 0.21, "tGulp": 0.3, "cam": {"z0": 1.0, "z1": 1.1}, "d": 4.1});}},73.300);}
+tl.fromTo("#ph358",{scale:1.0},{scale:1.1,duration:3.22,ease:"none"},77.400);
+tl.fromTo("#l359",{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:"power2.out"},78.200);
+{const c=document.getElementById("cv361").getContext("2d");tl.to({},{duration:6.120,ease:"none",onUpdate:function(){SC.swim(c,this.time(),{"depth": 0.85, "biolum": 30, "snow": 260, "heroes": [{"img": "img_swallower_full", "len": 1200, "headRight": false, "bend": 0.6, "amp": 0.015, "beat": 0.3, "rim": [110, 130, 150, 0.3], "x": 960, "y": 560, "dark": 0.15, "tintCol": [60, 50, 20, 0.15]}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 6.12});}},80.620);}
+tl.fromTo("#t362",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},84.100);
+tl.to("#t362",{opacity:0,duration:0.3,ease:"power2.out"},86.250);
+{const c=document.getElementById("cv364").getContext("2d");tl.to({},{duration:8.060,ease:"none",onUpdate:function(){SC.floatup(c,this.time(),{"hero": {"img": "img_swallower_full", "len": 1000, "headRight": false, "bend": 0.6, "amp": 0.015, "beat": 0.3, "rim": [110, 130, 150, 0.3], "flip": false}, "belly": [0.4, 0.75], "bellyR": 0.0, "d": 8.06});}},86.740);}
+tl.fromTo("#t365",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},89.600);
+tl.to("#t365",{opacity:0,duration:0.3,ease:"power2.out"},94.250);
+tl.fromTo("#v367",{scale:1.0},{scale:1.06,duration:3.0,ease:"none"},94.800);
+tl.fromTo("#t370",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},95.200);
+tl.to("#t370",{opacity:0,duration:0.3,ease:"power2.out"},97.450);
+tl.fromTo("#v372",{scale:1.0},{scale:1.06,duration:5.24,ease:"none"},97.800);
+{const c=document.getElementById("cv375").getContext("2d");tl.to({},{duration:7.740,ease:"none",onUpdate:function(){SC.gulper(c,this.time(),{"depth": 0.85, "biolum": 30, "snow": 260, "hero": {"img": "img_gulper", "len": 1350, "headRight": false, "bend": 0.35, "amp": 0.05, "beat": 0.4, "waves": 2.0, "rim": [90, 120, 140, 0.4], "path": [[0, 1500, 560], [7.7, 900, 540]]}, "jaw": [0.12, 0.55], "tOpen": 99, "noPouch": 1, "shrimp": {"n": 40, "cx": 700, "cy": 560, "rx": 420, "ry": 240, "size": 8, "seed": 31}, "cam": {"z0": 1.0, "z1": 1.08}, "d": 7.74});}},103.040);}
+tl.fromTo("#t376",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},107.000);
+tl.to("#t376",{opacity:0,duration:0.3,ease:"power2.out"},110.250);
+tl.fromTo("#v378",{scale:1.0},{scale:1.06,duration:4.7,ease:"none"},110.780);
+tl.fromTo("#t381",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},111.800);
+tl.to("#t381",{opacity:0,duration:0.3,ease:"power2.out"},114.950);
+tl.set({}, {}, 115.467);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

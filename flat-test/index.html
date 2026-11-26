@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Fredoka",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.cap{position:absolute;left:0;right:0;text-align:center;opacity:0}
+.cap span{display:inline-block;background:#fffdf6;color:#173a55;font-weight:700;font-size:64px;padding:14px 44px 18px;border-radius:60px;box-shadow:0 10px 0 rgba(10,40,70,.25)}
+.title{position:absolute;left:0;right:0;top:170px;text-align:center;font-weight:700;font-size:118px;line-height:1.02;color:#fff;text-shadow:0 8px 0 #0d5f96;opacity:0}
+.title small{display:block;font-size:54px;color:#ffe27a;text-shadow:0 5px 0 #0d5f96;margin-top:14px}
+.black{position:absolute;inset:0;background:#000}
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="25" data-width="1920" data-height="1080">
+<canvas id="c1" class="clip" width="1920" height="1080" data-start="0" data-duration="8.5" data-track-index="1"></canvas>
+<canvas id="c2" class="clip" width="1920" height="1080" data-start="8.5" data-duration="8" data-track-index="1"></canvas>
+<canvas id="c3" class="clip" width="1920" height="1080" data-start="16.5" data-duration="8.5" data-track-index="1"></canvas>
+<div id="t1" class="title clip" data-start="0" data-duration="8.5" data-track-index="2">THE ONLY ANIMAL<br>ORCAS WON'T HUNT<small>a flat-style test</small></div>
+<div id="k2" class="cap clip" style="top:900px" data-start="8.5" data-duration="8" data-track-index="2"><span>THEY SHARE THE SEA WITH US EVERY DAY</span></div>
+<div id="k3" class="cap clip" style="top:120px" data-start="16.5" data-duration="8.5" data-track-index="2"><span>YET NO WILD ORCA HAS EVER HUNTED A HUMAN</span></div>
+<div id="blk" class="black clip" data-start="0" data-duration="25" data-track-index="3"></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const run = (id, name, start, dur, o) => { const c = document.getElementById(id).getContext("2d"); tl.to({}, { duration: dur, ease: "none", onUpdate: function () { const k = this.time(), z = 1 + (o.zoom || 0) * k / dur; c.setTransform(z, 0, 0, z, (1 - z) * 960, (1 - z) * 540); FL.SC[name](c, k, o); } }, start); };
+run("c1", "seabed", 0, 8.5, { orcaT: 9 });
+run("c2", "boat", 8.5, 8, { zoom: 0.06 });
+run("c3", "shore", 16.5, 8.5, { breach: 3.6, zoom: 0.05 });
+tl.fromTo("#blk", { opacity: 1 }, { opacity: 0, duration: 1.2, ease: "power1.inOut" }, 0);
+tl.to("#blk", { opacity: 1, duration: 0.8, ease: "power1.in" }, 24.2);
+tl.fromTo("#t1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, 1.0);
+tl.to("#t1", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 4.6);
+tl.fromTo("#k2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, 9.3);
+tl.to("#k2", { opacity: 0, duration: 0.3 }, 15.9);
+tl.fromTo("#k3", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, 21.6);
+tl.set({}, {}, 25);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

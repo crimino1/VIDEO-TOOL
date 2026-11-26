@@ -1,0 +1,106 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="130.960" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v130" class="clip vid" src="assets/clips/mn_Walk_6b1fde84.mp4" muted playsinline data-start="0.000" data-duration="40.900" data-track-index="1" style="z-index:75;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v131" class="clip vid" src="assets/clips/mn_Quiz_8344b4bb.mp4" muted playsinline data-start="40.900" data-duration="24.180" data-track-index="1" style="z-index:77;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v132" class="clip vid" src="assets/clips/mn_Steps_fa390c10.mp4" muted playsinline data-start="65.080" data-duration="35.220" data-track-index="1" style="z-index:79;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s136" class="clip scene" data-start="100.300" data-duration="2.500" data-track-index="2" style="z-index:81" data-layout-allow-overflow data-layout-allow-overlap><div id="c135" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch133" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; FOUR</div><div class="ti">The man behind it</div><div id="ru134" class="rule"></div></div></div></div>
+<div id="s142" class="clip scene" data-start="102.800" data-duration="5.160" data-track-index="2" style="z-index:82" data-layout-allow-overflow data-layout-allow-overlap><div id="c141" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf138" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt137" src="assets/gen/euler_handmann_82ed62.jpg" alt="euler_handmann"></div><div id="tg139" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Leonhard Euler</div><div class="r">Swiss mathematician</div></div><div id="pl140" class="place" style="top:850px"><div class="ru"></div><div class="l1">BASEL, SWITZERLAND</div><div class="l2">born 1707</div></div></div></div>
+<div id="s146" class="clip scene" data-start="107.960" data-duration="3.800" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div id="c145" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:673px;top:140px;width:575px;height:760px"><img id="ph143" src="assets/gen/introductio_1748_c6d674.jpg" alt="introductio_1748"></div><div id="pl144" class="place" style="top:850px"><div class="ru"></div><div class="l1">INTRODUCTIO IN ANALYSIN INFINITORUM</div><div class="l2">1748</div></div></div></div>
+<video id="v147" class="clip vid" src="assets/clips/mn_EulerFormula_df2a3d4d.mp4" muted playsinline data-start="111.760" data-duration="19.200" data-track-index="1" style="z-index:84;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[100.3, 102.8, "euler_young", {"write": -9, "tin": "fade", "tout": "fade"}], [102.8, 107.96, "euler_young", {"tin": "fade", "tout": "fade"}], [107.96, 111.76, "euler_young", {"write": -9, "tin": "fade", "tout": "fade"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dread.js"></script>
+<script src="assets/js/scenes/history.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/story.js"></script>
+<script src="assets/js/scenes/world.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#ch133",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},100.450);
+tl.fromTo("#ru134",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},100.800);
+tl.fromTo("#pt137",{scale:1.0},{scale:1.04,duration:5.16,ease:"none"},102.800);
+tl.fromTo("#pf138",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},102.800);
+tl.fromTo("#tg139",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},103.100);
+tl.fromTo("#pl140",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},106.380);
+tl.fromTo("#ph143",{scale:1.0},{scale:1.05,duration:3.8,ease:"none"},107.960);
+tl.fromTo("#pl144",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},108.160);
+tl.set({}, {}, 130.960);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

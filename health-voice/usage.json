@@ -1,0 +1,1309 @@
+{
+ "days": {
+  "2026-11-10": 4998,
+  "2026-11-11": 3367,
+  "2026-11-12": 3543,
+  "2026-11-13": 3081,
+  "2026-11-18": 2716,
+  "2026-11-26": 3050
+ },
+ "last_request": 1795654113.4758337,
+ "log": [
+  {
+   "time": "2026-11-10T01:35:58",
+   "chars": 80,
+   "task": "e34738dd-9fa9-4040-b786-37f2a11b65a0",
+   "out": "health-voice/test.mp3"
+  },
+  {
+   "time": "2026-11-10T03:59:06",
+   "chars": 103,
+   "task": "ec3d8b19-0a7c-49aa-967e-185a4d83e144",
+   "out": "chair-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-10T04:00:03",
+   "chars": 95,
+   "task": "17aac966-6e65-45f4-b7fe-6ae662f7ffa8",
+   "out": "chair-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-10T04:00:56",
+   "chars": 116,
+   "task": "70475c64-e222-4df9-9377-c10732cb8fd2",
+   "out": "chair-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-10T04:01:50",
+   "chars": 110,
+   "task": "1284db5c-c061-4b07-8e4b-a4c1e1e7a7f1",
+   "out": "chair-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-10T04:02:48",
+   "chars": 101,
+   "task": "fbf3b9c6-c7e4-4864-ad1b-27cb067ae0b5",
+   "out": "chair-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-10T04:03:44",
+   "chars": 112,
+   "task": "27854479-008e-4a07-a5b0-27afd52accd5",
+   "out": "chair-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-10T04:04:38",
+   "chars": 97,
+   "task": "96332dae-99df-47b1-83d2-8f74d805b546",
+   "out": "chair-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-10T04:05:34",
+   "chars": 103,
+   "task": "2803dc96-a36a-4bc4-b95d-38ac473b5c15",
+   "out": "chair-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-10T04:06:29",
+   "chars": 116,
+   "task": "d093dd1a-0f88-4b44-abdb-34f47e13d7bf",
+   "out": "chair-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-10T04:07:24",
+   "chars": 89,
+   "task": "11dba809-8110-4581-84cb-75f117b3c3d9",
+   "out": "chair-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-10T04:08:19",
+   "chars": 292,
+   "task": "6ba2d73f-ff31-4888-a221-76bf981d17a2",
+   "out": "chair-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-10T04:09:14",
+   "chars": 221,
+   "task": "157e1ff7-aa5e-4c72-b545-6a0f3daab5ce",
+   "out": "chair-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-10T04:10:09",
+   "chars": 31,
+   "task": "a56cf223-5c8e-402f-9f8c-52cece1979ba",
+   "out": "chair-workout/voice/ten.mp3"
+  },
+  {
+   "time": "2026-11-10T12:24:52",
+   "chars": 112,
+   "task": "d4e10c89-489e-4fd4-8e8d-958bbee3c750",
+   "out": "belly-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-10T12:25:20",
+   "chars": 95,
+   "task": "ad9a8ef4-89be-412b-8b44-a3278d674756",
+   "out": "belly-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-10T12:25:31",
+   "chars": 101,
+   "task": "bc872ddb-4c88-403e-a99f-2167a367a459",
+   "out": "belly-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-10T12:25:41",
+   "chars": 95,
+   "task": "e440cf50-59be-449c-89fb-4a881f098d91",
+   "out": "belly-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-10T12:25:56",
+   "chars": 97,
+   "task": "b7fa32be-27a2-4362-9481-f4f2373728ba",
+   "out": "belly-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-10T12:26:07",
+   "chars": 111,
+   "task": "c65e0dc5-5f87-4ab7-b72e-de2ef9a66e55",
+   "out": "belly-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-10T12:26:18",
+   "chars": 106,
+   "task": "8cbc636a-7e81-47bf-96c0-6b91b23d2208",
+   "out": "belly-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-10T12:26:29",
+   "chars": 101,
+   "task": "55ebf279-e2fd-468b-9acd-4c7bcc52dfc3",
+   "out": "belly-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-10T12:26:47",
+   "chars": 96,
+   "task": "4c956af0-217d-43af-ba56-390f197723f2",
+   "out": "belly-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-10T12:26:58",
+   "chars": 97,
+   "task": "c2b4881c-a8d1-40a4-b237-dfe479d05103",
+   "out": "belly-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-10T12:27:13",
+   "chars": 308,
+   "task": "9b2d9b67-1608-4d79-8e65-bddde7581c76",
+   "out": "belly-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-10T12:27:37",
+   "chars": 213,
+   "task": "99dfe0bd-a2c9-4e1c-a90e-f72dc0fb2ec6",
+   "out": "belly-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-10T15:05:29",
+   "chars": 15,
+   "task": "e8ebd71d-251b-4ba8-8bb5-bcebdc643243",
+   "out": "kegel-workout/voice/squeeze.mp3"
+  },
+  {
+   "time": "2026-11-10T15:06:26",
+   "chars": 313,
+   "task": "6e441417-e26b-4930-b39f-a3b7807375dc",
+   "out": "kegel-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-10T15:07:24",
+   "chars": 100,
+   "task": "1bf34dec-0da2-41e3-af8f-79100d358183",
+   "out": "kegel-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-10T15:08:18",
+   "chars": 100,
+   "task": "54277f9e-671a-4b54-805c-1645480d5212",
+   "out": "kegel-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-10T15:09:13",
+   "chars": 90,
+   "task": "0907ab2b-b0a8-422c-a63c-fc20de6db4af",
+   "out": "kegel-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-10T15:10:07",
+   "chars": 89,
+   "task": "eadc33cd-da0f-4ba6-8bc5-d134b5862683",
+   "out": "kegel-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-10T15:11:05",
+   "chars": 110,
+   "task": "0d6ef060-c7f7-4688-aa03-570e9a3e0d77",
+   "out": "kegel-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-10T15:12:13",
+   "chars": 101,
+   "task": "e82a14b7-1ed7-4b82-9c63-a3c83bcf228b",
+   "out": "kegel-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-10T15:13:14",
+   "chars": 95,
+   "task": "0a7dfaf1-2857-4aae-bcec-cdfcc46b40f0",
+   "out": "kegel-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-10T15:14:12",
+   "chars": 101,
+   "task": "143f5764-380c-4637-ab89-a97808102ccf",
+   "out": "kegel-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-10T15:15:15",
+   "chars": 169,
+   "task": "8a7cb51f-e156-49f9-bd8c-82f973d91227",
+   "out": "kegel-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-10T15:16:20",
+   "chars": 17,
+   "task": "9ba91090-3c42-46b8-bea7-68dee3fa7d72",
+   "out": "kegel-workout/voice/relax.mp3"
+  },
+  {
+   "time": "2026-11-10T18:01:35",
+   "chars": 155,
+   "task": "37e316e1-f156-4070-8554-77632c6ee711",
+   "out": "abs-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-10T18:02:37",
+   "chars": 84,
+   "task": "a2c00f53-d9ee-4eac-bb0b-48cdee5fcb2c",
+   "out": "abs-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-10T18:03:30",
+   "chars": 84,
+   "task": "76f76f4d-1853-4dab-8b42-dcede0024285",
+   "out": "abs-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-10T18:04:24",
+   "chars": 79,
+   "task": "a11660a2-a4e1-40f7-8ecc-1f795e8bfefe",
+   "out": "abs-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-10T18:05:17",
+   "chars": 76,
+   "task": "0fec7d55-9e2d-4c9d-8a09-cac84521282c",
+   "out": "abs-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-10T23:36:54",
+   "chars": 22,
+   "task": "b080d08d-a978-48d1-b393-51a4f20a7211",
+   "out": "leg-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-11T13:07:35",
+   "chars": 196,
+   "task": "0c1b9e43-6fb2-4dfc-a61f-0befcaf8f1fa",
+   "out": "balance-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-11T13:08:36",
+   "chars": 116,
+   "task": "e3782a67-1752-41fe-8e90-d8ff9ec4ec7d",
+   "out": "balance-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-11T13:09:32",
+   "chars": 83,
+   "task": "fa14da8b-4a24-4bee-84c6-932af5673490",
+   "out": "balance-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-11T13:10:33",
+   "chars": 91,
+   "task": "463b1958-f00d-4549-9afd-d1b028a84143",
+   "out": "balance-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-11T13:11:27",
+   "chars": 82,
+   "task": "a9bfe613-2851-46d0-8dd1-b99ba3a20ea6",
+   "out": "balance-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-11T13:12:24",
+   "chars": 94,
+   "task": "6d10c7a5-efea-4f74-97db-8a8340075f8a",
+   "out": "balance-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-11T13:13:21",
+   "chars": 77,
+   "task": "ffda3cf0-3f72-44e1-9e44-24ca79ab98a7",
+   "out": "balance-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-11T13:14:18",
+   "chars": 75,
+   "task": "b34f7b8b-9d5b-4f8c-ac14-73627a794bf7",
+   "out": "balance-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-11T13:15:15",
+   "chars": 87,
+   "task": "5be10ffa-6629-4ab4-9d48-1ba1f4316f94",
+   "out": "balance-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-11T13:16:07",
+   "chars": 68,
+   "task": "2b1098b9-6089-4e74-bcab-ccccadd2f7ce",
+   "out": "balance-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-11T13:17:01",
+   "chars": 138,
+   "task": "95cdcdaf-a6a6-4078-ba26-c3af73fe7b31",
+   "out": "balance-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-11T13:17:54",
+   "chars": 204,
+   "task": "64f344e1-0c78-411a-b970-548a1f02564b",
+   "out": "back-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-11T13:18:53",
+   "chars": 88,
+   "task": "104cc4c7-1dbd-425c-8c55-0f0f594fcb60",
+   "out": "back-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-11T13:19:46",
+   "chars": 98,
+   "task": "1a997ddb-aeb2-446a-91d2-c0ccd33ab623",
+   "out": "back-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-11T13:20:39",
+   "chars": 92,
+   "task": "11716ba2-a0f6-4472-b0f1-8bb5cf4c8507",
+   "out": "back-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-11T13:21:33",
+   "chars": 89,
+   "task": "977efae2-ae7c-4ef9-abac-c13389580d97",
+   "out": "back-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-11T13:22:26",
+   "chars": 101,
+   "task": "c187929e-2813-4159-8f42-95581cf9e107",
+   "out": "back-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-11T13:23:23",
+   "chars": 74,
+   "task": "280a99a1-5012-45d0-b1b7-eb1fd634e181",
+   "out": "back-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-11T13:24:16",
+   "chars": 101,
+   "task": "c4964635-cd12-4d0f-ba19-bcd2a8b8c5f6",
+   "out": "back-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-11T13:25:09",
+   "chars": 94,
+   "task": "41981fc3-c5c4-48c2-b238-7c2fd5f1ef6d",
+   "out": "back-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-11T13:26:02",
+   "chars": 95,
+   "task": "f07f26d2-bec7-40b3-a31a-079f59305466",
+   "out": "back-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-11T13:26:55",
+   "chars": 133,
+   "task": "9ca84081-9af8-4a57-8899-0f2f1f3a54b7",
+   "out": "back-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-11T13:27:52",
+   "chars": 186,
+   "task": "593b2537-7eb7-435d-b8e8-7d7395c6705d",
+   "out": "arms-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-11T13:28:50",
+   "chars": 80,
+   "task": "ae046aab-1cc1-43b0-9c54-b152e1622d43",
+   "out": "arms-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-11T13:29:43",
+   "chars": 82,
+   "task": "6b0a3a1d-cd4c-4c02-b716-4b6d875c33ad",
+   "out": "arms-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-11T13:30:44",
+   "chars": 91,
+   "task": "09acdb2d-8fc7-41e1-90da-6236fdceb603",
+   "out": "arms-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-11T13:31:48",
+   "chars": 94,
+   "task": "b7585505-f625-418f-85b2-e5d92ae61358",
+   "out": "arms-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-11T13:32:48",
+   "chars": 105,
+   "task": "8b2c1f18-7ff4-4242-b9fc-5f4495a6ae8f",
+   "out": "arms-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-11T13:33:49",
+   "chars": 78,
+   "task": "e9568e1f-aac0-4e07-a076-462c09bb6f2a",
+   "out": "arms-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-11T13:34:42",
+   "chars": 89,
+   "task": "14df7f59-d41b-4478-b3c1-84295a7ae9b2",
+   "out": "arms-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-11T13:35:39",
+   "chars": 96,
+   "task": "3a383f76-baa3-455d-afc0-ee0bc81bbe61",
+   "out": "arms-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-11T13:36:43",
+   "chars": 80,
+   "task": "7ef25433-fc67-4509-900e-fffc914bd431",
+   "out": "arms-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-11T13:37:44",
+   "chars": 110,
+   "task": "4f86429a-4288-4003-9220-76c3e1478cb9",
+   "out": "arms-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:29:06",
+   "chars": 225,
+   "task": "9a281d10-b791-4f57-adf9-5bebbe4a2455",
+   "out": "knee-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:29:26",
+   "chars": 90,
+   "task": "1c2f5c75-d444-41b5-823d-0416260bfbce",
+   "out": "knee-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-12T03:29:37",
+   "chars": 86,
+   "task": "691fb79b-ba13-4ef9-b5bc-860a03ccbd1c",
+   "out": "knee-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-12T03:29:48",
+   "chars": 104,
+   "task": "2c1b95eb-2923-4d5e-8cc2-ca3b57858bbe",
+   "out": "knee-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-12T03:30:00",
+   "chars": 98,
+   "task": "376b4278-3427-4fa1-ae4d-86d7c392d991",
+   "out": "knee-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-12T03:30:19",
+   "chars": 104,
+   "task": "10835d98-f560-49de-abd8-213d70c05803",
+   "out": "knee-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-12T03:30:30",
+   "chars": 83,
+   "task": "861645eb-a10a-43f5-b83b-d7499deadbc0",
+   "out": "knee-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-12T03:30:41",
+   "chars": 97,
+   "task": "beb5e352-5079-4dfa-b088-976798eb8053",
+   "out": "knee-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-12T03:30:52",
+   "chars": 74,
+   "task": "69369f5e-ac26-46fa-8028-b69d2ff074b8",
+   "out": "knee-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-12T03:31:04",
+   "chars": 90,
+   "task": "91036a85-c4bf-4179-91f0-bc7c596e9ea4",
+   "out": "knee-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-12T03:31:15",
+   "chars": 147,
+   "task": "539396ae-cd76-4d41-a1bf-2d4acea9624e",
+   "out": "knee-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:31:27",
+   "chars": 200,
+   "task": "5554243f-97cc-420e-839f-7bc442c87f43",
+   "out": "neck-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:31:42",
+   "chars": 81,
+   "task": "c26a387d-a805-48c9-80e1-ce772ce8de51",
+   "out": "neck-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-12T03:31:54",
+   "chars": 94,
+   "task": "6a6e0dfc-7585-4d8b-8db5-15aefc3c729e",
+   "out": "neck-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-12T03:32:05",
+   "chars": 90,
+   "task": "a5fd5469-1212-40fd-915e-837101f84949",
+   "out": "neck-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-12T03:32:17",
+   "chars": 93,
+   "task": "f80f4649-c610-4f2c-9a3c-cbb300bdf76b",
+   "out": "neck-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-12T03:32:29",
+   "chars": 87,
+   "task": "2ec8f6cd-3fa3-406c-8345-29554e1dbab1",
+   "out": "neck-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-12T03:32:41",
+   "chars": 110,
+   "task": "6aabcf78-b694-4383-b88c-66104667b630",
+   "out": "neck-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-12T03:32:52",
+   "chars": 98,
+   "task": "10a7cd67-bc71-4e67-8359-f883f6c49339",
+   "out": "neck-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-12T03:33:03",
+   "chars": 89,
+   "task": "841bf453-977c-430c-96ae-01364683a1ea",
+   "out": "neck-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-12T03:33:15",
+   "chars": 104,
+   "task": "17e21bdb-c704-4567-95d2-0a1a2c440fd9",
+   "out": "neck-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-12T03:33:27",
+   "chars": 144,
+   "task": "8843638d-304e-4f31-a6ce-a7edb7decd4d",
+   "out": "neck-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:33:43",
+   "chars": 229,
+   "task": "8f146789-7ef4-4b67-9c39-d53a3584f436",
+   "out": "walk-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-12T03:33:59",
+   "chars": 73,
+   "task": "a0ea5abe-1063-4a6e-a994-e2fd54eaa668",
+   "out": "walk-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-12T03:34:10",
+   "chars": 100,
+   "task": "accf65c4-4cdb-4ced-8639-ef31f902fe11",
+   "out": "walk-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-12T03:34:21",
+   "chars": 92,
+   "task": "766bedbf-294d-4441-b0c0-1fe279763f2a",
+   "out": "walk-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-12T03:34:37",
+   "chars": 90,
+   "task": "d1dff3ae-71a3-4068-a59b-5af713403f3e",
+   "out": "walk-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-12T03:34:48",
+   "chars": 87,
+   "task": "1144e650-b344-49fe-8407-1a2e76a6eb29",
+   "out": "walk-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-12T03:35:00",
+   "chars": 84,
+   "task": "0a6267cf-457a-4bb5-ace6-11270b983c61",
+   "out": "walk-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-12T03:35:11",
+   "chars": 99,
+   "task": "66dfc065-8b2b-486a-96bf-024610aa3183",
+   "out": "walk-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-12T03:35:22",
+   "chars": 87,
+   "task": "709fd248-accd-4cca-8422-56591368b655",
+   "out": "walk-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-12T03:35:34",
+   "chars": 81,
+   "task": "a4f93f03-129e-4dd8-800d-e3c30a27843c",
+   "out": "walk-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-12T03:35:45",
+   "chars": 133,
+   "task": "dd4d5b94-f1cf-4059-bd92-948384949174",
+   "out": "walk-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:00:52",
+   "chars": 73,
+   "task": "935d2f05-f053-4414-954a-f1ea9a43e086",
+   "out": "morning-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-13T00:01:14",
+   "chars": 59,
+   "task": "11e77e90-aca0-4102-b325-d288aa007b36",
+   "out": "morning-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-13T00:01:28",
+   "chars": 84,
+   "task": "d77b39ab-4b80-4a38-a224-81efcd0d25dd",
+   "out": "morning-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-13T00:01:42",
+   "chars": 86,
+   "task": "dfe8f788-170f-40dc-b73d-f83711dd28f4",
+   "out": "morning-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-13T00:01:55",
+   "chars": 58,
+   "task": "86ec46c8-b9cf-4cfa-961b-5bf3c5411882",
+   "out": "morning-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-13T00:02:09",
+   "chars": 70,
+   "task": "0f9a9080-3a8f-4a4c-919d-779fe6e01e4d",
+   "out": "morning-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-13T00:02:25",
+   "chars": 60,
+   "task": "dc73d160-aa6a-4749-9add-a91f38b9a434",
+   "out": "morning-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-13T00:02:39",
+   "chars": 70,
+   "task": "46fc2fa7-3531-4917-820d-fe9c8be9cbbe",
+   "out": "morning-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-13T00:02:53",
+   "chars": 173,
+   "task": "cd9539f6-54dc-4721-b12b-62099d0f2a1c",
+   "out": "morning-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:03:12",
+   "chars": 116,
+   "task": "6fa3e385-68be-43b9-8855-a8a16c825098",
+   "out": "morning-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:03:26",
+   "chars": 64,
+   "task": "81d3b33a-e5b5-4e8f-a117-064538daa6f3",
+   "out": "hip-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-13T00:03:40",
+   "chars": 73,
+   "task": "02e319b8-cfcb-4277-849d-240520b7eac1",
+   "out": "hip-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-13T00:03:55",
+   "chars": 74,
+   "task": "87ebf0fa-3a18-416e-8624-3f7682aa0678",
+   "out": "hip-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-13T00:04:09",
+   "chars": 79,
+   "task": "ab9d2acd-340a-450d-bbe3-c3e9db086a19",
+   "out": "hip-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-13T00:04:24",
+   "chars": 82,
+   "task": "07f93beb-aaf9-4ea4-90e3-945588431864",
+   "out": "hip-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-13T00:04:38",
+   "chars": 88,
+   "task": "55cf3f55-7a68-48f6-973d-2a44d9a83e7e",
+   "out": "hip-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-13T00:04:52",
+   "chars": 87,
+   "task": "705437fe-913f-4ba4-9dc4-1ee88fb32669",
+   "out": "hip-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-13T00:05:09",
+   "chars": 79,
+   "task": "6efe0a8e-c7ea-4353-99a6-32ebce90948a",
+   "out": "hip-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-13T00:05:26",
+   "chars": 80,
+   "task": "7f028330-ba2d-4c0c-a6af-3a43245be937",
+   "out": "hip-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-13T00:05:40",
+   "chars": 79,
+   "task": "79ed9717-f0d5-4dde-8ffb-a4721a6040b1",
+   "out": "hip-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-13T00:05:54",
+   "chars": 174,
+   "task": "8efa6cc8-eba4-40b3-866d-0da94962c461",
+   "out": "hip-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:06:07",
+   "chars": 114,
+   "task": "cc4d2b87-d7a5-4dc7-ad1c-07eb08b2023f",
+   "out": "hip-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:06:22",
+   "chars": 59,
+   "task": "743ce8b5-3b3c-4d55-8af6-b920f707309a",
+   "out": "posture-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-13T00:06:36",
+   "chars": 65,
+   "task": "ee32df3c-1d0a-4026-9351-69682348b4f5",
+   "out": "posture-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-13T00:06:50",
+   "chars": 65,
+   "task": "62b5c4a7-354b-4495-96e8-d5223c981af5",
+   "out": "posture-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-13T00:07:04",
+   "chars": 67,
+   "task": "82fdee2b-303a-4ae3-999d-6747b1506fb9",
+   "out": "posture-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-13T00:07:17",
+   "chars": 80,
+   "task": "482fe4d5-5e4e-4ed7-9785-b4af26aa3c15",
+   "out": "posture-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-13T00:07:30",
+   "chars": 74,
+   "task": "b9785b92-e75a-4dc0-9b0e-72e1759c115c",
+   "out": "posture-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-13T00:07:44",
+   "chars": 87,
+   "task": "a7e1bd99-f043-42fd-b64a-64dd3799f9b2",
+   "out": "posture-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-13T00:07:57",
+   "chars": 75,
+   "task": "b99097c9-7a29-40ee-8535-1014f8c9fff5",
+   "out": "posture-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-13T00:08:11",
+   "chars": 87,
+   "task": "6336fbc9-2c4a-4b71-9f92-4f4d3353b5aa",
+   "out": "posture-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-13T00:08:26",
+   "chars": 71,
+   "task": "0872955a-bf75-4afa-ac16-10e65057a316",
+   "out": "posture-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-13T00:08:41",
+   "chars": 65,
+   "task": "a85ced7f-908f-4ec1-8f38-7e00796e97ec",
+   "out": "posture-workout/voice/ex11.mp3"
+  },
+  {
+   "time": "2026-11-13T00:08:56",
+   "chars": 79,
+   "task": "badf2be3-b5e0-43eb-b711-73583599b727",
+   "out": "posture-workout/voice/ex12.mp3"
+  },
+  {
+   "time": "2026-11-13T00:09:11",
+   "chars": 177,
+   "task": "3c90ea1a-cc33-4c1b-8862-584a81a0524c",
+   "out": "posture-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-13T00:09:31",
+   "chars": 108,
+   "task": "63eb2e9b-b38c-4b7d-a3fa-05df7c55a989",
+   "out": "posture-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:50:33",
+   "chars": 59,
+   "task": "739424b3-59f3-4584-a966-175b0640054b",
+   "out": "bellyfat-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-18T06:50:44",
+   "chars": 71,
+   "task": "d05455ba-1b69-4491-8790-1de530631636",
+   "out": "bellyfat-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-18T06:50:55",
+   "chars": 67,
+   "task": "13f2e16e-560d-41b7-a420-a7b4cf5d9efa",
+   "out": "bellyfat-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-18T06:51:10",
+   "chars": 63,
+   "task": "5d340650-4dd2-4103-b9c4-5bb1ad5a2171",
+   "out": "bellyfat-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-18T06:51:21",
+   "chars": 81,
+   "task": "e94fdfce-a01c-4f42-8504-d09899e2d0e3",
+   "out": "bellyfat-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-18T06:51:33",
+   "chars": 95,
+   "task": "3b0b15f0-0d6c-46e1-affc-545bef372e21",
+   "out": "bellyfat-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-18T06:51:44",
+   "chars": 71,
+   "task": "aafb6e28-1500-4b21-82f0-bb0b204acc41",
+   "out": "bellyfat-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-18T06:51:55",
+   "chars": 53,
+   "task": "7a2ff114-f8e4-4885-a572-888541a0f444",
+   "out": "bellyfat-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-18T06:52:07",
+   "chars": 62,
+   "task": "60a42c3f-c056-4b14-9843-fe44b952f4c1",
+   "out": "bellyfat-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-18T06:52:18",
+   "chars": 78,
+   "task": "2acf0b42-0fa7-4ebd-9a37-e5d781228e46",
+   "out": "bellyfat-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-18T06:52:28",
+   "chars": 167,
+   "task": "57003aab-d5c9-460a-b425-99673b513c00",
+   "out": "bellyfat-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:52:40",
+   "chars": 109,
+   "task": "2d25882b-a444-4dc9-a86d-63ba64d22628",
+   "out": "bellyfat-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:52:51",
+   "chars": 66,
+   "task": "8d38ec87-dac0-4e99-bb9f-1bd5c3c5bffa",
+   "out": "taichi-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-18T06:53:02",
+   "chars": 64,
+   "task": "64c33266-1ded-4cc4-8489-2d848e477875",
+   "out": "taichi-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-18T06:53:14",
+   "chars": 65,
+   "task": "847b33b4-b995-4436-8f6d-7e68d59c31c0",
+   "out": "taichi-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-18T06:53:25",
+   "chars": 67,
+   "task": "7791d405-fc5a-4213-93de-9a43d1f9dae0",
+   "out": "taichi-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-18T06:53:36",
+   "chars": 66,
+   "task": "fd5ad54a-2730-4af4-adf2-a11f383ae966",
+   "out": "taichi-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-18T06:53:48",
+   "chars": 83,
+   "task": "f29b9552-2424-41e3-8833-80d0a863a4bf",
+   "out": "taichi-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-18T06:54:00",
+   "chars": 64,
+   "task": "09256637-6ed2-4cf0-81f8-2c3381ecec3b",
+   "out": "taichi-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-18T06:54:15",
+   "chars": 62,
+   "task": "f81fc760-109e-47f5-a776-3f6d6bd94822",
+   "out": "taichi-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-18T06:54:27",
+   "chars": 60,
+   "task": "352eb897-00c8-4d0c-84fd-f7d3be46d8de",
+   "out": "taichi-workout/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-18T06:54:38",
+   "chars": 89,
+   "task": "2a51aad9-c4d5-48cd-8f5a-4c61a85fff3e",
+   "out": "taichi-workout/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-18T06:54:49",
+   "chars": 153,
+   "task": "31bfb5e5-ece6-4ed1-9d5e-5924c0215387",
+   "out": "taichi-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:55:01",
+   "chars": 112,
+   "task": "4acb4262-8271-4385-81ef-3b3f46554269",
+   "out": "taichi-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:55:13",
+   "chars": 64,
+   "task": "e7eefd7f-e46e-492d-84f4-102015879d9c",
+   "out": "neuropathy-workout/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-18T06:55:24",
+   "chars": 48,
+   "task": "8bc64fbb-e5b4-421e-bdf3-52055343b5a8",
+   "out": "neuropathy-workout/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-18T06:55:35",
+   "chars": 80,
+   "task": "d1d3accb-84c9-4926-be15-e58a396ea64a",
+   "out": "neuropathy-workout/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-18T06:55:50",
+   "chars": 52,
+   "task": "77d797d9-b1bc-4aa0-a03d-1c7a0f7463ba",
+   "out": "neuropathy-workout/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-18T06:56:02",
+   "chars": 75,
+   "task": "59d36dc0-6b5d-46f6-8be6-fea48c449c43",
+   "out": "neuropathy-workout/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-18T06:56:13",
+   "chars": 74,
+   "task": "64a289ff-6514-4621-bb4c-ecacb9206450",
+   "out": "neuropathy-workout/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-18T06:56:25",
+   "chars": 53,
+   "task": "4713073d-3ac4-4342-91ca-d9abe7380e3c",
+   "out": "neuropathy-workout/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-18T06:56:37",
+   "chars": 68,
+   "task": "99e4aba6-f8c4-40ba-93ad-e54dc7f55795",
+   "out": "neuropathy-workout/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-18T06:56:48",
+   "chars": 159,
+   "task": "377c2a7a-b72e-4fde-bbc5-24dc65ffd717",
+   "out": "neuropathy-workout/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-18T06:57:00",
+   "chars": 116,
+   "task": "b747f8cc-d31c-4b1b-86ef-46f916aa181b",
+   "out": "neuropathy-workout/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:12:24",
+   "chars": 105,
+   "task": "ffb07132-a504-4007-a0c3-c0551292d800",
+   "out": "bedtime-stretch/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-26T06:12:39",
+   "chars": 76,
+   "task": "17fa697e-1bc6-4a3e-9cd2-68e2fba6eff9",
+   "out": "bedtime-stretch/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-26T06:12:49",
+   "chars": 70,
+   "task": "f36a26db-da0f-4770-b0f4-0cf340f4e15e",
+   "out": "bedtime-stretch/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:00",
+   "chars": 92,
+   "task": "c2e9b7c0-dba9-48a4-84a2-4cbac563c30e",
+   "out": "bedtime-stretch/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:10",
+   "chars": 71,
+   "task": "7049a63f-6253-4d8d-940b-292c7d517037",
+   "out": "bedtime-stretch/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:20",
+   "chars": 94,
+   "task": "a7aa4a59-a315-4550-a32a-e4068c317a48",
+   "out": "bedtime-stretch/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:30",
+   "chars": 70,
+   "task": "caa9f076-6c1a-46ac-88fc-f753eb3bade0",
+   "out": "bedtime-stretch/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:40",
+   "chars": 82,
+   "task": "5588edcb-5f4e-4494-b5fa-cf4ea5e1767b",
+   "out": "bedtime-stretch/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-26T06:13:51",
+   "chars": 46,
+   "task": "835a23df-ab56-4f8c-9b4d-cdf6ea4ebe8c",
+   "out": "bedtime-stretch/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:01",
+   "chars": 95,
+   "task": "94783f02-e79e-4e61-8c6a-fa6c8a13dad1",
+   "out": "bedtime-stretch/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:11",
+   "chars": 165,
+   "task": "0369bf6a-c340-4040-b1ba-ea9457234f22",
+   "out": "bedtime-stretch/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:24",
+   "chars": 85,
+   "task": "4913256e-ecde-4c12-aa01-e209d05d8e44",
+   "out": "bedtime-stretch/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:34",
+   "chars": 81,
+   "task": "c628af4a-b7da-4a36-b0eb-659221951c9a",
+   "out": "floor-getup/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:44",
+   "chars": 59,
+   "task": "1dd3f537-210e-432f-a4d2-64733358adbb",
+   "out": "floor-getup/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-26T06:14:54",
+   "chars": 84,
+   "task": "41ea460c-d97b-46e6-bbea-e9941c23ceea",
+   "out": "floor-getup/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:04",
+   "chars": 77,
+   "task": "fb70f139-b28d-4dbb-8da2-71058ddb1b4d",
+   "out": "floor-getup/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:13",
+   "chars": 84,
+   "task": "36b926ec-a624-414f-8b24-0c5184446e99",
+   "out": "floor-getup/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:23",
+   "chars": 73,
+   "task": "9ccab024-80bf-4550-bd49-d20d02ae9999",
+   "out": "floor-getup/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:33",
+   "chars": 83,
+   "task": "66155905-780a-4e39-a2cd-72f0aadea755",
+   "out": "floor-getup/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:43",
+   "chars": 93,
+   "task": "7bdbe6a3-dbd9-4025-a139-546d84ddef54",
+   "out": "floor-getup/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-26T06:15:53",
+   "chars": 54,
+   "task": "557b58f9-65dd-4799-87fc-74d3f40819b8",
+   "out": "floor-getup/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:03",
+   "chars": 133,
+   "task": "3b05421f-b1e1-4979-b670-ffbe73037932",
+   "out": "floor-getup/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:14",
+   "chars": 194,
+   "task": "3dc39a8f-7bc4-4b69-b138-02291ba3a1fb",
+   "out": "floor-getup/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:24",
+   "chars": 129,
+   "task": "7ecf6cad-a51f-48c7-aa90-2e83088f4ae1",
+   "out": "floor-getup/voice/outro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:39",
+   "chars": 76,
+   "task": "3b36534a-f536-46e1-aa82-5b01aa285a9d",
+   "out": "japanese-five/voice/ex01.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:49",
+   "chars": 73,
+   "task": "61f15db8-56d3-47ef-942c-688bb2db4201",
+   "out": "japanese-five/voice/ex02.mp3"
+  },
+  {
+   "time": "2026-11-26T06:16:59",
+   "chars": 67,
+   "task": "538e9ccb-fcb1-4f76-b337-6e0303674747",
+   "out": "japanese-five/voice/ex03.mp3"
+  },
+  {
+   "time": "2026-11-26T06:17:09",
+   "chars": 67,
+   "task": "46938f20-00bb-426a-bb5d-5bce72e6c4e1",
+   "out": "japanese-five/voice/ex04.mp3"
+  },
+  {
+   "time": "2026-11-26T06:17:19",
+   "chars": 48,
+   "task": "bcb39071-fa4c-49f7-8543-8f006f9fa973",
+   "out": "japanese-five/voice/ex05.mp3"
+  },
+  {
+   "time": "2026-11-26T06:17:29",
+   "chars": 65,
+   "task": "5479023d-cecc-4cff-b882-579bb6e6c754",
+   "out": "japanese-five/voice/ex06.mp3"
+  },
+  {
+   "time": "2026-11-26T06:17:39",
+   "chars": 62,
+   "task": "5c93c0cf-6e6a-401b-8278-b2a3331a388c",
+   "out": "japanese-five/voice/ex07.mp3"
+  },
+  {
+   "time": "2026-11-26T06:17:52",
+   "chars": 49,
+   "task": "8ce0018c-9ffe-4222-8a02-5879ac2270e5",
+   "out": "japanese-five/voice/ex08.mp3"
+  },
+  {
+   "time": "2026-11-26T06:18:02",
+   "chars": 52,
+   "task": "c7ee21b8-f20f-4853-8f5f-0e55f00c4fcb",
+   "out": "japanese-five/voice/ex09.mp3"
+  },
+  {
+   "time": "2026-11-26T06:18:12",
+   "chars": 37,
+   "task": "7356d8e2-8699-4395-b71b-8c16db42ad6b",
+   "out": "japanese-five/voice/ex10.mp3"
+  },
+  {
+   "time": "2026-11-26T06:18:23",
+   "chars": 155,
+   "task": "371a42ba-0d7f-47fd-b310-552dec553234",
+   "out": "japanese-five/voice/intro.mp3"
+  },
+  {
+   "time": "2026-11-26T06:18:34",
+   "chars": 104,
+   "task": "6c9a2472-bfe3-48ac-8880-93e35bb772f0",
+   "out": "japanese-five/voice/outro.mp3"
+  }
+ ]
+}

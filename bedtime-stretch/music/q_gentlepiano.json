@@ -1,0 +1,91 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "558589c9-56c0-43f6-8008-99280f7f885a",
+   "title": "A Gentle Goodbye",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1191885",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1191885&format=mp32",
+   "creator": "Gary David Pobst",
+   "creator_url": "https://www.jamendo.com/artist/460873/Gary_David_Pobst",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "newage",
+    "symphonic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dark",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "transcendant",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Gentle Goodbye\" by Gary David Pobst is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Bright Future",
+    "foreign_landing_url": "https://www.jamendo.com/album/143445/bright-future",
+    "creator": "Gary David Pobst",
+    "creator_url": "https://www.jamendo.com/artist/460873/Gary_David_Pobst",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 359000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/558589c9-56c0-43f6-8008-99280f7f885a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/558589c9-56c0-43f6-8008-99280f7f885a/",
+   "related_url": "https://api.openverse.org/v1/audio/558589c9-56c0-43f6-8008-99280f7f885a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/558589c9-56c0-43f6-8008-99280f7f885a/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+MIT researchers handed GPT-6 Astra the weights of another AI and told it: make this better at math. No retraining, no new data. Astra found a looping bug in two layers of Qwen3.5-0.8B, changed 0.016% of its weights by hand, and MATH-500 went from 7.9% to 48.1%. But there's a twist most coverage skipped. Here's what happened, why it matters, and what the critics found.
+
+SOURCES
+Takehi, Teoh, Zhang, Khattab (MIT CSAIL), "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights" (Nov 2, 2026): https://rikiyat.github.io/blog/weight-space-programming/
+Experiment logs: https://github.com/RikiyaT/lm_understand-logs
+Edited model: https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming
+Rikiya Takehi announcement: https://x.com/rikiyatakehi/status/2117313742891327994
+Omar Khattab: https://x.com/lateinteraction/status/2117316068226028025
+Qwen3.5-0.8B model card (thinking-loop warning): https://huggingface.co/Qwen/Qwen3.5-0.8B
+Gemma 3 270M: https://huggingface.co/google/gemma-3-270m-it
+VentureBeat: https://venturebeat.com/technology/like-gene-editing-for-neural-networks-mit-researchers-used-gpt-6-astra-to-edit-qwens-open-weights-directly-boosting-math-performance
+Simon Willison: https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/
+Alex Krentsel: https://x.com/AlexKrentsel/status/2117376683724660898 · OfficeChai: https://officechai.com/ai/ability-for-weight-space-programming-has-appeared-only-in-latest-models-says-google-researcher-alex-krentsel-who-reproduced-results/
+Jacob Lauritzen (Legora): https://x.com/jacsebl/status/2117606206764175543
+Matthew Honnibal: https://honnibal.dev/blog/astra-read-write-misleading
+BuildMVPFast ("method swap"): https://www.buildmvpfast.com/blog/astra-weight-editing-qwen-misleading-rebuttal-2026
+Carlos Toledo's rerun: https://carlostoledo.co/reports/weight-space-programming.html
+METR assessment of AI R&D acceleration at Anthropic: https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment
+Sam McCandlish (Anthropic): https://x.com/Sam_McCandlish/status/2118422266669371519
+Prompt Engineering, Weight-Space Programming explainer (Breakout footage): https://www.youtube.com/watch?v=wXJDtImT_-0
+
+2D animation: original AI Equator illustrations.

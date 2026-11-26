@@ -1,0 +1,337 @@
+[0:00.00] Hey everyone, welcome.
+[0:01.88] This is episode one of the complete Calculus One course.
+[0:05.54] Over this series, we're going to learn all of Calculus One step by step.
+[0:10.44] Limits, derivatives, integrals, everything, from the very basics, all the way to the final exam.
+[0:17.96] And if you stick with me until the end of this series, you'll understand Calculus better than most students sitting in a university right now.
+[0:26.18] But before we jump into Calculus, we need one thing.
+[0:29.98] A strong foundation.
+[0:31.62] Because Calculus is built on top of something called functions.
+[0:35.08] If you understand functions really well, Calculus becomes easy.
+[0:39.08] If you don't, it feels like trying to read a book in a language you don't know.
+[0:43.28] So in this episode, we're going to warm up.
+[0:45.90] We'll learn what a function really is, how to read its graph, the most important types of functions, how to combine them, and how to undo them.
+[0:54.50] And of course, there will be practice questions along the way.
+[0:57.94] So grab a pen and some paper, let's go.
+[1:01.24] Part one.
+[1:02.66] What is a function?
+[1:04.08] Imagine a juice machine.
+[1:05.82] You put an orange in and orange juice comes out.
+[1:08.84] You put an apple in and apple juice comes out.
+[1:11.88] Every time you put something in, you get exactly one thing out.
+[1:15.84] That's a function.
+[1:17.28] A function is like a machine.
+[1:18.80] You give it an input, it follows a rule, and it gives you exactly one output.
+[1:24.04] In math, our inputs and outputs are usually numbers.
+[1:27.86] For example, here's a machine with a simple rule.
+[1:31.12] Double the number, then add three.
+[1:33.76] Put in one.
+[1:35.02] Double it, that's two.
+[1:36.82] Add three.
+[1:38.12] Out comes five.
+[1:39.42] Put in four.
+[1:40.82] Double it, that's eight.
+[1:42.88] Add three.
+[1:44.10] Out comes 11.
+[1:45.32] Put in zero.
+[1:46.14] Double it, still zero.
+[1:48.60] Add three.
+[1:49.64] Out comes three.
+[1:51.32] Writing double the number, then add three.
+[1:54.00] Every time is slow, so mathematicians use a short way to write it.
+[1:58.48] We call the function f, and we write f of x equals 2x plus three.
+[2:03.66] Here's how to read that.
+[2:05.10] The letter f is the name of the machine.
+[2:07.74] The x inside the brackets is the input, and everything after the equal sign is the rule.
+[2:13.62] So when we write f of four, it means put four into the machine.
+[2:17.46] Replace every x with four.
+[2:19.94] Two times four plus three, that's 11.
+[2:23.02] So f of four equals 11.
+[2:25.42] And here's something that confuses a lot of students.
+[2:28.32] f of x does not mean f times x.
+[2:31.22] It's not multiplication.
+[2:32.98] It just means the output of f when the input is x.
+[2:36.48] Think of it as a label, like a name tag.
+[2:39.72] Now, the most important rule of a function.
+[2:42.82] Every input must give exactly one output, never two.
+[2:47.26] Think of a vending machine.
+[2:48.90] If you press the button for chips, you should always get chips.
+[2:52.40] If sometimes you got chips, and sometimes you got a cold drink from the same button, that machine is broken.
+[2:58.60] In math, that's not a function.
+[3:00.84] But it's totally fine for two different inputs to give the same output.
+[3:05.02] If the chips button and the cookies button both give you a granola bar, weird, but still a function, each button has only one result.
+[3:13.96] Quick practice.
+[3:15.94] Question one.
+[3:17.44] If f of x equals x squared minus one, what is f of negative three?
+[3:22.92] Pause the video and try it.
+[3:25.24] Replace x with negative three.
+[3:27.76] Negative three squared is positive nine.
+[3:30.72] Remember, a negative times a negative is positive.
+[3:34.76] Nine minus one is eight, so f of negative three equals eight.
+[3:39.46] Part two.
+[3:40.60] Graphs.
+[3:41.66] Seeing a function.
+[3:43.08] A function is a rule, but we can also draw it as a picture.
+[3:46.84] That picture is called a graph.
+[3:49.28] You know the coordinate grid.
+[3:51.16] A line going across called the x -axis, and a line going up called the y -axis.
+[3:57.42] To draw a function, we take each input x, find its output, and mark the point.
+[4:03.22] The output is called y.
+[4:05.00] So in a graph, y is just another name for f of x.
+[4:09.10] Take f of x equals 2x plus three.
+[4:12.30] When x is zero, y is three.
+[4:14.96] Mark the point zero comma three.
+[4:17.26] When x is one, y is five.
+[4:19.68] Mark one comma five.
+[4:21.54] When x is two, y is seven.
+[4:24.02] Mark two comma seven.
+[4:25.92] Connect the dots and you get a straight line.
+[4:28.72] Now here's a cool trick.
+[4:30.48] How can you tell if a graph is a function just by looking at it?
+[4:34.60] Use the vertical line test.
+[4:36.76] Imagine sliding a vertical line, a line going straight up and down across the whole graph.
+[4:42.86] If that line ever touches the graph at two points at the same time, it's not a function because that means one input has two outputs.
+[4:51.80] A straight slanted line passes the test.
+[4:55.26] It's a function.
+[4:56.50] A u -shaped curve passes function.
+[4:59.82] But a circle?
+[5:01.10] Draw a vertical line through the middle of a circle and it hits the top and the bottom, two points.
+[5:07.22] So a circle is not a function.
+[5:09.38] Part three, domain and range.
+[5:12.30] Every function has two important lists, the domain and the range.
+[5:16.76] The domain is the list of all inputs you're allowed to put into the machine.
+[5:21.02] The range is the list of all outputs that can come out.
+[5:24.60] For many functions like 2x plus 3, you can put in any number at all.
+[5:29.50] Positive, negative, zero, fractions.
+[5:32.70] So the domain is all real numbers.
+[5:35.20] But some functions have forbidden inputs and there are two big troublemakers in math you must always watch out for.
+[5:43.04] Troublemaker number one, dividing by zero.
+[5:46.34] You can never divide by zero.
+[5:48.30] It simply has no answer.
+[5:50.48] So look at the function one over x minus two.
+[5:53.46] If x is two, the bottom becomes two minus two, which is zero.
+[5:57.62] Dividing by zero.
+[5:59.10] Not allowed.
+[6:00.34] So the domain is every number except two.
+[6:04.04] Troublemaker number two, the square root of a negative number.
+[6:08.08] With the normal numbers we use in calculus one, you can't take the square root of a negative.
+[6:13.36] No number times itself gives a negative answer.
+[6:16.46] So look at the square root of x minus five.
+[6:19.68] The part inside must be zero or bigger.
+[6:22.70] So x minus five must be at least zero, which means x must be at least five.
+[6:28.20] The domain is x greater than or equal to five.
+[6:31.58] Now the range.
+[6:32.96] Look at f of x equals x squared.
+[6:35.64] Any number squared is never negative.
+[6:38.10] Two squared is four.
+[6:39.98] Negative two squared is also four.
+[6:42.56] Zero squared is zero.
+[6:44.26] So the outputs are always zero or bigger.
+[6:47.00] The range is y greater than or equal to zero.
+[6:50.72] Practice time.
+[6:52.46] Question two, what is the domain of f of x equals three over x plus four?
+[6:57.72] Question three, what is the domain of the square root of x minus one?
+[7:02.64] Pause now.
+[7:04.24] Question two, the bottom can't be zero.
+[7:07.50] x plus four equals zero when x is negative four.
+[7:11.60] So the domain is every number except negative four.
+[7:15.34] Question three, the inside must be zero or bigger.
+[7:19.36] x minus one at least zero.
+[7:21.32] So x is at least one.
+[7:23.24] The domain is x greater than or equal to one.
+[7:26.36] Part four, the family of functions.
+[7:29.36] In calculus, you'll meet the same few types of functions again and again.
+[7:33.96] Think of them as a family.
+[7:35.84] Let's meet each member.
+[7:37.76] First, linear functions.
+[7:40.20] These make straight lines.
+[7:41.94] They look like y equals mx plus b.
+[7:45.22] The number b is where the line crosses the y axis.
+[7:48.66] We call it the y intercept.
+[7:50.66] The number m is the slope.
+[7:52.74] It tells you how steep the line is.
+[7:54.72] A slope of three means every time you move one step to the right, the line goes three steps up.
+[8:00.38] A negative slope means the line goes down as you move right, and a slope of zero means a perfectly flat line.
+[8:07.28] Keep slope in your mind.
+[8:08.84] Because in a few episodes, the derivative will turn out to be slope.
+[8:12.96] Slope for curves.
+[8:14.60] Second, quadratic functions.
+[8:16.64] These have an x squared, like y equals x squared.
+[8:20.24] Their graph is a u -shaped curve called a parabola.
+[8:23.50] If you throw a ball into the air, the path it follows is a parabola.
+[8:27.56] If there's a minus sign in front, like negative x squared, the u flips upside down, like a frown.
+[8:34.30] Third, polynomials.
+[8:36.52] These are made by adding up powers of x, like x cubed minus 4x squared plus 5x minus 7.
+[8:44.38] Their graphs are smooth, unbroken curves with hills and valleys.
+[8:48.78] Linear and quadratic functions are actually small members of the polynomial family.
+[8:53.94] Fourth, rational functions.
+[8:56.22] These are fractions with x in the bottom, like 1 over x.
+[9:00.36] Remember troublemaker number one?
+[9:02.40] Because you can't divide by zero, these graphs have breaks.
+[9:06.46] And near those breaks, the graph shoots up or down toward invisible lines it never touches.
+[9:11.68] These invisible lines are called asymptotes.
+[9:14.54] We'll study them closely when we learn limits.
+[9:17.56] Fifth, exponential functions.
+[9:20.00] Here, x is up in the power, like y equals 2 to the x.
+[9:24.98] Watch how fast it grows.
+[9:26.70] 2 to the 0 is 1.
+[9:28.48] 2 to the 1 is 2.
+[9:30.02] Then 4.
+[9:31.12] Then 8.
+[9:32.10] Then 16.
+[9:33.36] 32.
+[9:34.38] 64.
+[9:35.54] It doubles every step.
+[9:37.72] This is the math of things that grow faster and faster.
+[9:40.94] Money growing in a bank, a viral video spreading, bacteria multiplying.
+[9:46.10] And there's one very special exponential function.
+[9:49.38] E to the x.
+[9:50.68] E is a special number, about 2 .718.
+[9:54.54] Just like pi is special for circles, E is special for growth.
+[9:58.70] You'll see why in the derivatives episodes.
+[10:01.28] E to the x has a magical property that no other function has.
+[10:08.70] Sixth, is the opposite of an exponential.
+[10:11.34] It asks the question, what power do I need?
+[10:14.64] For example, log base 2 of 8 asks, 2 to what power gives 8?
+[10:19.86] 2 times 2 times 2 is 8.
+[10:22.16] So the answer is 3.
+[10:23.78] And when the base is that special number E, we call it the natural log and write it as ln of x.
+[10:30.72] And finally, the trigonometric functions, sine, cosine, and tangent.
+[10:36.06] They make waves that repeat forever.
+[10:38.34] If you need a full refresher, I've made a complete trigonometry course on this channel.
+[10:43.30] The link is in the description.
+[10:45.10] For calculus 1, remember the unit circle, the basic values, and that sine squared plus cosine squared equals 1.
+[10:53.04] Quick check, answer out loud.
+[10:55.54] What is the slope of the line y equals 3x minus 2?
+[10:59.80] 3.
+[11:00.66] Where does it cross the y -axis?
+[11:02.24] At negative 2.
+[11:04.04] What is 2 to the power of 5?
+[11:06.18] 32.
+[11:07.10] Log base 2 of 16?
+[11:09.02] 4.
+[11:09.88] Because 2 to the 4th is 16.
+[11:12.06] Nice.
+[11:12.96] You know the whole family now.
+[11:14.82] Part 5.
+[11:16.12] Combining functions.
+[11:17.96] Functions can be combined, just like numbers.
+[11:21.08] You can add them, subtract them, multiply them, and divide them.
+[11:25.72] If f of x is x plus 1 and g of x is x squared, then f plus g is x squared plus x plus 1.
+[11:33.22] Easy.
+[11:34.26] But there's one special way of combining functions that's super important for calculus.
+[11:39.12] It's called composition, putting one function inside another.
+[11:43.42] Think of it like an assembly line in a factory.
+[11:46.20] The first machine takes your input and makes something.
+[11:49.38] Then that result goes straight into the second machine.
+[11:52.72] We write it as f of g of x.
+[11:55.14] It means first put x into g.
+[11:58.44] Then take that answer and put it into f.
+[12:01.58] Always work from the inside out.
+[12:04.08] Let's try it.
+[12:05.32] f of x equals x plus 1.
+[12:07.80] g of x equals x squared.
+[12:10.18] Find f of g of 3.
+[12:12.48] Inside first.
+[12:14.10] g of 3 is 3 squared, which is 9.
+[12:17.10] Now put 9 into f.
+[12:19.34] 9 plus 1 is 10.
+[12:21.10] So f of g of 3 is 10.
+[12:23.52] Now flip it.
+[12:24.62] What is g of f of 3?
+[12:26.70] Inside first.
+[12:28.04] f of 3 is 3 plus 1, 4.
+[12:30.66] Now put 4 into g.
+[12:32.38] 4 squared is 16.
+[12:34.52] 10 and 16.
+[12:36.28] Different answers.
+[12:37.62] The order matters.
+[12:39.08] Putting on your socks than your shoes is very different from putting on your shoes than your socks.
+[12:44.70] Remember composition.
+[12:46.40] In episode 6 it becomes the key to one of the most powerful tools in calculus, the chain rule.
+[12:52.98] Part 6.
+[12:54.80] Inverse functions, the undo button.
+[12:57.82] If a function is a machine that does something, the inverse function is the machine that undoes it, like an undo button.
+[13:04.94] If f takes 3 and turns it into 11, then the inverse takes 11 and turns it back into 3.
+[13:11.44] We write the inverse as f with a little minus 1 on top.
+[13:15.48] And careful, that minus 1 does not mean 1 over f.
+[13:19.60] It means undo f.
+[13:21.54] How do you find an inverse?
+[13:23.42] Three steps.
+[13:24.88] Step 1.
+[13:26.08] Write y instead of f of x.
+[13:28.62] Step 2.
+[13:29.90] Swap x and y.
+[13:31.36] Step 3.
+[13:32.64] Solve for y.
+[13:34.02] Let's do it with f of x equals 2x plus 3.
+[13:37.82] Step 1.
+[13:39.28] y equals 2x plus 3.
+[13:41.84] Step 2.
+[13:43.10] Swap them.
+[13:44.50] x equals 2y plus 3.
+[13:46.80] Step 3.
+[13:48.18] Solve for y.
+[13:49.54] Subtract 3.
+[13:51.00] x minus 3 equals 2y.
+[13:53.32] Divide by 2.
+[13:54.64] y equals x minus 3 over 2.
+[13:58.02] Let's check it.
+[13:59.30] f of 4 is 2 times 4 plus 3, 11.
+[14:03.08] Now put 11 into the inverse.
+[14:05.32] 11 minus 3 is 8.
+[14:07.06] Divide by 2, 4.
+[14:09.32] We're back to 4.
+[14:10.94] The undo button works.
+[14:12.78] But not every function can be undone.
+[14:15.22] Look at x squared.
+[14:16.86] Both 2 and negative 2 give 4.
+[14:20.02] So if the output is 4, the undo machine doesn't know whether to go back to 2 or negative 2.
+[14:29.40] It's the horizontal line test.
+[14:32.02] Slide a flat horizontal line across the graph.
+[14:35.82] If it ever touches the graph twice, the function has no inverse.
+[14:40.22] And here's a beautiful connection.
+[14:42.28] Exponentials and logarithms are inverses of each other.
+[14:45.40] e to the x and the natural log of x undo each other perfectly.
+[14:49.18] The natural log of e to the 5 is just 5.
+[14:52.26] Practice time.
+[14:53.94] Question 4.
+[14:55.38] f of x equals x minus 4 and g of x equals 3x.
+[15:00.22] Find f of g of 2.
+[15:02.44] Question 5.
+[15:03.84] Find the inverse of f of x equals 5x minus 1.
+[15:07.84] Pause now.
+[15:09.38] Question 4.
+[15:10.64] Inside first.
+[15:11.94] g of 2 is 3 times 2, which is 6.
+[15:15.56] Then f of 6 is 6 minus 4, which is 2.
+[15:19.48] Answer 2.
+[15:21.34] Question 5.
+[15:22.60] y equals 5x minus 1.
+[15:25.14] Swap.
+[15:26.16] x equals 5y minus 1.
+[15:28.60] Add 1.
+[15:29.96] x plus 1 equals 5y.
+[15:32.36] Divide by 5.
+[15:33.92] The inverse is x plus 1 over 5.
+[15:37.54] If you got those, your foundation is solid.
+[15:40.60] You are ready for calculus.
+[15:42.54] Let's quickly sum up what we learned today.
+[15:45.34] A function is a machine.
+[15:47.26] One input, exactly one output.
+[15:50.02] We write it as f of x.
+[15:52.32] A graph is a picture of a function, and the vertical line test checks if it really is one.
+[15:57.98] The domain is the allowed inputs.
+[16:00.34] The range is the possible outputs.
+[16:02.88] Watch out for dividing by 0 and square roots of negatives.
+[16:06.80] We met the family.
+[16:08.48] Linear, quadratic, polynomial, rational, exponential, logarithmic, and trigonometric.
+[16:16.84] Composition means putting one function inside another, inside first, and an inverse is the undo button.
+[16:24.82] Every single idea from today will come back again and again in calculus.
+[16:29.68] So if anything felt shaky, rewatch that part before the next episode.
+[16:34.14] And speaking of the next episode, it's the big one.
+[16:37.58] Limits.
+[16:38.52] The idea that the whole of calculus is built on will find out what happens when you get closer and closer and closer to something, without ever quite getting there.
+[16:47.78] If you don't want to miss it, subscribe to the channel and turn on notifications.
+[16:52.54] This is a full calculus one course, and every episode builds on the last one, so make sure you're here for all of it.
+[16:59.58] Thanks for learning with me today.
+[17:01.42] Keep practicing, and I'll see you in episode two.

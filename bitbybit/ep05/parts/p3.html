@@ -1,0 +1,176 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="148.280" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v233" class="clip vid" src="assets/clips/pxb_racks_98b57d15.mp4" muted playsinline data-start="0.000" data-duration="3.620" data-track-index="1" style="z-index:57;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s246" class="clip scene" data-start="0.000" data-duration="3.620" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="c245" class="scene"><div id="k234" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:52px;line-height:1.08;color:#fff"><span id="w235" style="opacity:0">Somewhere</span> <span id="w236" style="opacity:0">on</span> <span id="w237" style="opacity:0">a</span> <span id="w238" style="opacity:0">server,</span> <span id="w239" style="opacity:0">there's</span> <span id="w240" style="opacity:0">a</span> <span id="w241" style="opacity:0">dot</span> <span id="w242" style="opacity:0">that</span> <span id="w243" style="opacity:0">is</span> <span id="w244" style="opacity:0">you.</span></div></div></div>
+<div id="s256" class="clip scene" data-start="3.620" data-duration="3.220" data-track-index="2" style="z-index:60" data-layout-allow-overflow data-layout-allow-overlap><div id="c255" class="scene"><div id="k247" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w248" style="opacity:0">It</span> <span id="w249" style="opacity:0">moves</span> <span id="w250" style="opacity:0">every</span> <span id="w251" style="opacity:0">time</span> <span id="w252" style="opacity:0">you</span> <span id="w253" style="opacity:0">do</span> <span id="w254" style="opacity:0">anything.</span></div></div></div>
+<div id="s260" class="clip scene" data-start="6.840" data-duration="6.500" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div id="c259" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch257" class="chap" style="top:330px"><div class="no">PIECE &nbsp;&middot;&nbsp; No. 4</div><div class="ti">Your hesitation is a vote</div><div id="ru258" class="rule"></div></div></div></div>
+<video id="v261" class="clip vid" src="assets/clips/pxb_bench_phones_79300749.mp4" muted playsinline data-start="13.340" data-duration="4.820" data-track-index="1" style="z-index:62;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s264" class="clip scene" data-start="13.340" data-duration="4.820" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="c263" class="scene"><div id="pl262" class="place" style="top:850px"><div class="ru"></div><div class="l1">THE WALL STREET JOURNAL &middot; NEW YORK</div><div class="l2">2021</div></div></div></div>
+<div id="s273" class="clip scene" data-start="31.440" data-duration="10.940" data-track-index="2" style="z-index:65" data-layout-allow-overflow data-layout-allow-overlap><div id="c272" class="scene"><div id="k265" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:54px;line-height:1.08;color:#fff"><span id="w266" style="opacity:0">They</span> <span id="w267" style="opacity:0">only</span> <span id="w268" style="opacity:0">paused</span> <span id="w269" style="opacity:0">a</span> <span id="w270" style="opacity:0">little</span> <span id="w271" style="opacity:0">longer</span></div></div></div>
+<div id="s283" class="clip scene" data-start="42.380" data-duration="14.160" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="c282" class="scene"><div id="k274" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:52px;line-height:1.08;color:#fff"><span id="w275" style="opacity:0">You</span> <span id="w276" style="opacity:0">can't</span> <span id="w277" style="opacity:0">really</span> <span id="w278" style="opacity:0">lie</span> <span id="w279" style="opacity:0">with</span> <span id="w280" style="opacity:0">your</span> <span id="w281" style="opacity:0">attention.</span></div></div></div>
+<div id="s287" class="clip scene" data-start="56.540" data-duration="10.180" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="c286" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch284" class="chap" style="top:330px"><div class="no">PIECE &nbsp;&middot;&nbsp; No. 5</div><div class="ti">Two stages and one number</div><div id="ru285" class="rule"></div></div></div></div>
+<div id="s292" class="clip scene" data-start="66.720" data-duration="3.720" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap><div id="c291" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:435px;top:166px;width:1050px;height:709px"><div id="ss288" class="ssin"><img src="assets/gen/ss_youtube_paper_page1_e97ba3.jpg" alt="ss_youtube_paper_page1"><div id="hl289" class="hl" style="left:2.0%;top:2.0%;width:96.0%;height:24.0%;opacity:0"></div></div></div><div id="pl290" class="place" style="top:850px"><div class="ru"></div><div class="l1">YOUTUBE &middot; SAN BRUNO, CALIFORNIA</div><div class="l2">2016</div></div><div class="credit">Covington, Adams, Sargin, RecSys 2016</div></div></div>
+<div id="s298" class="clip scene" data-start="85.900" data-duration="7.000" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div id="c297" class="scene"><div id="k293" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:56px;line-height:1.08;color:#fff"><span id="w294" style="opacity:0">Clicks</span> <span id="w295" style="opacity:0">reward</span> <span id="w296" style="opacity:0">clickbait.</span></div></div></div>
+<div id="s301" class="clip scene" data-start="97.260" data-duration="3.700" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="c300" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:385px;top:246px;width:1150px;height:548px"><div id="ss299" class="ssin"><img src="assets/gen/ss_cnet_2018_70_percent_db69e1.jpg" alt="ss_cnet_2018_70_percent"></div></div><div class="credit">CNET, January 2018 (Neal Mohan, YouTube)</div></div></div>
+<div id="s303" class="clip scene" data-start="100.960" data-duration="3.100" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div id="c302" class="scene"><div class="scrim" style="opacity:0.72"></div></div></div>
+<div id="s310" class="clip scene" data-start="100.960" data-duration="3.100" data-track-index="2" style="z-index:72" data-layout-allow-overflow data-layout-allow-overlap><div id="c309" class="scene"><div class="mascot" style="left:60px;top:485px;width:476px;height:640px"><div id="mp305" class="mpose" style="opacity:1"><svg viewBox="-10 0 320 430" class="msvg"><g><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L120 250 L110 295" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L240 210 L252 132" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me306" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div><div id="mp307" class="mpose" style="opacity:0"><svg viewBox="-10 0 320 430" class="msvg"><g><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L125 250 L118 295" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L220 200 L292 192" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me308" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div></div><div id="sb304" class="sub" style="left:600px;top:380px;opacity:0"><div class="h">Okay.</div><div class="b"><div>Now the creepy part.</div></div></div></div></div>
+<div id="s318" class="clip scene" data-start="104.060" data-duration="6.260" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div id="c317" class="scene"><div id="k311" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w312" style="opacity:0">Things</span> <span id="w313" style="opacity:0">you</span> <span id="w314" style="opacity:0">never</span> <span id="w315" style="opacity:0">told</span> <span id="w316" style="opacity:0">anyone</span></div></div></div>
+<video id="v319" class="clip vid" src="assets/clips/pxb_kings_7e842036.mp4" muted playsinline data-start="110.320" data-duration="3.420" data-track-index="1" style="z-index:74;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s322" class="clip scene" data-start="110.320" data-duration="3.420" data-track-index="2" style="z-index:76" data-layout-allow-overflow data-layout-allow-overlap><div id="c321" class="scene"><div id="pl320" class="place" style="top:850px"><div class="ru"></div><div class="l1">CAMBRIDGE &amp; STANFORD</div><div class="l2">2015</div></div></div></div>
+<div id="s330" class="clip scene" data-start="113.740" data-duration="1.240" data-track-index="2" style="z-index:77" data-layout-allow-overflow data-layout-allow-overlap><div id="c329" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf324" class="portrait" style="left:210px;top:190px;width:380px;height:480px;opacity:0"><img id="pt323" src="assets/gen/cm_kosinski_2019_ea3c20.jpg" alt="cm_kosinski_2019"></div><div id="tg325" class="tag" style="left:210px;top:700px;opacity:0"><div class="n">Michal Kosinski</div><div class="r">Psychologist, Stanford</div></div><div id="pf327" class="portrait" style="left:1090px;top:190px;width:380px;height:480px;opacity:0"><img id="pt326" src="assets/gen/press_david_stillwell_cambridge_jbs_73c1e0.jpg" alt="press_david_stillwell_cambridge_jbs"></div><div id="tg328" class="tag" style="left:1090px;top:700px;opacity:0"><div class="n">David Stillwell</div><div class="r">Psychometrics Centre, Cambridge</div></div><div class="credit">Photos: Adrian Grycuk, CC BY-SA 3.0 PL, via Wikimedia Commons; University of Cambridge</div></div></div>
+<div id="s333" class="clip scene" data-start="141.760" data-duration="6.520" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="c332" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:410px;top:214px;width:1100px;height:612px"><div id="ss331" class="ssin"><img src="assets/gen/ss_pnas_fig2_likes_vs_judges_f0961f.jpg" alt="ss_pnas_fig2_likes_vs_judges"></div></div><div class="credit">Youyou, Kosinski, Stillwell, PNAS 2015</div></div></div>
+</div>
+<script>window.PXS = [[3.62, 6.84, "dot_moves", {"moves": 0.3, "cam": {"z": [1.0, 1.12]}, "tin": "zoom", "tout": "zoom"}], [6.84, 13.34, "bot_farm", {"count": 99, "dog": 99, "dance": 99, "astro": 99, "nosearch": 99, "tin": "fade", "tout": "fade"}], [18.16, 31.44, "bot_farm", {"count": 1.18, "dog": 6.36, "dance": 7.26, "astro": 8.16, "nosearch": 10.14, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [31.44, 42.38, "linger", {"linger": 0.4, "figured": 6.9, "clock": 7.94, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [42.38, 56.54, "ballot", {"label": 2.96, "votes": 0.5, "cam": {"z": [1.22, 1.3], "x": [300, 300], "y": [190, 190]}, "tin": "zoom", "tout": "zoom"}], [56.54, 66.72, "two_stage", {"s1": 99, "s2": 99, "watch": 99, "tin": "fade", "tout": "fade"}], [66.72, 70.44, "two_stage", {"s1": 99, "s2": 99, "watch": 99, "tin": "fade", "tout": "fade"}], [70.44, 85.9, "two_stage", {"s1": 1.26, "s2": 7.86, "watch": 13.92, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [85.9, 92.9, "clickbait", {"leave": 2.96, "cross": 5.16, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [92.9, 97.26, "seventy", {"gate": 1.56, "pct": 3.16, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [97.26, 100.96, "seventy", {"gate": -9, "pct": -9, "tin": "fade", "tout": "fade"}], [100.96, 104.06, "dot_space", {"you": -9, "dims": -9, "near": -9, "videos": 99, "walk": 99, "tin": "fade", "tout": "zoom"}], [104.06, 110.32, "neighborhood", {"cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [113.74, 114.98, "volunteers", {"test": 99, "likes": 99, "count": 99, "tin": "fade", "tout": "fade"}], [114.98, 126.66, "volunteers", {"count": 0.3, "test": 3.7, "likes": 9.9, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [126.66, 141.76, "judge_ladder", {"s1": 0.14, "s2": 5.6, "s3": 8.08, "s4": 11.06, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [141.76, 148.28, "judge_ladder", {"s1": -9, "s2": -9, "s3": -9, "s4": -9, "tin": "fade", "tout": "fade"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/feed.js"></script>
+<script src="assets/js/scenes/home.js"></script>
+<script src="assets/js/scenes/mind.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/prize.js"></script>
+<script src="assets/js/scenes/sheet.js"></script>
+<script src="assets/js/scenes/space.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v233",{scale:1.0},{scale:1.08,duration:3.62,ease:"none"},0.000);
+tl.set("#w235",{opacity:1},0.740);
+tl.set("#w236",{opacity:1},16.940);
+tl.set("#w237",{opacity:1},20.120);
+tl.set("#w238",{opacity:1},20.120);
+tl.set("#w239",{opacity:1},155.060);
+tl.set("#w240",{opacity:1},158.460);
+tl.set("#w241",{opacity:1},208.740);
+tl.set("#w242",{opacity:1},221.900);
+tl.set("#w243",{opacity:1},229.740);
+tl.set("#w244",{opacity:1},231.640);
+tl.set("#w248",{opacity:1},44.760);
+tl.set("#w249",{opacity:1},44.760);
+tl.set("#w250",{opacity:1},50.340);
+tl.set("#w251",{opacity:1},62.620);
+tl.set("#w252",{opacity:1},62.940);
+tl.set("#w253",{opacity:1},144.580);
+tl.set("#w254",{opacity:1},266.060);
+tl.fromTo("#ch257",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},6.990);
+tl.fromTo("#ru258",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},7.340);
+tl.fromTo("#v261",{scale:1.0},{scale:1.06,duration:4.82,ease:"none"},13.340);
+tl.fromTo("#pl262",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},13.640);
+tl.set("#w266",{opacity:1},87.380);
+tl.set("#w267",{opacity:1},123.460);
+tl.set("#w268",{opacity:1},251.260);
+tl.set("#w269",{opacity:1},251.840);
+tl.set("#w270",{opacity:1},251.840);
+tl.set("#w271",{opacity:1},251.840);
+tl.set("#k265",{opacity:0},38.340);
+tl.set("#w275",{opacity:1},51.300);
+tl.set("#w276",{opacity:1},58.820);
+tl.set("#w277",{opacity:1},207.400);
+tl.set("#w278",{opacity:1},207.400);
+tl.set("#w279",{opacity:1},207.400);
+tl.set("#w280",{opacity:1},223.920);
+tl.set("#w281",{opacity:1},259.220);
+tl.fromTo("#ch284",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},56.690);
+tl.fromTo("#ru285",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},57.040);
+tl.fromTo("#ss288",{scale:1.0},{scale:1.04,duration:3.72,ease:"none"},66.720);
+tl.set("#hl289",{opacity:1},68.120);
+tl.fromTo("#pl290",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},68.720);
+tl.set("#w294",{opacity:1},89.660);
+tl.set("#w295",{opacity:1},89.660);
+tl.set("#w296",{opacity:1},89.660);
+tl.fromTo("#ss299",{scale:1.0},{scale:1.04,duration:3.7,ease:"none"},97.260);
+tl.set("#sb304",{opacity:1},100.960);
+tl.set("#me306",{scaleY:0.12},102.060);
+tl.set("#me306",{scaleY:1},102.180);
+tl.set("#mp307",{opacity:1},102.720);
+tl.set("#mp305",{opacity:0},102.720);
+tl.set("#w312",{opacity:1},108.580);
+tl.set("#w313",{opacity:1},128.740);
+tl.set("#w314",{opacity:1},142.080);
+tl.set("#w315",{opacity:1},142.080);
+tl.set("#w316",{opacity:1},142.080);
+tl.fromTo("#v319",{scale:1.0},{scale:1.06,duration:3.42,ease:"none"},110.320);
+tl.fromTo("#pl320",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},110.600);
+tl.fromTo("#pt323",{scale:1.0},{scale:1.04,duration:1.24,ease:"none"},113.740);
+tl.fromTo("#pf324",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},113.740);
+tl.fromTo("#tg325",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},113.940);
+tl.fromTo("#pt326",{scale:1.0},{scale:1.04,duration:1.24,ease:"none"},113.740);
+tl.fromTo("#pf327",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},113.740);
+tl.fromTo("#tg328",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},114.440);
+tl.fromTo("#ss331",{scale:1.0},{scale:1.04,duration:6.52,ease:"none"},141.760);
+tl.set({}, {}, 148.280);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

@@ -1,0 +1,23 @@
+# Builder 09: end of Chapter 3 (tan x / x, (1 - cos x)/x, practice sin 7x, continuity: pencil test, three conditions,
+# hole / jump / infinite, continuous families, find k, find a, intermediate value theorem, chapter recap)
+S = [
+    ("53:00.31", "m", "K09_TanX", {}),
+    ("53:19.40", "m", "K09_OneMinusCos", {}),
+    ("53:50.30", "q", "K09_TryCard1", dict(title="Try This One", sub="Pause and find the limit")),
+    ("53:51.85", "m", "K09_Sin7x", {}),
+    ("54:09.85", "m", "K09_Pencil", {}),
+    ("54:23.55", "m", "K09_ThreeRules", {}),
+    ("54:56.40", "m", "K09_Removable", {}),
+    ("55:25.20", "m", "K09_JumpInf", {}),
+    ("55:41.00", "m", "K09_GoodNews", {}),
+    ("56:15.00", "m", "K09_KSetup", {}),
+    ("56:44.40", "m", "K09_FindK", {}),
+    ("57:08.40", "q", "K09_TryCard2", dict(title="Try One", sub="Pause and find the value of a")),
+    ("57:09.95", "m", "K09_FindA", {}),
+    ("57:31.80", "m", "K09_IVT", {}),
+    ("57:48.20", "m", "K09_Temp", {}),
+    ("58:02.80", "m", "K09_Mountain", {}),
+    ("58:13.95", "m", "K09_Cubic", {}),
+    ("58:52.85", "m", "K09_NeedCont", {}),
+    ("59:09.70", "m", "K09_Recap", {}),
+]

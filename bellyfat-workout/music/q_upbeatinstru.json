@@ -1,0 +1,1597 @@
+{
+ "result_count": 240,
+ "page_count": 12,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "7fe500dd-343c-47bc-aa4c-061652bc1d3c",
+   "title": "Motionless Land (Instrumental Version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/764950",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=764950&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Motionless Land (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ashes (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/89595/ashes-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 211000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7fe500dd-343c-47bc-aa4c-061652bc1d3c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7fe500dd-343c-47bc-aa4c-061652bc1d3c/",
+   "related_url": "https://api.openverse.org/v1/audio/7fe500dd-343c-47bc-aa4c-061652bc1d3c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7fe500dd-343c-47bc-aa4c-061652bc1d3c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "311ba94a-3222-4289-80a3-97edc841ebda",
+   "title": "Little Tomcat (Instrumental Version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1000095",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1000095&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Little Tomcat (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Wake (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/117652/the-wake-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 197000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/311ba94a-3222-4289-80a3-97edc841ebda/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/311ba94a-3222-4289-80a3-97edc841ebda/",
+   "related_url": "https://api.openverse.org/v1/audio/311ba94a-3222-4289-80a3-97edc841ebda/related/",
+   "waveform": "https://api.openverse.org/v1/audio/311ba94a-3222-4289-80a3-97edc841ebda/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1701a107-2bc1-46ae-8570-ff7b23104cbc",
+   "title": "A Thousand Skins (Part 1) (Instrumental Version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/764958",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=764958&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "indie",
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "hammond",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Thousand Skins (Part 1) (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ashes (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/89595/ashes-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 356000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1701a107-2bc1-46ae-8570-ff7b23104cbc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1701a107-2bc1-46ae-8570-ff7b23104cbc/",
+   "related_url": "https://api.openverse.org/v1/audio/1701a107-2bc1-46ae-8570-ff7b23104cbc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1701a107-2bc1-46ae-8570-ff7b23104cbc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0ec83589-2e01-49fd-bab3-bd463a57a835",
+   "title": "Casa Noir",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/355486",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=355486&format=mp32",
+   "creator": "Quantum Jazz",
+   "creator_url": "https://www.jamendo.com/artist/350813/Quantum_Jazz",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "bossanova",
+    "jazz",
+    "latin"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Casa Noir\" by Quantum Jazz is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Hand In Space",
+    "foreign_landing_url": "https://www.jamendo.com/album/46377/hand-in-space",
+    "creator": "Quantum Jazz",
+    "creator_url": "https://www.jamendo.com/artist/350813/Quantum_Jazz",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 296000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0ec83589-2e01-49fd-bab3-bd463a57a835/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0ec83589-2e01-49fd-bab3-bd463a57a835/",
+   "related_url": "https://api.openverse.org/v1/audio/0ec83589-2e01-49fd-bab3-bd463a57a835/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0ec83589-2e01-49fd-bab3-bd463a57a835/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2078e5b8-cf16-46e6-9f3b-e4427f6f0afc",
+   "title": "I'll Be Right Behing You, Josephine (Instrumental)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/626398",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=626398&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"I'll Be Right Behing You, Josephine (Instrumental)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Only Whispering (Instrumental)",
+    "foreign_landing_url": "https://www.jamendo.com/album/72524/only-whispering-instrumental",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 257000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2078e5b8-cf16-46e6-9f3b-e4427f6f0afc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2078e5b8-cf16-46e6-9f3b-e4427f6f0afc/",
+   "related_url": "https://api.openverse.org/v1/audio/2078e5b8-cf16-46e6-9f3b-e4427f6f0afc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2078e5b8-cf16-46e6-9f3b-e4427f6f0afc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cd1850c8-9486-426c-9e96-38d96a6b9e48",
+   "title": "Already There (Instrumental Version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/764954",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=764954&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "acousticguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Already There (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ashes (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/89595/ashes-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 221000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cd1850c8-9486-426c-9e96-38d96a6b9e48/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cd1850c8-9486-426c-9e96-38d96a6b9e48/",
+   "related_url": "https://api.openverse.org/v1/audio/cd1850c8-9486-426c-9e96-38d96a6b9e48/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cd1850c8-9486-426c-9e96-38d96a6b9e48/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c0043749-491b-4916-abbf-2cf76ddc8362",
+   "title": "To Walk Alone",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/897659",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=897659&format=mp32",
+   "creator": "Jarek Laaser",
+   "creator_url": "https://www.jamendo.com/artist/366406/Jarek_Laaser",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"To Walk Alone\" by Jarek Laaser is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "To Walk Alone",
+    "foreign_landing_url": "https://www.jamendo.com/album/105619/to-walk-alone",
+    "creator": "Jarek Laaser",
+    "creator_url": "https://www.jamendo.com/artist/366406/Jarek_Laaser",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 256000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c0043749-491b-4916-abbf-2cf76ddc8362/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c0043749-491b-4916-abbf-2cf76ddc8362/",
+   "related_url": "https://api.openverse.org/v1/audio/c0043749-491b-4916-abbf-2cf76ddc8362/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c0043749-491b-4916-abbf-2cf76ddc8362/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f1ff2ae7-9ecd-4510-85f2-b7c132d21524",
+   "title": "Chicken Hiccups",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/971394",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=971394&format=mp32",
+   "creator": "GingerTom",
+   "creator_url": "https://www.jamendo.com/artist/370789/GingerTom",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "bluegrass"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "banjo",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Chicken Hiccups\" by GingerTom is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Wolfsong",
+    "foreign_landing_url": "https://www.jamendo.com/album/114315/wolfsong",
+    "creator": "GingerTom",
+    "creator_url": "https://www.jamendo.com/artist/370789/GingerTom",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 214000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f1ff2ae7-9ecd-4510-85f2-b7c132d21524/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f1ff2ae7-9ecd-4510-85f2-b7c132d21524/",
+   "related_url": "https://api.openverse.org/v1/audio/f1ff2ae7-9ecd-4510-85f2-b7c132d21524/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f1ff2ae7-9ecd-4510-85f2-b7c132d21524/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8cdcf3cc-f5da-496b-ba2f-bda249b55296",
+   "title": "Landscape",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/634410",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=634410&format=mp32",
+   "creator": "BS",
+   "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Landscape\" by BS is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Zero Gravity -2010 mix-",
+    "foreign_landing_url": "https://www.jamendo.com/album/73592/zero-gravity-2010-mix",
+    "creator": "BS",
+    "creator_url": "https://www.jamendo.com/artist/355569/BS_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 227000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8cdcf3cc-f5da-496b-ba2f-bda249b55296/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8cdcf3cc-f5da-496b-ba2f-bda249b55296/",
+   "related_url": "https://api.openverse.org/v1/audio/8cdcf3cc-f5da-496b-ba2f-bda249b55296/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8cdcf3cc-f5da-496b-ba2f-bda249b55296/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9cae23e1-d720-4006-8752-509e1f3dbfbe",
+   "title": "Border Blaster (Instrumental Version)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/765607",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=765607&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "ballad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Border Blaster (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Breadcrumbs (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/89689/breadcrumbs-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 279000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9cae23e1-d720-4006-8752-509e1f3dbfbe/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9cae23e1-d720-4006-8752-509e1f3dbfbe/",
+   "related_url": "https://api.openverse.org/v1/audio/9cae23e1-d720-4006-8752-509e1f3dbfbe/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9cae23e1-d720-4006-8752-509e1f3dbfbe/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3daf81bf-9bfe-4aed-b6f6-e1845e1d9969",
+   "title": "Gravity bass",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1471063",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1471063&format=mp32",
+   "creator": "Nordgroove",
+   "creator_url": "https://www.jamendo.com/artist/502379/Nordgroove",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "holiday",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "inspired",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Gravity bass\" by Nordgroove is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Suburban Simphony",
+    "foreign_landing_url": "https://www.jamendo.com/album/170450/suburban-simphony",
+    "creator": "Nordgroove",
+    "creator_url": "https://www.jamendo.com/artist/502379/Nordgroove",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 276000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3daf81bf-9bfe-4aed-b6f6-e1845e1d9969/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3daf81bf-9bfe-4aed-b6f6-e1845e1d9969/",
+   "related_url": "https://api.openverse.org/v1/audio/3daf81bf-9bfe-4aed-b6f6-e1845e1d9969/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3daf81bf-9bfe-4aed-b6f6-e1845e1d9969/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "faa3e2a3-72b3-42d1-af03-61c258f09d77",
+   "title": "Hand In Space",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/355479",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=355479&format=mp32",
+   "creator": "Quantum Jazz",
+   "creator_url": "https://www.jamendo.com/artist/350813/Quantum_Jazz",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "jazz"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "long",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Hand In Space\" by Quantum Jazz is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Hand In Space",
+    "foreign_landing_url": "https://www.jamendo.com/album/46377/hand-in-space",
+    "creator": "Quantum Jazz",
+    "creator_url": "https://www.jamendo.com/artist/350813/Quantum_Jazz",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 741000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/faa3e2a3-72b3-42d1-af03-61c258f09d77/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/faa3e2a3-72b3-42d1-af03-61c258f09d77/",
+   "related_url": "https://api.openverse.org/v1/audio/faa3e2a3-72b3-42d1-af03-61c258f09d77/related/",
+   "waveform": "https://api.openverse.org/v1/audio/faa3e2a3-72b3-42d1-af03-61c258f09d77/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "1069f59e-7dd9-4356-91d1-79956ace56a0",
+   "title": "At the centre of the sun",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/384093",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=384093&format=mp32",
+   "creator": "K4MMERER",
+   "creator_url": "https://www.jamendo.com/artist/341642/newmad",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"At the centre of the sun\" by K4MMERER is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Leaving Paradise",
+    "foreign_landing_url": "https://www.jamendo.com/album/48669/leaving-paradise",
+    "creator": "K4MMERER",
+    "creator_url": "https://www.jamendo.com/artist/341642/newmad",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 317000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/1069f59e-7dd9-4356-91d1-79956ace56a0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/1069f59e-7dd9-4356-91d1-79956ace56a0/",
+   "related_url": "https://api.openverse.org/v1/audio/1069f59e-7dd9-4356-91d1-79956ace56a0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/1069f59e-7dd9-4356-91d1-79956ace56a0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a961a0c5-6beb-4848-9829-cfdb2198ef39",
+   "title": "Diving",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1245189",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1245189&format=mp32",
+   "creator": "Ton in Ton",
+   "creator_url": "https://www.jamendo.com/artist/476715/Ton_in_Ton",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "abstract",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "nature",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Diving\" by Ton in Ton is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Al Cante",
+    "foreign_landing_url": "https://www.jamendo.com/album/149189/al-cante",
+    "creator": "Ton in Ton",
+    "creator_url": "https://www.jamendo.com/artist/476715/Ton_in_Ton",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 338000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a961a0c5-6beb-4848-9829-cfdb2198ef39/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a961a0c5-6beb-4848-9829-cfdb2198ef39/",
+   "related_url": "https://api.openverse.org/v1/audio/a961a0c5-6beb-4848-9829-cfdb2198ef39/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a961a0c5-6beb-4848-9829-cfdb2198ef39/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4892e321-8956-409d-93f5-0fbebdda88e5",
+   "title": "melodinette",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/11842",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=11842&format=mp32",
+   "creator": "Fadi\u00e8se",
+   "creator_url": "https://www.jamendo.com/artist/1780/popof",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "contemporary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"melodinette\" by Fadi\u00e8se is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pomponette",
+    "foreign_landing_url": "https://www.jamendo.com/album/1749/pomponette",
+    "creator": "Fadi\u00e8se",
+    "creator_url": "https://www.jamendo.com/artist/1780/popof",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 91000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4892e321-8956-409d-93f5-0fbebdda88e5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4892e321-8956-409d-93f5-0fbebdda88e5/",
+   "related_url": "https://api.openverse.org/v1/audio/4892e321-8956-409d-93f5-0fbebdda88e5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4892e321-8956-409d-93f5-0fbebdda88e5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f8d23566-4d46-4d19-a69e-71aed13a537e",
+   "title": "berceusounette",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/11845",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=11845&format=mp32",
+   "creator": "Fadi\u00e8se",
+   "creator_url": "https://www.jamendo.com/artist/1780/popof",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "contemporary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"berceusounette\" by Fadi\u00e8se is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pomponette",
+    "foreign_landing_url": "https://www.jamendo.com/album/1749/pomponette",
+    "creator": "Fadi\u00e8se",
+    "creator_url": "https://www.jamendo.com/artist/1780/popof",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 204000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f8d23566-4d46-4d19-a69e-71aed13a537e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f8d23566-4d46-4d19-a69e-71aed13a537e/",
+   "related_url": "https://api.openverse.org/v1/audio/f8d23566-4d46-4d19-a69e-71aed13a537e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f8d23566-4d46-4d19-a69e-71aed13a537e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9533edbc-7bfc-41a2-bfe0-2bce30357527",
+   "title": "bluzynette",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/11839",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=11839&format=mp32",
+   "creator": "Fadi\u00e8se",
+   "creator_url": "https://www.jamendo.com/artist/1780/popof",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "jazz"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"bluzynette\" by Fadi\u00e8se is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pomponette",
+    "foreign_landing_url": "https://www.jamendo.com/album/1749/pomponette",
+    "creator": "Fadi\u00e8se",
+    "creator_url": "https://www.jamendo.com/artist/1780/popof",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 212000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9533edbc-7bfc-41a2-bfe0-2bce30357527/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9533edbc-7bfc-41a2-bfe0-2bce30357527/",
+   "related_url": "https://api.openverse.org/v1/audio/9533edbc-7bfc-41a2-bfe0-2bce30357527/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9533edbc-7bfc-41a2-bfe0-2bce30357527/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0e64b31e-ac47-4727-bcba-22712f5a9a3d",
+   "title": "musiquette",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/11841",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=11841&format=mp32",
+   "creator": "Fadi\u00e8se",
+   "creator_url": "https://www.jamendo.com/artist/1780/popof",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "easylistening",
+    "newage"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "contemporary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"musiquette\" by Fadi\u00e8se is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Pomponette",
+    "foreign_landing_url": "https://www.jamendo.com/album/1749/pomponette",
+    "creator": "Fadi\u00e8se",
+    "creator_url": "https://www.jamendo.com/artist/1780/popof",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 120000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0e64b31e-ac47-4727-bcba-22712f5a9a3d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0e64b31e-ac47-4727-bcba-22712f5a9a3d/",
+   "related_url": "https://api.openverse.org/v1/audio/0e64b31e-ac47-4727-bcba-22712f5a9a3d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0e64b31e-ac47-4727-bcba-22712f5a9a3d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "10fa71f5-a269-44e2-a93e-93eb075e218d",
+   "title": "Sun and Friends",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1245192",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1245192&format=mp32",
+   "creator": "Ton in Ton",
+   "creator_url": "https://www.jamendo.com/artist/476715/Ton_in_Ton",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "downtempo",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "female",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "samples",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "summer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Sun and Friends\" by Ton in Ton is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Al Cante",
+    "foreign_landing_url": "https://www.jamendo.com/album/149189/al-cante",
+    "creator": "Ton in Ton",
+    "creator_url": "https://www.jamendo.com/artist/476715/Ton_in_Ton",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 250000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/10fa71f5-a269-44e2-a93e-93eb075e218d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/10fa71f5-a269-44e2-a93e-93eb075e218d/",
+   "related_url": "https://api.openverse.org/v1/audio/10fa71f5-a269-44e2-a93e-93eb075e218d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/10fa71f5-a269-44e2-a93e-93eb075e218d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "eeeca37a-5515-4a07-b6fc-083bf82cf829",
+   "title": "Thanks for Coming (Instrumental Version)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/628321",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=628321&format=mp32",
+   "creator": "Josh Woodward (Instrumental Versions)",
+   "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Thanks for Coming (Instrumental Version)\" by Josh Woodward (Instrumental Versions) is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Crawford Street (Instrumental Version)",
+    "foreign_landing_url": "https://www.jamendo.com/album/72784/crawford-street-instrumental-version",
+    "creator": "Josh Woodward (Instrumental Versions)",
+    "creator_url": "https://www.jamendo.com/artist/354648/Josh_Woodward_(Instrumental_Versions)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 229000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/eeeca37a-5515-4a07-b6fc-083bf82cf829/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/eeeca37a-5515-4a07-b6fc-083bf82cf829/",
+   "related_url": "https://api.openverse.org/v1/audio/eeeca37a-5515-4a07-b6fc-083bf82cf829/related/",
+   "waveform": "https://api.openverse.org/v1/audio/eeeca37a-5515-4a07-b6fc-083bf82cf829/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

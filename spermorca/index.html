@@ -1,0 +1,241 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/ocean.js"></script><script src="assets/js/scenes.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="336.400" data-width="1920" data-height="1080">
+<img id="img_sperm" class="hid" src="assets/cut/il_sperm.png" alt=""><img id="img_orca" class="hid" src="assets/cut/il_orca.png" alt=""><img id="img_blue" class="hid" src="assets/cut/il_blue.png" alt=""><img id="img_hump" class="hid" src="assets/cut/il_hump.png" alt=""><img id="img_gray" class="hid" src="assets/cut/il_gray.png" alt=""><img id="img_squid" class="hid" src="assets/cut/squid_3d.png" alt=""><img id="img_shark" class="hid" src="assets/cut/il_shark.png" alt="">
+<div id="w1599" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:261;"><video id="v1598" class="clip fit" src="assets/clips/abc_orca_fe54ddde.mp4" muted playsinline data-start="0.000" data-duration="8.427" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1600" class="clip scene " data-start="0.000" data-duration="8.427" data-track-index="2" style="z-index:262" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: ABC News</div></div>
+<div id="s1603" class="clip scene " data-start="0.000" data-duration="8.427" data-track-index="2" style="z-index:263" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.3"></div><div id="h1601" class="chap" style="top:380px;font-size:190px">TWO KINGS</div><div id="h1602" class="chapsub" style="top:566px">PURE SPECULATION</div></div>
+<div id="w1605" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:264;"><video id="v1604" class="clip fit" src="assets/clips/bremer_2a65d722.mp4" muted playsinline data-start="8.427" data-duration="13.510" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1606" class="clip scene " data-start="8.427" data-duration="13.510" data-track-index="2" style="z-index:265" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s1608" class="clip scene " data-start="8.427" data-duration="13.510" data-track-index="2" style="z-index:266" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1607" class="stamp" style="font-size:76px">SPEED · AGILITY · INHERITED KNOWLEDGE</span></div></div>
+<canvas id="cv1609" class="clip" width="1920" height="1080" data-start="21.937" data-duration="6.020" data-track-index="1" style="z-index:267"></canvas>
+<div id="s1611" class="clip scene " data-start="21.937" data-duration="6.020" data-track-index="2" style="z-index:268" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1610" class="stamp" style="font-size:76px">SIZE · A BATTERING-RAM HEAD</span></div></div>
+<div id="w1613" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:269;"><video id="v1612" class="clip fit" src="assets/clips/bremer_0761092f.mp4" muted playsinline data-start="27.957" data-duration="7.950" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1614" class="clip scene " data-start="27.957" data-duration="7.950" data-track-index="2" style="z-index:270" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s1616" class="clip scene " data-start="27.957" data-duration="7.950" data-track-index="2" style="z-index:271" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1615" class="stamp" style="font-size:76px">ORCAS TARGET THE WEAKEST</span></div></div>
+<div id="w1618" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:272;"><video id="v1617" class="clip fit" src="assets/clips/dominica_8618dbe7.mp4" muted playsinline data-start="35.907" data-duration="4.880" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1619" class="clip scene " data-start="35.907" data-duration="4.880" data-track-index="2" style="z-index:273" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1621" class="clip scene " data-start="35.907" data-duration="4.880" data-track-index="2" style="z-index:274" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1620" class="stamp" style="font-size:76px">A VERY RISKY FIGHT</span></div></div>
+<canvas id="cv1622" class="clip" width="1920" height="1080" data-start="40.787" data-duration="14.240" data-track-index="1" style="z-index:275"></canvas>
+<div id="s1624" class="clip scene " data-start="40.787" data-duration="14.240" data-track-index="2" style="z-index:276" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1623" class="stamp" style="font-size:76px">NOW THEY'RE HUNTING</span></div></div>
+<div id="w1626" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:277;"><video id="v1625" class="clip fit" src="assets/clips/pin_shark_4c1f7425.mp4" muted playsinline data-start="55.027" data-duration="12.140" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1627" class="clip scene " data-start="55.027" data-duration="12.140" data-track-index="2" style="z-index:278" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage via Pinterest</div></div>
+<div id="s1629" class="clip scene " data-start="55.027" data-duration="12.140" data-track-index="2" style="z-index:279" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1628" class="stamp" style="font-size:76px">REMEMBER THE SHARKS?</span></div></div>
+<canvas id="cv1630" class="clip" width="1920" height="1080" data-start="67.167" data-duration="10.540" data-track-index="1" style="z-index:280"></canvas>
+<div id="s1632" class="clip scene " data-start="67.167" data-duration="10.540" data-track-index="2" style="z-index:281" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1631" class="stamp" style="font-size:76px">PREDATORS AVOID PREDATORS</span></div></div>
+<div id="w1634" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:282;"><video id="v1633" class="clip fit" src="assets/clips/bremer_9871db56.mp4" muted playsinline data-start="77.707" data-duration="7.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1635" class="clip scene " data-start="77.707" data-duration="7.760" data-track-index="2" style="z-index:283" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s1637" class="clip scene " data-start="77.707" data-duration="7.760" data-track-index="2" style="z-index:284" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1636" class="stamp" style="font-size:110px">AVOIDANCE</span></div></div>
+<div id="w1639" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:285;"><video id="v1638" class="clip fit" src="assets/clips/px_lion_0_42ffe4b2.mp4" muted playsinline data-start="85.467" data-duration="3.420" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1641" class="clip scene " data-start="85.467" data-duration="3.420" data-track-index="2" style="z-index:286" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1640" class="stamp" style="font-size:76px">LIKE LIONS AND HYENAS</span></div></div>
+<div id="w1643" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:287;"><video id="v1642" class="clip fit" src="assets/clips/px_hyena_0_8e6ddef2.mp4" muted playsinline data-start="88.887" data-duration="3.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1645" class="vw" style="left:0px;top:0px;width:956px;height:1080px;z-index:288;"><video id="v1644" class="clip fit" src="assets/clips/bremer_99e4a654.mp4" muted playsinline data-start="92.487" data-duration="5.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1647" class="vw" style="left:964px;top:0px;width:956px;height:1080px;z-index:289;"><video id="v1646" class="clip fit" src="assets/clips/dominica_8d76670c.mp4" muted playsinline data-start="92.487" data-duration="5.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1649" class="clip scene " data-start="92.487" data-duration="5.300" data-track-index="2" style="z-index:290" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1648" class="stamp" style="font-size:120px">TWO KINGS</span></div></div>
+<div id="w1651" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:291;"><video id="v1650" class="clip fit" src="assets/clips/dominica_60e0d690.mp4" muted playsinline data-start="97.787" data-duration="6.730" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1652" class="clip scene " data-start="97.787" data-duration="6.730" data-track-index="2" style="z-index:292" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1654" class="clip scene " data-start="97.787" data-duration="6.730" data-track-index="2" style="z-index:293" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1653" class="stamp" style="font-size:76px">IT CHANGES EVERYTHING UNDERNEATH</span></div></div>
+<div id="s1661" class="clip scene " data-start="104.517" data-duration="22.660" data-track-index="2" style="z-index:294" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1655" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1656" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="fw1657" class="recap" style="top:150px;font-size:96px;color:#f2f6f8;opacity:0">SPERM WHALES LEAVE THE DEEP</div><div id="fw1658" class="recap" style="top:350px;font-size:96px;color:#8fe39a;opacity:0">SQUID MIGHT BOOM ↑</div><div id="fw1659" class="recap" style="top:550px;font-size:96px;color:#ff8a7a;opacity:0">FISH THEY EAT ↓</div><div id="fw1660" class="recap" style="top:750px;font-size:96px;color:#ffd27a;opacity:0">PREDATORS OF THE DEEP ↕</div></div>
+<canvas id="cv1662" class="clip" width="1920" height="1080" data-start="127.177" data-duration="17.530" data-track-index="1" style="z-index:295"></canvas>
+<div id="s1665" class="clip scene " data-start="127.177" data-duration="17.530" data-track-index="2" style="z-index:296" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1663" class="stamp" style="font-size:76px">THE WHALE PUMP</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1664" class="stamp" style="font-size:76px">IRON FEEDS PLANKTON</span></div></div>
+<div id="w1667" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:297;"><video id="v1666" class="clip fit" src="assets/clips/px_plankton_0_70539b87.mp4" muted playsinline data-start="144.707" data-duration="10.490" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1669" class="clip scene " data-start="144.707" data-duration="10.490" data-track-index="2" style="z-index:298" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1668" class="stamp" style="font-size:60px">HUNDREDS OF THOUSANDS OF TONNES OF CARBON A YEAR</span></div></div>
+<canvas id="cv1670" class="clip" width="1920" height="1080" data-start="155.197" data-duration="4.700" data-track-index="1" style="z-index:299"></canvas>
+<div id="s1672" class="clip scene " data-start="155.197" data-duration="4.700" data-track-index="2" style="z-index:300" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1671" class="stamp" style="font-size:76px">THAT PUMP WOULD WEAKEN</span></div></div>
+<div id="w1674" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:301;"><video id="v1673" class="clip fit" src="assets/clips/hump_maui_b0d1f1e0.mp4" muted playsinline data-start="159.897" data-duration="6.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1675" class="clip scene " data-start="159.897" data-duration="6.920" data-track-index="2" style="z-index:302" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Domenic Biagini</div></div>
+<div id="s1677" class="clip scene " data-start="159.897" data-duration="6.920" data-track-index="2" style="z-index:303" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1676" class="stamp" style="font-size:76px">STILL RECOVERING FROM WHALING</span></div></div>
+<div id="w1679" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:304;"><video id="v1678" class="clip fit" src="assets/clips/pin_sperm_6257a097.mp4" muted playsinline data-start="166.817" data-duration="5.100" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1680" class="clip scene " data-start="166.817" data-duration="5.100" data-track-index="2" style="z-index:305" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage via Pinterest</div></div>
+<div id="s1682" class="clip scene " data-start="166.817" data-duration="5.100" data-track-index="2" style="z-index:306" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1681" class="stamp" style="font-size:76px">PUSHED BACK TOWARD COLLAPSE</span></div></div>
+<canvas id="cv1683" class="clip" width="1920" height="1080" data-start="171.917" data-duration="11.070" data-track-index="1" style="z-index:307"></canvas>
+<div id="s1685" class="clip scene " data-start="171.917" data-duration="11.070" data-track-index="2" style="z-index:308" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1684" class="stamp" style="font-size:76px">A HOLE IN TWO ECOSYSTEMS AT ONCE</span></div></div>
+<div id="w1687" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:309;"><video id="v1686" class="clip fit" src="assets/clips/dominica_17846518.mp4" muted playsinline data-start="182.987" data-duration="10.960" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1688" class="clip scene " data-start="182.987" data-duration="10.960" data-track-index="2" style="z-index:310" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1690" class="clip scene " data-start="182.987" data-duration="10.960" data-track-index="2" style="z-index:311" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1689" class="stamp" style="font-size:76px">THE OCEAN DOESN'T NEED ANOTHER ORCA</span></div></div>
+<div id="w1692" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:312;"><video id="v1691" class="clip fit" src="assets/clips/iceseal_a09de2c3.mp4" muted playsinline data-start="193.947" data-duration="7.540" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1693" class="clip scene " data-start="193.947" data-duration="7.540" data-track-index="2" style="z-index:313" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Laag Ni Ivan</div></div>
+<div id="s1695" class="clip scene " data-start="193.947" data-duration="7.540" data-track-index="2" style="z-index:314" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1694" class="stamp" style="font-size:76px">KING OF THE SURFACE?</span></div></div>
+<div id="w1697" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:315;"><video id="v1696" class="clip fit" src="assets/clips/abc_orca_a1b650b6.mp4" muted playsinline data-start="201.487" data-duration="9.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1698" class="clip scene " data-start="201.487" data-duration="9.940" data-track-index="2" style="z-index:316" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: ABC News</div></div>
+<div id="s1700" class="clip scene " data-start="201.487" data-duration="9.940" data-track-index="2" style="z-index:317" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1699" class="stamp" style="font-size:76px">THE SUNLIT TOP FEW HUNDRED METRES</span></div></div>
+<canvas id="cv1701" class="clip" width="1920" height="1080" data-start="211.427" data-duration="13.290" data-track-index="1" style="z-index:318"></canvas>
+<div id="s1703" class="clip scene " data-start="211.427" data-duration="13.290" data-track-index="2" style="z-index:319" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1702" class="stamp" style="font-size:76px">BELOW: THE LARGEST LIVING SPACE ON THE PLANET</span></div></div>
+<canvas id="cv1704" class="clip" width="1920" height="1080" data-start="224.717" data-duration="4.040" data-track-index="1" style="z-index:320"></canvas>
+<div id="s1706" class="clip scene " data-start="224.717" data-duration="4.040" data-track-index="2" style="z-index:321" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1705" class="stamp" style="font-size:76px">AND IT HAS A RULER TOO</span></div></div>
+<canvas id="cv1707" class="clip" width="1920" height="1080" data-start="228.757" data-duration="5.610" data-track-index="1" style="z-index:322"></canvas>
+<div id="s1709" class="clip scene " data-start="228.757" data-duration="5.610" data-track-index="2" style="z-index:323" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1708" class="stamp" style="font-size:76px">HUNTING GIANT SQUID IN TOTAL DARKNESS</span></div></div>
+<div id="w1711" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:324;"><video id="v1710" class="clip fit" src="assets/clips/dominica_f3523330.mp4" muted playsinline data-start="234.367" data-duration="5.390" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1712" class="clip scene " data-start="234.367" data-duration="5.390" data-track-index="2" style="z-index:325" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1714" class="clip scene " data-start="234.367" data-duration="5.390" data-track-index="2" style="z-index:326" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1713" class="stamp" style="font-size:76px">COVERED IN SCARS</span></div></div>
+<div id="w1716" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:327;"><video id="v1715" class="clip fit" src="assets/clips/laguna_4fd253a8.mp4" muted playsinline data-start="239.757" data-duration="5.730" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1717" class="clip scene " data-start="239.757" data-duration="5.730" data-track-index="2" style="z-index:328" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: LagunaBluebelt</div></div>
+<div id="s1719" class="clip scene " data-start="239.757" data-duration="5.730" data-track-index="2" style="z-index:329" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1718" class="stamp" style="font-size:76px">A CROWN HELD FOR MILLIONS OF YEARS</span></div></div>
+<div id="w1721" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:330;"><video id="v1720" class="clip fit" src="assets/clips/dominica_f3157785.mp4" muted playsinline data-start="245.487" data-duration="8.920" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1722" class="clip scene " data-start="245.487" data-duration="8.920" data-track-index="2" style="z-index:331" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1725" class="clip scene " data-start="254.407" data-duration="7.460" data-track-index="2" style="z-index:332" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling_20th_5c8917.jpg" alt=""><div id="ph1723" class="card" style="left:210px;top:110px;width:1500px;height:839px"><img src="assets/gen/whaling_20th_32be5d.jpg" alt="whaling_20th" style="width:1500px;height:839px"></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1724" class="stamp" style="font-size:120px">IT WAS US</span></div><div class="credit">Archive photo · public domain</div></div>
+<div id="s1728" class="clip scene " data-start="261.867" data-duration="5.910" data-track-index="2" style="z-index:333" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling_20b_2654a3.jpg" alt=""><div id="ph1726" class="card" style="left:210px;top:105px;width:1500px;height:849px"><img src="assets/gen/whaling_20b_85cff1.jpg" alt="whaling_20b" style="width:1500px;height:849px"></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1727" class="stamp" style="font-size:76px">ENTIRE FAMILIES DISAPPEARED</span></div><div class="credit">Whaling station, about 1915 · public domain</div></div>
+<div id="w1730" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:334;"><video id="v1729" class="clip fit" src="assets/clips/dominica_da18ce44.mp4" muted playsinline data-start="267.777" data-duration="8.710" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1731" class="clip scene " data-start="267.777" data-duration="8.710" data-track-index="2" style="z-index:335" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<div id="s1733" class="clip scene " data-start="267.777" data-duration="8.710" data-track-index="2" style="z-index:336" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1732" class="stamp" style="font-size:76px">FAMILIES · CLANS · CODAS</span></div></div>
+<div id="s1736" class="clip scene " data-start="276.487" data-duration="6.460" data-track-index="2" style="z-index:337" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling_1921_bbf15f.jpg" alt=""><div id="ph1734" class="card" style="left:311px;top:100px;width:1298px;height:860px"><img src="assets/gen/whaling_1921_e8dd29.jpg" alt="whaling_1921" style="width:1298px;height:860px"></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1735" class="stamp" style="font-size:76px">WIPING OUT CULTURES</span></div><div class="credit">Archive photo, 1921 · public domain</div></div>
+<div id="w1738" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:338;"><video id="v1737" class="clip fit" src="assets/clips/px_hydro_0_11ab0559.mp4" muted playsinline data-start="282.947" data-duration="11.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1740" class="clip scene " data-start="282.947" data-duration="11.360" data-track-index="2" style="z-index:339" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1739" class="stamp" style="font-size:76px">RECORDING THEIR CONVERSATIONS</span></div></div>
+<div id="w1742" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:340;"><video id="v1741" class="clip fit" src="assets/clips/dominica_1ca2f8bd.mp4" muted playsinline data-start="294.307" data-duration="7.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1743" class="clip scene " data-start="294.307" data-duration="7.200" data-track-index="2" style="z-index:341" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Nadia Aly Underwater</div></div>
+<canvas id="cv1744" class="clip" width="1920" height="1080" data-start="301.507" data-duration="12.570" data-track-index="1" style="z-index:342"></canvas>
+<div id="s1746" class="clip scene " data-start="301.507" data-duration="12.570" data-track-index="2" style="z-index:343" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1745" class="stamp" style="font-size:76px">THE LARGEST BRAIN ON EARTH</span></div></div>
+<div id="w1748" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:344;"><video id="v1747" class="clip fit" src="assets/clips/bremer_e559630f.mp4" muted playsinline data-start="314.077" data-duration="2.830" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1749" class="clip scene " data-start="314.077" data-duration="2.830" data-track-index="2" style="z-index:345" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Whale Watch Western Australia</div></div>
+<div id="s1751" class="clip scene " data-start="314.077" data-duration="2.830" data-track-index="2" style="z-index:346" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1750" class="stamp" style="font-size:76px">KING OF THE SURFACE</span></div></div>
+<canvas id="cv1752" class="clip" width="1920" height="1080" data-start="316.907" data-duration="3.080" data-track-index="1" style="z-index:347"></canvas>
+<div id="s1754" class="clip scene " data-start="316.907" data-duration="3.080" data-track-index="2" style="z-index:348" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1753" class="stamp" style="font-size:76px">THE DEEP HAS HAD A KING ALL ALONG</span></div></div>
+<canvas id="cv1755" class="clip" width="1920" height="1080" data-start="319.987" data-duration="16.400" data-track-index="1" style="z-index:349"></canvas>
+<div id="s1759" class="clip scene " data-start="319.987" data-duration="16.400" data-track-index="2" style="z-index:350" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.5"></div><div id="tx1756" class="chap" style="top:330px;font-size:200px;opacity:0">UNSEEN KINGDOM</div><div id="bt1757" class="subbtn" style="opacity:0">SUBSCRIBE</div><div id="k1758" class="black" style="opacity:0"></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1598",{scale:1.0},{scale:1.06,duration:8.427,ease:"none"},0.000);
+tl.fromTo("#h1601",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},0.200);
+tl.to("#h1601",{opacity:0,duration:0.7,ease:"power1.in"},3.650);
+tl.fromTo("#h1602",{opacity:0},{opacity:1,duration:0.7,ease:"power2.out"},1.300);
+tl.to("#h1602",{opacity:0,duration:0.7,ease:"power2.out"},3.650);
+tl.fromTo("#v1604",{scale:1.0},{scale:1.06,duration:13.51,ease:"none"},8.427);
+tl.fromTo("#t1607",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},9.467);
+{const c=document.getElementById("cv1609").getContext("2d");tl.to({},{duration:6.020,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"n": 6, "speed": 1.0, "len": 480, "d": 6.02});}},21.937);}
+tl.fromTo("#t1610",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},23.067);
+tl.fromTo("#v1612",{scale:1.0},{scale:1.06,duration:7.95,ease:"none"},27.957);
+tl.fromTo("#t1615",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},29.737);
+tl.fromTo("#v1617",{scale:1.0},{scale:1.06,duration:4.88,ease:"none"},35.907);
+tl.fromTo("#t1620",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},38.627);
+{const c=document.getElementById("cv1622").getContext("2d");tl.to({},{duration:14.240,ease:"none",onUpdate:function(){SC.pod(c,this.time(),{"n": 8, "speed": 1.6, "prey": "orca", "preyLen": 380, "preyDx": 40, "d": 14.24});}},40.787);}
+tl.fromTo("#t1623",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},46.317);
+tl.fromTo("#v1625",{scale:1.0},{scale:1.06,duration:12.14,ease:"none"},55.027);
+tl.fromTo("#t1628",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},55.927);
+{const c=document.getElementById("cv1630").getContext("2d");tl.to({},{duration:10.540,ease:"none",onUpdate:function(){SC.avoid(c,this.time(),{"tTurn": 4.9, "d": 10.54});}},67.167);}
+tl.fromTo("#t1631",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},67.267);
+tl.fromTo("#v1633",{scale:1.0},{scale:1.06,duration:7.76,ease:"none"},77.707);
+tl.fromTo("#t1636",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},77.767);
+tl.fromTo("#v1638",{scale:1.0},{scale:1.06,duration:3.42,ease:"none"},85.467);
+tl.fromTo("#t1640",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},85.567);
+tl.fromTo("#v1642",{scale:1.0},{scale:1.06,duration:3.6,ease:"none"},88.887);
+tl.fromTo("#v1644",{scale:1.0},{scale:1.05,duration:5.3,ease:"none"},92.487);
+tl.fromTo("#v1646",{scale:1.0},{scale:1.05,duration:5.3,ease:"none"},92.487);
+tl.fromTo("#t1648",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},93.447);
+tl.fromTo("#v1650",{scale:1.0},{scale:1.06,duration:6.73,ease:"none"},97.787);
+tl.fromTo("#t1653",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},101.907);
+tl.fromTo("#sn1655",{y:0,x:0},{y:-90,x:-20,duration:22.66,ease:"none"},104.517);
+tl.fromTo("#sn1656",{y:0,x:0},{y:-170,x:30,duration:22.66,ease:"none"},104.517);
+tl.fromTo("#fw1657",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},108.437);
+tl.fromTo("#fw1658",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},118.047);
+tl.fromTo("#fw1659",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},120.667);
+tl.fromTo("#fw1660",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},122.587);
+{const c=document.getElementById("cv1662").getContext("2d");tl.to({},{duration:17.530,ease:"none",onUpdate:function(){SC.pump(c,this.time(),{"tUp": 5.95, "tRelease": 9.67, "d": 17.53});}},127.177);}
+tl.fromTo("#t1663",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},130.787);
+tl.to("#t1663",{opacity:0,duration:0.3,ease:"power2.out"},136.717);
+tl.fromTo("#t1664",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},140.887);
+tl.fromTo("#v1666",{scale:1.0},{scale:1.06,duration:10.49,ease:"none"},144.707);
+tl.fromTo("#t1668",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},149.927);
+{const c=document.getElementById("cv1670").getContext("2d");tl.to({},{duration:4.700,ease:"none",onUpdate:function(){SC.pump(c,this.time(),{"tUp": 0.1, "tRelease": 50, "d": 4.7});}},155.197);}
+tl.fromTo("#t1671",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},158.097);
+tl.fromTo("#v1673",{scale:1.0},{scale:1.06,duration:6.92,ease:"none"},159.897);
+tl.fromTo("#t1676",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},164.197);
+tl.fromTo("#v1678",{scale:1.0},{scale:1.06,duration:5.1,ease:"none"},166.817);
+tl.fromTo("#t1681",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},169.317);
+{const c=document.getElementById("cv1683").getContext("2d");tl.to({},{duration:11.070,ease:"none",onUpdate:function(){SC.layers(c,this.time(),{"d": 11.07});}},171.917);}
+tl.fromTo("#t1684",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},177.037);
+tl.fromTo("#v1686",{scale:1.0},{scale:1.06,duration:10.96,ease:"none"},182.987);
+tl.fromTo("#t1689",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},188.687);
+tl.fromTo("#v1691",{scale:1.0},{scale:1.06,duration:7.54,ease:"none"},193.947);
+tl.fromTo("#t1694",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},196.467);
+tl.fromTo("#v1696",{scale:1.0},{scale:1.06,duration:9.94,ease:"none"},201.487);
+tl.fromTo("#t1699",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},201.867);
+{const c=document.getElementById("cv1701").getContext("2d");tl.to({},{duration:13.290,ease:"none",onUpdate:function(){SC.layers(c,this.time(),{"squid": 1, "d": 13.29});}},211.427);}
+tl.fromTo("#t1702",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},216.147);
+{const c=document.getElementById("cv1704").getContext("2d");tl.to({},{duration:4.040,ease:"none",onUpdate:function(){SC.descend(c,this.time(),{"d": 4.04});}},224.717);}
+tl.fromTo("#t1705",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},224.867);
+{const c=document.getElementById("cv1707").getContext("2d");tl.to({},{duration:5.610,ease:"none",onUpdate:function(){SC.clicks(c,this.time(),{"d": 5.61});}},228.757);}
+tl.fromTo("#t1708",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},229.757);
+tl.fromTo("#v1710",{scale:1.0},{scale:1.06,duration:5.39,ease:"none"},234.367);
+tl.fromTo("#t1713",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},235.307);
+tl.fromTo("#v1715",{scale:1.0},{scale:1.06,duration:5.73,ease:"none"},239.757);
+tl.fromTo("#t1718",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},241.457);
+tl.fromTo("#v1720",{scale:1.0},{scale:1.06,duration:8.92,ease:"none"},245.487);
+tl.fromTo("#ph1723",{scale:1.0},{scale:1.08,duration:7.46,ease:"none"},254.407);
+tl.fromTo("#t1724",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},254.467);
+tl.fromTo("#ph1726",{scale:1.1},{scale:1.0,duration:5.91,ease:"none"},261.867);
+tl.fromTo("#t1727",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},261.967);
+tl.fromTo("#v1729",{scale:1.0},{scale:1.06,duration:8.71,ease:"none"},267.777);
+tl.fromTo("#t1732",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},269.577);
+tl.fromTo("#ph1734",{scale:1.0},{scale:1.12,duration:6.46,ease:"none"},276.487);
+tl.fromTo("#t1735",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},278.567);
+tl.fromTo("#v1737",{scale:1.0},{scale:1.06,duration:11.36,ease:"none"},282.947);
+tl.fromTo("#t1739",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},285.507);
+tl.fromTo("#v1741",{scale:1.0},{scale:1.06,duration:7.2,ease:"none"},294.307);
+{const c=document.getElementById("cv1744").getContext("2d");tl.to({},{duration:12.570,ease:"none",onUpdate:function(){SC.descend(c,this.time(),{"d": 12.57});}},301.507);}
+tl.fromTo("#t1745",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},303.847);
+tl.fromTo("#v1747",{scale:1.0},{scale:1.06,duration:2.83,ease:"none"},314.077);
+tl.fromTo("#t1750",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},314.897);
+{const c=document.getElementById("cv1752").getContext("2d");tl.to({},{duration:3.080,ease:"none",onUpdate:function(){SC.descend(c,this.time(),{"d": 3.08});}},316.907);}
+tl.fromTo("#t1753",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},317.907);
+{const c=document.getElementById("cv1755").getContext("2d");tl.to({},{duration:16.400,ease:"none",onUpdate:function(){SC.rise(c,this.time(),{"depth0": 0.8, "depth1": 0.85, "start": 1200, "end": 900, "d": 16.4});}},319.987);}
+tl.fromTo("#tx1756",{opacity:0,scale:1.05},{opacity:1,scale:1,duration:1.2,ease:"power2.out"},320.487);
+tl.fromTo("#bt1757",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},320.377);
+tl.fromTo("#k1758",{opacity:0},{opacity:1,duration:2.0,ease:"power1.inOut"},334.187);
+tl.set({}, {}, 336.400);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

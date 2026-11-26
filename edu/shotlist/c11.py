@@ -1,0 +1,22 @@
+# Builder 11: Chapter 15 (final challenge), recap, advice, goodbye. 50:03.02 -> end.
+S = [
+    ("50:03.02", "c", "K11_Card", dict(num=15, title="The Final Challenge", doodle="star")),
+    ("50:07.84", "m", "K11_Intro"),
+    ("50:13.92", "m", "K11_Q1"),
+    ("50:34.78", "m", "K11_Q2"),
+    ("50:46.08", "m", "K11_Q3"),
+    ("51:00.42", "m", "K11_Q4"),
+    ("51:12.02", "m", "K11_Q5"),
+    ("51:23.78", "m", "K11_Q6"),
+    ("51:58.34", "m", "K11_Q7"),
+    ("52:23.08", "g", "K11_Boss", dict(clip="k11_boss", cap="Question 8: the final boss")),
+    ("52:25.78", "m", "K11_Q8"),
+    ("53:18.92", "g", "K11_Master", dict(clip="k11_master", cap="you're a trigonometry master!")),
+    ("53:24.58", "m", "K11_Recap1"),
+    ("53:43.08", "m", "K11_Recap2"),
+    ("54:02.84", "p", "K11_Stars", dict(title="From the stars to your phone",
+                                        imgs=[("k11_stars", "54:02.95"), ("k11_tech", "54:09.42")],
+                                        caps=[("people measuring the stars", "54:06.92"), ("...today it powers your technology", "54:09.42")])),
+    ("54:12.56", "m", "K11_Advice"),
+    ("54:34.14", "m", "K11_Thanks"),
+]

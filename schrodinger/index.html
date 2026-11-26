@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0a0e17}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0a0e17;font-family:"EB Garamond",serif;color:#f4f1e8}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.shot{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;background:#0a0e17;z-index:5}
+.kb{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.pframe{top:90px;left:auto;outline:1px solid #2a3345}
+.pframe img{object-fit:cover}
+.ptext{position:absolute;top:320px}
+.who{font-size:92px;line-height:1.05;font-weight:500}
+.line{font-size:50px;color:#8b93a7;margin-top:18px}
+.quote{position:absolute;font-size:62px;line-height:1.15;font-style:italic;color:#ffc857;opacity:0}
+.cap{position:absolute;color:#fff;opacity:0;text-shadow:0 2px 16px rgba(0,0,0,.85)}
+.scrim-b{position:absolute;left:0;right:0;bottom:0;height:380px;background:linear-gradient(to top,rgba(5,8,14,.78),rgba(5,8,14,0))}
+.scrim-t{position:absolute;left:0;top:0;width:1100px;height:300px;background:linear-gradient(to bottom right,rgba(5,8,14,.72),rgba(5,8,14,0) 70%)}
+.scrim-a{position:absolute;inset:0;background:rgba(5,8,14,.5)}
+.fader{position:absolute;inset:0;background:#0a0e17;opacity:0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="831.63" data-width="1920" data-height="1080">
+<video id="v_Open" class="clip full" src="assets/manim/Open.mp4" muted playsinline data-start="0.000" data-duration="5.590" data-track-index="1" style="z-index:1"></video>
+<div id="p_phone" class="clip shot" data-start="5.590" data-duration="1.520" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_phone"><img class="full" src="assets/img/phone.jpg" alt="phone"></div><div class="fader" id="f_phone"></div></div>
+<div id="p_sun1" class="clip shot" data-start="7.110" data-duration="1.680" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_sun1"><img class="full" src="assets/img/sun.jpg" alt="sun1"></div><div class="fader" id="f_sun1"></div></div>
+<div id="p_neon" class="clip shot" data-start="8.790" data-duration="2.200" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_neon"><img class="full" src="assets/img/neon.jpg" alt="neon"></div><div class="fader" id="f_neon"></div></div>
+<video id="v_AtomsHold" class="clip full" src="assets/manim/AtomsHold.mp4" muted playsinline data-start="10.990" data-duration="5.260" data-track-index="1" style="z-index:1"></video>
+<video id="v_ComesDown" class="clip full" src="assets/manim/ComesDown.mp4" muted playsinline data-start="16.250" data-duration="2.930" data-track-index="1" style="z-index:1"></video>
+<div id="p_lecture" class="clip shot" data-start="19.180" data-duration="6.560" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_lecture"><img class="full" src="assets/img/lecture.jpg" alt="lecture"></div><div class="scrim-b"></div><div class="cap" id="c_lecture_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Most people who learn this equation in college</div><div class="cap" id="c_lecture_1" style="left:0;right:0;bottom:50px;text-align:center;font-size:60px;">never actually understand it.</div><div class="fader" id="f_lecture"></div></div>
+<video id="v_Memorize" class="clip full" src="assets/manim/Memorize.mp4" muted playsinline data-start="25.740" data-duration="7.480" data-track-index="1" style="z-index:1"></video>
+<video id="v_Changes" class="clip full" src="assets/manim/Changes.mp4" muted playsinline data-start="33.220" data-duration="17.890" data-track-index="1" style="z-index:1"></video>
+<div id="p_solvay1911" class="clip shot" data-start="51.110" data-duration="6.220" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_solvay1911"><img class="full" src="assets/img/solvay1911.png" alt="solvay1911"></div><div class="scrim-t"></div><div class="cap" id="c_solvay1911_0" style="left:96px;top:70px;font-size:64px;">The early 1900s</div><div class="fader" id="f_solvay1911"></div></div>
+<div id="p_newton" class="clip shot" data-start="57.330" data-duration="2.260" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_newton" style="right:140px;width:747px;height:900px"><img class="full" src="assets/img/newton.jpg" alt="newton" style="width:747px;height:900px"></div><div class="ptext" style="left:110px;width:883px"><div class="who">Isaac Newton</div><div class="line">explained motion</div></div><div class="fader" id="f_newton"></div></div>
+<div id="p_maxwell" class="clip shot" data-start="59.590" data-duration="2.120" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_maxwell" style="left:140px;width:643px;height:900px"><img class="full" src="assets/img/maxwell.jpg" alt="maxwell" style="width:643px;height:900px"></div><div class="ptext" style="left:873px;width:987px"><div class="who">James Clerk Maxwell</div><div class="line">explained light</div></div><div class="fader" id="f_maxwell"></div></div>
+<video id="v_Clockwork" class="clip full" src="assets/manim/Clockwork.mp4" muted playsinline data-start="61.710" data-duration="8.970" data-track-index="1" style="z-index:1"></video>
+<video id="v_AtomHappened" class="clip full" src="assets/manim/AtomHappened.mp4" muted playsinline data-start="70.680" data-duration="3.480" data-track-index="1" style="z-index:1"></video>
+<video id="v_AtomModel" class="clip full" src="assets/manim/AtomModel.mp4" muted playsinline data-start="74.160" data-duration="9.560" data-track-index="1" style="z-index:1"></video>
+<video id="v_Spiral" class="clip full" src="assets/manim/Spiral.mp4" muted playsinline data-start="83.720" data-duration="12.400" data-track-index="1" style="z-index:1"></video>
+<video id="v_HowFast" class="clip full" src="assets/manim/HowFast.mp4" muted playsinline data-start="96.120" data-duration="3.740" data-track-index="1" style="z-index:1"></video>
+<video id="v_AllDead" class="clip full" src="assets/manim/AllDead.mp4" muted playsinline data-start="99.860" data-duration="11.800" data-track-index="1" style="z-index:1"></video>
+<video id="v_Stable" class="clip full" src="assets/manim/Stable.mp4" muted playsinline data-start="111.660" data-duration="2.720" data-track-index="1" style="z-index:1"></video>
+<div id="p_h_tube" class="clip shot" data-start="114.380" data-duration="4.960" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_h_tube"><img class="full" src="assets/img/h_tube.jpg" alt="h_tube"></div><div class="scrim-t"></div><div class="cap" id="c_h_tube_0" style="left:96px;top:70px;font-size:64px;">Hydrogen gas, glowing</div><div class="fader" id="f_h_tube"></div></div>
+<video id="v_Barcode" class="clip full" src="assets/manim/Barcode.mp4" muted playsinline data-start="119.340" data-duration="5.780" data-track-index="1" style="z-index:1"></video>
+<video id="v_Stairs" class="clip full" src="assets/manim/Stairs.mp4" muted playsinline data-start="125.120" data-duration="7.940" data-track-index="1" style="z-index:1"></video>
+<video id="v_Why" class="clip full" src="assets/manim/Why.mp4" muted playsinline data-start="133.060" data-duration="7.680" data-track-index="1" style="z-index:1"></video>
+<video id="v_TwoIdeas" class="clip full" src="assets/manim/TwoIdeas.mp4" muted playsinline data-start="140.740" data-duration="7.980" data-track-index="1" style="z-index:1"></video>
+<video id="v_Packets" class="clip full" src="assets/manim/Packets.mp4" muted playsinline data-start="148.720" data-duration="13.940" data-track-index="1" style="z-index:1"></video>
+<video id="v_Ehf" class="clip full" src="assets/manim/Ehf.mp4" muted playsinline data-start="162.660" data-duration="9.170" data-track-index="1" style="z-index:1"></video>
+<div id="p_uv" class="clip shot" data-start="171.830" data-duration="3.480" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_uv"><img class="full" src="assets/img/uv.jpg" alt="uv"></div><div class="scrim-b"></div><div class="cap" id="c_uv_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Ultraviolet: big chunks of energy</div><div class="fader" id="f_uv"></div></div>
+<div id="p_radio" class="clip shot" data-start="175.310" data-duration="3.220" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_radio"><img class="full" src="assets/img/radio.jpg" alt="radio"></div><div class="scrim-b"></div><div class="cap" id="c_radio_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Radio: tiny chunks, they pass right through</div><div class="fader" id="f_radio"></div></div>
+<video id="v_Hbar" class="clip full" src="assets/manim/Hbar.mp4" muted playsinline data-start="178.530" data-duration="16.990" data-track-index="1" style="z-index:1"></video>
+<div id="p_debroglie" class="clip shot" data-start="195.520" data-duration="19.160" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_debroglie" style="right:140px;width:640px;height:900px"><img class="full" src="assets/img/debroglie.jpg" alt="debroglie" style="width:640px;height:900px"></div><div class="ptext" style="left:110px;width:990px"><div class="who">Louis de Broglie</div><div class="line">PhD student, 1924</div></div><div class="quote" id="q_debroglie_0" style="left:110px;width:990px;top:610px">If waves can act like particles,</div><div class="quote" id="q_debroglie_1" style="left:110px;width:990px;top:714px">can particles act like waves?</div><div class="quote" id="q_debroglie_2" style="left:110px;width:990px;top:818px">Yes.</div><div class="fader" id="f_debroglie"></div></div>
+<video id="v_EveryParticle" class="clip full" src="assets/manim/EveryParticle.mp4" muted playsinline data-start="214.680" data-duration="19.400" data-track-index="1" style="z-index:1"></video>
+<video id="v_Diffraction" class="clip full" src="assets/manim/Diffraction.mp4" muted playsinline data-start="234.080" data-duration="8.800" data-track-index="1" style="z-index:1"></video>
+<div id="p_ripples" class="clip shot" data-start="242.880" data-duration="1.540" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_ripples"><img class="full" src="assets/img/ripples.jpg" alt="ripples"></div><div class="fader" id="f_ripples"></div></div>
+<video id="v_WhatEq" class="clip full" src="assets/manim/WhatEq.mp4" muted playsinline data-start="244.420" data-duration="12.140" data-track-index="1" style="z-index:1"></video>
+<div id="p_eth" class="clip shot" data-start="256.560" data-duration="3.100" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_eth"><img class="full" src="assets/img/eth.jpg" alt="eth"></div><div class="scrim-t"></div><div class="cap" id="c_eth_0" style="left:96px;top:70px;font-size:64px;">Zürich, 1925</div><div class="fader" id="f_eth"></div></div>
+<div id="p_debye1" class="clip shot" data-start="259.660" data-duration="2.580" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_debye1" style="right:140px;width:645px;height:900px"><img class="full" src="assets/img/debye.jpg" alt="debye1" style="width:645px;height:900px"></div><div class="ptext" style="left:110px;width:985px"><div class="who">Peter Debye</div><div class="line"></div></div><div class="fader" id="f_debye1"></div></div>
+<div id="p_schrod1" class="clip shot" data-start="262.240" data-duration="4.960" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_schrod1" style="left:140px;width:651px;height:900px"><img class="full" src="assets/img/schrodinger.jpg" alt="schrod1" style="width:651px;height:900px"></div><div class="ptext" style="left:881px;width:979px"><div class="who">Erwin Schrödinger</div><div class="line"></div></div><div class="fader" id="f_schrod1"></div></div>
+<div id="p_debye2" class="clip shot" data-start="267.200" data-duration="6.400" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_debye2" style="right:140px;width:645px;height:900px"><img class="full" src="assets/img/debye.jpg" alt="debye2" style="width:645px;height:900px"></div><div class="ptext" style="left:110px;width:985px"><div class="who">Peter Debye</div><div class="line"></div></div><div class="quote" id="q_debye2_0" style="left:110px;width:985px;top:610px">If there&#x27;s a wave,</div><div class="quote" id="q_debye2_1" style="left:110px;width:985px;top:714px">there ought to be a wave equation.</div><div class="fader" id="f_debye2"></div></div>
+<div id="p_schrod2" class="clip shot" data-start="273.600" data-duration="2.340" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_schrod2" style="left:140px;width:651px;height:900px"><img class="full" src="assets/img/schrodinger.jpg" alt="schrod2" style="width:651px;height:900px"></div><div class="ptext" style="left:881px;width:979px"><div class="who">Erwin Schrödinger</div><div class="line"></div></div><div class="fader" id="f_schrod2"></div></div>
+<div id="p_arosa" class="clip shot" data-start="275.940" data-duration="8.680" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_arosa"><img class="full" src="assets/img/arosa.jpg" alt="arosa"></div><div class="scrim-t"></div><div class="cap" id="c_arosa_0" style="left:96px;top:70px;font-size:64px;">Christmas 1925</div><div class="cap" id="c_arosa_1" style="left:96px;top:152px;font-size:52px;">Arosa, Swiss Alps</div><div class="fader" id="f_arosa"></div></div>
+<video id="v_Published" class="clip full" src="assets/manim/Published.mp4" muted playsinline data-start="284.620" data-duration="6.950" data-track-index="1" style="z-index:1"></video>
+<div id="p_city" class="clip shot" data-start="291.570" data-duration="5.740" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_city"><img class="full" src="assets/img/city.jpg" alt="city"></div><div class="scrim-a"></div><div class="cap" id="c_city_0" style="left:0;right:0;top:330px;text-align:center;font-size:92px;">One holiday.</div><div class="cap" id="c_city_1" style="left:0;right:0;top:470px;text-align:center;font-size:92px;">One equation.</div><div class="cap" id="c_city_2" style="left:0;right:0;top:610px;text-align:center;font-size:92px;">The entire modern world.</div><div class="fader" id="f_city"></div></div>
+<video id="v_LetsBuild" class="clip full" src="assets/manim/LetsBuild.mp4" muted playsinline data-start="297.310" data-duration="4.420" data-track-index="1" style="z-index:1"></video>
+<video id="v_EnergySentence" class="clip full" src="assets/manim/EnergySentence.mp4" muted playsinline data-start="301.730" data-duration="32.740" data-track-index="1" style="z-index:1"></video>
+<video id="v_Corkscrew" class="clip full" src="assets/manim/Corkscrew.mp4" muted playsinline data-start="334.470" data-duration="16.790" data-track-index="1" style="z-index:1"></video>
+<video id="v_SpaceRule" class="clip full" src="assets/manim/SpaceRule.mp4" muted playsinline data-start="351.260" data-duration="26.370" data-track-index="1" style="z-index:1"></video>
+<video id="v_TimeRule" class="clip full" src="assets/manim/TimeRule.mp4" muted playsinline data-start="377.630" data-duration="9.070" data-track-index="1" style="z-index:1"></video>
+<video id="v_Hiding" class="clip full" src="assets/manim/Hiding.mp4" muted playsinline data-start="386.700" data-duration="8.160" data-track-index="1" style="z-index:1"></video>
+<video id="v_Dictionary" class="clip full" src="assets/manim/Dictionary.mp4" muted playsinline data-start="394.860" data-duration="13.780" data-track-index="1" style="z-index:1"></video>
+<video id="v_Translate" class="clip full" src="assets/manim/Translate.mp4" muted playsinline data-start="408.640" data-duration="42.700" data-track-index="1" style="z-index:1"></video>
+<video id="v_NotMagic" class="clip full" src="assets/manim/NotMagic.mp4" muted playsinline data-start="451.340" data-duration="16.860" data-track-index="1" style="z-index:1"></video>
+<video id="v_Fair" class="clip full" src="assets/manim/Fair.mp4" muted playsinline data-start="468.200" data-duration="16.310" data-track-index="1" style="z-index:1"></video>
+<video id="v_Compact" class="clip full" src="assets/manim/Compact.mp4" muted playsinline data-start="484.510" data-duration="19.720" data-track-index="1" style="z-index:1"></video>
+<video id="v_WhatWave" class="clip full" src="assets/manim/WhatWave.mp4" muted playsinline data-start="504.230" data-duration="8.830" data-track-index="1" style="z-index:1"></video>
+<div id="p_water" class="clip shot" data-start="513.060" data-duration="2.540" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_water"><img class="full" src="assets/img/water.jpg" alt="water"></div><div class="scrim-b"></div><div class="cap" id="c_water_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Water moving</div><div class="fader" id="f_water"></div></div>
+<video id="v_AirWave" class="clip full" src="assets/manim/AirWave.mp4" muted playsinline data-start="515.600" data-duration="4.300" data-track-index="1" style="z-index:1"></video>
+<video id="v_Cloud" class="clip full" src="assets/manim/Cloud.mp4" muted playsinline data-start="519.900" data-duration="5.180" data-track-index="1" style="z-index:1"></video>
+<div id="p_born1" class="clip shot" data-start="525.080" data-duration="6.290" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_born1" style="right:140px;width:659px;height:900px"><img class="full" src="assets/img/born.jpg" alt="born1" style="width:659px;height:900px"></div><div class="ptext" style="left:110px;width:971px"><div class="who">Max Born</div><div class="line">1926</div></div><div class="fader" id="f_born1"></div></div>
+<video id="v_Possibility" class="clip full" src="assets/manim/Possibility.mp4" muted playsinline data-start="531.370" data-duration="20.570" data-track-index="1" style="z-index:1"></video>
+<video id="v_NoSpot" class="clip full" src="assets/manim/NoSpot.mp4" muted playsinline data-start="551.940" data-duration="17.300" data-track-index="1" style="z-index:1"></video>
+<div id="p_einstein" class="clip shot" data-start="569.240" data-duration="7.480" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_einstein" style="right:140px;width:675px;height:900px"><img class="full" src="assets/img/einstein.jpg" alt="einstein" style="width:675px;height:900px"></div><div class="ptext" style="left:110px;width:955px"><div class="who">Albert Einstein</div><div class="line"></div></div><div class="quote" id="q_einstein_0" style="left:110px;width:955px;top:610px">God does not play dice</div><div class="quote" id="q_einstein_1" style="left:110px;width:955px;top:714px">with the universe.</div><div class="fader" id="f_einstein"></div></div>
+<div id="p_born2" class="clip shot" data-start="576.720" data-duration="3.600" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_born2" style="left:140px;width:659px;height:900px"><img class="full" src="assets/img/born.jpg" alt="born2" style="width:659px;height:900px"></div><div class="ptext" style="left:889px;width:971px"><div class="who">Max Born</div><div class="line">every experiment since agrees</div></div><div class="fader" id="f_born2"></div></div>
+<div id="p_schrod3" class="clip shot" data-start="580.320" data-duration="6.520" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb pframe" id="k_schrod3" style="right:140px;width:651px;height:900px"><img class="full" src="assets/img/schrodinger.jpg" alt="schrod3" style="width:651px;height:900px"></div><div class="ptext" style="left:110px;width:979px"><div class="who">Erwin Schrödinger</div><div class="line"></div></div><div class="fader" id="f_schrod3"></div></div>
+<video id="v_Cat" class="clip full" src="assets/manim/Cat.mp4" muted playsinline data-start="586.840" data-duration="27.900" data-track-index="1" style="z-index:1"></video>
+<div id="p_solvay1927" class="clip shot" data-start="614.740" data-duration="4.620" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_solvay1927"><img class="full" src="assets/img/solvay.jpg" alt="solvay1927"></div><div class="scrim-t"></div><div class="cap" id="c_solvay1927_0" style="left:96px;top:70px;font-size:64px;">Still argued about today</div><div class="fader" id="f_solvay1927"></div></div>
+<video id="v_Recap" class="clip full" src="assets/manim/Recap.mp4" muted playsinline data-start="619.360" data-duration="10.720" data-track-index="1" style="z-index:1"></video>
+<div id="p_guitar" class="clip shot" data-start="630.080" data-duration="2.100" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_guitar"><img class="full" src="assets/img/guitar.jpg" alt="guitar"></div><div class="fader" id="f_guitar"></div></div>
+<video id="v_GuitarString" class="clip full" src="assets/manim/GuitarString.mp4" muted playsinline data-start="632.180" data-duration="17.500" data-track-index="1" style="z-index:1"></video>
+<video id="v_ParticleBox" class="clip full" src="assets/manim/ParticleBox.mp4" muted playsinline data-start="649.680" data-duration="28.530" data-track-index="1" style="z-index:1"></video>
+<video id="v_Orbitals" class="clip full" src="assets/manim/Orbitals.mp4" muted playsinline data-start="678.210" data-duration="12.900" data-track-index="1" style="z-index:1"></video>
+<video id="v_LowestStep" class="clip full" src="assets/manim/LowestStep.mp4" muted playsinline data-start="691.110" data-duration="19.510" data-track-index="1" style="z-index:1"></video>
+<video id="v_Jump" class="clip full" src="assets/manim/Jump.mp4" muted playsinline data-start="710.620" data-duration="24.980" data-track-index="1" style="z-index:1"></video>
+<div id="p_sun2" class="clip shot" data-start="735.600" data-duration="6.290" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_sun2"><img class="full" src="assets/img/sun.jpg" alt="sun2"></div><div class="scrim-t"></div><div class="cap" id="c_sun2_0" style="left:96px;top:70px;font-size:64px;">Quantum tunneling</div><div class="fader" id="f_sun2"></div></div>
+<video id="v_Tunnel" class="clip full" src="assets/manim/Tunnel.mp4" muted playsinline data-start="741.890" data-duration="10.660" data-track-index="1" style="z-index:1"></video>
+<div id="p_chip" class="clip shot" data-start="752.550" data-duration="7.160" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_chip"><img class="full" src="assets/img/chip.jpg" alt="chip"></div><div class="scrim-b"></div><div class="cap" id="c_chip_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Billions of transistors</div><div class="fader" id="f_chip"></div></div>
+<div id="p_laser" class="clip shot" data-start="759.710" data-duration="1.080" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_laser"><img class="full" src="assets/img/laser.jpg" alt="laser"></div><div class="scrim-b"></div><div class="cap" id="c_laser_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Lasers</div><div class="fader" id="f_laser"></div></div>
+<div id="p_led" class="clip shot" data-start="760.790" data-duration="1.120" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_led"><img class="full" src="assets/img/led.jpg" alt="led"></div><div class="scrim-b"></div><div class="cap" id="c_led_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">LEDs</div><div class="fader" id="f_led"></div></div>
+<div id="p_mri" class="clip shot" data-start="761.910" data-duration="1.380" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_mri"><img class="full" src="assets/img/mri.jpg" alt="mri"></div><div class="scrim-b"></div><div class="cap" id="c_mri_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">MRI scanners</div><div class="fader" id="f_mri"></div></div>
+<div id="p_solar" class="clip shot" data-start="763.290" data-duration="1.340" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_solar"><img class="full" src="assets/img/solar.jpg" alt="solar"></div><div class="scrim-b"></div><div class="cap" id="c_solar_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Solar panels</div><div class="fader" id="f_solar"></div></div>
+<div id="p_chem" class="clip shot" data-start="764.630" data-duration="1.690" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_chem"><img class="full" src="assets/img/chem.jpg" alt="chem"></div><div class="scrim-b"></div><div class="cap" id="c_chem_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Chemistry itself</div><div class="fader" id="f_chem"></div></div>
+<div id="p_waterbend" class="clip shot" data-start="766.320" data-duration="2.120" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_waterbend"><img class="full" src="assets/img/waterbend.jpg" alt="waterbend"></div><div class="fader" id="f_waterbend"></div></div>
+<div id="p_gold" class="clip shot" data-start="768.440" data-duration="1.480" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_gold"><img class="full" src="assets/img/gold.jpg" alt="gold"></div><div class="fader" id="f_gold"></div></div>
+<div id="p_wire" class="clip shot" data-start="769.920" data-duration="3.700" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_wire"><img class="full" src="assets/img/wire.jpg" alt="wire"></div><div class="fader" id="f_wire"></div></div>
+<video id="v_Reprise" class="clip full" src="assets/manim/Reprise.mp4" muted playsinline data-start="773.620" data-duration="4.380" data-track-index="1" style="z-index:1"></video>
+<div id="p_arosa2" class="clip shot" data-start="778.000" data-duration="4.010" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_arosa2"><img class="full" src="assets/img/arosa.jpg" alt="arosa2"></div><div class="scrim-t"></div><div class="cap" id="c_arosa2_0" style="left:96px;top:70px;font-size:64px;">A hundred years ago</div><div class="fader" id="f_arosa2"></div></div>
+<video id="v_Terrifying" class="clip full" src="assets/manim/Terrifying.mp4" muted playsinline data-start="782.010" data-duration="17.410" data-track-index="1" style="z-index:1"></video>
+<div id="p_you" class="clip shot" data-start="799.420" data-duration="4.800" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_you"><img class="full" src="assets/img/you.jpg" alt="you"></div><div class="scrim-b"></div><div class="cap" id="c_you_0" style="left:0;right:0;bottom:120px;text-align:center;font-size:60px;">Trillions of tiny waves</div><div class="fader" id="f_you"></div></div>
+<video id="v_Waves" class="clip full" src="assets/manim/Waves.mp4" muted playsinline data-start="804.220" data-duration="9.000" data-track-index="1" style="z-index:1"></video>
+<video id="v_Music" class="clip full" src="assets/manim/Music.mp4" muted playsinline data-start="813.220" data-duration="3.320" data-track-index="1" style="z-index:1"></video>
+<video id="v_Outro" class="clip full" src="assets/manim/Outro.mp4" muted playsinline data-start="816.540" data-duration="15.090" data-track-index="1" style="z-index:1"></video>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="831.63" data-volume="1" data-track-index="10"></audio>
+<audio id="fx0" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="17.970" data-duration="2.12" data-volume="0.5" data-track-index="12"></audio>
+<audio id="fx1" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="72.620" data-duration="2.59" data-volume="0.55" data-track-index="12"></audio>
+<audio id="fx2" class="clip" src="assets/sfx/glitch-1.mp3" data-start="95.400" data-duration="2.64" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx3" class="clip" src="assets/sfx/glitch-2.mp3" data-start="110.750" data-duration="3.50" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx4" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="446.690" data-duration="2.12" data-volume="0.55" data-track-index="12"></audio>
+<audio id="fx5" class="clip" src="assets/sfx/click.mp3" data-start="564.140" data-duration="0.37" data-volume="0.7" data-track-index="12"></audio>
+<audio id="fx6" class="clip" src="assets/sfx/click.mp3" data-start="566.740" data-duration="0.37" data-volume="0.7" data-track-index="12"></audio>
+<audio id="fx7" class="clip" src="assets/sfx/click.mp3" data-start="568.100" data-duration="0.37" data-volume="0.7" data-track-index="12"></audio>
+<audio id="fx8" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="51.110" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx9" class="clip" src="assets/sfx/whoosh.mp3" data-start="140.740" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx10" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="256.560" data-duration="5.54" data-volume="0.28" data-track-index="12"></audio>
+<audio id="fx11" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="301.730" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx12" class="clip" src="assets/sfx/whoosh.mp3" data-start="504.230" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx13" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="619.360" data-duration="5.54" data-volume="0.28" data-track-index="12"></audio>
+<audio id="fx14" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="735.600" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx15" class="clip" src="assets/sfx/whoosh.mp3" data-start="782.010" data-duration="0.57" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx16" class="clip" src="assets/sfx/pop.mp3" data-start="667.600" data-duration="0.72" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx17" class="clip" src="assets/sfx/pop.mp3" data-start="668.250" data-duration="0.72" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx18" class="clip" src="assets/sfx/pop.mp3" data-start="669.020" data-duration="0.72" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx19" class="clip" src="assets/sfx/pop.mp3" data-start="669.820" data-duration="0.72" data-volume="0.4" data-track-index="12"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#k_phone",{scale:1},{scale:1.07,duration:1.520,ease:"none"},5.590);
+tl.fromTo("#f_phone",{opacity:1},{opacity:0,duration:0.220,ease:"none"},5.590);
+tl.to("#f_phone",{opacity:1,duration:0.220,ease:"none"},6.856);
+tl.fromTo("#k_sun1",{scale:1},{scale:1.07,duration:1.680,ease:"none"},7.110);
+tl.fromTo("#f_sun1",{opacity:1},{opacity:0,duration:0.220,ease:"none"},7.110);
+tl.to("#f_sun1",{opacity:1,duration:0.220,ease:"none"},8.536);
+tl.fromTo("#k_neon",{scale:1.07},{scale:1,duration:2.200,ease:"none"},8.790);
+tl.fromTo("#f_neon",{opacity:1},{opacity:0,duration:0.220,ease:"none"},8.790);
+tl.to("#f_neon",{opacity:1,duration:0.220,ease:"none"},10.736);
+tl.fromTo("#k_lecture",{scale:1},{scale:1.07,duration:6.560,ease:"none"},19.180);
+tl.fromTo("#c_lecture_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},21.140);
+tl.fromTo("#c_lecture_1",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},23.300);
+tl.fromTo("#f_lecture",{opacity:1},{opacity:0,duration:0.220,ease:"none"},19.180);
+tl.to("#f_lecture",{opacity:1,duration:0.220,ease:"none"},25.486);
+tl.fromTo("#k_solvay1911",{scale:1.12,x:-46},{scale:1.12,x:46,duration:6.220,ease:"none"},51.110);
+tl.fromTo("#c_solvay1911_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},52.050);
+tl.fromTo("#f_solvay1911",{opacity:1},{opacity:0,duration:0.220,ease:"none"},51.110);
+tl.to("#f_solvay1911",{opacity:1,duration:0.220,ease:"none"},57.076);
+tl.fromTo("#k_newton",{scale:1},{scale:1.035,duration:2.260,ease:"none"},57.330);
+tl.fromTo("#f_newton",{opacity:1},{opacity:0,duration:0.220,ease:"none"},57.330);
+tl.to("#f_newton",{opacity:1,duration:0.220,ease:"none"},59.336);
+tl.fromTo("#k_maxwell",{scale:1},{scale:1.035,duration:2.120,ease:"none"},59.590);
+tl.fromTo("#f_maxwell",{opacity:1},{opacity:0,duration:0.220,ease:"none"},59.590);
+tl.to("#f_maxwell",{opacity:1,duration:0.220,ease:"none"},61.456);
+tl.fromTo("#k_h_tube",{scale:1},{scale:1.07,duration:4.960,ease:"none"},114.380);
+tl.fromTo("#c_h_tube_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},116.180);
+tl.fromTo("#f_h_tube",{opacity:1},{opacity:0,duration:0.220,ease:"none"},114.380);
+tl.to("#f_h_tube",{opacity:1,duration:0.220,ease:"none"},119.086);
+tl.fromTo("#k_uv",{scale:1},{scale:1.07,duration:3.480,ease:"none"},171.830);
+tl.fromTo("#c_uv_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},172.100);
+tl.fromTo("#f_uv",{opacity:1},{opacity:0,duration:0.220,ease:"none"},171.830);
+tl.to("#f_uv",{opacity:1,duration:0.220,ease:"none"},175.056);
+tl.fromTo("#k_radio",{scale:1.07},{scale:1,duration:3.220,ease:"none"},175.310);
+tl.fromTo("#c_radio_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},175.500);
+tl.fromTo("#f_radio",{opacity:1},{opacity:0,duration:0.220,ease:"none"},175.310);
+tl.to("#f_radio",{opacity:1,duration:0.220,ease:"none"},178.276);
+tl.fromTo("#k_debroglie",{scale:1},{scale:1.035,duration:19.160,ease:"none"},195.520);
+tl.fromTo("#q_debroglie_0",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},206.330);
+tl.fromTo("#q_debroglie_1",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},208.880);
+tl.fromTo("#q_debroglie_2",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},213.120);
+tl.fromTo("#f_debroglie",{opacity:1},{opacity:0,duration:0.220,ease:"none"},195.520);
+tl.to("#f_debroglie",{opacity:1,duration:0.220,ease:"none"},214.426);
+tl.fromTo("#k_ripples",{scale:1},{scale:1.07,duration:1.540,ease:"none"},242.880);
+tl.fromTo("#f_ripples",{opacity:1},{opacity:0,duration:0.220,ease:"none"},242.880);
+tl.to("#f_ripples",{opacity:1,duration:0.220,ease:"none"},244.166);
+tl.fromTo("#k_eth",{scale:1},{scale:1.07,duration:3.100,ease:"none"},256.560);
+tl.fromTo("#c_eth_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},257.500);
+tl.fromTo("#f_eth",{opacity:1},{opacity:0,duration:0.220,ease:"none"},256.560);
+tl.to("#f_eth",{opacity:1,duration:0.220,ease:"none"},259.406);
+tl.fromTo("#k_debye1",{scale:1},{scale:1.035,duration:2.580,ease:"none"},259.660);
+tl.fromTo("#f_debye1",{opacity:1},{opacity:0,duration:0.220,ease:"none"},259.660);
+tl.to("#f_debye1",{opacity:1,duration:0.220,ease:"none"},261.986);
+tl.fromTo("#k_schrod1",{scale:1},{scale:1.035,duration:4.960,ease:"none"},262.240);
+tl.fromTo("#f_schrod1",{opacity:1},{opacity:0,duration:0.220,ease:"none"},262.240);
+tl.to("#f_schrod1",{opacity:1,duration:0.220,ease:"none"},266.946);
+tl.fromTo("#k_debye2",{scale:1},{scale:1.035,duration:6.400,ease:"none"},267.200);
+tl.fromTo("#q_debye2_0",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},268.440);
+tl.fromTo("#q_debye2_1",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},270.920);
+tl.fromTo("#f_debye2",{opacity:1},{opacity:0,duration:0.220,ease:"none"},267.200);
+tl.to("#f_debye2",{opacity:1,duration:0.220,ease:"none"},273.346);
+tl.fromTo("#k_schrod2",{scale:1},{scale:1.035,duration:2.340,ease:"none"},273.600);
+tl.fromTo("#f_schrod2",{opacity:1},{opacity:0,duration:0.220,ease:"none"},273.600);
+tl.to("#f_schrod2",{opacity:1,duration:0.220,ease:"none"},275.686);
+tl.fromTo("#k_arosa",{scale:1.12,x:-46},{scale:1.12,x:46,duration:8.680,ease:"none"},275.940);
+tl.fromTo("#c_arosa_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},276.660);
+tl.fromTo("#c_arosa_1",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},280.740);
+tl.fromTo("#f_arosa",{opacity:1},{opacity:0,duration:0.220,ease:"none"},275.940);
+tl.to("#f_arosa",{opacity:1,duration:0.220,ease:"none"},284.366);
+tl.fromTo("#k_city",{scale:1},{scale:1.07,duration:5.740,ease:"none"},291.570);
+tl.fromTo("#c_city_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},291.700);
+tl.fromTo("#c_city_1",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},292.910);
+tl.fromTo("#c_city_2",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},294.110);
+tl.fromTo("#f_city",{opacity:1},{opacity:0,duration:0.220,ease:"none"},291.570);
+tl.to("#f_city",{opacity:1,duration:0.220,ease:"none"},297.056);
+tl.fromTo("#k_water",{scale:1},{scale:1.07,duration:2.540,ease:"none"},513.060);
+tl.fromTo("#c_water_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},513.300);
+tl.fromTo("#f_water",{opacity:1},{opacity:0,duration:0.220,ease:"none"},513.060);
+tl.to("#f_water",{opacity:1,duration:0.220,ease:"none"},515.346);
+tl.fromTo("#k_born1",{scale:1},{scale:1.035,duration:6.290,ease:"none"},525.080);
+tl.fromTo("#f_born1",{opacity:1},{opacity:0,duration:0.220,ease:"none"},525.080);
+tl.to("#f_born1",{opacity:1,duration:0.220,ease:"none"},531.116);
+tl.fromTo("#k_einstein",{scale:1},{scale:1.035,duration:7.480,ease:"none"},569.240);
+tl.fromTo("#q_einstein_0",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},573.260);
+tl.fromTo("#q_einstein_1",{opacity:0,y:12},{opacity:1,y:0,duration:0.35,ease:"power2.out"},574.980);
+tl.fromTo("#f_einstein",{opacity:1},{opacity:0,duration:0.220,ease:"none"},569.240);
+tl.to("#f_einstein",{opacity:1,duration:0.220,ease:"none"},576.466);
+tl.fromTo("#k_born2",{scale:1},{scale:1.035,duration:3.600,ease:"none"},576.720);
+tl.fromTo("#f_born2",{opacity:1},{opacity:0,duration:0.220,ease:"none"},576.720);
+tl.to("#f_born2",{opacity:1,duration:0.220,ease:"none"},580.066);
+tl.fromTo("#k_schrod3",{scale:1},{scale:1.035,duration:6.520,ease:"none"},580.320);
+tl.fromTo("#f_schrod3",{opacity:1},{opacity:0,duration:0.220,ease:"none"},580.320);
+tl.to("#f_schrod3",{opacity:1,duration:0.220,ease:"none"},586.586);
+tl.fromTo("#k_solvay1927",{scale:1.12,x:-46},{scale:1.12,x:46,duration:4.620,ease:"none"},614.740);
+tl.fromTo("#c_solvay1927_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},615.520);
+tl.fromTo("#f_solvay1927",{opacity:1},{opacity:0,duration:0.220,ease:"none"},614.740);
+tl.to("#f_solvay1927",{opacity:1,duration:0.220,ease:"none"},619.106);
+tl.fromTo("#k_guitar",{scale:1},{scale:1.07,duration:2.100,ease:"none"},630.080);
+tl.fromTo("#f_guitar",{opacity:1},{opacity:0,duration:0.220,ease:"none"},630.080);
+tl.to("#f_guitar",{opacity:1,duration:0.220,ease:"none"},631.926);
+tl.fromTo("#k_sun2",{scale:1.07},{scale:1,duration:6.290,ease:"none"},735.600);
+tl.fromTo("#c_sun2_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},739.800);
+tl.fromTo("#f_sun2",{opacity:1},{opacity:0,duration:0.220,ease:"none"},735.600);
+tl.to("#f_sun2",{opacity:1,duration:0.220,ease:"none"},741.636);
+tl.fromTo("#k_chip",{scale:1},{scale:1.07,duration:7.160,ease:"none"},752.550);
+tl.fromTo("#c_chip_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},754.550);
+tl.fromTo("#f_chip",{opacity:1},{opacity:0,duration:0.220,ease:"none"},752.550);
+tl.to("#f_chip",{opacity:1,duration:0.220,ease:"none"},759.456);
+tl.fromTo("#k_laser",{scale:1},{scale:1.07,duration:1.080,ease:"none"},759.710);
+tl.fromTo("#c_laser_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},759.800);
+tl.fromTo("#f_laser",{opacity:1},{opacity:0,duration:0.220,ease:"none"},759.710);
+tl.to("#f_laser",{opacity:1,duration:0.220,ease:"none"},760.536);
+tl.fromTo("#k_led",{scale:1},{scale:1.07,duration:1.120,ease:"none"},760.790);
+tl.fromTo("#c_led_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},760.900);
+tl.fromTo("#f_led",{opacity:1},{opacity:0,duration:0.220,ease:"none"},760.790);
+tl.to("#f_led",{opacity:1,duration:0.220,ease:"none"},761.656);
+tl.fromTo("#k_mri",{scale:1},{scale:1.07,duration:1.380,ease:"none"},761.910);
+tl.fromTo("#c_mri_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},762.000);
+tl.fromTo("#f_mri",{opacity:1},{opacity:0,duration:0.220,ease:"none"},761.910);
+tl.to("#f_mri",{opacity:1,duration:0.220,ease:"none"},763.036);
+tl.fromTo("#k_solar",{scale:1},{scale:1.07,duration:1.340,ease:"none"},763.290);
+tl.fromTo("#c_solar_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},763.400);
+tl.fromTo("#f_solar",{opacity:1},{opacity:0,duration:0.220,ease:"none"},763.290);
+tl.to("#f_solar",{opacity:1,duration:0.220,ease:"none"},764.376);
+tl.fromTo("#k_chem",{scale:1},{scale:1.07,duration:1.690,ease:"none"},764.630);
+tl.fromTo("#c_chem_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},764.750);
+tl.fromTo("#f_chem",{opacity:1},{opacity:0,duration:0.220,ease:"none"},764.630);
+tl.to("#f_chem",{opacity:1,duration:0.220,ease:"none"},766.066);
+tl.fromTo("#k_waterbend",{scale:1},{scale:1.07,duration:2.120,ease:"none"},766.320);
+tl.fromTo("#f_waterbend",{opacity:1},{opacity:0,duration:0.220,ease:"none"},766.320);
+tl.to("#f_waterbend",{opacity:1,duration:0.220,ease:"none"},768.186);
+tl.fromTo("#k_gold",{scale:1},{scale:1.07,duration:1.480,ease:"none"},768.440);
+tl.fromTo("#f_gold",{opacity:1},{opacity:0,duration:0.220,ease:"none"},768.440);
+tl.to("#f_gold",{opacity:1,duration:0.220,ease:"none"},769.666);
+tl.fromTo("#k_wire",{scale:1.07},{scale:1,duration:3.700,ease:"none"},769.920);
+tl.fromTo("#f_wire",{opacity:1},{opacity:0,duration:0.220,ease:"none"},769.920);
+tl.to("#f_wire",{opacity:1,duration:0.220,ease:"none"},773.366);
+tl.fromTo("#k_arosa2",{scale:1.07},{scale:1,duration:4.010,ease:"none"},778.000);
+tl.fromTo("#c_arosa2_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},780.320);
+tl.fromTo("#f_arosa2",{opacity:1},{opacity:0,duration:0.220,ease:"none"},778.000);
+tl.to("#f_arosa2",{opacity:1,duration:0.220,ease:"none"},781.756);
+tl.fromTo("#k_you",{scale:1},{scale:1.07,duration:4.800,ease:"none"},799.420);
+tl.fromTo("#c_you_0",{opacity:0,y:10},{opacity:1,y:0,duration:0.32,ease:"power2.out"},801.840);
+tl.fromTo("#f_you",{opacity:1},{opacity:0,duration:0.220,ease:"none"},799.420);
+tl.to("#f_you",{opacity:1,duration:0.220,ease:"none"},803.966);
+tl.set({}, {}, 831.63);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

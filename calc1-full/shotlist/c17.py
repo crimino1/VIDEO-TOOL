@@ -1,0 +1,20 @@
+# Builder 17: middle of Chapter 6. The x^3 tan x answer, why we need the chain rule (functions inside functions),
+# three meshing gears (A:B:C = 1:3:6, rates multiply), the rule f'(g(x)) g'(x) in words and in Leibniz notation,
+# (3x+1)^5 slowly, the forgotten inside derivative, then sqrt(x^2+4), sin(x^2), e^(5x), e^(x^2), cos 3x,
+# ln(x^2+1), the log shortcut, sin^2 x and 1/(2x+1)^3.
+S = [
+    ("1:41:56.56", "m", "K17_TryAnswer", {}),
+    ("1:42:04.20", "m", "K17_Inside", {}),
+    ("1:42:30.30", "m", "K17_Gears", {}),
+    ("1:43:10.60", "m", "K17_Rule", {}),
+    ("1:43:36.30", "m", "K17_Leibniz", {}),
+    ("1:43:55.80", "m", "K17_FirstEx", {}),
+    ("1:44:34.90", "m", "K17_Mistake", {}),
+    ("1:44:52.60", "m", "K17_Root", {}),
+    ("1:45:22.30", "m", "K17_SinX2", {}),
+    ("1:45:47.60", "m", "K17_Exp", {}),
+    ("1:46:20.40", "m", "K17_Cos", {}),
+    ("1:46:31.50", "m", "K17_Log", {}),
+    ("1:46:59.70", "m", "K17_SinSq", {}),
+    ("1:47:23.50", "m", "K17_NegPow", {}),
+]

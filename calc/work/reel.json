@@ -1,0 +1,103 @@
+{
+ "fps": 30,
+ "total_frames": 1966,
+ "shots": [
+  {
+   "name": "K01_LabCoat",
+   "film_start": 17.4,
+   "film_end": 21.4,
+   "reel_start_f": 0,
+   "frames": 120
+  },
+  {
+   "name": "K01_Users",
+   "film_start": 69.7,
+   "film_end": 77.5,
+   "reel_start_f": 120,
+   "frames": 234
+  },
+  {
+   "name": "K01_Idea1",
+   "film_start": 87.34,
+   "film_end": 91.4,
+   "reel_start_f": 354,
+   "frames": 122
+  },
+  {
+   "name": "K01_Speedo",
+   "film_start": 95.6,
+   "film_end": 99.4,
+   "reel_start_f": 476,
+   "frames": 114
+  },
+  {
+   "name": "K02_Earth",
+   "film_start": 227.2,
+   "film_end": 234.0,
+   "reel_start_f": 590,
+   "frames": 204
+  },
+  {
+   "name": "K02_Sub",
+   "film_start": 356.15999999999997,
+   "film_end": 363.6,
+   "reel_start_f": 794,
+   "frames": 223
+  },
+  {
+   "name": "K03_Title",
+   "film_start": 375.55,
+   "film_end": 380.5,
+   "reel_start_f": 1017,
+   "frames": 149
+  },
+  {
+   "name": "K04_Duo",
+   "film_start": 559.0,
+   "film_end": 566.8,
+   "reel_start_f": 1166,
+   "frames": 234
+  },
+  {
+   "name": "K04_Rocket",
+   "film_start": 585.5,
+   "film_end": 589.6,
+   "reel_start_f": 1400,
+   "frames": 123
+  },
+  {
+   "name": "K04_Storm",
+   "film_start": 609.3,
+   "film_end": 613.45,
+   "reel_start_f": 1523,
+   "frames": 125
+  },
+  {
+   "name": "K04_Quiz",
+   "film_start": 627.56,
+   "film_end": 631.56,
+   "reel_start_f": 1648,
+   "frames": 120
+  },
+  {
+   "name": "K04_Sub",
+   "film_start": 727.7,
+   "film_end": 734.3,
+   "reel_start_f": 1768,
+   "frames": 198
+  }
+ ],
+ "clicks": [
+  18.78,
+  69.94,
+  72.38,
+  74.34,
+  95.84,
+  228.82,
+  231.92000000000002,
+  559.14,
+  564.28,
+  585.64,
+  609.42
+ ]
+}

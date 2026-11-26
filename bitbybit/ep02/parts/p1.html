@@ -1,0 +1,113 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#fff;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#f5c842;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #f5c842;border-radius:6px;box-shadow:0 0 18px rgba(245,200,66,.8)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:0 0 14px currentColor}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="154.040" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v1" class="clip vid" src="assets/clips/pxb_161739_0cb43577.mp4" muted playsinline data-start="0.000" data-duration="2.480" data-track-index="1" style="z-index:11;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s12" class="clip scene" data-start="0.000" data-duration="2.480" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="c11" class="scene"><div id="k2" class="kw " style="left:210px;width:1500px;text-align:center;top:760px;font-size:92px;line-height:1.08;color:#fff"><span id="w3" style="opacity:0">Want</span> <span id="w4" style="opacity:0">to</span> <span id="w5" style="opacity:0">get</span> <span id="w6" style="opacity:0">good</span> <span id="w7" style="opacity:0">at</span> <span id="w8" style="opacity:0">coding?</span></div><div id="k9" class="kw " style="left:210px;width:1500px;text-align:center;top:760px;font-size:110px;line-height:1.08;color:#fff"><span id="w10" style="opacity:0">Easy.</span></div></div></div>
+<div id="s18" class="clip scene" data-start="17.440" data-duration="3.280" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div id="c17" class="scene"><div id="k13" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:84px;line-height:1.08;color:#fff"><span id="w14" style="opacity:0">An</span> <span id="w15" style="opacity:0">incredible</span> <span id="w16" style="opacity:0">setup.</span></div></div></div>
+<div id="s28" class="clip scene" data-start="20.720" data-duration="3.360" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="c27" class="scene"><div id="k19" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:76px;line-height:1.08;color:#fff"><span id="w20" style="opacity:0">And</span> <span id="w21" style="opacity:0">no</span> <span id="w22" style="opacity:0">idea</span> <span id="w23" style="opacity:0">how</span> <span id="w24" style="opacity:0">to</span> <span id="w25" style="opacity:0">build</span> <span id="w26" style="opacity:0">anything.</span></div></div></div>
+<div id="s36" class="clip scene" data-start="24.080" data-duration="5.200" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="c35" class="scene"><div class="mascot" style="left:1384px;top:485px;width:476px;height:640px"><div id="mp31" class="mpose" style="opacity:1"><svg viewBox="-10 0 320 430" class="msvg"><g transform="translate(300 0) scale(-1 1)"><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L105 222 L78 178" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L195 222 L222 178" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me32" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div><div id="mp33" class="mpose" style="opacity:0"><svg viewBox="-10 0 320 430" class="msvg"><g transform="translate(300 0) scale(-1 1)"><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L125 250 L118 295" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L220 200 L292 192" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me34" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div></div><div id="sb29" class="sub" style="left:140px;top:380px;opacity:0"><div class="h">Okay, I'm kidding.</div><div class="b"></div></div><div id="sb30" class="sub" style="left:140px;top:330px;opacity:0"><div class="h">Only a little.</div><div class="b"><div>That's what most</div><div>people actually do.</div></div></div></div></div>
+<div id="s39" class="clip scene" data-start="57.960" data-duration="3.500" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="c38" class="scene"><div id="sec37" class="sec" style="top:440px"><div>Part 1:</div><div>The tutorial trap</div></div></div></div>
+<video id="v40" class="clip vid" src="assets/clips/pxb_65401_362ac54a.mp4" muted playsinline data-start="61.460" data-duration="7.140" data-track-index="1" style="z-index:18;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s47" class="clip scene" data-start="61.460" data-duration="7.140" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="c46" class="scene"><div id="k41" class="kw dark" style="left:210px;width:1500px;text-align:center;top:820px;font-size:80px;line-height:1.08;color:#fff"><span id="w42" style="opacity:0">Every</span> <span id="w43" style="opacity:0">line</span> <span id="w44" style="opacity:0">makes</span> <span id="w45" style="opacity:0">sense.</span></div></div></div>
+<div id="s53" class="clip scene" data-start="72.460" data-duration="12.720" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="c52" class="scene"><div id="k48" class="kw " style="left:210px;width:1500px;text-align:center;top:60px;font-size:80px;line-height:1.08;color:#fff"><span id="w49" style="opacity:0">The</span> <span id="w50" style="opacity:0">fluency</span> <span id="w51" style="opacity:0">illusion</span></div></div></div>
+<div id="s56" class="clip scene" data-start="102.400" data-duration="4.440" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div id="c55" class="scene"><div id="sec54" class="sec" style="top:440px"><div>Rule 1:</div><div>Build before you feel ready</div></div></div></div>
+</div>
+<script>window.PXS = [[2.48, 5.7, "keeb", {"tin": "glitch", "tout": "zoom"}], [5.7, 9.2, "room", {"mode": "setup", "cam": {"z": [1.18, 1.0], "x": [320, 320], "y": [180, 180]}, "tin": "zoom", "tout": "zoom"}], [9.2, 13.34, "neovim", {"days": [1.36, 1.94, 2.36], "done": 3.64, "tin": "zoom", "tout": "zoom"}], [13.34, 17.44, "tutorials", {"tin": "zoom", "tout": "zoom"}], [17.44, 20.72, "room", {"mode": "setup", "cam": {"z": [1.25, 1.0]}, "tin": "zoom", "tout": "zoom"}], [20.72, 24.08, "room", {"cam": {"z": [1.0, 1.7], "x": [320, 320], "y": [180, 152], "e": "io"}, "tin": "zoom", "tout": "zoom"}], [29.28, 37.14, "room", {"quiet": 6.58, "cam": {"z": [1.0, 1.55], "x": [320, 320], "y": [180, 158]}, "tin": "fade", "tout": "zoom"}], [37.14, 39.36, "logo2", {"done": 1.4, "tin": "glitch", "tout": "zoom"}], [39.36, 50.3, "two_paths", {"labels": 1.0, "reveal": 5.08, "tin": "zoom", "tout": "zoom"}], [50.3, 57.96, "quit_curve", {"q": 3.9, "cam": {"z": [1.0, 1.15], "x": [320, 380], "y": [180, 150]}, "tin": "zoom", "tout": "zoom"}], [57.96, 61.46, "secbg", {"tin": "glitch", "tout": "zoom", "cam": {"z": [1.0, 1.04]}}], [68.6, 72.46, "gauge", {"wrong": 2.64, "tin": "zoom", "tout": "zoom"}], [72.46, 85.18, "recog", {"labels": 3.0, "tags": 8.64, "tin": "zoom", "tout": "zoom"}], [85.18, 102.4, "test", {"close": 4.38, "blank": 5.26, "peek": 8.68, "timer": 10.24, "flag": 15.14, "tin": "zoom", "tout": "zoom"}], [102.4, 106.84, "secbg", {"tin": "glitch", "tout": "zoom", "cam": {"z": [1.0, 1.04]}}], [106.84, 110.74, "waiting", {"tin": "zoom", "tout": "zoom"}], [110.74, 121.3, "goldilocks", {"at": [3.0, 5.38, 8.52], "tin": "zoom", "tout": "zoom"}], [121.3, 128.84, "eighty", {"grow": 6.28, "tin": "zoom", "tout": "zoom"}], [128.84, 154.04, "projects_ladder", {"at": [3.64, 7.22, 12.46, 18.28], "climb": 23.78, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/debug.js"></script>
+<script src="assets/js/scenes/learn.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/practice.js"></script>
+<script src="assets/js/scenes/ship.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1",{scale:1.0},{scale:1.08,duration:2.48,ease:"none"},0.000);
+tl.set("#w3",{opacity:1},0.000);
+tl.set("#w4",{opacity:1},0.340);
+tl.set("#w5",{opacity:1},0.480);
+tl.set("#w6",{opacity:1},0.620);
+tl.set("#w7",{opacity:1},0.800);
+tl.set("#w8",{opacity:1},0.960);
+tl.set("#k2",{opacity:0},1.700);
+tl.set("#w10",{opacity:1},1.700);
+tl.set("#w14",{opacity:1},20.720);
+tl.set("#w15",{opacity:1},20.720);
+tl.set("#w16",{opacity:1},20.720);
+tl.set("#w20",{opacity:1},29.280);
+tl.set("#w21",{opacity:1},44.440);
+tl.set("#w22",{opacity:1},44.440);
+tl.set("#w23",{opacity:1},44.720);
+tl.set("#w24",{opacity:1},47.780);
+tl.set("#w25",{opacity:1},91.820);
+tl.set("#w26",{opacity:1},91.820);
+tl.set("#sb29",{opacity:1},24.080);
+tl.set("#sb29",{opacity:0},26.200);
+tl.set("#sb30",{opacity:1},26.200);
+tl.set("#me32",{scaleY:0.12},25.180);
+tl.set("#me32",{scaleY:1},25.300);
+tl.set("#me34",{scaleY:0.12},27.300);
+tl.set("#me34",{scaleY:1},27.420);
+tl.set("#mp33",{opacity:1},26.200);
+tl.set("#mp31",{opacity:0},26.200);
+tl.fromTo("#sec37",{scale:2.4,opacity:0},{scale:1,opacity:1,duration:0.55,ease:"power3.out"},57.960);
+tl.fromTo("#v40",{scale:1.0},{scale:1.1,duration:7.14,ease:"none"},61.460);
+tl.set("#w42",{opacity:1},63.320);
+tl.set("#w43",{opacity:1},63.620);
+tl.set("#w44",{opacity:1},63.920);
+tl.set("#w45",{opacity:1},64.220);
+tl.set("#w49",{opacity:1},87.460);
+tl.set("#w50",{opacity:1},87.460);
+tl.set("#w51",{opacity:1},87.460);
+tl.set("#k48",{opacity:0},75.460);
+tl.fromTo("#sec54",{scale:2.4,opacity:0},{scale:1,opacity:1,duration:0.55,ease:"power3.out"},102.400);
+tl.set({}, {}, 154.040);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

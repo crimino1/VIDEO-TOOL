@@ -1,0 +1,1286 @@
+{
+ "result_count": 240,
+ "page_count": 12,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "624e2816-455f-4ffd-b60e-506237c52a74",
+   "title": "My Boy (Relax Mix)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1543598",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1543598&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"My Boy (Relax Mix)\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Midnight Grooves (Smooth Jazz Lounge)",
+    "foreign_landing_url": "https://www.jamendo.com/album/176608/midnight-grooves-smooth-jazz-lounge",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 272000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/624e2816-455f-4ffd-b60e-506237c52a74/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/624e2816-455f-4ffd-b60e-506237c52a74/",
+   "related_url": "https://api.openverse.org/v1/audio/624e2816-455f-4ffd-b60e-506237c52a74/related/",
+   "waveform": "https://api.openverse.org/v1/audio/624e2816-455f-4ffd-b60e-506237c52a74/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "64962794-45ce-4c96-aa49-4d0acd6d5cad",
+   "title": "Relaxing Flutes",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1353244",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1353244&format=mp32",
+   "creator": "Soulful-Cafe",
+   "creator_url": "https://www.jamendo.com/artist/490858/Soulful_Cafe",
+   "license": "by-nd",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "electronic",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "kick",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "summer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relaxing Flutes\" by Soulful-Cafe is licensed under CC BY-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Chillout Attack",
+    "foreign_landing_url": null,
+    "creator": "Soulful-Cafe",
+    "creator_url": "https://www.jamendo.com/artist/490858/Soulful_Cafe",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 210000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/64962794-45ce-4c96-aa49-4d0acd6d5cad/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/64962794-45ce-4c96-aa49-4d0acd6d5cad/",
+   "related_url": "https://api.openverse.org/v1/audio/64962794-45ce-4c96-aa49-4d0acd6d5cad/related/",
+   "waveform": "https://api.openverse.org/v1/audio/64962794-45ce-4c96-aa49-4d0acd6d5cad/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "721a4cde-3afa-4da6-a376-7048d7c2b882",
+   "title": "Relax",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/484001",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=484001&format=mp32",
+   "creator": "M\u041eB",
+   "creator_url": "https://www.jamendo.com/artist/355745/DJ_M.O.B.",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relax\" by M\u041eB is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "My Instrumentals",
+    "foreign_landing_url": "https://www.jamendo.com/album/56997/my-instrumentals",
+    "creator": "M\u041eB",
+    "creator_url": "https://www.jamendo.com/artist/355745/DJ_M.O.B.",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 106000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/721a4cde-3afa-4da6-a376-7048d7c2b882/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/721a4cde-3afa-4da6-a376-7048d7c2b882/",
+   "related_url": "https://api.openverse.org/v1/audio/721a4cde-3afa-4da6-a376-7048d7c2b882/related/",
+   "waveform": "https://api.openverse.org/v1/audio/721a4cde-3afa-4da6-a376-7048d7c2b882/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7c54e52d-d1d5-4647-92e5-809593716504",
+   "title": "Tropical on Space (relax mix)",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/177138",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=177138&format=mp32",
+   "creator": "John Handersky",
+   "creator_url": "https://www.jamendo.com/artist/339966/John_Handersky",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "island",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "phone",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "space",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Tropical on Space (relax mix)\" by John Handersky is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Remind my Sad-Smile",
+    "foreign_landing_url": "https://www.jamendo.com/album/26199/remind-my-sad-smile",
+    "creator": "John Handersky",
+    "creator_url": "https://www.jamendo.com/artist/339966/John_Handersky",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 609000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7c54e52d-d1d5-4647-92e5-809593716504/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7c54e52d-d1d5-4647-92e5-809593716504/",
+   "related_url": "https://api.openverse.org/v1/audio/7c54e52d-d1d5-4647-92e5-809593716504/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7c54e52d-d1d5-4647-92e5-809593716504/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "13f72133-4046-4d5c-b0e7-3b7885b64b98",
+   "title": "Dj Sylvain-(2)Relax",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/191152",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=191152&format=mp32",
+   "creator": "Dj Sylvain",
+   "creator_url": "https://www.jamendo.com/artist/340673/Dj_Sylvain_(2)",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dj Sylvain-(2)Relax\" by Dj Sylvain is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/fr/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dj Sylvain ~ trips'day",
+    "foreign_landing_url": "https://www.jamendo.com/album/28610/dj-sylvain-trips-day",
+    "creator": "Dj Sylvain",
+    "creator_url": "https://www.jamendo.com/artist/340673/Dj_Sylvain_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 56000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/13f72133-4046-4d5c-b0e7-3b7885b64b98/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/13f72133-4046-4d5c-b0e7-3b7885b64b98/",
+   "related_url": "https://api.openverse.org/v1/audio/13f72133-4046-4d5c-b0e7-3b7885b64b98/related/",
+   "waveform": "https://api.openverse.org/v1/audio/13f72133-4046-4d5c-b0e7-3b7885b64b98/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "eb568010-6a72-4c50-b472-06b0d9dc1c95",
+   "title": "Relaxation",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/340073",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=340073&format=mp32",
+   "creator": "SBUT",
+   "creator_url": "https://www.jamendo.com/artist/350115/SBUT",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relaxation\" by SBUT is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Lounge (Album)",
+    "foreign_landing_url": "https://www.jamendo.com/album/44946/lounge-album",
+    "creator": "SBUT",
+    "creator_url": "https://www.jamendo.com/artist/350115/SBUT",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 239000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/eb568010-6a72-4c50-b472-06b0d9dc1c95/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/eb568010-6a72-4c50-b472-06b0d9dc1c95/",
+   "related_url": "https://api.openverse.org/v1/audio/eb568010-6a72-4c50-b472-06b0d9dc1c95/related/",
+   "waveform": "https://api.openverse.org/v1/audio/eb568010-6a72-4c50-b472-06b0d9dc1c95/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d5c8d97e-3093-4735-8aa2-eb76c551f53f",
+   "title": "Dan The Automator - Relaxation Spa Treatment",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/277",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=277&format=mp32",
+   "creator": "Various Artists",
+   "creator_url": "https://www.jamendo.com/artist/15/va",
+   "license": "sampling+",
+   "license_version": "1.0",
+   "license_url": "https://creativecommons.org/licenses/sampling+/1.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dan The Automator - Relaxation Spa Treatment\" by Various Artists is licensed under CC Sampling+ 1.0. To view a copy of this license, visit https://creativecommons.org/licenses/sampling+/1.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The WIRED CD : Rip. Sample. Mash. Share.",
+    "foreign_landing_url": "https://www.jamendo.com/album/35/the-wired-cd-rip-sample-mash-share",
+    "creator": "Various Artists",
+    "creator_url": "https://www.jamendo.com/artist/15/va",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 205000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d5c8d97e-3093-4735-8aa2-eb76c551f53f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d5c8d97e-3093-4735-8aa2-eb76c551f53f/",
+   "related_url": "https://api.openverse.org/v1/audio/d5c8d97e-3093-4735-8aa2-eb76c551f53f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d5c8d97e-3093-4735-8aa2-eb76c551f53f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "51e7d6bc-6d47-4491-8c6f-fafbf613038d",
+   "title": "relax mix",
+   "indexed_on": "2023-05-04T00:05:01.880122Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/138613",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=138613&format=mp32",
+   "creator": "dj atomiksky",
+   "creator_url": "https://www.jamendo.com/artist/338223/dj_atomiksky",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"relax mix\" by dj atomiksky is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/fr/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Atomik_Land VOL2",
+    "foreign_landing_url": "https://www.jamendo.com/album/19810/atomik_land-vol2",
+    "creator": "dj atomiksky",
+    "creator_url": "https://www.jamendo.com/artist/338223/dj_atomiksky",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 217000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/51e7d6bc-6d47-4491-8c6f-fafbf613038d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/51e7d6bc-6d47-4491-8c6f-fafbf613038d/",
+   "related_url": "https://api.openverse.org/v1/audio/51e7d6bc-6d47-4491-8c6f-fafbf613038d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/51e7d6bc-6d47-4491-8c6f-fafbf613038d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9c1a5d79-cf22-4d24-a8cf-431b42e04263",
+   "title": "SORT OF RELAX",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/72786",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=72786&format=mp32",
+   "creator": "Philippe.CAINE",
+   "creator_url": "https://www.jamendo.com/artist/7315/ph.caine",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"SORT OF RELAX\" by Philippe.CAINE is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "INSIDE",
+    "foreign_landing_url": "https://www.jamendo.com/album/6409/inside",
+    "creator": "Philippe.CAINE",
+    "creator_url": "https://www.jamendo.com/artist/7315/ph.caine",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 1104000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9c1a5d79-cf22-4d24-a8cf-431b42e04263/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9c1a5d79-cf22-4d24-a8cf-431b42e04263/",
+   "related_url": "https://api.openverse.org/v1/audio/9c1a5d79-cf22-4d24-a8cf-431b42e04263/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9c1a5d79-cf22-4d24-a8cf-431b42e04263/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "f84d9865-4c12-4fc0-99f4-ea339345f88e",
+   "title": "Confused relaxing (ambient synth)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/704397",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=704397&format=mp32",
+   "creator": "Ostenvegr",
+   "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Confused relaxing (ambient synth)\" by Ostenvegr is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ostenvegr's Travel (Demo)",
+    "foreign_landing_url": "https://www.jamendo.com/album/82126/ostenvegr-s-travel-demo",
+    "creator": "Ostenvegr",
+    "creator_url": "https://www.jamendo.com/artist/365532/Ostenvegr",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 124000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/",
+   "related_url": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/related/",
+   "waveform": "https://api.openverse.org/v1/audio/f84d9865-4c12-4fc0-99f4-ea339345f88e/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "4f5392c3-8758-45aa-9c57-4fe89de00301",
+   "title": "Relax Your Body",
+   "indexed_on": "2024-11-01T16:38:58.867315Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1116715",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1116715&format=mp32",
+   "creator": "The Clone Dj",
+   "creator_url": "https://www.jamendo.com/artist/421137/TheCloneDj",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "enigma",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relax Your Body\" by The Clone Dj is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Everybody Move Your Body",
+    "foreign_landing_url": "https://www.jamendo.com/album/133426/everybody-move-your-body",
+    "creator": "The Clone Dj",
+    "creator_url": "https://www.jamendo.com/artist/421137/TheCloneDj",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 256000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4f5392c3-8758-45aa-9c57-4fe89de00301/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4f5392c3-8758-45aa-9c57-4fe89de00301/",
+   "related_url": "https://api.openverse.org/v1/audio/4f5392c3-8758-45aa-9c57-4fe89de00301/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4f5392c3-8758-45aa-9c57-4fe89de00301/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "17f8e723-9f85-4413-a19c-1b6e7130429a",
+   "title": "relax",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/635805",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=635805&format=mp32",
+   "creator": "Sentinel",
+   "creator_url": "https://www.jamendo.com/artist/362438/Sentinel_(3)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"relax\" by Sentinel is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "music in the fire",
+    "foreign_landing_url": "https://www.jamendo.com/album/73598/music-in-the-fire",
+    "creator": "Sentinel",
+    "creator_url": "https://www.jamendo.com/artist/362438/Sentinel_(3)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 212000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/17f8e723-9f85-4413-a19c-1b6e7130429a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/17f8e723-9f85-4413-a19c-1b6e7130429a/",
+   "related_url": "https://api.openverse.org/v1/audio/17f8e723-9f85-4413-a19c-1b6e7130429a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/17f8e723-9f85-4413-a19c-1b6e7130429a/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a389b25e-76c6-42a3-9445-d0a3b4b52ee4",
+   "title": "15 Just Relax ( Ambient House Mix )",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1268143",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1268143&format=mp32",
+   "creator": "Hasenchat",
+   "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "acidhouse",
+    "deephouse",
+    "house"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "relaxe",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"15 Just Relax ( Ambient House Mix )\" by Hasenchat is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Berlin Club EDM",
+    "foreign_landing_url": "https://www.jamendo.com/album/151537/berlin-club-edm",
+    "creator": "Hasenchat",
+    "creator_url": "https://www.jamendo.com/artist/386200/hasenchat",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 550000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a389b25e-76c6-42a3-9445-d0a3b4b52ee4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a389b25e-76c6-42a3-9445-d0a3b4b52ee4/",
+   "related_url": "https://api.openverse.org/v1/audio/a389b25e-76c6-42a3-9445-d0a3b4b52ee4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a389b25e-76c6-42a3-9445-d0a3b4b52ee4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7dd9db9b-a039-4333-9bf6-aa76e727be44",
+   "title": "Musci ambient relax",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/678120",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=678120&format=mp32",
+   "creator": "empanada",
+   "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Musci ambient relax\" by empanada is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Ambien Music Reload",
+    "foreign_landing_url": "https://www.jamendo.com/album/78774/ambien-music-reload",
+    "creator": "empanada",
+    "creator_url": "https://www.jamendo.com/artist/364091/empanada",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 93000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7dd9db9b-a039-4333-9bf6-aa76e727be44/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7dd9db9b-a039-4333-9bf6-aa76e727be44/",
+   "related_url": "https://api.openverse.org/v1/audio/7dd9db9b-a039-4333-9bf6-aa76e727be44/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7dd9db9b-a039-4333-9bf6-aa76e727be44/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b3ec1b60-2033-4504-926e-24f57eae9bc2",
+   "title": "Relax",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/703482",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=703482&format=mp32",
+   "creator": "Sheard",
+   "creator_url": "https://www.jamendo.com/artist/365491/Sheard",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relax\" by Sheard is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Relax",
+    "foreign_landing_url": "https://www.jamendo.com/album/82020/relax",
+    "creator": "Sheard",
+    "creator_url": "https://www.jamendo.com/artist/365491/Sheard",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 136000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b3ec1b60-2033-4504-926e-24f57eae9bc2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b3ec1b60-2033-4504-926e-24f57eae9bc2/",
+   "related_url": "https://api.openverse.org/v1/audio/b3ec1b60-2033-4504-926e-24f57eae9bc2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b3ec1b60-2033-4504-926e-24f57eae9bc2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5269f196-2143-4860-b2f5-09181e157d44",
+   "title": "Infinite Mind Relax",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/177076",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=177076&format=mp32",
+   "creator": "John Handersky",
+   "creator_url": "https://www.jamendo.com/artist/339966/John_Handersky",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "experimental",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "airport",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Infinite Mind Relax\" by John Handersky is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Remind my Sad-Smile",
+    "foreign_landing_url": "https://www.jamendo.com/album/26199/remind-my-sad-smile",
+    "creator": "John Handersky",
+    "creator_url": "https://www.jamendo.com/artist/339966/John_Handersky",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 135000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5269f196-2143-4860-b2f5-09181e157d44/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5269f196-2143-4860-b2f5-09181e157d44/",
+   "related_url": "https://api.openverse.org/v1/audio/5269f196-2143-4860-b2f5-09181e157d44/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5269f196-2143-4860-b2f5-09181e157d44/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a70f1c14-e9ed-42bd-8fd1-8f4dafb17f01",
+   "title": "driving in relax",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/15975",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=15975&format=mp32",
+   "creator": "blackwire",
+   "creator_url": "https://www.jamendo.com/artist/2312/blackwire",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"driving in relax\" by blackwire is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "knowledge pills",
+    "foreign_landing_url": "https://www.jamendo.com/album/2265/knowledge-pills",
+    "creator": "blackwire",
+    "creator_url": "https://www.jamendo.com/artist/2312/blackwire",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 172000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a70f1c14-e9ed-42bd-8fd1-8f4dafb17f01/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a70f1c14-e9ed-42bd-8fd1-8f4dafb17f01/",
+   "related_url": "https://api.openverse.org/v1/audio/a70f1c14-e9ed-42bd-8fd1-8f4dafb17f01/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a70f1c14-e9ed-42bd-8fd1-8f4dafb17f01/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3b292ec4-2698-4abe-a1dc-0d82da0948b0",
+   "title": "Relax",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1740770",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1740770&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "documentary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "drama",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relax\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Salt Lounge - Spa &amp; Wellness",
+    "foreign_landing_url": "https://www.jamendo.com/album/191948/salt-lounge-spa-and-wellness",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 317000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3b292ec4-2698-4abe-a1dc-0d82da0948b0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3b292ec4-2698-4abe-a1dc-0d82da0948b0/",
+   "related_url": "https://api.openverse.org/v1/audio/3b292ec4-2698-4abe-a1dc-0d82da0948b0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3b292ec4-2698-4abe-a1dc-0d82da0948b0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c212a2e1-7a92-4282-ade9-4e72abd2b258",
+   "title": "relax in my mood",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/671179",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=671179&format=mp32",
+   "creator": "MG-Rizzello",
+   "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calmful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"relax in my mood\" by MG-Rizzello is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm down",
+    "foreign_landing_url": "https://www.jamendo.com/album/77859/calm-down",
+    "creator": "MG-Rizzello",
+    "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 305000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c212a2e1-7a92-4282-ade9-4e72abd2b258/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c212a2e1-7a92-4282-ade9-4e72abd2b258/",
+   "related_url": "https://api.openverse.org/v1/audio/c212a2e1-7a92-4282-ade9-4e72abd2b258/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c212a2e1-7a92-4282-ade9-4e72abd2b258/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "322e096d-2043-405a-834f-b78a4bc6f836",
+   "title": "Relax",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/284425",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=284425&format=mp32",
+   "creator": "Chriss ONAC",
+   "creator_url": "https://www.jamendo.com/artist/338549/CHRISS_ONAC",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Relax\" by Chriss ONAC is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RAISONNABLE ???",
+    "foreign_landing_url": "https://www.jamendo.com/album/39687/raisonnable",
+    "creator": "Chriss ONAC",
+    "creator_url": "https://www.jamendo.com/artist/338549/CHRISS_ONAC",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 258000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/322e096d-2043-405a-834f-b78a4bc6f836/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/322e096d-2043-405a-834f-b78a4bc6f836/",
+   "related_url": "https://api.openverse.org/v1/audio/322e096d-2043-405a-834f-b78a4bc6f836/related/",
+   "waveform": "https://api.openverse.org/v1/audio/322e096d-2043-405a-834f-b78a4bc6f836/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

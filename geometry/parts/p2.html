@@ -1,0 +1,128 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="158.020" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v56" class="clip vid" src="assets/clips/mn_Postulates_a1b81284.mp4" muted playsinline data-start="0.000" data-duration="26.460" data-track-index="1" style="z-index:43;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s59" class="clip scene" data-start="26.460" data-duration="4.590" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="c58" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:460px;top:196px;width:1000px;height:608px"><img id="ph57" src="assets/gen/euclid_papyrus_4d0284.jpg" alt="euclid_papyrus"></div><div class="credit">Euclid's Elements, P. Oxy. I 29, public domain</div></div></div>
+<video id="v60" class="clip vid" src="assets/clips/mn_Postulates_3af10eae.mp4" muted playsinline data-start="31.050" data-duration="4.990" data-track-index="1" style="z-index:46;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s64" class="clip scene" data-start="36.040" data-duration="1.460" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="c63" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch61" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; THREE</div><div class="ti">Angles</div><div id="ru62" class="rule"></div></div></div></div>
+<video id="v65" class="clip vid" src="assets/clips/mn_Angles_db7ad6b8.mp4" muted playsinline data-start="37.500" data-duration="37.120" data-track-index="1" style="z-index:49;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v66" class="clip vid" src="assets/clips/pxg_city_aedc9c7c.mp4" muted playsinline data-start="74.620" data-duration="7.760" data-track-index="1" style="z-index:51;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s78" class="clip scene" data-start="74.620" data-duration="7.760" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="c77" class="scene"><div id="k67" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:50px;line-height:1.08;color:#fff"><span id="w68" style="opacity:0">Our</span> <span id="w69" style="opacity:0">whole</span> <span id="w70" style="opacity:0">built</span> <span id="w71" style="opacity:0">world</span> <span id="w72" style="opacity:0">is</span> <span id="w73" style="opacity:0">full</span> <span id="w74" style="opacity:0">of</span> <span id="w75" style="opacity:0">right</span> <span id="w76" style="opacity:0">angles.</span></div></div></div>
+<video id="v79" class="clip vid" src="assets/clips/pxg_bridge2_e1b5b137.mp4" muted playsinline data-start="82.380" data-duration="1.500" data-track-index="1" style="z-index:54;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s83" class="clip scene" data-start="82.380" data-duration="1.500" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="c82" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch80" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; FOUR</div><div class="ti">Triangles</div><div id="ru81" class="rule"></div></div></div></div>
+<video id="v84" class="clip vid" src="assets/clips/mn_Rigid_028b88e3.mp4" muted playsinline data-start="83.880" data-duration="33.320" data-track-index="1" style="z-index:57;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v85" class="clip vid" src="assets/clips/pxg_bridge2_c90d8062.mp4" muted playsinline data-start="117.200" data-duration="5.580" data-track-index="1" style="z-index:59;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s87" class="clip scene" data-start="117.200" data-duration="5.580" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap><div id="c86" class="scene"></div></div>
+<video id="v88" class="clip vid" src="assets/clips/pxg_pylon_a6862835.mp4" muted playsinline data-start="122.780" data-duration="3.560" data-track-index="1" style="z-index:62;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s90" class="clip scene" data-start="122.780" data-duration="3.560" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="c89" class="scene"></div></div>
+<video id="v91" class="clip vid" src="assets/clips/pxg_bridge_905085e8.mp4" muted playsinline data-start="126.340" data-duration="3.700" data-track-index="1" style="z-index:65;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s98" class="clip scene" data-start="126.340" data-duration="3.700" data-track-index="2" style="z-index:67" data-layout-allow-overflow data-layout-allow-overlap><div id="c97" class="scene"><div id="k92" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w93" style="opacity:0">triangles</span> <span id="w94" style="opacity:0">keep</span> <span id="w95" style="opacity:0">everything</span> <span id="w96" style="opacity:0">rigid</span></div></div></div>
+<video id="v99" class="clip vid" src="assets/clips/mn_AngleSum_f96ce912.mp4" muted playsinline data-start="130.040" data-duration="27.980" data-track-index="1" style="z-index:68;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[26.46, 31.05, "euclid_class", {"line": -9, "circle": -9, "tin": "fade", "tout": "fade"}], [36.04, 37.5, "string_circle", {"walk": -9, "tin": "fade", "tout": "fade"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/ancient.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/modern.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#ph57",{scale:1.0},{scale:1.05,duration:4.59,ease:"none"},26.460);
+tl.fromTo("#ch61",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},36.190);
+tl.fromTo("#ru62",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},36.540);
+tl.fromTo("#v66",{scale:1.0},{scale:1.06,duration:7.76,ease:"none"},74.620);
+tl.set("#w68",{opacity:1},79.980);
+tl.set("#w69",{opacity:1},80.200);
+tl.set("#w70",{opacity:1},80.460);
+tl.set("#w71",{opacity:1},80.700);
+tl.set("#w72",{opacity:1},81.000);
+tl.set("#w73",{opacity:1},81.220);
+tl.set("#w74",{opacity:1},81.400);
+tl.set("#w75",{opacity:1},161.160);
+tl.set("#w76",{opacity:1},672.540);
+tl.fromTo("#v79",{scale:1.0},{scale:1.06,duration:1.5,ease:"none"},82.380);
+tl.fromTo("#ch80",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},82.530);
+tl.fromTo("#ru81",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},82.880);
+tl.fromTo("#v85",{scale:1.0},{scale:1.08,duration:5.58,ease:"none"},117.200);
+tl.fromTo("#v88",{scale:1.0},{scale:1.08,duration:3.56,ease:"none"},122.780);
+tl.fromTo("#v91",{scale:1.08},{scale:1.0,duration:3.7,ease:"none"},126.340);
+tl.set("#w93",{opacity:1},127.220);
+tl.set("#w94",{opacity:1},127.220);
+tl.set("#w95",{opacity:1},128.460);
+tl.set("#w96",{opacity:1},128.980);
+tl.set({}, {}, 158.020);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

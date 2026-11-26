@@ -1,0 +1,65 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/vidssave.com Jupiter isn't a planet 720P.mp4",
+  "duration": 978.936292,
+  "width": 1280,
+  "height": 720,
+  "fps": 23.98,
+  "has_audio": true,
+  "shots": 19,
+  "avg_shot_sec": 51.52,
+  "median_shot_sec": 30.24,
+  "shortest_shot_sec": 0.04,
+  "longest_shot_sec": 217.3,
+  "cuts_per_minute": {
+    "first 30s": 10.0,
+    "30s-2m": 0.7,
+    "2m-5m": 0.3,
+    "after 5m": 1.0
+  },
+  "loudness": {
+    "integrated_lufs": -18.9,
+    "range_lu": 3.2
+  },
+  "cuts": [
+    21.187833,
+    26.568208,
+    26.609917,
+    26.651625,
+    28.403375,
+    76.034292,
+    135.593792,
+    352.894208,
+    374.248875,
+    481.189042,
+    487.570417,
+    550.841958,
+    558.099208,
+    588.33775,
+    679.804125,
+    745.703292,
+    807.139667,
+    817.483333
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 20.4
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 326.3,
+      "sec_between_frames": 20.4
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 652.6,
+      "sec_between_frames": 20.4
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

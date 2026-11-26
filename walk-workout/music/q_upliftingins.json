@@ -1,0 +1,1532 @@
+{
+ "result_count": 198,
+ "page_count": 10,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "ceafeb54-b40c-4e30-9030-c8416d9a5dca",
+   "title": "Day Break",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/223590",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=223590&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Day Break\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "General Electronica",
+    "foreign_landing_url": "https://www.jamendo.com/album/32823/general-electronica",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 268000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ceafeb54-b40c-4e30-9030-c8416d9a5dca/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ceafeb54-b40c-4e30-9030-c8416d9a5dca/",
+   "related_url": "https://api.openverse.org/v1/audio/ceafeb54-b40c-4e30-9030-c8416d9a5dca/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ceafeb54-b40c-4e30-9030-c8416d9a5dca/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "43025b63-0f81-44df-af26-d240231b582c",
+   "title": "Memory",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/413138",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=413138&format=mp32",
+   "creator": "Alexandr Filippov",
+   "creator_url": "https://www.jamendo.com/artist/353021/Alexandr_Filippov",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "classical",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "classicalguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Memory\" by Alexandr Filippov is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "for you",
+    "foreign_landing_url": "https://www.jamendo.com/album/51002/for-you",
+    "creator": "Alexandr Filippov",
+    "creator_url": "https://www.jamendo.com/artist/353021/Alexandr_Filippov",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 234000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/43025b63-0f81-44df-af26-d240231b582c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/43025b63-0f81-44df-af26-d240231b582c/",
+   "related_url": "https://api.openverse.org/v1/audio/43025b63-0f81-44df-af26-d240231b582c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/43025b63-0f81-44df-af26-d240231b582c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7acb63f6-2f62-41b1-a3c1-7686d0b9dfca",
+   "title": "Fascination",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1331967",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1331967&format=mp32",
+   "creator": "Neon NiteClub",
+   "creator_url": "https://www.jamendo.com/artist/371777/Neon_NiteClub_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electropop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dancey",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "fun",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "retro",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Fascination\" by Neon NiteClub is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Her",
+    "foreign_landing_url": "https://www.jamendo.com/album/157549/her",
+    "creator": "Neon NiteClub",
+    "creator_url": "https://www.jamendo.com/artist/371777/Neon_NiteClub_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 245000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7acb63f6-2f62-41b1-a3c1-7686d0b9dfca/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7acb63f6-2f62-41b1-a3c1-7686d0b9dfca/",
+   "related_url": "https://api.openverse.org/v1/audio/7acb63f6-2f62-41b1-a3c1-7686d0b9dfca/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7acb63f6-2f62-41b1-a3c1-7686d0b9dfca/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cbd645ac-daaa-4f3a-a692-fb0915bce037",
+   "title": "Faith",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1331970",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1331970&format=mp32",
+   "creator": "Neon NiteClub",
+   "creator_url": "https://www.jamendo.com/artist/371777/Neon_NiteClub_(2)",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "dance",
+    "electropop",
+    "pop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "80s",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "dancey",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "fun",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Faith\" by Neon NiteClub is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Her",
+    "foreign_landing_url": "https://www.jamendo.com/album/157549/her",
+    "creator": "Neon NiteClub",
+    "creator_url": "https://www.jamendo.com/artist/371777/Neon_NiteClub_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 248000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cbd645ac-daaa-4f3a-a692-fb0915bce037/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cbd645ac-daaa-4f3a-a692-fb0915bce037/",
+   "related_url": "https://api.openverse.org/v1/audio/cbd645ac-daaa-4f3a-a692-fb0915bce037/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cbd645ac-daaa-4f3a-a692-fb0915bce037/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3b340315-2508-4768-a2c6-e403421351e5",
+   "title": "The Night Before",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/588705",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=588705&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "christmas",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Night Before\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "hellofanatic, hellofanattic",
+    "foreign_landing_url": "https://www.jamendo.com/album/67874/hellofanatic-hellofanattic",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 188000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3b340315-2508-4768-a2c6-e403421351e5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3b340315-2508-4768-a2c6-e403421351e5/",
+   "related_url": "https://api.openverse.org/v1/audio/3b340315-2508-4768-a2c6-e403421351e5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3b340315-2508-4768-a2c6-e403421351e5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "7fcecc39-d915-4473-83a8-aff7e5982355",
+   "title": "Dragons",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/332171",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=332171&format=mp32",
+   "creator": "Arnogh the Dragon",
+   "creator_url": "https://www.jamendo.com/artist/349652/Arnogh_the_Dragon",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Dragons\" by Arnogh the Dragon is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dragons are real",
+    "foreign_landing_url": "https://www.jamendo.com/album/44243/dragons-are-real",
+    "creator": "Arnogh the Dragon",
+    "creator_url": "https://www.jamendo.com/artist/349652/Arnogh_the_Dragon",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 216000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/7fcecc39-d915-4473-83a8-aff7e5982355/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/7fcecc39-d915-4473-83a8-aff7e5982355/",
+   "related_url": "https://api.openverse.org/v1/audio/7fcecc39-d915-4473-83a8-aff7e5982355/related/",
+   "waveform": "https://api.openverse.org/v1/audio/7fcecc39-d915-4473-83a8-aff7e5982355/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "edf2b111-e3d7-4246-8cc7-e5aa10bddb27",
+   "title": "Happy",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/317724",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=317724&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "jazz",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "education",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Happy\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Prepare To Be Happy",
+    "foreign_landing_url": "https://www.jamendo.com/album/43033/prepare-to-be-happy",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 213000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/edf2b111-e3d7-4246-8cc7-e5aa10bddb27/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/edf2b111-e3d7-4246-8cc7-e5aa10bddb27/",
+   "related_url": "https://api.openverse.org/v1/audio/edf2b111-e3d7-4246-8cc7-e5aa10bddb27/related/",
+   "waveform": "https://api.openverse.org/v1/audio/edf2b111-e3d7-4246-8cc7-e5aa10bddb27/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "dfa50743-0b91-44ae-b3e4-4731fe89090f",
+   "title": "Intro",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/628820",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=628820&format=mp32",
+   "creator": "DJ Fire-Black",
+   "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "techno",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electroamplified",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Intro\" by DJ Fire-Black is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Hydra",
+    "foreign_landing_url": "https://www.jamendo.com/album/72849/hydra",
+    "creator": "DJ Fire-Black",
+    "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 125000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/dfa50743-0b91-44ae-b3e4-4731fe89090f/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/dfa50743-0b91-44ae-b3e4-4731fe89090f/",
+   "related_url": "https://api.openverse.org/v1/audio/dfa50743-0b91-44ae-b3e4-4731fe89090f/related/",
+   "waveform": "https://api.openverse.org/v1/audio/dfa50743-0b91-44ae-b3e4-4731fe89090f/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ea36f600-08eb-47b6-bdf5-ce2632c9ccc4",
+   "title": "Loneliness Blues",
+   "indexed_on": "2021-12-23T02:09:52.493845Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/17085",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=17085&format=mp32",
+   "creator": "Ally Valentine",
+   "creator_url": "https://www.jamendo.com/artist/2523/ally.valentine",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "adventure",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electroamplified",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Loneliness Blues\" by Ally Valentine is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "DD10 8TW",
+    "foreign_landing_url": "https://www.jamendo.com/album/2422/dd10-8tw",
+    "creator": "Ally Valentine",
+    "creator_url": "https://www.jamendo.com/artist/2523/ally.valentine",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 425000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ea36f600-08eb-47b6-bdf5-ce2632c9ccc4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ea36f600-08eb-47b6-bdf5-ce2632c9ccc4/",
+   "related_url": "https://api.openverse.org/v1/audio/ea36f600-08eb-47b6-bdf5-ce2632c9ccc4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ea36f600-08eb-47b6-bdf5-ce2632c9ccc4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "de9aee23-9685-4295-8e3f-5d76a392ec9d",
+   "title": "Intro #3 (Jingle)",
+   "indexed_on": "2023-07-01T12:41:11.500001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1038494",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1038494&format=mp32",
+   "creator": "Dacroy",
+   "creator_url": "https://www.jamendo.com/artist/434449/Dacroy",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "folk",
+    "intro",
+    "logo",
+    "production"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "classicalguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Intro #3 (Jingle)\" by Dacroy is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/fr/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Tracks, Jingles and Loops - Pack 1",
+    "foreign_landing_url": "https://www.jamendo.com/album/122310/tracks-jingles-and-loops-pack-1",
+    "creator": "Dacroy",
+    "creator_url": "https://www.jamendo.com/artist/434449/Dacroy",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 7000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/de9aee23-9685-4295-8e3f-5d76a392ec9d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/de9aee23-9685-4295-8e3f-5d76a392ec9d/",
+   "related_url": "https://api.openverse.org/v1/audio/de9aee23-9685-4295-8e3f-5d76a392ec9d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/de9aee23-9685-4295-8e3f-5d76a392ec9d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c03e5c6c-9a87-4995-ab6b-ab158843d0be",
+   "title": "There's a hole, there's a wall",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/715561",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=715561&format=mp32",
+   "creator": "Arnaud Dromigny",
+   "creator_url": "https://www.jamendo.com/artist/2656/arnoldsrecords",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "adventure",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "travel",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"There's a hole, there's a wall\" by Arnaud Dromigny is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/fr/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Echo Mike crashed and died burnt in horrible sufferings",
+    "foreign_landing_url": "https://www.jamendo.com/album/83599/echo-mike-crashed-and-died-burnt-in-horrible-sufferings",
+    "creator": "Arnaud Dromigny",
+    "creator_url": "https://www.jamendo.com/artist/2656/arnoldsrecords",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 276000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c03e5c6c-9a87-4995-ab6b-ab158843d0be/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c03e5c6c-9a87-4995-ab6b-ab158843d0be/",
+   "related_url": "https://api.openverse.org/v1/audio/c03e5c6c-9a87-4995-ab6b-ab158843d0be/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c03e5c6c-9a87-4995-ab6b-ab158843d0be/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e3ca3dbf-5b17-48a1-b95b-905ddb262b11",
+   "title": "why",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/285616",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=285616&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "epic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"why\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Feel Good Album Of The Year",
+    "foreign_landing_url": "https://www.jamendo.com/album/39796/the-feel-good-album-of-the-year",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 325000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e3ca3dbf-5b17-48a1-b95b-905ddb262b11/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e3ca3dbf-5b17-48a1-b95b-905ddb262b11/",
+   "related_url": "https://api.openverse.org/v1/audio/e3ca3dbf-5b17-48a1-b95b-905ddb262b11/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e3ca3dbf-5b17-48a1-b95b-905ddb262b11/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "501d67c0-a1c9-451e-bc1a-af0c6e36761d",
+   "title": "Hydra",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/628823",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=628823&format=mp32",
+   "creator": "DJ Fire-Black",
+   "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock",
+    "techno",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electroamplified",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Hydra\" by DJ Fire-Black is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Hydra",
+    "foreign_landing_url": "https://www.jamendo.com/album/72849/hydra",
+    "creator": "DJ Fire-Black",
+    "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 446000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/501d67c0-a1c9-451e-bc1a-af0c6e36761d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/501d67c0-a1c9-451e-bc1a-af0c6e36761d/",
+   "related_url": "https://api.openverse.org/v1/audio/501d67c0-a1c9-451e-bc1a-af0c6e36761d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/501d67c0-a1c9-451e-bc1a-af0c6e36761d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "783d1d5c-2c38-4aa1-a2de-9fab5c31fdc7",
+   "title": "Sunshine",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/588708",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=588708&format=mp32",
+   "creator": "Emorej",
+   "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Sunshine\" by Emorej is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "hellofanatic, hellofanattic",
+    "foreign_landing_url": "https://www.jamendo.com/album/67874/hellofanatic-hellofanattic",
+    "creator": "Emorej",
+    "creator_url": "https://www.jamendo.com/artist/337114/Emorej",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 187000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/783d1d5c-2c38-4aa1-a2de-9fab5c31fdc7/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/783d1d5c-2c38-4aa1-a2de-9fab5c31fdc7/",
+   "related_url": "https://api.openverse.org/v1/audio/783d1d5c-2c38-4aa1-a2de-9fab5c31fdc7/related/",
+   "waveform": "https://api.openverse.org/v1/audio/783d1d5c-2c38-4aa1-a2de-9fab5c31fdc7/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5c24161f-f13f-4115-b143-61c8ae04213b",
+   "title": "FM",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/876536",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=876536&format=mp32",
+   "creator": "Jahzzar",
+   "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "lofi",
+    "pop",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"FM\" by Jahzzar is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Traveller's Guide",
+    "foreign_landing_url": "https://www.jamendo.com/album/102911/traveller-s-guide",
+    "creator": "Jahzzar",
+    "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 135000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5c24161f-f13f-4115-b143-61c8ae04213b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5c24161f-f13f-4115-b143-61c8ae04213b/",
+   "related_url": "https://api.openverse.org/v1/audio/5c24161f-f13f-4115-b143-61c8ae04213b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5c24161f-f13f-4115-b143-61c8ae04213b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "891f9232-c3aa-4eda-85c5-d180d44848f9",
+   "title": "The Magic Of Children",
+   "indexed_on": "2023-07-01T12:41:11.500001Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1061085",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1061085&format=mp32",
+   "creator": "Marcello Morgese",
+   "creator_url": "https://www.jamendo.com/artist/437164/Marcello_Morgese",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/it/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "children",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "computer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "the",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Magic Of Children\" by Marcello Morgese is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/it/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Digital Soundscape",
+    "foreign_landing_url": "https://www.jamendo.com/album/125218/digital-soundscape",
+    "creator": "Marcello Morgese",
+    "creator_url": "https://www.jamendo.com/artist/437164/Marcello_Morgese",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 343000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/891f9232-c3aa-4eda-85c5-d180d44848f9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/891f9232-c3aa-4eda-85c5-d180d44848f9/",
+   "related_url": "https://api.openverse.org/v1/audio/891f9232-c3aa-4eda-85c5-d180d44848f9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/891f9232-c3aa-4eda-85c5-d180d44848f9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0bbf87f2-e0b8-47c8-af01-8f648e734592",
+   "title": "Recuerdos del verano",
+   "indexed_on": "2023-05-04T00:05:01.880122Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/72641",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=72641&format=mp32",
+   "creator": "Dj Saryon &amp; Sory",
+   "creator_url": "https://www.jamendo.com/artist/4347/dj.saryon",
+   "license": "by-sa",
+   "license_version": "2.5",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/es/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "clubbing",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "dreamy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Recuerdos del verano\" by Dj Saryon &amp; Sory is licensed under CC BY-SA 2.5. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.5/es/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Recuerdos del verano",
+    "foreign_landing_url": "https://www.jamendo.com/album/6402/recuerdos-del-verano",
+    "creator": "Dj Saryon &amp; Sory",
+    "creator_url": "https://www.jamendo.com/artist/4347/dj.saryon",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 222000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0bbf87f2-e0b8-47c8-af01-8f648e734592/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0bbf87f2-e0b8-47c8-af01-8f648e734592/",
+   "related_url": "https://api.openverse.org/v1/audio/0bbf87f2-e0b8-47c8-af01-8f648e734592/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0bbf87f2-e0b8-47c8-af01-8f648e734592/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "2d2669fa-2a8f-46e2-813d-033f27916f0c",
+   "title": "Breaking News Opening Countdown Music",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1160638",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1160638&format=mp32",
+   "creator": "E. Erkut",
+   "creator_url": "https://www.jamendo.com/artist/454137/Enes_Sadik_Erkut",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "chillout",
+    "intro",
+    "production"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "atmospheric",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "news",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "orchestra",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "orchestralstrings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Breaking News Opening Countdown Music\" by E. Erkut is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Breaking News Music",
+    "foreign_landing_url": "https://www.jamendo.com/album/139387/breaking-news-music",
+    "creator": "E. Erkut",
+    "creator_url": "https://www.jamendo.com/artist/454137/Enes_Sadik_Erkut",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 46000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/2d2669fa-2a8f-46e2-813d-033f27916f0c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/2d2669fa-2a8f-46e2-813d-033f27916f0c/",
+   "related_url": "https://api.openverse.org/v1/audio/2d2669fa-2a8f-46e2-813d-033f27916f0c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/2d2669fa-2a8f-46e2-813d-033f27916f0c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b1962b28-c76e-4d34-8a0d-ec3869e759d4",
+   "title": "Comic",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/634247",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=634247&format=mp32",
+   "creator": "Jahzzar",
+   "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "filmscore",
+    "postrock",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electroamplified",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Comic\" by Jahzzar is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Comic",
+    "foreign_landing_url": "https://www.jamendo.com/album/73398/comic",
+    "creator": "Jahzzar",
+    "creator_url": "https://www.jamendo.com/artist/348998/Jahzzar",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 326000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b1962b28-c76e-4d34-8a0d-ec3869e759d4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b1962b28-c76e-4d34-8a0d-ec3869e759d4/",
+   "related_url": "https://api.openverse.org/v1/audio/b1962b28-c76e-4d34-8a0d-ec3869e759d4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b1962b28-c76e-4d34-8a0d-ec3869e759d4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b984515b-1896-4ca7-be28-a22fd9d5ade3",
+   "title": "Frozen Sun",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/628865",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=628865&format=mp32",
+   "creator": "DJ Fire-Black",
+   "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock",
+    "techno",
+    "trance"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electroamplified",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "uplifting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "violin",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Frozen Sun\" by DJ Fire-Black is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Hydra",
+    "foreign_landing_url": "https://www.jamendo.com/album/72849/hydra",
+    "creator": "DJ Fire-Black",
+    "creator_url": "https://www.jamendo.com/artist/343151/DJ_Fire-Black",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 446000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b984515b-1896-4ca7-be28-a22fd9d5ade3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b984515b-1896-4ca7-be28-a22fd9d5ade3/",
+   "related_url": "https://api.openverse.org/v1/audio/b984515b-1896-4ca7-be28-a22fd9d5ade3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b984515b-1896-4ca7-be28-a22fd9d5ade3/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="282.500" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s107" class="clip scene " data-start="0.000" data-duration="2.160" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="c106" class="scene"><div class="black"></div><div class="tcard"><div id="rk103" class="tk" style="opacity:0">PART ONE</div><div id="rk105" class="trule" style="transform:scaleX(0)"></div><div id="rk104" class="tn" style="opacity:0">The Universal Clock</div></div></div></div>
+<div id="w108" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:44"><video id="v109" class="clip fit" src="assets/clips/px_sundial_0_67cac260.mp4" muted playsinline data-start="2.160" data-duration="2.060" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s112" class="clip scene " data-start="6.100" data-duration="1.500" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="c111" class="scene"><div class="black"></div><div id="ph110" class="card" style="left:560px;top:160px;width:799px;height:760px;opacity:1"><img src="assets/gen/moon_full_e3ca6f.jpg" alt="moon_full"></div></div></div>
+<div id="s115" class="clip scene " data-start="7.600" data-duration="1.500" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="c114" class="scene"><div class="black"></div><div id="ph113" class="card" style="left:551px;top:150px;width:817px;height:779px;opacity:1"><img src="assets/gen/sun_sdo_02d73f.jpg" alt="sun_sdo"></div></div></div>
+<div id="s118" class="clip scene " data-start="9.100" data-duration="1.840" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="c117" class="scene"><img id="ph116" class="fill" src="assets/gen/hudf_d071d7.jpg" alt="hudf" style="transform-origin:45% 55%"></div></div>
+<div id="w119" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:48"><video id="v120" class="clip fit" src="assets/clips/px_gears_1_848e8d1a.mp4" muted playsinline data-start="10.940" data-duration="4.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s123" class="clip scene " data-start="15.160" data-duration="4.680" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c122" class="scene"><img id="ph121" class="fill" src="assets/gen/einstein_1921_4544af.jpg" alt="einstein_1921" style="transform-origin:62% 30%"></div></div>
+<div id="s126" class="clip scene " data-start="19.840" data-duration="4.620" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap><div id="c125" class="scene"><img id="ph124" class="fill" src="assets/gen/einstein_head_cd45b5.jpg" alt="einstein_head" style="transform-origin:50% 35%"></div></div>
+<div id="w127" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:51"><video id="v128" class="clip fit" src="assets/clips/px_silhouette_1_b2889f7e.mp4" muted playsinline data-start="36.240" data-duration="2.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w129" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:52"><video id="v130" class="clip fit" src="assets/clips/px_skydive_0_b989504f.mp4" muted playsinline data-start="38.840" data-duration="2.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w131" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:53"><video id="v132" class="clip fit" src="assets/clips/px_pocketwatch_0_18bda178.mp4" muted playsinline data-start="44.860" data-duration="2.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w133" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:54"><video id="v134" class="clip fit" src="assets/clips/px_standing_1_5d5a7e14.mp4" muted playsinline data-start="58.560" data-duration="3.380" data-track-index="1" style="transform-origin:40% 60%"></video></div>
+<div id="w135" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:55"><video id="v136" class="clip fit" src="assets/clips/px_silhouette_0_6f390705.mp4" muted playsinline data-start="61.940" data-duration="2.420" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s139" class="clip scene " data-start="64.360" data-duration="10.060" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="c138" class="scene"><div class="black"></div><div id="ph137" class="card" style="left:509px;top:160px;width:901px;height:760px;opacity:1"><img src="assets/gen/nist_clock_7c1bbb.jpg" alt="nist_clock"></div></div></div>
+<div id="w140" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:57"><video id="v141" class="clip fit" src="assets/clips/px_gears_0_30fdde6d.mp4" muted playsinline data-start="74.420" data-duration="5.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w142" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:58"><video id="v143" class="clip fit" src="assets/clips/px_digitalclock_0_66f16d5a.mp4" muted playsinline data-start="79.780" data-duration="2.260" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w144" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:59"><video id="v145" class="clip fit" src="assets/clips/px_books_0_8a5a2677.mp4" muted playsinline data-start="82.040" data-duration="5.460" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w146" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:60"><video id="v147" class="clip fit" src="assets/clips/px_pocketwatch_1_e9344000.mp4" muted playsinline data-start="87.500" data-duration="5.300" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w148" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:61"><video id="v149" class="clip fit" src="assets/clips/px_standing_0_b9f68578.mp4" muted playsinline data-start="99.660" data-duration="3.060" data-track-index="1" style="transform-origin:50% 30%"></video></div>
+<div id="w150" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:62"><video id="v151" class="clip fit" src="assets/clips/px_clocks_many_0_54e96a13.mp4" muted playsinline data-start="102.720" data-duration="5.080" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w152" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:63"><video id="v153" class="clip fit" src="assets/clips/px_skyscraper_0_a9942203.mp4" muted playsinline data-start="107.800" data-duration="5.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w154" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:64"><video id="v155" class="clip fit" src="assets/clips/px_climbers_1_01ef12c8.mp4" muted playsinline data-start="113.080" data-duration="5.200" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w156" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:65"><video id="v157" class="clip fit" src="assets/clips/px_everest_1_cb251c8f.mp4" muted playsinline data-start="118.280" data-duration="2.120" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w158" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:66"><video id="v159" class="clip fit" src="assets/clips/px_nightsky_0_3e968a13.mp4" muted playsinline data-start="120.400" data-duration="3.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w160" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:67"><video id="v161" class="clip fit" src="assets/clips/px_jet_takeoff_1_ce870ae5.mp4" muted playsinline data-start="123.760" data-duration="8.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w162" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:68"><video id="v163" class="clip fit" src="assets/clips/px_cabin_1_67f13169.mp4" muted playsinline data-start="132.040" data-duration="6.560" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w164" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:69"><video id="v165" class="clip fit" src="assets/clips/px_clocks_many_1_03dc2f37.mp4" muted playsinline data-start="147.380" data-duration="2.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w166" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:70"><video id="v167" class="clip fit" src="assets/clips/px_clouds_wing_1_1334c5cb.mp4" muted playsinline data-start="149.420" data-duration="3.780" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w168" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:71"><video id="v169" class="clip fit" src="assets/clips/px_clouds_wing_0_2c46ccb7.mp4" muted playsinline data-start="153.200" data-duration="3.540" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w170" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:72"><video id="v171" class="clip fit" src="assets/clips/px_contrail_1_1e88eed8.mp4" muted playsinline data-start="156.740" data-duration="2.980" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w172" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:73"><video id="v173" class="clip fit" src="assets/clips/px_jet_takeoff_0_cd0b8192.mp4" muted playsinline data-start="159.720" data-duration="2.940" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w174" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:74"><video id="v175" class="clip fit" src="assets/clips/nasa_iss_clouds_2af8dbb8.mp4" muted playsinline data-start="162.660" data-duration="6.420" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s178" class="clip scene " data-start="169.080" data-duration="4.860" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div id="c177" class="scene"><img id="ph176" class="fill" src="assets/gen/einstein_patent_22f9e8.jpg" alt="einstein_patent" style="transform-origin:50% 40%"></div></div>
+<div id="w179" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:76"><video id="v180" class="clip fit" src="assets/clips/px_lighttrails_0_7431c015.mp4" muted playsinline data-start="173.940" data-duration="5.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w181" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:77"><video id="v182" class="clip fit" src="assets/clips/px_carnav_1_b4c4952f.mp4" muted playsinline data-start="179.280" data-duration="5.120" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w183" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:78"><video id="v184" class="clip fit" src="assets/clips/px_phonemap_1_03f79886.mp4" muted playsinline data-start="184.400" data-duration="3.180" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s187" class="clip scene " data-start="187.580" data-duration="7.060" data-track-index="2" style="z-index:79" data-layout-allow-overflow data-layout-allow-overlap><div id="c186" class="scene"><img id="ph185" class="fill" src="assets/gen/gps_sat_f76886.jpg" alt="gps_sat" style="transform-origin:55% 45%"></div></div>
+<div id="w188" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:80"><video id="v189" class="clip fit" src="assets/clips/nasa_iss_limb_19376265.mp4" muted playsinline data-start="201.780" data-duration="7.500" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s192" class="clip scene " data-start="209.280" data-duration="5.700" data-track-index="2" style="z-index:81" data-layout-allow-overflow data-layout-allow-overlap><div id="c191" class="scene"><div class="black"></div><div id="ph190" class="card" style="left:570px;top:150px;width:780px;height:780px;opacity:1"><img src="assets/gen/gps_sat_ed81f8.jpg" alt="gps_sat"></div></div></div>
+<div id="w193" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:82"><video id="v194" class="clip fit" src="assets/clips/px_cityaerial_1_4003a77c.mp4" muted playsinline data-start="214.980" data-duration="6.620" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w195" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:83"><video id="v196" class="clip fit" src="assets/clips/px_cityaerial_0_511f0c2c.mp4" muted playsinline data-start="221.600" data-duration="4.560" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w197" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:84"><video id="v198" class="clip fit" src="assets/clips/px_carnav_0_91e8b6aa.mp4" muted playsinline data-start="226.160" data-duration="5.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w199" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:85"><video id="v200" class="clip fit" src="assets/clips/nasa_iss_limb_7cec7296.mp4" muted playsinline data-start="231.900" data-duration="4.000" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w201" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:86"><video id="v202" class="clip fit" src="assets/clips/nasa_iss_soyuz_e69c87f5.mp4" muted playsinline data-start="235.900" data-duration="6.360" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w203" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:87"><video id="v204" class="clip fit" src="assets/clips/nasa_iss_clouds_10a63464.mp4" muted playsinline data-start="242.260" data-duration="5.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s207" class="clip scene " data-start="248.120" data-duration="7.580" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div id="c206" class="scene"><img id="ph205" class="fill" src="assets/gen/scott_kelly_iss_97388c.jpg" alt="scott_kelly_iss" style="transform-origin:35% 45%"></div></div>
+<div id="s210" class="clip scene " data-start="255.700" data-duration="5.800" data-track-index="2" style="z-index:89" data-layout-allow-overflow data-layout-allow-overlap><div id="c209" class="scene"><img id="ph208" class="fill" src="assets/gen/kelly_twins_1363d6.jpg" alt="kelly_twins" style="transform-origin:50% 30%"></div></div>
+<div id="s213" class="clip scene " data-start="261.500" data-duration="6.800" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div id="c212" class="scene"><img id="ph211" class="fill" src="assets/gen/padalka_654c3c.jpg" alt="padalka" style="transform-origin:20% 45%"></div></div>
+<div id="w214" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:91"><video id="v215" class="clip fit" src="assets/clips/nasa_iss_limb_68abec00.mp4" muted playsinline data-start="268.300" data-duration="5.140" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w216" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:92"><video id="v217" class="clip fit" src="assets/clips/px_pocketwatch_0_7e583590.mp4" muted playsinline data-start="273.440" data-duration="4.020" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s220" class="clip scene " data-start="281.800" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c219" class="scene"><div id="dip218" class="black" style="opacity:0"></div></div></div>
+<div id="s238" class="clip scene " data-start="0.000" data-duration="282.500" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c237" class="scene"><div class="vign"></div><div id="grain236" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+</div>
+<script>
+window.SPS = [[4.22, 6.1, "earth", {"dist0": 3.0, "dist1": 2.6, "el": 8, "az0": 150, "az1": 160, "sun": [-65, 6], "sx": -280}], [24.46, 30.62, "well", {"mass": "none", "depth": 0.0, "dist0": 16, "dist1": 13, "el0": 14, "el1": 20, "az0": -20, "az1": 0, "sx": 0}], [30.62, 33.68, "well", {"mass": "earth", "r": 0.8, "depthK": [[0, 0], [0.6, 0], [2.6, 2.6]], "dropK": [[0, 3.0], [2.2, 0]], "dist": 13, "el": 18, "az0": 0, "az1": 8, "sx": -200}], [33.68, 35.06, "well", {"mass": "sun", "r": 1.2, "depth": 4.2, "wa": 1.6, "dist0": 17, "dist1": 15, "el": 16, "az0": 20, "az1": 30, "sx": 240}], [35.06, 36.24, "well", {"mass": "earth", "r": 0.8, "depth": 2.4, "dist": 12, "el": 12, "az0": -30, "az1": -22, "sx": -220}], [41.06, 44.86, "well", {"mass": "earth", "r": 0.8, "depth": 3.0, "dist0": 11, "dist1": 10, "el": 6, "az0": 40, "az1": 55, "roll": -4}], [46.9, 52.68, "well", {"mass": "earth", "r": 0.8, "depth": 3.4, "distK": [[0, 15], [5.8, 6.5]], "elK": [[0, 30], [5.8, 16]], "az0": 0, "az1": 20, "ease": "in"}], [52.68, 55.32, "bh", {"dist": 26, "el": 2, "az0": 50, "az1": 56, "fov": 17, "look0": [3.0, 0, 0], "look1": [2.6, 0.1, 0], "diskIn": 3.0, "diskOut": 14}], [55.32, 58.56, "bh", {"dist0": 48, "dist1": 42, "el": 7, "az0": -30, "az1": -18, "shiftX": -300, "diskIn": 3.0, "diskOut": 14}], [92.8, 99.66, "earth", {"dist0": 2.4, "dist1": 2.1, "el": 10, "az0": 200, "az1": 214, "sun": [-70, 10], "sx": 260}], [138.6, 147.38, "earth", {"dist0": 2.3, "dist1": 2.0, "el": 18, "az0": -40, "az1": 40, "sun": [-80, 5], "rot": 8, "sx": 0}], [194.64, 201.78, "earth", {"dist0": 6.5, "dist1": 5.6, "el": 22, "az0": 100, "az1": 112, "sun": [-60, 10], "sx": -240}], [277.46, 282.5, "bh", {"dist0": 66, "dist1": 52, "el": 8, "az0": 10, "az1": 26, "shiftX": -260, "diskIn": 3.0, "diskOut": 14}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script src="assets/js/kinds_ep4.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#rk103",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},0.250);
+tl.fromTo("#rk104",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},0.550);
+tl.fromTo("#rk105",{scaleX:0},{scaleX:1,duration:1.2,ease:"power2.inOut"},0.400);
+tl.to("#rk103",{opacity:0,duration:0.45,ease:"power2.out"},1.660);
+tl.to("#rk104",{opacity:0,duration:0.45,ease:"power2.out"},1.660);
+tl.to("#rk105",{opacity:0,duration:0.45,ease:"power2.out"},1.660);
+tl.fromTo("#v109",{scale:1.0},{scale:1.06,duration:2.06,ease:"none"},2.160);
+tl.fromTo("#ph110",{scale:1.0},{scale:1.05,duration:1.5,ease:"none"},6.100);
+tl.fromTo("#ph113",{scale:1.0},{scale:1.05,duration:1.5,ease:"none"},7.600);
+tl.fromTo("#ph116",{scale:1.0},{scale:1.12,duration:1.84,ease:"none"},9.100);
+tl.fromTo("#v120",{scale:1.0},{scale:1.06,duration:4.22,ease:"none"},10.940);
+tl.fromTo("#ph121",{scale:1.0},{scale:1.1,duration:4.68,ease:"none"},15.160);
+tl.fromTo("#ph124",{scale:1.0},{scale:1.08,duration:4.62,ease:"none"},19.840);
+tl.fromTo("#v128",{scale:1.0},{scale:1.06,duration:2.6,ease:"none"},36.240);
+tl.fromTo("#v130",{scale:1.0},{scale:1.06,duration:2.22,ease:"none"},38.840);
+tl.fromTo("#v132",{scale:1.0},{scale:1.08,duration:2.04,ease:"none"},44.860);
+tl.fromTo("#v134",{scale:1.0},{scale:1.1,duration:3.38,ease:"none"},58.560);
+tl.fromTo("#v136",{scale:1.0},{scale:1.06,duration:2.42,ease:"none"},61.940);
+tl.fromTo("#ph137",{scale:1.0},{scale:1.06,duration:10.06,ease:"none"},64.360);
+tl.fromTo("#v141",{scale:1.0},{scale:1.06,duration:5.36,ease:"none"},74.420);
+tl.fromTo("#v143",{scale:1.0},{scale:1.06,duration:2.26,ease:"none"},79.780);
+tl.fromTo("#v145",{scale:1.0},{scale:1.06,duration:5.46,ease:"none"},82.040);
+tl.fromTo("#v147",{scale:1.0},{scale:1.06,duration:5.3,ease:"none"},87.500);
+tl.fromTo("#v149",{scale:1.08},{scale:1.0,duration:3.06,ease:"none"},99.660);
+tl.fromTo("#v151",{scale:1.0},{scale:1.06,duration:5.08,ease:"none"},102.720);
+tl.fromTo("#v153",{scale:1.0},{scale:1.08,duration:5.28,ease:"none"},107.800);
+tl.fromTo("#v155",{scale:1.0},{scale:1.06,duration:5.2,ease:"none"},113.080);
+tl.fromTo("#v157",{scale:1.0},{scale:1.06,duration:2.12,ease:"none"},118.280);
+tl.fromTo("#v159",{scale:1.0},{scale:1.06,duration:3.36,ease:"none"},120.400);
+tl.fromTo("#v161",{scale:1.0},{scale:1.06,duration:8.28,ease:"none"},123.760);
+tl.fromTo("#v163",{scale:1.0},{scale:1.06,duration:6.56,ease:"none"},132.040);
+tl.fromTo("#v165",{scale:1.0},{scale:1.06,duration:2.04,ease:"none"},147.380);
+tl.fromTo("#v167",{scale:1.0},{scale:1.06,duration:3.78,ease:"none"},149.420);
+tl.fromTo("#v169",{scale:1.0},{scale:1.06,duration:3.54,ease:"none"},153.200);
+tl.fromTo("#v171",{scale:1.0},{scale:1.06,duration:2.98,ease:"none"},156.740);
+tl.fromTo("#v173",{scale:1.0},{scale:1.06,duration:2.94,ease:"none"},159.720);
+tl.fromTo("#v175",{scale:1.0},{scale:1.06,duration:6.42,ease:"none"},162.660);
+tl.fromTo("#ph176",{scale:1.0},{scale:1.08,duration:4.86,ease:"none"},169.080);
+tl.fromTo("#v180",{scale:1.0},{scale:1.06,duration:5.34,ease:"none"},173.940);
+tl.fromTo("#v182",{scale:1.0},{scale:1.06,duration:5.12,ease:"none"},179.280);
+tl.fromTo("#v184",{scale:1.0},{scale:1.06,duration:3.18,ease:"none"},184.400);
+tl.fromTo("#ph185",{scale:1.0},{scale:1.1,duration:7.06,ease:"none"},187.580);
+tl.fromTo("#v189",{scale:1.0},{scale:1.06,duration:7.5,ease:"none"},201.780);
+tl.fromTo("#ph190",{scale:1.0},{scale:1.05,duration:5.7,ease:"none"},209.280);
+tl.fromTo("#v194",{scale:1.0},{scale:1.06,duration:6.62,ease:"none"},214.980);
+tl.fromTo("#v196",{scale:1.0},{scale:1.06,duration:4.56,ease:"none"},221.600);
+tl.fromTo("#v198",{scale:1.0},{scale:1.06,duration:5.74,ease:"none"},226.160);
+tl.fromTo("#v200",{scale:1.0},{scale:1.06,duration:4.0,ease:"none"},231.900);
+tl.fromTo("#v202",{scale:1.0},{scale:1.06,duration:6.36,ease:"none"},235.900);
+tl.fromTo("#v204",{scale:1.0},{scale:1.06,duration:5.86,ease:"none"},242.260);
+tl.fromTo("#ph205",{scale:1.0},{scale:1.1,duration:7.58,ease:"none"},248.120);
+tl.fromTo("#ph208",{scale:1.0},{scale:1.08,duration:5.8,ease:"none"},255.700);
+tl.fromTo("#ph211",{scale:1.0},{scale:1.1,duration:6.8,ease:"none"},261.500);
+tl.fromTo("#v215",{scale:1.0},{scale:1.06,duration:5.14,ease:"none"},268.300);
+tl.fromTo("#v217",{scale:1.0},{scale:1.06,duration:4.02,ease:"none"},273.440);
+tl.fromTo("#dip218",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},281.800);
+tl.fromTo("#grain236",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:250860,backgroundPositionY:359340,duration:282.5,ease:"steps(6780)"},0.000);
+tl.set({}, {}, 282.500);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

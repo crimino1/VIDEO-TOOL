@@ -1,0 +1,128 @@
+[
+ {
+  "id": "p01",
+  "start": 0.0,
+  "end": 24.458,
+  "text": "ByteDance just pushed Seedance 2.5 up to 4K, and dropped a Flash version that costs a fraction of the price. This is the model that makes a full 30 second video, with sound, in one go. So in this video, I'm going to show you what it can actually do, the real tests people ran, where it breaks, how it ranks against Google, Kling and Wan, and what one clip really costs you."
+ },
+ {
+  "id": "p02",
+  "start": 25.208,
+  "end": 59.17,
+  "text": "Quick background. Seedance 2.0 came out in February and went viral, and Hollywood was not happy. Disney, Paramount and the Motion Picture Association all sent ByteDance legal letters over copyrighted characters. Then Seedance 2.5 launched on July 31st, in Dreamina and ByteDance's own apps. And this month, it got two upgrades. A 4K version, which opened to developers on November 17th, after a trial with 20 studios. And Seedance 2.5 Flash, a faster and cheaper version, on November 15th."
+ },
+ {
+  "id": "p03",
+  "start": 59.92,
+  "end": 83.773,
+  "text": "So what's new? The big one is length. It makes up to 30 seconds in a single generation, double what 2.0 could do. Video and audio come out together, so you get dialogue with lip sync, sound effects and background sound. And you can feed it a lot of references. Up to 30 images, 10 video clips and 10 audio clips at once. 2.0 allowed 12 in total."
+ },
+ {
+  "id": "p04",
+  "start": 84.123,
+  "end": 103.917,
+  "text": "It goes from 480p all the way to 4K, in six aspect ratios, and you can keep extending a scene for several minutes. You can also edit at the timestamp level, change the camera angle of a shot, or swap out a green screen. The 4K tier adds 10-bit color, plus a cheap 480p draft mode, so you can preview a shot before you pay for the big one."
+ },
+ {
+  "id": "p05",
+  "start": 104.267,
+  "end": 127.481,
+  "text": "Two more things matter here. The 4K version keeps fine text from your references much sharper, like posters and product packaging, which is a big deal for ads. And early testers found that 2.5 follows instructions more strictly than 2.0. So vague prompts actually get worse results. Be specific about who is in the shot, where they are, what the camera does, and what we hear."
+ },
+ {
+  "id": "p06",
+  "start": 128.231,
+  "end": 147.198,
+  "text": "Okay, enough specs. Let's look at what it makes. This is \"The Missing Pair\", a short film ByteDance says was made end to end with Seedance 2.5. And yeah, it looks great. But remember, this is their own showcase, so it's the best case. The real question is what happens when normal people use it."
+ },
+ {
+  "id": "p07",
+  "start": 147.548,
+  "end": 167.867,
+  "text": "A few more of their demos. This one takes a green screen clip of football training, swaps the poles for real defenders, and ends with a goal in a packed stadium. This one turns a plain grey 3D model of a car into a photoreal render. And this concert keeps a whole orchestra and choir consistent through one long shot, which used to be really hard."
+ },
+ {
+  "id": "p08",
+  "start": 168.217,
+  "end": 193.941,
+  "text": "Now, creators. One person got 14 different shots out of a single generation, with synced dialogue and a full fight scene. Another made a 1950s diner where time freezes and then rewinds. Justine Moore from a16z cloned her own face and voice from reference clips, and had herself walk through their office talking. And this one is a whole car commercial, an F1 car racing a fighter jet."
+ },
+ {
+  "id": "p09",
+  "start": 194.691,
+  "end": 218.355,
+  "text": "Let's get to the head to head. YouTuber Youri van Hofwegen ran Seedance 2.5 against Kling 4.0 on six identical prompts. First, a guy making breakfast. Seedance got a four out of five. The only mistake was that he cracks one egg, and two come out. Kling got a two. It put the moka pot next to the burner instead of on it, the toast popped up without being toasted, and the whole thing had that plastic AI look."
+ },
+ {
+  "id": "p10",
+  "start": 218.705,
+  "end": 237.048,
+  "text": "After all six rounds, Seedance won five to one. But there's a catch. Kling looked better for animation, and it costs about half as much, or less than a third with its current discount. So his advice was simple. Seedance for realistic people and talking scenes, Kling for anime and anything you make in bulk."
+ },
+ {
+  "id": "p11",
+  "start": 237.398,
+  "end": 267.474,
+  "text": "Curious Refuge, a filmmaking school, ran a much harder test. They loaded the model with reference photos of an antique shop and its props. It used almost everything, the pipe, the sextant, the shop owner. And then, out of nowhere, the guy turned into Green Lantern at the end. In another test, they actually thought Seedance 2.0 did better than 2.5. Their conclusion? The best physics and emotion on the market, but none of their 30 second clips were usable as they came out. You'd still cut them up."
+ },
+ {
+  "id": "p12",
+  "start": 267.824,
+  "end": 291.235,
+  "text": "And people have posted clear failures too. In this dogfight, bullets come out of nowhere and both planes just vanish. One creator tried a face swap that failed twice, and said Kling looked more real at a fraction of the price. And another tried to remove tattoos from a hand with an edit, and they never went away. ByteDance itself says complex motion and interactions between several people still need work."
+ },
+ {
+  "id": "p13",
+  "start": 291.985,
+  "end": 317.272,
+  "text": "Now, the benchmarks. On Artificial Analysis, where real people vote on blind comparisons, Seedance 2.5 is number five for text to video with audio. Alibaba's Wan 3.0 is first. Google's Gemini Omni Flash is right behind Seedance, and Kling 3.0 Pro and Veo 3.1 are much further down. For image to video, Seedance 2.5 is number two, just behind MAGI-2."
+ },
+ {
+  "id": "p14",
+  "start": 317.622,
+  "end": 343.65,
+  "text": "Here's something interesting though. On LMArena's video board, Seedance 2.5 actually sits one spot below Seedance 2.0. So the upgrade isn't a clear win everywhere. And the new Flash version lands at number 17 for text to video, and number 7 for image to video. In one side by side test, a creator called Flash versus the full model mix and match, basically a tie on multi scene shots."
+ },
+ {
+  "id": "p15",
+  "start": 344.0,
+  "end": 357.907,
+  "text": "Someone also put it against Google's Gemini Omni 1.2 with the same prompt. His Seedance clip cost about three and a half dollars, and Google's about one dollar. So the question isn't just which looks better. It's whether it looks three times better."
+ },
+ {
+  "id": "p16",
+  "start": 358.657,
+  "end": 382.802,
+  "text": "So, cost. And this is where it hurts. On fal, Seedance 2.5 costs about 22 cents a second at 480p, 47 cents at 720p, a dollar 16 at 1080p, and a dollar 84 at 4K. So one 10 second clip in 4K is about 18 dollars. Flash is around 15 cents a second, so a dollar fifty for 10 seconds."
+ },
+ {
+  "id": "p17",
+  "start": 383.152,
+  "end": 410.182,
+  "text": "Now compare that, for a 10 second clip. Veo 3.1 is about four dollars, or a dollar twenty on Veo Fast. Kling 3.0 Pro at 1080p is around a dollar seventy. Runway's Gen-4.5 is about a dollar twenty. And Google's Gemini Omni Flash starts at just 70 cents. Sora isn't even an option anymore. OpenAI shut down its API in September. So at 1080p, Seedance costs around seven times more than Kling."
+ },
+ {
+  "id": "p18",
+  "start": 410.532,
+  "end": 431.363,
+  "text": "If you use it in Dreamina instead, 2.5 costs 37 credits a second at 720p, more than double the 17 that 2.0 costs. The basic plan is 15 dollars a month, and right now in the US, the first month is 29 cents for 1,575 credits. That's about 42 seconds of Seedance 2.5."
+ },
+ {
+  "id": "p19",
+  "start": 432.113,
+  "end": 457.407,
+  "text": "And on safety, after all the Hollywood trouble, 2.5 adds visible watermarks and content credentials, limits on generating real people's faces, and identity checks for likeness. ByteDance also offers a library of over 10,000 virtual humans to use instead. One more thing, the official BytePlus API isn't available in the United States, though you can still use it through fal, Runway and others."
+ },
+ {
+  "id": "p20",
+  "start": 458.157,
+  "end": 480.635,
+  "text": "So who is it for? If you make films or ads with real looking people, talking scenes, or the same character across shots, it's the best tool you can get right now, and the references give you real control. But if you make anime, if you need lots of clips on a budget, or if your scene has heavy physics, Kling, Veo Fast or Gemini Omni Flash will save you a lot of money."
+ },
+ {
+  "id": "p21",
+  "start": 481.385,
+  "end": 504.177,
+  "text": "So that's Seedance 2.5. Honestly, it's stunning when it works, and 30 seconds with sound in one shot is a real step forward. But it's expensive, and it still messes up in ways that cost you retries. Let me know in the comments if you've tried it, and which video model you're using right now. If you enjoyed this, hit like and subscribe, and I'll see you in the next one."
+ }
+]

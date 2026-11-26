@@ -1,0 +1,63 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/Can you survive.mp4",
+  "duration": 69.030068,
+  "width": 720,
+  "height": 1280,
+  "fps": 30.0,
+  "has_audio": true,
+  "shots": 19,
+  "avg_shot_sec": 3.63,
+  "median_shot_sec": 2.83,
+  "shortest_shot_sec": 0.67,
+  "longest_shot_sec": 9.53,
+  "cuts_per_minute": {
+    "first 30s": 14.0,
+    "30s-2m": 16.9
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "range_lu": 1.8
+  },
+  "cuts": [
+    2.833333,
+    12.366667,
+    13.5,
+    16.033333,
+    19.733333,
+    23.8,
+    28.0,
+    30.466667,
+    32.366667,
+    41.133333,
+    48.033333,
+    50.566667,
+    52.766667,
+    53.433333,
+    59.066667,
+    61.333333,
+    64.2,
+    65.066667
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 1.4
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 23.0,
+      "sec_between_frames": 1.4
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 46.0,
+      "sec_between_frames": 1.4
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

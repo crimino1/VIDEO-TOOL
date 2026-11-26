@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="283.133" data-width="1920" data-height="1080">
+<div id="w1098" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:134;"><video id="v1097" class="clip fit" src="assets/clips/hover_28255552.mp4" muted playsinline data-start="0.000" data-duration="7.307" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1100" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:135;"><video id="v1099" class="clip fit" src="assets/clips/swim_0bec7ea0.mp4" muted playsinline data-start="7.307" data-duration="6.590" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1109" class="clip scene " data-start="13.897" data-duration="7.590" data-track-index="2" style="z-index:136" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1101" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1102" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><img src="assets/gen/cut_colossal_side.png" alt="colossal squid" style="position:absolute;left:220px;top:304px;width:1500px;height:513px;opacity:.28"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1020 470)"><g id="ht1103" opacity="0"><path d="M0,30 C-50,-10 -40,-60 0,-35 C40,-60 50,-10 0,30 Z" transform="scale(1.4)" fill="#4f9dff" stroke="#fff" stroke-width="2"/></g></g><g transform="translate(1020 650)"><g id="ht1104" opacity="0"><path d="M0,30 C-50,-10 -40,-60 0,-35 C40,-60 50,-10 0,30 Z" transform="scale(1.4)" fill="#4f9dff" stroke="#fff" stroke-width="2"/></g></g><g transform="translate(1180 560)"><g id="ht1105" opacity="0"><path d="M0,30 C-50,-10 -40,-60 0,-35 C40,-60 50,-10 0,30 Z" transform="scale(1.4)" fill="#ff6a5a" stroke="#fff" stroke-width="2"/></g></g><text id="tx1106" x="760" y="300" font-family="League Gothic" fill="#f2f6f8" font-size="64" opacity="0">TWO FOR THE GILLS</text><text id="tx1107" x="1240" y="860" font-family="League Gothic" fill="#f2f6f8" font-size="64" opacity="0">ONE FOR THE BODY</text><text id="c1108" x="100" y="180" font-family="League Gothic" fill="#f2f6f8" font-size="140" opacity="0">3 HEARTS</text></svg></div>
+<div id="s1119" class="clip scene " data-start="21.487" data-duration="18.700" data-track-index="2" style="z-index:137" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1110" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1111" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><g id="g1114" opacity="0"><rect x="490" y="300" width="140" height="440" rx="70" fill="#0f1a21" stroke="#9fb4c0" stroke-width="5"/><rect id="v1112" x="504" y="420" width="112" height="306" rx="56" fill="#b3121f" style="transform-origin:560px 726px"/><text x="560" y="820" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="64">US</text></g><g id="g1115" opacity="0"><rect x="1290" y="300" width="140" height="440" rx="70" fill="#0f1a21" stroke="#9fb4c0" stroke-width="5"/><rect id="v1113" x="1304" y="420" width="112" height="306" rx="56" fill="#2f6fe0" style="transform-origin:1360px 726px"/><text x="1360" y="820" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="64">SQUID</text></g><g id="g1116" opacity="0"><rect x="480" y="80" width="160" height="170" rx="10" fill="#7a2a22"/><text x="560" y="200" text-anchor="middle" font-family="Inter" font-weight="900" font-size="90" fill="#fff">Fe</text><text x="560" y="236" text-anchor="middle" font-family="Inter" font-weight="700" font-size="24" fill="#fff">IRON</text><text x="560" y="900" text-anchor="middle" font-family="Inter" font-weight="700" font-size="34" fill="#c9d6dc">HEMOGLOBIN</text></g><g id="g1117" opacity="0"><rect x="1280" y="80" width="160" height="170" rx="10" fill="#1f5a8a"/><text x="1360" y="200" text-anchor="middle" font-family="Inter" font-weight="900" font-size="90" fill="#fff">Cu</text><text x="1360" y="236" text-anchor="middle" font-family="Inter" font-weight="700" font-size="24" fill="#fff">COPPER</text><text x="1360" y="900" text-anchor="middle" font-family="Inter" font-weight="700" font-size="34" fill="#c9d6dc">HEMOCYANIN</text></g><text id="tx1118" x="960" y="1010" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="64" fill="#8fd4ff" opacity="0">BETTER IN COLD WATER WITH LITTLE OXYGEN</text></svg></div>
+<div id="s1126" class="clip scene " data-start="40.187" data-duration="7.940" data-track-index="2" style="z-index:138" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1120" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1121" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="rc1122" class="recap" style="top:170px;opacity:0">THREE HEARTS</div><div id="rc1123" class="recap" style="top:360px;opacity:0">BLUE BLOOD</div><div id="rc1124" class="recap" style="top:550px;opacity:0">A BRAIN AROUND ITS THROAT</div><div id="rc1125" class="recap" style="top:740px;opacity:0">AN EYE BIGGER THAN A WHALE'S</div></div>
+<div id="w1128" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:139;"><video id="v1127" class="clip fit" src="assets/clips/eye_reveal_276b7f7f.mp4" muted playsinline data-start="48.127" data-duration="5.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1130" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:140;"><video id="v1129" class="clip fit" src="assets/clips/swim_a2e17bca.mp4" muted playsinline data-start="53.727" data-duration="6.000" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1132" class="clip scene " data-start="53.727" data-duration="6.000" data-track-index="2" style="z-index:141" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.35"></div><div id="h1131" class="chap" style="top:380px;font-size:190px">THE HUNT</div></div>
+<div id="w1134" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:142;"><video id="v1133" class="clip fit" src="assets/clips/swim_af2aa3eb.mp4" muted playsinline data-start="59.727" data-duration="7.040" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1135" class="clip scene " data-start="59.727" data-duration="7.040" data-track-index="2" style="z-index:143" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w1137" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:144;"><video id="v1136" class="clip fit" src="assets/clips/hover_40e5ef26.mp4" muted playsinline data-start="66.767" data-duration="5.910" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1143" class="clip scene " data-start="72.677" data-duration="20.920" data-track-index="2" style="z-index:145" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1138" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1139" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><text id="tx1140" x="960" y="200" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="110" opacity="0">2010 · HOW MUCH ENERGY DOES IT BURN?</text><path d="M660,760 A300,300 0 0,1 1260,760" fill="none" stroke="#1d2f3a" stroke-width="46"/><path d="M660,760 A300,300 0 0,1 810,500" fill="none" stroke="#3fc6ff" stroke-width="46"/><path d="M1110,500 A300,300 0 0,1 1260,760" fill="none" stroke="#e0322b" stroke-width="46"/><text x="650" y="830" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="50">SLOW</text><text x="1270" y="830" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="50">FAST</text><g id="nd1141" style="transform-origin:960px 760px"><line x1="960" y1="760" x2="960" y2="500" stroke="#fff" stroke-width="12" stroke-linecap="round"/><circle cx="960" cy="760" r="26" fill="#fff"/></g><text id="tx1142" x="960" y="330" text-anchor="middle" font-family="Inter" font-weight="700" font-size="42" fill="#8fd4ff" opacity="0">COLD WATER + HUGE BODY = LIFE ON A VERY SLOW SETTING</text></svg></div>
+<div id="s1150" class="clip scene " data-start="93.597" data-duration="14.360" data-track-index="2" style="z-index:146" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1144" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1145" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="c1146" class="big" style="top:110px;opacity:0">30 GRAMS A DAY</div><div id="cd1147" class="fcard" style="left:160px;top:380px;opacity:0"><img src="assets/gen/tooth_noaa_2b6e23.jpg" alt="Antarctic toothfish" style="width:760px;height:470px;object-fit:cover"><div class="fcap">ONE 5 KG TOOTHFISH</div></div><div id="c1148" class="big" style="left:1040px;right:80px;top:430px;font-size:300px;opacity:0">0</div><div id="tx1149" class="bigsub" style="left:1040px;right:80px;top:760px;opacity:0">DAYS OF FOOD</div><div class="credit">Antarctic toothfish: NOAA · public domain</div></div>
+<div id="w1152" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:147;"><video id="v1151" class="clip fit" src="assets/clips/hover_dd92f3af.mp4" muted playsinline data-start="107.957" data-duration="10.670" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1154" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:148;"><video id="v1153" class="clip fit" src="assets/clips/eye_reveal_04e3966e.mp4" muted playsinline data-start="118.627" data-duration="5.660" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1156" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:149;"><video id="v1155" class="clip fit" src="assets/clips/hover_32e6619d.mp4" muted playsinline data-start="124.287" data-duration="6.350" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1157" class="clip scene " data-start="124.287" data-duration="6.350" data-track-index="2" style="z-index:150" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w1159" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:151;"><video id="v1158" class="clip fit" src="assets/clips/strike_181f22e3.mp4" muted playsinline data-start="130.637" data-duration="5.370" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1160" class="clip scene " data-start="130.637" data-duration="5.370" data-track-index="2" style="z-index:152" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w1162" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:153;"><video id="v1161" class="clip fit" src="assets/clips/beak_db8ce07e.mp4" muted playsinline data-start="136.007" data-duration="5.770" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1164" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:154;"><video id="v1163" class="clip fit" src="assets/clips/sub_dark_5cc35a4f.mp4" muted playsinline data-start="141.777" data-duration="8.210" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1165" class="clip scene " data-start="141.777" data-duration="8.210" data-track-index="2" style="z-index:155" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w1167" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:156;"><video id="v1166" class="clip fit" src="assets/clips/px_snow_0_00d35d98.mp4" muted playsinline data-start="149.987" data-duration="3.600" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1169" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:157;"><video id="v1168" class="clip fit" src="assets/clips/eye_reveal_c11c9574.mp4" muted playsinline data-start="153.587" data-duration="2.460" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1170" class="clip scene top" data-start="149.987" data-duration="6.060" data-track-index="2" style="z-index:158" data-layout-allow-overflow data-layout-allow-overlap><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><defs><mask id="ph"><rect width="1920" height="1080" fill="#fff"/><circle cx="960" cy="540" r="380" fill="#000"/></mask><radialGradient id="rim" cx="50%" cy="50%" r="50%"><stop offset=".8" stop-color="#2a3238"/><stop offset=".9" stop-color="#8d989f"/><stop offset="1" stop-color="#1a1f23"/></radialGradient></defs><rect width="1920" height="1080" fill="#05080a" mask="url(#ph)"/><circle cx="960" cy="540" r="430" fill="none" stroke="url(#rim)" stroke-width="100"/><circle cx="1390" cy="540" r="14" fill="#b9c3c9"/><circle cx="1332" cy="755" r="14" fill="#b9c3c9"/><circle cx="1175" cy="912" r="14" fill="#b9c3c9"/><circle cx="960" cy="970" r="14" fill="#b9c3c9"/><circle cx="745" cy="912" r="14" fill="#b9c3c9"/><circle cx="588" cy="755" r="14" fill="#b9c3c9"/><circle cx="530" cy="540" r="14" fill="#b9c3c9"/><circle cx="588" cy="325" r="14" fill="#b9c3c9"/><circle cx="745" cy="168" r="14" fill="#b9c3c9"/><circle cx="960" cy="110" r="14" fill="#b9c3c9"/><circle cx="1175" cy="168" r="14" fill="#b9c3c9"/><circle cx="1332" cy="325" r="14" fill="#b9c3c9"/><circle cx="960" cy="540" r="380" fill="none" stroke="#9fd8f0" stroke-width="2" opacity=".25"/></svg></div>
+<div id="w1172" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:159;"><video id="v1171" class="clip fit" src="assets/clips/hover_c5e675ce.mp4" muted playsinline data-start="156.047" data-duration="7.270" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1174" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:160;"><video id="v1173" class="clip fit" src="assets/clips/whale_dive_9ea72dba.mp4" muted playsinline data-start="163.317" data-duration="7.050" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1176" class="clip scene " data-start="163.317" data-duration="7.050" data-track-index="2" style="z-index:161" data-layout-allow-overflow data-layout-allow-overlap><div class="dim" style="opacity:0.35"></div><div id="h1175" class="chap" style="top:380px;font-size:190px">THE HUNTER</div></div>
+<div id="s1179" class="clip scene " data-start="170.367" data-duration="6.460" data-track-index="2" style="z-index:162" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling1_ef8598.jpg" alt=""><div id="ph1177" class="card" style="left:210px;top:110px;width:1500px;height:839px"><img src="assets/gen/whaling1_c6039d.jpg" alt="whaling1" style="width:1500px;height:839px"></div><div id="h1178" class="chap" style="top:400px;font-size:200px">1925</div><div class="credit">Whaling station, about 1915 · public domain</div></div>
+<div id="s1181" class="clip scene " data-start="176.827" data-duration="5.820" data-track-index="2" style="z-index:163" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling2_86af13.jpg" alt=""><div id="ph1180" class="card" style="left:210px;top:266px;width:1500px;height:528px"><img src="assets/gen/whaling2_717d19.jpg" alt="whaling2" style="width:1500px;height:528px"></div><div class="credit">Cutting in a sperm whale · public domain</div></div>
+<div id="s1183" class="clip scene " data-start="182.647" data-duration="4.500" data-track-index="2" style="z-index:164" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling4_259b4f.jpg" alt=""><div id="ph1182" class="card" style="left:311px;top:100px;width:1298px;height:860px"><img src="assets/gen/whaling4_548de2.jpg" alt="whaling4" style="width:1298px;height:860px"></div><div class="credit">Archive photo, 1921 · public domain</div></div>
+<div id="w1185" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:165;"><video id="v1184" class="clip fit" src="assets/clips/hooks_e7ca8cd7.mp4" muted playsinline data-start="187.147" data-duration="3.950" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1191" class="clip scene " data-start="191.097" data-duration="10.180" data-track-index="2" style="z-index:166" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#2a1810 0%,#120a07 60%,#050302 100%)"></div><img id="sn1186" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1187" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="tx1188" class="bigsub" style="top:250px;opacity:0;letter-spacing:6px">1925 · GUY COBURN ROBSON DESCRIBES A NEW SPECIES</div><div id="tx1189" class="latin" style="top:390px;opacity:0">Mesonychoteuthis hamiltoni</div><div id="tx1190" class="bigsub" style="top:620px;opacity:0;color:#d9b48a">FROM TWO ARMS FOUND IN A SPERM WHALE</div></div>
+<div id="w1193" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:167;"><video id="v1192" class="clip fit" src="assets/clips/nautilus_sperm_57c96d3c.mp4" muted playsinline data-start="201.277" data-duration="4.680" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1194" class="clip scene " data-start="201.277" data-duration="4.680" data-track-index="2" style="z-index:168" data-layout-allow-overflow data-layout-allow-overlap><div class="credit">Footage: Ocean Exploration Trust / Nautilus Live</div></div>
+<div id="w1196" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:169;"><video id="v1195" class="clip fit" src="assets/clips/px_whale_0_3d5176d2.mp4" muted playsinline data-start="205.957" data-duration="5.490" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1198" class="clip scene " data-start="205.957" data-duration="5.490" data-track-index="2" style="z-index:170" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1197" class="stamp" style="font-size:76px">DISCOVERED AS LEFTOVERS</span></div></div>
+<div id="s1200" class="clip scene " data-start="211.447" data-duration="4.040" data-track-index="2" style="z-index:171" data-layout-allow-overflow data-layout-allow-overlap><img class="fill" src="assets/gen/bg_whaling3_7bed6e.jpg" alt=""><div id="ph1199" class="card" style="left:210px;top:105px;width:1500px;height:849px"><img src="assets/gen/whaling3_53b0f7.jpg" alt="whaling3" style="width:1500px;height:849px"></div><div class="credit">Whaling station, about 1915 · public domain</div></div>
+<div id="s1241" class="clip scene " data-start="215.487" data-duration="16.380" data-track-index="2" style="z-index:172" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1201" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1202" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C10,-34 40,-58 120,-62 L330,-64 C420,-66 520,-60 600,-44 C680,-30 760,-14 830,-6 L870,-34 C878,-40 892,-38 888,-28 L872,4 L890,30 C894,40 880,42 872,36 L832,8 C760,14 680,28 600,38 C520,48 420,58 330,60 L150,60 C120,60 100,54 92,44 L40,44 C20,44 6,30 0,0 Z" transform="translate(160,560) scale(1.7978,1.7978)" fill="#1a242b" opacity="1.0" /><ellipse cx="900" cy="600" rx="300" ry="150" fill="#3a1f22" stroke="#7a4a4a" stroke-width="5"/><g transform="translate(878 654) rotate(333)"><path id="bk1203" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(884 646) rotate(211)"><path id="bk1204" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(755 647) rotate(227)"><path id="bk1205" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1035 584) rotate(109)"><path id="bk1206" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(712 691) rotate(250)"><path id="bk1207" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(689 717) rotate(347)"><path id="bk1208" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(971 662) rotate(57)"><path id="bk1209" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(677 649) rotate(21)"><path id="bk1210" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(757 606) rotate(11)"><path id="bk1211" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(883 636) rotate(303)"><path id="bk1212" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(909 666) rotate(180)"><path id="bk1213" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(975 639) rotate(100)"><path id="bk1214" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1129 719) rotate(302)"><path id="bk1215" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(996 617) rotate(83)"><path id="bk1216" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(803 581) rotate(276)"><path id="bk1217" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(854 697) rotate(139)"><path id="bk1218" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1111 697) rotate(0)"><path id="bk1219" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(766 707) rotate(169)"><path id="bk1220" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1121 630) rotate(26)"><path id="bk1221" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(960 687) rotate(97)"><path id="bk1222" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(710 620) rotate(347)"><path id="bk1223" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1019 588) rotate(89)"><path id="bk1224" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(716 579) rotate(287)"><path id="bk1225" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(752 654) rotate(161)"><path id="bk1226" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(758 680) rotate(47)"><path id="bk1227" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(966 587) rotate(151)"><path id="bk1228" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(768 610) rotate(350)"><path id="bk1229" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1040 616) rotate(319)"><path id="bk1230" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(767 629) rotate(308)"><path id="bk1231" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(965 585) rotate(356)"><path id="bk1232" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(768 609) rotate(278)"><path id="bk1233" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(821 614) rotate(26)"><path id="bk1234" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(711 657) rotate(87)"><path id="bk1235" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(947 626) rotate(163)"><path id="bk1236" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1111 643) rotate(207)"><path id="bk1237" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><g transform="translate(1069 597) rotate(55)"><path id="bk1238" d="M0,-28 C18,-26 30,-10 28,8 C26,20 14,30 2,30 C10,18 10,4 2,-6 C-6,4 -14,8 -24,6 C-20,-12 -12,-24 0,-28 Z" fill="#1b0f0a" stroke="#a5795a" stroke-width="2" opacity="0"/></g><text id="tx1239" x="960" y="220" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="96" opacity="0">BEAKS DON'T DIGEST</text><text id="tx1240" x="960" y="950" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="80" fill="#e0a09a" opacity="0">SOMETIMES DOZENS IN ONE WHALE</text></svg></div>
+<div id="s1249" class="clip scene " data-start="231.867" data-duration="14.360" data-track-index="2" style="z-index:173" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1242" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1243" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><div id="cd1244" class="fcard" style="left:140px;top:150px;opacity:0"><img src="assets/gen/beak_measure_2827d8.jpg" alt="measuring a squid beak" style="width:560px;height:700px;object-fit:cover"><div class="fcap">MEASURE THE BEAK</div></div><img id="sq1245" src="assets/gen/cut_colossal_side.png" alt="colossal squid" style="position:absolute;left:1000px;top:410px;width:760px;height:260px;opacity:0;transform-origin:50% 50%"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path id="ar1246" d="M740,540 L960,540" stroke="#fff" stroke-width="8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" marker-end="url(#am)" opacity="0"/><defs><marker id="am" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fff"/></marker></defs><rect id="ds1247" x="900" y="345" width="1026" height="390" fill="none" stroke="#e0322b" stroke-width="4" stroke-dasharray="16 12" opacity="0"/><text id="tx1248" x="1380" y="805" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="64" fill="#ff8a7a" opacity="0">BIGGER THAN ANY EVER CAUGHT</text></svg><div class="credit">Beak photo: Wikimedia Commons, public domain</div></div>
+<div id="w1251" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:174;"><video id="v1250" class="clip fit" src="assets/clips/hover_5404e2a3.mp4" muted playsinline data-start="246.227" data-duration="6.730" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1253" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:175;"><video id="v1252" class="clip fit" src="assets/clips/whale_dive_54b1830c.mp4" muted playsinline data-start="252.957" data-duration="3.480" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w1255" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:176;"><video id="v1254" class="clip fit" src="assets/clips/px_sperm_1_c8cf17f1.mp4" muted playsinline data-start="256.437" data-duration="3.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1256" class="clip scene " data-start="256.437" data-duration="3.740" data-track-index="2" style="z-index:177" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w1258" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:178;"><video id="v1257" class="clip fit" src="assets/clips/whale_dive_316de593.mp4" muted playsinline data-start="260.177" data-duration="8.390" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s1262" class="clip scene " data-start="260.177" data-duration="8.390" data-track-index="2" style="z-index:179" data-layout-allow-overflow data-layout-allow-overlap><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1259" class="stamp" style="font-size:100px">1 KM</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1260" class="stamp" style="font-size:100px">2 KM</span></div><div class="row" style="left:0;right:0;top:900px;text-align:center"><span id="t1261" class="stamp" style="font-size:76px">MORE THAN AN HOUR ON ONE BREATH</span></div></div>
+<div id="s1294" class="clip scene " data-start="268.567" data-duration="14.580" data-track-index="2" style="z-index:180" data-layout-allow-overflow data-layout-allow-overlap><div class="bg2" style="background:radial-gradient(ellipse 80% 70% at 50% 40%,#08161f 0%,#03080d 60%,#010203 100%)"></div><img id="sn1263" class="snow" src="assets/gen/snow_1.png" alt=""><img id="sn1264" class="snow" src="assets/gen/snow_2.png" alt="" style="opacity:.55"><svg class="full" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C10,-34 40,-58 120,-62 L330,-64 C420,-66 520,-60 600,-44 C680,-30 760,-14 830,-6 L870,-34 C878,-40 892,-38 888,-28 L872,4 L890,30 C894,40 880,42 872,36 L832,8 C760,14 680,28 600,38 C520,48 420,58 330,60 L150,60 C120,60 100,54 92,44 L40,44 C20,44 6,30 0,0 Z" transform="translate(80,520) scale(0.6966,0.6966)" fill="#26323a" opacity="1.0" /><path id="ck1265" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1266" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1267" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1268" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1269" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1270" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1271" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1272" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1273" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1274" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1275" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1276" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1277" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1278" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1279" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1280" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1281" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1282" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><path id="ck1283" d="M720,380 A180,180 0 0,1 720,660" fill="none" stroke="#7fe0ff" stroke-width="6" opacity="0"/><image href="assets/gen/cut_colossal_side.png" x="1560" y="476" width="260" height="88" opacity=".55"/><path id="ec1284" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1285" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1286" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1287" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1288" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1289" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><path id="ec1290" d="M1540,440 A110,110 0 0,0 1540,600" fill="none" stroke="#f0a64a" stroke-width="5" opacity="0"/><text id="tx1292" x="960" y="200" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="90" opacity="0">ONE OF THE LOUDEST ANIMALS ON EARTH</text><text id="tx1293" x="960" y="900" text-anchor="middle" font-family="League Gothic" fill="#f2f6f8" font-size="80" fill="#f0a64a" opacity="0">CLICK, LISTEN FOR THE ECHO</text></svg></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v1097",{scale:1.0},{scale:1.06,duration:7.307,ease:"none"},0.000);
+tl.fromTo("#v1099",{scale:1.0},{scale:1.06,duration:6.59,ease:"none"},7.307);
+tl.fromTo("#sn1101",{y:0,x:0},{y:-90,x:-20,duration:7.59,ease:"none"},13.897);
+tl.fromTo("#sn1102",{y:0,x:0},{y:-170,x:30,duration:7.59,ease:"none"},13.897);
+tl.fromTo("#ht1103",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},15.577);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},16.177);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},16.297);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},17.077);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},17.197);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},17.977);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},18.097);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},18.877);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},18.997);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},19.777);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},19.897);
+tl.to("#ht1103",{scale:1.18,duration:0.12,ease:"power2.out"},20.677);
+tl.to("#ht1103",{scale:1.0,duration:0.3,ease:"power2.in"},20.797);
+tl.fromTo("#ht1104",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},15.577);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},16.177);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},16.297);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},17.077);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},17.197);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},17.977);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},18.097);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},18.877);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},18.997);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},19.777);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},19.897);
+tl.to("#ht1104",{scale:1.18,duration:0.12,ease:"power2.out"},20.677);
+tl.to("#ht1104",{scale:1.0,duration:0.3,ease:"power2.in"},20.797);
+tl.fromTo("#ht1105",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},17.617);
+tl.to("#ht1105",{scale:1.18,duration:0.12,ease:"power2.out"},18.217);
+tl.to("#ht1105",{scale:1.0,duration:0.3,ease:"power2.in"},18.337);
+tl.to("#ht1105",{scale:1.18,duration:0.12,ease:"power2.out"},19.117);
+tl.to("#ht1105",{scale:1.0,duration:0.3,ease:"power2.in"},19.237);
+tl.to("#ht1105",{scale:1.18,duration:0.12,ease:"power2.out"},20.017);
+tl.to("#ht1105",{scale:1.0,duration:0.3,ease:"power2.in"},20.137);
+tl.to("#ht1105",{scale:1.18,duration:0.12,ease:"power2.out"},20.917);
+tl.to("#ht1105",{scale:1.0,duration:0.3,ease:"power2.in"},21.037);
+tl.fromTo("#tx1106",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},15.977);
+tl.fromTo("#tx1107",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},18.017);
+tl.fromTo("#c1108",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},14.097);
+tl.fromTo("#sn1110",{y:0,x:0},{y:-90,x:-20,duration:18.7,ease:"none"},21.487);
+tl.fromTo("#sn1111",{y:0,x:0},{y:-170,x:30,duration:18.7,ease:"none"},21.487);
+tl.fromTo("#g1114",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},21.687);
+tl.fromTo("#g1115",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},23.447);
+tl.fromTo("#v1113",{scaleY:0.1},{scaleY:1,duration:1.0,ease:"power2.out"},23.447);
+tl.fromTo("#g1116",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},24.907);
+tl.fromTo("#g1117",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},28.947);
+tl.fromTo("#tx1118",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},33.247);
+tl.fromTo("#sn1120",{y:0,x:0},{y:-90,x:-20,duration:7.94,ease:"none"},40.187);
+tl.fromTo("#sn1121",{y:0,x:0},{y:-170,x:30,duration:7.94,ease:"none"},40.187);
+tl.fromTo("#rc1122",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},40.187);
+tl.fromTo("#rc1123",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},41.697);
+tl.fromTo("#rc1124",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},43.057);
+tl.fromTo("#rc1125",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power2.out"},45.917);
+tl.fromTo("#v1127",{scale:1.0},{scale:1.1,duration:5.6,ease:"none"},48.127);
+tl.fromTo("#v1129",{scale:1.0},{scale:1.06,duration:6.0,ease:"none"},53.727);
+tl.fromTo("#h1131",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},53.927);
+tl.to("#h1131",{opacity:0,duration:0.7,ease:"power1.in"},57.577);
+tl.fromTo("#v1133",{scale:1.0},{scale:1.06,duration:7.04,ease:"none"},59.727);
+tl.fromTo("#v1136",{scale:1.0},{scale:1.12,duration:5.91,ease:"none"},66.767);
+tl.fromTo("#sn1138",{y:0,x:0},{y:-90,x:-20,duration:20.92,ease:"none"},72.677);
+tl.fromTo("#sn1139",{y:0,x:0},{y:-170,x:30,duration:20.92,ease:"none"},72.677);
+tl.fromTo("#tx1140",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},72.977);
+tl.fromTo("#nd1141",{rotation:60},{rotation:10,duration:1.2,ease:"power2.inOut"},73.177);
+tl.to("#nd1141",{rotation:-72,duration:2.0,ease:"power3.inOut"},85.237);
+tl.fromTo("#tx1142",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},85.737);
+tl.fromTo("#sn1144",{y:0,x:0},{y:-90,x:-20,duration:14.36,ease:"none"},93.597);
+tl.fromTo("#sn1145",{y:0,x:0},{y:-170,x:30,duration:14.36,ease:"none"},93.597);
+tl.fromTo("#c1146",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},93.797);
+tl.fromTo("#cd1147",{opacity:0,y:40},{opacity:1,y:0,duration:0.6,ease:"power2.out"},97.897);
+tl.to({v:0},{v:200,duration:2.200,ease:"power2.out",onUpdate:function(){var e=document.getElementById("c1148");if(e)e.textContent=("int"==="int"?Math.round(this.targets()[0].v).toLocaleString("en-US"):this.targets()[0].v.toFixed(1))+""}},103.897);
+tl.fromTo("#c1148",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},103.897);
+tl.fromTo("#tx1149",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},104.197);
+tl.fromTo("#v1151",{scale:1.0},{scale:1.14,duration:10.67,ease:"none"},107.957);
+tl.fromTo("#v1153",{scale:1.0},{scale:1.08,duration:5.66,ease:"none"},118.627);
+tl.fromTo("#v1155",{scale:1.05},{scale:1.15,duration:6.35,ease:"none"},124.287);
+tl.fromTo("#v1158",{scale:1.0},{scale:1.06,duration:5.37,ease:"none"},130.637);
+tl.fromTo("#v1161",{scale:1.0},{scale:1.06,duration:5.77,ease:"none"},136.007);
+tl.fromTo("#v1163",{scale:1.0},{scale:1.06,duration:8.21,ease:"none"},141.777);
+tl.fromTo("#v1166",{scale:1.0},{scale:1.06,duration:3.6,ease:"none"},149.987);
+tl.fromTo("#v1168",{scale:1.15},{scale:1.05,duration:2.46,ease:"none"},153.587);
+tl.fromTo("#v1171",{scale:1.0},{scale:1.06,duration:7.27,ease:"none"},156.047);
+tl.fromTo("#v1173",{scale:1.0},{scale:1.06,duration:7.05,ease:"none"},163.317);
+tl.fromTo("#h1175",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},163.517);
+tl.to("#h1175",{opacity:0,duration:0.7,ease:"power1.in"},167.167);
+tl.fromTo("#ph1177",{scale:1.0},{scale:1.08,duration:6.46,ease:"none"},170.367);
+tl.fromTo("#h1178",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},170.667);
+tl.to("#h1178",{opacity:0,duration:0.7,ease:"power1.in"},176.077);
+tl.fromTo("#ph1180",{scale:1.0},{scale:1.08,duration:5.82,ease:"none"},176.827);
+tl.fromTo("#ph1182",{scale:1.08},{scale:1.0,duration:4.5,ease:"none"},182.647);
+tl.fromTo("#v1184",{scale:1.0},{scale:1.06,duration:3.95,ease:"none"},187.147);
+tl.fromTo("#sn1186",{y:0,x:0},{y:-90,x:-20,duration:10.18,ease:"none"},191.097);
+tl.fromTo("#sn1187",{y:0,x:0},{y:-170,x:30,duration:10.18,ease:"none"},191.097);
+tl.fromTo("#tx1188",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},191.397);
+tl.fromTo("#tx1189",{opacity:0,letterSpacing:"24px"},{opacity:1,letterSpacing:"2px",duration:1.4,ease:"power2.out"},195.977);
+tl.fromTo("#tx1190",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},197.577);
+tl.fromTo("#v1192",{scale:1.0},{scale:1.06,duration:4.68,ease:"none"},201.277);
+tl.fromTo("#v1195",{scale:1.0},{scale:1.06,duration:5.49,ease:"none"},205.957);
+tl.fromTo("#t1197",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},206.567);
+tl.fromTo("#ph1199",{scale:1.1},{scale:1.0,duration:4.04,ease:"none"},211.447);
+tl.fromTo("#sn1201",{y:0,x:0},{y:-90,x:-20,duration:16.38,ease:"none"},215.487);
+tl.fromTo("#sn1202",{y:0,x:0},{y:-170,x:30,duration:16.38,ease:"none"},215.487);
+tl.fromTo("#bk1203",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},216.087);
+tl.fromTo("#bk1204",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},216.487);
+tl.fromTo("#bk1205",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},216.887);
+tl.fromTo("#bk1206",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},217.287);
+tl.fromTo("#bk1207",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.227);
+tl.fromTo("#bk1208",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.347);
+tl.fromTo("#bk1209",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.467);
+tl.fromTo("#bk1210",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.587);
+tl.fromTo("#bk1211",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.707);
+tl.fromTo("#bk1212",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.827);
+tl.fromTo("#bk1213",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},228.947);
+tl.fromTo("#bk1214",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.067);
+tl.fromTo("#bk1215",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.187);
+tl.fromTo("#bk1216",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.307);
+tl.fromTo("#bk1217",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.427);
+tl.fromTo("#bk1218",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.547);
+tl.fromTo("#bk1219",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.667);
+tl.fromTo("#bk1220",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.787);
+tl.fromTo("#bk1221",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},229.907);
+tl.fromTo("#bk1222",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.027);
+tl.fromTo("#bk1223",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.147);
+tl.fromTo("#bk1224",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.267);
+tl.fromTo("#bk1225",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.387);
+tl.fromTo("#bk1226",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.507);
+tl.fromTo("#bk1227",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.627);
+tl.fromTo("#bk1228",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.747);
+tl.fromTo("#bk1229",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.867);
+tl.fromTo("#bk1230",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},230.987);
+tl.fromTo("#bk1231",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.107);
+tl.fromTo("#bk1232",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.227);
+tl.fromTo("#bk1233",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.347);
+tl.fromTo("#bk1234",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.467);
+tl.fromTo("#bk1235",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.587);
+tl.fromTo("#bk1236",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.707);
+tl.fromTo("#bk1237",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.827);
+tl.fromTo("#bk1238",{opacity:0,y:-120},{opacity:1,y:0,duration:0.4,ease:"bounce.out"},231.947);
+tl.fromTo("#tx1239",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},223.747);
+tl.fromTo("#tx1240",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},216.487);
+tl.fromTo("#sn1242",{y:0,x:0},{y:-90,x:-20,duration:14.36,ease:"none"},231.867);
+tl.fromTo("#sn1243",{y:0,x:0},{y:-170,x:30,duration:14.36,ease:"none"},231.867);
+tl.fromTo("#cd1244",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power2.out"},232.067);
+tl.fromTo("#sq1245",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},237.487);
+tl.fromTo("#ar1246",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.5,ease:"power1.inOut"},237.087);
+tl.fromTo("#ar1246",{opacity:0},{opacity:1,duration:0.1,ease:"power2.out"},237.087);
+tl.fromTo("#ds1247",{opacity:0,y:0},{opacity:1,y:0,duration:0.6,ease:"power2.out"},240.157);
+tl.fromTo("#tx1248",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},240.557);
+tl.to("#sq1245",{scale:1.3,duration:2.0,ease:"power2.inOut"},240.157);
+tl.fromTo("#v1250",{scale:1.0},{scale:1.06,duration:6.73,ease:"none"},246.227);
+tl.fromTo("#v1252",{scale:1.0},{scale:1.06,duration:3.48,ease:"none"},252.957);
+tl.fromTo("#v1254",{scale:1.0},{scale:1.06,duration:3.74,ease:"none"},256.437);
+tl.fromTo("#v1257",{scale:1.0},{scale:1.06,duration:8.39,ease:"none"},260.177);
+tl.fromTo("#t1259",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},262.897);
+tl.to("#t1259",{opacity:0,duration:0.3,ease:"power2.out"},263.817);
+tl.fromTo("#t1260",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},264.247);
+tl.to("#t1260",{opacity:0,duration:0.3,ease:"power2.out"},265.217);
+tl.fromTo("#t1261",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},265.687);
+tl.fromTo("#sn1263",{y:0,x:0},{y:-90,x:-20,duration:14.58,ease:"none"},268.567);
+tl.fromTo("#sn1264",{y:0,x:0},{y:-170,x:30,duration:14.58,ease:"none"},268.567);
+tl.fromTo("#ck1265",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},269.167);
+tl.fromTo("#ck1266",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},269.867);
+tl.fromTo("#ck1267",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},270.567);
+tl.fromTo("#ck1268",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},271.267);
+tl.fromTo("#ck1269",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},271.967);
+tl.fromTo("#ck1270",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},272.667);
+tl.fromTo("#ck1271",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},273.367);
+tl.fromTo("#ck1272",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},274.067);
+tl.fromTo("#ck1273",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},274.767);
+tl.fromTo("#ck1274",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},275.467);
+tl.fromTo("#ck1275",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},276.167);
+tl.fromTo("#ck1276",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},276.867);
+tl.fromTo("#ck1277",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},277.567);
+tl.fromTo("#ck1278",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},278.267);
+tl.fromTo("#ck1279",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},278.967);
+tl.fromTo("#ck1280",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},279.667);
+tl.fromTo("#ck1281",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},280.367);
+tl.fromTo("#ck1282",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},281.067);
+tl.fromTo("#ck1283",{x:0,opacity:0.9},{x:1000,opacity:0,duration:1.8,ease:"none"},281.767);
+tl.fromTo("#ec1284",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},277.047);
+tl.fromTo("#ec1285",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},277.747);
+tl.fromTo("#ec1286",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},278.447);
+tl.fromTo("#ec1287",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},279.147);
+tl.fromTo("#ec1288",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},279.847);
+tl.fromTo("#ec1289",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},280.547);
+tl.fromTo("#ec1290",{x:0,opacity:0.9},{x:-700,opacity:0,duration:1.4,ease:"none"},281.247);
+tl.fromTo("#tx1292",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},271.207);
+tl.fromTo("#tx1293",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power2.out"},276.647);
+tl.set({}, {}, 283.133);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

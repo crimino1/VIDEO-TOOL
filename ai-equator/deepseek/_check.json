@@ -1,0 +1,2353 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 47,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 6 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 7 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 367 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 2 has 42 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s6\"> is a timeline element that contains nested <div id=\"w7\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s6",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s6\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s13\"> is a timeline element that contains nested <div id=\"w14\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s13",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s13\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s21\"> is a timeline element that contains nested <div id=\"w22\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s21",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s21\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s30\"> is a timeline element that contains nested <div id=\"w31\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s30",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s30\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s35\"> is a timeline element that contains nested <div id=\"w36\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s35",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s35\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s41\"> is a timeline element that contains nested <div id=\"w42\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s41",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s41\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s49\"> is a timeline element that contains nested <div id=\"w50\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s49",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s49\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s56\"> is a timeline element that contains nested <div id=\"w57\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s56",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s56\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s68\"> is a timeline element that contains nested <div id=\"w69\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s68",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s68\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s78\"> is a timeline element that contains nested <div id=\"w79\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s78",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s78\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s84\"> is a timeline element that contains nested <div id=\"w85\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s84",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s84\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s94\"> is a timeline element that contains nested <div id=\"w95\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s94",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s94\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s102\"> is a timeline element that contains nested <div id=\"w103\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s102",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s102\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s116\"> is a timeline element that contains nested <div id=\"w117\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s116",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s116\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s123\"> is a timeline element that contains nested <div id=\"w124\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s123",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s123\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s129\"> is a timeline element that contains nested <div id=\"w130\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s129",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s129\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s144\"> is a timeline element that contains nested <div id=\"w145\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s144",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s144\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s154\"> is a timeline element that contains nested <div id=\"w155\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s154",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s154\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s161\"> is a timeline element that contains nested <div id=\"w162\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s161",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s161\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s166\"> is a timeline element that contains nested <div id=\"w167\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s166",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s166\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s176\"> is a timeline element that contains nested <div id=\"w177\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s176",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s176\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s184\"> is a timeline element that contains nested <div id=\"w185\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s184",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s184\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s190\"> is a timeline element that contains nested <div id=\"w191\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s190",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s190\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s196\"> is a timeline element that contains nested <div id=\"w197\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s196",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s196\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s203\"> is a timeline element that contains nested <div id=\"w204\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s203",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s203\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s213\"> is a timeline element that contains nested <div id=\"w214\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s213",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s213\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s222\"> is a timeline element that contains nested <div id=\"w223\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s222",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s222\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s229\"> is a timeline element that contains nested <div id=\"w230\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s229",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s229\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s237\"> is a timeline element that contains nested <div id=\"w238\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s237",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s237\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s244\"> is a timeline element that contains nested <div id=\"w245\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s244",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s244\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s253\"> is a timeline element that contains nested <div id=\"w254\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s253",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s253\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s261\"> is a timeline element that contains nested <div id=\"w262\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s261",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s261\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s267\"> is a timeline element that contains nested <div id=\"w268\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s267",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s267\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s277\"> is a timeline element that contains nested <div id=\"w278\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s277",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s277\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s282\"> is a timeline element that contains nested <div id=\"w283\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s282",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s282\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s288\"> is a timeline element that contains nested <div id=\"w289\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s288",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s288\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s296\"> is a timeline element that contains nested <div id=\"w297\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s296",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s296\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s305\"> is a timeline element that contains nested <div id=\"w306\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s305",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s305\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s312\"> is a timeline element that contains nested <div id=\"w313\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s312",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s312\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s321\"> is a timeline element that contains nested <div id=\"w322\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s321",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s321\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s327\"> is a timeline element that contains nested <div id=\"w328\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s327",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s327\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s332\"> is a timeline element that contains nested <div id=\"w333\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s332",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s332\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"vo\" is 626.22s but its slot (data-duration) is 626.70s — the slot is shortened to the media length when rendered. Set data-duration to ~626.22s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "626.7",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 2,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 174.083,
+        "selector": "#k120",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 705.64,
+          "top": 215.5,
+          "right": 1354.21,
+          "bottom": 595.53,
+          "width": 648.58,
+          "height": 380.02
+        },
+        "containerSelector": "#i121 > div:nth-of-type(2)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 705.64,
+          "top": 215.5,
+          "right": 1352.19,
+          "bottom": 595.53,
+          "width": 646.55,
+          "height": 380.02
+        },
+        "overflow": {
+          "right": 2.02
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "k120",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 705.64,
+          "y": 215.5,
+          "width": 648.58,
+          "height": 380.02
+        },
+        "firstSeen": 174.083,
+        "lastSeen": 174.083,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          174.083
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 313.35,
+        "selector": "#k199",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 139.71,
+          "top": 449.52,
+          "right": 841.54,
+          "bottom": 830.51,
+          "width": 701.82,
+          "height": 380.99
+        },
+        "containerSelector": "#i200 > div:nth-of-type(2)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 140.34,
+          "top": 449.86,
+          "right": 838.9,
+          "bottom": 830.17,
+          "width": 698.56,
+          "height": 380.3
+        },
+        "overflow": {
+          "right": 2.64
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "k199",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 139.71,
+          "y": 449.52,
+          "width": 701.82,
+          "height": 380.99
+        },
+        "firstSeen": 313.35,
+        "lastSeen": 313.35,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          313.35
+        ]
+      }
+    ],
+    "duration": 626.7,
+    "samples": [
+      34.817,
+      104.45,
+      174.083,
+      243.717,
+      313.35,
+      382.983,
+      452.617,
+      522.25,
+      591.883
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 2,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      34.817,
+      174.083,
+      313.35,
+      452.617,
+      591.883
+    ],
+    "checked": 32,
+    "passed": 32
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 164 text elements stay under it for 0.5 s or more, the smallest \"github.com/deepseek-ai/deepseek-harness\" at 15 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "github.com/deepseek-ai/deepseek-harness",
+        "selector": "#i2 > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 434.7,
+          "y": 290.5,
+          "width": 310.6,
+          "height": 19
+        },
+        "time": 0,
+        "times": [
+          0,
+          0,
+          10.462,
+          10.462,
+          10.462,
+          19.879,
+          19.879,
+          21.971,
+          24.064,
+          26.156,
+          27.202,
+          29.295,
+          33.48,
+          34.526,
+          35.572,
+          50.22,
+          50.22,
+          63.821,
+          63.821,
+          63.821,
+          77.422,
+          77.422,
+          79.515,
+          81.607,
+          83.699,
+          87.884,
+          87.884,
+          106.717,
+          106.717,
+          106.717,
+          111.948,
+          119.272,
+          119.272,
+          129.734,
+          129.734,
+          132.873,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          146.474,
+          162.168,
+          169.491,
+          169.491,
+          175.769,
+          175.769,
+          177.861,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          183.093,
+          206.11,
+          213.434,
+          213.434,
+          214.48,
+          214.48,
+          214.48,
+          214.48,
+          214.48,
+          214.48,
+          214.48,
+          214.48,
+          223.896,
+          228.081,
+          229.127,
+          230.174,
+          232.266,
+          236.451,
+          243.775,
+          247.96,
+          247.96,
+          261.561,
+          264.7,
+          267.838,
+          270.977,
+          275.162,
+          279.347,
+          279.347,
+          279.347,
+          285.625,
+          286.671,
+          287.717,
+          288.763,
+          288.763,
+          290.856,
+          291.902,
+          296.087,
+          301.318,
+          302.364,
+          305.503,
+          312.827,
+          312.827,
+          312.827,
+          314.919,
+          321.197,
+          329.567,
+          340.029,
+          340.029,
+          345.26,
+          364.093,
+          364.093,
+          364.093,
+          368.278,
+          378.74,
+          382.925,
+          389.203,
+          404.896,
+          404.896,
+          404.896,
+          419.544,
+          419.544,
+          419.544,
+          435.237,
+          435.237,
+          440.469,
+          469.763,
+          469.763,
+          474.995,
+          488.596,
+          488.596,
+          493.827,
+          502.197,
+          507.428,
+          513.706,
+          513.706,
+          513.706,
+          516.844,
+          524.168,
+          530.446,
+          543.001,
+          545.093,
+          550.324,
+          556.602,
+          560.787,
+          567.064,
+          572.295,
+          577.527,
+          595.313
+        ],
+        "fontPx": 15,
+        "floorPx": 28,
+        "seconds": 10.462,
+        "elements": [
+          {
+            "selector": "#i2 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "github.com/deepseek-ai/deepseek-harness",
+            "fontPx": 15,
+            "time": 0,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#i45 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "statista.com · Jan 28, 2025",
+            "fontPx": 15,
+            "time": 63.821,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#i200 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "eu.36kr.com · Sep 23, 2026",
+            "fontPx": 15,
+            "time": 312.827,
+            "seconds": 16.74
+          },
+          {
+            "selector": "#i72 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "api-docs.deepseek.com · pricing",
+            "fontPx": 15.01,
+            "time": 106.717,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#i248 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "github.com/deepseek-ai/FlashMLA",
+            "fontPx": 15.01,
+            "time": 419.544,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#i88 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "api-docs.deepseek.com/news · Sep 10, 2026",
+            "fontPx": 15.02,
+            "time": 119.272,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#i101 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "github.com/deepseek-ai/deepseek-harness",
+            "fontPx": 15.05,
+            "time": 132.873,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#i217 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "tech.ifeng.com · Caiwen (财闻), Nov 3, 2026",
+            "fontPx": 15.05,
+            "time": 345.26,
+            "seconds": 18.833
+          },
+          {
+            "selector": "#i121 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "news.mydrivers.com · Oct 28, 2026",
+            "fontPx": 15.13,
+            "time": 169.491,
+            "seconds": 6.278
+          },
+          {
+            "selector": "#i111 > div:nth-of-type(1)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts",
+            "fontPx": 20.01,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#i142 > div:nth-of-type(1)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts",
+            "fontPx": 20.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#i12 > div:nth-of-type(1)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts",
+            "fontPx": 20.03,
+            "time": 10.462,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#i151 > div:nth-of-type(1)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts",
+            "fontPx": 20.04,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#b86 > div:nth-of-type(2)",
+            "text": "@deepseek_ai on X · V4.1-Flash-1017 demos, Oct 17, 2026",
+            "fontPx": 21,
+            "time": 111.948,
+            "seconds": 7.324
+          },
+          {
+            "selector": "#b239 > div:nth-of-type(2)",
+            "text": "Huawei Ascend 950 SuperPoD at WAIC 2026 (CN.科技发布会 on YouTube)",
+            "fontPx": 21,
+            "time": 389.203,
+            "seconds": 15.693
+          },
+          {
+            "selector": "#b323 > div:nth-of-type(2)",
+            "text": "Bloomberg Television · Huawei AI chip coverage",
+            "fontPx": 21,
+            "time": 595.313,
+            "seconds": 17.786
+          },
+          {
+            "selector": "div.ccap",
+            "text": "The image attached to the post",
+            "fontPx": 21.03,
+            "time": 279.347,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#i258 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.09,
+            "time": 440.469,
+            "seconds": 16.739
+          },
+          {
+            "selector": "#i189 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.1,
+            "time": 291.902,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#i143 > div:nth-of-type(1)",
+            "text": "Source check",
+            "fontPx": 21.24,
+            "time": 206.11,
+            "seconds": 7.323
+          },
+          {
+            "selector": "#w14 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The leak",
+            "fontPx": 22,
+            "time": 10.462,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#w22 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The hype",
+            "fontPx": 22,
+            "time": 19.879,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w31 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Today",
+            "fontPx": 22,
+            "time": 29.295,
+            "seconds": 12.555
+          },
+          {
+            "selector": "#w42 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Why it matters",
+            "fontPx": 22,
+            "time": 50.22,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#w50 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Why it matters",
+            "fontPx": 22,
+            "time": 63.821,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#w57 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "DeepSeek this year",
+            "fontPx": 22,
+            "time": 77.422,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w69 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "DeepSeek this year",
+            "fontPx": 22,
+            "time": 87.884,
+            "seconds": 18.833
+          },
+          {
+            "selector": "#w79 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "DeepSeek V4.1 Flash",
+            "fontPx": 22,
+            "time": 106.717,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#w117 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #1",
+            "fontPx": 22,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#w130 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #1",
+            "fontPx": 22,
+            "time": 175.769,
+            "seconds": 7.323
+          },
+          {
+            "selector": "#w145 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #1",
+            "fontPx": 22,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#w155 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #1",
+            "fontPx": 22,
+            "time": 213.434,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w167 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #1",
+            "fontPx": 22,
+            "time": 232.266,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#w185 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #2",
+            "fontPx": 22,
+            "time": 279.347,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w191 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #2",
+            "fontPx": 22,
+            "time": 288.763,
+            "seconds": 12.555
+          },
+          {
+            "selector": "#w204 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #2",
+            "fontPx": 22,
+            "time": 312.827,
+            "seconds": 16.74
+          },
+          {
+            "selector": "#w214 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Leak #2",
+            "fontPx": 22,
+            "time": 329.567,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w230 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The real news",
+            "fontPx": 22,
+            "time": 364.093,
+            "seconds": 25.109
+          },
+          {
+            "selector": "#w245 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The real news",
+            "fontPx": 22,
+            "time": 404.896,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#w254 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The real news",
+            "fontPx": 22,
+            "time": 419.544,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#w262 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The real news",
+            "fontPx": 22,
+            "time": 435.237,
+            "seconds": 21.971
+          },
+          {
+            "selector": "#w278 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "The real news",
+            "fontPx": 22,
+            "time": 469.763,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w289 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Timing",
+            "fontPx": 22,
+            "time": 488.596,
+            "seconds": 25.109
+          },
+          {
+            "selector": "#w297 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Timing",
+            "fontPx": 22,
+            "time": 513.706,
+            "seconds": 28.248
+          },
+          {
+            "selector": "#w306 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Verdict",
+            "fontPx": 22,
+            "time": 543.001,
+            "seconds": 34.525
+          },
+          {
+            "selector": "#w313 > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "Verdict",
+            "fontPx": 22,
+            "time": 577.527,
+            "seconds": 17.785
+          },
+          {
+            "selector": "#i291 > div:nth-of-type(1)",
+            "text": "Dec 2024",
+            "fontPx": 22.01,
+            "time": 513.706,
+            "seconds": 28.248
+          },
+          {
+            "selector": "#i292 > div:nth-of-type(1)",
+            "text": "Apr 2026",
+            "fontPx": 22.04,
+            "time": 516.844,
+            "seconds": 25.11
+          },
+          {
+            "selector": "#i52 > div:nth-of-type(1)",
+            "text": "Apr 24",
+            "fontPx": 22.08,
+            "time": 79.515,
+            "seconds": 8.369
+          },
+          {
+            "selector": "#i293 > div:nth-of-type(1)",
+            "text": "between",
+            "fontPx": 22.13,
+            "time": 524.168,
+            "seconds": 17.786
+          },
+          {
+            "selector": "#i53 > div:nth-of-type(1)",
+            "text": "Aug 13",
+            "fontPx": 22.15,
+            "time": 81.607,
+            "seconds": 6.277
+          },
+          {
+            "selector": "#i294 > div:nth-of-type(1)",
+            "text": "next",
+            "fontPx": 22.2,
+            "time": 530.446,
+            "seconds": 11.508
+          },
+          {
+            "selector": "#i54 > div:nth-of-type(1)",
+            "text": "Sep 10",
+            "fontPx": 22.21,
+            "time": 83.699,
+            "seconds": 4.185
+          },
+          {
+            "selector": "#w7 > div:nth-of-type(2)",
+            "text": "github.com/deepseek-ai/deepseek-harness",
+            "fontPx": 23,
+            "time": 0,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w14 > div:nth-of-type(3)",
+            "text": "github.com/deepseek-ai/deepseek-harness (commit 074889e)",
+            "fontPx": 23,
+            "time": 10.462,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#w22 > div:nth-of-type(3)",
+            "text": "@glitch_catAI on X, Sep 26, 2026",
+            "fontPx": 23,
+            "time": 19.879,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w42 > div:nth-of-type(3)",
+            "text": "DeepSeek API change log",
+            "fontPx": 23,
+            "time": 50.22,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#w50 > div:nth-of-type(3)",
+            "text": "Statista · Bloomberg ($589B)",
+            "fontPx": 23,
+            "time": 63.821,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#w57 > div:nth-of-type(3)",
+            "text": "DeepSeek API news · @deepseek_ai on X",
+            "fontPx": 23,
+            "time": 77.422,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w69 > div:nth-of-type(3)",
+            "text": "@deepseek_ai on X · Hugging Face model card",
+            "fontPx": 23,
+            "time": 87.884,
+            "seconds": 18.833
+          },
+          {
+            "selector": "#w79 > div:nth-of-type(3)",
+            "text": "api-docs.deepseek.com",
+            "fontPx": 23,
+            "time": 106.717,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#w95 > div:nth-of-type(2)",
+            "text": "DeepSeek API news, Sep 10, 2026",
+            "fontPx": 23,
+            "time": 119.272,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w103 > div:nth-of-type(2)",
+            "text": "github.com/deepseek-ai/deepseek-harness · public since Aug 13, 2026",
+            "fontPx": 23,
+            "time": 129.734,
+            "seconds": 16.74
+          },
+          {
+            "selector": "#w117 > div:nth-of-type(3)",
+            "text": "github.com/deepseek-ai/deepseek-harness · commits 0a13e89 and 7755d97 (Sep 24, 2026)",
+            "fontPx": 23,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#w124 > div:nth-of-type(2)",
+            "text": "@0x0SojalSec on X, Oct 28 · 快科技 (mydrivers.com)",
+            "fontPx": 23,
+            "time": 162.168,
+            "seconds": 13.601
+          },
+          {
+            "selector": "#w130 > div:nth-of-type(3)",
+            "text": "github.com/deepseek-ai/deepseek-harness",
+            "fontPx": 23,
+            "time": 175.769,
+            "seconds": 7.323
+          },
+          {
+            "selector": "#w145 > div:nth-of-type(3)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts L159–171 (excerpted)",
+            "fontPx": 23,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#w155 > div:nth-of-type(3)",
+            "text": "deepseek-harness · packages/llm/llm-deepseek-account/tests/provider.spec.ts L186, L195 (excerpted) · also listed-catalog.spec.ts L167",
+            "fontPx": 23,
+            "time": 213.434,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#w162 > div:nth-of-type(2)",
+            "text": "github.com/deepseek-ai/deepseek-harness",
+            "fontPx": 23,
+            "time": 223.896,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#w177 > div:nth-of-type(2)",
+            "text": "@glitch_catAI on X, Sep 26, 2026 · 846K views",
+            "fontPx": 23,
+            "time": 247.96,
+            "seconds": 31.387
+          },
+          {
+            "selector": "#w185 > div:nth-of-type(3)",
+            "text": "@glitch_catAI on X",
+            "fontPx": 23,
+            "time": 279.347,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w191 > div:nth-of-type(3)",
+            "text": "@glitch_catAI on X",
+            "fontPx": 23,
+            "time": 288.763,
+            "seconds": 12.555
+          },
+          {
+            "selector": "#w197 > div:nth-of-type(2)",
+            "text": "@theinformation on X, Sep 21, 2026",
+            "fontPx": 23,
+            "time": 301.318,
+            "seconds": 11.509
+          },
+          {
+            "selector": "#w204 > div:nth-of-type(3)",
+            "text": "The Information via The Standard · 36Kr",
+            "fontPx": 23,
+            "time": 312.827,
+            "seconds": 16.74
+          },
+          {
+            "selector": "#w223 > div:nth-of-type(2)",
+            "text": "Caiwen (via ifeng.com) · Star Market Daily · TechNode, Nov 4",
+            "fontPx": 23,
+            "time": 340.029,
+            "seconds": 24.064
+          },
+          {
+            "selector": "#w230 > div:nth-of-type(3)",
+            "text": "Caiwen (财闻), Nov 3, 2026",
+            "fontPx": 23,
+            "time": 364.093,
+            "seconds": 25.109
+          },
+          {
+            "selector": "#w245 > div:nth-of-type(3)",
+            "text": "The Information (paywalled; via AI Weekly summary)",
+            "fontPx": 23,
+            "time": 404.896,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#w254 > div:nth-of-type(3)",
+            "text": "FlashMLA README, Sep 30, 2026",
+            "fontPx": 23,
+            "time": 419.544,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#w262 > div:nth-of-type(3)",
+            "text": "Tom's Hardware · SCMP",
+            "fontPx": 23,
+            "time": 435.237,
+            "seconds": 21.971
+          },
+          {
+            "selector": "#w278 > div:nth-of-type(3)",
+            "text": "SEC 8-K (Nov 11) · CNBC, Bloomberg (Nov 18) · Boston Globe/AP (Nov 16) · photo: Anderseidesvik, CC BY-SA 4.0",
+            "fontPx": 23,
+            "time": 469.763,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#w289 > div:nth-of-type(3)",
+            "text": "36Kr · 快科技 · Caiwen",
+            "fontPx": 23,
+            "time": 488.596,
+            "seconds": 25.109
+          },
+          {
+            "selector": "#w297 > div:nth-of-type(3)",
+            "text": "DeepSeek API change log",
+            "fontPx": 23,
+            "time": 513.706,
+            "seconds": 28.248
+          },
+          {
+            "selector": "#i225 > div:nth-of-type(2)",
+            "text": "STILL IN SELECTION",
+            "fontPx": 24,
+            "time": 364.093,
+            "seconds": 25.109
+          },
+          {
+            "selector": "#cl132 > span:nth-of-type(1)",
+            "text": "159",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl132 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5' },",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl133 > span:nth-of-type(1)",
+            "text": "160",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl133 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5-open', ...requires('0.0.1') },",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl134 > span:nth-of-type(1)",
+            "text": "161",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl134 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5-next', ...requires('99.0.0-alpha.1') },",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl135 > span:nth-of-type(1)",
+            "text": "162",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl135 > span:nth-of-type(2)",
+            "text": "{ id: 'deepseek-v4-pro' },",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl136 > span:nth-of-type(1)",
+            "text": "163",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl137 > span:nth-of-type(1)",
+            "text": "164",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl138 > span:nth-of-type(1)",
+            "text": "165",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl138 > span:nth-of-type(2)",
+            "text": "expect(…listModels(…)).toEqual(['deepseek-flash', 'deepseek-v5-open'])",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl139 > span:nth-of-type(1)",
+            "text": "166",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl139 > span:nth-of-type(2)",
+            "text": "await expect(…'deepseek-v5' …).rejects.toMatchObject({ code: 'MODEL_UNSUPPORTED' })",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl140 > span:nth-of-type(1)",
+            "text": "167",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl141 > span:nth-of-type(1)",
+            "text": "168",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#cl141 > span:nth-of-type(2)",
+            "text": ".rejects.toMatchObject({ code: 'CLIENT_UPGRADE_REQUIRED', …99.0.0-alpha.1 })",
+            "fontPx": 24.01,
+            "time": 183.093,
+            "seconds": 30.34
+          },
+          {
+            "selector": "#i169",
+            "text": "LEAK #2",
+            "fontPx": 24.01,
+            "time": 247.96,
+            "seconds": 31.387
+          },
+          {
+            "selector": "#i218",
+            "text": "THE REAL NEWS",
+            "fontPx": 24.01,
+            "time": 340.029,
+            "seconds": 24.064
+          },
+          {
+            "selector": "#i240 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Sep 21, 2026",
+            "fontPx": 24.01,
+            "time": 404.896,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#i97",
+            "text": "LEAK #1",
+            "fontPx": 24.02,
+            "time": 129.734,
+            "seconds": 16.74
+          },
+          {
+            "selector": "#i299 > div:nth-of-type(2)",
+            "text": "REAL · PLACEHOLDERS",
+            "fontPx": 24.03,
+            "time": 545.093,
+            "seconds": 32.433
+          },
+          {
+            "selector": "#cl147 > span:nth-of-type(1)",
+            "text": "186",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl147 > span:nth-of-type(2)",
+            "text": "modelOverrides: { …, 'deepseek-v5': { contextWindow: 9 } }",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl148 > span:nth-of-type(1)",
+            "text": "187",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl149 > span:nth-of-type(1)",
+            "text": "188",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl149 > span:nth-of-type(2)",
+            "text": "…resolveModelInfo(…, 'deepseek-v5')",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl150 > span:nth-of-type(1)",
+            "text": "189",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#cl150 > span:nth-of-type(2)",
+            "text": ".resolves.toMatchObject({ context: { contextWindow: 9 } })",
+            "fontPx": 24.05,
+            "time": 214.48,
+            "seconds": 9.416
+          },
+          {
+            "selector": "#i194 > div:nth-of-type(2)",
+            "text": "OUT OF CONTEXT",
+            "fontPx": 24.05,
+            "time": 302.364,
+            "seconds": 10.463
+          },
+          {
+            "selector": "#i201 > div:nth-of-type(2)",
+            "text": "NOT TIED TO V5",
+            "fontPx": 24.05,
+            "time": 314.919,
+            "seconds": 14.648
+          },
+          {
+            "selector": "#i226 > div:nth-of-type(2)",
+            "text": "INTERNAL SECRETS",
+            "fontPx": 24.06,
+            "time": 368.278,
+            "seconds": 20.924
+          },
+          {
+            "selector": "#i187 > div:nth-of-type(2)",
+            "text": "NO SOURCE",
+            "fontPx": 24.08,
+            "time": 290.856,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#i285 > div:nth-of-type(2)",
+            "text": "OUTDATED",
+            "fontPx": 24.08,
+            "time": 493.827,
+            "seconds": 19.878
+          },
+          {
+            "selector": "#i300 > div:nth-of-type(2)",
+            "text": "NO EVIDENCE",
+            "fontPx": 24.09,
+            "time": 550.324,
+            "seconds": 27.202
+          },
+          {
+            "selector": "#i164 > div:nth-of-type(2)",
+            "text": "FAIR",
+            "fontPx": 24.11,
+            "time": 236.451,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#i17 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.12,
+            "time": 21.971,
+            "seconds": 7.324
+          },
+          {
+            "selector": "#i126",
+            "text": "REAL",
+            "fontPx": 24.12,
+            "time": 177.861,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#i24",
+            "text": "REAL",
+            "fontPx": 24.13,
+            "time": 33.48,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#i195 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Sep 21, 2026: about Huawei chips, not V5",
+            "fontPx": 24.15,
+            "time": 305.503,
+            "seconds": 7.324
+          },
+          {
+            "selector": "#i301 > div:nth-of-type(2)",
+            "text": "NO SOURCE",
+            "fontPx": 24.15,
+            "time": 556.602,
+            "seconds": 20.924
+          },
+          {
+            "selector": "#i26",
+            "text": "RUMOR",
+            "fontPx": 24.16,
+            "time": 34.526,
+            "seconds": 7.324
+          },
+          {
+            "selector": "#i171 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.17,
+            "time": 261.561,
+            "seconds": 17.786
+          },
+          {
+            "selector": "#i18 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.19,
+            "time": 24.064,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#i28",
+            "text": "MADE UP",
+            "fontPx": 24.19,
+            "time": 35.572,
+            "seconds": 6.278
+          },
+          {
+            "selector": "#i202 > div:nth-of-type(2)",
+            "text": "FUTURE GOAL",
+            "fontPx": 24.19,
+            "time": 321.197,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#i302 > div:nth-of-type(2)",
+            "text": "NOT TIED TO V5",
+            "fontPx": 24.19,
+            "time": 560.787,
+            "seconds": 16.739
+          },
+          {
+            "selector": "#i122 > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "guessing V5 Pro and V5 Flash in mid-November",
+            "fontPx": 24.2,
+            "time": 169.491,
+            "seconds": 6.278
+          },
+          {
+            "selector": "#i158",
+            "text": "NO SPECS",
+            "fontPx": 24.2,
+            "time": 228.081,
+            "seconds": 4.185
+          },
+          {
+            "selector": "#i172 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.2,
+            "time": 264.7,
+            "seconds": 14.647
+          },
+          {
+            "selector": "#i286 > div:nth-of-type(2)",
+            "text": "NOT HAPPENING",
+            "fontPx": 24.2,
+            "time": 502.197,
+            "seconds": 11.508
+          },
+          {
+            "selector": "#i188 > div:nth-of-type(2)",
+            "text": "CONTRADICTED",
+            "fontPx": 24.23,
+            "time": 296.087,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#i159",
+            "text": "NO BENCHMARKS",
+            "fontPx": 24.24,
+            "time": 229.127,
+            "seconds": 3.139
+          },
+          {
+            "selector": "#i173 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.24,
+            "time": 267.838,
+            "seconds": 11.509
+          },
+          {
+            "selector": "#i19 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.26,
+            "time": 26.156,
+            "seconds": 3.139
+          },
+          {
+            "selector": "#i303 > div:nth-of-type(2)",
+            "text": "REPORTED · UNCONFIRMED",
+            "fontPx": 24.26,
+            "time": 567.064,
+            "seconds": 10.462
+          },
+          {
+            "selector": "#i228 > div:nth-of-type(2)",
+            "text": "NO · REPORTED PLAN",
+            "fontPx": 24.27,
+            "time": 382.925,
+            "seconds": 6.277
+          },
+          {
+            "selector": "#i165 > div:nth-of-type(2)",
+            "text": "NOT IN THE CODE",
+            "fontPx": 24.28,
+            "time": 243.775,
+            "seconds": 3.138
+          },
+          {
+            "selector": "#i174 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.28,
+            "time": 270.977,
+            "seconds": 8.37
+          },
+          {
+            "selector": "#i181",
+            "text": "NO CHART",
+            "fontPx": 24.28,
+            "time": 285.625,
+            "seconds": 3.138
+          },
+          {
+            "selector": "#i287 > div:nth-of-type(2)",
+            "text": "LATEST REPORT",
+            "fontPx": 24.28,
+            "time": 507.428,
+            "seconds": 6.277
+          },
+          {
+            "selector": "#i160",
+            "text": "NO RELEASE DATE",
+            "fontPx": 24.29,
+            "time": 230.174,
+            "seconds": 2.092
+          },
+          {
+            "selector": "#i20 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.3,
+            "time": 27.202,
+            "seconds": 2.093
+          },
+          {
+            "selector": "#i304 > div:nth-of-type(2)",
+            "text": "LIKELY · NOT PROMISED",
+            "fontPx": 24.31,
+            "time": 572.295,
+            "seconds": 5.231
+          },
+          {
+            "selector": "#i175 > div:nth-of-type(2)",
+            "text": "CLAIM",
+            "fontPx": 24.32,
+            "time": 275.162,
+            "seconds": 4.185
+          },
+          {
+            "selector": "#i182",
+            "text": "NO TABLE",
+            "fontPx": 24.32,
+            "time": 286.671,
+            "seconds": 2.092
+          },
+          {
+            "selector": "#i183",
+            "text": "NO SCORE",
+            "fontPx": 24.36,
+            "time": 287.717,
+            "seconds": 1.046
+          },
+          {
+            "selector": "div.pr",
+            "text": "no longer Nvidia CEO",
+            "fontPx": 25.22,
+            "time": 474.995,
+            "seconds": 4.184
+          },
+          {
+            "selector": "#cl105 > span:nth-of-type(1)",
+            "text": "157",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl105 > span:nth-of-type(2)",
+            "text": "const server = await listing(json({ data: [",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl106 > span:nth-of-type(1)",
+            "text": "158",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl106 > span:nth-of-type(2)",
+            "text": "FLASH,",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl107 > span:nth-of-type(1)",
+            "text": "159",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl107 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5' },",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl108 > span:nth-of-type(1)",
+            "text": "160",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl108 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5-open', ...requires('0.0.1') },",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl109 > span:nth-of-type(1)",
+            "text": "161",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl109 > span:nth-of-type(2)",
+            "text": "{ ...PRO, id: 'deepseek-v5-next', ...requires('99.0.0-alpha.1') },",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl110 > span:nth-of-type(1)",
+            "text": "162",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "#cl110 > span:nth-of-type(2)",
+            "text": "{ id: 'deepseek-v4-pro' },",
+            "fontPx": 26.02,
+            "time": 146.474,
+            "seconds": 15.694
+          },
+          {
+            "selector": "span.mono.ink3",
+            "text": "LIKELY RELEASE",
+            "fontPx": 26.23,
+            "time": 378.74,
+            "seconds": 10.462
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Output, off-peak\" (3 words) is on screen 0.78 s (±0.03 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Output, off-peak",
+        "selector": "#i76 > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1395.46,
+          "y": 432.15,
+          "width": 243.97000000000003,
+          "height": 36.45999999999998
+        },
+        "time": 110.902,
+        "words": 3,
+        "seconds": 0.784,
+        "floorSeconds": 1.05
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"per million tokens\" (3 words) is on screen 0.78 s (±0.03 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "per million tokens",
+        "selector": "#i76 > div:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1395.46,
+          "y": 589.92,
+          "width": 235.76999999999998,
+          "height": 34.43999999999994
+        },
+        "time": 110.902,
+        "words": 3,
+        "seconds": 0.784,
+        "floorSeconds": 1.05
+      }
+    ],
+    "enabled": true,
+    "step": 1.0459999999999994,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "462dce94-c47e-4625-9668-d798e94f2879",
+    "revision": "f6cac1e1-eee0-494b-9f03-7839ed7a86d9",
+    "report": "C:\\Users\\daggu222105\\VIDEO-TOOL\\ai-equator\\deepseek\\.hyperframes\\artifacts\\checks\\462dce94-c47e-4625-9668-d798e94f2879.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.16",
+    "latestVersion": "0.9.72",
+    "updateAvailable": true,
+    "checkedAt": "2026-11-20T13:10:16.644Z",
+    "skillsOutdated": 0,
+    "skillsMissing": 0
+  }
+}

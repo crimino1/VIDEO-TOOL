@@ -1,0 +1,125 @@
+(0:00.00) ByteDance just pushed Cdance 2.5 up to 4K and dropped a flash version that costs a fraction
+(0:05.92) of the price.
+(0:07.28) This is the model that makes a full 30 second video with sound in one go.
+(0:12.42) So in this video, I'm going to show you what it can actually do.
+(0:16.24) The real tests people ran, where it breaks, how it ranks against Google, cling and wan,
+(0:22.38) and what one clip really costs you.
+(0:25.26) Quick background, Cdance 2.0 came out in February and went viral, and Hollywood was not happy.
+(0:32.02) Disney, Paramount and the Motion Picture Association all sent ByteDance legal letters over copyrighted
+(0:37.90) characters.
+(0:39.58) Then Cdance 2.5 launched on July 31, in Dreamina and ByteDance's own apps, and this month,
+(0:46.12) it got two upgrades, a 4K version which opened to developers on November 17, after a trial
+(0:52.26) with 20 studios, and Cdance 2.5 flash, a faster and cheaper version, on November 15.
+(0:59.82) So what's new?
+(1:01.50) The big one is length.
+(1:03.12) It makes up to 30 seconds in a single generation, double what 2.0 could do.
+(1:08.08) Video and audio come out together, so you get dialogue with lip sync, sound effects and
+(1:12.98) background sound, and you can feed it a lot of references, up to 30 images, 10 video clips,
+(1:19.38) and 10 audio clips at once.
+(1:21.42) 2.0 allowed 12 in total.
+(1:24.18) It goes from 480p all the way to 4K, in six aspect ratios, and you can keep extending a
+(1:29.46) scene for several minutes.
+(1:31.08) You can also edit at the timestamp level, change the camera angle of a shot, or swap
+(1:35.48) out a green screen.
+(1:36.88) The 4K tier adds 10-bit color, plus a cheap 480p draft mode, so you can preview a shot
+(1:42.40) before you pay for the big one.
+(1:44.28) Two more things matter here.
+(1:45.46) The 4K version keeps fine text from your references much sharper, like posters and product packaging,
+(1:51.90) which is a big deal for ads.
+(1:53.90) And early testers found that 2.5 follows instructions more strictly than 2.0, so vague prompts actually
+(2:00.32) get worse results.
+(2:02.00) Be specific about who is in the shot, where they are, what the camera does, and what we
+(2:06.96) hear.
+(2:08.10) Okay, enough specs.
+(2:10.24) Let's look at what it makes.
+(2:11.14) This is the missing pair.
+(2:13.58) A short film bite dance says was made end-to-end with C-dance 2.5, and yeah, it looks great.
+(2:19.94) But remember, this is their own showcase, so it's the best case.
+(2:24.14) The real question is what happens when normal people use it.
+(2:27.54) A few more of their demos.
+(2:29.16) This one takes a green screen clip of football training, swaps the polls for real defenders,
+(2:34.00) and ends with a goal in a packed stadium.
+(2:36.00) This one turns a plain gray 3D model of a car into a photoreal render, and this concert keeps
+(2:42.60) a whole orchestra and choir consistent through one long shot, which used to be really hard.
+(2:48.22) Now creators.
+(2:49.86) One person got 14 different shots out of a single generation with synced dialogue and a full
+(2:55.02) fight scene.
+(2:56.22) Another made a 1950s diner where time freezes and then rewinds.
+(3:01.52) 16 more from A16Z cloned her own face and voice from reference clips, and had herself
+(3:07.02) walk through their office talking.
+(3:09.28) And this one is a whole car commercial, an F1 car racing a fighter jet.
+(3:14.46) Let's get to the head-to-head.
+(3:16.12) YouTuber Jory Van Hofwegen ran C-dance 2.5 against Cling 4.0 on six identical prompts.
+(3:22.86) First, a guy making breakfast.
+(3:24.48) C-dance got a four out of five.
+(3:26.34) The only mistake was that he cracks one egg and two come out.
+(3:29.72) Cling got a two.
+(3:30.40) It put the mocha pot next to the burner instead of on it.
+(3:33.92) The toast popped up without being toasted, and the whole thing had that plastic AI look.
+(3:38.62) After all six rounds, C-dance won five to one.
+(3:42.22) But there's a catch.
+(3:43.78) Cling looked better for animation, and it costs about half as much, or less than a third with
+(3:48.48) its current discount.
+(3:50.02) So his advice was simple.
+(3:51.86) C-dance for realistic people and talking scenes, cling for anime and anything you make in bulk.
+(3:56.70) Curious Refuge, a filmmaking school, ran a much harder test.
+(4:01.86) They loaded the model with reference photos of an antique shop and its props.
+(4:05.92) It used almost everything, the pipe, the sextant, the shop owner.
+(4:10.60) And then, out of nowhere, the guy turned into Green Lantern at the end.
+(4:15.12) In another test, they actually thought C-dance 2.0 did better than 2.5.
+(4:19.56) Their conclusion?
+(4:20.84) The best physics and emotion on the market, but none of their 30 second clips were usable
+(4:24.92) as they came out.
+(4:26.42) You'd still cut them up.
+(4:27.82) And people have posted clear failures, too.
+(4:30.42) In this dogfight, bullets come out of nowhere, and both planes just vanish.
+(4:35.28) One creator tried a face swap that failed twice, and said Cling looked more real at a fraction
+(4:40.20) of the price.
+(4:41.50) And another tried to remove tattoos from a hand with an edit, and they never went away.
+(4:46.10) C-dance itself says complex motion and interactions between several people still need work.
+(4:52.06) Now the benchmarks.
+(4:53.10) On artificial analysis where real people vote on blind comparisons, C-dance 2.5 is number
+(4:59.46) 5 for text-to-video with audio.
+(5:02.28) Alibaba's WAN 3.0 is first.
+(5:04.90) Google's Gemini Omni Flash is right behind C-dance, and Cling 3.0 Pro and V0 3.1 are
+(5:10.78) much further down.
+(5:12.34) For image-to-video, C-dance 2.5 is number 2, just behind MAGI 2.
+(5:17.78) Here's something interesting, though.
+(5:19.12) On Ella Marina's video board, C-dance 2.5 actually sits one spot below C-dance 2.0, so
+(5:26.50) the upgrade isn't a clear win everywhere.
+(5:29.22) And the new Flash version lands at number 17 for text-to-video, and number 7 for image-to-video.
+(5:35.36) In one side-by-side test, a creator called Flash versus the full model mix-and-match, basically
+(5:41.58) a tie on multi-scene shots.
+(5:43.86) Someone also put it against Google's Gemini Omni 1.2 with the same prompt.
+(5:48.02) His C-dance clip cost about $3.5 and Google's about $1, so the question isn't just which
+(5:54.76) looks better, it's whether it looks three times better.
+(5:58.64) So, cost.
+(6:00.16) And this is where it hurts.
+(6:01.86) On fall, C-dance 2.5 costs about $0.22 a second at 480p, $0.47 at 720p, $1.16 at 1080p,
+(6:11.80) and $1.84 at 4k, so one 10 second clip in 4k is about $18.
+(6:18.10) Flash is around 15 cents a second, so $1.50 for 10 seconds.
+(6:23.06) Now compare that.
+(6:24.52) For a 10 second clip, Vio 3.1 is about $4, or $1.20 on VioFast.
+(6:31.00) Cling 3.0 Pro at 1080p is around $1.70, Runway's Gen 4.5 is about $1.20, and Google's
+(6:38.26) Gemini Omni Flash starts at just $0.70.
+(6:40.96) Sora isn't even an option anymore.
+(6:43.44) OpenAI shut down its API in September, so at 1080p, C-dance costs around 7 times more than cling.
+(6:50.50) If you use it in Dreaminai instead, 2.5 costs 37 credits a second at 720p, more than double
+(6:57.10) the 17 that 2.0 costs.
+(6:59.74) The basic plan is $15 a month, and right now in the US, the first month is $0.29 for 1,575 credits.
+(7:08.28) That's about 42 seconds of C-dance 2.5.
+(7:12.04) And on safety, after all the Hollywood trouble, 2.5 adds visible watermarks and content credentials,
+(7:19.08) limits on generating real people's faces, and identity checks for likeness.
+(7:24.10) ByteDance also offers a library of over 10,000 virtual humans to use instead.
+(7:29.24) One more thing, the official BytePlus API isn't available in the United States,
+(7:34.10) though you can still use it through Fall, Runway, and others.
+(7:37.98) So who is it for?
+(7:39.58) If you make films or ads with real-looking people, talking scenes, or the same character
+(7:44.14) across shots, it's the best tool you can get right now, and the references give you real control.
+(7:50.10) But if you make anime, if you need lots of clips on a budget,
+(7:53.76) or if your scene has heavy physics, cling, veyofast, or Gemini Omni Flash will save you a lot of money.
+(8:01.16) So that's C-dance 2.5.
+(8:03.84) Honestly, it's stunning when it works, and 30 seconds with sound in one shot is a real step forward.
+(8:10.06) But it's expensive, and it still messes up in ways that cost you retries.
+(8:14.78) Let me know in the comments if you've tried it, and which video model you're using right now.
+(8:19.76) If you enjoyed this, hit like and subscribe, and I'll see you in the next one.

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.6)}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9;text-shadow:0 2px 6px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.55)}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="168.900" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<video id="s218v" class="clip" src="assets/clips/lightning_851.mp4" muted playsinline data-start="0.000" data-duration="6.320" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s218" class="clip" data-start="0.000" data-duration="6.320" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s218k"></div><div class="fadeb"></div><div class="vig"></div><div id="o219" class="line" style="opacity:0">Satellites have caught antimatter shooting up from lightning.</div></div>
+<div id="s220" class="clip" data-start="6.320" data-duration="9.900" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s220k"></div><div class="vig"></div><div id="o221" class="big" style="opacity:0">nanograms<small>all the antimatter ever made at CERN</small></div></div>
+<div id="s222" class="clip" data-start="16.220" data-duration="12.480" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s222k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o223" class="line" style="opacity:0">Physics eventually moved past it.</div></div>
+<div id="s224" class="clip" data-start="28.700" data-duration="3.380" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb225" style="position:absolute;left:741px;top:130px;width:437px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/positron2.jpg" alt="positron2" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o226" class="line" style="opacity:0">But the prediction was exactly right.</div></div>
+<video id="s227v" class="clip" src="assets/clips/nightsky2_883.mp4" muted playsinline data-start="32.080" data-duration="2.640" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s227" class="clip" data-start="32.080" data-duration="2.640" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s227k"></div><div class="vig"></div></div>
+<div id="s228" class="clip" data-start="34.720" data-duration="12.560" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s228k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o229" class="cap" style="opacity:0">the Big Bang: matter and antimatter, one for one</div></div>
+<div id="s230" class="clip" data-start="47.280" data-duration="8.480" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s230k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o231" class="line" style="opacity:0">No stars. No planets. No people.</div></div>
+<div id="s232" class="clip" data-start="55.760" data-duration="12.140" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s232k"></div><div class="vig"></div><div id="o233" class="big" style="opacity:0">1,000,000,001<small>for every 1,000,000,000 of antimatter</small></div></div>
+<div id="s234" class="clip" data-start="67.900" data-duration="8.760" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s234k"></div><div class="vig"></div></div>
+<video id="s235v" class="clip" src="assets/clips/sunearth_928.mp4" muted playsinline data-start="76.660" data-duration="4.700" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s235" class="clip" data-start="76.660" data-duration="4.700" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s235k"></div><div class="vig"></div></div>
+<div id="s236" class="clip" data-start="81.360" data-duration="12.720" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s236k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o237" class="line" style="opacity:0">Nobody knows.</div></div>
+<div id="s238" class="clip" data-start="94.080" data-duration="3.840" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="kb239" style="position:absolute;left:690px;top:130px;width:539px;height:740px;box-shadow:0 30px 90px rgba(0,0,0,.7)"><img src="assets/img_s/dirac61.jpg" alt="dirac61" style="width:100%;height:100%;object-fit:contain"></div><div class="vig"></div><div id="o240" class="cap" style="opacity:0">Paul Dirac · 1902–1984</div></div>
+<video id="s241v" class="clip" src="assets/clips/westminster_949.mp4" muted playsinline data-start="97.920" data-duration="6.600" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s241" class="clip" data-start="97.920" data-duration="6.600" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s241k"></div><div class="fadeb"></div><div class="vig"></div><div id="o242" class="cap" style="opacity:0">Westminster Abbey, London</div></div>
+<div id="s243" class="clip" data-start="104.520" data-duration="9.060" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s243k"></div><div class="vig"></div></div>
+<div id="s244" class="clip" data-start="113.580" data-duration="10.960" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s244k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o245" class="line" style="opacity:0">Spin. A mirror world. A question about why anything exists.</div></div>
+<div id="s246" class="clip" data-start="124.540" data-duration="10.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s246k"></div><div class="vig"></div></div>
+<div id="s247" class="clip" data-start="134.660" data-duration="6.100" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s247k"></div><div class="vig"></div></div>
+<div id="s248" class="clip" data-start="140.760" data-duration="8.980" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s248k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o249" class="line" style="opacity:0">He refused to throw the second one away.</div></div>
+<div id="s250" class="clip" data-start="149.740" data-duration="5.500" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s250k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o251" class="line" style="opacity:0">A track in a cloud chamber proved the math was right.</div></div>
+<video id="s252v" class="clip" src="assets/clips/milkyway_1006.mp4" muted playsinline data-start="155.240" data-duration="5.840" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s252" class="clip" data-start="155.240" data-duration="5.840" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s252k"></div><div class="vig"></div></div>
+<div id="s253" class="clip" data-start="161.080" data-duration="7.820" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s253k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o254" class="line" style="opacity:0">The one in a billion that didn&#x27;t meet its twin.</div></div>
+<div id="fout" class="black" style="z-index:9;opacity:0"></div>
+</div>
+<script>window.LAB = [[6.32, 16.22, "cosmos", {"mode": "tiny", "FT0": 858.02}], [16.22, 28.7, "sea", {"mode": "sea", "FT0": 867.92}], [34.72, 47.28, "bang", {"mode": "bang", "FT0": 886.42}], [47.28, 55.76, "bang", {"mode": "light", "FT0": 898.98}], [55.76, 67.9, "bang", {"mode": "tip", "FT0": 907.46}], [67.9, 76.66, "bang", {"mode": "left", "FT0": 919.6}], [81.36, 94.08, "bang", {"mode": "why", "FT0": 933.06}], [104.52, 113.58, "stone", {"mode": "slab", "FT0": 956.22}], [113.58, 124.54, "stone", {"mode": "close", "FT0": 965.28}], [124.54, 134.66, "eqpaper", {"mode": "recap", "FT0": 976.24}], [134.66, 140.76, "triangle", {"mode": "recap", "FT0": 986.36}], [140.76, 149.74, "roots", {"mode": "recap", "FT0": 992.46}], [149.74, 155.24, "chamber", {"mode": "proof", "FT0": 1001.44}], [161.08, 168.9, "bang", {"mode": "end", "FT0": 1012.78}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_0shared.js"></script>
+<script src="assets/js/k_chamber.js"></script>
+<script src="assets/js/k_cosmos.js"></script>
+<script src="assets/js/k_desk.js"></script>
+<script src="assets/js/k_math.js"></script>
+<script src="assets/js/k_sea.js"></script>
+<script src="assets/js/k_theory.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s218k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.fromTo("#o219",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},2.000);
+tl.to("#o219",{opacity:0,duration:0.5,ease:"power1.inOut"},5.700);
+tl.fromTo("#s220k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},6.320);
+tl.fromTo("#o221",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},9.300);
+tl.to("#o221",{opacity:0,duration:0.5,ease:"power1.inOut"},15.500);
+tl.fromTo("#s222k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},16.220);
+tl.fromTo("#o223",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},20.900);
+tl.to("#o223",{opacity:0,duration:0.5,ease:"power1.inOut"},22.800);
+tl.fromTo("#kb225",{scale:1.0,y:6},{scale:1.09,y:-6,duration:3.380,ease:"sine.inOut"},28.700);
+tl.fromTo("#s224",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},28.700);
+tl.fromTo("#o226",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},28.900);
+tl.to("#o226",{opacity:0,duration:0.5,ease:"power1.inOut"},31.400);
+tl.fromTo("#s227k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},32.080);
+tl.fromTo("#s228k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},34.720);
+tl.fromTo("#o229",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},36.700);
+tl.to("#o229",{opacity:0,duration:0.5,ease:"power1.inOut"},41.700);
+tl.fromTo("#s230k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},47.280);
+tl.fromTo("#o231",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},51.800);
+tl.to("#o231",{opacity:0,duration:0.5,ease:"power1.inOut"},55.100);
+tl.fromTo("#s232k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},55.760);
+tl.fromTo("#o233",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},60.900);
+tl.to("#o233",{opacity:0,duration:0.5,ease:"power1.inOut"},67.200);
+tl.fromTo("#s234k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},67.900);
+tl.fromTo("#s235k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},76.660);
+tl.fromTo("#s236k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},81.360);
+tl.fromTo("#o237",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},84.800);
+tl.to("#o237",{opacity:0,duration:0.5,ease:"power1.inOut"},87.600);
+tl.fromTo("#kb239",{scale:1.0,y:6},{scale:1.09,y:-6,duration:3.840,ease:"sine.inOut"},94.080);
+tl.fromTo("#s238",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},94.080);
+tl.fromTo("#o240",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},94.500);
+tl.to("#o240",{opacity:0,duration:0.5,ease:"power1.inOut"},97.200);
+tl.fromTo("#s241k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},97.920);
+tl.fromTo("#o242",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},98.300);
+tl.to("#o242",{opacity:0,duration:0.5,ease:"power1.inOut"},103.600);
+tl.fromTo("#s243k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},104.520);
+tl.fromTo("#s244k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},113.580);
+tl.fromTo("#o245",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},115.700);
+tl.to("#o245",{opacity:0,duration:0.5,ease:"power1.inOut"},123.800);
+tl.fromTo("#s246k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},124.540);
+tl.fromTo("#s247k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},134.660);
+tl.fromTo("#s248k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},140.760);
+tl.fromTo("#o249",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},140.900);
+tl.to("#o249",{opacity:0,duration:0.5,ease:"power1.inOut"},143.000);
+tl.fromTo("#s250k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},149.740);
+tl.fromTo("#o251",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},149.900);
+tl.to("#o251",{opacity:0,duration:0.5,ease:"power1.inOut"},154.600);
+tl.fromTo("#s252k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},155.240);
+tl.fromTo("#s253k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},161.080);
+tl.fromTo("#o254",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},163.900);
+tl.fromTo("#fout",{opacity:0},{opacity:1,duration:1.4,ease:"power1.inOut"},167.400);
+tl.set({}, {}, 168.900);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

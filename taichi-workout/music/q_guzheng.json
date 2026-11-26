@@ -1,0 +1,1362 @@
+{
+ "result_count": 22,
+ "page_count": 2,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "0b172e45-6752-4ee8-8e8f-fd234e4c135d",
+   "title": "Shining",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1199567",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1199567&format=mp32",
+   "creator": "Andrey Avkhimovich",
+   "creator_url": "https://www.jamendo.com/artist/368142/Andrey_Avkhimovich",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "experimental",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Shining\" by Andrey Avkhimovich is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Not Anymore",
+    "foreign_landing_url": "https://www.jamendo.com/album/144290/not-anymore",
+    "creator": "Andrey Avkhimovich",
+    "creator_url": "https://www.jamendo.com/artist/368142/Andrey_Avkhimovich",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 192000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0b172e45-6752-4ee8-8e8f-fd234e4c135d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0b172e45-6752-4ee8-8e8f-fd234e4c135d/",
+   "related_url": "https://api.openverse.org/v1/audio/0b172e45-6752-4ee8-8e8f-fd234e4c135d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0b172e45-6752-4ee8-8e8f-fd234e4c135d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8c6747f3-81d1-4382-b778-e1ec751d8057",
+   "title": "A Sitar in Akihabara",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1396970",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1396970&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"A Sitar in Akihabara\" by Audiodyne is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TokyoTales",
+    "foreign_landing_url": "https://www.jamendo.com/album/163611/tokyotales",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 339000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8c6747f3-81d1-4382-b778-e1ec751d8057/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8c6747f3-81d1-4382-b778-e1ec751d8057/",
+   "related_url": "https://api.openverse.org/v1/audio/8c6747f3-81d1-4382-b778-e1ec751d8057/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8c6747f3-81d1-4382-b778-e1ec751d8057/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "c842ef8a-15b6-4fee-8aa3-67bd98de622c",
+   "title": "Enemy Ahead",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407354",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407354&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "experimental",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Enemy Ahead\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 150000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/c842ef8a-15b6-4fee-8aa3-67bd98de622c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/c842ef8a-15b6-4fee-8aa3-67bd98de622c/",
+   "related_url": "https://api.openverse.org/v1/audio/c842ef8a-15b6-4fee-8aa3-67bd98de622c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/c842ef8a-15b6-4fee-8aa3-67bd98de622c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "efa89674-754b-4fdb-94af-ea0950464ae8",
+   "title": "Escape And Save Them",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407355",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407355&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Escape And Save Them\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 183000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/efa89674-754b-4fdb-94af-ea0950464ae8/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/efa89674-754b-4fdb-94af-ea0950464ae8/",
+   "related_url": "https://api.openverse.org/v1/audio/efa89674-754b-4fdb-94af-ea0950464ae8/related/",
+   "waveform": "https://api.openverse.org/v1/audio/efa89674-754b-4fdb-94af-ea0950464ae8/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9dc5255e-2309-4edd-87c2-a71437e093db",
+   "title": "Travel",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407343",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407343&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Travel\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 197000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9dc5255e-2309-4edd-87c2-a71437e093db/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9dc5255e-2309-4edd-87c2-a71437e093db/",
+   "related_url": "https://api.openverse.org/v1/audio/9dc5255e-2309-4edd-87c2-a71437e093db/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9dc5255e-2309-4edd-87c2-a71437e093db/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "19ae4ba1-f93e-42b9-9eb4-f25f7657aed1",
+   "title": "Down The Cave",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407350",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407350&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Down The Cave\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 151000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/19ae4ba1-f93e-42b9-9eb4-f25f7657aed1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/19ae4ba1-f93e-42b9-9eb4-f25f7657aed1/",
+   "related_url": "https://api.openverse.org/v1/audio/19ae4ba1-f93e-42b9-9eb4-f25f7657aed1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/19ae4ba1-f93e-42b9-9eb4-f25f7657aed1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "bd9a86d9-08a6-4f2c-a358-23aa9213ba4d",
+   "title": "Through Japan Pt. 3",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1396929",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1396929&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Through Japan Pt. 3\" by Audiodyne is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TokyoTales",
+    "foreign_landing_url": "https://www.jamendo.com/album/163611/tokyotales",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 141000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bd9a86d9-08a6-4f2c-a358-23aa9213ba4d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bd9a86d9-08a6-4f2c-a358-23aa9213ba4d/",
+   "related_url": "https://api.openverse.org/v1/audio/bd9a86d9-08a6-4f2c-a358-23aa9213ba4d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bd9a86d9-08a6-4f2c-a358-23aa9213ba4d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "700ed64d-536b-4a55-a01b-3b3f9833d5a0",
+   "title": "Tell A Story",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407344",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407344&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Tell A Story\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 194000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/700ed64d-536b-4a55-a01b-3b3f9833d5a0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/700ed64d-536b-4a55-a01b-3b3f9833d5a0/",
+   "related_url": "https://api.openverse.org/v1/audio/700ed64d-536b-4a55-a01b-3b3f9833d5a0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/700ed64d-536b-4a55-a01b-3b3f9833d5a0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ca6db868-da3c-4bb6-851d-a6fec8fcfc71",
+   "title": "Survive",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407349",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407349&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Survive\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 289000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ca6db868-da3c-4bb6-851d-a6fec8fcfc71/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ca6db868-da3c-4bb6-851d-a6fec8fcfc71/",
+   "related_url": "https://api.openverse.org/v1/audio/ca6db868-da3c-4bb6-851d-a6fec8fcfc71/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ca6db868-da3c-4bb6-851d-a6fec8fcfc71/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d13c9d1c-10dc-4d41-9c37-aa46f4ea429c",
+   "title": "Through Japan Pt. 2",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1396928",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1396928&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Through Japan Pt. 2\" by Audiodyne is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TokyoTales",
+    "foreign_landing_url": "https://www.jamendo.com/album/163611/tokyotales",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 260000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d13c9d1c-10dc-4d41-9c37-aa46f4ea429c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d13c9d1c-10dc-4d41-9c37-aa46f4ea429c/",
+   "related_url": "https://api.openverse.org/v1/audio/d13c9d1c-10dc-4d41-9c37-aa46f4ea429c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d13c9d1c-10dc-4d41-9c37-aa46f4ea429c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "27774d82-f045-42bb-ac45-1f3d37bafb9d",
+   "title": "The Teahouse",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407342",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407342&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "experimental",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Teahouse\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 298000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/27774d82-f045-42bb-ac45-1f3d37bafb9d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/27774d82-f045-42bb-ac45-1f3d37bafb9d/",
+   "related_url": "https://api.openverse.org/v1/audio/27774d82-f045-42bb-ac45-1f3d37bafb9d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/27774d82-f045-42bb-ac45-1f3d37bafb9d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "16c7a43d-ce98-45f2-b5c4-5c0c3f9a17f8",
+   "title": "Through Japan Pt. 1",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1396927",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1396927&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Through Japan Pt. 1\" by Audiodyne is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "TokyoTales",
+    "foreign_landing_url": "https://www.jamendo.com/album/163611/tokyotales",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 146000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/16c7a43d-ce98-45f2-b5c4-5c0c3f9a17f8/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/16c7a43d-ce98-45f2-b5c4-5c0c3f9a17f8/",
+   "related_url": "https://api.openverse.org/v1/audio/16c7a43d-ce98-45f2-b5c4-5c0c3f9a17f8/related/",
+   "waveform": "https://api.openverse.org/v1/audio/16c7a43d-ce98-45f2-b5c4-5c0c3f9a17f8/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "0dc680df-d270-44a8-90b0-1fbd7a4e5f99",
+   "title": "Sun On Sand",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407348",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407348&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Sun On Sand\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 147000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/0dc680df-d270-44a8-90b0-1fbd7a4e5f99/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/0dc680df-d270-44a8-90b0-1fbd7a4e5f99/",
+   "related_url": "https://api.openverse.org/v1/audio/0dc680df-d270-44a8-90b0-1fbd7a4e5f99/related/",
+   "waveform": "https://api.openverse.org/v1/audio/0dc680df-d270-44a8-90b0-1fbd7a4e5f99/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b2c2c0d1-c517-4590-a573-433701c00389",
+   "title": "Alchemy",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407352",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407352&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "experimental",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Alchemy\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 168000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b2c2c0d1-c517-4590-a573-433701c00389/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b2c2c0d1-c517-4590-a573-433701c00389/",
+   "related_url": "https://api.openverse.org/v1/audio/b2c2c0d1-c517-4590-a573-433701c00389/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b2c2c0d1-c517-4590-a573-433701c00389/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b7da12d7-1575-4433-8b1f-a143c37b5a9c",
+   "title": "Movement In The Dark",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407351",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407351&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "experimental",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Movement In The Dark\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 328000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b7da12d7-1575-4433-8b1f-a143c37b5a9c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b7da12d7-1575-4433-8b1f-a143c37b5a9c/",
+   "related_url": "https://api.openverse.org/v1/audio/b7da12d7-1575-4433-8b1f-a143c37b5a9c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b7da12d7-1575-4433-8b1f-a143c37b5a9c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "408f8b2d-60fa-4bd3-aafc-da0d9716f867",
+   "title": "The Snake",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407347",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407347&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_low",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Snake\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 134000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/408f8b2d-60fa-4bd3-aafc-da0d9716f867/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/408f8b2d-60fa-4bd3-aafc-da0d9716f867/",
+   "related_url": "https://api.openverse.org/v1/audio/408f8b2d-60fa-4bd3-aafc-da0d9716f867/related/",
+   "waveform": "https://api.openverse.org/v1/audio/408f8b2d-60fa-4bd3-aafc-da0d9716f867/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "cb62865b-4cff-49d4-bbef-50ad1f59183b",
+   "title": "The Merchant",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407346",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407346&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Merchant\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 152000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/cb62865b-4cff-49d4-bbef-50ad1f59183b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/cb62865b-4cff-49d4-bbef-50ad1f59183b/",
+   "related_url": "https://api.openverse.org/v1/audio/cb62865b-4cff-49d4-bbef-50ad1f59183b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/cb62865b-4cff-49d4-bbef-50ad1f59183b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "36d9f537-2865-4f6b-9d68-4cf0f832eabd",
+   "title": "Little Creeps",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407353",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407353&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Little Creeps\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 119000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/36d9f537-2865-4f6b-9d68-4cf0f832eabd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/36d9f537-2865-4f6b-9d68-4cf0f832eabd/",
+   "related_url": "https://api.openverse.org/v1/audio/36d9f537-2865-4f6b-9d68-4cf0f832eabd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/36d9f537-2865-4f6b-9d68-4cf0f832eabd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "55af3f8d-509e-42d2-96c8-cfbce939c431",
+   "title": "Holy Dreamy Death",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407345",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407345&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore",
+    "oriental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Holy Dreamy Death\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 269000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/55af3f8d-509e-42d2-96c8-cfbce939c431/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/55af3f8d-509e-42d2-96c8-cfbce939c431/",
+   "related_url": "https://api.openverse.org/v1/audio/55af3f8d-509e-42d2-96c8-cfbce939c431/related/",
+   "waveform": "https://api.openverse.org/v1/audio/55af3f8d-509e-42d2-96c8-cfbce939c431/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "d4c321ca-4713-480c-bd15-df8da656b21a",
+   "title": "Left Long Ago",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1407341",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1407341&format=mp32",
+   "creator": "Audiodyne",
+   "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "asian",
+    "filmscore"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "guzheng",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Left Long Ago\" by Audiodyne is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "RPG Soundtrack",
+    "foreign_landing_url": "https://www.jamendo.com/album/164528/rpg-soundtrack",
+    "creator": "Audiodyne",
+    "creator_url": "https://www.jamendo.com/artist/494492/Audiodyne",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 100000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/d4c321ca-4713-480c-bd15-df8da656b21a/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/d4c321ca-4713-480c-bd15-df8da656b21a/",
+   "related_url": "https://api.openverse.org/v1/audio/d4c321ca-4713-480c-bd15-df8da656b21a/related/",
+   "waveform": "https://api.openverse.org/v1/audio/d4c321ca-4713-480c-bd15-df8da656b21a/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

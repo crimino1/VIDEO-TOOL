@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.6)}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9;text-shadow:0 2px 6px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.55)}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="196.080" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s80" class="clip" data-start="0.000" data-duration="16.560" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s80k"></div><div class="vig"></div></div>
+<video id="s81v" class="clip" src="assets/clips/breaker_411.mp4" muted playsinline data-start="16.560" data-duration="14.620" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s81" class="clip" data-start="16.560" data-duration="14.620" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s81k"></div><div class="fadeb"></div><div class="vig"></div><div id="o82" class="line" style="opacity:0">Turning off a light does not make the wiring safe to touch.</div></div>
+<video id="s83v" class="clip" src="assets/clips/led_426.mp4" muted playsinline data-start="31.180" data-duration="8.820" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s83" class="clip" data-start="31.180" data-duration="8.820" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s83k"></div><div class="fadeb"></div><div class="vig"></div><div id="o84" class="cap" style="opacity:0">Light and heat</div></div>
+<div id="s85" class="clip" data-start="40.000" data-duration="20.600" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s85k"></div><div class="vig"></div><div id="o86" class="big" style="opacity:0">300,000 km/s</div></div>
+<video id="s87v" class="clip" src="assets/clips/nighthouse_455.mp4" muted playsinline data-start="60.600" data-duration="12.340" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s87" class="clip" data-start="60.600" data-duration="12.340" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s87k"></div><div class="vig"></div></div>
+<div id="s88" class="clip" data-start="72.940" data-duration="12.620" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s88k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o89" class="line" style="opacity:0">The electrons stay home. The energy leaves the planet.</div></div>
+<video id="s90v" class="clip" src="assets/clips/pylons2_480.mp4" muted playsinline data-start="85.560" data-duration="8.880" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s90" class="clip" data-start="85.560" data-duration="8.880" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s90k"></div><div class="fadeb"></div><div class="vig"></div><div id="o91" class="line" style="opacity:0">Something changes far away from your house.</div></div>
+<video id="s92v" class="clip" src="assets/clips/coalplant2_489.mp4" muted playsinline data-start="94.440" data-duration="7.020" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s92" class="clip" data-start="94.440" data-duration="7.020" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s92k"></div><div class="fadeb"></div><div class="vig"></div><div id="o93" class="cap" style="opacity:0">Most of India&#x27;s electricity comes from coal</div></div>
+<div id="s94" class="clip" data-start="101.460" data-duration="14.060" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s94k"></div><div class="vig"></div></div>
+<div id="s95" class="clip" data-start="115.520" data-duration="10.260" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:635px"><img id="kb96" src="assets/img_s/faraday.jpg" alt="faraday"></div><div id="pn97" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:825px">Michael Faraday</div><div class="pmeta" style="left:160px;top:530px">Bookbinder&#x27;s apprentice · 1791–1867</div></div></div>
+<div id="s98" class="clip" data-start="125.780" data-duration="10.980" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s98k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o99" class="cap" style="opacity:0">1831</div></div>
+<video id="s100v" class="clip" src="assets/clips/turbine_531.mp4" muted playsinline data-start="136.760" data-duration="4.240" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s100" class="clip" data-start="136.760" data-duration="4.240" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s100k"></div><div class="fadeb"></div><div class="vig"></div><div id="o101" class="line" style="opacity:0">Nearly every big power station still runs on his idea.</div></div>
+<div id="s102" class="clip" data-start="141.000" data-duration="28.020" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s102k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o103" class="line" style="opacity:0">Most power is made at the same moment it&#x27;s used.</div></div>
+<video id="s104v" class="clip" src="assets/clips/fan_564.mp4" muted playsinline data-start="169.020" data-duration="3.980" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s104" class="clip" data-start="169.020" data-duration="3.980" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s104k"></div><div class="vig"></div></div>
+<div id="s105" class="clip" data-start="173.000" data-duration="23.080" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s105k"></div><div class="vig"></div><div id="o106" class="big" style="opacity:0">50 Hz<small>India&#x27;s grid frequency</small></div></div>
+
+</div>
+<script>window.LAB = [[0.0, 16.56, "switch3d", {"mode": "spark", "FT0": 395.0}], [40.0, 60.6, "room", {"mode": "light", "FT0": 435.0}], [72.94, 85.56, "room", {"mode": "space", "FT0": 467.94}], [101.46, 115.52, "generator", {"mode": "station", "FT0": 496.46}], [125.78, 136.76, "generator", {"mode": "faraday", "FT0": 520.78}], [141.0, 169.02, "grid", {"mode": "store", "FT0": 536.0}], [173.0, 196.08, "grid", {"mode": "tug", "FT0": 568.0}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_energy.js"></script>
+<script src="assets/js/k_grid.js"></script>
+<script src="assets/js/k_wire.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s80k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#s81k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},16.560);
+tl.fromTo("#o82",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},23.700);
+tl.to("#o82",{opacity:0,duration:0.5,ease:"power1.inOut"},27.600);
+tl.fromTo("#s83k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},31.180);
+tl.fromTo("#o84",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},37.200);
+tl.fromTo("#s85k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},40.000);
+tl.fromTo("#o86",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},42.100);
+tl.to("#o86",{opacity:0,duration:0.5,ease:"power1.inOut"},45.500);
+tl.fromTo("#s87k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},60.600);
+tl.fromTo("#s88k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},72.940);
+tl.fromTo("#o89",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},81.300);
+tl.to("#o89",{opacity:0,duration:0.5,ease:"power1.inOut"},84.800);
+tl.fromTo("#s90k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},85.560);
+tl.fromTo("#o91",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},88.900);
+tl.to("#o91",{opacity:0,duration:0.5,ease:"power1.inOut"},93.700);
+tl.fromTo("#s92k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},94.440);
+tl.fromTo("#o93",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},97.400);
+tl.fromTo("#s94k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},101.460);
+tl.fromTo("#kb96",{scale:1.0,x:0},{scale:1.10,x:-18,duration:10.260,ease:"none"},115.520);
+tl.fromTo("#pn97",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},115.870);
+tl.fromTo("#s95",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},115.520);
+tl.fromTo("#s98k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},125.780);
+tl.fromTo("#o99",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},126.000);
+tl.to("#o99",{opacity:0,duration:0.5,ease:"power1.inOut"},130.500);
+tl.fromTo("#s100k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},136.760);
+tl.fromTo("#o101",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},137.000);
+tl.to("#o101",{opacity:0,duration:0.5,ease:"power1.inOut"},140.300);
+tl.fromTo("#s102k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},141.000);
+tl.fromTo("#o103",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},160.200);
+tl.to("#o103",{opacity:0,duration:0.5,ease:"power1.inOut"},162.800);
+tl.fromTo("#s104k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},169.020);
+tl.fromTo("#s105k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},173.000);
+tl.fromTo("#o106",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},185.600);
+tl.to("#o106",{opacity:0,duration:0.5,ease:"power1.inOut"},188.900);
+tl.set({}, {}, 196.080);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

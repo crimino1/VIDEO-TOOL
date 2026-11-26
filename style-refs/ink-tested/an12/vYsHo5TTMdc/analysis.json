@@ -1,0 +1,73 @@
+{
+  "source": "dl/vYsHo5TTMdc.mp4",
+  "duration": 47.714,
+  "width": 1080,
+  "height": 1920,
+  "fps": 60.0,
+  "has_audio": true,
+  "shots": 29,
+  "avg_shot_sec": 1.65,
+  "median_shot_sec": 1.62,
+  "shortest_shot_sec": 0.37,
+  "longest_shot_sec": 4.45,
+  "cuts_per_minute": {
+    "first 30s": 34.0,
+    "30s-2m": 37.3
+  },
+  "loudness": {
+    "integrated_lufs": -15.4,
+    "range_lu": 3.5
+  },
+  "cuts": [
+    0.85,
+    1.433333,
+    3.333333,
+    5.616667,
+    5.983333,
+    6.733333,
+    11.183333,
+    13.7,
+    15.133333,
+    16.95,
+    18.566667,
+    21.216667,
+    22.566667,
+    25.05,
+    26.133333,
+    28.166667,
+    29.95,
+    30.95,
+    31.416667,
+    33.216667,
+    35.233333,
+    37.3,
+    40.35,
+    41.45,
+    42.283333,
+    43.4,
+    44.833333,
+    47.183333
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 16,
+      "sec_between_frames": 1
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 32,
+      "sec_between_frames": 1
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

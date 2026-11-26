@@ -1,0 +1,46 @@
+{
+  "source": "C:/Users/daggu222105/Downloads/vidssave.com Gravitation \u2013 3D Animated __ Class 11 Full Chapter __ Physics chapter 7 720P.mp4",
+  "duration": 597.375,
+  "width": 1280,
+  "height": 720,
+  "fps": 24.0,
+  "has_audio": true,
+  "shots": 1,
+  "avg_shot_sec": 597.38,
+  "median_shot_sec": 597.38,
+  "shortest_shot_sec": 597.38,
+  "longest_shot_sec": 597.38,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 0.0,
+    "2m-5m": 0.0,
+    "after 5m": 0.0
+  },
+  "loudness": {
+    "integrated_lufs": -19.4,
+    "range_lu": 6.7
+  },
+  "cuts": [],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 12.4
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 199.1,
+      "sec_between_frames": 12.4
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 398.2,
+      "sec_between_frames": 12.4
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

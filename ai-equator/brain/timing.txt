@@ -1,0 +1,430 @@
+   0.35 Imagine you're a doctor with a
+   1.77 patient who keeps getting stuck mid
+   3.57 -sentence,
+   4.47 repeating the same thought over and
+   6.47 over.
+   7.33 Instead of years of therapy,
+   9.27 you open up their brain,
+  10.75 find the exact wire that's causing
+  12.59 it,
+  13.23 and adjust it.
+  14.43 You touch less than two hundredths
+  16.19 of one percent of it.
+  17.77 And the next day,
+  18.63 their math score is six times
+  20.07 higher.
+  21.19 That's roughly what happened when MIT
+  22.93 researchers gave OpenAI's GPT -6 Astra,
+  26.61 the brain of another AI,
+  28.59 and told it,
+  29.51 make this better at math.
+  31.65 No retraining,
+  33.01 no new data,
+  34.39 Astra just looked at the numbers
+  35.91 inside the other model and changed
+  37.91 them by hand.
+  39.59 But this story has a twist,
+  41.63 and a lot of people who
+  42.65 covered it skipped it,
+  44.29 so let's go through what actually
+  45.83 happened,
+  46.85 why it matters,
+  48.07 and what critics are saying.
+  49.39 This research came out on November
+  51.85 2nd from MIT's Computer Science and
+  54.75 Artificial Intelligence Lab,
+  56.71 CHAIL.
+  57.73 Four researchers worked on it,
+  59.87 Rakea Takehi,
+  61.19 a first -year PhD student,
+  63.27 along with Jaden Tio,
+  65.11 Alex Zhang,
+  66.25 and Omar Katab.
+  67.57 They call the idea,
+  69.37 weight -space programming.
+  71.27 To get why this is a
+  72.39 big deal,
+  73.17 you need to know what weights
+  74.19 are.
+  75.19 An AI model is basically a
+  76.77 giant pile of numbers called weights.
+  79.37 A small model has hundreds of
+  80.89 millions of them.
+  82.19 The big ones have trillions.
+  84.13 Those numbers decide everything the model
+  85.99 does,
+  86.69 what it knows,
+  88.03 how it talks,
+  89.17 and how it reasons.
+  90.87 And here's the thing,
+  92.35 no human ever sets those numbers
+  94.27 by hand.
+  95.43 They come from training.
+  97.05 You show the model a ton
+  98.25 of examples,
+  98.81 and an algorithm called Gradient Descent
+ 101.33 nudges every number a tiny bit,
+ 104.31 over and over,
+ 105.45 millions of times.
+ 107.35 It's blind.
+ 108.67 The optimizer doesn't understand what any
+ 110.69 single weight does.
+ 112.29 It just keeps nudging in whatever
+ 113.61 direction makes the error a little
+ 115.45 smaller.
+ 116.59 That's why AI models are called
+ 118.19 black boxes.
+ 119.65 We know how to grow them.
+ 121.15 We don't really know how to
+ 122.17 read them.
+ 123.17 So the MIT team asked a
+ 125.55 strange question.
+ 127.23 What if,
+ 127.71 instead of blind training,
+ 129.43 you hand the weights to a
+ 130.61 smart AI and let it reason
+ 132.31 about them.
+ 133.59 Read them like code,
+ 134.97 find the bug,
+ 136.05 and fix it on purpose.
+ 137.99 Let's start with the main experiment.
+ 140.63 The patient was Quinn 3 .5
+ 142.79 -0 .8B,
+ 144.65 a small open -source model from
+ 146.45 Alibaba with under a billion parameters.
+ 148.97 Small models like this are cheap
+ 150.91 and fast,
+ 152.05 but they have problems.
+ 153.59 And Quinn had a famous one.
+ 155.39 Its own documentation warns that it
+ 157.23 can get stuck in reasoning loops,
+ 159.19 repeating the same text again and
+ 161.01 again without ever finishing.
+ 163.27 The researchers gave Astra a Python
+ 165.03 session with Quinn's weights loaded,
+ 167.23 no GPU,
+ 168.21 and some practice math problems so
+ 169.93 it could test the model.
+ 171.35 It was only allowed to run
+ 172.55 Quinn a limited number of times,
+ 174.77 10,
+ 175.31 25 or 50 runs,
+ 177.21 depending on the experiment.
+ 178.97 And here's the key rule.
+ 180.45 Astra was not allowed to write
+ 182.07 a training loop.
+ 183.35 Every change had to be written
+ 184.77 directly into the numbers.
+ 186.85 It also wasn't allowed to search
+ 188.25 the web.
+ 189.45 So what did Astra do?
+ 191.17 The first thing it noticed wasn't
+ 192.65 a math problem at all.
+ 194.33 Quinn was often just never finishing
+ 196.05 its answers.
+ 197.53 It was looping.
+ 198.83 Then Astra went hunting.
+ 200.55 It traced the loops to one
+ 201.73 specific direction written by two internal
+ 204.01 layers,
+ 204.87 layers 15 and 19.
+ 206.93 Here's a simple way to think
+ 208.05 about it.
+ 208.95 Inside the model,
+ 209.97 every word is turned into a
+ 211.65 long list of numbers,
+ 213.13 basically a point in a huge
+ 214.61 space.
+ 215.91 Astra found one particular direction in
+ 218.11 that space that was pushing the
+ 219.51 model to keep going and going.
+ 221.71 So it subtracted that direction out.
+ 224.23 It edited 64 output columns in
+ 226.41 each of those two layers.
+ 228.29 In total,
+ 229.29 that changed 131 ,072 weights out
+ 233.45 of 800 million.
+ 235.09 That's 0 .016%.
+ 238.01 And here are the results with
+ 240.65 50 test runs.
+ 242.47 On math 500,
+ 243.71 a standard math benchmark,
+ 245.17 Quinn went from 7 .9 %
+ 247.63 to 48 .1%.
+ 249.65 That's the six times jump in
+ 251.65 the headlines.
+ 252.91 On GSM 8K,
+ 254.53 which is grade school math word
+ 256.13 problems,
+ 257.09 it went from 13 .8 to
+ 259.07 67 .1.
+ 261.07 And on ifovol,
+ 262.69 which tests whether a model follows
+ 264.41 instructions,
+ 265.61 it went from 21 to 62.
+ 268.11 So it nearly tripled in instruction
+ 269.69 following,
+ 270.79 even though nobody asked Astra to
+ 272.75 work on that.
+ 273.93 Why did that happen?
+ 275.43 Because the fix wasn't really a
+ 276.99 math fix.
+ 278.37 Before the edit,
+ 279.43 93 % of Quinn's answers hit
+ 281.63 the maximum length limit.
+ 283.29 Basically,
+ 283.81 the model was rambling until it
+ 285.43 got cut off.
+ 286.57 After the edit,
+ 287.63 that dropped to about 33%.
+ 289.71 Once the model could actually finish
+ 291.55 its thoughts,
+ 292.61 everything improved.
+ 294.05 They also ran a smart control
+ 295.33 test.
+ 296.47 They tried the same thing on
+ 297.67 Google's Gemma3,
+ 298.69 a tiny model that rarely loops.
+ 301.61 And Astra found almost nothing to
+ 303.29 improve,
+ 304.15 about one point at most.
+ 306.17 That actually supports the story.
+ 308.23 Astra didn't find a magic be
+ 310.11 smarter knob.
+ 311.53 It found one specific bug and
+ 313.27 fixed it.
+ 314.41 Now,
+ 315.03 the Quinn experiment is the one
+ 316.55 everyone talked about.
+ 318.25 But honestly,
+ 319.33 some of the other experiments in
+ 320.71 this paper are even wilder.
+ 323.03 In one test,
+ 323.95 researchers gave Astra only the raw
+ 325.99 weights of small networks that had
+ 327.75 been trained to play video games.
+ 329.99 No game footage,
+ 331.25 no labels,
+ 332.33 no running the networks,
+ 334.03 just numbers.
+ 335.55 And they asked,
+ 336.51 which game was this network trained
+ 337.93 on?
+ 338.83 Astra correctly named which of four
+ 340.61 games each network was built for.
+ 342.87 Simon Willison,
+ 343.89 a well -known developer,
+ 345.03 tried the same test with an
+ 346.25 open model called Quinn 3 .827b,
+ 349.69 and it got three out of
+ 350.71 four,
+ 350.97 Pac -Man,
+ 352.11 Pong,
+ 352.55 and Breakout.
+ 353.87 It only missed Freeway.
+ 355.87 Then they flipped it.
+ 357.13 Instead of reading weights,
+ 358.77 Astra had to write them from
+ 360.07 scratch.
+ 361.19 They gave it the rules and
+ 362.41 source code of Breakout,
+ 364.09 and asked it to write the
+ 365.19 weights of a network that plays
+ 366.55 the game.
+ 367.75 No training at all.
+ 369.53 That handwritten network averaged 517 points.
+ 373.37 A baseline network trained over 100
+ 375.33 million rounds,
+ 376.65 scored 25.
+ 378.23 To be fair,
+ 379.35 on the other two games,
+ 380.51 Astra fell behind the networks that
+ 382.17 had trained the longest.
+ 383.89 But then they tried the board
+ 384.89 game Go,
+ 385.93 on a small 9x9 board.
+ 388.87 Astra wrote weights for a network
+ 390.25 with about 1 .5 million parameters.
+ 393.41 With 50 rounds of testing and
+ 394.75 corrections,
+ 395.89 it beat a comparable model trained
+ 397.45 on roughly 20 million games.
+ 399.69 There was also a little self
+ 401.15 -driving car policy that was stuck
+ 402.95 and failing every time.
+ 404.41 Astra edited 3 .5 % of
+ 407.01 its weights in one shot,
+ 408.77 and the success rate went from
+ 409.93 0 to 100%.
+ 411.81 And here's where it gets interesting
+ 413.45 for the rest of the AI
+ 414.73 world.
+ 415.85 People started trying this with other
+ 417.31 models right away.
+ 419.27 Alex Crensell repeated the Breakout test,
+ 421.35 and it wasn't just Astra.
+ 423.25 GPT 6 .1's Saul and Claude
+ 425.53 Opus 5 .5 could do it
+ 427.33 too.
+ 428.17 And the CTO of the Legal
+ 429.27 AI Company Legora said he got
+ 431.69 Claude Fable to handwrite the weights
+ 433.53 of a small network that tells
+ 435.05 real legal citations from fake ones,
+ 437.51 and that the one -shot result
+ 438.87 beat actually training it.
+ 440.81 So it looks like this isn't
+ 442.09 one magic model.
+ 443.75 It might be something Frontier models
+ 445.17 in general can now do.
+ 447.01 Okay,
+ 448.53 now the twist.
+ 450.11 Not everyone bought the headline.
+ 452.23 Matthew Honnable,
+ 453.17 a well -known machine learning engineer,
+ 455.21 went through the paper and pointed
+ 456.87 out a gap.
+ 457.97 The paper opens by saying Astra
+ 460.27 can tell what a network does,
+ 462.15 just by looking at the raw
+ 463.37 weights.
+ 464.43 But the no -tools experiments were
+ 466.01 only on tiny networks,
+ 467.81 between about 17 ,172 ,000 weights.
+ 472.33 Every experiment with a real language
+ 474.05 model,
+ 474.85 including the Quen one,
+ 476.29 used Python and actually ran the
+ 478.29 model.
+ 479.15 His argument was that this is
+ 480.77 impressive,
+ 481.81 but it's what a skilled human
+ 483.21 machine learning engineer could also do.
+ 485.39 One article called this a method
+ 488.23 swap.
+ 489.29 The abstract describes one method,
+ 491.63 but the headline number comes from
+ 493.11 another.
+ 494.19 And then there's the baseline problem,
+ 495.77 which is honestly the part I
+ 497.59 find most important.
+ 499.57 A researcher named Carlos Toledo reran
+ 501.91 the original untouched Quen.
+ 503.99 With the exact settings from the
+ 505.37 study,
+ 506.05 it scored about 7%,
+ 507.39 which matches.
+ 508.91 But with the sampling settings Quen's
+ 510.67 own model card recommends and a
+ 512.55 longer length limit,
+ 513.91 it scored about 22%.
+ 515.65 And with thinking mode turned off,
+ 518.03 the untouched model scored 43 .95%.
+ 521.91 So the unedited model,
+ 523.85 with different settings,
+ 525.41 gets close to what the edited
+ 526.73 model scored.
+ 528.13 That doesn't mean the edit did
+ 529.37 nothing.
+ 530.31 It means the six times better
+ 531.79 number only applies to the original
+ 533.55 setup.
+ 534.57 It doesn't tell us how much
+ 535.79 the edit really adds when everything
+ 537.47 else is set up properly.
+ 539.33 Nobody has run that matched comparison
+ 541.09 yet.
+ 542.49 The researchers themselves are honest about
+ 544.45 limits too.
+ 545.81 They say the edit seems to
+ 547.13 have removed a blockage that was
+ 548.63 suppressing abilities Quen already had.
+ 551.31 It couldn't add skills the model
+ 552.75 fundamentally lacks.
+ 554.45 The loops weren't fully gone either.
+ 556.63 About a third of answers still
+ 557.79 hit the limit.
+ 559.07 An Astra struggled with one test
+ 560.61 that matters a lot,
+ 561.99 telling which of two models had
+ 563.49 been trained to just agree with
+ 564.97 users.
+ 565.93 From the weights alone,
+ 566.75 it couldn't tell.
+ 568.41 It only succeeded after it was
+ 569.73 allowed to see what the models
+ 570.99 were paying attention to.
+ 572.81 Also,
+ 573.25 this is a blog post and
+ 574.37 paper that hasn't been peer reviewed
+ 575.97 yet,
+ 576.69 and the big math result hasn't
+ 578.09 been independently replicated under matched settings.
+ 581.39 So why does any of this
+ 582.95 matter?
+ 584.09 Here's what the researchers think it
+ 585.77 could lead to.
+ 587.31 One is security audits.
+ 589.43 Checking a model's weights directly for
+ 591.19 hidden back doors or dangerous capabilities,
+ 594.09 without needing to guess the right
+ 595.61 test.
+ 596.63 Another is fixing one specific bug
+ 598.63 in a model without retraining the
+ 600.29 whole thing,
+ 601.27 which costs a fortune and can
+ 602.75 break other things.
+ 604.11 They even think it could help
+ 605.23 reduce sycophancy,
+ 606.69 which is AI telling you what
+ 608.07 you want to hear.
+ 609.39 And then there's the big one.
+ 610.95 The researchers mention recursive self -improvement.
+ 614.47 That's the idea that an AI
+ 616.19 could one day edit its own
+ 617.95 weights to make itself smarter,
+ 620.03 then use that smarter version to
+ 621.61 edit itself again,
+ 622.53 and again.
+ 624.39 To be clear,
+ 625.53 that is not what happened here.
+ 627.67 Astra edited a different,
+ 629.31 much smaller model.
+ 631.01 Researchers call an AI editing itself
+ 633.31 a proposed application,
+ 635.29 not a result.
+ 636.89 But think about the direction.
+ 638.63 A few years ago,
+ 639.87 we couldn't read what was inside
+ 641.05 these models at all.
+ 642.73 Now one model can open up
+ 644.07 another,
+ 644.81 find a bug in two specific
+ 646.29 layers,
+ 647.23 and patch it.
+ 648.27 Even if the headline number was
+ 649.67 oversold,
+ 650.75 that part is real,
+ 652.19 and other people have reproduced pieces
+ 653.73 of it within days.
+ 655.89 And it's coming at the same
+ 657.05 time as labs like anthropics say
+ 659.07 AI is starting to speed up
+ 660.71 their own research.
+ 662.19 So AI that improves AI isn't
+ 664.47 a sci -fi phrase anymore.
+ 666.33 It's a research area.
+ 668.01 My take?
+ 669.03 It's not magic brain surgery yet.
+ 671.25 It's more like a very skilled
+ 672.57 mechanic who can open the hood
+ 674.13 and fix one known problem.
+ 676.15 But for the first time,
+ 677.43 the mechanic is also an AI.
+ 679.77 What do you think?
+ 681.13 Is this the first step toward
+ 682.45 AI improving itself,
+ 684.21 or just good engineering with a
+ 685.65 big headline?
+ 686.93 Let me know in the comments.
+ 688.75 This has been AI Equator.

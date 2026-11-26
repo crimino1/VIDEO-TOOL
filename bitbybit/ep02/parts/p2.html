@@ -1,0 +1,99 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#fff;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#f5c842;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #f5c842;border-radius:6px;box-shadow:0 0 18px rgba(245,200,66,.8)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:0 0 14px currentColor}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="146.100" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s59" class="clip scene" data-start="0.000" data-duration="1.900" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="c58" class="scene"><div id="sec57" class="sec" style="top:440px"><div>Rule 2:</div><div>Practice the parts you're bad at</div></div></div></div>
+<video id="v60" class="clip vid" src="assets/clips/pxb_123762_3545c3dd.mp4" muted playsinline data-start="1.900" data-duration="4.120" data-track-index="1" style="z-index:24;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s65" class="clip scene" data-start="6.020" data-duration="10.960" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="c64" class="scene"><div id="k61" class="kw " style="left:210px;width:1500px;text-align:center;top:820px;font-size:84px;line-height:1.08;color:#fff"><span id="w62" style="opacity:0">Anders</span> <span id="w63" style="opacity:0">Ericsson</span></div></div></div>
+<div id="s70" class="clip scene" data-start="29.580" data-duration="10.880" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="c69" class="scene"><div id="k66" class="kw " style="left:210px;width:1500px;text-align:center;top:50px;font-size:80px;line-height:1.08;color:#fff"><span id="w67" style="opacity:0">Deliberate</span> <span id="w68" style="opacity:0">practice</span></div></div></div>
+<div id="s76" class="clip scene" data-start="40.460" data-duration="7.360" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="c75" class="scene"><div id="k71" class="kw " style="left:210px;width:1500px;text-align:center;top:60px;font-size:72px;line-height:1.08;color:#fff"><span id="w72" style="opacity:0">Scared</span> <span id="w73" style="opacity:0">of</span> <span id="w74" style="opacity:0">recursion?</span></div></div></div>
+<div id="s79" class="clip scene" data-start="99.680" data-duration="3.860" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="c78" class="scene"><div id="sec77" class="sec" style="top:440px"><div>Rule 3:</div><div>Read more code than you write</div></div></div></div>
+<video id="v80" class="clip vid" src="assets/clips/pxb_140593_5cc3ee77.mp4" muted playsinline data-start="103.540" data-duration="3.580" data-track-index="1" style="z-index:30;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s87" class="clip scene" data-start="107.120" data-duration="3.340" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="c86" class="scene"><div id="k81" class="kw " style="left:210px;width:1500px;text-align:center;top:70px;font-size:76px;line-height:1.08;color:#fff"><span id="w82" style="opacity:0">Learning</span> <span id="w83" style="opacity:0">only</span> <span id="w84" style="opacity:0">by</span> <span id="w85" style="opacity:0">typing?</span></div></div></div>
+<video id="v88" class="clip vid" src="assets/clips/rec_requests_repo_57598fd7.mp4" muted playsinline data-start="110.460" data-duration="8.040" data-track-index="1" style="z-index:33;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s97" class="clip scene" data-start="110.460" data-duration="8.040" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="c96" class="scene"><div id="k89" class="kw dark" style="left:210px;width:1500px;text-align:center;top:880px;font-size:64px;line-height:1.08;color:#fff"><span id="w90" style="opacity:0">A</span> <span id="w91" style="opacity:0">small</span> <span id="w92" style="opacity:0">library</span> <span id="w93" style="opacity:0">you</span> <span id="w94" style="opacity:0">actually</span> <span id="w95" style="opacity:0">use</span></div></div></div>
+<video id="v98" class="clip vid" src="assets/clips/rec_requests_api_a68e4f9c.mp4" muted playsinline data-start="118.500" data-duration="5.660" data-track-index="1" style="z-index:36;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[0.0, 1.9, "secbg", {"tin": "glitch", "tout": "zoom", "cam": {"z": [1.0, 1.04]}}], [6.02, 16.98, "academy", {"cam": {"z": [1.0, 1.12], "x": [320, 320], "y": [180, 170]}, "tin": "zoom", "tout": "zoom"}], [16.98, 29.58, "practice_rooms", {"focus": 5.22, "tin": "zoom", "tout": "zoom"}], [29.58, 40.46, "sheet_music", {"loop": 5.92, "clean": 9.94, "tin": "zoom", "tout": "zoom"}], [40.46, 47.82, "recursion", {"tin": "zoom", "tout": "zoom"}], [47.82, 53.44, "sql50", {"tin": "zoom", "tout": "zoom"}], [53.44, 56.32, "target", {"hit": 1.0, "tin": "zoom", "tout": "zoom"}], [56.32, 66.88, "todo_clones", {"q": 9.06, "tin": "zoom", "tout": "zoom"}], [66.88, 76.24, "blueprint_build", {"title": 7.38, "tin": "zoom", "tout": "zoom"}], [76.24, 92.62, "diy_bench", {"at": [0.7, 2.18, 4.02, 7.42], "worse": 11.2, "tin": "zoom", "tout": "zoom"}], [92.62, 99.68, "dict_xray", {"xray": 4.54, "tin": "zoom", "tout": "zoom"}], [99.68, 103.54, "secbg", {"tin": "glitch", "tout": "zoom", "cam": {"z": [1.0, 1.04]}}], [107.12, 110.46, "room", {"typing": 0.0, "cam": {"z": [1.05, 1.2], "x": [320, 320], "y": [180, 200]}, "tin": "zoom", "tout": "zoom"}], [124.16, 130.74, "clean_code", {"tin": "zoom", "tout": "zoom"}], [130.74, 146.1, "time_machine", {"back": 4.38, "cringe": 6.56, "yay": 7.28, "still": 12.08, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/debug.js"></script>
+<script src="assets/js/scenes/learn.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/practice.js"></script>
+<script src="assets/js/scenes/ship.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#sec57",{scale:2.4,opacity:0},{scale:1,opacity:1,duration:0.55,ease:"power3.out"},0.000);
+tl.fromTo("#v60",{scale:1.0},{scale:1.08,duration:4.12,ease:"none"},1.900);
+tl.set("#w62",{opacity:1},8.700);
+tl.set("#w63",{opacity:1},9.220);
+tl.set("#w67",{opacity:1},30.420);
+tl.set("#w68",{opacity:1},31.020);
+tl.set("#k66",{opacity:0},35.500);
+tl.set("#w72",{opacity:1},43.020);
+tl.set("#w73",{opacity:1},60.360);
+tl.set("#w74",{opacity:1},60.360);
+tl.fromTo("#sec77",{scale:2.4,opacity:0},{scale:1,opacity:1,duration:0.55,ease:"power3.out"},99.680);
+tl.fromTo("#v80",{scale:1.0},{scale:1.08,duration:3.58,ease:"none"},103.540);
+tl.set("#w82",{opacity:1},161.000);
+tl.set("#w83",{opacity:1},161.000);
+tl.set("#w84",{opacity:1},215.120);
+tl.set("#w85",{opacity:1},378.880);
+tl.fromTo("#v88",{scale:1.0},{scale:1.03,duration:8.04,ease:"none"},110.460);
+tl.set("#w90",{opacity:1},112.200);
+tl.set("#w91",{opacity:1},112.200);
+tl.set("#w92",{opacity:1},112.200);
+tl.set("#w93",{opacity:1},119.980);
+tl.set("#w94",{opacity:1},128.740);
+tl.set("#w95",{opacity:1},229.060);
+tl.fromTo("#v98",{scale:1.0},{scale:1.04,duration:5.66,ease:"none"},118.500);
+tl.set({}, {}, 146.100);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

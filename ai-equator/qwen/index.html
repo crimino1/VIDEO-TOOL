@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Caveat";src:url("assets/fonts/caveat-600.woff2") format("woff2");font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(900px 600px at 18% 22%,rgba(30,52,110,.45),transparent 70%),radial-gradient(800px 560px at 84% 78%,rgba(22,40,96,.40),transparent 70%),#000}
+.grid{position:absolute;inset:-60px;background-image:linear-gradient(rgba(70,100,180,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(70,100,180,.07) 1.5px,transparent 1.5px);background-size:120px 120px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 80%)}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.h{font-weight:700;letter-spacing:-.025em;line-height:1.08}
+.big{font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.lab{color:#8A8F98;font-weight:400;line-height:1.2}
+.g{color:#8A8F98}
+.blue{color:#5B8FF0}
+.mono{font-family:"JetBrains Mono",monospace}
+.note{font-family:"Caveat",cursive;font-weight:600;color:#F0A818;line-height:1.05;white-space:nowrap}
+.arw{position:absolute;display:block}
+.src{font-size:22px;color:#6B7079}
+.card{background:#0D0F14;border:1.5px solid #2A2E37;border-radius:12px;padding:26px 30px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.card.sel{border-color:#5B8FF0;background:#0B1430}
+.card.red{border-color:rgba(248,81,73,.7);background:#1A0C0E}
+.card.ok{border-color:rgba(63,185,80,.7);background:#0B1A10}
+.card.dash{border-style:dashed;background:rgba(13,15,20,.6)}
+.card.lvl.hi{border-color:#F0A818}
+.card.lvl.crit{border-color:#F85149;background:#1A0C0E}
+.card.lvl.crit .ct{color:#F85149}
+.ct{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cs{font-size:26px;color:#8A8F98;margin-top:10px}
+.li{font-size:36px;font-weight:700;letter-spacing:-.015em}
+.cb{font-size:30px;line-height:1.3;padding:16px 22px;border-radius:16px;margin-top:14px;max-width:560px}
+.cb.u{background:#1E2A44;margin-left:auto;width:max-content}
+.cb.bot{background:#1A1C22;color:#D5D8DE}
+.mac{border-radius:12px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37}
+.mbar{height:44px;background:#1C1D21;position:relative}
+.mbar i{position:absolute;top:15px;width:14px;height:14px;border-radius:50%;background:#3A3C42}
+.mbar i:nth-child(1){left:18px;background:#ff5f57}.mbar i:nth-child(2){left:42px;background:#febc2e}.mbar i:nth-child(3){left:66px;background:#28c840}
+.murl{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:28px;padding:0 70px;background:#121316;border-radius:7px;font-size:16px;line-height:28px;color:#A9ADB5;white-space:nowrap}
+.mbody{overflow:hidden;position:relative}
+.mbody img{display:block}
+.im img,.logo img{display:block;object-fit:contain}
+.meme{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 3px #fff}
+.meme img{display:block;object-fit:cover}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.vcard{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37;background:#000}
+.person img{display:block;border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.pn{font-size:38px;font-weight:700;margin-top:18px}
+.pr{font-size:26px;color:#8A8F98;margin-top:4px}
+.track{position:absolute;height:44px;border-radius:6px;background:#15181F}
+.fill{position:absolute;height:44px;border-radius:6px;background:#4A505C}
+.fill.hero{background:#5B8FF0}
+.bl{font-weight:700;white-space:nowrap}
+.bvl{font-weight:900;font-variant-numeric:tabular-nums}
+.card.fixc{border:3px solid #F0A818;background:#1E1608}
+.im.chartp{border-radius:10px;background:#fff}
+.judge{width:110px;height:84px;border-radius:12px;background:#15181F;border:2px solid #3A3F4A;font:900 38px Inter,sans-serif;display:flex;align-items:center;justify-content:center}
+.bugrow{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.bugrow i{display:block;width:16px;height:16px;border-radius:50%;background:#3A3E47}
+.codewall{font-size:27px;line-height:1.75;color:#6B7079}
+.cl{padding:0 10px;border-radius:4px;white-space:nowrap}
+.strike{text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:5px}
+.strike2{color:#8A8F98;text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:4px}
+.tline{position:absolute;height:2px;background:#2A2E37}
+.tp i.dot{display:block;width:30px;height:30px;border-radius:50%;background:#0D0F14;border:3px solid #5A606B}
+.prow{display:flex;align-items:baseline;gap:40px;margin-top:26px;font-size:84px;font-weight:900;letter-spacing:-.03em}
+.prow .pl{font-size:34px;font-weight:400;color:#8A8F98;width:150px}
+.prow .new{color:#5B8FF0}
+.tw img{filter:drop-shadow(0 24px 50px rgba(0,0,0,.6))}
+.dimbg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.person0 img{border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.ovp{background:rgba(5,7,12,.78);padding:8px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.ovc{background:rgba(11,20,48,.92);border:1.5px solid #5B8FF0;border-radius:10px;padding:12px 22px;font-size:32px;font-weight:700;color:#fff;white-space:nowrap}
+.rowbox{border:3px solid #F0A818;border-radius:8px;box-shadow:0 0 24px rgba(240,168,24,.45)}
+.ovc.red{border-color:#F85149;background:rgba(40,10,12,.92)}
+.layer{background:#1A2236;border:3px solid #3A4A72;border-radius:8px}
+.lnum{font-family:"JetBrains Mono",monospace;font-size:18px;color:#8A8F98;text-align:center;margin-top:-30px}
+.tp i.dot.hero{border-color:#5B8FF0;background:#5B8FF0;box-shadow:0 0 24px #5B8FF0}
+
+.toon{position:absolute;opacity:0}
+.toon svg{display:block;overflow:visible}
+.tlab{position:absolute;left:50%;transform:translateX(-50%);bottom:-46px;white-space:nowrap;font-family:Inter,sans-serif;font-weight:700;font-size:26px;color:#fff;background:rgba(10,12,18,.8);padding:4px 14px;border-radius:8px}
+.shell{fill:rgba(240,130,170,.10);stroke:#F28CB1;stroke-width:6}
+.syn{stroke:rgba(140,160,210,.35);stroke-width:2.5}
+.neu{fill:#2A3550;stroke:#17181C;stroke-width:4}
+.room{position:absolute;inset:0}
+
+.bub{min-height:60px}
+.bubin{position:relative;background:#fff;color:#17181C;border:5px solid #17181C;border-radius:26px;padding:16px 22px;font-family:Inter,sans-serif;font-weight:700;line-height:1.2}
+.btail{position:absolute;bottom:-28px}
+.wgrid .wc{position:absolute;background:#1A2236;border:2px solid #2A3550;border-radius:6px;color:#8FA3C8;font-family:"JetBrains Mono",monospace;font-size:13px;display:flex;align-items:center;justify-content:center}
+.wgrid.dim .wc{opacity:.6}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="529.6" data-width="1920" data-height="1080">
+<div class="bg"><div class="grid" id="grid"></div></div>
+<div id="s5" class="clip scene" data-start="0.000" data-duration="8.700" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="w6" class="sc"><div id="vc1" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c4" class="a src" style="left:192px;top:968px">Qwen · “Qwen4-Max is now available.”</div></div></div>
+<div id="vw3" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:12"><video id="v2" class="clip" src="assets/clips/yt_official_c0cf60f7.mp4" muted playsinline data-start="0.000" data-duration="8.700" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s10" class="clip scene" data-start="0.000" data-duration="8.700" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="w11" class="sc"><div id="c7" class="a ovc" style="left:230px;top:110px">Alibaba just launched Qwen4-Max</div><div id="c8" class="a ovc" style="left:230px;top:190px">the new flagship of the Qwen family</div><div id="c9" class="a note ovp" style="left:1150px;top:860px;font-size:46px">Alibaba calls it a “frontier model”</div></div></div>
+<div id="s18" class="clip scene" data-start="8.300" data-duration="11.320" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap><div id="w19" class="sc"><div id="c12" class="a lab" style="left:0;right:0;top:110px;text-align:center;font-size:40px">on output tokens</div><div id="c13" class="a card sel" style="left:260px;top:200px;width:620px;height:330px;"><img src="assets/img/qwen_w.png" alt="" style="width:64px;height:64px;vertical-align:middle;margin-right:16px"><span class="ct">Qwen4-Max</span><div class="big blue" style="font-size:110px;margin-top:10px">$4.50</div><div class="cs">per million output tokens</div></div><div id="c14" class="a card red" style="left:1040px;top:200px;width:620px;height:330px;"><img src="assets/img/claude.png" alt="" style="width:60px;height:60px;vertical-align:middle;margin-right:16px"><span class="ct">Claude Fable 5.2</span><div class="big" style="font-size:110px;margin-top:10px;color:#F85149">$40</div><div class="cs">per million output tokens</div></div><div id="c15" class="a big" style="left:0;right:0;top:600px;text-align:center;font-size:76px">≈ <span class="blue">9× cheaper</span> on output</div><div id="c16" class="a note" style="left:560px;top:730px;font-size:54px">is it actually that good…</div><div id="c17" class="a note" style="left:520px;top:810px;font-size:50px">…or is the price the only frontier thing about it?</div></div></div>
+<div id="s26" class="clip scene" data-start="19.220" data-duration="11.480" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="w27" class="sc"><div id="c20" class="a h" style="left:0;right:0;top:150px;text-align:center;font-size:76px">reviewing <span class="blue">Qwen4-Max</span></div><div id="c21" class="a card" style="left:170px;top:420px;width:290px;height:150px;"><div class="mono g" style="font-size:22px">01</div><div class="ct" style="margin-top:6px">what it is</div></div><div id="c22" class="a card" style="left:490px;top:420px;width:290px;height:150px;"><div class="mono g" style="font-size:22px">02</div><div class="ct" style="margin-top:6px">what it costs</div></div><div id="c23" class="a card" style="left:810px;top:420px;width:290px;height:150px;"><div class="mono g" style="font-size:22px">03</div><div class="ct" style="margin-top:6px">how it scores</div></div><div id="c24" class="a card" style="left:1130px;top:420px;width:290px;height:150px;"><div class="mono g" style="font-size:22px">04</div><div class="ct" style="margin-top:6px">vs the top models</div></div><div id="c25" class="a card sel" style="left:1450px;top:420px;width:290px;height:150px;"><div class="mono g" style="font-size:22px">05</div><div class="ct" style="margin-top:6px">real-world tests</div></div></div></div>
+<div id="s34" class="clip scene" data-start="30.300" data-duration="8.480" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="w35" class="sc"><div id="c28" class="a lab" style="left:260px;top:70px;font-size:40px">let's start with the news</div><div id="c29" class="a im tw" style="left:260px;top:130px;width:640px;height:631px"><img src="assets/img/tw_launch_70.png" alt="" style="width:640px;height:631px"></div><div id="c30" class="a h" style="left:1000px;top:200px;font-size:34px"><span class="mono g">Nov 16, 2026</span></div><div id="c31" class="a h" style="left:1000px;top:260px;font-size:76px">officially <span class="blue">launched</span></div><div id="c32" class="a note" style="left:1010px;top:400px;font-size:46px">but the Qwen4 family isn't brand new</div><div id="c33" class="a src" style="left:260px;top:1000px">@Alibaba_Qwen on X · Nov 16, 2026</div></div></div>
+<div id="s42" class="clip scene" data-start="38.380" data-duration="16.340" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="w43" class="sc"><div id="m36" class="a mac" style="left:160px;top:120px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">alibabacloud.com/blog</div></div><div class="mbody" style="height:482px"><img id="k37" src="assets/img/ac_apsara_fa01b.jpg" alt="ac_apsara" style="width:900px;height:482px"></div></div><div id="c38" class="a h" style="left:1120px;top:140px;font-size:28px"><span class="mono g">Sept 22, 2026 · Apsara Conference, Hangzhou</span></div><div id="c39" class="a im tw" style="left:1120px;top:200px;width:620px;height:664px"><img src="assets/img/tw_apsara_80.png" alt="" style="width:620px;height:664px"></div><div id="c40" class="a card dash" style="left:160px;top:820px;width:420px;height:90px;"><div class="li">only names on a slide</div></div><div id="c41" class="a card red" style="left:620px;top:820px;width:640px;height:90px;"><div class="li">no specs · no prices · no benchmarks</div></div></div></div>
+<div id="s48" class="clip scene" data-start="54.320" data-duration="6.720" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="w49" class="sc"><div class="tline" style="left:300px;top:520px;width:1320px"></div><div id="c44" class="a tp" style="left:280px;top:506px;width:520px"><i class="dot"></i><div class="big" style="font-size:56px;margin-top:24px">Nov 11</div><div class="ct" style="font-size:34px;margin-top:6px">preview opens</div></div><div id="c45" class="a tp" style="left:1300px;top:506px;width:520px"><i class="dot hero"></i><div class="big" style="font-size:56px;margin-top:24px"><span class="blue">Nov 16</span></div><div class="ct" style="font-size:34px;margin-top:6px">Max goes live</div></div><div id="c46" class="a note" style="left:820px;top:400px;font-size:56px">five days later</div><div id="c47" class="a im tw" style="left:760px;top:600px;width:420px;height:265px"><img src="assets/img/tw_preview_35.png" alt="" style="width:420px;height:265px"></div></div></div>
+<div id="s54" class="clip scene" data-start="60.640" data-duration="9.760" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="w55" class="sc"><div id="vc50" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c53" class="a src" style="left:192px;top:968px">@Alibaba_Qwen on X · Qwen4-Max 3D understanding & design demo</div></div></div>
+<div id="vw52" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:20"><video id="v51" class="clip" src="assets/clips/x_3d_7c9ef5d0.mp4" muted playsinline data-start="60.640" data-duration="9.760" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s62" class="clip scene" data-start="60.640" data-duration="9.760" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="w63" class="sc"><div id="c56" class="a ovc" style="left:230px;top:110px">1,000,000-token context window</div><div id="c57" class="a ovc" style="left:230px;top:190px">three thinking levels:</div><div id="c58" class="a ovc" style="left:600px;top:190px">low</div><div id="c59" class="a ovc" style="left:720px;top:190px">high</div><div id="c60" class="a ovc" style="left:850px;top:190px">xhigh</div><div id="c61" class="a note ovp" style="left:230px;top:270px;font-size:44px">high is the default</div></div></div>
+<div id="s68" class="clip scene" data-start="70.000" data-duration="14.000" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div id="w69" class="sc"><div id="c64" class="a h" style="left:260px;top:90px;font-size:64px">the price is the <span class="blue">headline</span></div><div id="c65" class="a card sel" style="left:260px;top:220px;width:1400px;height:380px;"><div class="mono g" style="font-size:24px">per million tokens</div><div class="prow"><span class="pl">input</span><span class="new">$1.50</span><span class="old" style="color:#8A8F98">vs Fable 5.2 $8</span></div><div class="prow"><span class="pl">output</span><span class="new">$4.50</span><span class="old" style="color:#8A8F98">vs Fable 5.2 $40</span></div></div><div id="c66" class="a note" style="left:280px;top:680px;font-size:44px">“9× cheaper” = output only (input ≈ 5×)</div><div id="c67" class="a src" style="left:0;right:0;top:1000px;text-align:center">Sources: Alibaba Cloud Model Studio pricing · Anthropic</div></div></div>
+<div id="s76" class="clip scene" data-start="83.600" data-duration="10.960" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="w77" class="sc"><div id="c70" class="a card" style="left:160px;top:150px;width:620px;height:170px;"><div class="mono g" style="font-size:22px">try it</div><div class="ct" style="margin-top:8px">Qwen Chat / Qwen Studio</div></div><div id="c71" class="a card fixc" style="left:160px;top:360px;width:620px;"><div class="mono" style="font-size:22px;color:#F0A818">source check</div><div class="li" style="margin-top:6px">Alibaba's launch post names Qwen Studio, QwenWork and Qoder</div></div><div id="m72" class="a mac" style="left:860px;top:140px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">qwencloud.com/pricing/token-plan</div></div><div class="mbody" style="height:356px"><img id="k73" src="assets/img/tp_page_bf8a4.jpg" alt="tp_page" style="width:900px;height:356px"></div></div><div id="c74" class="a note" style="left:880px;top:720px;font-size:50px">Token Plan: from about $6 a month</div><div id="c75" class="a note" style="left:880px;top:800px;font-size:50px">or $3 for new users</div></div></div>
+<div id="s81" class="clip scene" data-start="94.160" data-duration="11.400" data-track-index="2" style="z-index:24" data-layout-allow-overflow data-layout-allow-overlap><div id="w82" class="sc"><div class="room" style="background:linear-gradient(#2E3F63 0 64%,#222B45 64%)"></div><div id="c78" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:64px">what it's <span class="blue">not</span>: open source</div><div class="toon" id="lock" style="left:250px;top:260px;width:360px;height:420px"><svg width="360" height="420" viewBox="0 0 360 420"><path d="M90 190 V120 A90 90 0 0 1 270 120 V190" fill="none" stroke="#17181C" stroke-width="30"/><path d="M90 190 V120 A90 90 0 0 1 270 120 V190" fill="none" stroke="#C9D1DC" stroke-width="18"/><rect x="40" y="180" width="280" height="220" rx="34" fill="#F2B33D" stroke="#17181C" stroke-width="8"/><circle cx="180" cy="270" r="26" fill="#17181C"/><rect x="170" y="280" width="20" height="60" rx="6" fill="#17181C"/></svg></div><div id="c79" class="a card red" style="left:760px;top:280px;width:860px;height:120px;"><div class="ct">Qwen4-Max weights: closed</div></div><div id="c80" class="a card dash" style="left:760px;top:440px;width:860px;height:170px;"><div class="ct">smaller Qwen4 models: open weights “coming”</div><div class="cs">no date given</div></div></div></div>
+<div id="s90" class="clip scene" data-start="105.160" data-duration="19.380" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="w91" class="sc"><div id="c83" class="a h" style="left:160px;top:70px;font-size:56px">and the size?</div><div id="c84" class="a ovc" style="left:160px;top:170px">“2.4 trillion parameters” everywhere online</div><div id="c85" class="a im chartp" style="left:160px;top:260px;width:520px;height:535px"><img src="assets/raw/web/q_arch.png" alt="" style="width:520px;height:535px"></div><div id="c86" class="a note" style="left:760px;top:260px;font-size:44px">narration: “2.4T is Qwen3.8-Max's size”</div><div id="c87" class="a card fixc" style="left:760px;top:340px;width:960px;"><div class="mono" style="font-size:22px;color:#F0A818">source check</div><div class="li" style="margin-top:6px">Alibaba's Qwen4-Max blog: <b>2.4T backbone parameters, 71B activated per token</b>, plus 328B N-gram embedding parameters</div></div><div id="c88" class="a card" style="left:760px;top:560px;width:960px;height:160px;"><div class="li">Qwen3.8-Max was also 2.4T in total (95B active)</div><div class="cs">so Qwen4-Max keeps the size and activates ~25% fewer parameters</div></div><div id="c89" class="a src" style="left:160px;top:1000px">Architecture diagram and text: qwen.ai/blog?id=qwen4-max, Nov 16, 2026</div></div></div>
+<div id="s102" class="clip scene" data-start="124.140" data-duration="36.060" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="w103" class="sc"><div id="c92" class="a h" style="left:160px;top:50px;font-size:56px">okay, <span class="blue">benchmarks</span></div><div id="c93" class="a im chartp" style="left:160px;top:140px;width:1200px;height:800px"><img src="assets/raw/web/q_table.png" alt="" style="width:1200px;height:800px"></div><div id="c94" class="a lab" style="left:1400px;top:160px;width:400px;font-size:30px">Alibaba's chart compares Qwen4-Max with</div><div id="c95" class="a ovc" style="left:1400px;top:260px">Claude Opus 5.5</div><div id="c96" class="a ovc" style="left:1400px;top:340px">GPT-6.1 Sol</div><div id="c97" class="a ovc" style="left:1400px;top:420px">Kimi K3.1</div><div id="c98" class="a card red" style="left:1400px;top:520px;width:420px;height:130px;"><div class="li">not in it: Fable 5.2 · Gemini 4 Carbon</div></div><div id="c99" class="a card fixc" style="left:1400px;top:680px;width:420px;"><div class="mono" style="font-size:22px;color:#F0A818">source check</div><div class="li" style="margin-top:6px">GPT-6 Astra <b>is</b> in Alibaba's chart (last-but-one column)</div></div><div id="c100" class="a note" style="left:300px;top:960px;font-size:46px">lined up against the next tier</div><div id="c101" class="a src" style="left:160px;top:1010px">Chart: @Alibaba_Qwen launch post / qwen.ai blog</div></div></div>
+<div id="s109" class="clip scene" data-start="159.800" data-duration="25.980" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="w110" class="sc"><div id="c104" class="a h" style="left:0;right:0;top:50px;text-align:center;font-size:60px">where it <span class="blue">wins</span></div><div id="pw1" class="a im chartp" style="left:120px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_c87e6.jpg" alt="" style="width:540px;height:343px"></div><div id="pw2" class="a im chartp" style="left:690px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_62880.jpg" alt="" style="width:540px;height:343px"></div><div id="pw3" class="a im chartp" style="left:1260px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_a35e9.jpg" alt="" style="width:540px;height:343px"></div><div id="c105" class="a card sel" style="left:120px;top:600px;width:540px;height:150px;"><div class="mono g" style="font-size:22px">DeepSWE v1.1 · coding agent</div><div class="big blue" style="font-size:64px">75.7</div></div><div id="c106" class="a card sel" style="left:690px;top:600px;width:540px;height:150px;"><div class="mono g" style="font-size:22px">Agents' Last Exam v1.1</div><div class="big blue" style="font-size:64px">46.7</div></div><div id="c107" class="a card sel" style="left:1260px;top:600px;width:540px;height:150px;"><div class="mono g" style="font-size:22px">HLAB-Vals-1.1 · legal agents</div><div class="big blue" style="font-size:64px">21.3 <span class="g" style="font-size:36px">vs Opus 9.2</span></div></div><div id="c108" class="a note" style="left:1300px;top:790px;font-size:56px">that one's a blowout</div></div></div>
+<div id="s118" class="clip scene" data-start="185.380" data-duration="23.500" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="w119" class="sc"><div id="c111" class="a h" style="left:0;right:0;top:50px;text-align:center;font-size:60px">where it <span class="blue">loses</span></div><div id="c112" class="a im chartp" style="left:120px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_cb060.jpg" alt="" style="width:540px;height:343px"></div><div id="c113" class="a im chartp" style="left:690px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_ccd9b.jpg" alt="" style="width:540px;height:343px"></div><div id="c114" class="a im chartp" style="left:1260px;top:170px;width:540px;height:343px"><img src="assets/img/q_table_703ae.jpg" alt="" style="width:540px;height:343px"></div><div id="c115" class="a card red" style="left:120px;top:600px;width:540px;height:190px;"><div class="mono g" style="font-size:22px">Terminal-Bench 4.0</div><div class="big" style="font-size:56px;color:#F85149">48.5</div><div class="cs">Opus 59.6 · Kimi 67.2</div></div><div id="c116" class="a card red" style="left:690px;top:600px;width:540px;height:190px;"><div class="mono g" style="font-size:22px">ProgramBench</div><div class="big" style="font-size:56px;color:#F85149">31.5</div><div class="cs">Opus 65, more than double</div></div><div id="c117" class="a card red" style="left:1260px;top:600px;width:540px;height:190px;"><div class="mono g" style="font-size:22px">Humanity's Last Exam</div><div class="big" style="font-size:56px;color:#F85149">51.7</div><div class="cs">Opus 59.8</div></div></div></div>
+<div id="s125" class="clip scene" data-start="208.480" data-duration="12.620" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="w126" class="sc"><div id="c120" class="a h" style="left:0;right:0;top:90px;text-align:center;font-size:48px">count it up: rows topped in Alibaba's own chart</div><div id="c121" class="a card sel" style="left:300px;top:240px;width:600px;height:300px;"><img src="assets/img/qwen_w.png" alt="" style="width:60px;height:60px;vertical-align:middle;margin-right:14px"><span class="ct">Qwen4-Max</span><div class="big blue" style="font-size:120px">3–4</div></div><div id="c122" class="a card" style="left:1020px;top:240px;width:600px;height:300px;"><img src="assets/img/claude.png" alt="" style="width:56px;height:56px;vertical-align:middle;margin-right:14px"><span class="ct">Claude Opus 5.5</span><div class="big" style="font-size:120px">7</div></div><div id="c123" class="a card fixc" style="left:300px;top:580px;width:1320px;"><div class="mono" style="font-size:22px;color:#F0A818">source check</div><div class="li" style="margin-top:6px">counting every chart panel, Qwen tops 4 (DeepSWE, Agents' Last Exam, HLAB, BioMysteryBench)</div></div><div id="c124" class="a note" style="left:420px;top:760px;font-size:52px">…in the chart where Alibaba picked the opponents</div></div></div>
+<div id="s144" class="clip scene" data-start="220.700" data-duration="18.980" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div id="w145" class="sc"><div id="c127" class="a h" style="left:0;right:0;top:50px;text-align:center;font-size:56px">so what do <span class="blue">independent testers</span> say?</div><div id="c128" class="a im tw" style="left:160px;top:140px;width:600px;height:579px"><img src="assets/img/tw_aa_62.png" alt="" style="width:600px;height:579px"></div><div id="c129" class="a lab" style="left:860px;top:150px;font-size:34px">Artificial Analysis Intelligence Index</div><div id="c132" class="a bl" style="left:860px;top:250px;font-size:34px;width:440px"><img src="assets/img/qwen_w.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Qwen4-Max (xhigh)</div><div class="track" style="left:1320px;top:256px;width:480px"></div><div id="bf130" class="fill hero" style="left:1320px;top:256px;width:0"></div><div id="c133" class="a bvl blue" style="left:1548px;top:246px;font-size:44px"><span id="bv131">0.0%</span></div><div id="c136" class="a bl" style="left:860px;top:370px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Claude Opus 5.5 (max)</div><div class="track" style="left:1320px;top:376px;width:480px"></div><div id="bf134" class="fill" style="left:1320px;top:376px;width:0"></div><div id="c137" class="a bvl" style="left:1625px;top:366px;font-size:44px"><span id="bv135">0.0%</span></div><div id="c140" class="a bl" style="left:860px;top:490px;font-size:34px;width:440px"><img src="assets/img/claude.png" alt="" style="width:40px;height:40px;object-fit:contain;margin-right:16px;vertical-align:-10px">Claude Fable 5.2 (max)</div><div class="track" style="left:1320px;top:496px;width:480px"></div><div id="bf138" class="fill" style="left:1320px;top:496px;width:0"></div><div id="c141" class="a bvl" style="left:1654px;top:486px;font-size:44px"><span id="bv139">0.0%</span></div><div id="c142" class="a note" style="left:860px;top:640px;font-size:50px">not a small gap: a different league</div><div id="c143" class="a src" style="left:160px;top:1000px">artificialanalysis.ai · AA lists whole numbers: 43 / 59 / 65</div></div></div>
+<div id="s151" class="clip scene" data-start="239.280" data-duration="13.480" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="w152" class="sc"><div id="c146" class="a im tw" style="left:300px;top:60px;width:640px;height:992px"><img src="assets/img/tw_vals_95.png" alt="" style="width:640px;height:992px"></div><div id="c147" class="a lab" style="left:1040px;top:180px;font-size:34px">Vals AI index</div><div id="c148" class="a card sel" style="left:1040px;top:240px;width:600px;height:240px;"><div class="li">Qwen4-Max</div><div class="big blue" style="font-size:90px">63.2%</div><div class="cs">#11 of 38 · top Chinese model</div></div><div id="c149" class="a card" style="left:1040px;top:510px;width:600px;height:200px;"><div class="li">Claude Fable 5.2</div><div class="big" style="font-size:90px">71.3%</div></div><div id="c150" class="a note" style="left:1060px;top:760px;font-size:52px">clearly behind the frontier</div></div></div>
+<div id="s155" class="clip scene" data-start="252.360" data-duration="6.160" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="w156" class="sc"><div id="c153" class="a h" style="left:0;right:0;top:400px;text-align:center;font-size:72px">but leaderboards aren't the <span class="blue">whole story</span></div><div id="c154" class="a lab" style="left:0;right:0;top:520px;text-align:center;font-size:44px">what happens when people actually use it?</div></div></div>
+<div id="s166" class="clip scene" data-start="258.120" data-duration="21.380" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap><div id="w167" class="sc"><div id="m157" class="a mac" style="left:160px;top:110px;width:840px"><div class="mbar"><i></i><i></i><i></i><div class="murl">atomicagent.io/blog/qwen-4-max</div></div><div class="mbody" style="height:310px"><img id="k158" src="assets/img/at_pass_833d0.jpg" alt="at_pass" style="width:840px;height:310px"></div></div><div id="c159" class="a lab" style="left:1080px;top:120px;font-size:34px">Atomic Agent's real coding job</div><div id="c160" class="a card" style="left:1080px;top:180px;width:680px;height:90px;"><div class="li">a ~1,400-line stock library</div></div><div id="c161" class="a card" style="left:1080px;top:290px;width:680px;height:90px;"><div class="li">13 planted bugs + 1 missing feature</div></div><div id="c162" class="a card" style="left:1080px;top:400px;width:680px;height:90px;"><div class="li">checked by 59 hidden tests</div></div><div id="c163" class="a card ok" style="left:1080px;top:530px;width:680px;height:180px;"><div class="mono g" style="font-size:22px">Qwen4-Max (high)</div><div class="big blue" style="font-size:72px">59/59 <span class="g" style="font-size:36px">in 3 of 3 runs</span></div></div><div id="c164" class="a card red" style="left:160px;top:760px;width:840px;height:90px;"><div class="li">Qwen3.8-Max: didn't finish it in the comparable runs</div></div><div id="c165" class="a note" style="left:1100px;top:760px;font-size:48px">a big jump over the last Qwen</div></div></div>
+<div id="s177" class="clip scene" data-start="279.100" data-duration="17.920" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="w178" class="sc"><div id="c168" class="a h" style="left:220px;top:70px;font-size:60px">but look at the <span class="blue">clock</span></div><div id="c169" class="a bl" style="left:220px;top:236px;font-size:32px">Qwen4-Max</div><div class="track" style="left:220px;top:280px;width:1100px;height:34px"></div><div id="rq" class="fill" style="left:220px;top:280px;width:0;height:34px;background:#5B8FF0"></div><div id="c170" class="a bvl" style="left:1340px;top:274px;font-size:40px"><span style="color:#5B8FF0">~25 min</span></div><div id="c171" class="a bl" style="left:220px;top:416px;font-size:32px">Claude Opus 5.5</div><div class="track" style="left:220px;top:460px;width:1100px;height:34px"></div><div id="ro" class="fill" style="left:220px;top:460px;width:0;height:34px;background:#D97757"></div><div id="c172" class="a bvl" style="left:1340px;top:454px;font-size:40px"><span style="color:#D97757">4.2 min</span></div><div id="c173" class="a bl" style="left:220px;top:596px;font-size:32px">GPT-6.1 Sol</div><div class="track" style="left:220px;top:640px;width:1100px;height:34px"></div><div id="rs" class="fill" style="left:220px;top:640px;width:0;height:34px;background:#E5E7EB"></div><div id="c174" class="a bvl" style="left:1340px;top:634px;font-size:40px"><span style="color:#E5E7EB">2.4 min</span></div><div id="c175" class="a card" style="left:220px;top:800px;width:1100px;height:90px;"><div class="li">and Sol was cheaper too: <span style="color:#3FB950">~29¢</span> vs Qwen's ~65¢ per task</div></div><div id="c176" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Atomic Agent, Nov 16, 2026</div></div></div>
+<div id="s201" class="clip scene" data-start="296.620" data-duration="40.640" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="w202" class="sc"><div id="m179" class="a mac" style="left:160px;top:110px;width:620px"><div class="mbar"><i></i><i></i><i></i><div class="murl">kingy.ai</div></div><div class="mbody" style="height:286px"><img id="k180" src="assets/img/kingy_f7a83.jpg" alt="kingy" style="width:620px;height:286px"></div></div><div id="c181" class="a lab" style="left:860px;top:120px;font-size:30px">10 practical tasks · 5 models · 2 runs · 200 graded stages</div><div id="c183" class="a bl" style="left:860px;top:200px;font-size:30px;width:400px"><img src="assets/img/openai_sym_w.png" alt="" style="width:36px;height:36px;object-fit:contain;vertical-align:-8px;margin-right:12px">GPT-6 Astra</div><div class="track" style="left:1260px;top:204px;width:440px;height:36px"></div><div id="kb182" class="fill" style="left:1260px;top:204px;width:0;height:36px"></div><div id="c184" class="a bvl" style="left:1696px;top:198px;font-size:36px"><span class="">19.8</span></div><div id="c186" class="a bl" style="left:860px;top:304px;font-size:30px;width:400px"><img src="assets/img/openai_sym_w.png" alt="" style="width:36px;height:36px;object-fit:contain;vertical-align:-8px;margin-right:12px">GPT-6.1 Sol</div><div class="track" style="left:1260px;top:308px;width:440px;height:36px"></div><div id="kb185" class="fill" style="left:1260px;top:308px;width:0;height:36px"></div><div id="c187" class="a bvl" style="left:1678px;top:302px;font-size:36px"><span class="">19.6</span></div><div id="c189" class="a bl" style="left:860px;top:408px;font-size:30px;width:400px"><img src="assets/img/claude.png" alt="" style="width:36px;height:36px;object-fit:contain;vertical-align:-8px;margin-right:12px">Claude Opus 5.5</div><div class="track" style="left:1260px;top:412px;width:440px;height:36px"></div><div id="kb188" class="fill" style="left:1260px;top:412px;width:0;height:36px"></div><div id="c190" class="a bvl" style="left:1643px;top:406px;font-size:36px"><span class="">19.2</span></div><div id="c192" class="a bl" style="left:860px;top:512px;font-size:30px;width:400px"><img src="assets/img/qwen_w.png" alt="" style="width:36px;height:36px;object-fit:contain;vertical-align:-8px;margin-right:12px">Qwen4-Max</div><div class="track" style="left:1260px;top:516px;width:440px;height:36px"></div><div id="kb191" class="fill hero" style="left:1260px;top:516px;width:0;height:36px"></div><div id="c193" class="a bvl" style="left:1595px;top:510px;font-size:36px"><span class="blue">18.65</span></div><div id="c195" class="a bl" style="left:860px;top:616px;font-size:30px;width:400px"><img src="assets/img/claude.png" alt="" style="width:36px;height:36px;object-fit:contain;vertical-align:-8px;margin-right:12px">Claude Fable 5.2</div><div class="track" style="left:1260px;top:620px;width:440px;height:36px"></div><div id="kb194" class="fill" style="left:1260px;top:620px;width:0;height:36px"></div><div id="c196" class="a bvl" style="left:1476px;top:614px;font-size:36px"><span class="">17.3</span></div><div id="c197" class="a note" style="left:860px;top:730px;font-size:40px">Fable: some outputs failed or got cut off</div><div id="c198" class="a card" style="left:860px;top:790px;width:900px;height:90px;"><div class="li">study cost: Qwen4-Max <span style="color:#3FB950">$3.62</span> · Fable 5.2 <span style="color:#F85149">$61.30</span></div></div><div id="c199" class="a note" style="left:880px;top:900px;font-size:46px">4th on quality, 2nd cheapest</div><div id="c200" class="a h" style="left:1260px;top:160px;font-size:20px"><span class="mono g" style="font-size:20px">score out of 20 (bars start at 15)</span></div></div></div>
+<div id="s206" class="clip scene" data-start="336.860" data-duration="8.000" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="w207" class="sc"><div class="room" style="background:linear-gradient(#2E3F63 0 64%,#222B45 64%)"></div><div id="c203" class="a card red" style="left:300px;top:260px;width:700px;height:250px;"><div class="mono g" style="font-size:22px">customer-support task · ticket</div><div class="ct" style="margin-top:8px">refund: <span style="color:#F85149">$0.00</span></div><div class="cs">…but the refund hadn't been decided yet</div></div><div id="qs" class="toon" style="left:1200px;top:536px;width:201px;height:364px"><svg width="201" height="364" viewBox="0 -20 144 280" overflow="visible"><g id="qs_legL" style="transform-origin:58px 200px"><rect x="50" y="196" width="18" height="58" rx="9" fill="#17181C"/></g><g id="qs_legR" style="transform-origin:84px 200px"><rect x="76" y="196" width="18" height="58" rx="9" fill="#17181C"/></g><rect id="qs_body" x="22" y="112" width="100" height="104" rx="44" fill="#8B5CF6" stroke="#17181C" stroke-width="6"/><g id="qs_armL" style="transform-origin:30px 140px"><path d="M30 140 Q4 170 12 202" fill="none" stroke="#17181C" stroke-width="13" stroke-linecap="round"/><path d="M30 140 Q4 170 12 202" fill="none" stroke="#8B5CF6" stroke-width="7" stroke-linecap="round"/></g><g id="qs_armR" style="transform-origin:114px 140px"><path d="M114 140 Q140 170 132 202" fill="none" stroke="#17181C" stroke-width="13" stroke-linecap="round"/><path d="M114 140 Q140 170 132 202" fill="none" stroke="#8B5CF6" stroke-width="7" stroke-linecap="round"/></g><g id="qs_head"><rect x="16" y="16" width="112" height="98" rx="26" fill="#DDE3EC" stroke="#17181C" stroke-width="6"/><rect x="30" y="32" width="84" height="64" rx="16" fill="#0E1626" stroke="#17181C" stroke-width="4"/><line x1="72" y1="16" x2="72" y2="-4" stroke="#17181C" stroke-width="6"/><circle id="qs_ant" cx="72" cy="-8" r="9" fill="#8B5CF6" stroke="#17181C" stroke-width="5"/><g id="qs_eyes" style="transform-origin:72px 62px"><rect x="46" y="52" width="16" height="22" rx="7" fill="#8B5CF6"/><rect x="82" y="52" width="16" height="22" rx="7" fill="#8B5CF6"/></g><path id="qs_mouth" d="M58 82 Q72 90 86 82" fill="none" stroke="#8B5CF6" stroke-width="5" stroke-linecap="round" style="transform-origin:72px 84px"/></g></svg><div class="tlab">Qwen4-Max</div></div><div id="c204" class="a note" style="left:300px;top:560px;font-size:50px">two real slips, both here</div><div id="c205" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Kingy AI run files (tickets T703, T708)</div></div></div>
+<div id="s216" class="clip scene" data-start="344.460" data-duration="24.380" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="w217" class="sc"><div id="m208" class="a mac" style="left:160px;top:110px;width:1000px"><div class="mbar"><i></i><i></i><i></i><div class="murl">mindstudio.ai/blog/qwen4-max-review</div></div><div class="mbody" style="height:317px"><img id="k209" src="assets/img/ms_dash_7fa79.jpg" alt="ms_dash" style="width:1000px;height:317px"></div></div><div id="c210" class="a lab" style="left:1240px;top:120px;font-size:32px">MindStudio hands-on tests</div><div id="c211" class="a card" style="left:1240px;top:180px;width:560px;height:210px;"><div class="mono g" style="font-size:22px">full-stack scoring dashboard · 4 judges</div><div style="display:flex;gap:14px;margin-top:14px"><div class="judge" id="jd0">8.5</div><div class="judge" id="jd1">9.0</div><div class="judge" id="jd2">8.0</div><div class="judge" id="jd3">9.5</div></div></div><div id="c212" class="a card" style="left:160px;top:740px;width:1000px;height:150px;"><div class="mono" style="font-size:28px;line-height:1.6">for i in range(len(judges)):<br>&nbsp;&nbsp;if i <span id="op" style="color:#F85149">&lt;</span> 3: total += s[i]</div></div><div id="c213" class="a note" style="left:1240px;top:420px;font-size:42px">dropping the 4th judge's score, no hints</div><div id="c214" class="a card ok" style="left:1240px;top:500px;width:560px;height:140px;"><div class="li">found it ✓ rebuilt the app ✓ reset the DB ✓ checked the fix ✓</div></div><div id="c215" class="a note" style="left:1240px;top:680px;font-size:48px">the right champion came back</div></div></div>
+<div id="s225" class="clip scene" data-start="368.440" data-duration="11.940" data-track-index="2" style="z-index:38" data-layout-allow-overflow data-layout-allow-overlap><div id="w226" class="sc"><div id="m218" class="a mac" style="left:160px;top:110px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">mindstudio.ai/blog/qwen4-max-review</div></div><div class="mbody" style="height:285px"><img id="k219" src="assets/img/ms_kebab_7fa79.jpg" alt="ms_kebab" style="width:900px;height:285px"></div></div><div id="kb" class="toon" style="left:1220px;top:250px;width:324px;height:468px"><svg width="324" height="468" viewBox="0 0 360 520"><rect x="20" y="40" width="40" height="440" rx="10" fill="#3A3F4A" stroke="#17181C" stroke-width="5"/><rect id="kb_heat" x="24" y="60" width="32" height="400" rx="8" fill="#F85149" style="opacity:.25"/><line x1="180" y1="40" x2="180" y2="480" stroke="#17181C" stroke-width="10"/><g id="kb_meat"><rect class="kb_band" x="110" y="90" width="140" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="106" y="124" width="148" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="102" y="158" width="156" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="98" y="192" width="164" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="94" y="226" width="172" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="90" y="260" width="180" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="86" y="294" width="188" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="82" y="328" width="196" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/><rect class="kb_band" x="78" y="362" width="204" height="30" rx="12" fill="#D9A77A" stroke="#17181C" stroke-width="4"/></g><rect x="120" y="470" width="120" height="20" rx="6" fill="#9AA3B2" stroke="#17181C" stroke-width="4"/></svg></div><div id="c220" class="a ovc" style="left:1560px;top:300px">spin speed</div><div id="c221" class="a ovc" style="left:1560px;top:380px">heat</div><div id="c222" class="a ovc" style="left:1560px;top:460px">slice thickness</div><div id="c223" class="a note" style="left:1500px;top:560px;font-size:44px">meat that slowly browns</div><div id="c224" class="a note" style="left:160px;top:760px;font-size:44px">hand-drawn sketch → working simulation in ~15 min</div></div></div>
+<div id="s249" class="clip scene" data-start="379.980" data-duration="9.120" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="w250" class="sc"><div id="m227" class="a mac" style="left:160px;top:120px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">mindstudio.ai/blog/qwen4-max-review</div></div><div class="mbody" style="height:285px"><img id="k228" src="assets/img/ms_lang_7fa79.jpg" alt="ms_lang" style="width:900px;height:285px"></div></div><div id="c229" class="a ovc" style="left:1110px;top:170px">Español</div><div id="c230" class="a ovc" style="left:1360px;top:170px">日本語</div><div id="c231" class="a ovc" style="left:1610px;top:170px">Kiswahili</div><div id="c232" class="a ovc" style="left:1110px;top:250px">Deutsch</div><div id="c233" class="a ovc" style="left:1360px;top:250px">हिन्दी</div><div id="c234" class="a ovc" style="left:1610px;top:250px">Português</div><div id="c235" class="a ovc" style="left:1110px;top:330px">한국어</div><div id="c236" class="a ovc" style="left:1360px;top:330px">Türkçe</div><div id="c237" class="a ovc" style="left:1610px;top:330px">Polski</div><div id="c238" class="a ovc" style="left:1110px;top:410px">العربية</div><div id="c239" class="a ovc" style="left:1360px;top:410px">Tiếng Việt</div><div id="c240" class="a ovc" style="left:1610px;top:410px">Suomi</div><div id="c241" class="a ovc" style="left:1110px;top:490px">Ελληνικά</div><div id="c242" class="a ovc" style="left:1360px;top:490px">Bahasa</div><div id="c243" class="a ovc" style="left:1610px;top:490px">Nederlands</div><div id="c244" class="a ovc" style="left:1110px;top:570px">ไทย</div><div id="c245" class="a ovc" style="left:1360px;top:570px">Yorùbá</div><div id="c246" class="a ovc" style="left:1610px;top:570px">Čeština</div><div id="c247" class="a big" style="left:1110px;top:680px;font-size:60px">all <span class="blue">82</span> in ~4 minutes</div><div id="c248" class="a note" style="left:1120px;top:790px;font-size:48px">without skipping one</div></div></div>
+<div id="s255" class="clip scene" data-start="388.700" data-duration="21.020" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="w256" class="sc"><div id="vc251" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c254" class="a src" style="left:192px;top:968px">@SPAC89 on X · Nov 16, 2026 · chip benchmark renders</div></div></div>
+<div id="vw253" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:41"><video id="v252" class="clip" src="assets/clips/x_spac_cf1b0906.mp4" muted playsinline data-start="388.700" data-duration="21.020" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s261" class="clip scene" data-start="388.700" data-duration="21.020" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="w262" class="sc"><div id="c257" class="a ovc" style="left:230px;top:110px">6 rounds of improvements, on its own</div><div id="c258" class="a ovc" style="left:230px;top:190px">checked every rendered frame visually</div><div id="c259" class="a ovc" style="left:1180px;top:760px">~1 day · ~half of a $5 plan</div><div id="c260" class="a note ovp" style="left:600px;top:860px;font-size:42px">“the first Qwen model that's really surprised me”</div></div></div>
+<div id="s270" class="clip scene" data-start="409.320" data-duration="10.600" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="w271" class="sc"><div id="c263" class="a h" style="left:0;right:0;top:60px;text-align:center;font-size:64px">now the <span class="blue">problems</span></div><div id="c264" class="a h" style="left:220px;top:200px;font-size:52px">1 · speed</div><div id="c265" class="a bl" style="left:220px;top:356px;font-size:32px">Qwen4-Max</div><div class="track" style="left:220px;top:400px;width:1100px;height:34px"></div><div id="rq2" class="fill" style="left:220px;top:400px;width:0;height:34px;background:#5B8FF0"></div><div id="c266" class="a bvl" style="left:1340px;top:394px;font-size:40px"><span style="color:#5B8FF0">slowest</span></div><div id="c267" class="a bl" style="left:220px;top:536px;font-size:32px">the competition</div><div class="track" style="left:220px;top:580px;width:1100px;height:34px"></div><div id="rc2" class="fill" style="left:220px;top:580px;width:0;height:34px;background:#9AA3B2"></div><div id="c268" class="a bvl" style="left:1340px;top:574px;font-size:40px"><span style="color:#9AA3B2">done</span></div><div id="c269" class="a note" style="left:220px;top:720px;font-size:50px">the coding test backs that up</div></div></div>
+<div id="s279" class="clip scene" data-start="419.520" data-duration="19.580" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="w280" class="sc"><div id="c272" class="a h" style="left:220px;top:60px;font-size:52px">2 · judgment on game design</div><div id="c273" class="a im tw" style="left:220px;top:150px;width:640px;height:769px"><img src="assets/img/tw_gamefeel_92.png" alt="" style="width:640px;height:769px"></div><div id="c274" class="a lab" style="left:960px;top:170px;width:820px;font-size:30px">GameFeel RE: can it tell if a game change is balanced?</div><div id="c275" class="a card red" style="left:960px;top:260px;width:380px;height:210px;"><div class="li">Qwen4-Max preview</div><div class="big" style="font-size:80px;color:#F85149">10.3</div></div><div id="c276" class="a card" style="left:1380px;top:260px;width:380px;height:210px;"><div class="li">old Qwen3.8-Max</div><div class="big" style="font-size:80px">12.1</div></div><div id="c277" class="a card dash" style="left:960px;top:510px;width:800px;height:160px;"><div class="li">even the small early Qwen4 models beat it</div><div class="cs">27B-Early 14.9 · Flash-Early 20.0</div></div><div id="c278" class="a src" style="left:220px;top:1000px">@follistatindev on X · GameFeel data as of Nov 12, 2026 (later rescaled)</div></div></div>
+<div id="s286" class="clip scene" data-start="438.700" data-duration="13.840" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="w287" class="sc"><div id="c281" class="a h" style="left:220px;top:60px;font-size:52px">3 · small details</div><div id="c282" class="a lab" style="left:220px;top:150px;font-size:34px">the classic test: draw a pelican riding a bicycle</div><div id="pb" class="toon" style="left:300px;top:250px;width:728px;height:560px"><svg width="728" height="560" viewBox="0 0 520 400"><g fill="none" stroke="#17181C" stroke-width="8" stroke-linecap="round"><circle cx="120" cy="300" r="78"/><circle cx="400" cy="300" r="78"/><path d="M120 300 L230 300 L330 190 L180 190 Z M230 300 L330 190 L400 300 M330 190 L318 150 M300 150 L340 150 M180 190 L170 160 M150 160 L196 160"/></g><g id="pb_ped"><line x1="230" y1="300" x2="262" y2="330" stroke="#17181C" stroke-width="8"/><rect x="252" y="324" width="30" height="10" rx="3" fill="#17181C"/></g><ellipse cx="200" cy="120" rx="80" ry="58" fill="#F4F5F7" stroke="#17181C" stroke-width="7"/><circle cx="262" cy="64" r="34" fill="#F4F5F7" stroke="#17181C" stroke-width="7"/><circle cx="272" cy="58" r="6" fill="#17181C"/><path d="M290 64 L392 84 L294 92 Z" fill="#F2B33D" stroke="#17181C" stroke-width="6" stroke-linejoin="round"/><path d="M150 108 Q120 130 150 156" fill="none" stroke="#C9D1DC" stroke-width="10" stroke-linecap="round"/><path id="pb_leg" d="M210 172 L232 236 L300 250" fill="none" stroke="#F2B33D" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle id="pb_miss" cx="281" cy="300" r="34" fill="none" stroke="#F85149" stroke-width="6" stroke-dasharray="10 8" style="opacity:0"/></svg></div><div id="c283" class="a note" style="left:1180px;top:400px;font-size:50px">feet don't line up with the pedals<span class="arw" style="left:-90px;top:30px"><svg width="70" height="40" viewBox="0 0 70 40"><path d="M66 10C46 4 24 10 8 28M8 28l2-16M8 28l16 0" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div id="c284" class="a note" style="left:1180px;top:520px;font-size:44px">looked finished, but wasn't quite right</div><div id="c285" class="a card dash" style="left:1180px;top:700px;width:600px;height:70px;"><div class="mono g" style="font-size:20px">illustration · we could not find the original tester post</div></div></div></div>
+<div id="s292" class="clip scene" data-start="452.140" data-duration="10.440" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="w293" class="sc"><div id="c288" class="a h" style="left:220px;top:60px;font-size:52px">4 · the subscription rules</div><div id="m289" class="a mac" style="left:220px;top:150px;width:1480px"><div class="mbar"><i></i><i></i><i></i><div class="murl">alibabacloud.com/help · Token Plan</div></div><div class="mbody" style="height:309px"><img id="k290" src="assets/img/tp_rule_3f387.jpg" alt="tp_rule" style="width:1480px;height:309px"></div></div><div id="c291" class="a note" style="left:240px;top:820px;font-size:48px">building a real product on it is complicated, for now</div></div></div>
+<div id="s299" class="clip scene" data-start="462.180" data-duration="20.220" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="w300" class="sc"><div id="c294" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:56px">so, is Qwen4-Max really a <span class="blue">frontier model</span>?</div><div id="c295" class="a big" style="left:0;right:0;top:180px;text-align:center;font-size:100px">honestly: no.</div><div id="c296" class="a card red" style="left:260px;top:400px;width:1400px;height:90px;"><div class="li">Artificial Analysis: ~20+ points behind Fable 5.2</div></div><div id="c297" class="a card red" style="left:260px;top:510px;width:1400px;height:90px;"><div class="li">Alibaba's own chart: Opus 5.5 wins most rows</div></div><div id="c298" class="a card red" style="left:260px;top:620px;width:1400px;height:90px;"><div class="li">top models (Fable 5.2, Gemini 4 Carbon) not invited</div></div></div></div>
+<div id="s306" class="clip scene" data-start="482.000" data-duration="18.500" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="w307" class="sc"><div id="c301" class="a lab" style="left:0;right:0;top:70px;text-align:center;font-size:44px">but here's what a lot of people are missing</div><div id="c302" class="a card" style="left:260px;top:180px;width:1400px;height:130px;"><div class="ct" style="font-size:50px">not trying to beat Fable at Fable's price…</div></div><div id="c303" class="a card sel" style="left:260px;top:340px;width:1400px;height:130px;"><div class="ct" style="font-size:50px">…trying to get <span class="blue">close</span> at a fraction of the cost</div></div><div id="c304" class="a card ok" style="left:260px;top:520px;width:1400px;height:90px;"><div class="li">real work tests: finished jobs the last Qwen couldn't</div></div><div id="c305" class="a card ok" style="left:260px;top:630px;width:1400px;height:90px;"><div class="li">same range as Opus 5.5 for a small slice of the price</div></div></div></div>
+<div id="s312" class="clip scene" data-start="500.100" data-duration="9.200" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="w313" class="sc"><div id="vc308" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c311" class="a src" style="left:192px;top:968px">Qwen · game demo from the Qwen4-Max launch post</div></div></div>
+<div id="vw310" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:50"><video id="v309" class="clip" src="assets/clips/q_game1_3d29d076.mp4" muted playsinline data-start="500.100" data-duration="9.200" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s318" class="clip scene" data-start="508.900" data-duration="7.760" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><div id="w319" class="sc"><div id="vc314" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c317" class="a src" style="left:192px;top:968px">Qwen · game demo from the Qwen4-Max launch post</div></div></div>
+<div id="vw316" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:52"><video id="v315" class="clip" src="assets/clips/q_game3_a77312dd.mp4" muted playsinline data-start="508.900" data-duration="7.760" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s324" class="clip scene" data-start="500.100" data-duration="16.560" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="w325" class="sc"><div id="c320" class="a ovc red" style="left:230px;top:110px">verdict: not on the frontier</div><div id="c321" class="a ovc" style="left:230px;top:190px">right behind it, for almost nothing</div><div id="c322" class="a note ovp" style="left:300px;top:860px;font-size:38px">agents all day? big coding jobs? the bill matters more than a leaderboard</div><div id="c323" class="a ovc" style="left:1180px;top:760px">and watch those open weights</div></div></div>
+<div id="s330" class="clip scene" data-start="516.260" data-duration="11.500" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div id="w331" class="sc"><div id="c326" class="a h" style="left:0;right:0;top:240px;text-align:center;font-size:52px">if Alibaba releases even a smaller Qwen4 this good…</div><div id="c327" class="a h" style="left:0;right:0;top:340px;text-align:center;font-size:80px">that could hit <span class="blue">harder than Max</span></div><div id="c328" class="a h" style="left:0;right:0;top:560px;text-align:center;font-size:50px">would you trade a bit of quality for 9× cheaper?</div><div id="c329" class="a note" style="left:700px;top:680px;font-size:56px">let me know in the comments</div></div></div>
+<div id="s334" class="clip scene" data-start="527.360" data-duration="2.240" data-track-index="2" style="z-index:55" data-layout-allow-overflow data-layout-allow-overlap><div id="w335" class="sc"><div id="c332" class="a im" style="left:760px;top:230px;width:400px;height:400px"><img src="assets/img/aiequator.png" alt="" style="width:400px;height:400px"></div><div id="c333" class="a lab" style="left:0;right:0;top:680px;text-align:center;font-size:40px">subscribe for more AI news</div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="529.6" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -60, duration: 529.6, ease: "none" }, 0);
+tl.set("#vc1, #vw3",{opacity:1},0.000);
+tl.fromTo("#c4",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.000);
+tl.set("#w6",{opacity:1},0);
+tl.to("#w6",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},8.300);
+tl.to("#vw3",{opacity:0,duration:.4,ease:"power2.in"},8.300);
+tl.fromTo("#c7",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.300);
+tl.fromTo("#c8",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},3.040);
+tl.fromTo("#c9",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},5.460);
+tl.set("#w11",{opacity:1},0);
+tl.to("#w11",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},8.300);
+tl.fromTo("#w11",{scale:1},{scale:1.03,duration:8.300,ease:"none",transformOrigin:"50% 50%"},0.000);
+tl.fromTo("#c12",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},8.300);
+tl.fromTo("#c13",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},8.920);
+tl.fromTo("#c14",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},10.720);
+tl.fromTo("#c15",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},11.600);
+tl.fromTo("#c16",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},12.760);
+tl.fromTo("#c17",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},16.100);
+tl.fromTo("#w19",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},8.300);
+tl.to("#w19",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},19.220);
+tl.fromTo("#w19",{scale:1},{scale:1.03,duration:10.920,ease:"none",transformOrigin:"50% 50%"},8.300);
+tl.fromTo("#c20",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},19.220);
+tl.fromTo("#c21",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},21.980);
+tl.fromTo("#c22",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},23.080);
+tl.fromTo("#c23",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},24.240);
+tl.fromTo("#c24",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},25.580);
+tl.fromTo("#c25",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.060);
+tl.fromTo("#w27",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},19.220);
+tl.to("#w27",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},30.300);
+tl.fromTo("#w27",{scale:1},{scale:1.03,duration:11.080,ease:"none",transformOrigin:"50% 50%"},19.220);
+tl.fromTo("#c28",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},30.300);
+tl.fromTo("#c29",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},32.380);
+tl.fromTo("#c30",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},32.600);
+tl.fromTo("#c31",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},33.400);
+tl.fromTo("#c32",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},35.760);
+tl.fromTo("#c33",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},32.600);
+tl.fromTo("#w35",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},30.300);
+tl.to("#w35",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},38.380);
+tl.fromTo("#w35",{scale:1},{scale:1.03,duration:8.080,ease:"none",transformOrigin:"50% 50%"},30.300);
+tl.fromTo("#m36",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},38.380);
+tl.fromTo("#k37",{scale:1},{scale:1.035,duration:15.940,ease:"none"},38.380);
+tl.fromTo("#c38",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},39.000);
+tl.fromTo("#c39",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},43.580);
+tl.fromTo("#c40",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},49.980);
+tl.fromTo("#c41",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},52.000);
+tl.fromTo("#w43",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},38.380);
+tl.to("#w43",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},54.320);
+tl.fromTo("#w43",{scale:1},{scale:1.03,duration:15.940,ease:"none",transformOrigin:"50% 50%"},38.380);
+tl.fromTo("#c44",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},54.320);
+tl.fromTo("#c45",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},57.640);
+tl.fromTo("#c46",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},57.900);
+tl.fromTo("#c47",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},54.600);
+tl.fromTo("#w49",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},54.320);
+tl.to("#w49",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},60.640);
+tl.fromTo("#w49",{scale:1},{scale:1.03,duration:6.320,ease:"none",transformOrigin:"50% 50%"},54.320);
+tl.fromTo("#vc50",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},60.640);
+tl.fromTo("#vw52",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},60.640);
+tl.fromTo("#c53",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},60.640);
+tl.fromTo("#w55",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},60.640);
+tl.to("#w55",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},70.000);
+tl.to("#vw52",{opacity:0,duration:.4,ease:"power2.in"},70.000);
+tl.fromTo("#c56",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},61.860);
+tl.fromTo("#c57",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},64.220);
+tl.fromTo("#c58",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},65.820);
+tl.fromTo("#c59",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},66.540);
+tl.fromTo("#c60",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},66.920);
+tl.fromTo("#c61",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},68.020);
+tl.fromTo("#w63",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},60.640);
+tl.to("#w63",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},70.000);
+tl.fromTo("#w63",{scale:1},{scale:1.03,duration:9.360,ease:"none",transformOrigin:"50% 50%"},60.640);
+tl.fromTo("#c64",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},70.000);
+tl.fromTo("#c65",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},71.900);
+tl.fromTo("#c66",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},80.900);
+tl.fromTo("#c67",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},72.200);
+tl.fromTo("#w69",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},70.000);
+tl.to("#w69",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},83.600);
+tl.fromTo("#w69",{scale:1},{scale:1.03,duration:13.600,ease:"none",transformOrigin:"50% 50%"},70.000);
+tl.fromTo(".prow .old",{opacity:0},{opacity:1,duration:.3,stagger:.3},77.64);
+tl.fromTo("#c70",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},83.600);
+tl.fromTo("#c71",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.600);
+tl.fromTo("#m72",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},86.420);
+tl.fromTo("#k73",{scale:1},{scale:1.035,duration:7.740,ease:"none"},86.420);
+tl.fromTo("#c74",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},89.740);
+tl.fromTo("#c75",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},91.940);
+tl.fromTo("#w77",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},83.600);
+tl.to("#w77",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},94.160);
+tl.fromTo("#w77",{scale:1},{scale:1.03,duration:10.560,ease:"none",transformOrigin:"50% 50%"},83.600);
+tl.fromTo("#c78",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},94.160);
+tl.fromTo("#c79",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},97.060);
+tl.fromTo("#c80",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},99.640);
+tl.fromTo("#w82",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},94.160);
+tl.to("#w82",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},105.160);
+tl.fromTo("#w82",{scale:1},{scale:1.03,duration:11.000,ease:"none",transformOrigin:"50% 50%"},94.160);
+tl.fromTo("#lock",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(1.6)"},95.000);
+tl.fromTo("#c83",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},105.160);
+tl.fromTo("#c84",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},106.360);
+tl.fromTo("#c85",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},108.000);
+tl.fromTo("#c86",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},111.440);
+tl.fromTo("#c87",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},113.000);
+tl.fromTo("#c88",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},117.900);
+tl.fromTo("#c89",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},108.300);
+tl.fromTo("#w91",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},105.160);
+tl.to("#w91",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},124.140);
+tl.fromTo("#w91",{scale:1},{scale:1.03,duration:18.980,ease:"none",transformOrigin:"50% 50%"},105.160);
+tl.fromTo("#c92",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},124.140);
+tl.fromTo("#c93",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},126.000);
+tl.fromTo("#c94",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},131.480);
+tl.fromTo("#c95",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},134.180);
+tl.fromTo("#c96",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},136.560);
+tl.fromTo("#c97",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},139.000);
+tl.fromTo("#c98",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},142.980);
+tl.fromTo("#c99",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},146.600);
+tl.fromTo("#c100",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},154.280);
+tl.fromTo("#c101",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},126.300);
+tl.fromTo("#w103",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},124.140);
+tl.to("#w103",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},159.800);
+tl.fromTo("#w103",{scale:1},{scale:1.03,duration:35.660,ease:"none",transformOrigin:"50% 50%"},124.140);
+tl.fromTo("#c104",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},159.800);
+tl.fromTo("#pw1",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},161.560);
+tl.fromTo("#pw2",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},168.240);
+tl.fromTo("#pw3",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},175.380);
+tl.fromTo("#c105",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},164.500);
+tl.fromTo("#c106",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},172.180);
+tl.fromTo("#c107",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},178.560);
+tl.fromTo("#c108",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},183.700);
+tl.fromTo("#w110",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},159.800);
+tl.to("#w110",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},185.380);
+tl.fromTo("#w110",{scale:1},{scale:1.03,duration:25.580,ease:"none",transformOrigin:"50% 50%"},159.800);
+tl.fromTo("#c111",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},185.380);
+tl.fromTo("#c112",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},187.260);
+tl.fromTo("#c113",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},195.440);
+tl.fromTo("#c114",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},202.340);
+tl.fromTo("#c115",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},189.000);
+tl.fromTo("#c116",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},197.160);
+tl.fromTo("#c117",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},204.200);
+tl.fromTo("#w119",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},185.380);
+tl.to("#w119",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},208.480);
+tl.fromTo("#w119",{scale:1},{scale:1.03,duration:23.100,ease:"none",transformOrigin:"50% 50%"},185.380);
+tl.fromTo("#c120",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},208.480);
+tl.fromTo("#c121",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},209.380);
+tl.fromTo("#c122",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},212.680);
+tl.fromTo("#c123",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},210.500);
+tl.fromTo("#c124",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},216.440);
+tl.fromTo("#w126",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},208.480);
+tl.to("#w126",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},220.700);
+tl.fromTo("#w126",{scale:1},{scale:1.03,duration:12.220,ease:"none",transformOrigin:"50% 50%"},208.480);
+tl.fromTo("#c127",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},220.700);
+tl.fromTo("#c128",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},222.540);
+tl.fromTo("#c129",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},223.000);
+tl.fromTo("#c132",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},225.840);
+tl.fromTo("#c133",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},225.840);
+tl.fromTo("#bf130",{width:0},{width:206,duration:0.9,ease:"power3.out"},225.840);
+count("#bv131",225.840,0,43,0,"","",0.9);
+tl.fromTo("#c136",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},229.400);
+tl.fromTo("#c137",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},229.400);
+tl.fromTo("#bf134",{width:0},{width:283,duration:0.9,ease:"power3.out"},229.400);
+count("#bv135",229.400,0,59,0,"","",0.9);
+tl.fromTo("#c140",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},232.840);
+tl.fromTo("#c141",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},232.840);
+tl.fromTo("#bf138",{width:0},{width:312,duration:0.9,ease:"power3.out"},232.840);
+count("#bv139",232.840,0,65,0,"","",0.9);
+tl.fromTo("#c142",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},236.060);
+tl.fromTo("#c143",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},226.200);
+tl.fromTo("#w145",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},220.700);
+tl.to("#w145",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},239.280);
+tl.fromTo("#w145",{scale:1},{scale:1.03,duration:18.580,ease:"none",transformOrigin:"50% 50%"},220.700);
+tl.fromTo("#c146",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},239.280);
+tl.fromTo("#c147",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},240.000);
+tl.fromTo("#c148",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},241.280);
+tl.fromTo("#c149",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},243.640);
+tl.fromTo("#c150",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},247.480);
+tl.fromTo("#w152",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},239.280);
+tl.to("#w152",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},252.360);
+tl.fromTo("#w152",{scale:1},{scale:1.03,duration:13.080,ease:"none",transformOrigin:"50% 50%"},239.280);
+tl.fromTo("#c153",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},252.360);
+tl.fromTo("#c154",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},254.960);
+tl.fromTo("#w156",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},252.360);
+tl.to("#w156",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},258.120);
+tl.fromTo("#m157",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},258.120);
+tl.fromTo("#k158",{scale:1},{scale:1.035,duration:20.980,ease:"none"},258.120);
+tl.fromTo("#c159",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},258.400);
+tl.fromTo("#c160",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},261.280);
+tl.fromTo("#c161",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.400);
+tl.fromTo("#c162",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},265.520);
+tl.fromTo("#c163",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},268.200);
+tl.fromTo("#c164",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},272.480);
+tl.fromTo("#c165",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},277.000);
+tl.fromTo("#w167",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},258.120);
+tl.to("#w167",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},279.100);
+tl.fromTo("#w167",{scale:1},{scale:1.03,duration:20.980,ease:"none",transformOrigin:"50% 50%"},258.120);
+tl.fromTo("#c168",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},279.100);
+tl.fromTo("#c169",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},281.460);
+tl.fromTo("#c170",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},287.460);
+tl.fromTo("#rq",{width:0},{width:1100,duration:6.00,ease:"none"},281.460);
+tl.fromTo("#c171",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},281.460);
+tl.fromTo("#c172",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},282.460);
+tl.fromTo("#ro",{width:0},{width:1100,duration:1.00,ease:"none"},281.460);
+tl.fromTo("#c173",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},281.460);
+tl.fromTo("#c174",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},282.060);
+tl.fromTo("#rs",{width:0},{width:1100,duration:0.60,ease:"none"},281.460);
+tl.fromTo("#c175",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},290.900);
+tl.fromTo("#c176",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},281.700);
+tl.fromTo("#w178",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},279.100);
+tl.to("#w178",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},296.620);
+tl.fromTo("#w178",{scale:1},{scale:1.03,duration:17.520,ease:"none",transformOrigin:"50% 50%"},279.100);
+tl.fromTo("#m179",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},296.620);
+tl.fromTo("#k180",{scale:1},{scale:1.035,duration:47.840,ease:"none"},296.620);
+tl.fromTo("#c181",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},299.460);
+tl.fromTo("#c183",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},306.160);
+tl.fromTo("#c184",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},306.160);
+tl.fromTo("#kb182",{width:0},{width:422,duration:0.6,ease:"power3.out"},306.160);
+tl.fromTo("#c186",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},310.500);
+tl.fromTo("#c187",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},310.500);
+tl.fromTo("#kb185",{width:0},{width:404,duration:0.6,ease:"power3.out"},310.500);
+tl.fromTo("#c189",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},312.840);
+tl.fromTo("#c190",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},312.840);
+tl.fromTo("#kb188",{width:0},{width:369,duration:0.6,ease:"power3.out"},312.840);
+tl.fromTo("#c192",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},315.200);
+tl.fromTo("#c193",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},315.200);
+tl.fromTo("#kb191",{width:0},{width:321,duration:0.6,ease:"power3.out"},315.200);
+tl.fromTo("#c195",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},318.280);
+tl.fromTo("#c196",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},318.280);
+tl.fromTo("#kb194",{width:0},{width:202,duration:0.6,ease:"power3.out"},318.280);
+tl.fromTo("#c197",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},322.080);
+tl.fromTo("#c198",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},325.380);
+tl.fromTo("#c199",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},333.100);
+tl.fromTo("#c200",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},296.900);
+tl.fromTo("#w202",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},296.620);
+tl.to("#w202",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},336.860);
+tl.fromTo("#w202",{scale:1},{scale:1.03,duration:40.240,ease:"none",transformOrigin:"50% 50%"},296.620);
+tl.fromTo("#c203",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},336.860);
+tl.fromTo("#c204",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},338.660);
+tl.fromTo("#c205",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},337.000);
+tl.fromTo("#w207",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},336.860);
+tl.to("#w207",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},344.460);
+tl.fromTo("#w207",{scale:1},{scale:1.03,duration:7.600,ease:"none",transformOrigin:"50% 50%"},336.860);
+tl.fromTo("#qs",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(1.6)"},337.000);
+tl.to("#qs_body, #qs_head",{y:-6,duration:0.450,ease:"sine.inOut",yoyo:true,repeat:15},337.000);
+tl.to("#qs_eyes",{scale:1.6,transformOrigin:"50% 50%",duration:.15,ease:"back.out(3)"},341.000);
+tl.to("#qs_mouth",{scaleY:-1.4,transformOrigin:"50% 50%",duration:.15},341.000);
+tl.to("#qs",{y:-18,duration:.12,yoyo:true,repeat:1},341.000);
+tl.to("#qs_eyes, #qs_mouth",{scale:1,scaleY:1,duration:.3},342.600);
+tl.fromTo("#m208",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},344.460);
+tl.fromTo("#k209",{scale:1},{scale:1.035,duration:23.980,ease:"none"},344.460);
+tl.fromTo("#c210",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},346.000);
+tl.fromTo("#c211",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},350.100);
+tl.fromTo("#c212",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},354.080);
+tl.fromTo("#c213",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},357.100);
+tl.fromTo("#c214",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},360.940);
+tl.fromTo("#c215",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},366.380);
+tl.fromTo("#w217",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},344.460);
+tl.to("#w217",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},368.440);
+tl.fromTo("#w217",{scale:1},{scale:1.03,duration:23.980,ease:"none",transformOrigin:"50% 50%"},344.460);
+tl.to("#jd3",{opacity:.25,duration:.3},357.1); tl.to("#op",{color:"#3FB950",duration:.2},361.6); tl.set("#op",{innerHTML:"&lt;="},361.7); tl.to("#jd3",{opacity:1,duration:.3},362.6);
+tl.fromTo("#m218",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},368.440);
+tl.fromTo("#k219",{scale:1},{scale:1.035,duration:11.540,ease:"none"},368.440);
+tl.fromTo("#c220",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},374.740);
+tl.fromTo("#c221",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},375.980);
+tl.fromTo("#c222",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},376.740);
+tl.fromTo("#c223",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},377.840);
+tl.fromTo("#c224",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},371.440);
+tl.fromTo("#w226",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},368.440);
+tl.to("#w226",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},379.980);
+tl.fromTo("#w226",{scale:1},{scale:1.03,duration:11.540,ease:"none",transformOrigin:"50% 50%"},368.440);
+tl.fromTo("#kb",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(1.6)"},370.000);
+tl.to("#kb_meat",{scaleX:.86,transformOrigin:"180px 0px",duration:.35,yoyo:true,repeat:13,ease:"sine.inOut"},374.740);
+tl.to(".kb_band",{fill:"#9B5A2E",duration:5.160,stagger:.05,ease:"none"},374.740);
+tl.to("#kb_heat",{opacity:.9,duration:.6},374.740);
+tl.fromTo("#m227",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},379.980);
+tl.fromTo("#k228",{scale:1},{scale:1.035,duration:8.720,ease:"none"},379.980);
+tl.fromTo("#c229",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.300);
+tl.fromTo("#c230",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.420);
+tl.fromTo("#c231",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.540);
+tl.fromTo("#c232",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.660);
+tl.fromTo("#c233",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.780);
+tl.fromTo("#c234",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.900);
+tl.fromTo("#c235",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.020);
+tl.fromTo("#c236",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.140);
+tl.fromTo("#c237",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.260);
+tl.fromTo("#c238",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.380);
+tl.fromTo("#c239",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.500);
+tl.fromTo("#c240",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.620);
+tl.fromTo("#c241",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.740);
+tl.fromTo("#c242",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.860);
+tl.fromTo("#c243",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},382.980);
+tl.fromTo("#c244",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},383.100);
+tl.fromTo("#c245",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},383.220);
+tl.fromTo("#c246",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},383.340);
+tl.fromTo("#c247",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},384.140);
+tl.fromTo("#c248",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},386.900);
+tl.fromTo("#w250",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},379.980);
+tl.to("#w250",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},388.700);
+tl.fromTo("#w250",{scale:1},{scale:1.03,duration:8.720,ease:"none",transformOrigin:"50% 50%"},379.980);
+tl.fromTo("#vc251",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},388.700);
+tl.fromTo("#vw253",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},388.700);
+tl.fromTo("#c254",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},388.700);
+tl.fromTo("#w256",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},388.700);
+tl.to("#w256",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},409.320);
+tl.to("#vw253",{opacity:0,duration:.4,ease:"power2.in"},409.320);
+tl.fromTo("#c257",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},391.760);
+tl.fromTo("#c258",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},395.760);
+tl.fromTo("#c259",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},401.320);
+tl.fromTo("#c260",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},406.000);
+tl.fromTo("#w262",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},388.700);
+tl.to("#w262",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},409.320);
+tl.fromTo("#w262",{scale:1},{scale:1.03,duration:20.620,ease:"none",transformOrigin:"50% 50%"},388.700);
+tl.fromTo("#c263",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},409.320);
+tl.fromTo("#c264",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},411.420);
+tl.fromTo("#c265",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},413.040);
+tl.fromTo("#c266",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},418.040);
+tl.fromTo("#rq2",{width:0},{width:1100,duration:5.00,ease:"none"},413.040);
+tl.fromTo("#c267",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},413.040);
+tl.fromTo("#c268",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},414.040);
+tl.fromTo("#rc2",{width:0},{width:1100,duration:1.00,ease:"none"},413.040);
+tl.fromTo("#c269",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},417.040);
+tl.fromTo("#w271",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},409.320);
+tl.to("#w271",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},419.520);
+tl.fromTo("#w271",{scale:1},{scale:1.03,duration:10.200,ease:"none",transformOrigin:"50% 50%"},409.320);
+tl.fromTo("#c272",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},419.520);
+tl.fromTo("#c273",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},422.600);
+tl.fromTo("#c274",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},424.280);
+tl.fromTo("#c275",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},427.900);
+tl.fromTo("#c276",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},430.240);
+tl.fromTo("#c277",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},435.000);
+tl.fromTo("#c278",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},423.000);
+tl.fromTo("#w280",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},419.520);
+tl.to("#w280",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},438.700);
+tl.fromTo("#w280",{scale:1},{scale:1.03,duration:19.180,ease:"none",transformOrigin:"50% 50%"},419.520);
+tl.fromTo("#c281",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},438.700);
+tl.fromTo("#c282",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},439.840);
+tl.fromTo("#c283",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},444.340);
+tl.fromTo("#c284",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},449.120);
+tl.fromTo("#c285",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},441.000);
+tl.fromTo("#w287",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},438.700);
+tl.to("#w287",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},452.140);
+tl.fromTo("#w287",{scale:1},{scale:1.03,duration:13.440,ease:"none",transformOrigin:"50% 50%"},438.700);
+tl.fromTo("#pb",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(1.6)"},440.500);
+tl.to("#pb_miss",{opacity:1,duration:.3},444.5);
+tl.fromTo("#c288",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},452.140);
+tl.fromTo("#m289",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},453.000);
+tl.fromTo("#k290",{scale:1},{scale:1.035,duration:9.180,ease:"none"},453.000);
+tl.fromTo("#c291",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},458.240);
+tl.fromTo("#w293",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},452.140);
+tl.to("#w293",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},462.180);
+tl.fromTo("#w293",{scale:1},{scale:1.03,duration:10.040,ease:"none",transformOrigin:"50% 50%"},452.140);
+tl.fromTo("#c294",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},462.180);
+tl.fromTo("#c295",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},465.640);
+tl.fromTo("#c296",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},468.780);
+tl.fromTo("#c297",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},474.040);
+tl.fromTo("#c298",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},478.700);
+tl.fromTo("#w300",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},462.180);
+tl.to("#w300",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},482.000);
+tl.fromTo("#w300",{scale:1},{scale:1.03,duration:19.820,ease:"none",transformOrigin:"50% 50%"},462.180);
+tl.fromTo("#c301",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},482.000);
+tl.fromTo("#c302",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},484.600);
+tl.fromTo("#c303",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},487.540);
+tl.fromTo("#c304",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},490.580);
+tl.fromTo("#c305",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},494.400);
+tl.fromTo("#w307",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},482.000);
+tl.to("#w307",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},500.100);
+tl.fromTo("#w307",{scale:1},{scale:1.03,duration:18.100,ease:"none",transformOrigin:"50% 50%"},482.000);
+tl.fromTo("#vc308",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},500.100);
+tl.fromTo("#vw310",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},500.100);
+tl.fromTo("#c311",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},500.100);
+tl.fromTo("#w313",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},500.100);
+tl.to("#w313",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},508.900);
+tl.to("#vw310",{opacity:0,duration:.4,ease:"power2.in"},508.900);
+tl.fromTo("#vc314",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},508.900);
+tl.fromTo("#vw316",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},508.900);
+tl.fromTo("#c317",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},508.900);
+tl.fromTo("#w319",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},508.900);
+tl.to("#w319",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},516.260);
+tl.to("#vw316",{opacity:0,duration:.4,ease:"power2.in"},516.260);
+tl.fromTo("#c320",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},501.580);
+tl.fromTo("#c321",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},503.320);
+tl.fromTo("#c322",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},506.920);
+tl.fromTo("#c323",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},512.580);
+tl.fromTo("#w325",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},500.100);
+tl.to("#w325",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},516.260);
+tl.fromTo("#w325",{scale:1},{scale:1.03,duration:16.160,ease:"none",transformOrigin:"50% 50%"},500.100);
+tl.fromTo("#c326",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},516.260);
+tl.fromTo("#c327",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},520.320);
+tl.fromTo("#c328",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},522.420);
+tl.fromTo("#c329",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},525.780);
+tl.fromTo("#w331",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},516.260);
+tl.to("#w331",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},527.360);
+tl.fromTo("#w331",{scale:1},{scale:1.03,duration:11.100,ease:"none",transformOrigin:"50% 50%"},516.260);
+tl.fromTo("#c332",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},527.360);
+tl.fromTo("#c333",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},527.360);
+tl.fromTo("#w335",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},527.360);
+tl.set({}, {}, 529.6);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

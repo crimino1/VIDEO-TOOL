@@ -1,0 +1,121 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="133.200" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v183" class="clip vid" src="assets/clips/mn_Hexagons_cc4b9db5.mp4" muted playsinline data-start="0.000" data-duration="19.460" data-track-index="1" style="z-index:116;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v184" class="clip vid" src="assets/clips/pxg_honey_f1f72c14.mp4" muted playsinline data-start="19.460" data-duration="2.400" data-track-index="1" style="z-index:118;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s186" class="clip scene" data-start="19.460" data-duration="2.400" data-track-index="2" style="z-index:120" data-layout-allow-overflow data-layout-allow-overlap><div id="c185" class="scene"></div></div>
+<video id="v187" class="clip vid" src="assets/clips/pxg_earth_fdbac5d1.mp4" muted playsinline data-start="21.860" data-duration="7.380" data-track-index="1" style="z-index:121;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s191" class="clip scene" data-start="21.860" data-duration="7.380" data-track-index="2" style="z-index:123" data-layout-allow-overflow data-layout-allow-overlap><div id="c190" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch188" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; EIGHT</div><div class="ti">Measuring the Earth</div><div id="ru189" class="rule"></div></div></div></div>
+<div id="s197" class="clip scene" data-start="29.240" data-duration="7.680" data-track-index="2" style="z-index:124" data-layout-allow-overflow data-layout-allow-overlap><div id="c196" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf193" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt192" src="assets/gen/eratosthenes_7c1b44.jpg" alt="eratosthenes"></div><div id="tg194" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Eratosthenes</div><div class="r">chief librarian, Library of Alexandria</div></div><div id="pl195" class="place" style="top:850px"><div class="ru"></div><div class="l1">ALEXANDRIA</div><div class="l2">around 240 BC</div></div><div class="credit">Imagined portrait, public domain</div></div></div>
+<video id="v198" class="clip vid" src="assets/clips/pxg_nile_a285e05b.mp4" muted playsinline data-start="36.920" data-duration="6.000" data-track-index="1" style="z-index:125;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s201" class="clip scene" data-start="36.920" data-duration="6.000" data-track-index="2" style="z-index:127" data-layout-allow-overflow data-layout-allow-overlap><div id="c200" class="scene"><div id="pl199" class="place" style="top:850px"><div class="ru"></div><div class="l1">SYENE</div><div class="l2">known today as Aswan</div></div></div></div>
+<video id="v202" class="clip vid" src="assets/clips/mn_EraRays_d4e6babf.mp4" muted playsinline data-start="61.700" data-duration="37.280" data-track-index="1" style="z-index:128;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v203" class="clip vid" src="assets/clips/mn_EraRays_f8a5041f.mp4" muted playsinline data-start="104.720" data-duration="19.780" data-track-index="1" style="z-index:130;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v204" class="clip vid" src="assets/clips/pxg_desert_e435aa5a.mp4" muted playsinline data-start="124.500" data-duration="6.000" data-track-index="1" style="z-index:132;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s214" class="clip scene" data-start="124.500" data-duration="6.000" data-track-index="2" style="z-index:134" data-layout-allow-overflow data-layout-allow-overlap><div id="c213" class="scene"><div id="k205" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w206" style="opacity:0">a</span> <span id="w207" style="opacity:0">stick,</span> <span id="w208" style="opacity:0">a</span> <span id="w209" style="opacity:0">shadow,</span> <span id="w210" style="opacity:0">and</span> <span id="w211" style="opacity:0">a</span> <span id="w212" style="opacity:0">planet</span></div></div></div>
+<video id="v215" class="clip vid" src="assets/clips/pxg_earth_83e9658f.mp4" muted playsinline data-start="130.500" data-duration="2.700" data-track-index="1" style="z-index:135;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s217" class="clip scene" data-start="130.500" data-duration="2.700" data-track-index="2" style="z-index:137" data-layout-allow-overflow data-layout-allow-overlap><div id="c216" class="scene"></div></div>
+</div>
+<script>window.PXS = [[29.24, 36.92, "euclid_class", {"line": -9, "circle": -9, "tin": "fade", "tout": "fade"}], [42.92, 61.7, "syene_well", {"sun": 5.46, "measure": 15.94, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [98.98, 104.72, "walkers", {"walk": 0.3, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/ancient.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/modern.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v184",{scale:1.08},{scale:1.0,duration:2.4,ease:"none"},19.460);
+tl.fromTo("#v187",{scale:1.0},{scale:1.06,duration:7.38,ease:"none"},21.860);
+tl.fromTo("#ch188",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},22.010);
+tl.fromTo("#ru189",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},22.360);
+tl.fromTo("#pt192",{scale:1.0},{scale:1.04,duration:7.68,ease:"none"},29.240);
+tl.fromTo("#pf193",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},29.240);
+tl.fromTo("#tg194",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},35.260);
+tl.fromTo("#pl195",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},29.620);
+tl.fromTo("#v198",{scale:1.0},{scale:1.06,duration:6.0,ease:"none"},36.920);
+tl.fromTo("#pl199",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},40.180);
+tl.fromTo("#v204",{scale:1.0},{scale:1.08,duration:6.0,ease:"none"},124.500);
+tl.set("#w206",{opacity:1},128.500);
+tl.set("#w207",{opacity:1},356.040);
+tl.set("#w208",{opacity:1},356.880);
+tl.set("#w209",{opacity:1},356.880);
+tl.set("#w210",{opacity:1},356.880);
+tl.set("#w211",{opacity:1},356.880);
+tl.set("#w212",{opacity:1},356.880);
+tl.fromTo("#v215",{scale:1.0},{scale:1.06,duration:2.7,ease:"none"},130.500);
+tl.set({}, {}, 133.200);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

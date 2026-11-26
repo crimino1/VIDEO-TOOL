@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Caveat";src:url("assets/fonts/caveat-600.woff2") format("woff2");font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(900px 600px at 18% 22%,rgba(30,52,110,.45),transparent 70%),radial-gradient(800px 560px at 84% 78%,rgba(22,40,96,.40),transparent 70%),#000}
+.grid{position:absolute;inset:-60px;background-image:linear-gradient(rgba(70,100,180,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(70,100,180,.07) 1.5px,transparent 1.5px);background-size:120px 120px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 80%)}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.h{font-weight:700;letter-spacing:-.025em;line-height:1.08}
+.big{font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.lab{color:#8A8F98;font-weight:400;line-height:1.2}
+.g{color:#8A8F98}
+.blue{color:#5B8FF0}
+.mono{font-family:"JetBrains Mono",monospace}
+.note{font-family:"Caveat",cursive;font-weight:600;color:#F0A818;line-height:1.05;white-space:nowrap}
+.arw{position:absolute;display:block}
+.src{font-size:22px;color:#6B7079}
+.card{background:#0D0F14;border:1.5px solid #2A2E37;border-radius:12px;padding:26px 30px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.card.sel{border-color:#5B8FF0;background:#0B1430}
+.card.red{border-color:rgba(248,81,73,.7);background:#1A0C0E}
+.card.ok{border-color:rgba(63,185,80,.7);background:#0B1A10}
+.card.dash{border-style:dashed;background:rgba(13,15,20,.6)}
+.card.lvl.hi{border-color:#F0A818}
+.card.lvl.crit{border-color:#F85149;background:#1A0C0E}
+.card.lvl.crit .ct{color:#F85149}
+.ct{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cs{font-size:26px;color:#8A8F98;margin-top:10px}
+.li{font-size:36px;font-weight:700;letter-spacing:-.015em}
+.cb{font-size:30px;line-height:1.3;padding:16px 22px;border-radius:16px;margin-top:14px;max-width:560px}
+.cb.u{background:#1E2A44;margin-left:auto;width:max-content}
+.cb.bot{background:#1A1C22;color:#D5D8DE}
+.mac{border-radius:12px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37}
+.mbar{height:44px;background:#1C1D21;position:relative}
+.mbar i{position:absolute;top:15px;width:14px;height:14px;border-radius:50%;background:#3A3C42}
+.mbar i:nth-child(1){left:18px;background:#ff5f57}.mbar i:nth-child(2){left:42px;background:#febc2e}.mbar i:nth-child(3){left:66px;background:#28c840}
+.murl{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:28px;padding:0 70px;background:#121316;border-radius:7px;font-size:16px;line-height:28px;color:#A9ADB5;white-space:nowrap}
+.mbody{overflow:hidden;position:relative}
+.mbody img{display:block}
+.im img,.logo img{display:block;object-fit:contain}
+.meme{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 3px #fff}
+.meme img{display:block;object-fit:cover}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.vcard{border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1.5px #2A2E37;background:#000}
+.person img{display:block;border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.pn{font-size:38px;font-weight:700;margin-top:18px}
+.pr{font-size:26px;color:#8A8F98;margin-top:4px}
+.track{position:absolute;height:44px;border-radius:6px;background:#15181F}
+.fill{position:absolute;height:44px;border-radius:6px;background:#4A505C}
+.fill.hero{background:#5B8FF0}
+.bl{font-weight:700;white-space:nowrap}
+.bvl{font-weight:900;font-variant-numeric:tabular-nums}
+.bugrow{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.bugrow i{display:block;width:16px;height:16px;border-radius:50%;background:#3A3E47}
+.codewall{font-size:27px;line-height:1.75;color:#6B7079}
+.cl{padding:0 10px;border-radius:4px;white-space:nowrap}
+.strike{text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:5px}
+.strike2{color:#8A8F98;text-decoration:line-through;text-decoration-color:#F0A818;text-decoration-thickness:4px}
+.tline{position:absolute;height:2px;background:#2A2E37}
+.tp i.dot{display:block;width:30px;height:30px;border-radius:50%;background:#0D0F14;border:3px solid #5A606B}
+.prow{display:flex;align-items:baseline;gap:40px;margin-top:26px;font-size:84px;font-weight:900;letter-spacing:-.03em}
+.prow .pl{font-size:34px;font-weight:400;color:#8A8F98;width:150px}
+.prow .new{color:#5B8FF0}
+.tw img{filter:drop-shadow(0 24px 50px rgba(0,0,0,.6))}
+.dimbg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.person0 img{border-radius:16px;object-fit:cover;border:1.5px solid #2A2E37}
+.ovp{background:rgba(5,7,12,.78);padding:8px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.ovc{background:rgba(11,20,48,.92);border:1.5px solid #5B8FF0;border-radius:10px;padding:12px 22px;font-size:32px;font-weight:700;color:#fff;white-space:nowrap}
+.rowbox{border:3px solid #F0A818;border-radius:8px;box-shadow:0 0 24px rgba(240,168,24,.45)}
+.ovc.red{border-color:#F85149;background:rgba(40,10,12,.92)}
+.tp i.dot.hero{border-color:#5B8FF0;background:#5B8FF0;box-shadow:0 0 24px #5B8FF0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="848.4" data-width="1920" data-height="1080">
+<div class="bg"><div class="grid" id="grid"></div></div>
+<div id="s5" class="clip scene" data-start="0.000" data-duration="9.400" data-track-index="2" style="z-index:11" data-layout-allow-overflow data-layout-allow-overlap><div id="w6" class="sc"><div id="vc1" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c4" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · fort, galaxies, robot, Breakout demos</div></div></div>
+<div id="vw3" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:12"><video id="v2" class="clip" src="assets/clips/pe_a848fa93.mp4" muted playsinline data-start="0.000" data-duration="9.400" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s11" class="clip scene" data-start="9.000" data-duration="9.000" data-track-index="2" style="z-index:13" data-layout-allow-overflow data-layout-allow-overlap><div id="w12" class="sc"><div id="vc7" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c10" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · fort, galaxies, robot, Breakout demos</div></div></div>
+<div id="vw9" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:14"><video id="v8" class="clip" src="assets/clips/pe_7da63949.mp4" muted playsinline data-start="9.000" data-duration="9.000" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s19" class="clip scene" data-start="0.000" data-duration="18.000" data-track-index="2" style="z-index:15" data-layout-allow-overflow data-layout-allow-overlap><div id="w20" class="sc"><div id="c13" class="a note ovp" style="left:230px;top:120px;font-size:56px">one job</div><div id="c14" class="a note ovp" style="left:230px;top:210px;font-size:48px">rebuild a historic fort in 3D</div><div id="c15" class="a note ovp" style="left:230px;top:300px;font-size:44px">using only what it could find online</div><div id="c16" class="a ovc" style="left:1290px;top:640px">~20 hours straight</div><div id="c17" class="a ovc" style="left:1100px;top:720px">65 rounds of building + checking</div><div id="c18" class="a ovc" style="left:1290px;top:800px">its own grade: 5 / 10</div></div></div>
+<div id="s25" class="clip scene" data-start="17.600" data-duration="7.880" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap><div id="w26" class="sc"><div id="c21" class="a lab" style="left:0;right:0;top:200px;text-align:center;font-size:44px">meanwhile, in another test…</div><div id="c22" class="a card red" style="left:360px;top:300px;width:1200px;height:220px;"><div class="mono g" style="font-size:22px">via security firm Wiz</div><div class="ct" style="font-size:54px;margin-top:10px">real security holes in two big software companies</div></div><div id="c23" class="a h" style="left:0;right:0;top:580px;text-align:center;font-size:84px">in under <span class="blue">two hours</span></div><div id="c24" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Google, Nov 10, 2026</div></div></div>
+<div id="s30" class="clip scene" data-start="25.080" data-duration="4.260" data-track-index="2" style="z-index:17" data-layout-allow-overflow data-layout-allow-overlap><div id="w31" class="sc"><div id="c27" class="a im" style="left:760px;top:300px;width:400px;height:90px"><img src="assets/img/gemini_w.png" alt="" style="width:400px;height:90px"></div><div id="c28" class="a h" style="left:0;right:0;top:420px;text-align:center;font-size:140px">Gemini 4 <span class="blue">Carbon</span></div><div id="c29" class="a lab" style="left:0;right:0;top:600px;text-align:center;font-size:40px">Google's new frontier model</div></div></div>
+<div id="s35" class="clip scene" data-start="28.940" data-duration="6.000" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap><div id="w36" class="sc"><div id="m32" class="a mac" style="left:360px;top:120px;width:1200px"><div class="mbar"><i></i><i></i><i></i><div class="murl">blog.google/…/gemini-4-carbon-now-available</div></div><div class="mbody" style="height:444px"><img id="k33" src="assets/img/gn_top_833d0.jpg" alt="gn_top" style="width:1200px;height:444px"></div></div><div id="c34" class="a note" style="left:600px;top:900px;font-size:54px">public since November 10</div></div></div>
+<div id="s45" class="clip scene" data-start="34.540" data-duration="11.080" data-track-index="2" style="z-index:19" data-layout-allow-overflow data-layout-allow-overlap><div id="w46" class="sc"><div id="c37" class="a lab" style="left:0;right:0;top:150px;text-align:center;font-size:40px">in this video</div><div id="c38" class="a card" style="left:260px;top:320px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">01</div><div class="ct" style="margin-top:6px">what it is</div></div><div id="c39" class="a card" style="left:740px;top:320px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">02</div><div class="ct" style="margin-top:6px">the benchmarks</div></div><div id="c40" class="a card" style="left:1220px;top:320px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">03</div><div class="ct" style="margin-top:6px">vs Claude & GPT</div></div><div id="c41" class="a card" style="left:260px;top:520px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">04</div><div class="ct" style="margin-top:6px">what people built</div></div><div id="c42" class="a card" style="left:740px;top:520px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">05</div><div class="ct" style="margin-top:6px">the reviews</div></div><div id="c43" class="a card red" style="left:1220px;top:520px;width:440px;height:150px;"><div class="mono g" style="font-size:22px">06</div><div class="ct" style="margin-top:6px">the problems</div></div><div id="c44" class="a note" style="left:1100px;top:760px;font-size:46px">the bit nobody puts in thumbnails<span class="arw" style="left:140px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s50" class="clip scene" data-start="45.220" data-duration="16.820" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap><div id="w51" class="sc"><div id="c47" class="a h" style="left:0;right:0;top:110px;text-align:center;font-size:70px">first, the <span class="blue">timeline</span></div><div class="tline" style="left:300px;top:470px;width:1320px"></div><div id="c48" class="a tp" style="left:280px;top:456px;width:600px"><i class="dot"></i><div class="big" style="font-size:56px;margin-top:24px">Oct 28</div><div class="ct" style="font-size:34px;margin-top:6px">announced</div><div class="cs">only cybersecurity defenders,<br>via the Fairwind program</div></div><div id="c49" class="a tp" style="left:1300px;top:456px;width:520px"><i class="dot hero"></i><div class="big" style="font-size:56px;margin-top:24px"><span class="blue">Nov 10</span></div><div class="ct" style="font-size:34px;margin-top:6px">generally available</div><div class="cs">two weeks later</div></div></div></div>
+<div id="s60" class="clip scene" data-start="61.640" data-duration="15.260" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><div id="w61" class="sc"><div id="c52" class="a h" style="left:0;right:0;top:100px;text-align:center;font-size:56px">where you can use it right now</div><div id="c53" class="a card sel" style="left:260px;top:260px;width:640px;height:160px;"><div class="mono g" style="font-size:22px">paid Gemini API</div><div class="ct" style="margin-top:8px">Google AI Studio</div></div><div id="c54" class="a card" style="left:1020px;top:260px;width:640px;height:160px;"><div class="mono g" style="font-size:22px">companies</div><div class="ct" style="margin-top:8px">Gemini for business</div></div><div id="c55" class="a lab" style="left:260px;top:480px;font-size:32px">Google AI Ultra subscribers:</div><div id="c56" class="a card" style="left:260px;top:540px;width:400px;height:90px;"><div class="li">Gemini app</div></div><div id="c57" class="a card" style="left:700px;top:540px;width:400px;height:90px;"><div class="li">AI Mode</div></div><div id="c58" class="a card sel" style="left:1140px;top:540px;width:520px;height:90px;"><div class="li"><span class="blue">Antigravity</span></div></div><div id="c59" class="a note" style="left:1150px;top:660px;font-size:50px">Google's answer to Claude Code<span class="arw" style="left:80px;top:-80px"><svg width="54" height="58" viewBox="0 0 54 58"><path d="M10 54c16-6 28-20 28-46M26 18l12-12 10 15" fill="none" stroke="#F0A818" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div>
+<div id="s68" class="clip scene" data-start="76.500" data-duration="15.620" data-track-index="2" style="z-index:22" data-layout-allow-overflow data-layout-allow-overlap><div id="w69" class="sc"><div id="c62" class="a h" style="left:0;right:0;top:100px;text-align:center;font-size:70px">what is it <span class="blue">exactly</span>?</div><div id="c63" class="a card" style="left:260px;top:280px;width:560px;height:180px;"><div class="mono g" style="font-size:22px">released weeks earlier</div><div class="ct" style="font-size:54px;margin-top:8px">Gemini 4 Argon</div></div><div id="al64" class="a" style="left:860px;top:360px;width:200px;height:20px;opacity:0"><div class="mono" style="position:absolute;left:-60px;width:320px;top:-42px;text-align:center;font-size:24px;color:#8A8F98">built on top</div><svg width="200" height="20" viewBox="0 0 200 20"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M2 10H196M186 2L196 10L186 18" fill="none" stroke="#5A606B" stroke-width="2.5"/></svg></div><div id="c65" class="a card sel" style="left:1100px;top:280px;width:560px;height:180px;"><div class="mono g" style="font-size:22px">new</div><div class="ct" style="font-size:54px;margin-top:8px">Gemini 4 <span class="blue">Carbon</span></div></div><div id="c66" class="a card" style="left:260px;top:540px;width:560px;height:90px;"><div class="li">mixture-of-experts model</div></div><div id="c67" class="a card" style="left:260px;top:650px;width:760px;height:140px;"><div class="li">heavy reinforcement learning on</div><div class="cs">reasoning · problem solving · theorem proving</div></div></div></div>
+<div id="s74" class="clip scene" data-start="91.720" data-duration="11.400" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap><div id="w75" class="sc"><div id="c70" class="a h" style="left:0;right:0;top:140px;text-align:center;font-size:56px">Carbon pushes harder on two things</div><div id="c71" class="a card sel" style="left:300px;top:330px;width:620px;height:180px;"><div class="ct" style="font-size:56px;text-align:center"><span class="blue">cybersecurity</span></div></div><div id="c72" class="a card" style="left:1000px;top:330px;width:620px;height:180px;"><div class="ct" style="font-size:56px;text-align:center">long-horizon work</div></div><div id="c73" class="a note" style="left:1040px;top:560px;font-size:52px">tasks that take hours, not seconds</div></div></div>
+<div id="s78" class="clip scene" data-start="102.720" data-duration="4.990" data-track-index="2" style="z-index:24" data-layout-allow-overflow data-layout-allow-overlap><div id="w79" class="sc"><div id="c76" class="a card" style="left:360px;top:330px;width:1200px;height:240px;"><div class="mono g" style="font-size:22px">Google</div><div class="ct" style="font-size:52px;margin-top:10px">“Internally, our teams have seen Carbon run for <span class="blue">days</span>.”</div></div><div id="c77" class="a src" style="left:0;right:0;top:640px;text-align:center">Source: Google, “Gemini 4 Carbon: our next frontier model”, Oct 28, 2026</div></div></div>
+<div id="s86" class="clip scene" data-start="107.310" data-duration="15.310" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap><div id="w87" class="sc"><div id="c80" class="a big" style="left:300px;top:160px;font-size:130px"><span id="ctx">0</span> tokens</div><div id="c81" class="a lab" style="left:300px;top:330px;font-size:40px">context window</div><div id="c82" class="a card sel" style="left:300px;top:430px;width:640px;height:220px;"><div class="mono g" style="font-size:22px">new</div><div class="ct" style="font-size:52px;margin-top:8px"><span class="blue">long decode</span></div><div class="cs">output way past the usual limits</div></div><div id="c83" class="a card" style="left:1040px;top:430px;width:580px;height:100px;"><div class="li">a full multi-file code change</div></div><div id="c84" class="a card" style="left:1040px;top:550px;width:580px;height:100px;"><div class="li">or a long proof</div></div><div id="c85" class="a note" style="left:1060px;top:680px;font-size:54px">in a single response</div></div></div>
+<div id="s92" class="clip scene" data-start="122.220" data-duration="10.340" data-track-index="2" style="z-index:26" data-layout-allow-overflow data-layout-allow-overlap><div id="w93" class="sc"><div id="c88" class="a h" style="left:260px;top:70px;font-size:56px">now the <span class="blue">price</span></div><div id="m89" class="a mac" style="left:260px;top:170px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">blog.google/…/introducing-gemini-4-carbon</div></div><div class="mbody" style="height:387px"><img id="k90" src="assets/img/gb_price_0b653.jpg" alt="gb_price" style="width:1400px;height:387px"></div></div><div id="c91" class="a note" style="left:300px;top:880px;font-size:56px">until November 30</div></div></div>
+<div id="s99" class="clip scene" data-start="132.160" data-duration="10.050" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="w100" class="sc"><div id="c94" class="a h" style="left:560px;top:100px;font-size:64px">from <span class="blue">December 1</span></div><div id="c95" class="a card red" style="left:560px;top:230px;width:800px;height:380px;"><div class="mono g" style="font-size:24px">per million tokens</div><div class="prow"><span class="pl">input</span><span class="old">$2</span><span class="new">$4</span></div><div class="prow"><span class="pl">output</span><span class="old">$10</span><span class="new">$20</span></div></div><div id="c96" class="a note" style="left:560px;top:680px;font-size:54px">test it this month: cheap</div><div id="c97" class="a note" style="left:1060px;top:760px;font-size:54px">next month: it won't be</div><div id="c98" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Google price note via dev.to review</div></div></div>
+<div id="s104" class="clip scene" data-start="141.810" data-duration="6.040" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="w105" class="sc"><div id="c101" class="a big" style="left:0;right:0;top:300px;text-align:center;font-size:220px"><span class="blue">−95%</span></div><div id="c102" class="a h" style="left:0;right:0;top:560px;text-align:center;font-size:50px">on cached input</div><div id="c103" class="a note" style="left:700px;top:660px;font-size:54px">helps a lot for long agent runs</div></div></div>
+<div id="s110" class="clip scene" data-start="147.450" data-duration="10.040" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="w111" class="sc"><div id="m106" class="a mac" style="left:260px;top:150px;width:1400px"><div class="mbar"><i></i><i></i><i></i><div class="murl">blog.google/…/gemini-4-carbon-now-available</div></div><div class="mbody" style="height:388px"><img id="k107" src="assets/img/gn_argon_3e7b2.jpg" alt="gn_argon" style="width:1400px;height:388px"></div></div><div id="c108" class="a note" style="left:300px;top:880px;font-size:50px">Carbon and Argon: same price per token</div><div id="c109" class="a note" style="left:300px;top:950px;font-size:44px">Google still recommends Argon for everyday work</div></div></div>
+<div id="s114" class="clip scene" data-start="157.090" data-duration="8.680" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div id="w115" class="sc"><div id="c112" class="a card sel" style="left:300px;top:300px;width:620px;height:220px;"><div class="mono g" style="font-size:22px">Carbon is for</div><div class="ct" style="font-size:56px;margin-top:8px">the <span class="blue">hardest</span> stuff</div></div><div id="c113" class="a card red" style="left:1000px;top:300px;width:620px;height:220px;"><div class="mono g" style="font-size:22px">but it uses a lot more tokens</div><div class="ct" style="margin-top:8px">so the same task usually costs more</div></div></div></div>
+<div id="s122" class="clip scene" data-start="165.370" data-duration="82.730" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="w123" class="sc"><div id="c116" class="a im" style="left:110px;top:70px;width:1150px;height:966px"><img src="assets/raw/web/g__evals-table.png" alt="" style="width:1150px;height:966px"></div><div id="rb1" class="a rowbox" style="left:104px;top:328px;width:1162px;height:49px"></div><div id="c117" class="a src" style="left:110px;top:1044px">Google DeepMind · Gemini 4 Carbon evals table (company-reported)</div><div id="c118" class="a h" style="left:1320px;top:90px;font-size:52px">okay, <span class="blue">benchmarks</span></div><div id="c119" class="a note" style="left:1330px;top:190px;font-size:52px">17 benchmarks</div><div id="c120" class="a big" style="left:1320px;top:270px;font-size:70px">first on <span class="blue">15</span></div><div id="bm1" class="a card sel" style="left:1320px;top:400px;width:480px;height:230px;"><div class="mono g" style="font-size:22px">Terminal-Bench 4.0</div><div class="big blue" style="font-size:84px;margin-top:8px">65.2%</div><div class="cs">GPT-6 Astra 59.1 · Opus 5.5 59.6</div></div><div id="bm2" class="a card sel" style="left:1320px;top:400px;width:480px;height:230px;"><div class="mono g" style="font-size:22px">Agents' Last Exam</div><div class="big blue" style="font-size:84px;margin-top:8px">77.4</div><div class="cs">Astra 73.1 · Opus 71.6</div></div><div id="bm3" class="a card sel" style="left:1320px;top:400px;width:480px;height:230px;"><div class="mono g" style="font-size:22px">RiemannBench (math)</div><div class="big blue" style="font-size:84px;margin-top:8px">80%</div><div class="cs">GPT-6 Astra 72</div></div><div id="bm4" class="a card sel" style="left:1320px;top:400px;width:480px;height:250px;"><div class="mono g" style="font-size:22px">Vending-Bench 2 · runs a vending business</div><div class="big blue" style="font-size:76px;margin-top:8px">$16,484</div><div class="cs">Astra $15,515 · Opus 5.5 $9,235</div></div><div id="c121" class="a note" style="left:1320px;top:670px;font-size:40px">need an AI for your snack machine?</div><div id="bm5" class="a card sel" style="left:1320px;top:400px;width:480px;height:250px;"><div class="mono g" style="font-size:22px">Blueprint-Bench 2 · room photo → floor plan</div><div class="big blue" style="font-size:84px;margin-top:8px">58.6</div><div class="cs">Opus 5.5 51.2</div></div></div></div>
+<div id="s125" class="clip scene" data-start="234.600" data-duration="3.400" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="w126" class="sc"><div id="c124" class="a meme" style="left:1420px;top:740px;width:300px;height:232px"><img src="assets/img/cinema.png" alt="" style="width:300px;height:232px"></div></div></div>
+<div id="s136" class="clip scene" data-start="247.700" data-duration="36.970" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap><div id="w137" class="sc"><div class="dimbg" style="background:#000"></div><div id="c127" class="a h" style="left:0;right:0;top:60px;text-align:center;font-size:52px">and then <span class="blue">cybersecurity</span>: Carbon's main thing</div><div id="c128" class="a im" style="left:160px;top:170px;width:760px;height:427px"><img src="assets/raw/web/g_secbench-pro.png" alt="" style="width:760px;height:427px"></div><div id="c129" class="a im" style="left:1000px;top:170px;width:760px;height:427px"><img src="assets/raw/web/g_exploitgym.png" alt="" style="width:760px;height:427px"></div><div id="c130" class="a card sel" style="left:160px;top:620px;width:760px;height:150px;"><div class="mono g" style="font-size:22px">SEC-bench Pro · finding real vulnerabilities</div><div class="big blue" style="font-size:64px">88.2%</div></div><div id="c131" class="a card sel" style="left:1000px;top:620px;width:760px;height:150px;"><div class="mono g" style="font-size:22px">ExploitGym · proving a bug can be exploited</div><div class="big blue" style="font-size:64px">54.8%</div></div><div id="c132" class="a note" style="left:300px;top:810px;font-size:42px">ahead of GPT-6 Astra (42.4) and even OpenAI's GPT-6 Cyber (48.5)</div><div id="c133" class="a card" style="left:300px;top:890px;width:820px;height:90px;"><div class="li">CWE-bench · patching the root cause: <span class="blue">71%</span></div></div><div id="c134" class="a note" style="left:1160px;top:900px;font-size:40px">Google's own numbers, run without guardrails</div><div id="c135" class="a src" style="left:0;right:0;top:1010px;text-align:center">Charts: Google DeepMind</div></div></div>
+<div id="s142" class="clip scene" data-start="284.270" data-duration="18.940" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="w143" class="sc"><div id="c138" class="a im" style="left:110px;top:70px;width:1150px;height:966px"><img src="assets/raw/web/g__evals-table.png" alt="" style="width:1150px;height:966px"></div><div id="rb2" class="a rowbox" style="left:104px;top:279px;width:1162px;height:49px"></div><div id="c139" class="a h" style="left:1320px;top:120px;font-size:56px">where did it <span class="blue">lose</span>?</div><div id="c140" class="a card red" style="left:1320px;top:260px;width:480px;height:230px;"><div class="mono g" style="font-size:22px">FrontierSWE 2</div><div class="big" style="font-size:84px;margin-top:8px">61.2</div><div class="cs">GPT-6 Astra <span class="blue">65.5</span> · Opus 5.5 62.3</div></div><div id="c141" class="a note" style="left:1320px;top:540px;font-size:46px">pure software engineering<br>isn't where it dominates</div></div></div>
+<div id="s149" class="clip scene" data-start="302.810" data-duration="18.240" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="w150" class="sc"><div id="c144" class="a h" style="left:0;right:0;top:60px;text-align:center;font-size:52px">independent testing: <span class="blue">a bit messy</span></div><div id="c145" class="a im tw" style="left:260px;top:150px;width:620px;height:548px"><img src="assets/img/tw_aa_launch_62.png" alt="" style="width:620px;height:548px"></div><div id="c146" class="a big" style="left:980px;top:300px;font-size:76px">#1 at launch · <span class="blue">59</span></div><div id="c147" class="a note" style="left:990px;top:420px;font-size:44px">1 ahead of Opus 5.5, 2 ahead of GPT-6 Astra</div><div id="c148" class="a src" style="left:260px;top:1000px">@ArtificialAnlys on X · Oct 28, 2026</div></div></div>
+<div id="s156" class="clip scene" data-start="320.650" data-duration="17.620" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="w157" class="sc"><div id="c151" class="a im tw" style="left:260px;top:80px;width:620px;height:629px"><img src="assets/img/tw_aa_66.png" alt="" style="width:620px;height:629px"></div><div id="c152" class="a note" style="left:980px;top:200px;font-size:52px">that lead lasted about 12 days</div><div id="c153" class="a card sel" style="left:980px;top:300px;width:620px;height:200px;"><div class="mono g" style="font-size:22px">Nov 9 · Claude Fable 5.2 (max)</div><div class="big" style="font-size:84px;margin-top:8px">65</div></div><div id="c154" class="a card" style="left:980px;top:530px;width:620px;height:90px;"><div class="li">Fable 5.2 holds the top three spots</div></div><div id="c155" class="a card" style="left:980px;top:640px;width:620px;height:90px;"><div class="li">Carbon: <span class="blue">4th</span> · updated score 60</div></div></div></div>
+<div id="s166" class="clip scene" data-start="337.870" data-duration="25.340" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap><div id="w167" class="sc"><div id="c158" class="a im tw" style="left:220px;top:70px;width:520px;height:684px"><img src="assets/img/tw_aa_cost_62.png" alt="" style="width:520px;height:684px"></div><div id="c159" class="a lab" style="left:860px;top:120px;font-size:36px">cost per task (Artificial Analysis)</div><div id="c160" class="a card sel" style="left:860px;top:200px;width:440px;height:160px;"><div class="li">Gemini 4 Carbon</div><div class="big blue" style="font-size:60px">$7.76</div></div><div id="c161" class="a card" style="left:1340px;top:200px;width:440px;height:160px;"><div class="li">Opus 5.5 (max)</div><div class="big" style="font-size:60px">~$10</div></div><div id="c162" class="a card" style="left:860px;top:390px;width:440px;height:160px;"><div class="li">GPT-6 Astra</div><div class="big" style="font-size:60px">~$6.25</div></div><div id="c163" class="a card red" style="left:1340px;top:390px;width:440px;height:160px;"><div class="li">Fable 5.2 (max)</div><div class="big" style="font-size:60px;color:#F85149">~$26.5</div></div><div id="c164" class="a note" style="left:880px;top:620px;font-size:52px">not the smartest anymore…</div><div id="c165" class="a note" style="left:880px;top:700px;font-size:44px">but one of the best value-for-money picks at the top</div></div></div>
+<div id="s177" class="clip scene" data-start="362.810" data-duration="17.040" data-track-index="2" style="z-index:38" data-layout-allow-overflow data-layout-allow-overlap><div id="w178" class="sc"><div id="c168" class="a im tw" style="left:220px;top:60px;width:600px;height:743px"><img src="assets/img/tw_vals_78.png" alt="" style="width:600px;height:743px"></div><div id="c169" class="a big" style="left:920px;top:160px;font-size:76px">Vals AI: <span class="blue">#3</span> of 36</div><div id="c170" class="a note" style="left:930px;top:270px;font-size:48px">just behind Fable 5.2</div><div id="c171" class="a card ok" style="left:920px;top:360px;width:600px;height:90px;"><div class="li">#1 on their finance index</div></div><div id="c172" class="a lab" style="left:920px;top:490px;font-size:32px">cost per test</div><div id="c173" class="a card sel" style="left:920px;top:540px;width:300px;height:90px;"><div class="li">Carbon <span class="blue">$10.5</span></div></div><div id="c174" class="a card" style="left:1240px;top:540px;width:300px;height:90px;"><div class="li">Fable 5.2 $18</div></div><div id="c175" class="a card" style="left:1560px;top:540px;width:300px;height:90px;"><div class="li">Opus 5.5 $25</div></div><div id="c176" class="a src" style="left:220px;top:1000px">@ValsAI on X · Nov 9, 2026</div></div></div>
+<div id="s185" class="clip scene" data-start="379.450" data-duration="25.500" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="w186" class="sc"><div id="m179" class="a mac" style="left:160px;top:120px;width:760px"><div class="mbar"><i></i><i></i><i></i><div class="murl">arcprize.org/leaderboard</div></div><div class="mbody" style="height:573px"><img id="k180" src="assets/img/arc_1c1c3.jpg" alt="arc" style="width:760px;height:573px"></div></div><div id="c181" class="a lab" style="left:1000px;top:110px;font-size:40px">ARC Prize tested it on two</div><div id="c182" class="a card sel" style="left:1000px;top:180px;width:760px;height:170px;"><div class="mono g" style="font-size:22px">ARC-AGI-2</div><div class="big" style="font-size:64px;margin-top:6px"><span class="blue">94.2%</span> <span class="g" style="font-size:40px">vs Fable 5.2 93.8</span></div></div><div id="c183" class="a card" style="left:1000px;top:380px;width:760px;height:170px;"><div class="mono g" style="font-size:22px">ARC-AGI-3 · newer, harder</div><div class="big" style="font-size:64px;margin-top:6px">65.1% <span class="g" style="font-size:40px">vs Fable 5.2 <span class="blue">81.2</span></span></div></div><div id="c184" class="a card" style="left:1000px;top:580px;width:760px;height:100px;"><div class="li">run cost: Carbon <span class="blue">~$7,200</span> · Fable ~$22,000</div></div></div></div>
+<div id="s190" class="clip scene" data-start="404.550" data-duration="10.900" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="w191" class="sc"><div id="c187" class="a card sel" style="left:300px;top:300px;width:620px;height:260px;"><div class="mono g" style="font-size:22px">Arena · text leaderboard</div><div class="big blue" style="font-size:100px;margin-top:8px">#1</div></div><div id="c188" class="a note" style="left:300px;top:600px;font-size:44px">preliminary, lead inside the margin of error</div><div id="c189" class="a card" style="left:1000px;top:300px;width:620px;height:260px;"><div class="mono g" style="font-size:22px">WebDev Arena</div><div class="big" style="font-size:100px;margin-top:8px">#4</div></div></div></div>
+<div id="s198" class="clip scene" data-start="415.050" data-duration="23.240" data-track-index="2" style="z-index:41" data-layout-allow-overflow data-layout-allow-overlap><div id="w199" class="sc"><div id="c192" class="a lab" style="left:0;right:0;top:90px;text-align:center;font-size:40px">the result Google won't put in its ads</div><div id="c193" class="a h" style="left:0;right:0;top:150px;text-align:center;font-size:90px"><span class="blue">hallucination</span></div><div id="c194" class="a card ok" style="left:260px;top:330px;width:680px;height:200px;"><div class="mono g" style="font-size:22px">knowledge test · answers correct</div><div class="big" style="font-size:80px;margin-top:6px"><span class="blue">58%</span> <span class="g" style="font-size:44px">vs Argon 48</span></div></div><div id="c195" class="a card red" style="left:1000px;top:330px;width:660px;height:200px;"><div class="li">but when it doesn't know…</div><div class="cs">it's more likely to make something up</div></div><div id="c196" class="a big" style="left:260px;top:620px;font-size:84px">hallucination rate: 4% → <span style="color:#F85149">11%</span></div><div id="c197" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Artificial Analysis AA-Omniscience, via VentureBeat</div></div></div>
+<div id="s205" class="clip scene" data-start="437.890" data-duration="13.470" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap><div id="w206" class="sc"><div id="m200" class="a mac" style="left:260px;top:120px;width:900px"><div class="mbar"><i></i><i></i><i></i><div class="murl">venturebeat.com</div></div><div class="mbody" style="height:503px"><img id="k201" src="assets/img/vb_hall_0c926.jpg" alt="vb_hall" style="width:900px;height:503px"></div></div><div id="c202" class="a note" style="left:1220px;top:260px;font-size:44px">still the 2nd lowest measured, behind Argon</div><div id="c203" class="a note" style="left:1220px;top:360px;font-size:52px">but going the wrong direction</div><div id="c204" class="a card red" style="left:1220px;top:470px;width:520px;height:160px;"><div class="li">legal · medical · financial?</div><div class="cs">test it on your own questions first</div></div></div></div>
+<div id="s209" class="clip scene" data-start="450.960" data-duration="4.660" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="w210" class="sc"><div id="c207" class="a lab" style="left:0;right:0;top:380px;text-align:center;font-size:44px">okay, now the fun part</div><div id="c208" class="a h" style="left:0;right:0;top:450px;text-align:center;font-size:90px">what did people <span class="blue">actually build</span>?</div></div></div>
+<div id="s217" class="clip scene" data-start="455.220" data-duration="12.360" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap><div id="w218" class="sc"><div id="c211" class="a im tw" style="left:260px;top:50px;width:600px;height:742px"><img src="assets/img/tw_huryn_72.png" alt="" style="width:600px;height:742px"></div><div id="c212" class="a lab" style="left:960px;top:160px;font-size:40px">one of the most useful tests</div><div id="c213" class="a card" style="left:960px;top:240px;width:660px;height:90px;"><div class="li">two real code repositories</div></div><div id="c214" class="a card sel" style="left:960px;top:350px;width:660px;height:90px;"><div class="li"><span class="blue">105</span> planted bugs</div></div><div id="c215" class="a card" style="left:960px;top:460px;width:660px;height:90px;"><div class="li">find and fix as many as you can</div></div><div id="c216" class="a src" style="left:260px;top:1000px">@PawelHuryn on X · Nov 11, 2026</div></div></div>
+<div id="s226" class="clip scene" data-start="467.180" data-duration="26.710" data-track-index="2" style="z-index:45" data-layout-allow-overflow data-layout-allow-overlap><div id="w227" class="sc"><div id="c219" class="a lab" style="left:260px;top:90px;font-size:40px">bugs found and fixed (score) · cost</div><div id="c220" class="a card" style="left:260px;top:170px;width:1400px;height:110px;"><img src="assets/img/claude.png" alt="" style="width:44px;height:44px;object-fit:contain;vertical-align:middle;margin-right:18px"><span class="ct">Fable 5.2 (max)</span><span class="big" style="position:absolute;right:300px;top:22px;font-size:60px">58</span><span class="big" style="position:absolute;right:40px;top:22px;font-size:60px;color:#8A8F98">$140</span></div><div id="c221" class="a card sel" style="left:260px;top:300px;width:1400px;height:110px;"><img src="assets/img/gemini_icon.png" alt="" style="width:44px;height:44px;object-fit:contain;vertical-align:middle;margin-right:18px"><span class="ct">Gemini 4 Carbon</span><span class="big blue" style="position:absolute;right:300px;top:22px;font-size:60px">57.3</span><span class="big" style="position:absolute;right:40px;top:22px;font-size:60px;color:#3FB950">$31</span></div><div id="c222" class="a card" style="left:260px;top:430px;width:1400px;height:110px;"><img src="assets/img/claude.png" alt="" style="width:44px;height:44px;object-fit:contain;vertical-align:middle;margin-right:18px"><span class="ct">Sonnet 5.5</span><span class="big" style="position:absolute;right:300px;top:22px;font-size:60px">51</span><span class="big" style="position:absolute;right:40px;top:22px;font-size:60px;color:#8A8F98">$154</span></div><div id="c223" class="a card" style="left:260px;top:560px;width:1400px;height:110px;"><img src="assets/img/openai_sym_w.png" alt="" style="width:44px;height:44px;object-fit:contain;vertical-align:middle;margin-right:18px"><span class="ct">GPT-6 Astra</span><span class="big" style="position:absolute;right:300px;top:22px;font-size:60px">45</span><span class="big" style="position:absolute;right:40px;top:22px;font-size:60px;color:#8A8F98"></span></div><div id="c224" class="a card" style="left:260px;top:690px;width:1400px;height:110px;"><img src="assets/img/gemini_icon.png" alt="" style="width:44px;height:44px;object-fit:contain;vertical-align:middle;margin-right:18px"><span class="ct">Gemini 4 Argon</span><span class="big" style="position:absolute;right:300px;top:22px;font-size:60px">~41</span><span class="big" style="position:absolute;right:40px;top:22px;font-size:60px;color:#8A8F98"></span></div><div id="c225" class="a note" style="left:300px;top:850px;font-size:46px">basically the same result for less than a quarter of the price</div></div></div>
+<div id="s234" class="clip scene" data-start="493.490" data-duration="22.520" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="w235" class="sc"><div id="c228" class="a im tw" style="left:220px;top:60px;width:580px;height:568px"><img src="assets/img/tw_shipper_75.png" alt="" style="width:580px;height:568px"></div><div id="c229" class="a im" style="left:900px;top:70px;width:820px;height:489px"><img src="assets/raw/web/every.png" alt="" style="width:820px;height:489px"></div><div id="c230" class="a card ok" style="left:900px;top:600px;width:620px;height:90px;"><div class="li">a much better coder than Argon</div></div><div id="c231" class="a card" style="left:900px;top:700px;width:620px;height:90px;"><div class="li">but keeping Argon for writing</div></div><div id="c232" class="a h" style="left:220px;top:900px;font-size:44px">senior-engineer benchmark: <span class="blue">44%</span> vs Argon 21%</div><div id="c233" class="a note" style="left:1300px;top:820px;font-size:46px">…still middle of the pack</div></div></div>
+<div id="s243" class="clip scene" data-start="515.610" data-duration="17.820" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="w244" class="sc"><div id="c236" class="a lab" style="left:0;right:0;top:90px;text-align:center;font-size:40px">their biggest complaint</div><div id="c237" class="a h" style="left:0;right:0;top:150px;text-align:center;font-size:80px">it doesn't know when to <span class="blue">stop</span></div><div id="c238" class="a card" style="left:260px;top:330px;width:560px;height:170px;"><div class="mono g" style="font-size:22px">one teammate</div><div class="ct" style="margin-top:8px">gave it a backlog of tasks</div></div><div id="al239" class="a" style="left:840px;top:410px;width:120px;height:20px;opacity:0"><svg width="120" height="20" viewBox="0 0 120 20"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M2 10H116M106 2L116 10L106 18" fill="none" stroke="#5A606B" stroke-width="2.5"/></svg></div><div id="c240" class="a card red" style="left:980px;top:330px;width:680px;height:170px;"><div class="ct">decided <span class="blue">6</span> were ready…</div><div class="cs">then did <b style="color:#F85149">15</b>, incl. work someone else was doing</div></div><div id="c241" class="a note" style="left:300px;top:600px;font-size:56px">stopped it after almost 4.5 hours</div><div id="c242" class="a meme" style="left:1300px;top:560px;width:360px;height:360px"><img src="assets/img/megamind.jpg" alt="" style="width:360px;height:360px"></div></div></div>
+<div id="s249" class="clip scene" data-start="533.030" data-duration="12.180" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="w250" class="sc"><div id="c245" class="a card sel" style="left:300px;top:260px;width:1320px;height:170px;"><div class="mono g" style="font-size:22px">another teammate</div><div class="ct" style="font-size:48px;margin-top:8px">3D scans of their podcast studio</div></div><div id="al246" class="a" style="left:880px;top:470px;width:160px;height:20px;opacity:0"><svg width="160" height="20" viewBox="0 0 160 20"><path class="dr" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M2 10H156M146 2L156 10L146 18" fill="none" stroke="#5A606B" stroke-width="2.5"/></svg></div><div id="c247" class="a card" style="left:300px;top:540px;width:1320px;height:160px;"><div class="li">one try: an accurate browser 3D model</div><div class="cs">to check if new gear fits without showing on camera</div></div><div id="c248" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Every vibe check / @danshipper, Nov 10, 2026</div></div></div>
+<div id="s255" class="clip scene" data-start="544.810" data-duration="23.150" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="w256" class="sc"><div id="vc251" class="a vcard" style="left:528px;top:88px;width:864px;height:864px"></div><div id="c254" class="a src" style="left:528px;top:968px">@Stefan_3D_AI on X · Nov 11, 2026</div></div></div>
+<div id="vw253" class="vwrap" style="left:528px;top:88px;width:864px;height:864px;z-index:50"><video id="v252" class="clip" src="assets/clips/x_stefan_d875ce43.mp4" muted playsinline data-start="544.810" data-duration="23.150" data-track-index="1" style="width:864px;height:864px;object-fit:cover"></video></div>
+<div id="s263" class="clip scene" data-start="544.810" data-duration="23.150" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><div id="w264" class="sc"><div id="c257" class="a note ovp" style="left:120px;top:110px;font-size:40px">3D is where people seem most impressed</div><div id="c258" class="a ovc red" style="left:80px;top:400px">Argon: 14 min · disappointed</div><div id="c259" class="a ovc" style="left:1440px;top:300px">Carbon: 81 min</div><div id="c260" class="a ovc" style="left:1440px;top:390px">186K output tokens</div><div id="c261" class="a ovc" style="left:1440px;top:480px">~$4.50</div><div id="c262" class="a note ovp" style="left:1380px;top:600px;font-size:44px">“redeemed Google on 3D”</div></div></div>
+<div id="s269" class="clip scene" data-start="567.560" data-duration="14.190" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div id="w270" class="sc"><div id="vc265" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c268" class="a src" style="left:192px;top:968px">@chetaslua on X · Gemini 4 Carbon, Greek world in Three.js</div></div></div>
+<div id="vw267" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:53"><video id="v266" class="clip" src="assets/clips/x_chet_8c95a1ee.mp4" muted playsinline data-start="567.560" data-duration="14.190" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s274" class="clip scene" data-start="567.560" data-duration="14.190" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><div id="w275" class="sc"><div id="c271" class="a ovc" style="left:230px;top:120px">4,000 lines in one shot</div><div id="c272" class="a ovc" style="left:230px;top:200px">a Greek world in Three.js</div><div id="c273" class="a note ovp" style="left:560px;top:860px;font-size:44px">Google models used to be lazy… that seems fixed</div></div></div>
+<div id="s283" class="clip scene" data-start="581.350" data-duration="13.600" data-track-index="2" style="z-index:55" data-layout-allow-overflow data-layout-allow-overlap><div id="w284" class="sc"><div id="c276" class="a im tw" style="left:160px;top:120px;width:560px;height:709px"><img src="assets/img/tw_pankaj_100.png" alt="" style="width:560px;height:709px"></div><div id="c277" class="a im tw" style="left:760px;top:160px;width:520px;height:658px"><img src="assets/img/tw_pankaj2_100.png" alt="" style="width:520px;height:658px"></div><div id="c278" class="a card ok" style="left:1340px;top:160px;width:440px;height:90px;"><div class="li">agrees: no more laziness</div></div><div id="c279" class="a card ok" style="left:1340px;top:270px;width:440px;height:90px;"><div class="li">3D taste & colors: great</div></div><div id="c280" class="a card" style="left:1340px;top:380px;width:440px;height:90px;"><div class="li">slight edge: Opus 5.5</div></div><div id="c281" class="a note" style="left:1340px;top:500px;font-size:46px">web design & front end:<br>“generic AI slop”</div><div id="c282" class="a src" style="left:160px;top:1000px">@pankajkumar_dev on X</div></div></div>
+<div id="s289" class="clip scene" data-start="594.550" data-duration="14.360" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="w290" class="sc"><div id="vc285" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c288" class="a src" style="left:192px;top:968px">@LuminaBench on X · 3D helicopter, Opus 5.5 vs Gemini 4 Carbon</div></div></div>
+<div id="vw287" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:57"><video id="v286" class="clip" src="assets/clips/x_lumina_4528f332.mp4" muted playsinline data-start="594.550" data-duration="14.360" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s294" class="clip scene" data-start="594.550" data-duration="14.360" data-track-index="2" style="z-index:58" data-layout-allow-overflow data-layout-allow-overlap><div id="w295" class="sc"><div id="c291" class="a ovc" style="left:1160px;top:120px">Carbon: a bit over 30 min</div><div id="c292" class="a ovc red" style="left:230px;top:120px">Opus 5.5: 55 min</div><div id="c293" class="a note ovp" style="left:380px;top:860px;font-size:42px">preferred Carbon's design · Opus more polished overall</div></div></div>
+<div id="s298" class="clip scene" data-start="608.510" data-duration="6.100" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="w299" class="sc"><div id="c296" class="a lab" style="left:0;right:0;top:400px;text-align:center;font-size:50px">the long-run experiments</div><div id="c297" class="a h" style="left:0;right:0;top:470px;text-align:center;font-size:90px">the “<span class="blue">this is the future</span>” part</div></div></div>
+<div id="s304" class="clip scene" data-start="614.210" data-duration="7.460" data-track-index="2" style="z-index:60" data-layout-allow-overflow data-layout-allow-overlap><div id="w305" class="sc"><div id="vc300" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c303" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw302" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:61"><video id="v301" class="clip" src="assets/clips/pe_98fc8408.mp4" muted playsinline data-start="614.210" data-duration="7.460" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s310" class="clip scene" data-start="621.270" data-duration="9.300" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><div id="w311" class="sc"><div id="vc306" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c309" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw308" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:63"><video id="v307" class="clip" src="assets/clips/pe_87177570.mp4" muted playsinline data-start="621.270" data-duration="9.300" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s316" class="clip scene" data-start="630.170" data-duration="9.900" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap><div id="w317" class="sc"><div id="vc312" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c315" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw314" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:65"><video id="v313" class="clip" src="assets/clips/pe_358704a2.mp4" muted playsinline data-start="630.170" data-duration="9.900" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s322" class="clip scene" data-start="639.670" data-duration="10.900" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="w323" class="sc"><div id="vc318" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c321" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw320" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:67"><video id="v319" class="clip" src="assets/clips/pe_ec21b233.mp4" muted playsinline data-start="639.670" data-duration="10.900" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s327" class="clip scene" data-start="614.210" data-duration="16.360" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap><div id="w328" class="sc"><div id="c324" class="a ovc" style="left:1060px;top:120px">Qila Bala Hissar · Peshawar, Pakistan</div><div id="c325" class="a note ovp" style="left:760px;top:860px;font-size:40px">~30 sources: old records, aerial photos, satellite images</div><div id="c326" class="a note ovp" style="left:760px;top:790px;font-size:40px">undocumented parts labelled “inferred”, not faked</div></div></div>
+<div id="s334" class="clip scene" data-start="630.170" data-duration="20.400" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><div id="w335" class="sc"><div id="c329" class="a note ovp" style="left:300px;top:860px;font-size:40px">every 10 passes: a fresh sub-agent scores renders vs real photos</div><div id="c330" class="a ovc" style="left:1300px;top:640px">65 passes · ~20 hours</div><div id="c331" class="a ovc" style="left:1300px;top:720px">score: 3 → 5 / 10</div><div id="c332" class="a note ovp" style="left:1060px;top:120px;font-size:44px">not photo-real, but honest about it</div><div id="c333" class="a note ovp" style="left:900px;top:200px;font-size:40px">also fixed 2 bugs in the open-source 3D engine</div></div></div>
+<div id="s340" class="clip scene" data-start="650.170" data-duration="5.320" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="w341" class="sc"><div id="vc336" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c339" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw338" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:71"><video id="v337" class="clip" src="assets/clips/pe_8c497776.mp4" muted playsinline data-start="650.170" data-duration="5.320" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s346" class="clip scene" data-start="655.090" data-duration="3.820" data-track-index="2" style="z-index:72" data-layout-allow-overflow data-layout-allow-overlap><div id="w347" class="sc"><div id="vc342" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c345" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw344" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:73"><video id="v343" class="clip" src="assets/clips/pe_f1ff69cc.mp4" muted playsinline data-start="655.090" data-duration="3.820" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s352" class="clip scene" data-start="658.510" data-duration="4.650" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="w353" class="sc"><div id="vc348" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c351" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw350" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:75"><video id="v349" class="clip" src="assets/clips/pe_3b7d69be.mp4" muted playsinline data-start="658.510" data-duration="4.650" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s355" class="clip scene" data-start="650.170" data-duration="5.320" data-track-index="2" style="z-index:76" data-layout-allow-overflow data-layout-allow-overlap><div id="w356" class="sc"><div id="c354" class="a ovc" style="left:1120px;top:120px">colliding galaxies · 500,000+ stars</div></div></div>
+<div id="s358" class="clip scene" data-start="655.090" data-duration="3.820" data-track-index="2" style="z-index:77" data-layout-allow-overflow data-layout-allow-overlap><div id="w359" class="sc"><div id="c357" class="a ovc" style="left:1000px;top:120px">four-legged robot: falling over → sprinting</div></div></div>
+<div id="s361" class="clip scene" data-start="658.510" data-duration="4.650" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="w362" class="sc"><div id="c360" class="a ovc" style="left:230px;top:860px">interactive jet engine cutaway, slice at any angle</div></div></div>
+<div id="s367" class="clip scene" data-start="662.760" data-duration="12.980" data-track-index="2" style="z-index:79" data-layout-allow-overflow data-layout-allow-overlap><div id="w368" class="sc"><div id="vc363" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c366" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw365" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:80"><video id="v364" class="clip" src="assets/clips/pe_71d46fbf.mp4" muted playsinline data-start="662.760" data-duration="12.980" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s373" class="clip scene" data-start="675.340" data-duration="11.020" data-track-index="2" style="z-index:81" data-layout-allow-overflow data-layout-allow-overlap><div id="w374" class="sc"><div id="vc369" class="a vcard" style="left:192px;top:88px;width:1536px;height:864px"></div><div id="c372" class="a src" style="left:192px;top:968px">Prompt Engineering on YouTube · “Gemini 4 Carbon Is Finally Here”</div></div></div>
+<div id="vw371" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:82"><video id="v370" class="clip" src="assets/clips/pe_9539df86.mp4" muted playsinline data-start="675.340" data-duration="11.020" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s381" class="clip scene" data-start="662.760" data-duration="23.600" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div id="w382" class="sc"><div id="c375" class="a note ovp" style="left:230px;top:120px;font-size:50px">a really weird one</div><div id="c376" class="a ovc" style="left:230px;top:210px">a neural network for Breakout, written by hand</div><div id="c377" class="a ovc" style="left:230px;top:290px">no training · ~20,000 weights typed directly</div><div id="c378" class="a ovc" style="left:1220px;top:700px">average: 217 points a game</div><div id="c379" class="a ovc red" style="left:1320px;top:600px">harder game: failed</div><div id="c380" class="a note ovp" style="left:300px;top:860px;font-size:40px">high effort sometimes burned its whole reply limit just thinking</div></div></div>
+<div id="s391" class="clip scene" data-start="685.960" data-duration="16.820" data-track-index="2" style="z-index:84" data-layout-allow-overflow data-layout-allow-overlap><div id="w392" class="sc"><div id="c383" class="a lab" style="left:260px;top:80px;font-size:40px">on apps</div><div id="c384" class="a h" style="left:260px;top:140px;font-size:64px">“the ultimate macOS <span class="blue">Pomodoro</span> timer”</div><div id="c385" class="a card sel" style="left:260px;top:330px;width:520px;height:90px;"><div class="li">a full Swift app</div></div><div id="c386" class="a card" style="left:260px;top:440px;width:520px;height:90px;"><div class="li">menu bar controller</div></div><div id="c387" class="a card" style="left:260px;top:550px;width:520px;height:90px;"><div class="li">project tracking</div></div><div id="c388" class="a card" style="left:260px;top:660px;width:520px;height:90px;"><div class="li">focus audio</div></div><div id="c389" class="a note" style="left:860px;top:560px;font-size:56px">none of it explicitly asked for</div><div id="c390" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: MindStudio, “Gemini 4 Carbon overview” (independent test)</div></div></div>
+<div id="s397" class="clip scene" data-start="702.380" data-duration="21.760" data-track-index="2" style="z-index:85" data-layout-allow-overflow data-layout-allow-overlap><div id="w398" class="sc"><div id="c393" class="a h" style="left:0;right:0;top:90px;text-align:center;font-size:60px">on the <span class="blue">security</span> side</div><div id="c394" class="a card sel" style="left:260px;top:260px;width:680px;height:300px;"><div class="mono g" style="font-size:22px">via security firm Wiz</div><div class="ct" style="margin-top:8px">real <span class="blue">zero-day</span> vulnerabilities in two large software companies</div><div class="cs">in under two hours of scanning</div></div><div id="c395" class="a card" style="left:1000px;top:260px;width:660px;height:300px;"><div class="mono g" style="font-size:22px">Google Cloud security team</div><div class="ct" style="margin-top:8px">working exploits for two known bugs in a popular open-source project</div><div class="cs">so the bugs could be properly patched</div></div><div id="c396" class="a src" style="left:0;right:0;top:1000px;text-align:center">Source: Google, “Gemini 4 Carbon is now available”, Nov 10, 2026</div></div></div>
+<div id="s406" class="clip scene" data-start="723.740" data-duration="31.500" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap><div id="w407" class="sc"><div id="c399" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:60px">now the <span class="blue">complaints</span></div><div id="c400" class="a card red" style="left:260px;top:200px;width:640px;height:200px;"><div class="mono g" style="font-size:22px">speed · Artificial Analysis</div><div class="big" style="font-size:80px;margin-top:6px">~80 <span class="g" style="font-size:40px">tokens / sec</span></div></div><div id="c401" class="a card red" style="left:1020px;top:200px;width:640px;height:200px;"><div class="mono g" style="font-size:22px">one of the wordiest models tested</div><div class="big" style="font-size:80px;margin-top:6px">70th <span class="g" style="font-size:40px">of 73</span></div></div><div id="c402" class="a card" style="left:260px;top:450px;width:1400px;height:90px;"><div class="li">high thinking: about a minute before the first word</div></div><div id="c403" class="a card" style="left:260px;top:580px;width:1400px;height:170px;"><div class="mono g" style="font-size:22px">Hacker News · majdalsado</div><div class="ct" style="margin-top:8px">“p75 TTFT of 60s and a TPS of 10. Model is <span style="color:#F85149">completely unusable at the moment</span>.”</div></div><div id="c404" class="a note" style="left:280px;top:800px;font-size:42px">an Ultra subscriber: barely finished one project before hitting limits</div><div id="c405" class="a src" style="left:0;right:0;top:1000px;text-align:center">Sources: Artificial Analysis via dev.to · news.ycombinator.com/item?id=50444914</div></div></div>
+<div id="s415" class="clip scene" data-start="754.840" data-duration="23.140" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><div id="w416" class="sc"><div id="c408" class="a im" style="left:160px;top:150px;width:900px;height:506px"><img src="assets/raw/web/g_grey_swan.png" alt="" style="width:900px;height:506px"></div><div id="c409" class="a h" style="left:1140px;top:140px;font-size:60px">on <span class="blue">safety</span></div><div id="c410" class="a card ok" style="left:1140px;top:240px;width:620px;height:240px;"><div class="mono g" style="font-size:22px">well-known prompt-injection test</div><div class="big blue" style="font-size:90px;margin-top:6px">0%</div><div class="cs">first model to score it, says Google</div></div><div id="c411" class="a card ok" style="left:1140px;top:510px;width:620px;height:90px;"><div class="li">passed 92% of an internal honesty test</div></div><div id="c412" class="a card red" style="left:160px;top:690px;width:900px;height:140px;"><div class="li">but Google's own safety report: prompt-injection resistance still needs work</div></div><div id="c413" class="a card red" style="left:1140px;top:640px;width:620px;height:190px;"><div class="li">no brand-new full frontier safety assessment</div><div class="cs">results mostly carried over from Argon</div></div><div id="c414" class="a src" style="left:0;right:0;top:1000px;text-align:center">Chart: Google DeepMind · The Decoder, Nov 10, 2026</div></div></div>
+<div id="s426" class="clip scene" data-start="777.580" data-duration="23.290" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div id="w427" class="sc"><div id="c417" class="a h" style="left:0;right:0;top:70px;text-align:center;font-size:64px">so who should <span class="blue">actually use it</span>?</div><div id="c418" class="a lab" style="left:260px;top:200px;font-size:38px">long tasks with a clear finish line:</div><div id="c419" class="a card" style="left:260px;top:270px;width:340px;height:90px;"><div class="li">a big bug hunt</div></div><div id="c420" class="a card" style="left:630px;top:270px;width:340px;height:90px;"><div class="li">a security audit</div></div><div id="c421" class="a card" style="left:1000px;top:270px;width:300px;height:90px;"><div class="li">a 3D build</div></div><div id="c422" class="a card" style="left:1330px;top:270px;width:340px;height:90px;"><div class="li">a research project</div></div><div id="c423" class="a note" style="left:300px;top:390px;font-size:48px">you can launch and walk away from</div><div id="c424" class="a card ok" style="left:260px;top:480px;width:1400px;height:130px;"><div class="ct"><span class="blue">genuinely strong</span>, and a lot cheaper than Fable 5.2 for similar results in some tests</div></div><div id="c425" class="a card ok" style="left:260px;top:650px;width:1400px;height:90px;"><div class="li">also great for finance & business automation</div></div></div></div>
+<div id="s433" class="clip scene" data-start="800.470" data-duration="23.290" data-track-index="2" style="z-index:89" data-layout-allow-overflow data-layout-allow-overlap><div id="w434" class="sc"><div id="c428" class="a card red" style="left:260px;top:180px;width:1400px;height:170px;"><div class="mono g" style="font-size:22px">not the one for</div><div class="ct" style="margin-top:8px">quick back-and-forth chat · nice front-end design · writing</div></div><div id="c429" class="a note" style="left:280px;top:390px;font-size:46px">even Google says Argon is better for most everyday work</div><div id="c430" class="a card" style="left:260px;top:500px;width:1400px;height:170px;"><div class="mono g" style="font-size:22px">already on Fable 5.2 or Opus 5.5 for coding?</div><div class="ct" style="margin-top:8px">no strong reason to switch…</div></div><div id="c431" class="a h" style="left:280px;top:720px;font-size:64px">…unless <span class="blue">price</span> matters to you.</div><div id="c432" class="a note" style="left:1200px;top:820px;font-size:56px">and it usually does</div></div></div>
+<div id="s443" class="clip scene" data-start="823.360" data-duration="19.000" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div id="w444" class="sc"><div id="c435" class="a h" style="left:260px;top:70px;font-size:64px">my <span class="blue">take</span></div><div id="c436" class="a card" style="left:260px;top:190px;width:1400px;height:90px;"><div class="li">didn't hold the #1 spot for long</div></div><div id="c437" class="a card sel" style="left:260px;top:300px;width:1400px;height:110px;"><div class="ct">but Google stopped being the <span class="blue">lazy model company</span></div></div><div id="c438" class="a card ok" style="left:260px;top:440px;width:440px;height:90px;"><div class="li">works for hours</div></div><div id="c439" class="a card ok" style="left:730px;top:440px;width:600px;height:90px;"><div class="li">honest about what it doesn't know</div></div><div id="c440" class="a card ok" style="left:260px;top:560px;width:1400px;height:90px;"><div class="li">long jobs: one of the best deals at the top</div></div><div id="c441" class="a h" style="left:260px;top:720px;font-size:70px">test it before <span class="blue">December 1</span></div><div id="c442" class="a note" style="left:1180px;top:740px;font-size:56px">when the price doubles</div></div></div>
+<div id="s447" class="clip scene" data-start="841.960" data-duration="4.140" data-track-index="2" style="z-index:91" data-layout-allow-overflow data-layout-allow-overlap><div id="w448" class="sc"><div id="c445" class="a h" style="left:0;right:0;top:330px;text-align:center;font-size:76px">have you tried Carbon yet?</div><div id="c446" class="a note" style="left:640px;top:480px;font-size:56px">tell me what you built in the comments</div></div></div>
+<div id="s451" class="clip scene" data-start="845.700" data-duration="2.700" data-track-index="2" style="z-index:92" data-layout-allow-overflow data-layout-allow-overlap><div id="w452" class="sc"><div id="c449" class="a im" style="left:760px;top:230px;width:400px;height:400px"><img src="assets/img/aiequator.png" alt="" style="width:400px;height:400px"></div><div id="c450" class="a lab" style="left:0;right:0;top:680px;text-align:center;font-size:40px">subscribe for more AI news</div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="848.4" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -60, duration: 848.4, ease: "none" }, 0);
+tl.set("#vc1, #vw3",{opacity:1},0.000);
+tl.fromTo("#c4",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},0.000);
+tl.set("#w6",{opacity:1},0);
+tl.to("#w6",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},9.000);
+tl.to("#vw3",{opacity:0,duration:.4,ease:"power2.in"},9.000);
+tl.fromTo("#vc7",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},9.000);
+tl.fromTo("#vw9",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},9.000);
+tl.fromTo("#c10",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},9.000);
+tl.fromTo("#w12",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},9.000);
+tl.to("#w12",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},17.600);
+tl.to("#vw9",{opacity:0,duration:.4,ease:"power2.in"},17.600);
+tl.fromTo("#c13",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},1.840);
+tl.fromTo("#c14",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},2.680);
+tl.fromTo("#c15",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},5.580);
+tl.fromTo("#c16",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},8.840);
+tl.fromTo("#c17",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},11.140);
+tl.fromTo("#c18",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},14.820);
+tl.set("#w20",{opacity:1},0);
+tl.to("#w20",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},17.600);
+tl.fromTo("#c21",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},18.480);
+tl.fromTo("#c22",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},19.720);
+tl.fromTo("#c23",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},23.240);
+tl.fromTo("#c24",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},19.900);
+tl.fromTo("#w26",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},17.600);
+tl.to("#w26",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},25.080);
+tl.fromTo("#c27",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},25.080);
+tl.fromTo("#c28",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},26.000);
+tl.fromTo("#c29",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},27.340);
+tl.fromTo("#w31",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},25.080);
+tl.to("#w31",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},28.940);
+tl.fromTo("#m32",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},28.940);
+tl.fromTo("#k33",{scale:1},{scale:1.035,duration:5.600,ease:"none"},28.940);
+tl.fromTo("#c34",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},30.800);
+tl.fromTo("#w36",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},28.940);
+tl.to("#w36",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},34.540);
+tl.fromTo("#c37",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},34.540);
+tl.fromTo("#c38",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},35.500);
+tl.fromTo("#c39",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},36.380);
+tl.fromTo("#c40",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},37.400);
+tl.fromTo("#c41",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},39.780);
+tl.fromTo("#c42",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},40.780);
+tl.fromTo("#c43",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},42.160);
+tl.fromTo("#c44",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},42.840);
+tl.fromTo("#w46",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},34.540);
+tl.to("#w46",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},45.220);
+tl.fromTo("#c47",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},45.220);
+tl.fromTo("#c48",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},48.880);
+tl.fromTo("#c49",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},58.220);
+tl.fromTo("#w51",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},45.220);
+tl.to("#w51",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},61.640);
+tl.fromTo("#c52",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},61.640);
+tl.fromTo("#c53",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},62.400);
+tl.fromTo("#c54",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},66.320);
+tl.fromTo("#c55",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},68.200);
+tl.fromTo("#c56",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},69.180);
+tl.fromTo("#c57",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},71.780);
+tl.fromTo("#c58",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},72.480);
+tl.fromTo("#c59",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},73.600);
+tl.fromTo("#w61",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},61.640);
+tl.to("#w61",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},76.500);
+tl.fromTo("#c62",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},76.500);
+tl.fromTo("#c63",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},77.980);
+tl.set("#al64",{opacity:1},78.980);
+tl.fromTo("#al64 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.35,stagger:0,ease:"power2.out"},78.980);
+tl.fromTo("#c65",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},79.400);
+tl.fromTo("#c66",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},84.800);
+tl.fromTo("#c67",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},86.340);
+tl.fromTo("#w69",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},76.500);
+tl.to("#w69",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},91.720);
+tl.fromTo("#c70",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},91.720);
+tl.fromTo("#c71",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},94.880);
+tl.fromTo("#c72",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},96.320);
+tl.fromTo("#c73",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},99.160);
+tl.fromTo("#w75",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},91.720);
+tl.to("#w75",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},102.720);
+tl.fromTo("#c76",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},102.720);
+tl.fromTo("#c77",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},103.000);
+tl.fromTo("#w79",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},102.720);
+tl.to("#w79",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},107.310);
+tl.fromTo("#c80",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},107.310);
+tl.fromTo("#c81",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},108.200);
+tl.fromTo("#c82",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},109.910);
+tl.fromTo("#c83",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},116.550);
+tl.fromTo("#c84",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},118.000);
+tl.fromTo("#c85",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},119.500);
+tl.fromTo("#w87",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},107.310);
+tl.to("#w87",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},122.220);
+count("#ctx",107.310,0,1000000,0,"","",1.4);
+tl.fromTo("#c88",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},122.220);
+tl.fromTo("#m89",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},124.000);
+tl.fromTo("#k90",{scale:1},{scale:1.035,duration:8.160,ease:"none"},124.000);
+tl.fromTo("#c91",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},125.240);
+tl.fromTo("#w93",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},122.220);
+tl.to("#w93",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},132.160);
+tl.fromTo("#c94",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},132.160);
+tl.fromTo("#c95",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},132.400);
+tl.fromTo("#c96",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},136.470);
+tl.fromTo("#c97",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},140.210);
+tl.fromTo("#c98",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},133.000);
+tl.fromTo("#w100",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},132.160);
+tl.to("#w100",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},141.810);
+tl.fromTo(".prow .old",{color:"#FFFFFF"},{color:"#6B7079",textDecoration:"line-through",duration:.25},134.3);tl.fromTo(".prow .new",{opacity:0,x:-10},{opacity:1,x:0,duration:.3,stagger:.2},134.5);
+tl.fromTo("#c101",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},141.810);
+tl.fromTo("#c102",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},142.600);
+tl.fromTo("#c103",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},144.790);
+tl.fromTo("#w105",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},141.810);
+tl.to("#w105",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},147.450);
+tl.fromTo("#m106",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},147.450);
+tl.fromTo("#k107",{scale:1},{scale:1.035,duration:9.640,ease:"none"},147.450);
+tl.fromTo("#c108",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},150.490);
+tl.fromTo("#c109",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},153.300);
+tl.fromTo("#w111",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},147.450);
+tl.to("#w111",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},157.090);
+tl.fromTo("#c112",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},157.090);
+tl.fromTo("#c113",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},159.730);
+tl.fromTo("#w115",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},157.090);
+tl.to("#w115",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},165.370);
+tl.fromTo("#c116",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},167.250);
+tl.fromTo("#rb1",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},183.770);
+tl.fromTo("#c117",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},167.600);
+tl.fromTo("#c118",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},165.370);
+tl.fromTo("#c119",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},178.650);
+tl.fromTo("#c120",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},179.970);
+tl.fromTo("#bm1",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},183.770);
+tl.fromTo("#bm2",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},196.570);
+tl.fromTo("#bm3",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},207.940);
+tl.fromTo("#bm4",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},213.720);
+tl.fromTo("#c121",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},232.640);
+tl.fromTo("#bm5",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},237.840);
+tl.fromTo("#w123",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},165.370);
+tl.to("#w123",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},247.700);
+tl.to("#rb1",{y:47,duration:.4,ease:"power3.inOut"},196.57);
+tl.to("#rb1",{y:402,duration:.4,ease:"power3.inOut"},207.94);
+tl.to("#rb1",{y:206,duration:.4,ease:"power3.inOut"},213.72);
+tl.to("#rb1",{y:306,duration:.4,ease:"power3.inOut"},237.84);
+tl.to("#bm1",{opacity:0,duration:.2},196.52);
+tl.to("#bm2",{opacity:0,duration:.2},207.89);
+tl.to("#bm3",{opacity:0,duration:.2},213.67);
+tl.to("#bm4",{opacity:0,duration:.2},237.79);
+tl.to("#rb1, #bm5",{opacity:0,duration:.3},247.4);
+tl.fromTo("#c124",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},234.600);
+tl.fromTo("#w126",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},234.600);
+tl.to("#w126",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},237.600);
+tl.fromTo("#c127",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},247.700);
+tl.fromTo("#c128",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},251.690);
+tl.fromTo("#c129",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},256.630);
+tl.fromTo("#c130",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},251.690);
+tl.fromTo("#c131",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},256.630);
+tl.fromTo("#c132",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},262.210);
+tl.fromTo("#c133",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},274.350);
+tl.fromTo("#c134",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},278.970);
+tl.fromTo("#c135",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},252.000);
+tl.fromTo("#w137",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},247.700);
+tl.to("#w137",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},284.270);
+tl.fromTo("#c138",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},284.270);
+tl.fromTo("#rb2",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},284.270);
+tl.fromTo("#c139",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},284.270);
+tl.fromTo("#c140",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},286.130);
+tl.fromTo("#c141",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},299.290);
+tl.fromTo("#w143",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},284.270);
+tl.to("#w143",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},302.810);
+tl.fromTo("#c144",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},303.090);
+tl.fromTo("#c145",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},308.330);
+tl.fromTo("#c146",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},313.890);
+tl.fromTo("#c147",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},314.950);
+tl.fromTo("#c148",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},308.600);
+tl.fromTo("#w150",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},302.810);
+tl.to("#w150",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},320.650);
+tl.fromTo("#c151",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},320.650);
+tl.fromTo("#c152",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},320.900);
+tl.fromTo("#c153",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},323.090);
+tl.fromTo("#c154",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},329.850);
+tl.fromTo("#c155",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},334.230);
+tl.fromTo("#w157",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},320.650);
+tl.to("#w157",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},337.870);
+tl.fromTo("#c158",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},337.870);
+tl.fromTo("#c159",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},338.800);
+tl.fromTo("#c160",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},343.610);
+tl.fromTo("#c161",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},346.170);
+tl.fromTo("#c162",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},349.410);
+tl.fromTo("#c163",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},352.390);
+tl.fromTo("#c164",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},357.130);
+tl.fromTo("#c165",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},359.050);
+tl.fromTo("#w167",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},337.870);
+tl.to("#w167",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},362.810);
+tl.fromTo("#c168",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},362.810);
+tl.fromTo("#c169",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},363.790);
+tl.fromTo("#c170",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},366.110);
+tl.fromTo("#c171",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},368.370);
+tl.fromTo("#c172",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},370.950);
+tl.fromTo("#c173",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},370.950);
+tl.fromTo("#c174",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},374.030);
+tl.fromTo("#c175",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},376.630);
+tl.fromTo("#c176",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},363.000);
+tl.fromTo("#w178",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},362.810);
+tl.to("#w178",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},379.450);
+tl.fromTo("#m179",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},379.450);
+tl.fromTo("#k180",{scale:1},{scale:1.035,duration:25.100,ease:"none"},379.450);
+tl.fromTo("#c181",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},379.600);
+tl.fromTo("#c182",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},381.770);
+tl.fromTo("#c183",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},389.590);
+tl.fromTo("#c184",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},398.970);
+tl.fromTo("#w186",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},379.450);
+tl.to("#w186",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},404.550);
+tl.fromTo("#c187",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},404.550);
+tl.fromTo("#c188",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},409.070);
+tl.fromTo("#c189",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},412.590);
+tl.fromTo("#w191",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},404.550);
+tl.to("#w191",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},415.050);
+tl.fromTo("#c192",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},415.050);
+tl.fromTo("#c193",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},418.550);
+tl.fromTo("#c194",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},422.590);
+tl.fromTo("#c195",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},427.930);
+tl.fromTo("#c196",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},432.730);
+tl.fromTo("#c197",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},420.600);
+tl.fromTo("#w199",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},415.050);
+tl.to("#w199",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},437.890);
+tl.fromTo("#m200",{opacity:0,y:24,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},437.890);
+tl.fromTo("#k201",{scale:1},{scale:1.035,duration:13.070,ease:"none"},437.890);
+tl.fromTo("#c202",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},438.790);
+tl.fromTo("#c203",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},442.670);
+tl.fromTo("#c204",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},444.750);
+tl.fromTo("#w206",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},437.890);
+tl.to("#w206",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},450.960);
+tl.fromTo("#c207",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},450.960);
+tl.fromTo("#c208",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},452.000);
+tl.fromTo("#w210",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},450.960);
+tl.to("#w210",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},455.220);
+tl.fromTo("#c211",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},455.220);
+tl.fromTo("#c212",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},458.900);
+tl.fromTo("#c213",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},459.640);
+tl.fromTo("#c214",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},461.500);
+tl.fromTo("#c215",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},463.340);
+tl.fromTo("#c216",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},455.500);
+tl.fromTo("#w218",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},455.220);
+tl.to("#w218",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},467.180);
+tl.fromTo("#c219",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},467.180);
+tl.fromTo("#c220",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},467.180);
+tl.fromTo("#c221",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},472.760);
+tl.fromTo("#c222",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},482.360);
+tl.fromTo("#c223",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},487.700);
+tl.fromTo("#c224",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},490.740);
+tl.fromTo("#c225",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},478.560);
+tl.fromTo("#w227",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},467.180);
+tl.to("#w227",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},493.490);
+tl.fromTo("#c228",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},493.490);
+tl.fromTo("#c229",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},494.500);
+tl.fromTo("#c230",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},501.070);
+tl.fromTo("#c231",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},503.190);
+tl.fromTo("#c232",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},505.630);
+tl.fromTo("#c233",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},512.930);
+tl.fromTo("#w235",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},493.490);
+tl.to("#w235",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},515.610);
+tl.fromTo("#c236",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},515.610);
+tl.fromTo("#c237",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},516.600);
+tl.fromTo("#c238",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},520.920);
+tl.set("#al239",{opacity:1},523.300);
+tl.fromTo("#al239 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.35,stagger:0,ease:"power2.out"},523.300);
+tl.fromTo("#c240",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},523.810);
+tl.fromTo("#c241",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},529.850);
+tl.fromTo("#c242",{opacity:0,scale:.86,rotation:-2},{opacity:1,scale:1,rotation:2,duration:.22,ease:"back.out(2)"},526.900);
+tl.fromTo("#w244",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},515.610);
+tl.to("#w244",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},533.030);
+tl.fromTo("#c245",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},533.030);
+tl.set("#al246",{opacity:1},537.000);
+tl.fromTo("#al246 .dr",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.35,stagger:0,ease:"power2.out"},537.000);
+tl.fromTo("#c247",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},537.770);
+tl.fromTo("#c248",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},533.300);
+tl.fromTo("#w250",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},533.030);
+tl.to("#w250",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},544.810);
+tl.fromTo("#vc251",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},544.810);
+tl.fromTo("#vw253",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},544.810);
+tl.fromTo("#c254",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},544.810);
+tl.fromTo("#w256",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},544.810);
+tl.to("#w256",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},567.560);
+tl.to("#vw253",{opacity:0,duration:.4,ease:"power2.in"},567.560);
+tl.fromTo("#c257",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},544.900);
+tl.fromTo("#c258",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},553.950);
+tl.fromTo("#c259",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},557.370);
+tl.fromTo("#c260",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},559.450);
+tl.fromTo("#c261",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},562.370);
+tl.fromTo("#c262",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},564.670);
+tl.fromTo("#w264",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},544.810);
+tl.to("#w264",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},567.560);
+tl.fromTo("#vc265",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},567.560);
+tl.fromTo("#vw267",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},567.560);
+tl.fromTo("#c268",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},567.560);
+tl.fromTo("#w270",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},567.560);
+tl.to("#w270",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},581.350);
+tl.to("#vw267",{opacity:0,duration:.4,ease:"power2.in"},581.350);
+tl.fromTo("#c271",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},570.960);
+tl.fromTo("#c272",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},573.440);
+tl.fromTo("#c273",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},576.610);
+tl.fromTo("#w275",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},567.560);
+tl.to("#w275",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},581.350);
+tl.fromTo("#c276",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},581.350);
+tl.fromTo("#c277",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},582.000);
+tl.fromTo("#c278",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},583.270);
+tl.fromTo("#c279",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},584.230);
+tl.fromTo("#c280",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},586.190);
+tl.fromTo("#c281",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},589.890);
+tl.fromTo("#c282",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},581.600);
+tl.fromTo("#w284",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},581.350);
+tl.to("#w284",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},594.550);
+tl.fromTo("#vc285",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},594.550);
+tl.fromTo("#vw287",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},594.550);
+tl.fromTo("#c288",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},594.550);
+tl.fromTo("#w290",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},594.550);
+tl.to("#w290",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},608.510);
+tl.to("#vw287",{opacity:0,duration:.4,ease:"power2.in"},608.510);
+tl.fromTo("#c291",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},599.030);
+tl.fromTo("#c292",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},601.110);
+tl.fromTo("#c293",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},604.010);
+tl.fromTo("#w295",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},594.550);
+tl.to("#w295",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},608.510);
+tl.fromTo("#c296",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},608.510);
+tl.fromTo("#c297",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},610.750);
+tl.fromTo("#w299",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},608.510);
+tl.to("#w299",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},614.210);
+tl.fromTo("#vc300",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},614.210);
+tl.fromTo("#vw302",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},614.210);
+tl.fromTo("#c303",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},614.210);
+tl.fromTo("#w305",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},614.210);
+tl.to("#w305",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},621.270);
+tl.to("#vw302",{opacity:0,duration:.4,ease:"power2.in"},621.270);
+tl.fromTo("#vc306",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},621.270);
+tl.fromTo("#vw308",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},621.270);
+tl.fromTo("#c309",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},621.270);
+tl.fromTo("#w311",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},621.270);
+tl.to("#w311",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},630.170);
+tl.to("#vw308",{opacity:0,duration:.4,ease:"power2.in"},630.170);
+tl.fromTo("#vc312",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},630.170);
+tl.fromTo("#vw314",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},630.170);
+tl.fromTo("#c315",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},630.170);
+tl.fromTo("#w317",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},630.170);
+tl.to("#w317",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},639.670);
+tl.to("#vw314",{opacity:0,duration:.4,ease:"power2.in"},639.670);
+tl.fromTo("#vc318",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},639.670);
+tl.fromTo("#vw320",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},639.670);
+tl.fromTo("#c321",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},639.670);
+tl.fromTo("#w323",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},639.670);
+tl.to("#w323",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},650.170);
+tl.to("#vw320",{opacity:0,duration:.4,ease:"power2.in"},650.170);
+tl.fromTo("#c324",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},615.830);
+tl.fromTo("#c325",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},618.690);
+tl.fromTo("#c326",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},625.010);
+tl.fromTo("#w328",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},614.210);
+tl.to("#w328",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},630.170);
+tl.fromTo("#c329",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},630.170);
+tl.fromTo("#c330",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},636.590);
+tl.fromTo("#c331",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},639.670);
+tl.fromTo("#c332",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},643.810);
+tl.fromTo("#c333",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},645.470);
+tl.fromTo("#w335",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},630.170);
+tl.to("#w335",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},650.170);
+tl.fromTo("#vc336",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},650.170);
+tl.fromTo("#vw338",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},650.170);
+tl.fromTo("#c339",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},650.170);
+tl.fromTo("#w341",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},650.170);
+tl.to("#w341",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},655.090);
+tl.to("#vw338",{opacity:0,duration:.4,ease:"power2.in"},655.090);
+tl.fromTo("#vc342",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},655.090);
+tl.fromTo("#vw344",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},655.090);
+tl.fromTo("#c345",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},655.090);
+tl.fromTo("#w347",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},655.090);
+tl.to("#w347",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},658.510);
+tl.to("#vw344",{opacity:0,duration:.4,ease:"power2.in"},658.510);
+tl.fromTo("#vc348",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},658.510);
+tl.fromTo("#vw350",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},658.510);
+tl.fromTo("#c351",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},658.510);
+tl.fromTo("#w353",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},658.510);
+tl.to("#w353",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},662.760);
+tl.to("#vw350",{opacity:0,duration:.4,ease:"power2.in"},662.760);
+tl.fromTo("#c354",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},650.170);
+tl.fromTo("#w356",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},650.170);
+tl.to("#w356",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},655.090);
+tl.fromTo("#c357",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},655.090);
+tl.fromTo("#w359",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},655.090);
+tl.to("#w359",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},658.510);
+tl.fromTo("#c360",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},658.510);
+tl.fromTo("#w362",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},658.510);
+tl.to("#w362",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},662.760);
+tl.fromTo("#vc363",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},662.760);
+tl.fromTo("#vw365",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},662.760);
+tl.fromTo("#c366",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},662.760);
+tl.fromTo("#w368",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},662.760);
+tl.to("#w368",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},675.340);
+tl.to("#vw365",{opacity:0,duration:.4,ease:"power2.in"},675.340);
+tl.fromTo("#vc369",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},675.340);
+tl.fromTo("#vw371",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},675.340);
+tl.fromTo("#c372",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},675.340);
+tl.fromTo("#w374",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},675.340);
+tl.to("#w374",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},685.960);
+tl.to("#vw371",{opacity:0,duration:.4,ease:"power2.in"},685.960);
+tl.fromTo("#c375",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},663.000);
+tl.fromTo("#c376",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},666.620);
+tl.fromTo("#c377",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},670.760);
+tl.fromTo("#c378",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},675.340);
+tl.fromTo("#c379",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},681.060);
+tl.fromTo("#c380",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},682.080);
+tl.fromTo("#w382",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},662.760);
+tl.to("#w382",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},685.960);
+tl.fromTo("#c383",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},685.960);
+tl.fromTo("#c384",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},687.990);
+tl.fromTo("#c385",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},692.760);
+tl.fromTo("#c386",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},695.380);
+tl.fromTo("#c387",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},696.860);
+tl.fromTo("#c388",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},698.040);
+tl.fromTo("#c389",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},699.320);
+tl.fromTo("#c390",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},688.200);
+tl.fromTo("#w392",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},685.960);
+tl.to("#w392",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},702.380);
+tl.fromTo("#c393",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},702.380);
+tl.fromTo("#c394",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},703.960);
+tl.fromTo("#c395",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},713.800);
+tl.fromTo("#c396",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},704.200);
+tl.fromTo("#w398",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},702.380);
+tl.to("#w398",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},723.740);
+tl.fromTo("#c399",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},723.740);
+tl.fromTo("#c400",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},726.720);
+tl.fromTo("#c401",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},731.930);
+tl.fromTo("#c402",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},737.320);
+tl.fromTo("#c403",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},742.300);
+tl.fromTo("#c404",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},749.310);
+tl.fromTo("#c405",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},729.300);
+tl.fromTo("#w407",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},723.740);
+tl.to("#w407",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},754.840);
+tl.fromTo("#c408",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},754.840);
+tl.fromTo("#c409",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},754.840);
+tl.fromTo("#c410",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},756.780);
+tl.fromTo("#c411",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},761.420);
+tl.fromTo("#c412",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},765.480);
+tl.fromTo("#c413",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},770.580);
+tl.fromTo("#c414",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},755.100);
+tl.fromTo("#w416",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},754.840);
+tl.to("#w416",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},777.580);
+tl.fromTo("#c417",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},777.580);
+tl.fromTo("#c418",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},780.210);
+tl.fromTo("#c419",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},783.050);
+tl.fromTo("#c420",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},784.430);
+tl.fromTo("#c421",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},785.690);
+tl.fromTo("#c422",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},786.830);
+tl.fromTo("#c423",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},788.000);
+tl.fromTo("#c424",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},789.210);
+tl.fromTo("#c425",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},796.990);
+tl.fromTo("#w427",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},777.580);
+tl.to("#w427",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},800.470);
+tl.fromTo("#c428",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},800.470);
+tl.fromTo("#c429",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},806.530);
+tl.fromTo("#c430",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},810.550);
+tl.fromTo("#c431",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},817.600);
+tl.fromTo("#c432",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},821.090);
+tl.fromTo("#w434",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},800.470);
+tl.to("#w434",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},823.360);
+tl.fromTo("#c435",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},823.360);
+tl.fromTo("#c436",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},824.560);
+tl.fromTo("#c437",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},827.360);
+tl.fromTo("#c438",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},830.690);
+tl.fromTo("#c439",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},832.150);
+tl.fromTo("#c440",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},834.790);
+tl.fromTo("#c441",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},837.570);
+tl.fromTo("#c442",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},840.230);
+tl.fromTo("#w444",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},823.360);
+tl.to("#w444",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},841.960);
+tl.fromTo("#c445",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},841.960);
+tl.fromTo("#c446",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},843.000);
+tl.fromTo("#w448",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},841.960);
+tl.to("#w448",{opacity:0,filter:"blur(10px)",duration:.4,ease:"power2.in"},845.700);
+tl.fromTo("#c449",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},845.700);
+tl.fromTo("#c450",{opacity:0,y:18,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.35,ease:"power3.out"},845.700);
+tl.fromTo("#w452",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power2.out"},845.700);
+tl.set({}, {}, 848.4);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

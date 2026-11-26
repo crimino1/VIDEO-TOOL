@@ -1,0 +1,195 @@
+{
+ "url": "https://x.com/jasonlk/status/1946069562723897802",
+ "id": "1946069562723897802",
+ "text": ".@Replit goes rogue during a code freeze and shutdown and deletes our entire database",
+ "raw_text": {
+  "text": ".@Replit goes rogue during a code freeze and shutdown and deletes our entire database https://t.co/VJECFhPAU9",
+  "display_text_range": [
+   0,
+   85
+  ],
+  "facets": [
+   {
+    "type": "mention",
+    "indices": [
+     1,
+     8
+    ],
+    "original": "Replit",
+    "id": "366289783"
+   },
+   {
+    "type": "media",
+    "indices": [
+     86,
+     109
+    ],
+    "id": "1946069553970040834",
+    "display": "pic.x.com/VJECFhPAU9",
+    "original": "https://t.co/VJECFhPAU9",
+    "replacement": "https://x.com/jasonlk/status/1946069562723897802/photo/1"
+   },
+   {
+    "type": "media",
+    "indices": [
+     86,
+     109
+    ],
+    "id": "1946069554221797377",
+    "display": "pic.x.com/VJECFhPAU9",
+    "original": "https://t.co/VJECFhPAU9",
+    "replacement": "https://x.com/jasonlk/status/1946069562723897802/photo/2"
+   },
+   {
+    "type": "media",
+    "indices": [
+     86,
+     109
+    ],
+    "id": "1946069555291299842",
+    "display": "pic.x.com/VJECFhPAU9",
+    "original": "https://t.co/VJECFhPAU9",
+    "replacement": "https://x.com/jasonlk/status/1946069562723897802/photo/3"
+   },
+   {
+    "type": "media",
+    "indices": [
+     86,
+     109
+    ],
+    "id": "1946069556054691842",
+    "display": "pic.x.com/VJECFhPAU9",
+    "original": "https://t.co/VJECFhPAU9",
+    "replacement": "https://x.com/jasonlk/status/1946069562723897802/photo/4"
+   }
+  ]
+ },
+ "author": {
+  "screen_name": "jasonlk",
+  "url": "https://x.com/jasonlk",
+  "id": "4215921",
+  "followers": 256115,
+  "following": 2398,
+  "likes": 55900,
+  "media_count": 23712,
+  "name": "Jason \u2728\ud83d\udc7eSaaStr.Ai\u2728 Lemkin",
+  "description": "GET funded \u27a1 $200m http://SaaStrFund.com\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\n\nSeed/Early A\nAI+B2B\nThe Agentic Life",
+  "raw_description": {
+   "text": "GET funded \u27a1 $200m https://t.co/AVvPIrIdFP\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\ud83e\udd84\n\nSeed/Early A\nAI+B2B\nThe Agentic Life",
+   "facets": [
+    {
+     "type": "url",
+     "indices": [
+      19,
+      42
+     ],
+     "original": "https://t.co/AVvPIrIdFP",
+     "replacement": "http://SaaStrFund.com",
+     "display": "SaaStrFund.com"
+    }
+   ]
+  },
+  "location": "Palo Alto, CA",
+  "banner_url": "https://pbs.twimg.com/profile_banners/4215921/1791489563",
+  "avatar_url": "https://pbs.twimg.com/profile_images/1981936022049972224/xvLI9bNx_200x200.jpg",
+  "joined": "Wed Apr 11 17:42:28 +0000 2007",
+  "protected": false,
+  "website": {
+   "url": "https://saastr.ai",
+   "display_url": "saastr.ai"
+  },
+  "verification": {
+   "verified": true,
+   "verified_at": null,
+   "type": "individual"
+  },
+  "avatar_color": null
+ },
+ "replies": 11,
+ "retweets": 477,
+ "likes": 3721,
+ "bookmarks": 1542,
+ "quotes": 1111,
+ "created_at": "Fri Jul 18 04:48:34 +0000 2025",
+ "created_timestamp": 1752814114,
+ "possibly_sensitive": false,
+ "views": 2725365,
+ "is_note_tweet": false,
+ "community_note": null,
+ "lang": "en",
+ "replying_to": "jasonlk",
+ "replying_to_status": "1946066422477529487",
+ "media": {
+  "all": [
+   {
+    "type": "photo",
+    "id": "1946069553970040834",
+    "url": "https://pbs.twimg.com/media/GwHT8tiWUAIuphG.jpg?name=orig",
+    "width": 1115,
+    "height": 1530
+   },
+   {
+    "type": "photo",
+    "id": "1946069554221797377",
+    "url": "https://pbs.twimg.com/media/GwHT8ueX0AEptFo.jpg?name=orig",
+    "width": 1115,
+    "height": 1472
+   },
+   {
+    "type": "photo",
+    "id": "1946069555291299842",
+    "url": "https://pbs.twimg.com/media/GwHT8ydXIAIFoeq.jpg?name=orig",
+    "width": 1116,
+    "height": 1481
+   },
+   {
+    "type": "photo",
+    "id": "1946069556054691842",
+    "url": "https://pbs.twimg.com/media/GwHT81TXkAIST0K.jpg?name=orig",
+    "width": 1115,
+    "height": 1496
+   }
+  ],
+  "photos": [
+   {
+    "type": "photo",
+    "id": "1946069553970040834",
+    "url": "https://pbs.twimg.com/media/GwHT8tiWUAIuphG.jpg?name=orig",
+    "width": 1115,
+    "height": 1530
+   },
+   {
+    "type": "photo",
+    "id": "1946069554221797377",
+    "url": "https://pbs.twimg.com/media/GwHT8ueX0AEptFo.jpg?name=orig",
+    "width": 1115,
+    "height": 1472
+   },
+   {
+    "type": "photo",
+    "id": "1946069555291299842",
+    "url": "https://pbs.twimg.com/media/GwHT8ydXIAIFoeq.jpg?name=orig",
+    "width": 1116,
+    "height": 1481
+   },
+   {
+    "type": "photo",
+    "id": "1946069556054691842",
+    "url": "https://pbs.twimg.com/media/GwHT81TXkAIST0K.jpg?name=orig",
+    "width": 1115,
+    "height": 1496
+   }
+  ],
+  "mosaic": {
+   "type": "mosaic_photo",
+   "formats": {
+    "jpeg": "https://mosaic.fxtwitter.com/jpeg/1946069562723897802/GwHT8tiWUAIuphG/GwHT8ueX0AEptFo/GwHT8ydXIAIFoeq/GwHT81TXkAIST0K",
+    "webp": "https://mosaic.fxtwitter.com/webp/1946069562723897802/GwHT8tiWUAIuphG/GwHT8ueX0AEptFo/GwHT8ydXIAIFoeq/GwHT81TXkAIST0K"
+   }
+  }
+ },
+ "twitter_card": "summary_large_image",
+ "color": null,
+ "provider": "twitter",
+ "reposted_by": null
+}

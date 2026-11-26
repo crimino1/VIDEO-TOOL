@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="528.54" data-width="1920" data-height="1080">
+<div id="s6" class="clip scene" data-start="0.000" data-duration="10.080" data-track-index="2" style="z-index:11"><div id="w7" class="sc"><div id="b8" class="body clipb"><div class="vframe"></div><div class="vcred">OpenAI · GPT-6.2 Astra and Sol launch film, Nov 17, 2026</div></div></div></div>
+<div id="vw2" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:12"><video id="v1" class="clip" src="assets/clips/x_launch_84eadadc.mp4" muted playsinline data-start="0.000" data-duration="10.080" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i3" class="a cap acc" style="">OpenAI just released GPT-6.2 Astra</div><div id="i4" class="a cap " style="">ahead of Claude Fable 5.2 on some of the hardest tests</div><div id="i5" class="a cap acc" style="">at a fraction of the cost</div></div></div>
+<div id="s14" class="clip scene" data-start="10.080" data-duration="10.480" data-track-index="2" style="z-index:13"><div id="w15" class="sc"><div class="head"><div class="kick">GPT-6.2 Astra</div><div class="ttl">What OpenAI is claiming</div></div><div id="b16" class="body"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i9" class="a pic" style="width:300px"><img src="assets/raw/people/altman.jpg" alt="" style="width:300px;height:300px;object-fit:cover"><div class="pn">Sam Altman</div><div class="pr">CEO, OpenAI</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i11" class="a stat " style="flex:1"><div class="slab">Human-graded 3D test (AA-3D)</div><div id="v10" class="sval ">#1</div><div class="ssub">1,318 vs Claude Fable 5.2 at 1,271</div></div><div id="i13" class="a stat hero" style="flex:1"><div class="slab">AI self-improvement rating</div><div id="v12" class="sval hero">High</div><div class="ssub">first model OpenAI has released at this level</div></div></div></div></div></div><div class="srcl">Artificial Analysis · OpenAI GPT-6.2 system card · photo: TechCrunch, CC BY 2.0</div></div></div>
+<div id="s19" class="clip scene" data-start="20.560" data-duration="6.800" data-track-index="2" style="z-index:14"><div id="w20" class="sc"><div class="head"><div class="kick">Reactions</div><div class="ttl">Early testers are split</div></div><div id="b21" class="body"><div class="row" style="gap:48px;align-items:stretch"><div class="col" style="flex:1 1 0;min-width:0"><div id="i17" class="a quote " style=""><div class="qt">“extremely smart and really good models”</div><div class="qwho"><img src="assets/img/av_weinbach.jpg" alt="" class="qav"><div><b>Max Weinbach</b><span>on X, Nov 17</span></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div id="i18" class="a quote bad" style=""><div class="qt">“I think this is the worst model OpenAI has ever released.”</div><div class="qwho"><img src="assets/img/av_theo.jpg" alt="" class="qav"><div><b>Theo (t3.gg)</b><span>on X, Nov 17</span></div></div></div></div></div></div><div class="srcl">x.com/mweinbach · x.com/theo</div></div></div>
+<div id="s27" class="clip scene" data-start="27.360" data-duration="14.580" data-track-index="2" style="z-index:15"><div id="w28" class="sc"><div class="head"><div class="kick">GPT-6.2 Astra</div><div class="ttl">Today's review</div></div><div id="b29" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i22" class="a hd" style="font-size:50px"><span class="mono acc" style="font-size:26px;margin-right:26px">01</span>What's new</div><div id="i23" class="a hd" style="font-size:50px"><span class="mono acc" style="font-size:26px;margin-right:26px">02</span>The benchmarks</div><div id="i24" class="a hd" style="font-size:50px"><span class="mono acc" style="font-size:26px;margin-right:26px">03</span>Against Fable 5.2 and Gemini 4 Carbon</div><div id="i25" class="a hd" style="font-size:50px"><span class="mono acc" style="font-size:26px;margin-right:26px">04</span>What people built</div><div id="i26" class="a hd" style="font-size:50px"><span class="mono acc" style="font-size:26px;margin-right:26px">05</span>Should you use it?</div></div></div></div></div>
+<div id="s36" class="clip scene" data-start="41.940" data-duration="15.440" data-track-index="2" style="z-index:16"><div id="w37" class="sc"><div id="b38" class="body full"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i30" class="a twc" style="width:660px"><img src="assets/img/tw_launch_62.png" alt="" style="width:660px;height:535px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i31" class="a hd" style="font-size:54px;text-align:left">Two models, Nov 17</div><div id="i33" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div id="v32" class="sval hero">Heavy hitter</div><div class="ssub">built for your hardest projects</div></div><div id="i35" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Sol</div><div id="v34" class="sval ">Fast + efficient</div><div class="ssub">for everyday work</div></div></div></div></div></div><div class="srcl">@OpenAI on X, Nov 17, 2026</div></div></div>
+<div id="s45" class="clip scene" data-start="57.380" data-duration="10.680" data-track-index="2" style="z-index:17"><div id="w46" class="sc"><div class="head"><div class="kick">Availability</div><div class="ttl">Where you can use it</div></div><div id="b47" class="body"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i39" class="a twc" style="width:600px"><img src="assets/img/tw_fast_36.png" alt="" style="width:600px;height:510px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:14px;justify-content:flex-start"><div id="i40" class="a pill " style="">ChatGPT Work</div><div id="i41" class="a pill " style="">Codex</div><div id="i42" class="a pill " style="">API</div></div><div id="i43" class="a pill acc" style="">Fast + Ultrafast modes</div><div id="i44" class="a fix" style=""><div class="fk">Source check</div><div class="ft">OpenAI lists ChatGPT Work and Codex, not the regular Plus plan. Ultrafast starts with Pro and the API.</div></div></div></div></div></div><div class="srcl">@OpenAIDevs on X · OpenAI launch post</div></div></div>
+<div id="s51" class="clip scene" data-start="68.060" data-duration="8.140" data-track-index="2" style="z-index:18"><div id="w52" class="sc"><div id="b53" class="body full"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i48" class="a hd" style="font-size:68px">“Some of you have been asking very politely.</div><div id="i49" class="a hd" style="font-size:68px;color:var(--acc)">Some of you have just been asking.”</div><div id="i50" class="a tx ink3" style="font-size:34px;text-align:left">@OpenAI, opening line of the launch post</div></div></div></div></div>
+<div id="s58" class="clip scene" data-start="76.200" data-duration="9.080" data-track-index="2" style="z-index:19"><div id="w59" class="sc"><div class="head"><div class="kick">Context</div><div class="ttl">Why people were waiting</div></div><div id="b60" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div id="i55" class="a stat " style="flex:1"><div class="slab">Nov 12, 2026</div><div id="v54" class="sval ">Cyber at the Frontier</div><div class="ssub">OpenAI's security event</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div id="i56" class="a tx " style="font-size:42px;text-align:left">It launched security tools (Daybreak Red Team, Defense Factory), not a new model.</div><div id="i57" class="a tx acc" style="font-size:42px;text-align:left">Five days later: GPT-6.2.</div></div></div></div></div><div class="srcl">SecurityWeek, Nov 12, 2026</div></div></div>
+<div id="s67" class="clip scene" data-start="85.280" data-duration="15.260" data-track-index="2" style="z-index:20"><div id="w68" class="sc"><div class="head"><div class="kick">Cost</div><div class="ttl">The price</div></div><div id="b69" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i62" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div id="v61" class="sval hero">$8 / $40</div><div class="ssub">per million tokens in / out · 20% below GPT-6 Astra</div></div><div id="i64" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Fable 5.2</div><div id="v63" class="sval ">$8 / $40</div><div class="ssub">the same price</div></div><div id="i66" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Sol</div><div id="v65" class="sval ">$2 / $10</div><div class="ssub">unchanged</div></div></div></div><div class="srcl">Artificial Analysis · OpenAI API pricing · Fable price from third-party listings</div></div></div>
+<div id="s77" class="clip scene" data-start="100.540" data-duration="14.020" data-track-index="2" style="z-index:21"><div id="w78" class="sc"><div class="head"><div class="kick">Cost</div><div class="ttl">Per task, not per token</div></div><div id="b79" class="body"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i71" class="a stat " style="flex:1"><div class="slab">Price per token</div><div id="v70" class="sval " style="font-size:80px">same as Fable 5.2</div></div><div id="i73" class="a stat " style="flex:1"><div class="slab">Tokens per job</div><div id="v72" class="sval " style="font-size:80px">fewer</div></div><div id="i75" class="a stat hero" style="flex:1"><div class="slab">Price per task</div><div id="v74" class="sval hero" style="font-size:80px">much lower</div></div></div><div id="i76" class="a tx ink3" style="font-size:38px;text-align:left">Watch the cost axis in every chart that follows.</div></div></div><div class="srcl">OpenAI launch post</div></div></div>
+<div id="s92" class="clip scene" data-start="114.560" data-duration="27.920" data-track-index="2" style="z-index:22"><div id="w93" class="sc"><div class="head"><div class="kick">Benchmarks · multi-step professional work</div><div class="ttl">Agents' Last Exam</div></div><div id="b94" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i81" class="a chartc" style="width:760px"><div class="cbody" style="height:593px"><img id="k80" src="assets/img/c_ale_8776b.png" alt="" style="width:760px;height:593px"></div><div class="ccap">OpenAI chart: score vs cost per task</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:28px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i84" class="a brow" style=""><div class="blab" style="width:390px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf82" class="bfill hero" style="width:78.00%"></div></div><div class="bval acc" style="width:200px"><span id="bv83">0</span><span class="bsub">~$3 / task</span></div></div><div id="i87" class="a brow" style=""><div class="blab" style="width:390px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf85" class="bfill" style="width:73.00%"></div></div><div class="bval" style="width:200px"><span id="bv86">0</span><span class="bsub">~$60 / task</span></div></div><div id="i90" class="a brow" style=""><div class="blab" style="width:390px"><img src="assets/img/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Carbon</span></div><div class="btrack" style="height:56px"><div id="bf88" class="bfill" style="width:77.50%"></div></div><div class="bval" style="width:200px"><span id="bv89">0</span><span class="bsub">~$4.50 / task</span></div></div></div><div id="i91" class="a tx ink3" style="font-size:34px;text-align:left">OpenAI: +5.5 points over Fable “at about 5% of the cost”</div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 launch charts (values read from chart, approximate)</div></div></div>
+<div id="s107" class="clip scene" data-start="142.480" data-duration="12.360" data-track-index="2" style="z-index:23"><div id="w108" class="sc"><div class="head"><div class="kick">Benchmarks · scientific work in a terminal</div><div class="ttl">Terminal-Bench Science</div></div><div id="b109" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i96" class="a chartc" style="width:760px"><div class="cbody" style="height:593px"><img id="k95" src="assets/raw/web/c_tbsci.png" alt="" style="width:760px;height:593px"></div><div class="ccap">OpenAI chart: Terminal-Bench Science 0.1</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:28px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i99" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf97" class="bfill hero" style="width:77.00%"></div></div><div class="bval acc" style="width:230px"><span id="bv98">0</span></div></div><div id="i102" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf100" class="bfill" style="width:73.00%"></div></div><div class="bval" style="width:230px"><span id="bv101">0</span><span class="bsub">third-party harness</span></div></div><div id="i105" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6 Astra</span></div><div class="btrack" style="height:56px"><div id="bf103" class="bfill" style="width:68.00%"></div></div><div class="bval" style="width:230px"><span id="bv104">0</span></div></div></div><div id="i106" class="a tx ink3" style="font-size:34px;text-align:left">OpenAI calls Astra “the best model in the world for scientists.”</div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 launch charts (approximate)</div></div></div>
+<div id="s117" class="clip scene" data-start="154.840" data-duration="12.960" data-track-index="2" style="z-index:24"><div id="w118" class="sc"><div class="head"><div class="kick">Benchmarks · Harvey LAB-AA</div><div class="ttl">Legal: the biggest win</div></div><div id="b119" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i112" class="a brow" style=""><div class="blab" style="width:330px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf110" class="bfill hero" style="width:75.00%"></div></div><div class="bval acc" style="width:200px"><span id="bv111">0</span><span class="bsub">~$6 / task</span></div></div><div id="i115" class="a brow" style=""><div class="blab" style="width:330px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf113" class="bfill" style="width:35.00%"></div></div><div class="bval" style="width:200px"><span id="bv114">0</span><span class="bsub">~$40 / task</span></div></div></div><div id="i116" class="a tx " style="font-size:44px;text-align:left">More than double, at about <b class="acc">one-sixth</b> of the cost</div></div></div><div class="srcl">OpenAI GPT-6.2 launch charts (approximate) · bars drawn to a 20% scale</div></div></div>
+<div id="s124" class="clip scene" data-start="167.800" data-duration="6.040" data-track-index="2" style="z-index:25"><div id="w125" class="sc"><div id="b126" class="body full"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i121" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>openai.com/index/astra-law-6-2</span></div><div class="wbody" style="height:654px"><img id="k120" src="assets/img/law_6bad5.jpg" alt="" style="width:760px;height:654px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i122" class="a hd" style="font-size:54px;text-align:left">Astra for Law</div><div id="i123" class="a tx ink2" style="font-size:38px;text-align:left">OpenAI's legal setup of GPT-6.2 Astra. It scores even higher on Harvey LAB-AA.</div></div></div></div></div><div class="srcl">openai.com, Nov 17, 2026</div></div></div>
+<div id="s134" class="clip scene" data-start="173.840" data-duration="14.240" data-track-index="2" style="z-index:26"><div id="w135" class="sc"><div class="head"><div class="kick">Benchmarks · Artificial Analysis AA-3D</div><div class="ttl">Interactive 3D</div></div><div id="b136" class="body"><div class="col" style="gap:34px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i128" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div id="v127" class="sval hero">1,318</div><div class="ssub">#1</div></div><div id="i130" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Fable 5.2</div><div id="v129" class="sval ">1,271</div></div><div id="i132" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Sol</div><div id="v131" class="sval ">1,259</div></div></div><div id="i133" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Artificial Analysis calls it AA-3D, a human-graded test of interactive 3D experiences.</div></div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s144" class="clip scene" data-start="188.080" data-duration="16.040" data-track-index="2" style="z-index:27"><div id="w145" class="sc"><div class="head"><div class="kick">Benchmarks · computer-aided design</div><div class="ttl">Where it loses</div></div><div id="b146" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i138" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Fable 5.2</div><div id="v137" class="sval ">≈84</div><div class="ssub">BenchCAD 2.1 Core score · ~$51 / task</div></div><div id="i140" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div id="v139" class="sval ">≈83</div><div class="ssub">BenchCAD 2.1 Core score · ~$5.50 / task</div></div><div id="i142" class="a stat hero" style="flex:1"><div class="slab">Cost per task</div><div id="v141" class="sval hero">9× less</div><div class="ssub">for about 1 point lower</div></div></div><div id="i143" class="a tx " style="font-size:52px;text-align:left">Even when it loses, it <b class="acc">loses cheap</b>.</div></div></div><div class="srcl">OpenAI GPT-6.2 launch charts (approximate)</div></div></div>
+<div id="s161" class="clip scene" data-start="204.120" data-duration="20.000" data-track-index="2" style="z-index:28"><div id="w162" class="sc"><div class="head"><div class="kick">Independent</div><div class="ttl">Artificial Analysis Intelligence Index</div></div><div id="b163" class="body"><div class="row" style="gap:60px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i147" class="a twc" style="width:520px"><img src="assets/img/tw_aa_66.png" alt="" style="width:520px;height:476px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i150" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf148" class="bfill" style="width:65.00%"></div></div><div class="bval" style="width:110px"><span id="bv149">0</span></div></div><div id="i153" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf151" class="bfill hero" style="width:62.00%"></div></div><div class="bval acc" style="width:110px"><span id="bv152">0</span><span class="bsub">2nd</span></div></div><div id="i156" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/gemini_icon.png" alt="" class="blogo"><span>Gemini 4 Carbon</span></div><div class="btrack" style="height:56px"><div id="bf154" class="bfill" style="width:60.00%"></div></div><div class="bval" style="width:110px"><span id="bv155">0</span></div></div><div id="i159" class="a brow" style=""><div class="blab" style="width:370px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Claude Opus 5.5</span></div><div class="btrack" style="height:56px"><div id="bf157" class="bfill" style="width:59.00%"></div></div><div class="bval" style="width:110px"><span id="bv158">0</span></div></div></div><div id="i160" class="a tx ink3" style="font-size:34px;text-align:left">Fable 5.2 also stays ahead on several hard reasoning and knowledge tests.</div></div></div></div></div><div class="srcl">@ArtificialAnlys on X, Nov 17, 2026</div></div></div>
+<div id="s170" class="clip scene" data-start="224.120" data-duration="7.700" data-track-index="2" style="z-index:29"><div id="w171" class="sc"><div class="head"><div class="kick">Independent</div><div class="ttl">Epoch Capabilities Index: a tie</div></div><div id="b172" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i165" class="a chartc" style="width:520px"><div class="cbody" style="height:559px"><img id="k164" src="assets/img/c_epoch_4a3f3.png" alt="" style="width:520px;height:559px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i167" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div id="v166" class="sval hero">174</div></div><div id="i169" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Fable 5.2</div><div id="v168" class="sval ">174</div></div></div></div></div></div><div class="srcl">@EpochAIResearch on X, Nov 18, 2026 · CC BY</div></div></div>
+<div id="s176" class="clip scene" data-start="231.820" data-duration="12.920" data-track-index="2" style="z-index:30"><div id="w177" class="sc"><div class="head"><div class="kick">Benchmarks · summary</div><div class="ttl">So the picture is simple</div></div><div id="b178" class="body"><div class="col" style="gap:34px;justify-content:center;align-items:stretch"><div id="i173" class="a hd" style="font-size:48px"><span class="mono ink3" style="font-size:26px;margin-right:24px">ON PAPER</span>Claude Fable 5.2 is still the smartest model</div><div id="i174" class="a hd" style="font-size:48px"><span class="mono acc" style="font-size:26px;margin-right:24px">RIGHT BEHIND</span>GPT-6.2 Astra wins many real-world tests</div><div id="i175" class="a hd" style="font-size:48px"><span class="mono acc" style="font-size:26px;margin-right:24px">COST</span>and costs far less to run</div></div></div></div></div>
+<div id="s185" class="clip scene" data-start="244.740" data-duration="16.960" data-track-index="2" style="z-index:31"><div id="w186" class="sc"><div class="head"><div class="kick">Coding</div><div class="ttl">Coding: no big jump</div></div><div id="b187" class="body"><div class="row" style="gap:60px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i180" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/articles</span></div><div class="wbody" style="height:427px"><img id="k179" src="assets/img/aa_art_44546.jpg" alt="" style="width:760px;height:427px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i182" class="a stat " style="flex:1"><div class="slab">GPT-6.2 Astra · coding</div><div id="v181" class="sval ">Flat</div><div class="ssub">same as GPT-6 Astra</div></div><div id="i184" class="a stat bad" style="flex:1"><div class="slab">GPT-6.2 Sol · Coding Agent Index</div><div id="v183" class="sval bad">−3</div><div class="ssub">driven by −14 on SWE-Atlas-QnA</div></div></div></div></div></div><div class="srcl">Artificial Analysis, Nov 17, 2026</div></div></div>
+<div id="s193" class="clip scene" data-start="261.700" data-duration="15.260" data-track-index="2" style="z-index:32"><div id="w194" class="sc"><div class="head"><div class="kick">Coding</div><div class="ttl">Sol is the sleeper hit</div></div><div id="b195" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i189" class="a chartc" style="width:660px"><div class="cbody" style="height:515px"><img id="k188" src="assets/raw/web/c_fcode.png" alt="" style="width:660px;height:515px"></div><div class="ccap">OpenAI chart: FrontierCode 2.0 (Cognition)</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i191" class="a stat hero" style="flex:1"><div class="slab">Sol vs Astra on FrontierCode 2.0</div><div id="v190" class="sval hero">−0.5 pt</div><div class="ssub">at about one-fifth of the cost</div></div><div id="i192" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Sol matches GPT-6 Astra at about 15% of GPT-6 Astra's cost per task, and gains 2 points on the AA index (57).</div></div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 launch charts · Artificial Analysis</div></div></div>
+<div id="s201" class="clip scene" data-start="276.960" data-duration="25.540" data-track-index="2" style="z-index:33"><div id="w202" class="sc"><div class="head"><div class="kick">Preparedness Framework</div><div class="ttl">A first: AI self-improvement rated High</div></div><div id="b203" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i197" class="a win" style="width:860px"><div class="wbar"><i></i><i></i><i></i><span>deploymentsafety.openai.com/gpt-6-2-astra-sol</span></div><div class="wbody" style="height:425px"><img id="k196" src="assets/img/card_hi_f4320.jpg" alt="" style="width:860px;height:425px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i198" class="a stat" style=""><div class="slab" style="margin-bottom:16px">AI self-improvement</div><div class="lvl"><i class="">Low</i><i class="">Medium</i><i class="on">High</i><i class="">Critical</i></div></div><div id="i199" class="a tx " style="font-size:38px;text-align:left">GPT-6.2 Astra: the <b class="acc">first</b> model OpenAI has released at High in this category.</div><div id="i200" class="a quote " style=""><div class="qt">“like giving every OpenAI researcher an extra, highly capable research engineer”</div><div class="qwho"><div><b>OpenAI</b><span>compared with its researchers' 2024 baseline</span></div></div></div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 system card, Nov 17, 2026</div></div></div>
+<div id="s207" class="clip scene" data-start="302.500" data-duration="13.920" data-track-index="2" style="z-index:34"><div id="w208" class="sc"><div id="b209" class="body full"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div id="i204" class="a hd" style="font-size:72px;text-align:center">AI that meaningfully helps <b class='acc'>build the next AI</b></div><div id="i205" class="a stat" style="align-self:center;text-align:center;font-size:34px;font-weight:700"><span class="mono ink3" style="font-size:24px">EARLIER ON AI EQUATOR</span><br>AI Can Now Edit Another AI's Brain</div><div id="i206" class="a tx ink2" style="font-size:42px;text-align:center">Now it's an official rating on a product you can use.</div></div></div></div></div>
+<div id="s215" class="clip scene" data-start="316.420" data-duration="20.600" data-track-index="2" style="z-index:35"><div id="w216" class="sc"><div class="head"><div class="kick">Preparedness Framework</div><div class="ttl">Rated Critical for cybersecurity</div></div><div id="b217" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i210" class="a stat" style=""><div class="slab" style="margin-bottom:16px">Cybersecurity</div><div class="lvl"><i class="">Low</i><i class="">Medium</i><i class="">High</i><i class="crit">Critical</i></div></div><div id="i211" class="a fix" style=""><div class="fk">Source check</div><div class="ft">Critical is the top of OpenAI's scale, but not new: GPT-6 Astra was already rated Critical for cyber.</div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i213" class="a stat hero" style="flex:1"><div class="slab">Internal exploit test (code execution)</div><div id="v212" class="sval hero">53.5%</div><div class="ssub">vs 31.5% for GPT-6 Astra</div></div><div id="i214" class="a tx ink2" style="font-size:36px;text-align:left">Stronger cyber abilities are locked down by default. Reduced refusals: only for orgs approved for Daybreak Red.</div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 system card</div></div></div>
+<div id="s222" class="clip scene" data-start="337.020" data-duration="5.560" data-track-index="2" style="z-index:36"><div id="w223" class="sc"><div id="b224" class="body clipb"><div class="vframe"></div><div class="vcred">@OpenAIDevs on X · building 3D video sets with GPT-6.2 Astra</div></div></div></div>
+<div id="vw219" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:37"><video id="v218" class="clip" src="assets/clips/x_sets_4bdeb08d.mp4" muted playsinline data-start="337.020" data-duration="5.560" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i220" class="a cap acc" style="">What people built</div><div id="i221" class="a cap " style="">OpenAI's demos: real engineering</div></div></div>
+<div id="s231" class="clip scene" data-start="342.580" data-duration="7.000" data-track-index="2" style="z-index:38"><div id="w232" class="sc"><div class="head"><div class="kick">What people built</div><div class="ttl">OpenAI demo: a car, end to end</div></div><div id="b233" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i226" class="a stat " style="flex:1"><div class="slab">Step 1</div><div id="v225" class="sval " style="font-size:80px">3D model</div><div class="ssub">of a car</div></div><div id="i228" class="a stat " style="flex:1"><div class="slab">Step 2</div><div id="v227" class="sval " style="font-size:80px">Physics solver</div><div class="ssub">written in Python</div></div><div id="i230" class="a stat hero" style="flex:1"><div class="slab">Step 3</div><div id="v229" class="sval hero" style="font-size:80px">Animation</div><div class="ssub">rendered in Blender</div></div></div></div><div class="srcl">OpenAI launch post (described there; no standalone clip published)</div></div></div>
+<div id="s239" class="clip scene" data-start="349.580" data-duration="14.640" data-track-index="2" style="z-index:39"><div id="w240" class="sc"><div id="b241" class="body clipb"><div class="vframe"></div><div class="vcred">@OpenAIDevs on X · RC buggy assembly guide made by GPT-6.2 Astra</div></div></div></div>
+<div id="vw235" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:40"><video id="v234" class="clip" src="assets/clips/x_rc_f8e4fa27.mp4" muted playsinline data-start="349.580" data-duration="14.640" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i236" class="a cap " style="">RC buggy from public photos + build manuals</div><div id="i237" class="a cap acc" style="">animated assembly guide + parts catalog</div><div id="i238" class="a cap " style="">precise computer use: down to single parts</div></div></div>
+<div id="s246" class="clip scene" data-start="364.220" data-duration="6.720" data-track-index="2" style="z-index:41"><div id="w247" class="sc"><div id="b248" class="body clipb"><div class="vframe"></div><div class="vcred">@emollick on X, Nov 17, 2026</div></div></div></div>
+<div id="vw243" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:42"><video id="v242" class="clip" src="assets/clips/x_mollick_f497803b.mp4" muted playsinline data-start="364.220" data-duration="6.720" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i244" class="a cap " style="">Ethan Mollick: a space elevator ride</div><div id="i245" class="a cap acc" style="">built with Blender + Unity</div></div></div>
+<div id="s254" class="clip scene" data-start="370.940" data-duration="12.980" data-track-index="2" style="z-index:43"><div id="w255" class="sc"><div class="head"><div class="kick">What testers said</div><div class="ttl">The praise</div></div><div id="b256" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i249" class="a " style="text-align:center"><img src="assets/img/av_theo.jpg" alt="" style="width:200px;height:200px;border-radius:50%;display:block"><div class="pn">Theo</div><div class="pr">t3.gg · T3 Code</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i250" class="a quote " style=""><div class="qt">“Computer use is nuts”</div><div class="qwho"><div><b>Theo</b><span>X article, “Why I hate GPT-6.2 Astra”</span></div></div></div><div id="i251" class="a qt" style="font-size:44px">“World class at 3D & game stuff”</div><div id="i252" class="a qt" style="font-size:44px">“catches things other models miss”</div><div id="i253" class="a qt" style="font-size:44px">reverse proxy that “will save me $25k/month”</div></div></div></div></div><div class="srcl">x.com/theo (X article, Nov 18, 2026)</div></div></div>
+<div id="s259" class="clip scene" data-start="383.920" data-duration="8.100" data-track-index="2" style="z-index:44"><div id="w260" class="sc"><div class="head"><div class="kick">What testers said</div><div class="ttl">The praise</div></div><div id="b261" class="body"><div class="row" style="gap:48px;align-items:stretch"><div class="col" style="flex:1 1 0;min-width:0"><div id="i257" class="a quote " style=""><div class="qt">“good default design instincts”</div><div class="qwho"><img src="assets/img/av_shipper.jpg" alt="" class="qav"><div><b>Dan Shipper</b><span>Every, on X</span></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div id="i258" class="a quote " style=""><div class="qt">“extremely smart and really good models”</div><div class="qwho"><img src="assets/img/av_weinbach.jpg" alt="" class="qav"><div><b>Max Weinbach</b><span>on X</span></div></div></div></div></div></div><div class="srcl">x.com/danshipper · x.com/mweinbach</div></div></div>
+<div id="s269" class="clip scene" data-start="392.020" data-duration="24.900" data-track-index="2" style="z-index:45"><div id="w270" class="sc"><div class="head"><div class="kick">What testers said</div><div class="ttl">Where it gets messy</div></div><div id="b271" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i262" class="a twc" style="width:640px"><img src="assets/img/tw_theo_100.png" alt="" style="width:640px;height:372px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i263" class="a quote bad sm" style=""><div class="qt">“I would not choose this over Opus 5.5”</div><div class="qwho"><img src="assets/img/av_theo.jpg" alt="" class="qav"><div><b>Theo</b><span>X article</span></div></div></div><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i265" class="a stat bad" style="flex:1"><div class="slab">Long project</div><div id="v264" class="sval bad">7 days</div><div class="ssub">with zero improvements</div></div><div id="i267" class="a stat bad" style="flex:1"><div class="slab">Compiler speed</div><div id="v266" class="sval bad">56% slower</div></div></div><div id="i268" class="a fix" style=""><div class="fk">Source check</div><div class="ft">“Smaller” isn't confirmed in Theo's post.</div></div></div></div></div></div><div class="srcl">x.com/theo</div></div></div>
+<div id="s275" class="clip scene" data-start="416.920" data-duration="19.040" data-track-index="2" style="z-index:46"><div id="w276" class="sc"><div class="head"><div class="kick">What testers said</div><div class="ttl">Disappointing, uneven, unusable</div></div><div id="b277" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i272" class="a quote bad sm" style=""><div class="qt">“a disappointing release compared to Fable 5.2 … seemed to stop too early frequently”</div><div class="qwho"><img src="assets/img/av_shipper.jpg" alt="" class="qav"><div><b>Dan Shipper</b><span>Every, on X, Nov 17</span></div></div></div><div id="i273" class="a quote bad sm" style=""><div class="qt">“very uneven & weird … harder to steer”</div><div class="qwho"><img src="assets/img/av_mollick.jpg" alt="" class="qav"><div><b>Ethan Mollick</b><span>on X, Nov 17</span></div></div></div><div id="i274" class="a quote bad sm" style=""><div class="qt">“essentially unusable … I do not recommend these models.”</div><div class="qwho"><img src="assets/img/av_shumer.jpg" alt="" class="qav"><div><b>Matt Shumer</b><span>on X, Nov 17</span></div></div></div></div></div><div class="srcl">x.com/danshipper · x.com/emollick · x.com/mattshumer_ (Shipper's praise and criticism are in the same post)</div></div></div>
+<div id="s292" class="clip scene" data-start="435.960" data-duration="21.180" data-track-index="2" style="z-index:47"><div id="w293" class="sc"><div class="head"><div class="kick">From OpenAI's own safety report</div><div class="ttl">It's more likely to skip over a problem</div></div><div id="b294" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i278" class="a " style=""><div class="tx ink3" style="font-size:26px">Blocker Deception: hits an obstacle (like a missing file) and leaves it out of the final answer</div></div><div class="bars" style="gap:30px"><div id="i281" class="a brow" style=""><div class="blab" style="width:300px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf279" class="bfill hero" style="width:74.27%"></div></div><div class="bval acc" style="width:200px"><span id="bv280">0</span></div></div><div id="i284" class="a brow" style=""><div class="blab" style="width:300px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6 Astra</span></div><div class="btrack" style="height:56px"><div id="bf282" class="bfill" style="width:36.97%"></div></div><div class="bval" style="width:200px"><span id="bv283">0</span></div></div></div><div id="i285" class="a " style=""><div class="tx ink3" style="font-size:26px">Broken Search Tool: fails to say it could not search</div></div><div class="bars" style="gap:30px"><div id="i288" class="a brow" style=""><div class="blab" style="width:300px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf286" class="bfill hero" style="width:76.67%"></div></div><div class="bval acc" style="width:200px"><span id="bv287">0</span></div></div><div id="i291" class="a brow" style=""><div class="blab" style="width:300px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6 Astra</span></div><div class="btrack" style="height:56px"><div id="bf289" class="bfill" style="width:25.27%"></div></div><div class="bval" style="width:200px"><span id="bv290">0</span></div></div></div></div></div><div class="srcl">OpenAI GPT-6.2 system card · Alignment section · bars drawn to a 30% scale</div></div></div>
+<div id="s297" class="clip scene" data-start="457.140" data-duration="13.740" data-track-index="2" style="z-index:48"><div id="w298" class="sc"><div id="b299" class="body full"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div id="i295" class="a quote " style=""><div class="qt">“our efforts to make responses concise and avoid excessive caveats may be related to the model omitting important obstacles”</div><div class="qwho"><div><b>OpenAI</b><span>GPT-6.2 system card</span></div></div></div><div id="i296" class="a tx " style="font-size:44px;text-align:left">More capable, but more likely to <b class="acc">quietly skip a problem</b>. Check its work on long jobs.</div></div></div><div class="srcl">OpenAI GPT-6.2 system card (the standard Codex developer prompt reduces both failures)</div></div></div>
+<div id="s303" class="clip scene" data-start="470.880" data-duration="31.900" data-track-index="2" style="z-index:49"><div id="w304" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Should you use it?</div></div><div id="b305" class="body"><div class="col" style="gap:22px;justify-content:center;align-items:stretch"><div id="i300" class="a stat hero" style=""><div style="display:flex;gap:40px;align-items:center"><div style="width:520px;flex:none"><div class="hd" style="font-size:40px">Professional work</div><div class="ssub">office, science, legal, 3D and design</div></div><div class="tx" style="font-size:34px;font-weight:600">Among the best right now, often cheapest per task</div></div></div><div id="i301" class="a stat " style=""><div style="display:flex;gap:40px;align-items:center"><div style="width:520px;flex:none"><div class="hd" style="font-size:40px">Mostly coding</div><div class="ssub">independent numbers: not a big jump</div></div><div class="tx" style="font-size:34px;font-weight:600">Many developers stay on Opus 5.5 or Fable 5.2</div></div></div><div id="i302" class="a stat " style=""><div style="display:flex;gap:40px;align-items:center"><div style="width:520px;flex:none"><div class="hd" style="font-size:40px">On a budget</div><div class="ssub">look at GPT-6.2 Sol</div></div><div class="tx" style="font-size:34px;font-weight:600">Close to GPT-6 Astra for a fraction of the price</div></div></div></div></div></div></div>
+<div id="s310" class="clip scene" data-start="502.780" data-duration="16.640" data-track-index="2" style="z-index:50"><div id="w311" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">My take</div></div><div id="b312" class="body"><div class="col" style="gap:26px;justify-content:center;align-items:stretch"><div id="i306" class="a tx " style="font-size:48px;text-align:left">Not number one at everything.</div><div id="i307" class="a hd" style="font-size:44px"><img src="assets/img/claude.png" alt="" style="height:44px;vertical-align:-8px;margin-right:16px">Claude Fable 5.2 still holds the overall crown.</div><div id="i308" class="a hd" style="font-size:44px"><img src="assets/img/openai_k.png" alt="" style="height:44px;vertical-align:-8px;margin-right:16px">OpenAI closed the gap, won real-world tests at a fraction of the cost,</div><div id="i309" class="a tx acc" style="font-size:48px;text-align:left">and shipped the first model it says can speed up AI research.</div></div></div></div></div>
+<div id="s316" class="clip scene" data-start="519.420" data-duration="6.680" data-track-index="2" style="z-index:51"><div id="w317" class="sc"><div id="b318" class="body full"><div class="col" style="gap:50px;justify-content:center;align-items:stretch"><div id="i313" class="a hd" style="font-size:64px;text-align:center">The race at the top has never been this close.</div><div id="i314" class="a " style=""><div style="display:flex;justify-content:center;align-items:center;gap:80px"><div style="text-align:center"><img src="assets/img/openai_k.png" alt="" style="height:120px"><div class="hd" style="font-size:48px;margin-top:20px">Astra</div></div><div class="hd ink3" style="font-size:44px">or</div><div style="text-align:center"><img src="assets/img/claude.png" alt="" style="height:120px"><div class="hd" style="font-size:48px;margin-top:20px">Fable</div></div></div></div><div id="i315" class="a tx ink2" style="font-size:42px;text-align:center">Which one are you using? Tell me in the comments.</div></div></div></div></div>
+<div id="s321" class="clip scene" data-start="526.100" data-duration="2.440" data-track-index="2" style="z-index:52"><div id="w322" class="sc"><div id="b323" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i319" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i320" class="a tx ink3" style="font-size:38px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="528.54" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#vw2",{opacity:1},0.000);
+tl.fromTo("#i3",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},0.150);
+tl.fromTo("#i4",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},4.220);
+tl.fromTo("#i5",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.620);
+tl.fromTo("#w7",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},0.000);
+tl.to("#w7",{opacity:0,duration:0.25,ease:"power1.in"},9.830);
+tl.to("#vw2",{opacity:0,duration:0.25,ease:"power1.in"},9.830);
+tl.fromTo("#i9",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},10.080);
+tl.fromTo("#i11",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},10.280);
+tl.fromTo("#i13",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},15.040);
+tl.fromTo("#w15",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},10.080);
+tl.to("#w15",{opacity:0,duration:0.25,ease:"power1.in"},20.310);
+tl.fromTo("#b16",{scale:1},{scale:1.015,duration:10.480,ease:"none"},10.080);
+tl.fromTo("#i17",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},23.320);
+tl.fromTo("#i18",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},24.120);
+tl.fromTo("#w20",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},20.560);
+tl.to("#w20",{opacity:0,duration:0.25,ease:"power1.in"},27.110);
+tl.fromTo("#b21",{scale:1},{scale:1.015,duration:6.800,ease:"none"},20.560);
+tl.fromTo("#i22",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},30.420);
+tl.fromTo("#i23",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},31.540);
+tl.fromTo("#i24",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},32.540);
+tl.fromTo("#i25",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},36.580);
+tl.fromTo("#i26",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},37.720);
+tl.fromTo("#w28",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},27.360);
+tl.to("#w28",{opacity:0,duration:0.25,ease:"power1.in"},41.690);
+tl.fromTo("#b29",{scale:1},{scale:1.015,duration:14.580,ease:"none"},27.360);
+tl.fromTo("#i30",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},41.940);
+tl.fromTo("#i31",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},44.440);
+tl.fromTo("#i33",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},50.560);
+tl.fromTo("#i35",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},53.320);
+tl.fromTo("#w37",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},41.940);
+tl.to("#w37",{opacity:0,duration:0.25,ease:"power1.in"},57.130);
+tl.fromTo("#b38",{scale:1},{scale:1.015,duration:15.440,ease:"none"},41.940);
+tl.fromTo("#i39",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},57.380);
+tl.fromTo("#i40",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},57.680);
+tl.fromTo("#i41",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},62.200);
+tl.fromTo("#i42",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},63.300);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},65.120);
+tl.fromTo("#i44",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},62.600);
+tl.fromTo("#w46",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},57.380);
+tl.to("#w46",{opacity:0,duration:0.25,ease:"power1.in"},67.810);
+tl.fromTo("#b47",{scale:1},{scale:1.015,duration:10.680,ease:"none"},57.380);
+tl.fromTo("#i48",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},71.000);
+tl.fromTo("#i49",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},73.460);
+tl.fromTo("#i50",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},68.660);
+tl.fromTo("#w52",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},68.060);
+tl.to("#w52",{opacity:0,duration:0.25,ease:"power1.in"},75.950);
+tl.fromTo("#b53",{scale:1},{scale:1.015,duration:8.140,ease:"none"},68.060);
+tl.fromTo("#i55",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},76.400);
+tl.fromTo("#i56",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},80.680);
+tl.fromTo("#i57",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},82.980);
+tl.fromTo("#w59",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},76.200);
+tl.to("#w59",{opacity:0,duration:0.25,ease:"power1.in"},85.030);
+tl.fromTo("#b60",{scale:1},{scale:1.015,duration:9.080,ease:"none"},76.200);
+tl.fromTo("#i62",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},88.240);
+tl.fromTo("#i64",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},94.560);
+tl.fromTo("#i66",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},97.820);
+tl.fromTo("#w68",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},85.280);
+tl.to("#w68",{opacity:0,duration:0.25,ease:"power1.in"},100.290);
+tl.fromTo("#b69",{scale:1},{scale:1.015,duration:15.260,ease:"none"},85.280);
+tl.fromTo("#i71",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},101.820);
+tl.fromTo("#i73",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.980);
+tl.fromTo("#i75",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},109.380);
+tl.fromTo("#i76",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},110.350);
+tl.fromTo("#w78",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},100.540);
+tl.to("#w78",{opacity:0,duration:0.25,ease:"power1.in"},114.310);
+tl.fromTo("#b79",{scale:1},{scale:1.015,duration:14.020,ease:"none"},100.540);
+tl.fromTo("#k80",{scale:1},{scale:1.03,duration:27.620,ease:"none"},114.860);
+tl.fromTo("#i81",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},114.860);
+tl.fromTo("#bf82",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},120.440);
+count("#bv83",120.440,0,78,1,"","%",0.9);
+tl.fromTo("#i84",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},120.440);
+tl.fromTo("#bf85",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},126.420);
+count("#bv86",126.420,0,73,1,"","%",0.9);
+tl.fromTo("#i87",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},126.420);
+tl.fromTo("#bf88",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},135.180);
+count("#bv89",135.180,0,77.5,1,"","%",0.9);
+tl.fromTo("#i90",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},135.180);
+tl.fromTo("#i91",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},131.880);
+tl.fromTo("#w93",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},114.560);
+tl.to("#w93",{opacity:0,duration:0.25,ease:"power1.in"},142.230);
+tl.fromTo("#b94",{scale:1},{scale:1.015,duration:27.920,ease:"none"},114.560);
+tl.fromTo("#k95",{scale:1},{scale:1.03,duration:12.060,ease:"none"},142.780);
+tl.fromTo("#i96",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},142.780);
+tl.fromTo("#bf97",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},143.680);
+count("#bv98",143.680,0,77,0,"","%",0.9);
+tl.fromTo("#i99",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},143.680);
+tl.fromTo("#bf100",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},145.900);
+count("#bv101",145.900,0,73,0,"","%",0.9);
+tl.fromTo("#i102",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},145.900);
+tl.fromTo("#bf103",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},146.500);
+count("#bv104",146.500,0,68,0,"","%",0.9);
+tl.fromTo("#i105",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},146.500);
+tl.fromTo("#i106",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},149.800);
+tl.fromTo("#w108",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},142.480);
+tl.to("#w108",{opacity:0,duration:0.25,ease:"power1.in"},154.590);
+tl.fromTo("#b109",{scale:1},{scale:1.015,duration:12.360,ease:"none"},142.480);
+tl.fromTo("#bf110",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},159.620);
+count("#bv111",159.620,0,15,0,"","%",0.9);
+tl.fromTo("#i112",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},159.620);
+tl.fromTo("#bf113",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},161.480);
+count("#bv114",161.480,0,7,0,"","%",0.9);
+tl.fromTo("#i115",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},161.480);
+tl.fromTo("#i116",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},164.540);
+tl.fromTo("#w118",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},154.840);
+tl.to("#w118",{opacity:0,duration:0.25,ease:"power1.in"},167.550);
+tl.fromTo("#b119",{scale:1},{scale:1.015,duration:12.960,ease:"none"},154.840);
+tl.fromTo("#k120",{scale:1},{scale:1.035,duration:6.040,ease:"none"},167.800);
+tl.fromTo("#i121",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},167.800);
+tl.fromTo("#i122",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},168.200);
+tl.fromTo("#i123",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},168.800);
+tl.fromTo("#w125",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},167.800);
+tl.to("#w125",{opacity:0,duration:0.25,ease:"power1.in"},173.590);
+tl.fromTo("#b126",{scale:1},{scale:1.015,duration:6.040,ease:"none"},167.800);
+count("#v127",179.660,0,1318,0,"","",1.0);
+tl.fromTo("#i128",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},179.560);
+count("#v129",184.340,0,1271,0,"","",1.0);
+tl.fromTo("#i130",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},184.240);
+count("#v131",185.140,0,1259,0,"","",1.0);
+tl.fromTo("#i132",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},185.040);
+tl.fromTo("#i133",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},175.840);
+tl.fromTo("#w135",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},173.840);
+tl.to("#w135",{opacity:0,duration:0.25,ease:"power1.in"},187.830);
+tl.fromTo("#b136",{scale:1},{scale:1.015,duration:14.240,ease:"none"},173.840);
+tl.fromTo("#i138",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},189.560);
+tl.fromTo("#i140",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},190.360);
+tl.fromTo("#i142",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},196.060);
+tl.fromTo("#i143",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},201.020);
+tl.fromTo("#w145",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},188.080);
+tl.to("#w145",{opacity:0,duration:0.25,ease:"power1.in"},203.870);
+tl.fromTo("#b146",{scale:1},{scale:1.015,duration:16.040,ease:"none"},188.080);
+tl.fromTo("#i147",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},204.120);
+tl.fromTo("#bf148",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},212.260);
+count("#bv149",212.260,0,65,0,"","",0.9);
+tl.fromTo("#i150",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},212.260);
+tl.fromTo("#bf151",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},208.600);
+count("#bv152",208.600,0,62,0,"","",0.9);
+tl.fromTo("#i153",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},208.600);
+tl.fromTo("#bf154",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},214.280);
+count("#bv155",214.280,0,60,0,"","",0.9);
+tl.fromTo("#i156",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},214.280);
+tl.fromTo("#bf157",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},216.860);
+count("#bv158",216.860,0,59,0,"","",0.9);
+tl.fromTo("#i159",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},216.860);
+tl.fromTo("#i160",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},219.920);
+tl.fromTo("#w162",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},204.120);
+tl.to("#w162",{opacity:0,duration:0.25,ease:"power1.in"},223.870);
+tl.fromTo("#b163",{scale:1},{scale:1.015,duration:20.000,ease:"none"},204.120);
+tl.fromTo("#k164",{scale:1},{scale:1.03,duration:7.500,ease:"none"},224.320);
+tl.fromTo("#i165",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},224.320);
+count("#v166",229.740,0,174,0,"","",1.0);
+tl.fromTo("#i167",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},229.640);
+count("#v168",230.240,0,174,0,"","",1.0);
+tl.fromTo("#i169",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},230.140);
+tl.fromTo("#w171",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},224.120);
+tl.to("#w171",{opacity:0,duration:0.25,ease:"power1.in"},231.570);
+tl.fromTo("#b172",{scale:1},{scale:1.015,duration:7.700,ease:"none"},224.120);
+tl.fromTo("#i173",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},233.620);
+tl.fromTo("#i174",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},237.400);
+tl.fromTo("#i175",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},242.080);
+tl.fromTo("#w177",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},231.820);
+tl.to("#w177",{opacity:0,duration:0.25,ease:"power1.in"},244.490);
+tl.fromTo("#b178",{scale:1},{scale:1.015,duration:12.920,ease:"none"},231.820);
+tl.fromTo("#k179",{scale:1},{scale:1.035,duration:16.960,ease:"none"},244.740);
+tl.fromTo("#i180",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},244.740);
+tl.fromTo("#i182",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},252.120);
+tl.fromTo("#i184",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},255.800);
+tl.fromTo("#w186",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},244.740);
+tl.to("#w186",{opacity:0,duration:0.25,ease:"power1.in"},261.450);
+tl.fromTo("#b187",{scale:1},{scale:1.015,duration:16.960,ease:"none"},244.740);
+tl.fromTo("#k188",{scale:1},{scale:1.03,duration:14.960,ease:"none"},262.000);
+tl.fromTo("#i189",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},262.000);
+tl.fromTo("#i191",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},264.160);
+tl.fromTo("#i192",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},269.820);
+tl.fromTo("#w194",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},261.700);
+tl.to("#w194",{opacity:0,duration:0.25,ease:"power1.in"},276.710);
+tl.fromTo("#b195",{scale:1},{scale:1.015,duration:15.260,ease:"none"},261.700);
+tl.fromTo("#k196",{scale:1},{scale:1.035,duration:20.820,ease:"none"},281.680);
+tl.fromTo("#i197",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},281.680);
+tl.fromTo("#i198",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},284.200);
+tl.fromTo("#i199",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},287.400);
+tl.fromTo("#i200",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},295.260);
+tl.fromTo("#w202",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},276.960);
+tl.to("#w202",{opacity:0,duration:0.25,ease:"power1.in"},302.250);
+tl.fromTo("#b203",{scale:1},{scale:1.015,duration:25.540,ease:"none"},276.960);
+tl.fromTo("#i204",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},302.700);
+tl.fromTo("#i205",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},307.760);
+tl.fromTo("#i206",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},313.060);
+tl.fromTo("#w208",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},302.500);
+tl.to("#w208",{opacity:0,duration:0.25,ease:"power1.in"},316.170);
+tl.fromTo("#b209",{scale:1},{scale:1.015,duration:13.920,ease:"none"},302.500);
+tl.fromTo("#i210",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},316.620);
+tl.fromTo("#i211",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},317.920);
+count("#v212",320.840,0,53.5,1,"","%",1.0);
+tl.fromTo("#i213",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},320.740);
+tl.fromTo("#i214",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},329.320);
+tl.fromTo("#w216",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},316.420);
+tl.to("#w216",{opacity:0,duration:0.25,ease:"power1.in"},336.770);
+tl.fromTo("#b217",{scale:1},{scale:1.015,duration:20.600,ease:"none"},316.420);
+tl.fromTo("#vw219",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},337.020);
+tl.fromTo("#i220",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},337.420);
+tl.fromTo("#i221",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},339.320);
+tl.fromTo("#w223",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},337.020);
+tl.to("#w223",{opacity:0,duration:0.25,ease:"power1.in"},342.330);
+tl.to("#vw219",{opacity:0,duration:0.25,ease:"power1.in"},342.330);
+tl.fromTo("#i226",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},342.780);
+tl.fromTo("#i228",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},345.340);
+tl.fromTo("#i230",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},347.440);
+tl.fromTo("#w232",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},342.580);
+tl.to("#w232",{opacity:0,duration:0.25,ease:"power1.in"},349.330);
+tl.fromTo("#b233",{scale:1},{scale:1.015,duration:7.000,ease:"none"},342.580);
+tl.fromTo("#vw235",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},349.580);
+tl.fromTo("#i236",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},349.880);
+tl.fromTo("#i237",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},353.760);
+tl.fromTo("#i238",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},356.380);
+tl.fromTo("#w240",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},349.580);
+tl.to("#w240",{opacity:0,duration:0.25,ease:"power1.in"},363.970);
+tl.to("#vw235",{opacity:0,duration:0.25,ease:"power1.in"},363.970);
+tl.fromTo("#vw243",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},364.220);
+tl.fromTo("#i244",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},364.520);
+tl.fromTo("#i245",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},366.460);
+tl.fromTo("#w247",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},364.220);
+tl.to("#w247",{opacity:0,duration:0.25,ease:"power1.in"},370.690);
+tl.to("#vw243",{opacity:0,duration:0.25,ease:"power1.in"},370.690);
+tl.fromTo("#i249",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},370.940);
+tl.fromTo("#i250",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},373.420);
+tl.fromTo("#i251",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},374.640);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},376.520);
+tl.fromTo("#i253",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},378.920);
+tl.fromTo("#w255",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},370.940);
+tl.to("#w255",{opacity:0,duration:0.25,ease:"power1.in"},383.670);
+tl.fromTo("#b256",{scale:1},{scale:1.015,duration:12.980,ease:"none"},370.940);
+tl.fromTo("#i257",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},383.920);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},388.280);
+tl.fromTo("#w260",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},383.920);
+tl.to("#w260",{opacity:0,duration:0.25,ease:"power1.in"},391.770);
+tl.fromTo("#b261",{scale:1},{scale:1.015,duration:8.100,ease:"none"},383.920);
+tl.fromTo("#i262",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},393.720);
+tl.fromTo("#i263",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},396.820);
+tl.fromTo("#i265",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},409.520);
+tl.fromTo("#i267",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},412.740);
+tl.fromTo("#i268",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},412.740);
+tl.fromTo("#w270",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},392.020);
+tl.to("#w270",{opacity:0,duration:0.25,ease:"power1.in"},416.670);
+tl.fromTo("#b271",{scale:1},{scale:1.015,duration:24.900,ease:"none"},392.020);
+tl.fromTo("#i272",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},416.920);
+tl.fromTo("#i273",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},426.560);
+tl.fromTo("#i274",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},430.940);
+tl.fromTo("#w276",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},416.920);
+tl.to("#w276",{opacity:0,duration:0.25,ease:"power1.in"},435.710);
+tl.fromTo("#b277",{scale:1},{scale:1.015,duration:19.040,ease:"none"},416.920);
+tl.fromTo("#i278",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},436.160);
+tl.fromTo("#bf279",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},444.720);
+count("#bv280",444.720,0,22.28,2,"","%",0.9);
+tl.fromTo("#i281",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},444.720);
+tl.fromTo("#bf282",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},448.060);
+count("#bv283",448.060,0,11.09,2,"","%",0.9);
+tl.fromTo("#i284",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},448.060);
+tl.fromTo("#i285",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},451.080);
+tl.fromTo("#bf286",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},451.680);
+count("#bv287",451.680,0,23.0,2,"","%",0.9);
+tl.fromTo("#i288",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},451.680);
+tl.fromTo("#bf289",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},455.780);
+count("#bv290",455.780,0,7.58,2,"","%",0.9);
+tl.fromTo("#i291",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},455.780);
+tl.fromTo("#w293",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},435.960);
+tl.to("#w293",{opacity:0,duration:0.25,ease:"power1.in"},456.890);
+tl.fromTo("#b294",{scale:1},{scale:1.015,duration:21.180,ease:"none"},435.960);
+tl.fromTo("#i295",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},457.340);
+tl.fromTo("#i296",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},463.060);
+tl.fromTo("#w298",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},457.140);
+tl.to("#w298",{opacity:0,duration:0.25,ease:"power1.in"},470.630);
+tl.fromTo("#b299",{scale:1},{scale:1.015,duration:13.740,ease:"none"},457.140);
+tl.fromTo("#i300",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},472.900);
+tl.fromTo("#i301",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},487.280);
+tl.fromTo("#i302",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},496.840);
+tl.fromTo("#w304",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},470.880);
+tl.to("#w304",{opacity:0,duration:0.25,ease:"power1.in"},502.530);
+tl.fromTo("#b305",{scale:1},{scale:1.015,duration:31.900,ease:"none"},470.880);
+tl.fromTo("#i306",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},503.620);
+tl.fromTo("#i307",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},506.560);
+tl.fromTo("#i308",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},509.220);
+tl.fromTo("#i309",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},515.000);
+tl.fromTo("#w311",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},502.780);
+tl.to("#w311",{opacity:0,duration:0.25,ease:"power1.in"},519.170);
+tl.fromTo("#b312",{scale:1},{scale:1.015,duration:16.640,ease:"none"},502.780);
+tl.fromTo("#i313",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},519.520);
+tl.fromTo("#i314",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},522.020);
+tl.fromTo("#i315",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},522.620);
+tl.fromTo("#w317",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},519.420);
+tl.to("#w317",{opacity:0,duration:0.25,ease:"power1.in"},525.850);
+tl.fromTo("#b318",{scale:1},{scale:1.015,duration:6.680,ease:"none"},519.420);
+tl.fromTo("#i319",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},526.100);
+tl.fromTo("#i320",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},526.100);
+tl.fromTo("#w322",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},526.100);
+tl.set({}, {}, 528.54);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

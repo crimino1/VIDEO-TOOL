@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Kalam";src:url("assets/fonts/Kalam-Bold.ttf");font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Inter",sans-serif;color:#f2f2f2}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.shot{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;background:#05080f;z-index:5}
+.shot.black{background:#000}
+.stage{position:absolute;inset:0}
+.navy{position:absolute;inset:0;background:radial-gradient(ellipse at center,#0e1a2b 0%,#05080f 80%)}
+.kb{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.anc{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;text-align:center}
+.pop{opacity:0;display:block}
+.kw{font-weight:600;line-height:1.1;letter-spacing:-0.01em}
+.cap{font-weight:600;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.9)}
+.hand{font-family:"Kalam",cursive;font-weight:700;font-size:54px;line-height:1}
+.lab{font-weight:700;font-size:30px;letter-spacing:.16em}
+.ei{height:1em;width:1em;vertical-align:-0.12em;margin:0 .06em}
+.framed{border:4px solid #ffc23d;box-shadow:0 0 40px rgba(255,194,61,.25)}
+.dsvg{position:absolute;left:0;top:0}
+.pframe{position:absolute;overflow:hidden;border:4px solid #ffc23d;box-shadow:0 0 60px rgba(255,194,61,.18)}
+.ptext{position:absolute;top:300px}
+.who{font-size:84px;line-height:1.05;font-weight:700}
+.yrs{font-size:40px;color:#8a93a6;margin-top:16px}
+.pline{font-size:56px;font-weight:600;margin-top:34px;line-height:1.15}
+.pline .ei{height:1em}
+.scrim-b{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,0))}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="520.94" data-width="1920" data-height="1080">
+<div id="s_hand" class="clip shot " data-start="0.000" data-duration="4.020" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_hand"><img class="full" src="assets/img_s/hand.jpg" alt="hand"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_hand_0" class="pop cap" style="font-size:66px">hold your hand up <img class="ei" src="assets/emoji/270b.png" alt=""></div></div><div class="anc " style="left:960px;top:930px"><div id="c_hand_1" class="pop cap" style="font-size:66px">right in front of your face</div></div></div>
+<video id="v_Invisible" class="clip full" src="assets/manim/Invisible.mp4" muted playsinline data-start="4.020" data-duration="12.060" data-track-index="1" style="z-index:1"></video>
+<video id="v_FourLines" class="clip full" src="assets/manim/FourLines.mp4" muted playsinline data-start="16.080" data-duration="6.280" data-track-index="1" style="z-index:1"></video>
+<div id="s_pen" class="clip shot black" data-start="22.360" data-duration="3.070" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_pen"><div class="anc " style="left:960px;top:520px"><img id="i_pen_0" class="pop" src="assets/emoji/270d.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_pen_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">one guy.</div></div><div class="anc " style="left:960px;top:820px"><div id="i_pen_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">with a pen.</div></div></div><div class="flash" id="fl_pen"></div></div>
+<div id="s_maxwell1" class="clip shot " data-start="25.430" data-duration="2.240" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:1163px;top:150px;width:557px;height:780px;opacity:1"><div class="kb" id="k_maxwell1" style="width:557px;height:780px"><img src="assets/img_s/maxwell.jpg" alt="maxwell1" style="width:557px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:200px;width:853px"><div class="who" id="w_maxwell1">James Clerk Maxwell</div><div class="yrs" id="y_maxwell1">1831 – 1879</div><div class="pline" id="l_maxwell1_0">Scotland</div></div></div>
+<div id="s_show" class="clip shot black" data-start="27.670" data-duration="9.420" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_show"><div class="anc " style="left:960px;top:250px"><div id="i_show_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">today:</div></div><div class="anc " style="left:960px;top:540px"><div id="i_show_1" class="pop kw" style="font-size:110px;color:#f2f2f2;">those 4 lines <img class="ei" src="assets/emoji/1f440.png" alt=""></div></div><div class="anc " style="left:960px;top:250px"><div id="i_show_2" class="pop kw" style="font-size:64px;color:#f2f2f2;">you don&#x27;t need</div></div><div class="anc " style="left:960px;top:540px"><div id="i_show_3" class="pop kw" style="font-size:96px;color:#f2f2f2;">to be good at math</div></div><div class="anc " style="left:960px;top:520px"><img id="i_show_4" class="pop" src="assets/emoji/1f9f2.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:250px"><div id="i_show_5" class="pop kw" style="font-size:64px;color:#f2f2f2;">played with a magnet?</div></div><svg class="dsvg" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="i_show_7p" pathLength="1" d="M1069,676 Q1104,646 1060,660 M1085,669 L1060,660 L1075,639" stroke="#f2f2f2" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/></svg><div class="anc " style="left:1180px;top:880px"><div id="i_show_7" class="pop hand" style="color:#f2f2f2">you already get half of this <img class="ei" src="assets/emoji/2714.png" alt=""></div></div></div><div class="flash" id="fl_show"></div></div>
+<video id="v_TwoThings" class="clip full" src="assets/manim/TwoThings.mp4" muted playsinline data-start="37.090" data-duration="17.940" data-track-index="1" style="z-index:1"></video>
+<div id="s_oersted" class="clip shot " data-start="55.030" data-duration="4.020" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:1089px;top:150px;width:631px;height:780px;opacity:1"><div class="kb" id="k_oersted" style="width:631px;height:780px"><img src="assets/img_s/oersted.jpg" alt="oersted" style="width:631px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:200px;width:779px"><div class="who" id="w_oersted">Hans Christian Ørsted</div><div class="yrs" id="y_oersted">1777 – 1851</div><div class="pline" id="l_oersted_0">a Danish teacher</div><div class="pline" id="l_oersted_1">doing a class demo</div></div></div>
+<video id="v_Oersted" class="clip full" src="assets/manim/Oersted.mp4" muted playsinline data-start="59.050" data-duration="12.760" data-track-index="1" style="z-index:1"></video>
+<div id="s_touch" class="clip shot black" data-start="71.810" data-duration="1.710" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_touch"><div class="anc " style="left:960px;top:520px"><img id="i_touch_0" class="pop" src="assets/emoji/1f47b.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_touch_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">nobody touched it.</div></div></div><div class="flash" id="fl_touch"></div></div>
+<div id="s_how" class="clip shot black" data-start="73.520" data-duration="4.600" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_how"><div class="anc " style="left:700px;top:500px"><img id="i_how_0" class="pop" src="assets/emoji/26a1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:500px"><div id="i_how_1" class="pop kw" style="font-size:140px;color:#f2f2f2;">+</div></div><div class="anc " style="left:1220px;top:500px"><img id="i_how_2" class="pop" src="assets/emoji/1f9f2.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_how_3" class="pop kw" style="font-size:72px;color:#f2f2f2;">connected somehow</div></div><div class="anc " style="left:960px;top:820px"><div id="i_how_4" class="pop kw" style="font-size:72px;color:#ff5a6e;">...but HOW?</div></div></div><div class="flash" id="fl_how"></div></div>
+<div id="s_faraday1" class="clip shot " data-start="78.120" data-duration="4.520" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:1130px;top:150px;width:590px;height:780px;opacity:1"><div class="kb" id="k_faraday1" style="width:590px;height:780px"><img src="assets/img_s/faraday.jpg" alt="faraday1" style="width:590px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:200px;width:820px"><div class="who" id="w_faraday1">Michael Faraday</div><div class="yrs" id="y_faraday1">1791 – 1867</div><div class="pline" id="l_faraday1_0">left school at 13</div></div></div>
+<div id="s_books" class="clip shot " data-start="82.640" data-duration="3.020" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_books"><img class="full" src="assets/img_s/books.jpg" alt="books"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_books_0" class="pop cap" style="font-size:66px">worked in a bookshop <img class="ei" src="assets/emoji/1f4da.png" alt=""></div></div><div class="anc " style="left:960px;top:930px"><div id="c_books_1" class="pop cap" style="font-size:66px">binding books</div></div></div>
+<div id="s_nomath" class="clip shot black" data-start="85.660" data-duration="3.640" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_nomath"><div class="anc " style="left:960px;top:540px"><div id="i_nomath_0" class="pop kw" style="font-size:120px;color:#f2f2f2;font-family:'EB Garamond',serif;font-style:italic;">∂²B/∂t² ∮ ∇×</div></div><svg class="dsvg" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="i_nomath_1" pathLength="1" d="M600,360 L1320,720 M1320,360 L600,720" stroke="#ff5a6e" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/></svg><div class="anc " style="left:960px;top:820px"><div id="i_nomath_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">couldn&#x27;t do fancy math</div></div><div class="anc " style="left:960px;top:540px"><img id="i_nomath_3" class="pop" src="assets/emoji/1f913.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_nomath_5" class="pop kw" style="font-size:72px;color:#ffc23d;">but OBSESSED</div></div></div><div class="flash" id="fl_nomath"></div></div>
+<video id="v_FaradayLines" class="clip full" src="assets/manim/FaradayLines.mp4" muted playsinline data-start="89.300" data-duration="7.970" data-track-index="1" style="z-index:1"></video>
+<video id="v_ToMath" class="clip full" src="assets/manim/ToMath.mp4" muted playsinline data-start="97.270" data-duration="4.760" data-track-index="1" style="z-index:1"></video>
+<div id="s_four" class="clip shot black" data-start="102.030" data-duration="6.870" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_four"><div class="anc " style="left:960px;top:540px"><div id="i_four_0" class="pop kw" style="font-size:120px;color:#f2f2f2;">Maxwell&#x27;s 4 rules</div></div><div class="anc " style="left:960px;top:820px"><div id="i_four_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">one at a time</div></div><div class="anc " style="left:960px;top:500px"><img id="i_four_2" class="pop" src="assets/emoji/1f645.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_four_4" class="pop kw" style="font-size:72px;color:#f2f2f2;">no scary symbols</div></div><div class="anc " style="left:960px;top:820px"><div id="i_four_5" class="pop kw" style="font-size:72px;color:#ffc23d;">just the idea <img class="ei" src="assets/emoji/1f4a1.png" alt=""></div></div></div><div class="flash" id="fl_four"></div></div>
+<div id="s_r1" class="clip shot black" data-start="108.900" data-duration="4.320" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_r1"><div class="anc " style="left:960px;top:70px"><div id="i_r1_0" class="pop lab" style="color:#ffc23d">RULE 1</div></div><div class="anc " style="left:960px;top:250px"><div id="i_r1_1" class="pop kw" style="font-size:64px;color:#f2f2f2;">electric charges</div></div><div class="anc " style="left:960px;top:540px"><div id="i_r1_2" class="pop kw" style="font-size:96px;color:#ffc23d;">push out an invisible field</div></div></div><div class="flash" id="fl_r1"></div></div>
+<div id="s_balloon" class="clip shot " data-start="113.220" data-duration="5.840" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_balloon"><img class="full" src="assets/img_s/balloon.jpg" alt="balloon"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_balloon_0" class="pop cap" style="font-size:66px">rub a balloon on your hair <img class="ei" src="assets/emoji/1f388.png" alt=""></div></div><div class="anc " style="left:960px;top:930px"><div id="c_balloon_1" class="pop cap" style="font-size:66px">why?</div></div></div>
+<video id="v_Rule1" class="clip full" src="assets/manim/Rule1.mp4" muted playsinline data-start="119.060" data-duration="21.070" data-track-index="1" style="z-index:1"></video>
+<div id="s_r2" class="clip shot black" data-start="140.130" data-duration="3.700" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_r2"><div class="anc " style="left:960px;top:70px"><div id="i_r2_0" class="pop lab" style="color:#3fd8ff">RULE 2</div></div><div class="anc " style="left:960px;top:540px"><div id="i_r2_1" class="pop kw" style="font-size:110px;color:#f2f2f2;">my favourite <img class="ei" src="assets/emoji/1f60d.png" alt=""></div></div><div class="anc " style="left:960px;top:820px"><div id="i_r2_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">because it&#x27;s kind of weird <img class="ei" src="assets/emoji/1f928.png" alt=""></div></div></div><div class="flash" id="fl_r2"></div></div>
+<video id="v_Snap" class="clip full" src="assets/manim/Snap.mp4" muted playsinline data-start="143.830" data-duration="9.550" data-track-index="1" style="z-index:1"></video>
+<div id="s_nope" class="clip shot black" data-start="153.380" data-duration="1.220" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_nope"><div class="anc " style="left:960px;top:540px"><div id="i_nope_0" class="pop kw" style="font-size:200px;color:#ff5a6e;">NOPE.</div></div></div><div class="flash" id="fl_nope"></div></div>
+<video id="v_Snap2" class="clip full" src="assets/manim/Snap2.mp4" muted playsinline data-start="154.600" data-duration="10.960" data-track-index="1" style="z-index:1"></video>
+<video id="v_Loops" class="clip full" src="assets/manim/Loops.mp4" muted playsinline data-start="165.560" data-duration="15.430" data-track-index="1" style="z-index:1"></video>
+<div id="s_r34" class="clip shot black" data-start="180.990" data-duration="8.310" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_r34"><div class="anc " style="left:960px;top:250px"><div id="i_r34_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">rules 3 &amp; 4</div></div><div class="anc " style="left:960px;top:540px"><div id="i_r34_1" class="pop kw" style="font-size:110px;color:#ffc23d;">where it gets GOOD <img class="ei" src="assets/emoji/1f37f.png" alt=""></div></div><div class="anc " style="left:620px;top:860px"><img id="i_r34_2" class="pop" src="assets/emoji/26a1.png" style="width:160px;height:160px" alt=""></div><div class="anc " style="left:960px;top:840px"><img id="i_r34_3" class="pop" src="assets/emoji/1f4ac.png" style="width:140px;height:140px" alt=""></div><div class="anc " style="left:1300px;top:860px"><img id="i_r34_4" class="pop" src="assets/emoji/1f9f2.png" style="width:160px;height:160px" alt=""></div></div><div class="flash" id="fl_r34"></div></div>
+<video id="v_Rule3" class="clip full" src="assets/manim/Rule3.mp4" muted playsinline data-start="189.300" data-duration="29.320" data-track-index="1" style="z-index:1"></video>
+<div id="s_plant" class="clip shot " data-start="218.620" data-duration="4.980" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_plant"><img class="full" src="assets/img_s/plant.jpg" alt="plant"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_plant_0" class="pop cap" style="font-size:66px">how most of your electricity is made</div></div></div>
+<video id="v_Generator" class="clip full" src="assets/manim/Generator.mp4" muted playsinline data-start="223.600" data-duration="8.720" data-track-index="1" style="z-index:1"></video>
+<div id="s_charger" class="clip shot " data-start="232.320" data-duration="2.720" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_charger"><img class="full" src="assets/img_s/charger.jpg" alt="charger"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_charger_0" class="pop cap" style="font-size:66px">your phone charger? <img class="ei" src="assets/emoji/1f50c.png" alt=""></div></div><div class="anc " style="left:960px;top:930px"><div id="c_charger_1" class="pop cap" style="font-size:66px">rule 3.</div></div></div>
+<div id="s_faraday2" class="clip shot " data-start="235.040" data-duration="5.400" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:200px;top:150px;width:590px;height:780px;opacity:1"><div class="kb" id="k_faraday2" style="width:590px;height:780px"><img src="assets/img_s/faraday.jpg" alt="faraday2" style="width:590px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:900px;width:820px"><div class="who" id="w_faraday2">Michael Faraday</div><div class="yrs" id="y_faraday2">1831</div><div class="pline" id="l_faraday2_0">figured this out</div><div class="pline" id="l_faraday2_1">we still run the planet on it <img class="ei" src="assets/emoji/1f30d.png" alt=""></div></div></div>
+<video id="v_Rule4" class="clip full" src="assets/manim/Rule4.mp4" muted playsinline data-start="240.440" data-duration="19.620" data-track-index="1" style="z-index:1"></video>
+<div id="s_crane" class="clip shot " data-start="260.060" data-duration="3.540" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_crane"><img class="full" src="assets/img_s/crane.jpg" alt="crane"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_crane_0" class="pop cap" style="font-size:66px">junkyard cranes lift whole cars <img class="ei" src="assets/emoji/1f697.png" alt=""></div></div></div>
+<div id="s_secret" class="clip shot black" data-start="263.600" data-duration="2.340" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_secret"><div class="anc " style="left:960px;top:520px"><img id="i_secret_0" class="pop" src="assets/emoji/1f92b.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_secret_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">the part nobody tells you</div></div></div><div class="flash" id="fl_secret"></div></div>
+<video id="v_Missing" class="clip full" src="assets/manim/Missing.mp4" muted playsinline data-start="265.940" data-duration="18.580" data-track-index="1" style="z-index:1"></video>
+<div id="s_everything" class="clip shot black" data-start="284.520" data-duration="3.280" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_everything"><div class="anc " style="left:960px;top:250px"><div id="i_everything_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">that tiny addition</div></div><div class="anc " style="left:960px;top:540px"><div id="i_everything_1" class="pop kw" style="font-size:120px;color:#ffc23d;">changed EVERYTHING</div></div><div class="anc " style="left:960px;top:820px"><img id="i_everything_2" class="pop" src="assets/emoji/1f92f.png" style="width:220px;height:220px" alt=""></div></div><div class="flash" id="fl_everything"></div></div>
+<video id="v_SideBySide" class="clip full" src="assets/manim/SideBySide.mp4" muted playsinline data-start="287.800" data-duration="11.720" data-track-index="1" style="z-index:1"></video>
+<video id="v_Feed" class="clip full" src="assets/manim/Feed.mp4" muted playsinline data-start="299.520" data-duration="11.860" data-track-index="1" style="z-index:1"></video>
+<div id="s_leapfrog" class="clip shot black" data-start="311.380" data-duration="2.140" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_leapfrog"><div class="anc " style="left:760px;top:520px"><img id="i_leapfrog_0" class="pop" src="assets/emoji/1f438.png" style="width:260px;height:260px" alt=""></div><div class="anc " style="left:1160px;top:420px"><img id="i_leapfrog_1" class="pop" src="assets/emoji/1f438.png" style="width:260px;height:260px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_leapfrog_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">two kids playing leapfrog</div></div><svg class="dsvg" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="i_leapfrog_3p" pathLength="1" d="M604,375 Q632,438 700,450 M682,431 L700,450 L677,462" stroke="#ffc23d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/></svg><div class="anc " style="left:560px;top:340px"><div id="i_leapfrog_3" class="pop hand" style="color:#ffc23d">E</div></div><svg class="dsvg" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="i_leapfrog_4p" pathLength="1" d="M1349,287 Q1273,288 1230,350 M1255,342 L1230,350 L1229,324" stroke="#3fd8ff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/></svg><div class="anc " style="left:1400px;top:260px"><div id="i_leapfrog_4" class="pop hand" style="color:#3fd8ff">B</div></div></div><div class="flash" id="fl_leapfrog"></div></div>
+<video id="v_Wave" class="clip full" src="assets/manim/Wave.mp4" muted playsinline data-start="313.520" data-duration="13.640" data-track-index="1" style="z-index:1"></video>
+<div id="s_fast" class="clip shot black" data-start="327.160" data-duration="3.740" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_fast"><div class="anc " style="left:960px;top:540px"><div id="i_fast_0" class="pop kw" style="font-size:104px;color:#f2f2f2;">so he did the obvious thing</div></div><div class="anc " style="left:960px;top:480px"><img id="i_fast_1" class="pop" src="assets/emoji/23f1.png" style="width:260px;height:260px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_fast_3" class="pop kw" style="font-size:72px;color:#ffc23d;">how FAST would it go?</div></div></div><div class="flash" id="fl_fast"></div></div>
+<video id="v_Speed" class="clip full" src="assets/manim/Speed.mp4" muted playsinline data-start="330.900" data-duration="14.590" data-track-index="1" style="z-index:1"></video>
+<div id="s_felt" class="clip shot black" data-start="345.490" data-duration="8.100" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_felt"><div class="anc " style="left:960px;top:540px"><div id="i_felt_0" class="pop kw" style="font-size:104px;color:#f2f2f2;">imagine how that felt <img class="ei" src="assets/emoji/1f633.png" alt=""></div></div><div class="anc " style="left:700px;top:480px"><img id="i_felt_1" class="pop" src="assets/emoji/1f9f2.png" style="width:200px;height:200px" alt=""></div><div class="anc " style="left:960px;top:480px"><img id="i_felt_2" class="pop" src="assets/emoji/1f50b.png" style="width:200px;height:200px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_felt_4" class="pop kw" style="font-size:72px;color:#f2f2f2;">doing math about magnets &amp; batteries</div></div><div class="anc " style="left:1220px;top:480px"><img id="i_felt_5" class="pop" src="assets/emoji/1f4a1.png" style="width:220px;height:220px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_felt_6" class="pop kw" style="font-size:72px;color:#ffc23d;">...out pops the speed of light</div></div></div><div class="flash" id="fl_felt"></div></div>
+<div id="s_bike" class="clip shot black" data-start="353.590" data-duration="6.220" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_bike"><div class="anc " style="left:660px;top:500px"><img id="i_bike_0" class="pop" src="assets/emoji/1f6b2.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_bike_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">math about your bicycle</div></div><div class="anc " style="left:960px;top:500px"><div id="i_bike_2" class="pop kw" style="font-size:160px;color:#f2f2f2;">=</div></div><div class="anc " style="left:1260px;top:500px"><img id="i_bike_3" class="pop" src="assets/emoji/1f4f1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_bike_4" class="pop kw" style="font-size:72px;color:#ffc23d;">= your best friend&#x27;s phone number</div></div></div><div class="flash" id="fl_bike"></div></div>
+<div id="s_coinc" class="clip shot black" data-start="359.810" data-duration="1.700" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_coinc"><div class="anc " style="left:960px;top:540px"><div id="i_coinc_0" class="pop kw" style="font-size:120px;color:#f2f2f2;">not a coincidence.</div></div></div><div class="flash" id="fl_coinc"></div></div>
+<div id="s_maxwell2" class="clip shot " data-start="361.510" data-duration="7.200" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:200px;top:150px;width:557px;height:780px;opacity:1"><div class="kb" id="k_maxwell2" style="width:557px;height:780px"><img src="assets/img_s/maxwell.jpg" alt="maxwell2" style="width:557px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:867px;width:853px"><div class="who" id="w_maxwell2">James Clerk Maxwell</div><div class="yrs" id="y_maxwell2">1865</div><div class="pline" id="l_maxwell2_0">light itself is made of</div><div class="pline" id="l_maxwell2_1">electricity &amp; magnetism</div></div></div>
+<div id="s_sun" class="clip shot " data-start="368.710" data-duration="0.960" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_sun"><img class="full" src="assets/img_s/sun.jpg" alt="sun"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_sun_0" class="pop cap" style="font-size:66px">sunlight <img class="ei" src="assets/emoji/2600.png" alt=""></div></div></div>
+<div id="s_screen" class="clip shot " data-start="369.670" data-duration="2.280" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_screen"><img class="full" src="assets/img_s/screen.jpg" alt="screen"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_screen_0" class="pop cap" style="font-size:66px">the light from your screen</div></div></div>
+<video id="v_LightWave" class="clip full" src="assets/manim/LightWave.mp4" muted playsinline data-start="371.950" data-duration="4.560" data-track-index="1" style="z-index:1"></video>
+<div id="s_bigger" class="clip shot black" data-start="376.510" data-duration="1.160" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_bigger"><div class="anc " style="left:960px;top:540px"><div id="i_bigger_0" class="pop kw" style="font-size:120px;color:#ffc23d;">and it gets BIGGER</div></div></div><div class="flash" id="fl_bigger"></div></div>
+<video id="v_Spectrum" class="clip full" src="assets/manim/Spectrum.mp4" muted playsinline data-start="377.670" data-duration="24.790" data-track-index="1" style="z-index:1"></video>
+<div id="s_xray" class="clip shot " data-start="402.460" data-duration="5.140" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_xray"><img class="full" src="assets/img_s/xray.jpg" alt="xray"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_xray_0" class="pop cap" style="font-size:66px">X-rays <img class="ei" src="assets/emoji/1f9b4.png" alt=""></div></div><div class="anc " style="left:960px;top:930px"><div id="c_xray_1" class="pop cap" style="font-size:66px">right through your skin</div></div></div>
+<video id="v_Spectrum2" class="clip full" src="assets/manim/Spectrum2.mp4" muted playsinline data-start="407.600" data-duration="13.250" data-track-index="1" style="z-index:1"></video>
+<div id="s_sad" class="clip shot black" data-start="420.850" data-duration="8.410" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_sad"><div class="anc " style="left:960px;top:540px"><div id="i_sad_0" class="pop kw" style="font-size:104px;color:#f2f2f2;">here&#x27;s the sad part</div></div><div class="anc " style="left:960px;top:300px"><img id="i_sad_1" class="pop" src="assets/emoji/1f622.png" style="width:180px;height:180px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_sad_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">nobody had made one of these waves</div></div><div class="anc " style="left:960px;top:820px"><div id="i_sad_3" class="pop kw" style="font-size:72px;color:#f2f2f2;">just math on paper <img class="ei" src="assets/emoji/1f4dd.png" alt=""></div></div></div><div class="flash" id="fl_sad"></div></div>
+<div id="s_maxwell3" class="clip shot " data-start="429.260" data-duration="6.360" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:1163px;top:150px;width:557px;height:780px;opacity:0.8"><div class="kb" id="k_maxwell3" style="width:557px;height:780px"><img src="assets/img_s/maxwell.jpg" alt="maxwell3" style="width:557px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:200px;width:853px"><div class="who" id="w_maxwell3">James Clerk Maxwell</div><div class="yrs" id="y_maxwell3">1831 – 1879</div><div class="pline" id="l_maxwell3_0">got sick</div><div class="pline" id="l_maxwell3_1">died at only 48</div></div></div>
+<div id="s_hertz" class="clip shot " data-start="435.620" data-duration="3.600" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="navy"></div><div class="pframe" style="left:200px;top:150px;width:596px;height:780px;opacity:1"><div class="kb" id="k_hertz" style="width:596px;height:780px"><img src="assets/img_s/hertz.jpg" alt="hertz" style="width:596px;height:780px;object-fit:cover;object-position:50% 20%"></div></div><div class="ptext" style="left:906px;width:814px"><div class="who" id="w_hertz">Heinrich Hertz</div><div class="yrs" id="y_hertz">1887</div><div class="pline" id="l_hertz_0">about 9 years later</div><div class="pline" id="l_hertz_1">a German scientist</div></div></div>
+<video id="v_Hertz" class="clip full" src="assets/manim/Hertz.mp4" muted playsinline data-start="439.220" data-duration="14.780" data-track-index="1" style="z-index:1"></video>
+<div id="s_never" class="clip shot black" data-start="454.000" data-duration="2.030" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_never"><div class="anc " style="left:960px;top:470px"><img id="i_never_0" class="pop framed" src="assets/img_s/maxwell.jpg" style="width:420px;height:587px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_never_1" class="pop kw" style="font-size:72px;color:#f2f2f2;">he never got to see it.</div></div></div><div class="flash" id="fl_never"></div></div>
+<div id="s_after" class="clip shot black" data-start="456.030" data-duration="7.320" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_after"><div class="anc " style="left:960px;top:540px"><div id="i_after_0" class="pop kw" style="font-size:104px;color:#f2f2f2;">but look what came after</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_2" class="pop" src="assets/emoji/1f4fb.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_3" class="pop kw" style="font-size:72px;color:#f2f2f2;">radio</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_4" class="pop" src="assets/emoji/1f4fa.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_5" class="pop kw" style="font-size:72px;color:#f2f2f2;">TV</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_6" class="pop" src="assets/emoji/1f4e1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_7" class="pop kw" style="font-size:72px;color:#f2f2f2;">radar</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_8" class="pop" src="assets/emoji/1f4f1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_9" class="pop kw" style="font-size:72px;color:#f2f2f2;">mobile phones</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_10" class="pop" src="assets/emoji/1f6f0.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_11" class="pop kw" style="font-size:72px;color:#f2f2f2;">GPS</div></div><div class="anc " style="left:960px;top:520px"><img id="i_after_12" class="pop" src="assets/emoji/1f4f6.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_after_13" class="pop kw" style="font-size:72px;color:#f2f2f2;">Wi-Fi</div></div></div><div class="flash" id="fl_after"></div></div>
+<div id="s_reached" class="clip shot black" data-start="463.350" data-duration="3.140" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_reached"><div class="anc " style="left:960px;top:250px"><div id="i_reached_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">this video reached you</div></div><div class="anc " style="left:960px;top:540px"><div id="i_reached_1" class="pop kw" style="font-size:110px;color:#ffc23d;">because of 4 rules</div></div></div><div class="flash" id="fl_reached"></div></div>
+<div id="s_einstein" class="clip shot black" data-start="466.490" data-duration="6.440" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_einstein"><div class="anc " style="left:520px;top:500px"><img id="i_einstein_0" class="pop framed" src="assets/img_s/einstein.jpg" style="width:470px;height:626px" alt=""></div><div class="anc " style="left:520px;top:930px"><div id="i_einstein_1" class="pop kw" style="font-size:48px;color:#f2f2f2;">Albert Einstein</div></div><div class="anc " style="left:1180px;top:470px"><img id="i_einstein_2" class="pop framed" src="assets/img_s/maxwell.jpg" style="width:300px;height:419px" alt=""></div><div class="anc " style="left:1560px;top:470px"><img id="i_einstein_3" class="pop framed" src="assets/img_s/newton.jpg" style="width:300px;height:361px" alt=""></div><svg class="dsvg" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="i_einstein_4p" pathLength="1" d="M1246,656 Q1273,636 1250,660 M1276,656 L1250,660 L1254,634" stroke="#f2f2f2" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/></svg><div class="anc " style="left:1370px;top:800px"><div id="i_einstein_4" class="pop hand" style="color:#f2f2f2">on his study wall</div></div></div><div class="flash" id="fl_einstein"></div></div>
+<video id="v_Recap" class="clip full" src="assets/manim/Recap.mp4" muted playsinline data-start="472.930" data-duration="20.030" data-track-index="1" style="z-index:1"></video>
+<div id="s_simple" class="clip shot black" data-start="492.960" data-duration="1.500" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_simple"><div class="anc " style="left:960px;top:540px"><div id="i_simple_0" class="pop kw" style="font-size:120px;color:#f2f2f2;">4 simple ideas</div></div></div><div class="flash" id="fl_simple"></div></div>
+<div id="s_lightning" class="clip shot " data-start="494.460" data-duration="1.540" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_lightning"><img class="full" src="assets/img_s/lightning.jpg" alt="lightning"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_lightning_0" class="pop cap" style="font-size:66px">lightning <img class="ei" src="assets/emoji/26a1.png" alt=""></div></div></div>
+<div id="s_plant2" class="clip shot " data-start="496.000" data-duration="1.000" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_plant2"><img class="full" src="assets/img_s/plant.jpg" alt="plant2"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_plant2_0" class="pop cap" style="font-size:66px">power plants</div></div></div>
+<div id="s_rainbow" class="clip shot " data-start="497.000" data-duration="0.780" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_rainbow"><img class="full" src="assets/img_s/rainbow.jpg" alt="rainbow"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_rainbow_0" class="pop cap" style="font-size:66px">rainbows <img class="ei" src="assets/emoji/1f308.png" alt=""></div></div></div>
+<div id="s_stars" class="clip shot " data-start="497.780" data-duration="2.510" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="kb" id="k_stars"><img class="full" src="assets/img_s/stars.jpg" alt="stars"></div><div class="scrim-b"></div><div class="anc " style="left:960px;top:930px"><div id="c_stars_0" class="pop cap" style="font-size:66px">every star in the sky <img class="ei" src="assets/emoji/2728.png" alt=""></div></div></div>
+<div id="s_next" class="clip shot black" data-start="500.290" data-duration="5.240" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_next"><div class="anc " style="left:960px;top:250px"><div id="i_next_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">next time you</div></div><div class="anc " style="left:960px;top:520px"><img id="i_next_1" class="pop" src="assets/emoji/1f4f1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_next_2" class="pop kw" style="font-size:72px;color:#f2f2f2;">pick up your phone</div></div><div class="anc " style="left:960px;top:520px"><img id="i_next_3" class="pop" src="assets/emoji/1f4a1.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_next_4" class="pop kw" style="font-size:72px;color:#f2f2f2;">flip on a light</div></div><div class="anc " style="left:960px;top:520px"><img id="i_next_5" class="pop" src="assets/emoji/2600.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_next_6" class="pop kw" style="font-size:72px;color:#f2f2f2;">feel the sun on your face</div></div></div><div class="flash" id="fl_next"></div></div>
+<video id="v_Final" class="clip full" src="assets/manim/Final.mp4" muted playsinline data-start="505.530" data-duration="5.140" data-track-index="1" style="z-index:1"></video>
+<div id="s_end" class="clip shot black" data-start="510.670" data-duration="10.270" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap><div class="stage" id="st_end"><div class="anc " style="left:960px;top:250px"><div id="i_end_0" class="pop kw" style="font-size:64px;color:#f2f2f2;">did it click? <img class="ei" src="assets/emoji/1f914.png" alt=""></div></div><div class="anc " style="left:960px;top:520px"><img id="i_end_1" class="pop" src="assets/emoji/1f44d.png" style="width:300px;height:300px" alt=""></div><div class="anc " style="left:960px;top:820px"><div id="i_end_2" class="pop kw" style="font-size:72px;color:#ffc23d;">like &amp; subscribe</div></div><div class="anc " style="left:960px;top:250px"><div id="i_end_3" class="pop kw" style="font-size:64px;color:#f2f2f2;">which rule surprised you most?</div></div><div class="anc " style="left:960px;top:540px"><div id="i_end_5" class="pop kw" style="font-size:130px;color:#f2f2f2;">1 · 2 · 3 · 4 <img class="ei" src="assets/emoji/1f4ac.png" alt=""></div></div><div class="anc " style="left:960px;top:860px"><img id="i_end_8" class="pop" src="assets/emoji/1f44b.png" style="width:160px;height:160px" alt=""></div><div class="anc " style="left:960px;top:250px"><div id="i_end_9" class="pop kw" style="font-size:64px;color:#f2f2f2;">see you in the next one</div></div></div><div class="flash" id="fl_end"></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="520.94" data-volume="1" data-track-index="10"></audio>
+<audio id="fx0" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="0.000" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx1" class="clip" src="assets/sfx/whoosh.mp3" data-start="5.000" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx2" class="clip" src="assets/sfx/shimmer.wav" data-start="12.780" data-duration="1.400" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx3" class="clip" src="assets/sfx/pop.mp3" data-start="22.360" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx4" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="25.430" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx5" class="clip" src="assets/sfx/pop.mp3" data-start="28.650" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx6" class="clip" src="assets/sfx/pop.mp3" data-start="31.110" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx7" class="clip" src="assets/sfx/pop.mp3" data-start="32.760" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx8" class="clip" src="assets/sfx/tick.wav" data-start="34.540" data-duration="0.080" data-volume="0.5" data-track-index="12"></audio>
+<audio id="fx9" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="37.090" data-duration="2.116" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx10" class="clip" src="assets/sfx/spark.wav" data-start="45.170" data-duration="0.500" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx11" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="53.490" data-duration="2.592" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx12" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="55.030" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx13" class="clip" src="assets/sfx/hum.wav" data-start="63.630" data-duration="1.200" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx14" class="clip" src="assets/sfx/ding.wav" data-start="67.350" data-duration="1.800" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx15" class="clip" src="assets/sfx/pop.mp3" data-start="71.810" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx16" class="clip" src="assets/sfx/pop.mp3" data-start="73.520" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx17" class="clip" src="assets/sfx/scratch.wav" data-start="76.630" data-duration="0.550" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx18" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="78.120" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx19" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="82.640" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx20" class="clip" src="assets/sfx/pop.mp3" data-start="85.660" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx21" class="clip" src="assets/sfx/snap.wav" data-start="86.300" data-duration="0.350" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx22" class="clip" src="assets/sfx/pop.mp3" data-start="87.360" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx23" class="clip" src="assets/sfx/shimmer.wav" data-start="98.950" data-duration="1.400" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx24" class="clip" src="assets/sfx/pop.mp3" data-start="102.030" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx25" class="clip" src="assets/sfx/pop.mp3" data-start="105.970" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx26" class="clip" src="assets/sfx/whoosh.mp3" data-start="108.900" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx27" class="clip" src="assets/sfx/pop.mp3" data-start="111.740" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx28" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="113.220" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx29" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="122.160" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx30" class="clip" src="assets/sfx/pop.mp3" data-start="140.130" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx31" class="clip" src="assets/sfx/whoosh.mp3" data-start="140.130" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx32" class="clip" src="assets/sfx/snap.wav" data-start="148.110" data-duration="0.350" data-volume="0.6" data-track-index="12"></audio>
+<audio id="fx33" class="clip" src="assets/sfx/scratch.wav" data-start="153.330" data-duration="0.550" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx34" class="clip" src="assets/sfx/pop.mp3" data-start="153.380" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx35" class="clip" src="assets/sfx/snap.wav" data-start="159.780" data-duration="0.350" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx36" class="clip" src="assets/sfx/glitch-1.mp3" data-start="162.920" data-duration="2.638" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx37" class="clip" src="assets/sfx/whoosh.mp3" data-start="167.380" data-duration="0.575" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx38" class="clip" src="assets/sfx/pop.mp3" data-start="182.970" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx39" class="clip" src="assets/sfx/pop.mp3" data-start="184.610" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx40" class="clip" src="assets/sfx/pop.mp3" data-start="186.450" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx41" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="193.860" data-duration="0.575" data-volume="0.2" data-track-index="12"></audio>
+<audio id="fx42" class="clip" src="assets/sfx/hum.wav" data-start="200.320" data-duration="1.200" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx43" class="clip" src="assets/sfx/hum.wav" data-start="207.840" data-duration="1.200" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx44" class="clip" src="assets/sfx/ding.wav" data-start="216.790" data-duration="1.800" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx45" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="218.620" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx46" class="clip" src="assets/sfx/spark.wav" data-start="231.160" data-duration="0.500" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx47" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="232.320" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx48" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="235.040" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx49" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="249.920" data-duration="0.575" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx50" class="clip" src="assets/sfx/click.mp3" data-start="258.100" data-duration="0.366" data-volume="0.6" data-track-index="12"></audio>
+<audio id="fx51" class="clip" src="assets/sfx/click.mp3" data-start="259.040" data-duration="0.366" data-volume="0.6" data-track-index="12"></audio>
+<audio id="fx52" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="260.060" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx53" class="clip" src="assets/sfx/scratch.wav" data-start="263.550" data-duration="0.550" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx54" class="clip" src="assets/sfx/pop.mp3" data-start="263.600" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx55" class="clip" src="assets/sfx/shimmer.wav" data-start="271.580" data-duration="1.400" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx56" class="clip" src="assets/sfx/pop.mp3" data-start="285.480" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx57" class="clip" src="assets/sfx/pop.mp3" data-start="286.420" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx58" class="clip" src="assets/sfx/whoosh.mp3" data-start="298.100" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx59" class="clip" src="assets/sfx/pop.mp3" data-start="311.380" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx60" class="clip" src="assets/sfx/pop.mp3" data-start="311.900" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx61" class="clip" src="assets/sfx/tick.wav" data-start="312.160" data-duration="0.080" data-volume="0.5" data-track-index="12"></audio>
+<audio id="fx62" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="313.520" data-duration="5.544" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx63" class="clip" src="assets/sfx/pop.mp3" data-start="327.160" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx64" class="clip" src="assets/sfx/pop.mp3" data-start="328.800" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx65" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="337.410" data-duration="0.575" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx66" class="clip" src="assets/sfx/ding.wav" data-start="343.240" data-duration="1.800" data-volume="0.45" data-track-index="12"></audio>
+<audio id="fx67" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="343.240" data-duration="2.116" data-volume="0.35" data-track-index="12"></audio>
+<audio id="fx68" class="clip" src="assets/sfx/pop.mp3" data-start="345.490" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx69" class="clip" src="assets/sfx/pop.mp3" data-start="347.550" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx70" class="clip" src="assets/sfx/pop.mp3" data-start="349.810" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx71" class="clip" src="assets/sfx/pop.mp3" data-start="351.890" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx72" class="clip" src="assets/sfx/pop.mp3" data-start="353.590" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx73" class="clip" src="assets/sfx/pop.mp3" data-start="356.770" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx74" class="clip" src="assets/sfx/pop.mp3" data-start="359.810" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx75" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="361.510" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx76" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="368.710" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx77" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="369.670" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx78" class="clip" src="assets/sfx/whoosh.mp3" data-start="371.950" data-duration="0.575" data-volume="0.2" data-track-index="12"></audio>
+<audio id="fx79" class="clip" src="assets/sfx/pop.mp3" data-start="376.510" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx80" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="383.900" data-duration="0.575" data-volume="0.2" data-track-index="12"></audio>
+<audio id="fx81" class="clip" src="assets/sfx/shimmer.wav" data-start="396.090" data-duration="1.400" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx82" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="402.460" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx83" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="415.260" data-duration="5.544" data-volume="0.25" data-track-index="12"></audio>
+<audio id="fx84" class="clip" src="assets/sfx/pop.mp3" data-start="420.850" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx85" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="429.260" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx86" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="435.620" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx87" class="clip" src="assets/sfx/spark.wav" data-start="441.140" data-duration="0.500" data-volume="0.5" data-track-index="12"></audio>
+<audio id="fx88" class="clip" src="assets/sfx/spark.wav" data-start="446.620" data-duration="0.500" data-volume="0.4" data-track-index="12"></audio>
+<audio id="fx89" class="clip" src="assets/sfx/whoosh.mp3" data-start="449.960" data-duration="0.575" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx90" class="clip" src="assets/sfx/pop.mp3" data-start="454.000" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx91" class="clip" src="assets/sfx/pop.mp3" data-start="456.030" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx92" class="clip" src="assets/sfx/pop.mp3" data-start="457.730" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx93" class="clip" src="assets/sfx/pop.mp3" data-start="458.110" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx94" class="clip" src="assets/sfx/pop.mp3" data-start="459.370" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx95" class="clip" src="assets/sfx/pop.mp3" data-start="460.210" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx96" class="clip" src="assets/sfx/pop.mp3" data-start="461.310" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx97" class="clip" src="assets/sfx/pop.mp3" data-start="462.330" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx98" class="clip" src="assets/sfx/pop.mp3" data-start="465.090" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx99" class="clip" src="assets/sfx/pop.mp3" data-start="466.490" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx100" class="clip" src="assets/sfx/pop.mp3" data-start="468.950" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx101" class="clip" src="assets/sfx/tick.wav" data-start="468.950" data-duration="0.080" data-volume="0.5" data-track-index="12"></audio>
+<audio id="fx102" class="clip" src="assets/sfx/pop.mp3" data-start="470.830" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx103" class="clip" src="assets/sfx/pop.mp3" data-start="474.470" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx104" class="clip" src="assets/sfx/pop.mp3" data-start="478.250" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx105" class="clip" src="assets/sfx/pop.mp3" data-start="483.850" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx106" class="clip" src="assets/sfx/pop.mp3" data-start="487.690" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx107" class="clip" src="assets/sfx/pop.mp3" data-start="492.960" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx108" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="494.460" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx109" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="496.000" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx110" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="497.000" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx111" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="497.780" data-duration="0.575" data-volume="0.18" data-track-index="12"></audio>
+<audio id="fx112" class="clip" src="assets/sfx/pop.mp3" data-start="501.230" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx113" class="clip" src="assets/sfx/pop.mp3" data-start="502.850" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx114" class="clip" src="assets/sfx/pop.mp3" data-start="503.770" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx115" class="clip" src="assets/sfx/shimmer.wav" data-start="508.970" data-duration="1.400" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx116" class="clip" src="assets/sfx/pop.mp3" data-start="513.190" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+<audio id="fx117" class="clip" src="assets/sfx/pop.mp3" data-start="516.550" data-duration="0.720" data-volume="0.22" data-track-index="12"></audio>
+<audio id="fx118" class="clip" src="assets/sfx/pop.mp3" data-start="519.810" data-duration="0.720" data-volume="0.3" data-track-index="12"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#k_hand",{scale:1},{scale:1.08,duration:4.020,ease:"none"},0.000);
+tl.fromTo("#c_hand_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},0.060);
+tl.to("#c_hand_0",{opacity:0,duration:0.08,ease:"none"},1.760);
+tl.fromTo("#c_hand_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},1.840);
+tl.fromTo("#i_pen_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},22.360);
+tl.fromTo("#i_pen_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},22.360);
+tl.to("#i_pen_1",{opacity:0,duration:0.08,ease:"none"},24.280);
+tl.fromTo("#i_pen_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},24.360);
+tl.fromTo("#k_maxwell1",{scale:1},{scale:1.05,duration:2.240,ease:"none"},25.430);
+tl.fromTo("#l_maxwell1_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},25.680);
+tl.fromTo("#w_maxwell1",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},25.480);
+tl.fromTo("#y_maxwell1",{opacity:0},{opacity:1,duration:0.35},25.630);
+tl.fromTo("#i_show_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},27.670);
+tl.fromTo("#i_show_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},28.650);
+tl.to("#i_show_0",{opacity:0,duration:0.08,ease:"none"},30.110);
+tl.fromTo("#i_show_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},30.190);
+tl.to("#i_show_1",{opacity:0,duration:0.08,ease:"none"},31.030);
+tl.fromTo("#i_show_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},31.110);
+tl.fromTo("#i_show_4",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},32.760);
+tl.to("#i_show_2",{opacity:0,duration:0.08,ease:"none"},32.680);
+tl.fromTo("#i_show_5",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},32.760);
+tl.to("#i_show_3",{opacity:0,duration:0.08,ease:"none"},32.680);
+tl.fromTo("#i_show_7",{opacity:0},{opacity:1,duration:0.2},34.540);
+tl.fromTo("#i_show_7p",{strokeDashoffset:1,opacity:1},{strokeDashoffset:0,opacity:1,duration:0.35,ease:"power2.out"},34.640);
+tl.fromTo("#k_oersted",{scale:1},{scale:1.05,duration:4.020,ease:"none"},55.030);
+tl.fromTo("#l_oersted_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},55.280);
+tl.fromTo("#l_oersted_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},57.630);
+tl.fromTo("#w_oersted",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},55.080);
+tl.fromTo("#y_oersted",{opacity:0},{opacity:1,duration:0.35},55.230);
+tl.fromTo("#i_touch_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},71.810);
+tl.fromTo("#i_touch_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},71.810);
+tl.fromTo("#i_how_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},73.520);
+tl.fromTo("#i_how_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},73.520);
+tl.fromTo("#i_how_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},73.520);
+tl.fromTo("#i_how_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},73.520);
+tl.to("#i_how_3",{opacity:0,duration:0.08,ease:"none"},76.600);
+tl.fromTo("#i_how_4",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},76.680);
+tl.fromTo("#fl_how",{opacity:0.9},{opacity:0,duration:0.18,ease:"power1.out"},76.680);
+tl.fromTo("#st_how",{x:-14},{x:0,duration:0.25,ease:"elastic.out(1,0.3)"},76.680);
+tl.fromTo("#k_faraday1",{scale:1},{scale:1.05,duration:4.520,ease:"none"},78.120);
+tl.fromTo("#l_faraday1_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},79.860);
+tl.fromTo("#w_faraday1",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},78.170);
+tl.fromTo("#y_faraday1",{opacity:0},{opacity:1,duration:0.35},78.320);
+tl.fromTo("#k_books",{scale:1},{scale:1.08,duration:3.020,ease:"none"},82.640);
+tl.fromTo("#c_books_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},82.640);
+tl.to("#c_books_0",{opacity:0,duration:0.08,ease:"none"},84.260);
+tl.fromTo("#c_books_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},84.340);
+tl.fromTo("#i_nomath_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},85.660);
+tl.fromTo("#i_nomath_1",{strokeDashoffset:1,opacity:1},{strokeDashoffset:0,opacity:1,duration:0.3,ease:"power2.out"},86.300);
+tl.to("#i_nomath_1",{opacity:0,duration:0.08,ease:"none"},87.280);
+tl.fromTo("#i_nomath_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},85.660);
+tl.fromTo("#i_nomath_3",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},87.360);
+tl.to("#i_nomath_0",{opacity:0,duration:0.08,ease:"none"},87.280);
+tl.to("#i_nomath_2",{opacity:0,duration:0.08,ease:"none"},88.160);
+tl.fromTo("#i_nomath_5",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},88.240);
+tl.fromTo("#i_four_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},102.030);
+tl.fromTo("#i_four_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},104.710);
+tl.fromTo("#i_four_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},105.970);
+tl.to("#i_four_0",{opacity:0,duration:0.08,ease:"none"},105.890);
+tl.to("#i_four_1",{opacity:0,duration:0.08,ease:"none"},105.890);
+tl.fromTo("#i_four_4",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},105.970);
+tl.to("#i_four_4",{opacity:0,duration:0.08,ease:"none"},107.170);
+tl.fromTo("#i_four_5",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},107.250);
+tl.fromTo("#i_r1_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},108.900);
+tl.fromTo("#i_r1_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},110.140);
+tl.fromTo("#i_r1_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},111.740);
+tl.fromTo("#k_balloon",{scale:1},{scale:1.08,duration:5.840,ease:"none"},113.220);
+tl.fromTo("#c_balloon_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},113.220);
+tl.to("#c_balloon_0",{opacity:0,duration:0.08,ease:"none"},117.400);
+tl.fromTo("#c_balloon_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},117.480);
+tl.fromTo("#i_r2_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},140.130);
+tl.fromTo("#i_r2_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},140.130);
+tl.fromTo("#i_r2_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},142.610);
+tl.fromTo("#i_nope_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},153.380);
+tl.fromTo("#fl_nope",{opacity:0.9},{opacity:0,duration:0.18,ease:"power1.out"},153.380);
+tl.fromTo("#st_nope",{x:-14},{x:0,duration:0.25,ease:"elastic.out(1,0.3)"},153.380);
+tl.fromTo("#i_r34_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},180.990);
+tl.fromTo("#i_r34_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},182.970);
+tl.fromTo("#i_r34_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},184.610);
+tl.fromTo("#i_r34_3",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},186.450);
+tl.fromTo("#i_r34_4",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},184.610);
+tl.fromTo("#k_plant",{scale:1},{scale:1.08,duration:4.980,ease:"none"},218.620);
+tl.fromTo("#c_plant_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},220.360);
+tl.fromTo("#k_charger",{scale:1},{scale:1.08,duration:2.720,ease:"none"},232.320);
+tl.fromTo("#c_charger_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},232.320);
+tl.to("#c_charger_0",{opacity:0,duration:0.08,ease:"none"},233.600);
+tl.fromTo("#c_charger_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},233.680);
+tl.fromTo("#k_faraday2",{scale:1},{scale:1.05,duration:5.400,ease:"none"},235.040);
+tl.fromTo("#l_faraday2_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},235.290);
+tl.fromTo("#l_faraday2_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},238.100);
+tl.fromTo("#w_faraday2",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},235.090);
+tl.fromTo("#y_faraday2",{opacity:0},{opacity:1,duration:0.35},235.240);
+tl.fromTo("#k_crane",{scale:1},{scale:1.08,duration:3.540,ease:"none"},260.060);
+tl.fromTo("#c_crane_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},260.060);
+tl.fromTo("#i_secret_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},263.600);
+tl.fromTo("#i_secret_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},263.600);
+tl.fromTo("#fl_secret",{opacity:0.9},{opacity:0,duration:0.18,ease:"power1.out"},263.600);
+tl.fromTo("#st_secret",{x:-14},{x:0,duration:0.25,ease:"elastic.out(1,0.3)"},263.600);
+tl.fromTo("#i_everything_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},284.520);
+tl.fromTo("#i_everything_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},285.480);
+tl.fromTo("#i_everything_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},286.420);
+tl.fromTo("#i_leapfrog_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},311.380);
+tl.fromTo("#i_leapfrog_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},311.900);
+tl.fromTo("#i_leapfrog_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},311.380);
+tl.fromTo("#i_leapfrog_3",{opacity:0},{opacity:1,duration:0.2},312.160);
+tl.fromTo("#i_leapfrog_3p",{strokeDashoffset:1,opacity:1},{strokeDashoffset:0,opacity:1,duration:0.35,ease:"power2.out"},312.260);
+tl.fromTo("#i_leapfrog_4",{opacity:0},{opacity:1,duration:0.2},312.160);
+tl.fromTo("#i_leapfrog_4p",{strokeDashoffset:1,opacity:1},{strokeDashoffset:0,opacity:1,duration:0.35,ease:"power2.out"},312.260);
+tl.fromTo("#i_fast_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},327.160);
+tl.fromTo("#i_fast_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},328.800);
+tl.to("#i_fast_0",{opacity:0,duration:0.08,ease:"none"},328.720);
+tl.fromTo("#i_fast_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},328.800);
+tl.fromTo("#i_felt_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},345.490);
+tl.fromTo("#i_felt_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},347.550);
+tl.fromTo("#i_felt_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},349.810);
+tl.to("#i_felt_0",{opacity:0,duration:0.08,ease:"none"},347.470);
+tl.fromTo("#i_felt_4",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},347.550);
+tl.fromTo("#i_felt_5",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},351.890);
+tl.to("#i_felt_4",{opacity:0,duration:0.08,ease:"none"},351.810);
+tl.fromTo("#i_felt_6",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},351.890);
+tl.fromTo("#i_bike_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},353.590);
+tl.fromTo("#i_bike_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},353.590);
+tl.fromTo("#i_bike_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},355.970);
+tl.fromTo("#i_bike_3",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},356.770);
+tl.to("#i_bike_1",{opacity:0,duration:0.08,ease:"none"},356.690);
+tl.fromTo("#i_bike_4",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},356.770);
+tl.fromTo("#i_coinc_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},359.810);
+tl.fromTo("#k_maxwell2",{scale:1},{scale:1.05,duration:7.200,ease:"none"},361.510);
+tl.fromTo("#l_maxwell2_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},363.970);
+tl.fromTo("#l_maxwell2_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},366.470);
+tl.fromTo("#w_maxwell2",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},361.560);
+tl.fromTo("#y_maxwell2",{opacity:0},{opacity:1,duration:0.35},361.710);
+tl.fromTo("#k_sun",{scale:1},{scale:1.08,duration:0.960,ease:"none"},368.710);
+tl.fromTo("#c_sun_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},368.710);
+tl.fromTo("#k_screen",{scale:1},{scale:1.08,duration:2.280,ease:"none"},369.670);
+tl.fromTo("#c_screen_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},369.670);
+tl.fromTo("#i_bigger_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},376.510);
+tl.fromTo("#k_xray",{scale:1},{scale:1.08,duration:5.140,ease:"none"},402.460);
+tl.fromTo("#c_xray_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},402.460);
+tl.to("#c_xray_0",{opacity:0,duration:0.08,ease:"none"},403.500);
+tl.fromTo("#c_xray_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},403.580);
+tl.fromTo("#i_sad_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},420.850);
+tl.fromTo("#i_sad_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},420.850);
+tl.fromTo("#i_sad_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},422.680);
+tl.to("#i_sad_2",{opacity:0,duration:0.08,ease:"none"},427.220);
+tl.fromTo("#i_sad_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},427.300);
+tl.fromTo("#k_maxwell3",{scale:1},{scale:1.05,duration:6.360,ease:"none"},429.260);
+tl.fromTo("#l_maxwell3_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},429.940);
+tl.fromTo("#l_maxwell3_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},433.150);
+tl.fromTo("#w_maxwell3",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},429.310);
+tl.fromTo("#y_maxwell3",{opacity:0},{opacity:1,duration:0.35},429.460);
+tl.fromTo("#k_hertz",{scale:1},{scale:1.05,duration:3.600,ease:"none"},435.620);
+tl.fromTo("#l_hertz_0",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},435.870);
+tl.fromTo("#l_hertz_1",{opacity:0,y:14},{opacity:1,y:0,duration:0.3,ease:"power2.out"},437.480);
+tl.fromTo("#w_hertz",{opacity:0,x:-20},{opacity:1,x:0,duration:0.35,ease:"power2.out"},435.670);
+tl.fromTo("#y_hertz",{opacity:0},{opacity:1,duration:0.35},435.820);
+tl.fromTo("#i_never_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},454.000);
+tl.fromTo("#i_never_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},454.000);
+tl.fromTo("#i_after_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},456.030);
+tl.to("#i_after_0",{opacity:0,duration:0.08,ease:"none"},457.650);
+tl.fromTo("#i_after_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},457.730);
+tl.fromTo("#i_after_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},457.730);
+tl.to("#i_after_2",{opacity:0,duration:0.08,ease:"none"},458.030);
+tl.fromTo("#i_after_4",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},458.110);
+tl.to("#i_after_3",{opacity:0,duration:0.08,ease:"none"},458.030);
+tl.fromTo("#i_after_5",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},458.110);
+tl.to("#i_after_4",{opacity:0,duration:0.08,ease:"none"},459.290);
+tl.fromTo("#i_after_6",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},459.370);
+tl.to("#i_after_5",{opacity:0,duration:0.08,ease:"none"},459.290);
+tl.fromTo("#i_after_7",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},459.370);
+tl.to("#i_after_6",{opacity:0,duration:0.08,ease:"none"},460.130);
+tl.fromTo("#i_after_8",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},460.210);
+tl.to("#i_after_7",{opacity:0,duration:0.08,ease:"none"},460.130);
+tl.fromTo("#i_after_9",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},460.210);
+tl.to("#i_after_8",{opacity:0,duration:0.08,ease:"none"},461.230);
+tl.fromTo("#i_after_10",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},461.310);
+tl.to("#i_after_9",{opacity:0,duration:0.08,ease:"none"},461.230);
+tl.fromTo("#i_after_11",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},461.310);
+tl.to("#i_after_10",{opacity:0,duration:0.08,ease:"none"},462.250);
+tl.fromTo("#i_after_12",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},462.330);
+tl.to("#i_after_11",{opacity:0,duration:0.08,ease:"none"},462.250);
+tl.fromTo("#i_after_13",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},462.330);
+tl.fromTo("#i_reached_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},463.350);
+tl.fromTo("#i_reached_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},465.090);
+tl.fromTo("#i_einstein_0",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},466.490);
+tl.fromTo("#i_einstein_1",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},466.490);
+tl.fromTo("#i_einstein_2",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},468.950);
+tl.fromTo("#i_einstein_3",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},470.830);
+tl.fromTo("#i_einstein_4",{opacity:0},{opacity:1,duration:0.2},468.950);
+tl.fromTo("#i_einstein_4p",{strokeDashoffset:1,opacity:1},{strokeDashoffset:0,opacity:1,duration:0.35,ease:"power2.out"},469.050);
+tl.fromTo("#i_simple_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},492.960);
+tl.fromTo("#k_lightning",{scale:1},{scale:1.08,duration:1.540,ease:"none"},494.460);
+tl.fromTo("#c_lightning_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},494.460);
+tl.fromTo("#k_plant2",{scale:1.08},{scale:1,duration:1.000,ease:"none"},496.000);
+tl.fromTo("#c_plant2_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},496.000);
+tl.fromTo("#k_rainbow",{scale:1},{scale:1.08,duration:0.780,ease:"none"},497.000);
+tl.fromTo("#c_rainbow_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},497.000);
+tl.fromTo("#k_stars",{scale:1},{scale:1.08,duration:2.510,ease:"none"},497.780);
+tl.fromTo("#c_stars_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},497.780);
+tl.fromTo("#i_next_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},500.290);
+tl.fromTo("#i_next_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},501.230);
+tl.fromTo("#i_next_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},501.230);
+tl.to("#i_next_1",{opacity:0,duration:0.08,ease:"none"},502.770);
+tl.fromTo("#i_next_3",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},502.850);
+tl.to("#i_next_2",{opacity:0,duration:0.08,ease:"none"},502.770);
+tl.fromTo("#i_next_4",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},502.850);
+tl.to("#i_next_3",{opacity:0,duration:0.08,ease:"none"},503.690);
+tl.fromTo("#i_next_5",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},503.770);
+tl.to("#i_next_4",{opacity:0,duration:0.08,ease:"none"},503.690);
+tl.fromTo("#i_next_6",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},503.770);
+tl.fromTo("#i_end_0",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},510.670);
+tl.fromTo("#i_end_1",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},513.190);
+tl.fromTo("#i_end_2",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},513.190);
+tl.to("#i_end_0",{opacity:0,duration:0.08,ease:"none"},515.430);
+tl.fromTo("#i_end_3",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},515.510);
+tl.to("#i_end_1",{opacity:0,duration:0.08,ease:"none"},515.430);
+tl.fromTo("#i_end_5",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},516.550);
+tl.to("#i_end_2",{opacity:0,duration:0.08,ease:"none"},515.430);
+tl.to("#i_end_5",{opacity:0,duration:0.08,ease:"none"},519.730);
+tl.fromTo("#i_end_8",{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.28,ease:"back.out(2.2)"},519.810);
+tl.to("#i_end_3",{opacity:0,duration:0.08,ease:"none"},519.730);
+tl.fromTo("#i_end_9",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.12,ease:"power2.out"},519.810);
+tl.set({}, {}, 520.94);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

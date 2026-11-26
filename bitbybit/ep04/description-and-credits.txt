@@ -1,0 +1,56 @@
+TITLE (pick one)
+1. 5 Weird Computers That Are Alive (Slime Mold, DNA, Brain Cells)   <- recommended
+2. Weird Computer Science: The Computers Made of Living Things
+3. A Slime Mold Rebuilt Tokyo's Rail Network. It's Not the Weirdest Computer.
+4. Brain Cells That Play Pong, and 4 Other Living Computers
+
+DESCRIPTION
+A slime mold with no brain rebuilt the Tokyo rail network. A test tube solved a routing puzzle with DNA. A gram of DNA can hold 215 petabytes. Bacteria can run code compiled from Verilog. And about 800,000 brain cells in a dish learned to play Pong. This is weird computer science: five living computers, each one stranger than the last, and the one thing they all have in common.
+
+A computer is anything that takes in information, follows rules and gives you an answer. By that definition some of the strangest computers on Earth are alive. In this documentary-style explainer: Physarum polycephalum and the 2010 Tokyo rail experiment (Tero, Nakagaki et al.), Leonard Adleman's 1994 DNA computer and why it scales so badly, DNA data storage (Erlich and Zielinski, 2017: an operating system and a short film stored in DNA with zero errors), MIT's Cello compiler that turns Verilog into DNA for E. coli (2016), and Cortical Labs' DishBrain (2022), the neurons that learned Pong, plus why a brain runs on about 20 watts.
+
+The hardware got weird. The ideas stayed exactly the same: shortest paths, parallel search, error correction, logic gates, learning from feedback. That's why the fundamentals are worth learning properly. Bit by bit.
+
+CHAPTERS
+0:00 A computer was never about silicon
+0:28 Welcome to Bit by Bit
+0:39 1. The slime mold that plans railways
+2:26 2. Adleman's DNA computer: the test tube that tries every answer
+3:55 3. DNA data storage: an operating system in a molecule
+5:40 4. Cello: bacteria that run compiled code
+6:58 5. DishBrain: the dish of neurons that learned Pong
+8:25 What all five have in common
+
+SOURCES
+- Tero A, Takagi S, Saigusa T, Ito K, Bebber DP, Fricker MD, Yumiki K, Kobayashi R, Nakagaki T (2010). Rules for biologically inspired adaptive network design. Science. https://doi.org/10.1126/science.1177894
+- Adleman LM (1994). Molecular computation of solutions to combinatorial problems. Science. https://doi.org/10.1126/science.7973651
+- Erlich Y, Zielinski D (2017). DNA Fountain enables a robust and efficient storage architecture. Science. https://doi.org/10.1126/science.aaj2038 (free preprint: https://www.biorxiv.org/content/10.1101/074237v4.full)
+- Nielsen AAK et al. (2016). Genetic circuit design automation. Science. https://doi.org/10.1126/science.aac7341 (Cello: https://www.cellocad.org)
+- Kagan BJ et al. (2022). In vitro neurons learn and exhibit sentience when embodied in a simulated game-world. Neuron. https://doi.org/10.1016/j.neuron.2022.09.001 (open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC9747182/)
+- Cortical Labs CL1: https://corticallabs.com/cl1 (price as reported by the press at launch, March 2025)
+
+Which of the five would you want on your desk? Tell me in the comments. I'm taking the slime mold.
+Subscribe to Bit by Bit for computer science explained, one piece at a time.
+
+CREDITS
+Tokyo rail experiment footage: Tero et al., Science 2010 (Fig. 1 movie, experiment by Seiji Takagi)
+Slime mold time-lapses: Tim Tim (VD fr), CC BY-SA 4.0, via Wikimedia Commons
+Photo of Leonard Adleman: CC BY-SA 3.0, via Wikimedia Commons
+Photo of Yaniv Erlich and Dina Zielinski: New York Genome Center
+Photo of Christopher Voigt: U.S. Office of Naval Research (public domain)
+E. coli microscopy: Girgis H, Liu Y, Ryu W, Tavazoie S, PLOS Genetics 2007, CC BY 2.5
+DishBrain game video and neuron images: Kagan et al., Neuron 2022, CC BY 4.0
+Brett Kagan and CL1 footage: Cortical Labs on YouTube (short excerpts for commentary)
+Stock footage: Pixabay (Pixabay Content License)
+Sound effects: Pixabay (Pixabay Content License)
+
+#computerscience #biology #science #slimemold #dnacomputing #biocomputing #bitbybit
+
+TAGS (paste into YouTube's tags box)
+weird computer science,living computers,biological computer,slime mold tokyo rail network,slime mold computer,slime mold maze,dna computer,dna computing,dna data storage,dna data storage explained,brain cells play pong,dishbrain,dishbrain pong,cortical labs cl1,computer made of human brain cells,organoid intelligence,wetware computer,leonard adleman,bit by bit
+
+HASHTAGS (first 3 show above the title)
+#computerscience #biology #science
+
+PINNED COMMENT
+Five living computers: a blob, a test tube, a molecule, a bacterium and a dish of neurons. Which one would you keep on your desk? I'm taking the slime mold.

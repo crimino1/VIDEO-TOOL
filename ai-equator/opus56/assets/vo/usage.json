@@ -1,0 +1,92 @@
+{
+ "used": 4324,
+ "last_request": 1795629557.3353343,
+ "log": [
+  {
+   "time": "2026-11-25T22:35:23",
+   "chars": 359,
+   "task": "b1af24e4-36be-409f-a390-4629e2258db4",
+   "out": "ai-equator/opus56/assets/vo/p01.mp3"
+  },
+  {
+   "time": "2026-11-25T22:39:14",
+   "chars": 319,
+   "task": "9fd501fc-bdcd-4ed6-8b2d-35e83b3ecbbe",
+   "out": "ai-equator/opus56/assets/vo/p02.mp3"
+  },
+  {
+   "time": "2026-11-25T22:43:06",
+   "chars": 390,
+   "task": "37e78396-c05b-459b-b41c-b38ff91331a3",
+   "out": "ai-equator/opus56/assets/vo/p03.mp3"
+  },
+  {
+   "time": "2026-11-25T22:46:57",
+   "chars": 187,
+   "task": "e44120b5-2c16-4af2-9977-0a307cc1dd7b",
+   "out": "ai-equator/opus56/assets/vo/p04.mp3"
+  },
+  {
+   "time": "2026-11-25T22:50:44",
+   "chars": 370,
+   "task": "f37dd4e1-3aae-4f6a-9725-64ba4191d73d",
+   "out": "ai-equator/opus56/assets/vo/p05.mp3"
+  },
+  {
+   "time": "2026-11-25T22:54:31",
+   "chars": 305,
+   "task": "2f33c0cd-32f9-448a-8340-4fb9a6e828af",
+   "out": "ai-equator/opus56/assets/vo/p06.mp3"
+  },
+  {
+   "time": "2026-11-25T22:58:18",
+   "chars": 313,
+   "task": "80cc40a1-8b4e-462a-b31b-668981bd43e4",
+   "out": "ai-equator/opus56/assets/vo/p07.mp3"
+  },
+  {
+   "time": "2026-11-25T23:02:09",
+   "chars": 310,
+   "task": "6119aa61-f59c-4007-8f0c-105f302af540",
+   "out": "ai-equator/opus56/assets/vo/p08.mp3"
+  },
+  {
+   "time": "2026-11-25T23:05:56",
+   "chars": 319,
+   "task": "13e8486b-28ff-4103-b1f4-7d711a61d563",
+   "out": "ai-equator/opus56/assets/vo/p09.mp3"
+  },
+  {
+   "time": "2026-11-25T23:09:40",
+   "chars": 320,
+   "task": "ee681acd-a837-4b82-b7a1-38db31939b15",
+   "out": "ai-equator/opus56/assets/vo/p10.mp3"
+  },
+  {
+   "time": "2026-11-25T23:13:35",
+   "chars": 154,
+   "task": "3e2bb6ff-eb14-47d8-a747-e03831be9a66",
+   "out": "ai-equator/opus56/assets/vo/p11.mp3"
+  },
+  {
+   "time": "2026-11-25T23:17:21",
+   "chars": 304,
+   "task": "6498078f-30ff-4556-8412-3e4abd1280ef",
+   "out": "ai-equator/opus56/assets/vo/p12.mp3"
+  },
+  {
+   "time": "2026-11-25T23:21:08",
+   "chars": 390,
+   "task": "36b0e394-695c-4d8e-baf8-355b6972d08a",
+   "out": "ai-equator/opus56/assets/vo/p13.mp3"
+  },
+  {
+   "time": "2026-11-25T23:29:18",
+   "chars": 284,
+   "task": "79f88cf6-192e-4522-a6de-2a9f96464085",
+   "out": "ai-equator/opus56/assets/vo/p17.mp3"
+  }
+ ],
+ "budget": 7000,
+ "model": "eleven_multilingual_v2"
+}

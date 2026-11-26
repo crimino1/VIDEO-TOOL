@@ -1,0 +1,177 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="149.040" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v251" class="clip vid" src="assets/clips/pxb_nyc_night_83197754.mp4" muted playsinline data-start="0.000" data-duration="1.720" data-track-index="1" style="z-index:68;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s254" class="clip scene" data-start="0.000" data-duration="1.720" data-track-index="2" style="z-index:70" data-layout-allow-overflow data-layout-allow-overlap><div id="c253" class="scene"><div id="pl252" class="place" style="top:850px"><div class="ru"></div><div class="l1">NEW YORK</div><div class="l2">2017</div></div></div></div>
+<div id="s259" class="clip scene" data-start="1.720" data-duration="6.180" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap><div id="c258" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:431px;top:87px;width:1059px;height:706px"><img id="ph255" src="assets/gen/erlich_zielinski_press_c4754e.jpg" alt="erlich_zielinski_press"></div><div id="tg256" class="tag" style="left:200px;top:830px;opacity:0"><div class="n">Yaniv Erlich</div><div class="r">Columbia University &amp; NY Genome Center</div></div><div id="tg257" class="tag" style="left:1060px;top:830px;opacity:0"><div class="n">Dina Zielinski</div><div class="r">New York Genome Center</div></div><div class="credit">Photo: New York Genome Center</div></div></div>
+<div id="s267" class="clip scene" data-start="47.760" data-duration="9.420" data-track-index="2" style="z-index:72" data-layout-allow-overflow data-layout-allow-overlap><div id="c266" class="scene"><div id="k260" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:54px;line-height:1.08;color:#fff"><span id="w261" style="opacity:0">That</span> <span id="w262" style="opacity:0">demo</span> <span id="w263" style="opacity:0">was</span> <span id="w264" style="opacity:0">2</span> <span id="w265" style="opacity:0">megabytes.</span></div></div></div>
+<div id="s272" class="clip scene" data-start="57.180" data-duration="10.320" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap><div id="c271" class="scene"><div id="k268" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:56px;line-height:1.08;color:#fff"><span id="w269" style="opacity:0">Error-correcting</span> <span id="w270" style="opacity:0">codes</span></div></div></div>
+<div id="s277" class="clip scene" data-start="67.500" data-duration="3.780" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><div id="c276" class="scene"><div class="scrim" style="opacity:0.62"></div><div class="refr" style="top:380px"><div class="a"><span id="rf273">No disk.</span><span id="rf274">No power.</span></div><div id="rb275" class="b">Still remembering.</div></div></div></div>
+<div id="s279" class="clip scene" data-start="71.280" data-duration="6.060" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><div id="c278" class="scene"><div class="scrim" style="opacity:0.72"></div></div></div>
+<div id="s287" class="clip scene" data-start="71.280" data-duration="6.060" data-track-index="2" style="z-index:76" data-layout-allow-overflow data-layout-allow-overlap><div id="c286" class="scene"><div class="mascot" style="left:60px;top:485px;width:476px;height:640px"><div id="mp282" class="mpose" style="opacity:1"><svg viewBox="-10 0 320 430" class="msvg"><g><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L120 250 L110 295" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L205 235 L172 172" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me283" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div><div id="mp284" class="mpose" style="opacity:0"><svg viewBox="-10 0 320 430" class="msvg"><g><g filter="url(#bbRough)"><path d="M150 160 L150 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 300 L115 405 M150 300 L185 405" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L90 185 L52 125" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 195 L210 185 L255 125" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g><g shape-rendering="crispEdges" filter="url(#bbGlow)"><polygon points="90,40 115,20 235,20 210,40" fill="#B4F7F9"/><polygon points="210,40 235,20 235,140 210,160" fill="#2A9FAD"/><rect x="90" y="40" width="15" height="15" fill="#57D6DC"/><rect x="105" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="40" width="15" height="15" fill="#57D6DC"/><rect x="135" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="40" width="15" height="15" fill="#57D6DC"/><rect x="165" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="40" width="15" height="15" fill="#57D6DC"/><rect x="195" y="40" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="55" width="15" height="15" fill="#57D6DC"/><rect x="120" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="55" width="15" height="15" fill="#57D6DC"/><rect x="150" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="55" width="15" height="15" fill="#57D6DC"/><rect x="180" y="55" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="55" width="15" height="15" fill="#57D6DC"/><rect x="90" y="70" width="15" height="15" fill="#57D6DC"/><rect x="105" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="70" width="15" height="15" fill="#57D6DC"/><rect x="135" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="70" width="15" height="15" fill="#57D6DC"/><rect x="165" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="70" width="15" height="15" fill="#57D6DC"/><rect x="195" y="70" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="85" width="15" height="15" fill="#57D6DC"/><rect x="120" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="85" width="15" height="15" fill="#57D6DC"/><rect x="150" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="85" width="15" height="15" fill="#57D6DC"/><rect x="180" y="85" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="85" width="15" height="15" fill="#57D6DC"/><rect x="90" y="100" width="15" height="15" fill="#57D6DC"/><rect x="105" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="100" width="15" height="15" fill="#57D6DC"/><rect x="135" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="100" width="15" height="15" fill="#57D6DC"/><rect x="165" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="100" width="15" height="15" fill="#57D6DC"/><rect x="195" y="100" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="115" width="15" height="15" fill="#57D6DC"/><rect x="120" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="115" width="15" height="15" fill="#57D6DC"/><rect x="150" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="115" width="15" height="15" fill="#57D6DC"/><rect x="180" y="115" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="115" width="15" height="15" fill="#57D6DC"/><rect x="90" y="130" width="15" height="15" fill="#57D6DC"/><rect x="105" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="120" y="130" width="15" height="15" fill="#57D6DC"/><rect x="135" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="150" y="130" width="15" height="15" fill="#57D6DC"/><rect x="165" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="180" y="130" width="15" height="15" fill="#57D6DC"/><rect x="195" y="130" width="15" height="15" fill="#5FE3E8"/><rect x="90" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="105" y="145" width="15" height="15" fill="#57D6DC"/><rect x="120" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="135" y="145" width="15" height="15" fill="#57D6DC"/><rect x="150" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="165" y="145" width="15" height="15" fill="#57D6DC"/><rect x="180" y="145" width="15" height="15" fill="#5FE3E8"/><rect x="195" y="145" width="15" height="15" fill="#57D6DC"/><g id="me285" style="transform-origin:150px 85px;transform-box:view-box"><rect x="120" y="70" width="15" height="30" fill="#06121A"/><rect x="165" y="70" width="15" height="30" fill="#06121A"/></g><rect x="120" y="115" width="15" height="15" fill="#06121A"/><rect x="135" y="130" width="15" height="15" fill="#06121A"/><rect x="150" y="130" width="15" height="15" fill="#06121A"/><rect x="165" y="115" width="15" height="15" fill="#06121A"/></g></g></svg></div></div><div id="sb280" class="sub" style="left:600px;top:380px;opacity:0"><div class="h">Can a cell</div><div class="b"><div>run a program?</div></div></div><div id="sb281" class="sub" style="left:600px;top:380px;opacity:0"><div class="h">It can.</div><div class="b"></div></div></div></div>
+<div id="s291" class="clip scene" data-start="77.340" data-duration="3.300" data-track-index="2" style="z-index:77" data-layout-allow-overflow data-layout-allow-overlap><div id="c290" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch288" class="chap" style="top:330px"><div class="no">LIVING COMPUTER &nbsp;&middot;&nbsp; No. 4</div><div class="ti">Bacteria that run compiled code</div><div id="ru289" class="rule"></div></div></div></div>
+<div id="s297" class="clip scene" data-start="80.640" data-duration="4.240" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><div id="c296" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf293" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt292" src="assets/gen/voigt_0f8ee0.jpg" alt="voigt"></div><div id="tg294" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Christopher Voigt</div><div class="r">Synthetic biologist, MIT</div></div><div id="pl295" class="place" style="top:850px"><div class="ru"></div><div class="l1">MIT &middot; CAMBRIDGE, MASSACHUSETTS</div><div class="l2">2016</div></div><div class="credit">Photo: U.S. Office of Naval Research (public domain)</div></div></div>
+<div id="s305" class="clip scene" data-start="84.880" data-duration="12.600" data-track-index="2" style="z-index:79" data-layout-allow-overflow data-layout-allow-overlap><div id="c304" class="scene"><div id="k298" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:54px;line-height:1.08;color:#fff"><span id="w299" style="opacity:0">The</span> <span id="w300" style="opacity:0">language</span> <span id="w301" style="opacity:0">of</span> <span id="w302" style="opacity:0">chip</span> <span id="w303" style="opacity:0">designers</span></div></div></div>
+<div id="s307" class="clip scene" data-start="102.000" data-duration="4.240" data-track-index="2" style="z-index:80" data-layout-allow-overflow data-layout-allow-overlap><div id="c306" class="scene"><div class="scrim" style="opacity:0.7"></div></div></div>
+<video id="v308" class="clip vid" src="assets/clips/cm_ecoli_b8e55d6d.mp4" muted playsinline data-start="102.000" data-duration="4.240" data-track-index="1" style="z-index:81;transform-origin:50% 50%;left:370px;top:138px;width:1180px;height:664px;box-shadow:0 24px 70px rgba(0,0,0,.7)"></video>
+<div id="s317" class="clip scene" data-start="102.000" data-duration="4.240" data-track-index="2" style="z-index:83" data-layout-allow-overflow data-layout-allow-overlap><div id="c316" class="scene"><div id="k309" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:56px;line-height:1.08;color:#fff"><span id="w310" style="opacity:0">Put</span> <span id="w311" style="opacity:0">it</span> <span id="w312" style="opacity:0">inside</span> <span id="w313" style="opacity:0">E.</span> <span id="w314" style="opacity:0">coli</span> <span id="w315" style="opacity:0">bacteria</span></div><div class="credit">Video: Girgis et al., PLOS Genetics 2007, CC BY 2.5</div></div></div>
+<div id="s326" class="clip scene" data-start="106.240" data-duration="2.280" data-track-index="2" style="z-index:84" data-layout-allow-overflow data-layout-allow-overlap><div id="c325" class="scene"><div id="k318" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w319" style="opacity:0">Now</span> <span id="w320" style="opacity:0">the</span> <span id="w321" style="opacity:0">bacteria</span> <span id="w322" style="opacity:0">run</span> <span id="w323" style="opacity:0">your</span> <span id="w324" style="opacity:0">logic</span></div></div></div>
+<video id="v327" class="clip vid" src="assets/clips/pxb_scope_stage_eaa19f39.mp4" muted playsinline data-start="127.540" data-duration="3.440" data-track-index="1" style="z-index:85;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s335" class="clip scene" data-start="127.540" data-duration="3.440" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><div id="c334" class="scene"><div id="k328" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:56px;line-height:1.08;color:#fff"><span id="w329" style="opacity:0">A</span> <span id="w330" style="opacity:0">cell</span> <span id="w331" style="opacity:0">that</span> <span id="w332" style="opacity:0">makes</span> <span id="w333" style="opacity:0">decisions</span></div></div></div>
+<div id="s346" class="clip scene" data-start="140.880" data-duration="3.820" data-track-index="2" style="z-index:88" data-layout-allow-overflow data-layout-allow-overlap><div id="c345" class="scene"><div id="k336" class="kw " style="left:210px;width:1500px;text-align:center;top:70px;font-size:62px;line-height:1.08;color:#fff"><span id="w337" style="opacity:0">Programs</span> <span id="w338" style="opacity:0">you</span> <span id="w339" style="opacity:0">don't</span> <span id="w340" style="opacity:0">install.</span></div><div id="k341" class="kw " style="left:210px;width:1500px;text-align:center;top:150px;font-size:62px;line-height:1.08;color:#e0b23a"><span id="w342" style="opacity:0">You</span> <span id="w343" style="opacity:0">grow</span> <span id="w344" style="opacity:0">them.</span></div></div></div>
+<div id="s351" class="clip scene" data-start="144.700" data-duration="4.340" data-track-index="2" style="z-index:89" data-layout-allow-overflow data-layout-allow-overlap><div id="c350" class="scene"><div class="scrim" style="opacity:0.62"></div><div class="refr" style="top:380px"><div class="a"><span id="rf347">No keyboard.</span><span id="rf348">No screen.</span></div><div id="rb349" class="b">Still running code.</div></div></div></div>
+</div>
+<script>window.PXS = [[1.72, 7.9, "order_vial", {"count": 99, "send": 99, "vial": 99, "tin": "fade", "tout": "fade"}], [7.9, 17.52, "order_vial", {"count": 1.68, "send": 5.8, "vial": 8.66, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [17.52, 22.1, "sequencer", {"load": 0.4, "done": 2.94, "tin": "zoom", "tout": "zoom"}], [22.1, 26.68, "boot_mine", {"boot": 0.18, "party": 3.48, "tin": "zoom", "tout": "zoom"}], [26.68, 40.46, "gram_scale", {"pb": 4.02, "gb": 9.08, "clip": 12.78, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [40.46, 47.76, "deep_time", {"dna": 2.88, "hdd": 5.28, "tin": "zoom", "tout": "zoom"}], [47.76, 57.18, "price_tag", {"write": 6.16, "read": 8.26, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [57.18, 67.5, "fountain", {"lost": 0.82, "rebuild": 4.52, "phone": 8.36, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [67.5, 71.28, "cabinet", {"focus": 3, "check": [[1, -9], [2, -9], [3, 2.52]], "lit": [-9, -9, -9, -9, -9], "tin": "fade", "tout": "fade"}], [71.28, 77.34, "ecoli_in", {"in": 99.0, "tin": "fade", "tout": "zoom"}], [77.34, 80.64, "verilog_ed", {"code": 99, "gate": 99, "compile": 99, "tin": "fade", "tout": "fade"}], [80.64, 84.88, "verilog_ed", {"code": 99, "gate": 99, "compile": 99, "tin": "fade", "tout": "fade"}], [84.88, 97.48, "verilog_ed", {"code": 0.98, "gate": 6.96, "compile": 11.46, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [97.48, 102.0, "compile_dna", {"dna": 3.7, "tin": "zoom", "tout": "zoom"}], [102.0, 106.24, "ecoli_in", {"tin": "fade", "tout": "fade"}], [106.24, 108.52, "ecoli_in", {"in": 0.3, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [108.52, 119.02, "cell_circuit", {"in": 1.58, "gates": 4.36, "out": 7.46, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [119.02, 124.58, "plate60", {"end": 2.62, "count": 3.12, "tin": "zoom", "tout": "zoom"}], [124.58, 127.54, "my_code", {"cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [130.98, 135.26, "tumor_drug", {"detect": 2.46, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [135.26, 140.88, "root_microbes", {"attack": 3.84, "spray": 4.84, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [140.88, 144.7, "grow_prog", {"cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [144.7, 149.04, "cabinet", {"focus": 4, "check": [[1, -9], [2, -9], [3, -9], [4, 2.98]], "lit": [-9, -9, -9, -9, -9], "tin": "fade", "tout": "fade"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/brain.js"></script>
+<script src="assets/js/scenes/cello.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dnacalc.js"></script>
+<script src="assets/js/scenes/dnastore.js"></script>
+<script src="assets/js/scenes/intro.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/slime.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v251",{scale:1.0},{scale:1.06,duration:1.72,ease:"none"},0.000);
+tl.fromTo("#pl252",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},0.120);
+tl.fromTo("#ph255",{scale:1.0},{scale:1.05,duration:6.18,ease:"none"},1.720);
+tl.fromTo("#tg256",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},2.060);
+tl.fromTo("#tg257",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},2.560);
+tl.set("#w261",{opacity:1},93.220);
+tl.set("#w262",{opacity:1},93.220);
+tl.set("#w263",{opacity:1},179.000);
+tl.set("#w264",{opacity:1},224.580);
+tl.set("#w265",{opacity:1},224.580);
+tl.set("#w269",{opacity:1},61.700);
+tl.set("#w270",{opacity:1},62.520);
+tl.set("#rf273",{opacity:1},67.700);
+tl.set("#rf274",{opacity:1},68.640);
+tl.fromTo("#rb275",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},70.020);
+tl.set("#sb280",{opacity:1},71.280);
+tl.set("#sb280",{opacity:0},76.460);
+tl.set("#sb281",{opacity:1},76.460);
+tl.set("#me283",{scaleY:0.12},72.380);
+tl.set("#me283",{scaleY:1},72.500);
+tl.set("#me283",{scaleY:0.12},75.080);
+tl.set("#me283",{scaleY:1},75.200);
+tl.set("#mp284",{opacity:1},76.460);
+tl.set("#mp282",{opacity:0},76.460);
+tl.fromTo("#ch288",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},77.490);
+tl.fromTo("#ru289",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},77.840);
+tl.fromTo("#pt292",{scale:1.0},{scale:1.04,duration:4.24,ease:"none"},80.640);
+tl.fromTo("#pf293",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},80.640);
+tl.fromTo("#tg294",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},80.420);
+tl.fromTo("#pl295",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},80.920);
+tl.set("#w299",{opacity:1},94.540);
+tl.set("#w300",{opacity:1},276.560);
+tl.set("#w301",{opacity:1},291.320);
+tl.set("#w302",{opacity:1},291.320);
+tl.set("#w303",{opacity:1},291.320);
+tl.set("#k298",{opacity:0},91.540);
+tl.fromTo("#v308",{scale:1.0},{scale:1.04,duration:4.24,ease:"none"},102.000);
+tl.set("#w310",{opacity:1},104.320);
+tl.set("#w311",{opacity:1},156.780);
+tl.set("#w312",{opacity:1},156.780);
+tl.set("#w313",{opacity:1},164.980);
+tl.set("#w314",{opacity:1},164.980);
+tl.set("#w315",{opacity:1},244.880);
+tl.set("#w319",{opacity:1},214.760);
+tl.set("#w320",{opacity:1},253.540);
+tl.set("#w321",{opacity:1},253.540);
+tl.set("#w322",{opacity:1},253.540);
+tl.set("#w323",{opacity:1},266.200);
+tl.set("#w324",{opacity:1},266.200);
+tl.fromTo("#v327",{scale:1.0},{scale:1.06,duration:3.44,ease:"none"},127.540);
+tl.set("#w329",{opacity:1},132.120);
+tl.set("#w330",{opacity:1},153.640);
+tl.set("#w331",{opacity:1},155.880);
+tl.set("#w332",{opacity:1},155.880);
+tl.set("#w333",{opacity:1},155.880);
+tl.set("#w337",{opacity:1},140.880);
+tl.set("#w338",{opacity:1},141.420);
+tl.set("#w339",{opacity:1},141.800);
+tl.set("#w340",{opacity:1},142.060);
+tl.set("#w342",{opacity:1},152.220);
+tl.set("#w343",{opacity:1},152.220);
+tl.set("#w344",{opacity:1},206.020);
+tl.set("#rf347",{opacity:1},144.940);
+tl.set("#rf348",{opacity:1},146.080);
+tl.fromTo("#rb349",{opacity:0,y:18},{opacity:1,y:0,duration:0.5,ease:"power2.out"},147.680);
+tl.set({}, {}, 149.040);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

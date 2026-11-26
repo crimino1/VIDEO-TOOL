@@ -1,0 +1,110 @@
+[
+ {
+  "id": "p01",
+  "start": 0.0,
+  "end": 22.136,
+  "text": "Is Claude Opus 5.6 about to drop? People say it's already being secretly tested inside Claude Code. There's a leaked spec sheet with a 20 percent price cut. And betting markets give it an 82 percent chance before December 16th. But Anthropic hasn't said a word. So let's go through every leak, what's real, what's not, and when it's actually likely to launch."
+ },
+ {
+  "id": "p02",
+  "start": 22.886,
+  "end": 49.105,
+  "text": "First, the pattern. Anthropic has shipped a new Opus about every two months. Opus 4.5 last November, 4.6 in February, 4.7 in April, 4.8 in May, Opus 5 in July, and Opus 5.5 on September 22nd. The average gap is about 60 days. And today, it's been 64 days since Opus 5.5. So on the calendar alone, a new Opus is overdue."
+ },
+ {
+  "id": "p03",
+  "start": 49.855,
+  "end": 72.615,
+  "text": "The first real signal came in mid October. People noticed that some Opus 5.5 requests seemed to be answered by a different, unannounced checkpoint. One tester got a JavaScript animation that burned through about 27 million tokens. Another built a 3D scene in Blender over two hours. TestingCatalog reported it, but even they said it might just be fresher training data, not a smarter model."
+ },
+ {
+  "id": "p04",
+  "start": 72.965,
+  "end": 83.151,
+  "text": "Some testers weren't even sure it was Opus. One asked, Fable 5.5, is that you? Because the next release could just as easily be a new Fable instead.\n"
+ },
+ {
+  "id": "p05",
+  "start": 83.501,
+  "end": 94.591,
+  "text": "Around the same time, someone from Anthropic's partnerships team posted, \"The best is yet to come. Stay tuned.\" And that's it. That's the closest thing to a hint from anyone at Anthropic."
+ },
+ {
+  "id": "p06",
+  "start": 94.941,
+  "end": 119.414,
+  "text": "Then on November 2nd, a spec sheet started going around. It claimed 90 percent on SWE-bench, 81 on RiemannBench, a score of 61 on the Artificial Analysis index, 20 percent lower prices, and higher usage limits. Here's the problem. Nobody can find the original post. Even some accounts sharing it said none of it is confirmed. So treat this one as a rumour, nothing more."
+ },
+ {
+  "id": "p07",
+  "start": 119.764,
+  "end": 139.86,
+  "text": "And just yesterday, a developer with over a quarter million views claimed Opus 5.6 is already being routed in Claude Code and on the web, with richer output and much better 3D and SVG. He predicted a launch in late November, or the first week of December. Again, no proof. Just a feeling from the outputs."
+ },
+ {
+  "id": "p08",
+  "start": 140.21,
+  "end": 162.009,
+  "text": "And over the last two days, the demos exploded. People posted anime made in pure code, an animated SVG short film comparing 5.6 with 5.5, and the same panda drawing prompt run on so called Opus next versus Fable 5.2. One account even claimed leaked pricing of 2 dollars in and 10 out, which doesn't match the other leak at all.\n"
+ },
+ {
+  "id": "p09",
+  "start": 162.759,
+  "end": 190.118,
+  "text": "So what does Anthropic's own documentation say? I checked. The models page lists Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 and Mythos 5.2. No Opus 5.6. No model ID on Bedrock or Google Cloud either. And on November 23rd, when Anthropic retired Opus 4.5, it pointed people to Opus 5.5 as the replacement. Not 5.6."
+ },
+ {
+  "id": "p10",
+  "start": 190.868,
+  "end": 213.631,
+  "text": "What do the betting markets think? On Kalshi, Opus 5.6 before December 1st is just 7 percent. Before December 16th, 82 percent. Before January 1st, 84. Manifold is a bit more careful, at 15, 64 and 81 percent. And remember, these same markets already expected it before November 16th, and that one resolved no."
+ },
+ {
+  "id": "p11",
+  "start": 213.981,
+  "end": 232.731,
+  "text": "Polymarket has the biggest market, with around 58 thousand dollars bet. It says 4.5 percent by November 30th, 81.5 by December 15th, and 92 percent by the end of the year. So every market agrees. Probably not this week, but very likely in the first half of December.\n"
+ },
+ {
+  "id": "p12",
+  "start": 233.481,
+  "end": 256.087,
+  "text": "So why might Anthropic hurry? Because the competition just moved. OpenAI launched GPT-6.2 Astra on November 17th. Google launched Gemini 4 Neon the very next day, at three dollars input, and says it can hang with Opus 5.5. And on Artificial Analysis, Opus 5.5 has slipped from number one at launch, to number ten today."
+ },
+ {
+  "id": "p13",
+  "start": 256.437,
+  "end": 282.614,
+  "text": "Here's what 5.6 has to beat. Opus 5.5 costs 4 dollars per million input tokens and 20 dollars output, with a one million token context. It scored 66.4 percent on Terminal Bench 4, 81.8 on OSWorld, and 59 on the Artificial Analysis index. Even the leaked 61 would still sit below Fable 5.2 at 65, and GPT-6.2 Astra at 62."
+ },
+ {
+  "id": "p14",
+  "start": 282.964,
+  "end": 294.025,
+  "text": "And if that 20 percent price cut were real, Opus would drop to about 3 dollars 20 in, and 16 dollars out. Still more than Gemini 4 Neon, but a lot closer."
+ },
+ {
+  "id": "p15",
+  "start": 294.775,
+  "end": 312.814,
+  "text": "A few things push against the hype, though. The popular trick of asking it about recent events proves nothing, because Opus 5.5's training data already goes up to June. During the last Opus leak, a viral demo turned out to be fake. And Anthropic could skip the name entirely, and go straight to 5.7 or 6."
+ },
+ {
+  "id": "p16",
+  "start": 313.164,
+  "end": 322.274,
+  "text": "And AI YouTuber Matthew Berman went even further. He posted that everyone talking about Opus 5.6 is lying, and that the demos aren't real.\n"
+ },
+ {
+  "id": "p17",
+  "start": 323.024,
+  "end": 339.781,
+  "text": "So what should you watch for? When it's real, you'll see a new model ID in Anthropic's docs, on Bedrock and Google Cloud, and in the Claude app's model picker, along with an official post from Anthropic. Until then, every demo you see is somebody's guess, no matter how good it looks."
+ },
+ {
+  "id": "p18",
+  "start": 340.531,
+  "end": 364.13,
+  "text": "So here's my take. Something new is clearly being tested, the calendar says it's overdue, and the markets point to the first half of December. But there's no model ID, no docs page, no official word, and that spec sheet is unverified. My guess? Early to mid December. Let me know your prediction in the comments, and subscribe so you catch it the day it drops. I'll see you in the next one."
+ }
+]

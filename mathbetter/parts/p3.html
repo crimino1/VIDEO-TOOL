@@ -1,0 +1,257 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="160.320" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s331" class="clip scene" data-start="0.000" data-duration="4.460" data-track-index="2" style="z-index:81" data-layout-allow-overflow data-layout-allow-overlap><div id="c330" class="scene"><div id="k318" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:60px;line-height:1.08;color:#fff"><span id="w319" style="opacity:0">You</span> <span id="w320" style="opacity:0">didn't</span> <span id="w321" style="opacity:0">get</span> <span id="w322" style="opacity:0">faster</span> <span id="w323" style="opacity:0">at</span> <span id="w324" style="opacity:0">adding.</span></div><div id="k325" class="kw " style="left:210px;width:1500px;text-align:center;top:170px;font-size:64px;line-height:1.08;color:#e0b23a"><span id="w326" style="opacity:0">You</span> <span id="w327" style="opacity:0">saw</span> <span id="w328" style="opacity:0">a</span> <span id="w329" style="opacity:0">pattern.</span></div></div></div>
+<video id="v332" class="clip vid" src="assets/clips/mn_Formula_a2cfa8a4.mp4" muted playsinline data-start="4.460" data-duration="16.820" data-track-index="1" style="z-index:82;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v333" class="clip vid" src="assets/clips/pxb_sketch_fd4d35c2.mp4" muted playsinline data-start="21.280" data-duration="11.000" data-track-index="1" style="z-index:84;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s358" class="clip scene" data-start="21.280" data-duration="11.000" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap><div id="c357" class="scene"><div id="k334" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:60px;line-height:1.08;color:#fff"><span id="w335" style="opacity:0">It</span> <span id="w336" style="opacity:0">isn't</span> <span id="w337" style="opacity:0">speed</span> <span id="w338" style="opacity:0">with</span> <span id="w339" style="opacity:0">numbers.</span></div><div id="k340" class="kw " style="left:210px;width:1500px;text-align:center;top:170px;font-size:60px;line-height:1.08;color:#e0b23a"><span id="w341" style="opacity:0">It's</span> <span id="w342" style="opacity:0">spotting</span> <span id="w343" style="opacity:0">the</span> <span id="w344" style="opacity:0">structure.</span></div><div id="k345" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:48px;line-height:1.08;color:#fff"><span id="w346" style="opacity:0">A</span> <span id="w347" style="opacity:0">habit</span> <span id="w348" style="opacity:0">you</span> <span id="w349" style="opacity:0">can</span> <span id="w350" style="opacity:0">build,</span> <span id="w351" style="opacity:0">not</span> <span id="w352" style="opacity:0">a</span> <span id="w353" style="opacity:0">gift</span> <span id="w354" style="opacity:0">you're</span> <span id="w355" style="opacity:0">born</span> <span id="w356" style="opacity:0">with.</span></div></div></div>
+<div id="s370" class="clip scene" data-start="32.280" data-duration="8.540" data-track-index="2" style="z-index:87" data-layout-allow-overflow data-layout-allow-overlap><div id="c369" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch359" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; FOUR</div><div class="ti">Make it hard on purpose</div><div id="ru360" class="rule"></div></div><div id="k361" class="kw dark" style="left:210px;width:1500px;text-align:center;top:880px;font-size:50px;line-height:1.08;color:#fff"><span id="w362" style="opacity:0">The</span> <span id="w363" style="opacity:0">methods</span> <span id="w364" style="opacity:0">that</span> <span id="w365" style="opacity:0">work</span> <span id="w366" style="opacity:0">best</span> <span id="w367" style="opacity:0">feel</span> <span id="w368" style="opacity:0">worse.</span></div></div></div>
+<video id="v371" class="clip vid" src="assets/clips/pxb_library_student_263cde30.mp4" muted playsinline data-start="40.820" data-duration="5.120" data-track-index="1" style="z-index:88;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s377" class="clip scene" data-start="40.820" data-duration="5.120" data-track-index="2" style="z-index:90" data-layout-allow-overflow data-layout-allow-overlap><div id="c376" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf373" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt372" src="assets/gen/bjork_2014_ca0c14.jpg" alt="bjork_2014"></div><div id="tg374" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Robert Bjork</div><div class="r">Psychologist, UCLA</div></div><div id="pl375" class="place" style="top:850px"><div class="ru"></div><div class="l1">DESIRABLE DIFFICULTY</div><div class="l2"></div></div><div class="credit">Photo: UQx Think101, CC BY 3.0, via Wikimedia Commons</div></div></div>
+<video id="v378" class="clip vid" src="assets/clips/pxb_study_group_74e0bc45.mp4" muted playsinline data-start="45.940" data-duration="7.700" data-track-index="1" style="z-index:91;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s395" class="clip scene" data-start="45.940" data-duration="7.700" data-track-index="2" style="z-index:93" data-layout-allow-overflow data-layout-allow-overlap><div id="c394" class="scene"><div id="k379" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:52px;line-height:1.08;color:#fff"><span id="w380" style="opacity:0">Smooth</span> <span id="w381" style="opacity:0">and</span> <span id="w382" style="opacity:0">easy</span> <span id="w383" style="opacity:0">often</span> <span id="w384" style="opacity:0">doesn't</span> <span id="w385" style="opacity:0">stick.</span></div><div id="k386" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:52px;line-height:1.08;color:#fff"><span id="w387" style="opacity:0">Effort</span> <span id="w388" style="opacity:0">is</span> <span id="w389" style="opacity:0">your</span> <span id="w390" style="opacity:0">brain</span> <span id="w391" style="opacity:0">doing</span> <span id="w392" style="opacity:0">the</span> <span id="w393" style="opacity:0">work.</span></div></div></div>
+<div id="s404" class="clip scene" data-start="53.640" data-duration="7.900" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><div id="c403" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf397" class="portrait" style="left:210px;top:190px;width:380px;height:480px;opacity:0"><img id="pt396" src="assets/gen/roediger_washu_f3012a.jpg" alt="roediger_washu"></div><div id="tg398" class="tag" style="left:210px;top:700px;opacity:0"><div class="n">Henry Roediger</div><div class="r">Psychologist</div></div><div id="pf400" class="portrait" style="left:1090px;top:190px;width:380px;height:480px;opacity:0"><img id="pt399" src="assets/gen/karpicke_purdue_lab_328e6f.jpg" alt="karpicke_purdue_lab"></div><div id="tg401" class="tag" style="left:1090px;top:700px;opacity:0"><div class="n">Jeffrey Karpicke</div><div class="r">Psychologist</div></div><div id="pl402" class="place" style="top:850px"><div class="ru"></div><div class="l1">THE TESTING EXPERIMENT</div><div class="l2">2006</div></div><div class="credit">Photos: Washington University in St. Louis; Purdue University</div></div></div>
+<div id="s414" class="clip scene" data-start="61.540" data-duration="2.240" data-track-index="2" style="z-index:95" data-layout-allow-overflow data-layout-allow-overlap><div id="c413" class="scene"><div id="k405" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w406" style="opacity:0">Group</span> <span id="w407" style="opacity:0">1:</span> <span id="w408" style="opacity:0">read</span> <span id="w409" style="opacity:0">it</span> <span id="w410" style="opacity:0">again</span> <span id="w411" style="opacity:0">and</span> <span id="w412" style="opacity:0">again</span></div></div></div>
+<div id="s425" class="clip scene" data-start="63.780" data-duration="4.740" data-track-index="2" style="z-index:96" data-layout-allow-overflow data-layout-allow-overlap><div id="c424" class="scene"><div id="k415" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:50px;line-height:1.08;color:#fff"><span id="w416" style="opacity:0">Group</span> <span id="w417" style="opacity:0">2:</span> <span id="w418" style="opacity:0">read</span> <span id="w419" style="opacity:0">once,</span> <span id="w420" style="opacity:0">then</span> <span id="w421" style="opacity:0">recall</span> <span id="w422" style="opacity:0">from</span> <span id="w423" style="opacity:0">memory</span></div></div></div>
+<div id="s442" class="clip scene" data-start="68.520" data-duration="6.680" data-track-index="2" style="z-index:97" data-layout-allow-overflow data-layout-allow-overlap><div id="c441" class="scene"><div id="k426" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:50px;line-height:1.08;color:#fff"><span id="w427" style="opacity:0">The</span> <span id="w428" style="opacity:0">re-readers</span> <span id="w429" style="opacity:0">felt</span> <span id="w430" style="opacity:0">more</span> <span id="w431" style="opacity:0">confident.</span></div><div id="k432" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:46px;line-height:1.08;color:#fff"><span id="w433" style="opacity:0">A</span> <span id="w434" style="opacity:0">week</span> <span id="w435" style="opacity:0">later,</span> <span id="w436" style="opacity:0">the</span> <span id="w437" style="opacity:0">self-testers</span> <span id="w438" style="opacity:0">remembered</span> <span id="w439" style="opacity:0">far</span> <span id="w440" style="opacity:0">more.</span></div></div></div>
+<div id="s452" class="clip scene" data-start="75.200" data-duration="6.780" data-track-index="2" style="z-index:98" data-layout-allow-overflow data-layout-allow-overlap><div id="c451" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:454px;top:140px;width:1012px;height:760px"><div id="ss443" class="ssin"><img src="assets/gen/ss_roediger_karpicke_2006_p1_e40d7b.jpg" alt="ss_roediger_karpicke_2006_p1"></div></div><div id="k444" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w445" style="opacity:0">Familiar</span> <span id="w446" style="opacity:0">isn't</span> <span id="w447" style="opacity:0">the</span> <span id="w448" style="opacity:0">same</span> <span id="w449" style="opacity:0">as</span> <span id="w450" style="opacity:0">knowing.</span></div><div class="credit">Roediger &amp; Karpicke, Psychological Science 2006</div></div></div>
+<div id="s455" class="clip scene" data-start="81.980" data-duration="4.100" data-track-index="2" style="z-index:99" data-layout-allow-overflow data-layout-allow-overlap><div id="c454" class="scene"><div id="pl453" class="place" style="top:850px"><div class="ru"></div><div class="l1">GERMANY</div><div class="l2">THE 1880s</div></div></div></div>
+<div id="s459" class="clip scene" data-start="86.080" data-duration="7.000" data-track-index="2" style="z-index:100" data-layout-allow-overflow data-layout-allow-overlap><div id="c458" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:318px;top:160px;width:484px;height:640px"><img id="ph456" src="assets/gen/ebbinghaus_34a815.jpg" alt="ebbinghaus"></div><div id="tg457" class="tag" style="left:900px;top:420px;opacity:0"><div class="n">Hermann Ebbinghaus</div><div class="r">Psychologist</div></div><div class="credit">Photo: Hermann Ebbinghaus (public domain)</div></div></div>
+<video id="v460" class="clip vid" src="assets/clips/mn_Forgetting_bfab79b6.mp4" muted playsinline data-start="93.080" data-duration="17.600" data-track-index="1" style="z-index:101;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s463" class="clip scene" data-start="110.680" data-duration="4.940" data-track-index="2" style="z-index:103" data-layout-allow-overflow data-layout-allow-overlap><div id="c462" class="scene"><div id="pl461" class="place" style="top:850px"><div class="ru"></div><div class="l1">SEVENTH GRADE, TAMPA</div><div class="l2">2014</div></div></div></div>
+<div id="s466" class="clip scene" data-start="115.620" data-duration="4.780" data-track-index="2" style="z-index:104" data-layout-allow-overflow data-layout-allow-overlap><div id="c465" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame ss" style="left:529px;top:140px;width:862px;height:760px"><div id="ss464" class="ssin"><img src="assets/gen/ss_rohrer_2014_p1_41be05.jpg" alt="ss_rohrer_2014_p1"></div></div><div class="credit">Rohrer, Dedrick &amp; Burgess, Psychonomic Bulletin &amp; Review 2014</div></div></div>
+<video id="v467" class="clip vid" src="assets/clips/mn_Interleave_42fc302e.mp4" muted playsinline data-start="120.400" data-duration="18.860" data-track-index="1" style="z-index:105;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s489" class="clip scene" data-start="139.260" data-duration="12.680" data-track-index="2" style="z-index:107" data-layout-allow-overflow data-layout-allow-overlap><div id="c488" class="scene"><div id="k468" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:46px;line-height:1.08;color:#fff"><span id="w469" style="opacity:0">Same</span> <span id="w470" style="opacity:0">type</span> <span id="w471" style="opacity:0">every</span> <span id="w472" style="opacity:0">time:</span> <span id="w473" style="opacity:0">you</span> <span id="w474" style="opacity:0">never</span> <span id="w475" style="opacity:0">have</span> <span id="w476" style="opacity:0">to</span> <span id="w477" style="opacity:0">choose.</span></div><div id="k478" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:46px;line-height:1.08;color:#fff"><span id="w479" style="opacity:0">Mixed:</span> <span id="w480" style="opacity:0">you</span> <span id="w481" style="opacity:0">ask</span> <span id="w482" style="opacity:0">what</span> <span id="w483" style="opacity:0">kind</span> <span id="w484" style="opacity:0">of</span> <span id="w485" style="opacity:0">problem</span> <span id="w486" style="opacity:0">it</span> <span id="w487" style="opacity:0">is.</span></div></div></div>
+<video id="v490" class="clip vid" src="assets/clips/pxb_whiteboard_6ed54f89.mp4" muted playsinline data-start="151.940" data-duration="1.580" data-track-index="1" style="z-index:108;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s499" class="clip scene" data-start="151.940" data-duration="1.580" data-track-index="2" style="z-index:110" data-layout-allow-overflow data-layout-allow-overlap><div id="c498" class="scene"><div id="k491" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:64px;line-height:1.08;color:#fff"><span id="w492" style="opacity:0">That</span> <span id="w493" style="opacity:0">question</span> <span id="w494" style="opacity:0">is</span> <span id="w495" style="opacity:0">half</span> <span id="w496" style="opacity:0">of</span> <span id="w497" style="opacity:0">math.</span></div></div></div>
+<div id="s507" class="clip scene" data-start="153.520" data-duration="6.700" data-track-index="2" style="z-index:111" data-layout-allow-overflow data-layout-allow-overlap><div id="c506" class="scene"><div id="k500" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:56px;line-height:1.08;color:#fff"><span id="w501" style="opacity:0">The</span> <span id="w502" style="opacity:0">strain</span> <span id="w503" style="opacity:0">is</span> <span id="w504" style="opacity:0">the</span> <span id="w505" style="opacity:0">point.</span></div></div></div>
+<video id="v508" class="clip vid" src="assets/clips/mn_NegQ_c71aebe7.mp4" muted playsinline data-start="160.220" data-duration="0.100" data-track-index="1" style="z-index:112;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+</div>
+<script>window.PXS = [[0.0, 4.46, "pattern_eyes", {"idea": 4.1, "cam": {"z": [1.0, 1.15], "x": [320, 360], "y": [180, 180]}, "tin": "zoom", "tout": "zoom"}], [32.28, 40.82, "gym", {"easy": 99, "heavy": 99, "tin": "fade", "tout": "fade"}], [53.64, 61.54, "reread", {"relax": 99, "tin": "fade", "tout": "fade"}], [61.54, 63.78, "reread", {"relax": 1.3, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [63.78, 68.52, "recall", {"close": 1.16, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [68.52, 75.2, "week_later", {"flip": 2.62, "result": 4.66, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [75.2, 81.98, "reread", {"relax": -9, "tin": "fade", "tout": "fade"}], [81.98, 86.08, "ebbinghaus", {"cards": 0.3, "test": 8.58, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [86.08, 93.08, "ebbinghaus", {"cards": -9, "test": 99, "tin": "fade", "tout": "fade"}], [110.68, 115.62, "classroom7", {"blocked": 99, "mixed": 99, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [115.62, 120.4, "classroom7", {"blocked": 99, "mixed": 99, "tin": "fade", "tout": "fade"}], [139.26, 151.94, "classroom7", {"blocked": 0.3, "mixed": 8.96, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [153.52, 160.22, "gym", {"easy": 0.2, "heavy": 5.3, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dread.js"></script>
+<script src="assets/js/scenes/dz.js"></script>
+<script src="assets/js/scenes/gauss.js"></script>
+<script src="assets/js/scenes/minds.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/practice.js"></script>
+<script src="assets/js/scenes/wiles.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.set("#w319",{opacity:1},3.480);
+tl.set("#w320",{opacity:1},17.600);
+tl.set("#w321",{opacity:1},308.440);
+tl.set("#w322",{opacity:1},308.440);
+tl.set("#w323",{opacity:1},308.980);
+tl.set("#w324",{opacity:1},308.980);
+tl.set("#w326",{opacity:1},17.500);
+tl.set("#w327",{opacity:1},274.620);
+tl.set("#w328",{opacity:1},284.820);
+tl.set("#w329",{opacity:1},319.920);
+tl.fromTo("#v333",{scale:1.0},{scale:1.06,duration:11.0,ease:"none"},21.280);
+tl.set("#w335",{opacity:1},25.920);
+tl.set("#w336",{opacity:1},79.980);
+tl.set("#w337",{opacity:1},79.980);
+tl.set("#w338",{opacity:1},95.300);
+tl.set("#w339",{opacity:1},95.300);
+tl.set("#w341",{opacity:1},207.840);
+tl.set("#w342",{opacity:1},207.840);
+tl.set("#w343",{opacity:1},212.360);
+tl.set("#w344",{opacity:1},212.360);
+tl.set("#w346",{opacity:1},30.360);
+tl.set("#w347",{opacity:1},30.360);
+tl.set("#w348",{opacity:1},30.700);
+tl.set("#w349",{opacity:1},169.640);
+tl.set("#w350",{opacity:1},169.640);
+tl.set("#w351",{opacity:1},331.880);
+tl.set("#w352",{opacity:1},332.160);
+tl.set("#w353",{opacity:1},332.160);
+tl.set("#w354",{opacity:1},332.160);
+tl.set("#w355",{opacity:1},332.160);
+tl.set("#w356",{opacity:1},332.160);
+tl.fromTo("#ch359",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},32.430);
+tl.fromTo("#ru360",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},32.780);
+tl.set("#w362",{opacity:1},39.920);
+tl.set("#w363",{opacity:1},39.920);
+tl.set("#w364",{opacity:1},52.020);
+tl.set("#w365",{opacity:1},154.220);
+tl.set("#w366",{opacity:1},154.220);
+tl.set("#w367",{opacity:1},156.060);
+tl.set("#w368",{opacity:1},156.060);
+tl.fromTo("#v371",{scale:1.0},{scale:1.06,duration:5.12,ease:"none"},40.820);
+tl.fromTo("#pt372",{scale:1.0},{scale:1.04,duration:5.12,ease:"none"},40.820);
+tl.fromTo("#pf373",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},40.820);
+tl.fromTo("#tg374",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},41.580);
+tl.fromTo("#pl375",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},43.340);
+tl.fromTo("#v378",{scale:1.0},{scale:1.06,duration:7.7,ease:"none"},45.940);
+tl.set("#w380",{opacity:1},46.560);
+tl.set("#w381",{opacity:1},46.920);
+tl.set("#w382",{opacity:1},47.100);
+tl.set("#w383",{opacity:1},48.040);
+tl.set("#w384",{opacity:1},48.320);
+tl.set("#w385",{opacity:1},48.640);
+tl.set("#k379",{opacity:0},49.560);
+tl.set("#w387",{opacity:1},50.040);
+tl.set("#w388",{opacity:1},51.260);
+tl.set("#w389",{opacity:1},75.660);
+tl.set("#w390",{opacity:1},315.460);
+tl.set("#w391",{opacity:1},315.460);
+tl.set("#w392",{opacity:1},316.360);
+tl.set("#w393",{opacity:1},327.940);
+tl.fromTo("#pt396",{scale:1.0},{scale:1.04,duration:7.9,ease:"none"},53.640);
+tl.fromTo("#pf397",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},53.640);
+tl.fromTo("#tg398",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},57.280);
+tl.fromTo("#pt399",{scale:1.0},{scale:1.04,duration:7.9,ease:"none"},53.640);
+tl.fromTo("#pf400",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},53.640);
+tl.fromTo("#tg401",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},58.820);
+tl.fromTo("#pl402",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},55.940);
+tl.set("#w406",{opacity:1},61.800);
+tl.set("#w407",{opacity:1},84.020);
+tl.set("#w408",{opacity:1},229.200);
+tl.set("#w409",{opacity:1},229.820);
+tl.set("#w410",{opacity:1},229.820);
+tl.set("#w411",{opacity:1},258.700);
+tl.set("#w412",{opacity:1},258.700);
+tl.set("#w416",{opacity:1},64.340);
+tl.set("#w417",{opacity:1},114.460);
+tl.set("#w418",{opacity:1},229.200);
+tl.set("#w419",{opacity:1},229.200);
+tl.set("#w420",{opacity:1},247.020);
+tl.set("#w421",{opacity:1},247.020);
+tl.set("#w422",{opacity:1},247.020);
+tl.set("#w423",{opacity:1},247.020);
+tl.set("#w427",{opacity:1},72.020);
+tl.set("#w428",{opacity:1},72.020);
+tl.set("#w429",{opacity:1},72.020);
+tl.set("#w430",{opacity:1},74.200);
+tl.set("#w431",{opacity:1},74.200);
+tl.set("#k426",{opacity:0},71.140);
+tl.set("#w433",{opacity:1},80.820);
+tl.set("#w434",{opacity:1},92.180);
+tl.set("#w435",{opacity:1},132.420);
+tl.set("#w436",{opacity:1},134.460);
+tl.set("#w437",{opacity:1},134.460);
+tl.set("#w438",{opacity:1},134.460);
+tl.set("#w439",{opacity:1},134.460);
+tl.set("#w440",{opacity:1},212.880);
+tl.fromTo("#ss443",{scale:1.0},{scale:1.04,duration:6.78,ease:"none"},75.200);
+tl.set("#w445",{opacity:1},79.620);
+tl.set("#w446",{opacity:1},79.980);
+tl.set("#w447",{opacity:1},80.420);
+tl.set("#w448",{opacity:1},80.560);
+tl.set("#w449",{opacity:1},80.820);
+tl.set("#w450",{opacity:1},80.940);
+tl.fromTo("#pl453",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},84.020);
+tl.fromTo("#ph456",{scale:1.0},{scale:1.05,duration:7.0,ease:"none"},86.080);
+tl.fromTo("#tg457",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},86.480);
+tl.fromTo("#pl461",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},114.460);
+tl.fromTo("#ss464",{scale:1.0},{scale:1.04,duration:4.78,ease:"none"},115.620);
+tl.set("#w469",{opacity:1},142.600);
+tl.set("#w470",{opacity:1},142.880);
+tl.set("#w471",{opacity:1},262.240);
+tl.set("#w472",{opacity:1},299.860);
+tl.set("#w473",{opacity:1},337.000);
+tl.set("#w474",{opacity:1},337.000);
+tl.set("#w475",{opacity:1},354.060);
+tl.set("#w476",{opacity:1},354.160);
+tl.set("#w477",{opacity:1},354.160);
+tl.set("#k468",{opacity:0},148.220);
+tl.set("#w479",{opacity:1},148.220);
+tl.set("#w480",{opacity:1},148.580);
+tl.set("#w481",{opacity:1},149.860);
+tl.set("#w482",{opacity:1},150.140);
+tl.set("#w483",{opacity:1},150.360);
+tl.set("#w484",{opacity:1},150.620);
+tl.set("#w485",{opacity:1},150.720);
+tl.set("#w486",{opacity:1},151.060);
+tl.set("#w487",{opacity:1},151.260);
+tl.fromTo("#v490",{scale:1.0},{scale:1.06,duration:1.58,ease:"none"},151.940);
+tl.set("#w492",{opacity:1},166.520);
+tl.set("#w493",{opacity:1},166.520);
+tl.set("#w494",{opacity:1},173.660);
+tl.set("#w495",{opacity:1},173.660);
+tl.set("#w496",{opacity:1},278.660);
+tl.set("#w497",{opacity:1},283.560);
+tl.set("#w501",{opacity:1},159.340);
+tl.set("#w502",{opacity:1},159.340);
+tl.set("#w503",{opacity:1},173.660);
+tl.set("#w504",{opacity:1},177.100);
+tl.set("#w505",{opacity:1},312.180);
+tl.set({}, {}, 160.320);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

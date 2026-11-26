@@ -1,0 +1,89 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "78d60f5e-b1d2-4cea-b5f2-b01b190cdec0",
+   "title": "Zen",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1740769",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1740769&format=mp32",
+   "creator": "Mazelo Nostra",
+   "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "meditative",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "mystery",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "nature",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Zen\" by Mazelo Nostra is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Salt Lounge - Spa &amp; Wellness",
+    "foreign_landing_url": "https://www.jamendo.com/album/191948/salt-lounge-spa-and-wellness",
+    "creator": "Mazelo Nostra",
+    "creator_url": "https://www.jamendo.com/artist/470592/Mazelo_Nostra",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 303000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/",
+   "related_url": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/78d60f5e-b1d2-4cea-b5f2-b01b190cdec0/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

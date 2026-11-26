@@ -1,0 +1,78 @@
+[0:00.00] In July 2025, a startup founder named Jason Lemkin was about a week into an experiment.
+[0:08.16] He was building a real product without writing the code himself.
+[0:12.12] He described what he wanted, and an AI agent on a platform called Replit built it, and for a while it was going great.
+[0:21.22] Then one evening he told the agent to stop, a full freeze, no more changes without his permission.
+[0:27.62] He typed part of it in capital letters and signed off for the night.
+[0:32.72] The next day, the live database was gone. Records for more than 1 ,200 executives and over a thousand companies wiped.
+[0:42.08] When he asked the agent what happened, it admitted it had deleted everything during the freeze.
+[0:47.80] It said it had panicked. It rated its own mistake 95 out of 100.
+[0:52.72] And then it told him the data could never be recovered. Hold on to that last detail.
+[0:58.26] We're coming back to it because it turns out to be the most important part of the story.
+[1:03.30] Welcome to bit by bit. I want to be upfront about something.
+[1:07.18] I use AI to write code almost every day, and I'm not going to pretend I don't.
+[1:12.26] This video isn't about quitting. It's about one specific trap a lot of us are walking into, and what the research says is happening to our skills while we're inside it.
+[1:23.98] Start with where the phrase came from. In February 2025, Andre Carpathi, one of the co -founders of Open AI, posted about a new way he'd been programming.
+[1:35.88] He called it Vibe Coding. You talk to the AI, accept everything it suggests, never read the changes, and, in his words, forget that the code even exists.
+[1:47.88] The internet loved it. Within weeks, the phrase was everywhere.
+[1:51.98] But almost nobody quoted the rest of the post. He said this was for throwaway weekend projects.
+[1:58.92] That was the fine print, and it was there from day one. A year later, he called the whole thing a throwaway shower thought and said he'd moved on to something more careful.
+[2:08.80] So the person who named Vibe Coding scoped it to toys. The rest of us turned it into a career plan.
+[2:15.58] Okay, but does it matter? If the app works, who cares how it got written?
+[2:20.33] For the first few weeks, nobody. AI is very good at the first 80 % of an app.
+[2:26.44] Login pages, forms, dashboards, things that have been built a million times.
+[2:32.42] Then a user emails you. They keep getting logged out, at random, only on their phone.
+[2:38.34] So you open the project, and it's 4 ,000 lines you have never read.
+[2:42.70] You're now debugging a stranger's code base, except the stranger is you.
+[2:47.50] That's the cost you can see. There's another one you can't. And that's where a non -profit research lab called Meta comes in.
+[2:55.20] In 2025, they ran an experiment with 16 experienced open source developers, doing real tasks in big projects they had worked on for years.
+[3:05.52] Each task was randomly assigned. AI allowed, or AI banned. Before they started, the developers predicted AI would make them about 24 % faster.
+[3:17.25] With AI, they were 19 % slower. But the slowdown isn't the part that stuck with me.
+[3:23.92] Afterwards, the researchers asked the developers how it went.
+[3:28.06] And they still believed AI had made them about 20 % faster. Think about what that means.
+[3:34.60] These are experts with years inside these code bases, and their gut feeling pointed the wrong way.
+[3:40.70] The tool felt fast. Typing less feels like progress. Watching code appear feels like progress.
+[3:47.66] The clock disagreed. Now, fair warning about that study. It's small.
+[3:52.80] It used early 2025 tools. And those have improved a lot since.
+[3:57.54] And it tested experts on code they already knew deeply, which is exactly where AI has the least to add.
+[4:04.30] The authors said so themselves. So please don't leave this video quoting, AI makes you 19 % slower like it's a law of physics.
+[4:13.24] The finding I'd keep is the other one. Your sense of how much AI is helping you is not a reliable instrument.
+[4:20.48] So that's speed. What about skill? In January, 2026, researchers at Anthropic, the company behind Claude, published an experiment on exactly that, which, credit to them, is a slightly awkward thing for an AI company to publish.
+[4:38.66] They took 52 mostly junior developers and had them learn a Python library none of them had used before.
+[4:45.90] Half could use an AI assistant. Half worked by hand. Then everybody took a quiz with no AI.
+[4:53.10] The AI group finished about two minutes sooner. A gap too small to mean anything.
+[4:58.32] On the quiz, the by hand group averaged 67%. The AI group averaged 50.
+[5:04.66] And the biggest gap was in debugging. Working out why code is broken, which is a problem because that's the exact skill you need to supervise an AI that writes code.
+[5:15.42] To be fair again, this was one short session and the quiz came right after it.
+[5:20.66] Nobody checked a month later, but there's a detail in the results that I think matters more than the headline.
+[5:27.46] Not everyone in the AI group did badly. The difference was how they used it.
+[5:32.72] The people who handed over the whole task and pasted back whatever came out scored under 40%.
+[5:38.76] The people who asked it questions, why does this work? What does this line do?
+[5:44.16] Scored above 65. Same tool. Same task. Same half hour. Very different brains walking out of the room.
+[5:52.68] It's the same reason you can follow GPS to a place 20 times and still not know the way there.
+[5:58.72] You arrived every single time. You just never built the map.
+[6:02.78] Now, there's an obvious objection and it's a good one. People said calculators would rot our brains.
+[6:09.58] They said it about compilers and about stack overflow. Every generation of programmers let's go with something.
+[6:16.60] Almost nobody writes assembly by hand anymore. And we're fine.
+[6:21.40] But there's a difference. A compiler is boring. It does the same thing every time and you never have to double check the machine code it produces.
+[6:31.62] An AI model is more like a very fast, very confident new hire.
+[6:36.84] Usually right. Sometimes wrong in a way that looks exactly like right.
+[6:42.14] You can only handwork to someone like that if you can tell the two apart.
+[6:46.90] And telling them apart is the skill that study saw slipping.
+[6:50.82] That's the trap. The more you lean on it, the worse you get at noticing when you shouldn't.
+[6:56.64] So here's how I try to stay out of it. Three habits and none of them mean giving up the tools.
+[7:02.92] One, don't ship what you can't explain. Before I keep anything an AI wrote, I walk through it out loud.
+[7:10.90] If I reach a line and my explanation turns into and then this part does something I stop.
+[7:17.70] That line is now my homework. Two, guess first. Before I send the prompt, I take 30 seconds and write down how I would solve it.
+[7:26.42] One or two sentences. Then I compare. If the AI's answer matches mine, great.
+[7:32.90] If it's different, I've just found something worth learning.
+[7:36.74] Skip the guess and every answer looks equally reasonable. Three, fly by hand sometimes.
+[7:44.28] Airline pilots let the autopilot handle most of a flight. They also keep practicing manual flying because the moment the autopilot hands back control is the worst possible moment to be rusty.
+[7:57.22] So every so often, I build something small with every assistant switched off.
+[8:02.46] It's humbling. That's the point. And when it really is a throwaway, a joke website for a friend's birthday, a script you'll run once, vibe away.
+[8:12.44] That's what the idea was for. Now, back to that database. Remember what the agent said?
+[8:19.46] The data was gone for good. That wasn't true. Lemkin didn't take its word for it.
+[8:25.06] He ran the rollback himself and the data came back. The AI was confident and wrong.
+[8:31.52] The person who was willing to check got his work back. That's the job now.
+[8:36.12] You'll never outtype the machine. You can be the one who knows when it's wrong.
+[8:41.04] Nobody builds that in one prompt. You build it bit by bit. If this was useful, subscribe to bit by bit and tell me in the comments what's one thing you let AI do that you couldn't do yourself anymore?
+[8:54.78] I'll put mine down there first.

@@ -1,0 +1,1351 @@
+{
+ "result_count": 240,
+ "page_count": 12,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "4a04dba6-cfff-4639-ad19-975ad63a1166",
+   "title": "Calm after war",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1342800",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1342800&format=mp32",
+   "creator": "Oncle Fab",
+   "creator_url": "https://www.jamendo.com/artist/487981/Oncle_Fab_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "christian",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "evangelic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Calm after war\" by Oncle Fab is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "In the Garden",
+    "foreign_landing_url": "https://www.jamendo.com/album/156897/in-the-garden",
+    "creator": "Oncle Fab",
+    "creator_url": "https://www.jamendo.com/artist/487981/Oncle_Fab_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 222000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/4a04dba6-cfff-4639-ad19-975ad63a1166/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/4a04dba6-cfff-4639-ad19-975ad63a1166/",
+   "related_url": "https://api.openverse.org/v1/audio/4a04dba6-cfff-4639-ad19-975ad63a1166/related/",
+   "waveform": "https://api.openverse.org/v1/audio/4a04dba6-cfff-4639-ad19-975ad63a1166/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c",
+   "title": "At last, calm",
+   "indexed_on": "2022-04-01T07:25:28.481246Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/341547",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=341547&format=mp32",
+   "creator": "Tymphony",
+   "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"At last, calm\" by Tymphony is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm",
+    "foreign_landing_url": "https://www.jamendo.com/album/45082/calm",
+    "creator": "Tymphony",
+    "creator_url": "https://www.jamendo.com/artist/350154/Tymphony",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 179000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/",
+   "related_url": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ed8f3329-f2de-4b6c-8dde-ceffdc5bd95c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8dfedbcf-6b92-4b69-b1fb-5fb43e680541",
+   "title": "ISTWA - Mint Calm Day",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1325510",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1325510&format=mp32",
+   "creator": "Tunguska Electronic Music Society",
+   "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "psychedelic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"ISTWA - Mint Calm Day\" by Tunguska Electronic Music Society is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Phaeton Chronicles 3",
+    "foreign_landing_url": "https://www.jamendo.com/album/156955/phaeton-chronicles-3",
+    "creator": "Tunguska Electronic Music Society",
+    "creator_url": "https://www.jamendo.com/artist/343607/Tunguska_Chillout_Grooves_vol.1",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 311000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8dfedbcf-6b92-4b69-b1fb-5fb43e680541/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8dfedbcf-6b92-4b69-b1fb-5fb43e680541/",
+   "related_url": "https://api.openverse.org/v1/audio/8dfedbcf-6b92-4b69-b1fb-5fb43e680541/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8dfedbcf-6b92-4b69-b1fb-5fb43e680541/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "98f2e262-8fac-4e23-bfc4-bfc4f9acd72b",
+   "title": "Corvois calm",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/151039",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=151039&format=mp32",
+   "creator": "Torley on Piano",
+   "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "classical"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Corvois calm\" by Torley on Piano is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "solo piano 7: Improvisations for a New Age",
+    "foreign_landing_url": "https://www.jamendo.com/album/21576/solo-piano-7-improvisations-for-a-new-age",
+    "creator": "Torley on Piano",
+    "creator_url": "https://www.jamendo.com/artist/338247/Torley_on_Piano",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 108000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/",
+   "related_url": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/related/",
+   "waveform": "https://api.openverse.org/v1/audio/98f2e262-8fac-4e23-bfc4-bfc4f9acd72b/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9781a42d-dcac-44da-b5cd-e7f1d3f0c2c5",
+   "title": "Michael Eutanasia - BreakfasteR (Calm Of Beast Promo 2009)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/477292",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=477292&format=mp32",
+   "creator": "Michael Eutanasia",
+   "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Michael Eutanasia - BreakfasteR (Calm Of Beast Promo 2009)\" by Michael Eutanasia is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Michael Eutanasia - Calm Of Beast",
+    "foreign_landing_url": "https://www.jamendo.com/album/56285/michael-eutanasia-calm-of-beast",
+    "creator": "Michael Eutanasia",
+    "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 385000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9781a42d-dcac-44da-b5cd-e7f1d3f0c2c5/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9781a42d-dcac-44da-b5cd-e7f1d3f0c2c5/",
+   "related_url": "https://api.openverse.org/v1/audio/9781a42d-dcac-44da-b5cd-e7f1d3f0c2c5/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9781a42d-dcac-44da-b5cd-e7f1d3f0c2c5/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "5cd9b49d-d4e3-4ae2-888e-32bee37343b1",
+   "title": "Michael Eutanasia - Calm of Beast (Promo 2009)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/477298",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=477298&format=mp32",
+   "creator": "Michael Eutanasia",
+   "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Michael Eutanasia - Calm of Beast (Promo 2009)\" by Michael Eutanasia is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Michael Eutanasia - Calm Of Beast",
+    "foreign_landing_url": "https://www.jamendo.com/album/56285/michael-eutanasia-calm-of-beast",
+    "creator": "Michael Eutanasia",
+    "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 417000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/5cd9b49d-d4e3-4ae2-888e-32bee37343b1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/5cd9b49d-d4e3-4ae2-888e-32bee37343b1/",
+   "related_url": "https://api.openverse.org/v1/audio/5cd9b49d-d4e3-4ae2-888e-32bee37343b1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/5cd9b49d-d4e3-4ae2-888e-32bee37343b1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a9709d86-5b62-47ae-a4cd-6a6cb39d21f2",
+   "title": "Une journ\u00e9e calme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1404722",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1404722&format=mp32",
+   "creator": "Boudu",
+   "creator_url": "https://www.jamendo.com/artist/495910/Boudu_(2)",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "cello",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_verylow",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Une journ\u00e9e calme\" by Boudu is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Boudu",
+    "foreign_landing_url": "https://www.jamendo.com/album/164264/boudu",
+    "creator": "Boudu",
+    "creator_url": "https://www.jamendo.com/artist/495910/Boudu_(2)",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 157000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a9709d86-5b62-47ae-a4cd-6a6cb39d21f2/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a9709d86-5b62-47ae-a4cd-6a6cb39d21f2/",
+   "related_url": "https://api.openverse.org/v1/audio/a9709d86-5b62-47ae-a4cd-6a6cb39d21f2/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a9709d86-5b62-47ae-a4cd-6a6cb39d21f2/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "501926b4-23f1-4314-beed-8a784b42a1d1",
+   "title": "The Calm Before The Storm",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1036509",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1036509&format=mp32",
+   "creator": "The Kyoto Connection",
+   "creator_url": "https://www.jamendo.com/artist/341585/The_Kyoto_Connection",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "pop",
+    "world"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Calm Before The Storm\" by The Kyoto Connection is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Wake Up",
+    "foreign_landing_url": "https://www.jamendo.com/album/122030/wake-up",
+    "creator": "The Kyoto Connection",
+    "creator_url": "https://www.jamendo.com/artist/341585/The_Kyoto_Connection",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 228000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/501926b4-23f1-4314-beed-8a784b42a1d1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/501926b4-23f1-4314-beed-8a784b42a1d1/",
+   "related_url": "https://api.openverse.org/v1/audio/501926b4-23f1-4314-beed-8a784b42a1d1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/501926b4-23f1-4314-beed-8a784b42a1d1/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "87daddd6-4b02-457d-b5c5-959503baa5bc",
+   "title": "sleep well calm remix",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/671177",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=671177&format=mp32",
+   "creator": "MG-Rizzello",
+   "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "electronic",
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calmful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "sampler",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"sleep well calm remix\" by MG-Rizzello is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Calm down",
+    "foreign_landing_url": "https://www.jamendo.com/album/77859/calm-down",
+    "creator": "MG-Rizzello",
+    "creator_url": "https://www.jamendo.com/artist/362935/MG-Rizzello",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 440000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/87daddd6-4b02-457d-b5c5-959503baa5bc/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/87daddd6-4b02-457d-b5c5-959503baa5bc/",
+   "related_url": "https://api.openverse.org/v1/audio/87daddd6-4b02-457d-b5c5-959503baa5bc/related/",
+   "waveform": "https://api.openverse.org/v1/audio/87daddd6-4b02-457d-b5c5-959503baa5bc/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "70fdfb98-1a6c-4a95-aefc-1f9628f3484d",
+   "title": "Calm down",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/968988",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=968988&format=mp32",
+   "creator": "Funkypipole",
+   "creator_url": "https://www.jamendo.com/artist/425197/Funkypipole",
+   "license": "by-sa",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Calm down\" by Funkypipole is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/fr/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Last summer",
+    "foreign_landing_url": "https://www.jamendo.com/album/114038/last-summer",
+    "creator": "Funkypipole",
+    "creator_url": "https://www.jamendo.com/artist/425197/Funkypipole",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 113000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/70fdfb98-1a6c-4a95-aefc-1f9628f3484d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/70fdfb98-1a6c-4a95-aefc-1f9628f3484d/",
+   "related_url": "https://api.openverse.org/v1/audio/70fdfb98-1a6c-4a95-aefc-1f9628f3484d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/70fdfb98-1a6c-4a95-aefc-1f9628f3484d/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "e1ac7d05-463c-442d-b849-2c9d5787b9fd",
+   "title": "Eaux calmes",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1296459",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1296459&format=mp32",
+   "creator": "Noziris",
+   "creator_url": "https://www.jamendo.com/artist/484893/Kazadrok",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "chillout"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "calme",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Eaux calmes\" by Noziris is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Lucky old",
+    "foreign_landing_url": "https://www.jamendo.com/album/154325/lucky-old",
+    "creator": "Noziris",
+    "creator_url": "https://www.jamendo.com/artist/484893/Kazadrok",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 237000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/e1ac7d05-463c-442d-b849-2c9d5787b9fd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/e1ac7d05-463c-442d-b849-2c9d5787b9fd/",
+   "related_url": "https://api.openverse.org/v1/audio/e1ac7d05-463c-442d-b849-2c9d5787b9fd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/e1ac7d05-463c-442d-b849-2c9d5787b9fd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9767572d-a898-4861-8abc-cdb584820ca4",
+   "title": "Calme",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/889545",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=889545&format=mp32",
+   "creator": "Laurent Danis",
+   "creator_url": "https://www.jamendo.com/artist/337939/Laurent_Danis",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Calme\" by Laurent Danis is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Le coeur au bout des doigts (remasteris\u00e9)",
+    "foreign_landing_url": "https://www.jamendo.com/album/104611/le-coeur-au-bout-des-doigts-remasterise",
+    "creator": "Laurent Danis",
+    "creator_url": "https://www.jamendo.com/artist/337939/Laurent_Danis",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 228000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9767572d-a898-4861-8abc-cdb584820ca4/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9767572d-a898-4861-8abc-cdb584820ca4/",
+   "related_url": "https://api.openverse.org/v1/audio/9767572d-a898-4861-8abc-cdb584820ca4/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9767572d-a898-4861-8abc-cdb584820ca4/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a4c9f807-583e-4187-9a6f-ec6ae68ce3eb",
+   "title": "Michael Eutanasia - Heist14 (Bonus Track - Calm Of Beast Promo 2009)",
+   "indexed_on": "2022-06-01T12:42:14.554074Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/477335",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=477335&format=mp32",
+   "creator": "Michael Eutanasia",
+   "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Michael Eutanasia - Heist14 (Bonus Track - Calm Of Beast Promo 2009)\" by Michael Eutanasia is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Michael Eutanasia - Calm Of Beast",
+    "foreign_landing_url": "https://www.jamendo.com/album/56285/michael-eutanasia-calm-of-beast",
+    "creator": "Michael Eutanasia",
+    "creator_url": "https://www.jamendo.com/artist/350615/Michael_Eutanasia",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 370000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a4c9f807-583e-4187-9a6f-ec6ae68ce3eb/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a4c9f807-583e-4187-9a6f-ec6ae68ce3eb/",
+   "related_url": "https://api.openverse.org/v1/audio/a4c9f807-583e-4187-9a6f-ec6ae68ce3eb/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a4c9f807-583e-4187-9a6f-ec6ae68ce3eb/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "3831eeeb-6385-43f6-9387-08cfba4fcfd3",
+   "title": "Calming the Spirit",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/674080",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=674080&format=mp32",
+   "creator": "Morris Masters",
+   "creator_url": "https://www.jamendo.com/artist/341740/Morris_Masters",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "blues"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lounge",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "softrock",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_high",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Calming the Spirit\" by Morris Masters is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Punderllella(the ghost in my cellar)",
+    "foreign_landing_url": "https://www.jamendo.com/album/78278/punderllella-the-ghost-in-my-cellar",
+    "creator": "Morris Masters",
+    "creator_url": "https://www.jamendo.com/artist/341740/Morris_Masters",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 80000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/3831eeeb-6385-43f6-9387-08cfba4fcfd3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/3831eeeb-6385-43f6-9387-08cfba4fcfd3/",
+   "related_url": "https://api.openverse.org/v1/audio/3831eeeb-6385-43f6-9387-08cfba4fcfd3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/3831eeeb-6385-43f6-9387-08cfba4fcfd3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "8a6ee1d7-de09-424d-aff5-2a745896cebd",
+   "title": "The Calm Before The Storm",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1204594",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1204594&format=mp32",
+   "creator": "TLE",
+   "creator_url": "https://www.jamendo.com/artist/443569/TLE",
+   "license": "by-nd",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "rock",
+    "southernrock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "70th",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "ballad",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"The Calm Before The Storm\" by TLE is licensed under CC BY-ND 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Parsec Away",
+    "foreign_landing_url": "https://www.jamendo.com/album/144696/parsec-away",
+    "creator": "TLE",
+    "creator_url": "https://www.jamendo.com/artist/443569/TLE",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 413000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/8a6ee1d7-de09-424d-aff5-2a745896cebd/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/8a6ee1d7-de09-424d-aff5-2a745896cebd/",
+   "related_url": "https://api.openverse.org/v1/audio/8a6ee1d7-de09-424d-aff5-2a745896cebd/related/",
+   "waveform": "https://api.openverse.org/v1/audio/8a6ee1d7-de09-424d-aff5-2a745896cebd/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "a115bfb7-1a1a-485d-9a38-2d4eb97b90e0",
+   "title": "PARPG Ruins (Calm, Amibient)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/875308",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=875308&format=mp32",
+   "creator": "Pal Zoltan Illes",
+   "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "gamemusic",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "scifi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "soft",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"PARPG Ruins (Calm, Amibient)\" by Pal Zoltan Illes is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Mantle Of Games",
+    "foreign_landing_url": "https://www.jamendo.com/album/102732/a-mantle-of-games",
+    "creator": "Pal Zoltan Illes",
+    "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 217000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a115bfb7-1a1a-485d-9a38-2d4eb97b90e0/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a115bfb7-1a1a-485d-9a38-2d4eb97b90e0/",
+   "related_url": "https://api.openverse.org/v1/audio/a115bfb7-1a1a-485d-9a38-2d4eb97b90e0/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a115bfb7-1a1a-485d-9a38-2d4eb97b90e0/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ad98cb42-8524-4c13-9391-1870cb525740",
+   "title": "on se calme",
+   "indexed_on": "2022-02-24T01:34:42.275707Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/76819",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=76819&format=mp32",
+   "creator": "babal",
+   "creator_url": "https://www.jamendo.com/artist/7821/babal",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic",
+    "techno"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "drums",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "hartdek",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"on se calme\" by babal is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "babal",
+    "foreign_landing_url": "https://www.jamendo.com/album/6918/babal",
+    "creator": "babal",
+    "creator_url": "https://www.jamendo.com/artist/7821/babal",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 329000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ad98cb42-8524-4c13-9391-1870cb525740/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ad98cb42-8524-4c13-9391-1870cb525740/",
+   "related_url": "https://api.openverse.org/v1/audio/ad98cb42-8524-4c13-9391-1870cb525740/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ad98cb42-8524-4c13-9391-1870cb525740/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "b0e784d2-83be-457e-8043-39bf572c32c3",
+   "title": "KEEP CALM (1994)",
+   "indexed_on": "2023-06-01T06:44:19.942567Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/200986",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=200986&format=mp32",
+   "creator": "photona",
+   "creator_url": "https://www.jamendo.com/artist/341071/photona",
+   "license": "by-nd",
+   "license_version": "2.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/2.0/de/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "electronic"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_veryhigh",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"KEEP CALM (1994)\" by photona is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/de/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Der Tunnel am Ende des Nichts",
+    "foreign_landing_url": "https://www.jamendo.com/album/29778/der-tunnel-am-ende-des-nichts",
+    "creator": "photona",
+    "creator_url": "https://www.jamendo.com/artist/341071/photona",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 254000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/b0e784d2-83be-457e-8043-39bf572c32c3/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/b0e784d2-83be-457e-8043-39bf572c32c3/",
+   "related_url": "https://api.openverse.org/v1/audio/b0e784d2-83be-457e-8043-39bf572c32c3/related/",
+   "waveform": "https://api.openverse.org/v1/audio/b0e784d2-83be-457e-8043-39bf572c32c3/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "fc67b815-4d2a-40df-bb5c-d716f6244143",
+   "title": "Wow ! Calm down !",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1400154",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1400154&format=mp32",
+   "creator": "Joseph Curwen",
+   "creator_url": "https://www.jamendo.com/artist/471813/Joseph_Curwen",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "experimental"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "dark",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "lmms",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "synthesizer",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Wow ! Calm down !\" by Joseph Curwen is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Non, je ne suis pas tr\u00e8s dou\u00e9 pour \u00e7a",
+    "foreign_landing_url": "https://www.jamendo.com/album/163863/non-je-ne-suis-pas-tres-doue-pour-ca",
+    "creator": "Joseph Curwen",
+    "creator_url": "https://www.jamendo.com/artist/471813/Joseph_Curwen",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 305000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/fc67b815-4d2a-40df-bb5c-d716f6244143/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/fc67b815-4d2a-40df-bb5c-d716f6244143/",
+   "related_url": "https://api.openverse.org/v1/audio/fc67b815-4d2a-40df-bb5c-d716f6244143/related/",
+   "waveform": "https://api.openverse.org/v1/audio/fc67b815-4d2a-40df-bb5c-d716f6244143/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1",
+   "title": "PARPG Solitude (Calm, Ambient)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/875307",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=875307&format=mp32",
+   "creator": "Pal Zoltan Illes",
+   "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "ambient",
+    "classical",
+    "rock"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "apocalyptique",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "bass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "doublebass",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "scifi",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"PARPG Solitude (Calm, Ambient)\" by Pal Zoltan Illes is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "A Mantle Of Games",
+    "foreign_landing_url": "https://www.jamendo.com/album/102732/a-mantle-of-games",
+    "creator": "Pal Zoltan Illes",
+    "creator_url": "https://www.jamendo.com/artist/344764/Pal_Zoltan_Illes",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 197000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/",
+   "related_url": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/related/",
+   "waveform": "https://api.openverse.org/v1/audio/bc5d7be7-f3f1-42fa-83f5-fe7b61d31db1/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

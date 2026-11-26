@@ -1,0 +1,1 @@
+One more thing I really like here. They trained it natively in 4-bit, in a format called NVFP4. So the 4-bit version isn't a squished copy of a bigger model. It is the model. You don't lose any quality to quantization. They also started with 384 experts and cut two thirds of them halfway through training, which is a big part of why it ended up this small.

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.85),0 0 18px rgba(0,0,0,.6)}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9;text-shadow:0 2px 6px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.55)}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="190.520" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<video id="s107v" class="clip" src="assets/clips/control_591.mp4" muted playsinline data-start="0.000" data-duration="9.000" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s107" class="clip" data-start="0.000" data-duration="9.000" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s107k"></div><div class="vig"></div></div>
+<div id="s108" class="clip" data-start="9.000" data-duration="45.580" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s108k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o109" class="line" style="opacity:0">It spreads like falling dominoes.</div></div>
+<div id="s110" class="clip" data-start="54.580" data-duration="16.140" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s110k"></div><div class="vig"></div><div id="o111" class="capt" style="opacity:0">30 July 2012</div></div>
+<div id="s112" class="clip" data-start="70.720" data-duration="14.420" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s112k"></div><div class="vig"></div><div id="o113" class="capt" style="opacity:0">31 July 2012 · about 1 pm</div><div id="o114" class="big" style="opacity:0">≈ 620 million people<small>about half of India</small></div></div>
+<div id="s115" class="clip" data-start="85.140" data-duration="2.940" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o116" class="big" style="opacity:0">The biggest blackout in history.</div></div>
+<video id="s117v" class="clip" src="assets/clips/indiatrain_679.mp4" muted playsinline data-start="88.080" data-duration="2.700" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s117" class="clip" data-start="88.080" data-duration="2.700" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s117k"></div><div class="vig"></div></div>
+<video id="s118v" class="clip" src="assets/clips/candle_681.mp4" muted playsinline data-start="90.780" data-duration="5.760" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s118" class="clip" data-start="90.780" data-duration="5.760" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s118k"></div><div class="vig"></div></div>
+<video id="s119v" class="clip" src="assets/clips/mine_687.mp4" muted playsinline data-start="96.540" data-duration="10.600" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s119" class="clip" data-start="96.540" data-duration="10.600" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s119k"></div><div class="fadeb"></div><div class="vig"></div><div id="o120" class="line" style="opacity:0">More than 200 miners were stuck underground in the dark.</div></div>
+<div id="s121" class="clip" data-start="107.140" data-duration="10.000" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s121k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o122" class="big" style="opacity:0">≈ 6 hours</div><div id="o123" class="line" style="opacity:0">All of them made it home.</div></div>
+<video id="s124v" class="clip" src="assets/clips/coal_708.mp4" muted playsinline data-start="117.140" data-duration="10.140" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s124" class="clip" data-start="117.140" data-duration="10.140" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s124k"></div><div class="fadeb"></div><div class="vig"></div><div id="o125" class="line" style="opacity:0">The grid trapped the very people keeping it alive.</div></div>
+<video id="s126v" class="clip" src="assets/clips/dam_718.mp4" muted playsinline data-start="127.280" data-duration="15.420" data-track-index="4" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5"></video>
+<div id="s126" class="clip" data-start="127.280" data-duration="15.420" data-track-index="3" style="position:absolute;inset:0;z-index:6;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s126k"></div><div class="fadeb"></div><div class="vig"></div><div id="o127" class="cap" style="opacity:0">Hydroelectric plants can start on their own</div></div>
+<div id="s128" class="clip" data-start="142.700" data-duration="6.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s128k"></div><div class="vig"></div></div>
+<div id="s129" class="clip" data-start="149.400" data-duration="12.780" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s129k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o130" class="line" style="opacity:0">The electrons go nowhere. They stop jiggling and sit.</div></div>
+<div id="s131" class="clip" data-start="162.180" data-duration="5.800" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s131k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o132" class="line" style="opacity:0">The energy was the part that moved.</div></div>
+<div id="s133" class="clip" data-start="167.980" data-duration="5.080" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s133k"></div><div class="vig"></div></div>
+<div id="s134" class="clip" data-start="173.060" data-duration="7.740" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s134k"></div><div class="vig"></div></div>
+<div id="s135" class="clip" data-start="180.800" data-duration="9.720" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s135k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o136" class="line" style="opacity:0">You didn&#x27;t empty the wire.</div><div id="o137" class="line" style="opacity:0">You just told it to stop pushing.</div></div>
+<div id="fout" class="black" style="z-index:9;opacity:0"></div>
+</div>
+<script>window.LAB = [[9.0, 54.58, "grid", {"mode": "cascade", "FT0": 600.08}], [54.58, 70.72, "indiamap", {"mode": "jul30", "FT0": 645.66}], [70.72, 85.14, "indiamap", {"mode": "jul31", "FT0": 661.8}], [107.14, 117.14, "grid", {"mode": "mine", "FT0": 698.22}], [142.7, 149.4, "indiamap", {"mode": "restore", "FT0": 733.78}], [149.4, 162.18, "wire", {"mode": "answer", "FT0": 740.48}], [162.18, 167.98, "poynting", {"mode": "energy", "FT0": 753.26}], [167.98, 173.06, "room", {"mode": "space2", "FT0": 759.06}], [173.06, 180.8, "grid", {"mode": "end", "FT0": 764.14}], [180.8, 190.52, "switch3d", {"mode": "end", "FT0": 771.88}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_energy.js"></script>
+<script src="assets/js/k_grid.js"></script>
+<script src="assets/js/k_wire.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s107k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.fromTo("#s108k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},9.000);
+tl.fromTo("#o109",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},47.120);
+tl.to("#o109",{opacity:0,duration:0.5,ease:"power1.inOut"},48.920);
+tl.fromTo("#s110k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},54.580);
+tl.fromTo("#o111",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},54.920);
+tl.fromTo("#s112k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},70.720);
+tl.fromTo("#o113",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},70.920);
+tl.fromTo("#o114",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},78.720);
+tl.to("#o114",{opacity:0,duration:0.5,ease:"power1.inOut"},84.320);
+tl.fromTo("#s115",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},85.140);
+tl.fromTo("#o116",{scale:0.97},{scale:1.04,duration:3.500,ease:"none"},85.320);
+tl.fromTo("#o116",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},85.320);
+tl.to("#o116",{opacity:0,duration:0.5,ease:"power1.inOut"},87.420);
+tl.fromTo("#s117k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},88.080);
+tl.fromTo("#s118k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},90.780);
+tl.fromTo("#s119k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},96.540);
+tl.fromTo("#o120",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},96.920);
+tl.to("#o120",{opacity:0,duration:0.5,ease:"power1.inOut"},106.420);
+tl.fromTo("#s121k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},107.140);
+tl.fromTo("#o122",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},107.320);
+tl.to("#o122",{opacity:0,duration:0.5,ease:"power1.inOut"},108.920);
+tl.fromTo("#o123",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},114.920);
+tl.to("#o123",{opacity:0,duration:0.5,ease:"power1.inOut"},116.420);
+tl.fromTo("#s124k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},117.140);
+tl.fromTo("#o125",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},122.320);
+tl.to("#o125",{opacity:0,duration:0.5,ease:"power1.inOut"},126.520);
+tl.fromTo("#s126k",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},127.280);
+tl.fromTo("#o127",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},136.620);
+tl.fromTo("#s128k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},142.700);
+tl.fromTo("#s129k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},149.400);
+tl.fromTo("#o130",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},153.520);
+tl.to("#o130",{opacity:0,duration:0.5,ease:"power1.inOut"},161.420);
+tl.fromTo("#s131k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},162.180);
+tl.fromTo("#o132",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},162.320);
+tl.to("#o132",{opacity:0,duration:0.5,ease:"power1.inOut"},167.420);
+tl.fromTo("#s133k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},167.980);
+tl.fromTo("#s134k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},173.060);
+tl.fromTo("#s135k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},180.800);
+tl.fromTo("#o136",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},184.720);
+tl.to("#o136",{opacity:0,duration:0.5,ease:"power1.inOut"},185.920);
+tl.fromTo("#o137",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},186.520);
+tl.fromTo("#fout",{opacity:0},{opacity:1,duration:1.4,ease:"power1.inOut"},189.020);
+tl.set({}, {}, 190.520);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

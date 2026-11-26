@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="412.235" data-width="1920" data-height="1080">
+<div id="s214" class="clip scene" data-start="0.000" data-duration="11.386" data-track-index="2" style="z-index:52"><div id="w215" class="sc"><div id="b216" class="body full"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i206" class="a hd" style="font-size:96px;text-align:center">How fast is it</div><div id="i207" class="a hd" style="font-size:96px;text-align:center">on <b class='acc'>my</b> machine?</div><div id="i208" class="a tx ink3" style="font-size:36px;text-align:center">No official local tokens/s. These are measured by people.</div><div class="hrow" style="gap:16px;justify-content:center"><div id="i209" class="a pill " style="">Mac mini</div><div id="i210" class="a pill " style="">MacBook</div><div id="i211" class="a pill " style="">Mac Studio</div><div id="i212" class="a pill " style="">RTX cards</div><div id="i213" class="a pill " style="">DGX Spark</div></div></div></div></div></div>
+<div id="s229" class="clip scene" data-start="11.386" data-duration="13.749" data-track-index="2" style="z-index:53"><div id="w230" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">Mac mini</div></div><div id="b231" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i218" class="a win" style="width:700px"><div class="wbar"><i></i><i></i><i></i><span>huggingface.co/datasets/pratikgx/inkling-2-mini-m5-pro-mac-mini-bench</span></div><div class="wbody" style="height:601px;position:relative"><img id="k217" src="assets/img/macmini_bench_d1444.jpg" alt="" style="width:700px;height:601px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i219" class="a tx ink3" style="font-size:28px;text-align:left">Mac mini · M5 Pro · 64 GB · IQ4_NL · llama.cpp</div><div class="bars" style="gap:16px"><div id="i222" class="a brow" style=""><div class="blab" style="width:250px"><span>Short prompt</span></div><div class="btrack" style="height:48px"><div id="bf220" class="bfill hero" style="width:85.71%"></div></div><div class="bval acc" style="width:130px"><span id="bv221">0</span></div></div><div id="i225" class="a brow" style=""><div class="blab" style="width:250px"><span>32K context</span></div><div class="btrack" style="height:48px"><div id="bf223" class="bfill" style="width:71.43%"></div></div><div class="bval" style="width:130px"><span id="bv224">0</span></div></div><div id="i228" class="a brow" style=""><div class="blab" style="width:250px"><span>131K context</span></div><div class="btrack" style="height:48px"><div id="bf226" class="bfill" style="width:49.71%"></div></div><div class="bval" style="width:130px"><span id="bv227">0</span></div></div></div><div class="bnote">tokens per second, generation</div></div></div></div></div><div class="srcl">pratikgx on Hugging Face (community benchmark)</div></div></div>
+<div id="s238" class="clip scene" data-start="25.135" data-duration="14.437" data-track-index="2" style="z-index:54"><div id="w239" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">MacBook and Mac Studio</div></div><div id="b240" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i234" class="a brow" style=""><div class="blab" style="width:480px"><span>MacBook Pro · M4 Pro</span></div><div class="btrack" style="height:56px"><div id="bf232" class="bfill" style="width:27.00%"></div></div><div class="bval" style="width:220px"><span id="bv233">0</span><span class="bsub">36 GB · Ollama</span></div></div><div id="i237" class="a brow" style=""><div class="blab" style="width:480px"><span>Mac Studio · M5 Ultra</span></div><div class="btrack" style="height:56px"><div id="bf235" class="bfill hero" style="width:83.40%"></div></div><div class="bval acc" style="width:220px"><span id="bv236">0</span><span class="bsub">oMLX · 8-bit</span></div></div></div></div></div><div class="srcl">flaviocopes.com · omlx.ai benchmarks (community)</div></div></div>
+<div id="s253" class="clip scene" data-start="39.572" data-duration="14.023" data-track-index="2" style="z-index:55"><div id="w254" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">Nvidia GPUs</div></div><div id="b255" class="body"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:12px"><div id="i243" class="a brow" style=""><div class="blab" style="width:390px"><span>RTX 4090 · 24 GB</span></div><div class="btrack" style="height:40px"><div id="bf241" class="bfill" style="width:58.50%"></div></div><div class="bval" style="width:120px"><span id="bv242">0</span><span class="bsub">57–60</span></div></div><div id="i246" class="a brow" style=""><div class="blab" style="width:390px"><span>RTX 3090 · 4-bit</span></div><div class="btrack" style="height:40px"><div id="bf244" class="bfill" style="width:73.50%"></div></div><div class="bval" style="width:120px"><span id="bv245">0</span></div></div><div id="i249" class="a brow" style=""><div class="blab" style="width:390px"><span>2× RTX 3090</span></div><div class="btrack" style="height:40px"><div id="bf247" class="bfill hero" style="width:89.80%"></div></div><div class="bval acc" style="width:120px"><span id="bv248">0</span></div></div><div id="i252" class="a brow" style=""><div class="blab" style="width:390px"><span>DGX Spark</span></div><div class="btrack" style="height:40px"><div id="bf250" class="bfill" style="width:45.00%"></div></div><div class="bval" style="width:120px"><span id="bv251">0</span></div></div></div><div class="bnote">tokens per second, generation</div></div></div></div></div><div class="srcl">community measurements: Hugging Face, GitHub (tonyd2wild)</div></div></div>
+<div id="s259" class="clip scene" data-start="53.595" data-duration="6.420" data-track-index="2" style="z-index:56"><div id="w260" class="sc"><div id="b261" class="body clipb"><div class="vframe"></div><div class="vcred">@analogalok on X · RTX 4060 8GB · Unsloth Q3_K_XL · llama.cpp</div></div></div></div>
+<div id="vw257" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:57"><video id="v256" class="clip" src="assets/clips/x_alok4060_ea8070c9.mp4" muted playsinline data-start="53.595" data-duration="6.420" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i258" class="a cap acc" style="">8 GB RTX 4060: about 18 tok/s, 3-bit build</div></div></div>
+<div id="s265" class="clip scene" data-start="60.015" data-duration="9.552" data-track-index="2" style="z-index:58"><div id="w266" class="sc"><div id="b267" class="body clipb"><div class="vframe"></div><div class="vcred">Square Pc on YouTube · RTX 5090 · optimized engine (Basalt)</div></div></div></div>
+<div id="vw263" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:59"><video id="v262" class="clip" src="assets/clips/yt_sq_camel_ab51dd5d.mp4" muted playsinline data-start="60.015" data-duration="9.552" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i264" class="a cap acc" style="">Bursts over 400 tok/s · usually ~250</div></div></div>
+<div id="s274" class="clip scene" data-start="69.567" data-duration="13.368" data-track-index="2" style="z-index:60"><div id="w275" class="sc"><div id="b276" class="body clipb"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="vframe" style="left:192px;top:140px;width:760px;height:760px"></div><div class="vlab" style="left:192px;top:84px">@exolabs on X (launch partner)</div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i271" class="a stat " style="flex:1"><div class="slab">Exo Labs' claim, M5 Ultra</div><div id="v270" class="sval " style="font-size:110px">210</div><div class="ssub">tok/s · settings not shared</div></div><div id="i273" class="a stat hero" style="flex:1"><div class="slab">Best independent, same chip</div><div id="v272" class="sval hero" style="font-size:110px">83</div><div class="ssub">tok/s</div></div></div></div></div></div></div></div>
+<div id="vw269" class="vwrap" style="left:192px;top:140px;width:760px;height:760px;z-index:61"><video id="v268" class="clip" src="assets/clips/x_exo_0331a9b7.mp4" muted playsinline data-start="69.567" data-duration="13.368" data-track-index="1" style="width:760px;height:760px;object-fit:cover"></video></div>
+<div id="s283" class="clip scene" data-start="82.935" data-duration="9.351" data-track-index="2" style="z-index:62"><div id="w284" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">The cloud number</div></div><div id="b285" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i279" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai/models/inkling-2-mini</span></div><div class="wbody" style="height:215px;position:relative"><img id="k277" src="assets/img/aa_model_eb765.jpg" alt="" style="width:900px;height:215px"><div id="hl278" style="position:absolute;left:207px;top:90px;width:216px;height:125px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i281" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/tm_logo.png" alt="" class="slogo">On Thinking Machines' servers</div><div id="v280" class="sval hero" style="font-size:120px">197</div><div class="ssub">tok/s · Artificial Analysis</div></div><div id="i282" class="a tx ink3" style="font-size:34px;text-align:left">That's the cloud number, not your laptop.</div></div></div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s293" class="clip scene" data-start="92.286" data-duration="14.029" data-track-index="2" style="z-index:63"><div id="w294" class="sc"><div class="head"><div class="kick">Speed</div><div class="ttl">The weak spot: prefill</div></div><div id="b295" class="body"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i286" class="a tx ink3" style="font-size:32px;text-align:left">Prefill: how fast it reads your prompt before answering. Mac mini, M5 Pro:</div><div class="bars" style="gap:30px"><div id="i289" class="a brow" style=""><div class="blab" style="width:300px"><span>Short prompt</span></div><div class="btrack" style="height:56px"><div id="bf287" class="bfill hero" style="width:94.42%"></div></div><div class="bval acc" style="width:140px"><span id="bv288">0</span></div></div><div id="i292" class="a brow" style=""><div class="blab" style="width:300px"><span>131K tokens</span></div><div class="btrack" style="height:56px"><div id="bf290" class="bfill" style="width:18.27%"></div></div><div class="bval" style="width:140px"><span id="bv291">0</span></div></div></div><div class="bnote">prompt tokens per second</div></div></div><div class="srcl">pratikgx on Hugging Face (community benchmark)</div></div></div>
+<div id="s301" class="clip scene" data-start="106.315" data-duration="18.707" data-track-index="2" style="z-index:64"><div id="w302" class="sc"><div id="b303" class="body clipb"><div class="row" style="gap:0px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="vframe" style="left:140px;top:330px;width:760px;height:428px"></div><div class="vlab" style="left:140px;top:274px">@DogukanUrker on X · RTX 3060</div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i299" class="a stat hero" style="flex:1"><div class="slab">950K-token prompt on a DGX Spark</div><div id="v298" class="sval hero" style="font-size:96px">26.5 min</div><div class="ssub">before the first word</div></div><div id="i300" class="a tx " style="font-size:30px;text-align:left">“prefill is crazy slow, the slowest i have ever posted”</div></div></div></div></div></div></div>
+<div id="vw297" class="vwrap" style="left:140px;top:330px;width:760px;height:428px;z-index:65"><video id="v296" class="clip" src="assets/clips/x_dogukan3060_4c6f5a46.mp4" muted playsinline data-start="106.315" data-duration="18.707" data-track-index="1" style="width:760px;height:428px;object-fit:cover"></video></div>
+<div id="s315" class="clip scene" data-start="125.022" data-duration="13.253" data-track-index="2" style="z-index:66"><div id="w316" class="sc"><div class="head"><div class="kick">Hardware</div><div class="ttl">Memory</div></div><div id="b317" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i305" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>unsloth.ai/docs/models/inkling-2-mini</span></div><div class="wbody" style="height:310px;position:relative"><img id="k304" src="assets/img/unsloth_e114d.jpg" alt="" style="width:760px;height:310px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div class="bars" style="gap:14px"><div id="i308" class="a brow" style=""><div class="blab" style="width:140px"><span>4-bit</span></div><div class="btrack" style="height:48px"><div id="bf306" class="bfill hero" style="width:73.33%"></div></div><div class="bval acc" style="width:220px"><span id="bv307">0</span></div></div><div id="i311" class="a brow" style=""><div class="blab" style="width:140px"><span>3-bit</span></div><div class="btrack" style="height:48px"><div id="bf309" class="bfill" style="width:58.33%"></div></div><div class="bval" style="width:220px"><span id="bv310">0</span></div></div><div id="i314" class="a brow" style=""><div class="blab" style="width:140px"><span>2-bit</span></div><div class="btrack" style="height:48px"><div id="bf312" class="bfill" style="width:43.75%"></div></div><div class="bval" style="width:220px"><span id="bv313">0</span></div></div></div><div class="bnote">community GGUF builds (Unsloth)</div></div></div></div></div><div class="srcl">unsloth.ai docs</div></div></div>
+<div id="s326" class="clip scene" data-start="138.275" data-duration="15.569" data-track-index="2" style="z-index:67"><div id="w327" class="sc"><div class="head"><div class="kick">Hardware</div><div class="ttl">Long context eats memory</div></div><div id="b328" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i318" class="a twc" style="width:640px"><img src="assets/img/tw_lasse_55.png" alt="" style="width:640px;height:574px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i321" class="a brow" style=""><div class="blab" style="width:290px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:42px"><div id="bf319" class="bfill hero" style="width:86.67%"></div></div><div class="bval acc" style="width:210px"><span id="bv320">0</span></div></div><div id="i324" class="a brow" style=""><div class="blab" style="width:290px"><span>Qwen 3.8 27B</span></div><div class="btrack" style="height:42px"><div id="bf322" class="bfill" style="width:58.06%"></div></div><div class="bval" style="width:210px"><span id="bv323">0</span></div></div></div><div class="bnote">memory at 131K context</div><div id="i325" class="a verd bad" style="font-size:28px;padding:13px 22px;border-width:3px">262K: DIDN'T FIT</div></div></div></div></div><div class="srcl">@lasse_ai on X</div></div></div>
+<div id="s333" class="clip scene" data-start="153.844" data-duration="14.971" data-track-index="2" style="z-index:68"><div id="w334" class="sc"><div id="b335" class="body clipb"><div class="vframe"></div><div class="vcred">thinkingmachines.ai/news/inkling-2-mini (screen recording)</div></div></div></div>
+<div id="vw330" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:69"><video id="v329" class="clip" src="assets/clips/tm_bench_fef646e7.mp4" muted playsinline data-start="153.844" data-duration="14.971" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i331" class="a cap " style="">Their own table, against open models of similar size</div><div id="i332" class="a cap acc" style="">Qwen 3.8 27B · Gemma 4 31B · Muse Glimmer · Nemotron 3.5</div></div></div>
+<div id="s351" class="clip scene" data-start="168.815" data-duration="15.540" data-track-index="2" style="z-index:70"><div id="w352" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Intelligence Index: tied with Qwen</div></div><div id="b353" class="body"><div class="bars" style="gap:14px"><div id="i338" class="a brow" style=""><div class="blab" style="width:470px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:46px"><div id="bf336" class="bfill hero" style="width:80.40%"></div></div><div class="bval acc" style="width:120px"><span id="bv337">0</span></div></div><div id="i341" class="a brow" style=""><div class="blab" style="width:470px"><span>Qwen 3.8 27B</span></div><div class="btrack" style="height:46px"><div id="bf339" class="bfill" style="width:80.40%"></div></div><div class="bval" style="width:120px"><span id="bv340">0</span></div></div><div id="i344" class="a brow" style=""><div class="blab" style="width:470px"><span>Nemotron 3.5 Super VL</span></div><div class="btrack" style="height:46px"><div id="bf342" class="bfill" style="width:54.40%"></div></div><div class="bval" style="width:120px"><span id="bv343">0</span></div></div><div id="i347" class="a brow" style=""><div class="blab" style="width:470px"><span>Muse Glimmer (Meta)</span></div><div class="btrack" style="height:46px"><div id="bf345" class="bfill" style="width:25.20%"></div></div><div class="bval" style="width:120px"><span id="bv346">0</span></div></div><div id="i350" class="a brow" style=""><div class="blab" style="width:470px"><span>Gemma 4 31B (Google)</span></div><div class="btrack" style="height:46px"><div id="bf348" class="bfill" style="width:17.60%"></div></div><div class="bval" style="width:120px"><span id="bv349">0</span></div></div></div></div><div class="srcl">Artificial Analysis Intelligence Index v5 · Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s357" class="clip scene" data-start="184.355" data-duration="29.153" data-track-index="2" style="z-index:71"><div id="w358" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Where it pulls ahead: coding agents</div></div><div id="b359" class="body"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i354" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">SWE-bench Verified</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>79.2</b></div><div class="drow">Qwen 3.8 27B<b>77.8</b></div><div class="drow">Gemma 4 31B<b>46.1</b></div><div class="ssub">fixing real GitHub issues</div></div><div id="i355" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">DeepSWE v1.1</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>48.2</b></div><div class="drow">Qwen 3.8 27B<b>42.2</b></div><div class="drow">Gemma 4 31B<b>0.3</b></div><div class="ssub">coding agent test</div></div><div id="i356" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">BrowseComp</div><div class="drow win"><img src="assets/img/tm_logo.png" alt="">Inkling 2 Mini<b>79.0</b></div><div class="drow">Qwen 3.8 27B<b>61.6</b></div><div class="drow">Gemma 4 31B<b>37.0</b></div><div class="ssub">digging through the web</div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s365" class="clip scene" data-start="213.508" data-duration="25.287" data-track-index="2" style="z-index:72"><div id="w366" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Where Qwen wins</div></div><div id="b367" class="body"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i360" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Terminal-Bench 2.1</div></div><div class="verd warn">QWEN 73.0 vs 71.6</div></div><div id="i361" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">GDPval-AA (office work)</div></div><div class="verd warn">QWEN 1427 vs 1319</div></div><div id="i362" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">AutomationBench</div></div><div class="verd warn">QWEN 48.2 vs 41.8</div></div><div id="i363" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">MMMU Pro (vision)</div></div><div class="verd warn">QWEN 76.3 vs 74.9</div></div><div id="i364" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Doesn't hallucinate (AA-Omniscience)</div></div><div class="verd bad">QWEN 71.4 vs 63.4</div></div></div></div><div class="srcl">Thinking Machines, “Introducing Inkling 2 Mini”</div></div></div>
+<div id="s373" class="clip scene" data-start="238.795" data-duration="25.123" data-track-index="2" style="z-index:73"><div id="w374" class="sc"><div id="b375" class="body clipb"><div class="vframe"></div><div class="vcred">artificialanalysis.ai/models/inkling-2-mini (screen recording)</div></div></div></div>
+<div id="vw369" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:74"><video id="v368" class="clip" src="assets/clips/aa_model30_12197272.mp4" muted playsinline data-start="238.795" data-duration="25.123" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i370" class="a cap " style="">#2 of 16 in its size class, behind Nanbeige4.3-33B</div><div id="i371" class="a cap acc" style="">$0.59 per index task · Qwen 3.8 27B: $3.53</div><div id="i372" class="a cap " style="">About half the time, ~38% more output tokens</div></div></div>
+<div id="s383" class="clip scene" data-start="263.918" data-duration="15.888" data-track-index="2" style="z-index:75"><div id="w384" class="sc"><div class="head"><div class="kick">Benchmarks</div><div class="ttl">Check the Vals number</div></div><div id="b385" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i378" class="a win" style="width:780px"><div class="wbar"><i></i><i></i><i></i><span>vals.ai/models/thinkingmachines_inkling-2-mini</span></div><div class="wbody" style="height:510px;position:relative"><img id="k376" src="assets/img/vals_14d79.jpg" alt="" style="width:780px;height:510px"><div id="hl377" style="position:absolute;left:23px;top:357px;width:226px;height:153px;border:4px solid #1D4ED8;border-radius:8px;background:rgba(29,78,216,.08);opacity:0"></div></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i380" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/tm_logo.png" alt="" class="slogo">Thinking Machines says</div><div id="v379" class="sval " style="font-size:96px">46.5%</div><div class="ssub">Vals Index</div></div><div id="i382" class="a stat hero" style="flex:1"><div class="slab">Vals' own page</div><div id="v381" class="sval hero" style="font-size:96px">44.0%</div><div class="ssub">rank 38 of 43</div></div></div></div></div></div><div class="srcl">vals.ai</div></div></div>
+<div id="s389" class="clip scene" data-start="279.806" data-duration="23.948" data-track-index="2" style="z-index:76"><div id="w390" class="sc"><div class="head"><div class="kick">Open models, 20–35B</div><div class="ttl">What about the others?</div></div><div id="b391" class="body"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i386" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">DeepSeek's smallest: V4.1 Flash</div><div class="ssub" style="margin-top:4px">nothing in this size range</div></div><div class="verd warn">552B</div></div><div id="i387" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">OpenAI gpt-oss-20b</div><div class="ssub" style="margin-top:4px">Artificial Analysis lists N/A</div></div><div class="verd warn">NO INDEX SCORE</div></div><div id="i388" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">20–35B, top of the index</div><div class="ssub" style="margin-top:4px">all at about 20</div></div><div class="verd good">INKLING · QWEN · NANBEIGE</div></div></div></div><div class="srcl">artificialanalysis.ai · OpenRouter</div></div></div>
+<div id="s401" class="clip scene" data-start="303.754" data-duration="21.477" data-track-index="2" style="z-index:77"><div id="w402" class="sc"><div class="head"><div class="kick">Artificial Analysis Intelligence Index</div><div class="ttl">For perspective</div></div><div id="b403" class="body"><div class="bars" style="gap:20px"><div id="i394" class="a brow" style=""><div class="blab" style="width:480px"><span>Claude Fable 5.2 (closed)</span></div><div class="btrack" style="height:56px"><div id="bf392" class="bfill" style="width:92.86%"></div></div><div class="bval" style="width:110px"><span id="bv393">0</span></div></div><div id="i397" class="a brow" style=""><div class="blab" style="width:480px"><span>Kimi K3.1 Pro (best open)</span></div><div class="btrack" style="height:56px"><div id="bf395" class="bfill" style="width:65.71%"></div></div><div class="bval" style="width:110px"><span id="bv396">0</span></div></div><div id="i400" class="a brow" style=""><div class="blab" style="width:480px"><img src="assets/img/tm_logo.png" alt="" class="blogo"><span>Inkling 2 Mini</span></div><div class="btrack" style="height:56px"><div id="bf398" class="bfill hero" style="width:28.57%"></div></div><div class="bval acc" style="width:110px"><span id="bv399">0</span></div></div></div></div><div class="srcl">artificialanalysis.ai leaderboard</div></div></div>
+<div id="s408" class="clip scene" data-start="325.231" data-duration="23.440" data-track-index="2" style="z-index:78"><div id="w409" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Who should use it</div></div><div id="b410" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i404" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Privacy: nothing leaves your machine</div></div><div class="verd good">YES</div></div><div id="i405" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Offline work: flights, bad internet</div></div><div class="verd good">YES</div></div><div id="i406" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Coding and search agents on a budget</div></div><div class="verd good">YES</div></div><div id="i407" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Fine-tune and ship it (Apache 2.0)</div></div><div class="verd good">YES</div></div></div></div></div></div>
+<div id="s416" class="clip scene" data-start="348.671" data-duration="34.124" data-track-index="2" style="z-index:79"><div id="w417" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Who shouldn't</div></div><div id="b418" class="body"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div id="i411" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Fact questions without search</div></div><div class="verd bad">MAKES THINGS UP</div></div><div id="i412" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Languages other than English</div></div><div class="verd warn">WEAKER</div></div><div id="i413" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">16 GB machines: 2- or 3-bit only</div></div><div class="verd warn">SLOW</div></div><div id="i414" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Hard engineering · Terminal-Bench 4: 5.6%</div></div><div class="verd warn">SAME AS QWEN</div></div><div id="i415" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Runtimes still need patches</div></div><div class="verd warn">EARLY</div></div></div></div></div></div>
+<div id="s427" class="clip scene" data-start="382.795" data-duration="19.040" data-track-index="2" style="z-index:80"><div id="w428" class="sc"><div class="head"><div class="kick">Inkling 2 Mini</div><div class="ttl">My take</div></div><div id="b429" class="body"><div class="hrow" style="gap:18px;justify-content:flex-start"><div id="i420" class="a stat " style="flex:1"><div class="slab">Intelligence</div><div id="v419" class="sval " style="font-size:80px">= Qwen</div><div class="ssub">AA Index 20.1</div></div><div id="i422" class="a stat hero" style="flex:1"><div class="slab">Coding agents</div><div id="v421" class="sval hero" style="font-size:80px">Better</div><div class="ssub">SWE-bench, BrowseComp</div></div><div id="i424" class="a stat " style="flex:1"><div class="slab">Cost per task</div><div id="v423" class="sval " style="font-size:80px">~6× less</div><div class="ssub">vs Qwen 3.8 27B</div></div><div id="i426" class="a stat " style="flex:1"><div class="slab">Long prompts</div><div id="v425" class="sval " style="font-size:80px">Slow</div><div class="ssub">prefill</div></div></div></div></div></div>
+<div id="s432" class="clip scene" data-start="401.835" data-duration="4.220" data-track-index="2" style="z-index:81"><div id="w433" class="sc"><div id="b434" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i430" class="a hd" style="font-size:80px;text-align:center">Tried it? What speed do you get?</div><div id="i431" class="a tx ink3" style="font-size:40px;text-align:center">Tell me in the comments.</div></div></div></div></div>
+<div id="s437" class="clip scene" data-start="406.055" data-duration="6.180" data-track-index="2" style="z-index:82"><div id="w438" class="sc"><div id="b439" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i435" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i436" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.fromTo("#i206",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},0.100);
+tl.fromTo("#i207",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},3.475);
+tl.fromTo("#i208",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},5.335);
+tl.fromTo("#i209",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},6.835);
+tl.fromTo("#i210",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.035);
+tl.fromTo("#i211",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.235);
+tl.fromTo("#i212",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.435);
+tl.fromTo("#i213",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.635);
+tl.fromTo("#w215",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},0.000);
+tl.to("#w215",{opacity:0,duration:0.25,ease:"power1.in"},11.136);
+tl.fromTo("#i218",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},11.486);
+tl.fromTo("#i219",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},11.686);
+tl.fromTo("#bf220",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},16.555);
+count("#bv221",16.555,0,30.0,1,"","",0.9);
+tl.fromTo("#i222",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},16.555);
+tl.fromTo("#bf223",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},19.335);
+count("#bv224",19.335,0,25.0,1,"","",0.9);
+tl.fromTo("#i225",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},19.335);
+tl.fromTo("#bf226",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},22.515);
+count("#bv227",22.515,0,17.4,1,"","",0.9);
+tl.fromTo("#i228",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},22.515);
+tl.fromTo("#w230",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},11.386);
+tl.to("#w230",{opacity:0,duration:0.25,ease:"power1.in"},24.885);
+tl.fromTo("#b231",{scale:1},{scale:1.015,duration:13.749,ease:"none"},11.386);
+tl.fromTo("#bf232",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},25.235);
+count("#bv233",25.235,0,27,1,"","",0.9);
+tl.fromTo("#i234",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.235);
+tl.fromTo("#bf235",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},34.475);
+count("#bv236",34.475,0,83.4,1,"","",0.9);
+tl.fromTo("#i237",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},34.475);
+tl.fromTo("#w239",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},25.135);
+tl.to("#w239",{opacity:0,duration:0.25,ease:"power1.in"},39.322);
+tl.fromTo("#b240",{scale:1},{scale:1.015,duration:14.437,ease:"none"},25.135);
+tl.fromTo("#bf241",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},40.535);
+count("#bv242",40.535,0,58.5,0,"","",0.9);
+tl.fromTo("#i243",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},40.535);
+tl.fromTo("#bf244",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},44.715);
+count("#bv245",44.715,0,73.5,0,"","",0.9);
+tl.fromTo("#i246",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},44.715);
+tl.fromTo("#bf247",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},49.055);
+count("#bv248",49.055,0,89.8,0,"","",0.9);
+tl.fromTo("#i249",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.055);
+tl.fromTo("#bf250",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},51.035);
+count("#bv251",51.035,0,45,0,"","",0.9);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},51.035);
+tl.fromTo("#w254",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},39.572);
+tl.to("#w254",{opacity:0,duration:0.25,ease:"power1.in"},53.345);
+tl.fromTo("#b255",{scale:1},{scale:1.015,duration:14.023,ease:"none"},39.572);
+tl.fromTo("#vw257",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},53.595);
+tl.fromTo("#i258",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},53.795);
+tl.fromTo("#w260",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},53.595);
+tl.to("#w260",{opacity:0,duration:0.25,ease:"power1.in"},59.765);
+tl.to("#vw257",{opacity:0,duration:0.25,ease:"power1.in"},59.765);
+tl.fromTo("#vw263",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},60.015);
+tl.fromTo("#i264",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},60.315);
+tl.fromTo("#w266",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},60.015);
+tl.to("#w266",{opacity:0,duration:0.25,ease:"power1.in"},69.317);
+tl.to("#vw263",{opacity:0,duration:0.25,ease:"power1.in"},69.317);
+tl.fromTo("#vw269",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},69.567);
+count("#v270",72.995,0,210,0,"","",1.0);
+tl.fromTo("#i271",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},72.895);
+count("#v272",79.295,0,83,0,"","",1.0);
+tl.fromTo("#i273",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},79.195);
+tl.fromTo("#w275",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},69.567);
+tl.to("#w275",{opacity:0,duration:0.25,ease:"power1.in"},82.685);
+tl.to("#vw269",{opacity:0,duration:0.25,ease:"power1.in"},82.685);
+tl.fromTo("#hl278",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},86.295);
+tl.fromTo("#i279",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},83.035);
+count("#v280",86.395,0,197,0,"","",1.0);
+tl.fromTo("#i281",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},86.295);
+tl.fromTo("#i282",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},89.275);
+tl.fromTo("#w284",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},82.935);
+tl.to("#w284",{opacity:0,duration:0.25,ease:"power1.in"},92.036);
+tl.fromTo("#b285",{scale:1},{scale:1.015,duration:9.351,ease:"none"},82.935);
+tl.fromTo("#i286",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.486);
+tl.fromTo("#bf287",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},99.035);
+count("#bv288",99.035,0,491,0,"","",0.9);
+tl.fromTo("#i289",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},99.035);
+tl.fromTo("#bf290",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},102.855);
+count("#bv291",102.855,0,95,0,"","",0.9);
+tl.fromTo("#i292",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},102.855);
+tl.fromTo("#w294",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},92.286);
+tl.to("#w294",{opacity:0,duration:0.25,ease:"power1.in"},106.065);
+tl.fromTo("#b295",{scale:1},{scale:1.015,duration:14.029,ease:"none"},92.286);
+tl.fromTo("#vw297",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},106.315);
+tl.fromTo("#i299",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.415);
+tl.fromTo("#i300",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},118.055);
+tl.fromTo("#w302",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},106.315);
+tl.to("#w302",{opacity:0,duration:0.25,ease:"power1.in"},124.772);
+tl.to("#vw297",{opacity:0,duration:0.25,ease:"power1.in"},124.772);
+tl.fromTo("#i305",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},125.122);
+tl.fromTo("#bf306",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},127.195);
+count("#bv307",127.195,0,17.6,1,""," GB",0.9);
+tl.fromTo("#i308",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},127.195);
+tl.fromTo("#bf309",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},131.115);
+count("#bv310",131.115,0,14,1,""," GB",0.9);
+tl.fromTo("#i311",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},131.115);
+tl.fromTo("#bf312",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},134.115);
+count("#bv313",134.115,0,10.5,1,""," GB",0.9);
+tl.fromTo("#i314",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},134.115);
+tl.fromTo("#w316",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},125.022);
+tl.to("#w316",{opacity:0,duration:0.25,ease:"power1.in"},138.025);
+tl.fromTo("#b317",{scale:1},{scale:1.015,duration:13.253,ease:"none"},125.022);
+tl.fromTo("#i318",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},138.375);
+tl.fromTo("#bf319",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},142.955);
+count("#bv320",142.955,0,31.2,1,""," GB",0.9);
+tl.fromTo("#i321",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},142.955);
+tl.fromTo("#bf322",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},147.915);
+count("#bv323",147.915,0,20.9,1,""," GB",0.9);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},147.915);
+tl.fromTo("#i325",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},152.095);
+tl.fromTo("#w327",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},138.275);
+tl.to("#w327",{opacity:0,duration:0.25,ease:"power1.in"},153.594);
+tl.fromTo("#b328",{scale:1},{scale:1.015,duration:15.569,ease:"none"},138.275);
+tl.fromTo("#vw330",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},153.844);
+tl.fromTo("#i331",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},154.244);
+tl.fromTo("#i332",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},162.695);
+tl.fromTo("#w334",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},153.844);
+tl.to("#w334",{opacity:0,duration:0.25,ease:"power1.in"},168.565);
+tl.to("#vw330",{opacity:0,duration:0.25,ease:"power1.in"},168.565);
+tl.fromTo("#bf336",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},172.595);
+count("#bv337",172.595,0,20.1,1,"","",0.9);
+tl.fromTo("#i338",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},172.595);
+tl.fromTo("#bf339",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},174.175);
+count("#bv340",174.175,0,20.1,1,"","",0.9);
+tl.fromTo("#i341",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},174.175);
+tl.fromTo("#bf342",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},179.315);
+count("#bv343",179.315,0,13.6,1,"","",0.9);
+tl.fromTo("#i344",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},179.315);
+tl.fromTo("#bf345",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},179.065);
+count("#bv346",179.065,0,6.3,1,"","",0.9);
+tl.fromTo("#i347",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},179.065);
+tl.fromTo("#bf348",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},178.815);
+count("#bv349",178.815,0,4.4,1,"","",0.9);
+tl.fromTo("#i350",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},178.815);
+tl.fromTo("#w352",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},168.815);
+tl.to("#w352",{opacity:0,duration:0.25,ease:"power1.in"},184.105);
+tl.fromTo("#b353",{scale:1},{scale:1.015,duration:15.540,ease:"none"},168.815);
+tl.fromTo("#i354",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},187.175);
+tl.fromTo("#i355",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},197.395);
+tl.fromTo("#i356",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},204.575);
+tl.fromTo("#w358",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},184.355);
+tl.to("#w358",{opacity:0,duration:0.25,ease:"power1.in"},213.258);
+tl.fromTo("#b359",{scale:1},{scale:1.015,duration:29.153,ease:"none"},184.355);
+tl.fromTo("#i360",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},217.935);
+tl.fromTo("#i361",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},219.915);
+tl.fromTo("#i362",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},222.595);
+tl.fromTo("#i363",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},225.715);
+tl.fromTo("#i364",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},230.615);
+tl.fromTo("#w366",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},213.508);
+tl.to("#w366",{opacity:0,duration:0.25,ease:"power1.in"},238.545);
+tl.fromTo("#b367",{scale:1},{scale:1.015,duration:25.287,ease:"none"},213.508);
+tl.fromTo("#vw369",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},238.795);
+tl.fromTo("#i370",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},239.095);
+tl.fromTo("#i371",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},249.855);
+tl.fromTo("#i372",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},259.095);
+tl.fromTo("#w374",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},238.795);
+tl.to("#w374",{opacity:0,duration:0.25,ease:"power1.in"},263.668);
+tl.to("#vw369",{opacity:0,duration:0.25,ease:"power1.in"},263.668);
+tl.fromTo("#hl377",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.35,ease:"power2.out"},270.475);
+tl.fromTo("#i378",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},264.018);
+tl.fromTo("#i380",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},267.095);
+tl.fromTo("#i382",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},270.475);
+tl.fromTo("#w384",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},263.918);
+tl.to("#w384",{opacity:0,duration:0.25,ease:"power1.in"},279.556);
+tl.fromTo("#b385",{scale:1},{scale:1.015,duration:15.888,ease:"none"},263.918);
+tl.fromTo("#i386",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},280.655);
+tl.fromTo("#i387",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},291.375);
+tl.fromTo("#i388",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},297.115);
+tl.fromTo("#w390",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},279.806);
+tl.to("#w390",{opacity:0,duration:0.25,ease:"power1.in"},303.504);
+tl.fromTo("#b391",{scale:1},{scale:1.015,duration:23.948,ease:"none"},279.806);
+tl.fromTo("#bf392",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},307.455);
+count("#bv393",307.455,0,65,0,"","",0.9);
+tl.fromTo("#i394",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},307.455);
+tl.fromTo("#bf395",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},312.515);
+count("#bv396",312.515,0,46,0,"","",0.9);
+tl.fromTo("#i397",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},312.515);
+tl.fromTo("#bf398",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},318.915);
+count("#bv399",318.915,0,20,0,"","",0.9);
+tl.fromTo("#i400",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},318.915);
+tl.fromTo("#w402",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},303.754);
+tl.to("#w402",{opacity:0,duration:0.25,ease:"power1.in"},324.981);
+tl.fromTo("#b403",{scale:1},{scale:1.015,duration:21.477,ease:"none"},303.754);
+tl.fromTo("#i404",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},327.635);
+tl.fromTo("#i405",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},334.295);
+tl.fromTo("#i406",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},339.635);
+tl.fromTo("#i407",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},344.475);
+tl.fromTo("#w409",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},325.231);
+tl.to("#w409",{opacity:0,duration:0.25,ease:"power1.in"},348.421);
+tl.fromTo("#b410",{scale:1},{scale:1.015,duration:23.440,ease:"none"},325.231);
+tl.fromTo("#i411",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},350.795);
+tl.fromTo("#i412",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},356.315);
+tl.fromTo("#i413",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},360.435);
+tl.fromTo("#i414",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},367.615);
+tl.fromTo("#i415",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},375.835);
+tl.fromTo("#w417",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},348.671);
+tl.to("#w417",{opacity:0,duration:0.25,ease:"power1.in"},382.545);
+tl.fromTo("#b418",{scale:1},{scale:1.015,duration:34.124,ease:"none"},348.671);
+tl.fromTo("#i420",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},388.535);
+tl.fromTo("#i422",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},390.535);
+tl.fromTo("#i424",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},392.375);
+tl.fromTo("#i426",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},396.055);
+tl.fromTo("#w428",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},382.795);
+tl.to("#w428",{opacity:0,duration:0.25,ease:"power1.in"},401.585);
+tl.fromTo("#b429",{scale:1},{scale:1.015,duration:19.040,ease:"none"},382.795);
+tl.fromTo("#i430",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},401.935);
+tl.fromTo("#i431",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},402.435);
+tl.fromTo("#w433",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},401.835);
+tl.to("#w433",{opacity:0,duration:0.25,ease:"power1.in"},405.805);
+tl.fromTo("#i435",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},406.055);
+tl.fromTo("#i436",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},406.055);
+tl.fromTo("#w438",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},406.055);
+tl.set({}, {}, 412.235);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

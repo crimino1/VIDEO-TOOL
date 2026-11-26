@@ -1,0 +1,119 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="177.260" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s162" class="clip scene " data-start="0.000" data-duration="3.620" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap><div id="c161" class="scene"><div class="black"></div><div class="tcard"><div id="rk158" class="tk" style="opacity:0">NUMBER FIVE</div><div id="rk160" class="trule" style="transform:scaleX(0)"></div><div id="rk159" class="tn" style="opacity:0">The Ghost from the Big Bang</div></div></div></div>
+<div id="s165" class="clip scene " data-start="3.620" data-duration="14.300" data-track-index="2" style="z-index:28" data-layout-allow-overflow data-layout-allow-overlap><div id="c164" class="scene"><div class="black"></div><div id="ph163" class="card" style="left:260px;top:190px;width:1400px;height:700px;opacity:1"><img src="assets/gen/cmb_planck_c2dc2b.jpg" alt="cmb_planck"></div></div></div>
+<div id="s168" class="clip scene " data-start="17.920" data-duration="12.760" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap><div id="c167" class="scene"><div class="black"></div><div id="ph166" class="card" style="left:580px;top:160px;width:760px;height:760px;opacity:1"><img src="assets/gen/hawking_b_2d1dbf.jpg" alt="hawking_b"></div></div></div>
+<div id="w169" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:30"><video id="v170" class="clip fit" src="assets/clips/px_mountain_0_c20e431b.mp4" muted playsinline data-start="36.700" data-duration="4.060" data-track-index="1"></video></div>
+<div id="w171" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:31"><video id="v172" class="clip fit" src="assets/clips/px_palm_0_cb88c0ea.mp4" muted playsinline data-start="40.760" data-duration="4.300" data-track-index="1"></video></div>
+<div id="s175" class="clip scene " data-start="45.060" data-duration="12.100" data-track-index="2" style="z-index:32" data-layout-allow-overflow data-layout-allow-overlap><div id="c174" class="scene"><img id="ph173" class="fill" src="assets/gen/rogue_bh_art_8aefb4.jpg" alt="rogue_bh_art" style="transform-origin:50% 55%"></div></div>
+<div id="w176" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:33"><video id="v177" class="clip fit" src="assets/clips/px_bowling_0_899b4148.mp4" muted playsinline data-start="74.500" data-duration="7.920" data-track-index="1"></video></div>
+<div id="s180" class="clip scene " data-start="90.520" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c179" class="scene"><div id="dip178" class="black" style="opacity:0"></div></div></div>
+<div id="s185" class="clip scene " data-start="91.220" data-duration="2.300" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="c184" class="scene"><div class="black"></div><div class="tcard"><div id="rk181" class="tk" style="opacity:0">NUMBER FOUR</div><div id="rk183" class="trule" style="transform:scaleX(0)"></div><div id="rk182" class="tn" style="opacity:0">The Sniper</div></div></div></div>
+<div id="w186" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:36"><video id="v187" class="clip fit" src="assets/clips/px_ice_0_26e5bd09.mp4" muted playsinline data-start="123.280" data-duration="6.100" data-track-index="1"></video></div>
+<div id="w188" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:37"><video id="v189" class="clip fit" src="assets/clips/nasa_icecube_detect_eabf6c84.mp4" muted playsinline data-start="129.380" data-duration="6.860" data-track-index="1"></video></div>
+<div id="w190" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:38"><video id="v191" class="clip fit" src="assets/clips/nasa_blazar_jet_b16f7bbf.mp4" muted playsinline data-start="136.240" data-duration="20.220" data-track-index="1"></video></div>
+<div id="s194" class="clip scene " data-start="176.560" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c193" class="scene"><div id="dip192" class="black" style="opacity:0"></div></div></div>
+<div id="s197" class="clip scene " data-start="168.160" data-duration="9.100" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c196" class="scene"><img id="ph195" class="fill" src="assets/gen/milkyway_center_6ca8a4.jpg" alt="milkyway_center" style="transform-origin:45% 50%"></div></div>
+<div id="s215" class="clip scene " data-start="0.000" data-duration="177.260" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c214" class="scene"><div class="vign"></div><div id="grain213" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+<div id="s217" class="clip scene " data-start="176.910" data-duration="0.350" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c216" class="scene"><div id="seamout" class="black" style="opacity:0"></div></div></div>
+<div id="s219" class="clip scene " data-start="0.000" data-duration="0.400" data-track-index="2" style="z-index:9500" data-layout-allow-overflow data-layout-allow-overlap><div id="c218" class="scene"><div id="seamin" class="black"></div></div></div>
+</div>
+<script>
+window.SPS = [[30.68, 36.7, "bh", {"disk": 0, "dist0": 18, "dist1": 15, "el": 3, "az0": 0, "az1": 12, "fov": 26, "shiftX": 260, "glow": 0.6}], [57.16, 74.5, "bh", {"disk": 0, "starDir": [0.36, 0.06, -1], "star": 16, "dist0": 17, "dist1": 14, "el": 2, "az0": -6, "az1": 6, "fov": 34, "shiftX": -200}], [82.42, 91.22, "bh", {"disk": 0, "dist0": 14, "dist1": 11, "el": 2, "az0": 20, "az1": 30, "shiftX": -280}], [93.52, 106.44, "bh", {"dist0": 46, "dist1": 40, "el": 12, "az0": -30, "az1": -14, "shiftX": -260, "diskOut": 11, "jetK": [[0, 0], [8.120000000000005, 0], [10.120000000000005, 1.2]]}], [106.44, 112.56, "bh", {"dist0": 62, "dist1": 70, "el0": 10, "el1": 28, "az0": -14, "az1": 10, "fov": 26, "roll0": 0, "roll1": 6, "jet": 1.2, "diskOut": 11}], [112.56, 123.28, "bh", {"distK": [[0, 70], [10.7, 52]], "elK": [[0, 28], [3.0, 30], [10.7, 66]], "az": 10, "rollK": [[0, 0], [10.7, 10]], "jet": 1.3, "diskOut": 11}], [156.46, 168.16, "earth", {"dist0": 3.4, "dist1": 3.0, "el": 8, "az0": 10, "az1": 20, "sun": [-70, 6], "sx": 240}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#rk158",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},0.300);
+tl.fromTo("#rk159",{opacity:0},{opacity:1,duration:1.2,ease:"power1.inOut"},0.700);
+tl.fromTo("#rk160",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},0.500);
+tl.to("#rk158",{opacity:0,duration:0.5,ease:"power2.out"},3.020);
+tl.to("#rk159",{opacity:0,duration:0.5,ease:"power2.out"},3.020);
+tl.fromTo("#ph163",{scale:1.0},{scale:1.06,duration:14.3,ease:"none"},3.620);
+tl.fromTo("#ph166",{scale:1.0},{scale:1.05,duration:12.76,ease:"none"},17.920);
+tl.fromTo("#v170",{scale:1.0},{scale:1.06,duration:4.06,ease:"none"},36.700);
+tl.fromTo("#v172",{scale:1.0},{scale:1.06,duration:4.3,ease:"none"},40.760);
+tl.fromTo("#ph173",{scale:1.0},{scale:1.12,duration:12.1,ease:"none"},45.060);
+tl.fromTo("#v177",{scale:1.0},{scale:1.06,duration:7.92,ease:"none"},74.500);
+tl.fromTo("#dip178",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},90.520);
+tl.fromTo("#rk181",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},91.520);
+tl.fromTo("#rk182",{opacity:0},{opacity:1,duration:1.2,ease:"power1.inOut"},91.920);
+tl.fromTo("#rk183",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},91.720);
+tl.to("#rk181",{opacity:0,duration:0.5,ease:"power2.out"},92.920);
+tl.to("#rk182",{opacity:0,duration:0.5,ease:"power2.out"},92.920);
+tl.fromTo("#v187",{scale:1.0},{scale:1.06,duration:6.1,ease:"none"},123.280);
+tl.fromTo("#v189",{scale:1.0},{scale:1.06,duration:6.86,ease:"none"},129.380);
+tl.fromTo("#v191",{scale:1.0},{scale:1.06,duration:20.22,ease:"none"},136.240);
+tl.fromTo("#dip192",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},176.560);
+tl.fromTo("#ph195",{scale:1.0},{scale:1.12,duration:9.1,ease:"none"},168.160);
+tl.fromTo("#grain213",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:157398,backgroundPositionY:225462,duration:177.26,ease:"steps(4254)"},0.000);
+tl.fromTo("#seamout",{opacity:0},{opacity:1,duration:0.35,ease:"power1.in"},176.910);
+tl.fromTo("#seamin",{opacity:1},{opacity:0,duration:0.4,ease:"power1.out"},0.000);
+tl.set({}, {}, 177.260);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

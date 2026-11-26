@@ -1,0 +1,242 @@
+{
+ "result_count": 3,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "a0e3a85d-4adb-4755-8b8e-7cee9dac288c",
+   "title": "the invisible galaxy (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1116541",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1116541&format=mp32",
+   "creator": "Benjamin Lambert",
+   "creator_url": "https://www.jamendo.com/artist/440884/Benjamin_Lambert",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "film",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "peaceful",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "piano",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"the invisible galaxy (acoustic)\" by Benjamin Lambert is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "The Invisible Galaxy",
+    "foreign_landing_url": "https://www.jamendo.com/album/133397/the-invisible-galaxy",
+    "creator": "Benjamin Lambert",
+    "creator_url": "https://www.jamendo.com/artist/440884/Benjamin_Lambert",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 214000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/",
+   "related_url": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/related/",
+   "waveform": "https://api.openverse.org/v1/audio/a0e3a85d-4adb-4755-8b8e-7cee9dac288c/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "ea4ef155-35a9-46bb-b136-4e4f8f2223d9",
+   "title": "Lucky Acoustic",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1540859",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1540859&format=mp32",
+   "creator": "Jesse Keller",
+   "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "corporate",
+    "filmscore",
+    "folk"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "advertising",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "guitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "instrumental",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "strings",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Lucky Acoustic\" by Jesse Keller is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "One Mans Journey",
+    "foreign_landing_url": "https://www.jamendo.com/album/176305/one-mans-journey",
+    "creator": "Jesse Keller",
+    "creator_url": "https://www.jamendo.com/artist/508416/Jesse_Keller",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 202000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/",
+   "related_url": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/related/",
+   "waveform": "https://api.openverse.org/v1/audio/ea4ef155-35a9-46bb-b136-4e4f8f2223d9/waveform/",
+   "unstable__sensitivity": []
+  },
+  {
+   "id": "9bf23ad0-0ee8-47ab-a125-d60502131b1d",
+   "title": "Key, Kida &amp; Eddie (feat. ICD) - Sundalo (acoustic)",
+   "indexed_on": "2022-08-01T21:56:38.264750Z",
+   "foreign_landing_url": "https://www.jamendo.com/track/1522600",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=1522600&format=mp32",
+   "creator": "Key, Kida &amp; Eddie",
+   "creator_url": "https://www.jamendo.com/artist/507113/Key,_Kida_amp_Eddie",
+   "license": "by",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "category": "music",
+   "genres": [
+    "gangstarap",
+    "hiphop"
+   ],
+   "filesize": null,
+   "filetype": "mp32",
+   "tags": [
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "neutral",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "revolutionary",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "upbeat",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Key, Kida &amp; Eddie (feat. ICD) - Sundalo (acoustic)\" by Key, Kida &amp; Eddie is licensed under CC BY 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/3.0/.",
+   "fields_matched": [
+    "title",
+    "tags.name"
+   ],
+   "mature": false,
+   "audio_set": {
+    "title": "Dugang Kadasig!",
+    "foreign_landing_url": "https://www.jamendo.com/album/174869/dugang-kadasig",
+    "creator": "Key, Kida &amp; Eddie",
+    "creator_url": "https://www.jamendo.com/artist/507113/Key,_Kida_amp_Eddie",
+    "url": null,
+    "filesize": null,
+    "filetype": null
+   },
+   "duration": 143000,
+   "bit_rate": null,
+   "sample_rate": null,
+   "thumbnail": "https://api.openverse.org/v1/audio/9bf23ad0-0ee8-47ab-a125-d60502131b1d/thumb/",
+   "detail_url": "https://api.openverse.org/v1/audio/9bf23ad0-0ee8-47ab-a125-d60502131b1d/",
+   "related_url": "https://api.openverse.org/v1/audio/9bf23ad0-0ee8-47ab-a125-d60502131b1d/related/",
+   "waveform": "https://api.openverse.org/v1/audio/9bf23ad0-0ee8-47ab-a125-d60502131b1d/waveform/",
+   "unstable__sensitivity": []
+  }
+ ]
+}

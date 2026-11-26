@@ -1,0 +1,14 @@
+{
+ "used": 977,
+ "last_request": 1795685474.4759226,
+ "log": [
+  {
+   "time": "2026-11-26T15:01:15",
+   "chars": 977,
+   "task": "3dd3d9e1-778f-4897-b8bc-8b7701ecd1a2",
+   "out": "assets/vo/vo_raw.mp3"
+  }
+ ],
+ "budget": 3000,
+ "voice": "elevenlabs_aHYS10erl9IGphnXtDeD"
+}

@@ -1,0 +1,196 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="87.900" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v107" class="clip vid" src="assets/clips/pxb_paris_f4c7c7cc.mp4" muted playsinline data-start="0.000" data-duration="5.720" data-track-index="1" style="z-index:28;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s113" class="clip scene" data-start="0.000" data-duration="5.720" data-track-index="2" style="z-index:30" data-layout-allow-overflow data-layout-allow-overlap><div id="c112" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf109" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt108" src="assets/gen/schwartz_1970_8d75bc.jpg" alt="schwartz_1970"></div><div id="tg110" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Laurent Schwartz</div><div class="r">Mathematician</div></div><div id="pl111" class="place" style="top:850px"><div class="ru"></div><div class="l1">FRANCE</div><div class="l2">FIELDS MEDAL, 1950</div></div><div class="credit">Photo: Konrad Jacobs, CC BY-SA 2.0 de, via Wikimedia Commons</div></div></div>
+<div id="s121" class="clip scene" data-start="5.720" data-duration="3.660" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap><div id="c120" class="scene"><div id="k114" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:52px;line-height:1.08;color:#fff"><span id="w115" style="opacity:0">The</span> <span id="w116" style="opacity:0">highest</span> <span id="w117" style="opacity:0">honor</span> <span id="w118" style="opacity:0">in</span> <span id="w119" style="opacity:0">mathematics</span></div></div></div>
+<video id="v122" class="clip vid" src="assets/clips/pxb_chalkboard_7d83c2bf.mp4" muted playsinline data-start="9.380" data-duration="4.540" data-track-index="1" style="z-index:32;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s124" class="clip scene" data-start="9.380" data-duration="4.540" data-track-index="2" style="z-index:34" data-layout-allow-overflow data-layout-allow-overlap><div id="c123" class="scene"></div></div>
+<div id="s136" class="clip scene" data-start="13.920" data-duration="18.920" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap><div id="c135" class="scene"><div id="k125" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:50px;line-height:1.08;color:#fff"><span id="w126" style="opacity:0">As</span> <span id="w127" style="opacity:0">a</span> <span id="w128" style="opacity:0">teenager,</span> <span id="w129" style="opacity:0">he</span> <span id="w130" style="opacity:0">was</span> <span id="w131" style="opacity:0">convinced</span> <span id="w132" style="opacity:0">he</span> <span id="w133" style="opacity:0">was</span> <span id="w134" style="opacity:0">stupid.</span></div></div></div>
+<div id="s149" class="clip scene" data-start="32.840" data-duration="10.300" data-track-index="2" style="z-index:36" data-layout-allow-overflow data-layout-allow-overlap><div id="c148" class="scene"><div id="k137" class="kw dark" style="left:210px;width:1500px;text-align:center;top:60px;font-size:48px;line-height:1.08;color:#fff"><span id="w138" style="opacity:0">He</span> <span id="w139" style="opacity:0">refused</span> <span id="w140" style="opacity:0">to</span> <span id="w141" style="opacity:0">move</span> <span id="w142" style="opacity:0">on</span> <span id="w143" style="opacity:0">until</span> <span id="w144" style="opacity:0">he</span> <span id="w145" style="opacity:0">understood</span> <span id="w146" style="opacity:0">it</span> <span id="w147" style="opacity:0">completely.</span></div></div></div>
+<video id="v150" class="clip vid" src="assets/clips/pxb_tehran_metro_51297bce.mp4" muted playsinline data-start="43.140" data-duration="2.620" data-track-index="1" style="z-index:37;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s155" class="clip scene" data-start="43.140" data-duration="2.620" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap><div id="c154" class="scene"><div class="scrim" style="opacity:0.6"></div><div id="pf152" class="portrait" style="left:320px;top:170px;width:480px;height:600px;opacity:0"><img id="pt151" src="assets/gen/mirzakhani_simons_0e551d.jpg" alt="mirzakhani_simons"></div><div id="tg153" class="tag" style="left:880px;top:400px;opacity:0"><div class="n">Maryam Mirzakhani</div><div class="r">Mathematician</div></div><div class="credit">Video: Simons Foundation on YouTube</div></div></div>
+<div id="s157" class="clip scene" data-start="45.760" data-duration="7.160" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><div id="c156" class="scene"><div class="scrim" style="opacity:0.7"></div></div></div>
+<video id="v158" class="clip vid" src="assets/clips/yt_LxuVSW4VZ78_0a9d6361.mp4" muted playsinline data-start="45.760" data-duration="7.160" data-track-index="1" style="z-index:41;transform-origin:50% 50%;left:340px;top:121px;width:1240px;height:698px;box-shadow:0 24px 70px rgba(0,0,0,.7)"></video>
+<div id="s161" class="clip scene" data-start="45.760" data-duration="7.160" data-track-index="2" style="z-index:43" data-layout-allow-overflow data-layout-allow-overlap><div id="c160" class="scene"><div id="pl159" class="place" style="top:850px"><div class="ru"></div><div class="l1">TEHRAN, IRAN</div><div class="l2">AROUND AGE 12</div></div><div class="credit">Video: Simons Foundation on YouTube</div></div></div>
+<video id="v162" class="clip vid" src="assets/clips/pxb_student_papers_d508a261.mp4" muted playsinline data-start="52.920" data-duration="1.800" data-track-index="1" style="z-index:44;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s168" class="clip scene" data-start="52.920" data-duration="1.800" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap><div id="c167" class="scene"><div id="k163" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:56px;line-height:1.08;color:#fff"><span id="w164" style="opacity:0">Her</span> <span id="w165" style="opacity:0">confidence</span> <span id="w166" style="opacity:0">dropped.</span></div></div></div>
+<div id="s181" class="clip scene" data-start="54.720" data-duration="5.100" data-track-index="2" style="z-index:47" data-layout-allow-overflow data-layout-allow-overlap><div id="c180" class="scene"><div class="scrim" style="opacity:0.68"></div><div class="frame" style="left:410px;top:161px;width:1100px;height:618px"><img id="ph169" src="assets/gen/mirzakhani_fields_ceremony_2014_6fab23.jpg" alt="mirzakhani_fields_ceremony_2014"></div><div id="k170" class="kw dark" style="left:210px;width:1500px;text-align:center;top:920px;font-size:50px;line-height:1.08;color:#fff"><span id="w171" style="opacity:0">2014:</span> <span id="w172" style="opacity:0">the</span> <span id="w173" style="opacity:0">first</span> <span id="w174" style="opacity:0">woman</span> <span id="w175" style="opacity:0">to</span> <span id="w176" style="opacity:0">win</span> <span id="w177" style="opacity:0">the</span> <span id="w178" style="opacity:0">Fields</span> <span id="w179" style="opacity:0">Medal</span></div><div class="credit">Photo: Florian Caullery, CC BY-SA 3.0, via Wikimedia Commons</div></div></div>
+<div id="s190" class="clip scene" data-start="59.820" data-duration="7.840" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap><div id="c189" class="scene"><div id="k182" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w183" style="opacity:0">Like</span> <span id="w184" style="opacity:0">being</span> <span id="w185" style="opacity:0">lost</span> <span id="w186" style="opacity:0">in</span> <span id="w187" style="opacity:0">a</span> <span id="w188" style="opacity:0">jungle</span></div></div></div>
+<div id="s192" class="clip scene" data-start="67.660" data-duration="3.340" data-track-index="2" style="z-index:49" data-layout-allow-overflow data-layout-allow-overlap><div id="c191" class="scene"><div class="scrim" style="opacity:0.7"></div></div></div>
+<video id="v193" class="clip vid" src="assets/clips/yt_LxuVSW4VZ78_32e896c1.mp4" muted playsinline data-start="67.660" data-duration="3.340" data-track-index="1" style="z-index:50;transform-origin:50% 50%;left:340px;top:121px;width:1240px;height:698px;box-shadow:0 24px 70px rgba(0,0,0,.7)"></video>
+<div id="s200" class="clip scene" data-start="67.660" data-duration="3.340" data-track-index="2" style="z-index:52" data-layout-allow-overflow data-layout-allow-overlap><div id="c199" class="scene"><div id="k194" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:54px;line-height:1.08;color:#fff"><span id="w195" style="opacity:0">Giant</span> <span id="w196" style="opacity:0">sheets</span> <span id="w197" style="opacity:0">of</span> <span id="w198" style="opacity:0">paper</span></div><div class="credit">Video: Simons Foundation on YouTube</div></div></div>
+<div id="s208" class="clip scene" data-start="71.000" data-duration="4.300" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="c207" class="scene"><div id="k201" class="kw dark" style="left:210px;width:1500px;text-align:center;top:930px;font-size:54px;line-height:1.08;color:#fff"><span id="w202" style="opacity:0">Her</span> <span id="w203" style="opacity:0">daughter</span> <span id="w204" style="opacity:0">called</span> <span id="w205" style="opacity:0">it</span> <span id="w206" style="opacity:0">painting.</span></div></div></div>
+<video id="v209" class="clip vid" src="assets/clips/pxb_runner_a6f9d626.mp4" muted playsinline data-start="83.020" data-duration="2.460" data-track-index="1" style="z-index:54;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s217" class="clip scene" data-start="83.020" data-duration="2.460" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap><div id="c216" class="scene"><div id="k210" class="kw dark" style="left:210px;width:1500px;text-align:center;top:900px;font-size:56px;line-height:1.08;color:#fff"><span id="w211" style="opacity:0">School</span> <span id="w212" style="opacity:0">math</span> <span id="w213" style="opacity:0">rewards</span> <span id="w214" style="opacity:0">the</span> <span id="w215" style="opacity:0">sprint.</span></div></div></div>
+<video id="v218" class="clip vid" src="assets/clips/pxb_climber_fog_bd0aa72d.mp4" muted playsinline data-start="85.480" data-duration="2.420" data-track-index="1" style="z-index:57;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s226" class="clip scene" data-start="85.480" data-duration="2.420" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><div id="c225" class="scene"><div id="k219" class="kw " style="left:210px;width:1500px;text-align:center;top:80px;font-size:70px;line-height:1.08;color:#fff"><span id="w220" style="opacity:0">Real</span> <span id="w221" style="opacity:0">math</span> <span id="w222" style="opacity:0">is</span> <span id="w223" style="opacity:0">the</span> <span id="w224" style="opacity:0">mountain.</span></div></div></div>
+</div>
+<script>window.PXS = [[5.72, 9.38, "medal", {"plaque": 0.5, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [13.92, 32.84, "lycee", {"hands": [6.64, 11.58], "worry": 14.54, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [32.84, 43.14, "deep_quick", {"quick": 2.3, "deep": 2.98, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}], [45.76, 52.92, "jungle", {"tries": 99, "path": 99, "tin": "fade", "tout": "fade"}], [54.72, 59.82, "medal", {"plaque": 99, "tin": "fade", "tout": "fade"}], [59.82, 67.66, "jungle", {"tries": [1.48, 5.36], "path": 6.4, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [67.66, 71.0, "paper_floor", {"girl": 99, "paint": 99, "tin": "fade", "tout": "fade"}], [71.0, 75.3, "paper_floor", {"girl": 0.3, "paint": 2.94, "cam": {"z": [1.0, 1.1]}, "tin": "zoom", "tout": "zoom"}], [75.3, 83.02, "sprint_climb", {"sprint": 1.66, "climb": 5.46, "judge": 5.02, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/dread.js"></script>
+<script src="assets/js/scenes/dz.js"></script>
+<script src="assets/js/scenes/gauss.js"></script>
+<script src="assets/js/scenes/minds.js"></script>
+<script src="assets/js/scenes/open.js"></script>
+<script src="assets/js/scenes/practice.js"></script>
+<script src="assets/js/scenes/wiles.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#v107",{scale:1.0},{scale:1.06,duration:5.72,ease:"none"},0.000);
+tl.fromTo("#pt108",{scale:1.0},{scale:1.04,duration:5.72,ease:"none"},0.000);
+tl.fromTo("#pf109",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},0.000);
+tl.fromTo("#tg110",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},0.580);
+tl.fromTo("#pl111",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},4.660);
+tl.set("#w115",{opacity:1},11.820);
+tl.set("#w116",{opacity:1},11.820);
+tl.set("#w117",{opacity:1},11.820);
+tl.set("#w118",{opacity:1},18.800);
+tl.set("#w119",{opacity:1},18.800);
+tl.fromTo("#v122",{scale:1.0},{scale:1.06,duration:4.54,ease:"none"},9.380);
+tl.set("#w126",{opacity:1},24.500);
+tl.set("#w127",{opacity:1},24.500);
+tl.set("#w128",{opacity:1},24.500);
+tl.set("#w129",{opacity:1},28.280);
+tl.set("#w130",{opacity:1},29.560);
+tl.set("#w131",{opacity:1},29.560);
+tl.set("#w132",{opacity:1},30.840);
+tl.set("#w133",{opacity:1},108.580);
+tl.set("#w134",{opacity:1},108.580);
+tl.set("#k125",{opacity:0},17.460);
+tl.set("#w138",{opacity:1},40.780);
+tl.set("#w139",{opacity:1},40.780);
+tl.set("#w140",{opacity:1},57.820);
+tl.set("#w141",{opacity:1},167.380);
+tl.set("#w142",{opacity:1},168.500);
+tl.set("#w143",{opacity:1},168.500);
+tl.set("#w144",{opacity:1},182.880);
+tl.set("#w145",{opacity:1},182.880);
+tl.set("#w146",{opacity:1},189.920);
+tl.set("#w147",{opacity:1},189.920);
+tl.fromTo("#v150",{scale:1.0},{scale:1.06,duration:2.62,ease:"none"},43.140);
+tl.fromTo("#pt151",{scale:1.0},{scale:1.04,duration:2.62,ease:"none"},43.140);
+tl.fromTo("#pf152",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},43.140);
+tl.fromTo("#tg153",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},43.140);
+tl.fromTo("#v158",{scale:1.0},{scale:1.04,duration:7.16,ease:"none"},45.760);
+tl.fromTo("#pl159",{clipPath:"inset(0 100% 0 0)",opacity:1},{clipPath:"inset(0 0% 0 0)",opacity:1,duration:0.8,ease:"power2.out"},48.660);
+tl.fromTo("#v162",{scale:1.0},{scale:1.06,duration:1.8,ease:"none"},52.920);
+tl.set("#w164",{opacity:1},60.360);
+tl.set("#w165",{opacity:1},60.360);
+tl.set("#w166",{opacity:1},60.360);
+tl.fromTo("#ph169",{scale:1.0},{scale:1.05,duration:5.1,ease:"none"},54.720);
+tl.set("#w171",{opacity:1},378.660);
+tl.set("#w172",{opacity:1},385.200);
+tl.set("#w173",{opacity:1},385.200);
+tl.set("#w174",{opacity:1},385.200);
+tl.set("#w175",{opacity:1},391.280);
+tl.set("#w176",{opacity:1},391.280);
+tl.set("#w177",{opacity:1},393.680);
+tl.set("#w178",{opacity:1},393.680);
+tl.set("#w179",{opacity:1},393.680);
+tl.set("#w183",{opacity:1},118.560);
+tl.set("#w184",{opacity:1},284.420);
+tl.set("#w185",{opacity:1},284.420);
+tl.set("#w186",{opacity:1},320.000);
+tl.set("#w187",{opacity:1},322.220);
+tl.set("#w188",{opacity:1},322.220);
+tl.fromTo("#v193",{scale:1.0},{scale:1.04,duration:3.34,ease:"none"},67.660);
+tl.set("#w195",{opacity:1},68.980);
+tl.set("#w196",{opacity:1},69.380);
+tl.set("#w197",{opacity:1},69.640);
+tl.set("#w198",{opacity:1},69.860);
+tl.set("#w202",{opacity:1},350.480);
+tl.set("#w203",{opacity:1},350.480);
+tl.set("#w204",{opacity:1},541.180);
+tl.set("#w205",{opacity:1},541.460);
+tl.set("#w206",{opacity:1},541.460);
+tl.fromTo("#v209",{scale:1.0},{scale:1.06,duration:2.46,ease:"none"},83.020);
+tl.set("#w211",{opacity:1},83.020);
+tl.set("#w212",{opacity:1},83.300);
+tl.set("#w213",{opacity:1},84.040);
+tl.set("#w214",{opacity:1},84.420);
+tl.set("#w215",{opacity:1},84.640);
+tl.fromTo("#v218",{scale:1.0},{scale:1.08,duration:2.42,ease:"none"},85.480);
+tl.set("#w220",{opacity:1},85.480);
+tl.set("#w221",{opacity:1},85.700);
+tl.set("#w222",{opacity:1},85.980);
+tl.set("#w223",{opacity:1},86.240);
+tl.set("#w224",{opacity:1},86.380);
+tl.set({}, {}, 87.900);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

@@ -1,0 +1,1116 @@
+                                                               Proceedings on Privacy Enhancing Technologies ; 2018 (4):33­50
+
+Elleen Pan*, Jingjing Ren, Martina Lindorfer, Christo Wilson, and David Choffnes
+
+Panoptispy: Characterizing Audio and Video
+Exfiltration from Android Applications
+
+Abstract: The high-fidelity sensors and ubiquitous in-         1 Introduction
+ternet connectivity offered by mobile devices have facil-
+itated an explosion in mobile apps that rely on multi-         The high-fidelity sensors and ubiquitous internet con-
+media features. However, these sensors can also be used        nectivity offered by mobile devices have facilitated nu-
+in ways that may violate user's expectations and per-          merous mobile applications (apps) that rely on multi-
+sonal privacy. For example, apps have been caught tak-         media features. For example, a mobile device's camera
+ing pictures without the user's knowledge and passively        and microphone enable users to capture and share pic-
+listened for inaudible, ultrasonic audio beacons. The de-      tures, videos, and recorded audio. Apps also use these
+velopers of mobile device operating systems recognize          sensors to implement important services such as voice
+that sensor data is sensitive, but unfortunately existing      assistants, optical character recognition (OCR), music
+permission models only mitigate some of the privacy            identification, and face and object recognition.
+concerns surrounding multimedia data.
+In this work, we present the first large-scale empir-               In addition to such beneficial use cases, apps may
+ical study of media permissions and leaks from An-             use these sensors in ways that violate users' expectations
+droid apps, covering 17,260 apps from Google Play, Ap-         and privacy. For example, some apps take pictures with-
+pChina, Mi.com, and Anzhi. We study the behavior of            out the user's knowledge by shrinking the viewfinder
+these apps using a combination of static and dynamic           preview window to a 1×1 pixel, thus making it virtually
+analysis techniques. Our study reveals several alarming        invisible [51, 68]. Similarly, Silverpush, an advertising
+privacy risks in the Android app ecosystem, including          company, developed a library that passively listened for
+apps that over-provision their media permissions and           inaudible, ultrasonic audio beacons for tracking users'
+apps that share image and video data with other par-           TV viewing habits [28]. Finally, as a possible example
+ties in unexpected ways, without user knowledge or con-        of things to come, Facebook has been awarded a patent
+sent. We also identify a previously unreported privacy         on using the mobile device's camera to analyze users'
+risk that arises from third-party libraries that record        emotions while they are browsing the newsfeed [70].
+and upload screenshots and videos of the screen with-
+out informing the user and without requiring any per-               Given that sensor data is highly sensitive, the An-
+missions.                                                      droid and iOS operating systems include mandatory
+                                                               access control mechanisms around most sensors. How-
+Keywords: privacy; mobile devices; audio, video, and           ever, existing permission models only partially mitigate
+image leaks                                                    multimedia privacy concerns because they are coarse
+                                                               grained and incomplete. For example, when a user grants
+DOI 10.1515/popets-2018-0030                                   a multimedia permission to an app, this permission also
+Received 2018-02-28; revised 2018-06-15; accepted 2018-06-16.  applies to any third-party library code that is included
+                                                               in the app. Thus, users and even app developers may
+*Corresponding Author: Elleen Pan: Northeastern Uni-           be unaware of the extent of privacy risks from such per-
+versity, E-mail: elleen@ccs.neu.edu                            missions. In addition, we find that on Android there is
+Jingjing Ren: Northeastern University,                         no permission required for third-party code in an app to
+E-mail: renjj@ccs.neu.edu                                      continuously record the screen displayed to the user. As
+Martina Lindorfer: UC Santa Barbara,                           such, users may unwittingly use apps that collect video
+E-mail: martina@iseclab.org                                    recordings containing sensitive information, similar to
+Christo Wilson: Northeastern University,                       session-replay scripts on websites [44]. A key challenge
+E-mail: cbw@ccs.neu.edu                                        for understanding these risks is that there is no general
+David Choffnes: Northeastern University,                       approach to reveal such behavior.
+E-mail: choffnes@ccs.neu.edu
+                                                                    In this work, our goal is to identify and measure
+                                                               the exfiltration of media (defined as images, video, and
+                                                               audio) over the network from Android apps. We focus on
+                                                             Proceedings on Privacy Enhancing Technologies ; 2018 (4):34­50
+
+(potential) privacy risks that are caused by the transfer    ­ Our analysis reveals that several apps share image
+of media recordings to parties over the internet, rather          and video data with other parties in unexpected
+than privacy risks caused solely by apps' access to the           ways. For example, several photo editing apps pro-
+camera and microphone (e.g., device fingerprinting [42,           cess images in the cloud without explicitly mention-
+46, 80] and location tracking [28]). We define a leak as          ing the behavior in their privacy policy.
+either (1) unexpected recording of users' interactions
+with an app, and (2) sharing of multimedia recordings        ­ Large fractions of apps request multimedia permis-
+with other parties over the internet, without explicitly          sions that they never use, and/or include code that
+indicating this to the user either in the privacy policy          uses multimedia sensors without explicitly request-
+or at run time.                                                   ing permissions for them. This inconsistency in-
+                                                                  creases the potential privacy risks for users: previ-
+     To understand media exfiltration by Android apps             ously unused permissions could be exploited by new
+and the potential privacy consequences, we empirically            third-party code that a developer includes in an app.
+studied the behavior of 17,260 apps collected from                Further, third-party code that does not have per-
+Google Play and three popular third-party app stores.             missions to use multimedia in one version of an app
+We analyze these apps using a combination of static               may start exploiting any permissions granted to a
+and dynamic analysis techniques. We use static analy-             future version of the app for an unrelated purpose.
+sis on all of the apps in our dataset to determine (1)
+whether each app requests access to camera and micro-        Taken together, our study reveals several alarming pri-
+phone permissions, (2) whether media APIs are actu-          vacy risks in the Android app ecosystem. We have re-
+ally referenced in the app's code, and (3) whether these     sponsibly disclosed confirmed privacy leaks to develop-
+API references (if they are present) are in code from the    ers and the Android privacy team, and they took action
+first-party developer or a third-party library. Of course,   to remediate the privacy concerns we discovered (§7.1).
+static analysis alone cannot tell us whether an app ac-
+tually invokes media APIs, or exfiltrates media over the     Our dataset and analysis results are publicly available
+network. Therefore, we use dynamic analysis (on a sub-       at https://recon.meddle.mobi/panoptispy/.
+set of 9,100 apps that have the potential to leak media)
+to detect media exfiltration; specifically, we used the Ex-  2 Related Work
+erciser Monkey [26] to automatically interact with each
+app in a controlled environment, recorded network traf-      We begin by surveying related work on mobile device
+fic using Mitmproxy [16], and used the MediaExtract          privacy in general, and media leaks in particular. We
+file carving tool [6] to identify media in network flows.    also discuss existing approaches and tools for investigat-
+                                                             ing the security and privacy offered by Android apps.
+Our work makes the following contributions:
+                                                             2.1 Privacy Measurements
+­ We present the first large-scale empirical study of
+     media permissions and leaks from Android apps,          Tracking and PII collection. Several studies have
+     covering 17,260 apps from Google Play, AppChina,        documented the growing prevalence of tracking in mo-
+     Mi.com, and Anzhi.                                      bile apps. Vallina-Rodriguez et al. presented a broad
+                                                             characterization of the online advertising platforms used
+­ We develop a comprehensive methodology for de-             by apps [72], and follow-up studies revealed the specific
+     tecting media exfiltration that combines analysis       kinds of personally identifiable information (PII) sent to
+     of permissions, method references, third-party li-      trackers and analytics services [31, 38, 61, 65, 73, 76].
+     braries, and automated interactions. We validate        Book et al. investigated APIs exposed by advertising li-
+     our methodology by analyzing the behavior of a          braries that can be used to leak PII [33]. Ren et al. used
+     ground-truth test app that we developed, as well as     longitudinal data to examine how app privacy practices
+     through manual examination of key apps that are         have changed over time [64]. Other studies have focused
+     known to rely on image, video, and audio collection.    on legal implications of apps' privacy practices, specifi-
+                                                             cally COPPA and the GDPR [63, 66].
+­ We find a previously unreported privacy risk from
+     third-party libraries. Namely, they can record the
+     screen from the app in which they are embedded
+     without requiring any permissions. Apps often dis-
+     play sensitive information, so this exposes users to
+     stealthy, undisclosed monitoring by third parties.
+                                                              Proceedings on Privacy Enhancing Technologies ; 2018 (4):35­50
+
+     Several studies bridge the gap between tracking on       tions of static screenshots and captured videos of the
+the web and on mobile devices. Leung et al. directly          screen. As we will show, these represent significant pri-
+compared the privacy practices of web and app-based           vacy risks since they can be surreptitiously recorded by
+versions of the same service [55]. In contrast, two studies   any app without the need for explicit permissions.
+have delved into the mechanisms used by advertisers to
+track users' behavior across devices [34, 81].                2.2 Privacy Measurement and Tools
+
+     While this body of work has significantly advanced       Numerous tools from the research community help iden-
+our understanding of the mobile tracking ecosystem, one       tify, and in some cases mitigate, security and privacy
+shortcoming is that it exclusively focuses on leaks of tex-   risks on mobile devices.
+tual information to third parties (e.g., unique identifiers,
+email addresses, names, etc.).                                Static analysis. Previous work analyzed the pri-
+                                                              vacy implications of Android app bytecode using a va-
+Attacks using multimedia sensors. Several pre-                riety of static analysis techniques, such as static data
+vious studies take an initial look at how a mobile de-        flow (taint) analysis [29, 36, 47, 52], and symbolic exe-
+vice's cameras and microphones can be used to vio-            cution [50, 78]. These systems uncover many PII leaks,
+late user privacy and security. For example, uninten-         but they often overestimate the number of leaks, thus
+tional variations in the manufacturing of mobile de-          leading to false positives. Further, code that is heavily
+vice cameras, microphones, and speakers can be used           obfuscated or dynamically loaded at run time can lead
+to create fingerprints that uniquely identify mobile de-      to false negatives (recent measurements indicate that
+vices [42, 46, 80]. Petracca et al. demonstrated nu-          30% of Android apps load code at run time [56]).
+merous attacks that apps with microphone permissions
+can implement by passively eavesdropping in the back-         Dynamic taint analysis. TaintDroid was the first
+ground [60]. Similarly, Fiebig et al. demonstrated that       system to pioneer the use of dynamic taint track-
+apps with camera permissions could passively capture          ing to analyze privacy leaks on Android [43]. Subse-
+keystrokes and even users' fingerprints [45].                 quent systems have refined these dynamic analysis tech-
+                                                              niques [75, 77, 79]. Additionally, there are several tools
+     Two studies have examined the deployment and im-         to assist in automating the testing process for Android
+plications of ultrasonic beacons. Arp et al. measured the     apps, i.e., to increase code coverage when performing
+prevalence of ultrasonic beacons in the wild, and found       taint analysis [37, 39, 48, 49, 58]. Unfortunately, dy-
+them deployed on websites and in stores. Furthermore,         namic analysis alone suffers from false negatives, as fully
+they found 234 apps in the Google Play Store that were        exercising all code paths in complex apps is generally
+constantly, passively monitoring for these beacons, in        not feasible. Further, taint tracking imposes run-time
+order to track users' online and offline browsing be-         overheads that make it challenging to run analysis at
+haviors [28]. Mavroudis et al. consider various attacks       large scale in a reasonable amount of time.
+against users that leverage ultrasonic beacons, including
+de-anonymizing Tor users [59].                                Dynamic network traffic analysis. A separate
+                                                              line of work focuses on identifying privacy leaks in net-
+     Shrivastava et al. developed a testing framework         work traffic [54, 63, 65, 69]. The advantage is that these
+that probes the computer vision algorithms used by            approaches are easily deployable for end-user devices,
+apps with camera permissions [67]. They found that            either via a Virtual Private Network (VPN) proxy or
+many apps included libraries that implement character,        by conducting analysis on a home router. When com-
+face, and barcode detection. Furthermore, the authors         bined with ground-truth information about PII and/or
+surveyed users and found that 19% of apps in their study      machine learning, this approach can provide good cov-
+extracted information from images that users did not          erage of privacy leaks with few false positives and nega-
+expect, and that this made users very uncomfortable.          tives. However, such approaches will not work well if the
+                                                              PII is exfiltrated using sophisticated obfuscation [40].
+Our work. Our study complements and extends the
+existing measurement work on the privacy implications         Our work. No single method is totally effective at
+of media sensors on mobile devices in two significant         detecting all privacy leaks from Android apps. Thus, in
+ways. First, existing studies focus on how apps can ex-       this study we leverage a combination of static analysis
+tract and distill privacy-sensitive data from images and      and dynamic network traffic analysis to measure media
+audio (e.g., fingerprints). In contrast, we focus on the      leaks. As we discuss in § 5, we first use static analysis
+wholesale exfiltration of media over the internet. Sec-
+ond, prior work does not consider the privacy implica-
+                                                             Proceedings on Privacy Enhancing Technologies ; 2018 (4):36­50
+
+to examine the permissions requested by apps and ref- ­ It is not employed by similar apps. We determine
+
+erences to sensitive API calls. We then run the apps         this based on comparisons with apps that have
+
+and automatically interact with them in an attempt to        nearly identical functionality. If other, similar apps
+
+trigger those APIs, and subsequently analyze the cor-        do not exfiltrate media, then it is a good indicator
+
+responding network traffic that those apps generate to       that such functionality is suspicious. We then man-
+
+identify media leaks.                                        ually investigate and subjectively label such cases.
+
+3 Threat Model                                               ­ It is not encrypted over the internet. This creates
+                                                                  opportunities for eavesdroppers to passively observe
+Our goal is to identify and measure exfiltration of media         sensitive content. We check this property based on
+(i.e., images, audio, and video) by Android apps over             whether media is sent over an unencrypted channel.
+the network. Media exfiltration presents new privacy
+implications compared to well-known PII leaks. They          We assume that apps do not attempt to break the per-
+provide an extra channel to carry PII and private infor-     mission model, nor break out of the Android sandbox
+mation (e.g., a user's images) that prior approaches do      (e.g., by exploiting OS-level vulnerabilities). We further
+not identify. Furthermore, screen recording reveals data     assume that apps access media sensors using only stan-
+as it is entered, which the user may reasonably expect       dard Android APIs that are available to all app develop-
+not to be shared until submitted. Finally, screen record-    ers on recent Android platforms, as opposed to hidden
+ing might reveal highly sensitive information, such as       or privileged APIs. We do not examine media exfiltra-
+passwords: Android has the option to toggle password         tion from apps' background activity. We also do not
+visibility globally in its security settings (i.e., showing  consider data that is reshared after collection, as was
+the entered characters briefly before masking them) or       the case for the Cambridge Analytica controversy.
+locally for individual input fields (i.e., unmasking the
+whole password) if enabled by the developer.                 Privacy legislation. While we do not provide a le-
+                                                             gal analysis of privacy leaks in this study, our definition
+Definition of media leaks. We assume that the                of leaks is in line with recent legislation that requires
+user has either granted no permissions, or granted an        companies to disclose and explain the purpose of col-
+app permissions to use media sensor(s) for a user-           lected PII. The European Union's General Data Pro-
+identifiable purpose of that app. For example, a user        tection Regulation (GDPR) restricts and requires full
+would grant no media permissions to a simple Solitaire       disclosure of PII collection and usage [11]. The Califor-
+app, and would grant camera permissions to an app that       nia Online Privacy Protection Act (CalOPPA) requires
+allows the user to take and edit photos. A suspicious or     any party who collects PII from Californian consumers
+unexpected media exfiltration is one that meets at least     to provide a privacy policy outlining what data is col-
+one of the following criteria:                               lected and who it is shared with, and to comply with
+                                                             posted policies [5]. The Fair Information Practice Prin-
+­ It does not further the primary purpose of the app.        ciples is a set of principles adopted by the US Privacy
+     Media shared outside of an app's primary purpose        Act and other frameworks worldwide. It details prin-
+     presents privacy risks since users do not expect it.    ciples such as transparency, purpose specification, and
+     In many cases, this shairng is due to third-party       data minimization, among others [8].
+     tracking or analytics libraries. For other cases, we
+     manually inspect the app being studied to assess        4 Background
+     this property.
+                                                             Before we describe our methodology for investigating
+­ It is not disclosed to the user. Media sharing that        media leaks from Android apps, it is important to review
+     is not disclosed may not only be unexpected by the      the permission model and APIs offered by Android to
+     user, but also may violate privacy laws. We manu-       access media resources.
+     ally verify whether an app provides visual cues to
+     users, requests users' consent, and/or clearly dis-     Media permissions. Android restricts access to
+     closes this behavior in its privacy policy.             sensitive OS capabilities by forcing developers to ob-
+                                                             tain explicit permission from users. App developers
+                                                             must list the permissions they plan to use in their
+                                                           Proceedings on Privacy Enhancing Technologies ; 2018 (4):37­50
+
+AndroidManifest.xml file, which is contained in all An-    nodes). In short, when an app calls these methods it
+droid Packages (APKs). To access the camera and mi-        does not necessarily imply that it is recording the screen.
+crophone, apps must request the following permissions:
+                                                                Note that this approach of capturing the screen is
+­ android.permission.CAMERA                                different from that of Android's MediaProjection API.
+­ android.permission.RECORD_AUDIO                          The latter provides means to record the screen program-
+                                                           matically, but includes an indication in the form of a
+Additionally, apps may request the permissions             lock icon. Since the user is informed about the record-
+                                                           ing in this case, this API is outside of our threat model.
+android.permission.READ_EXTERNAL_STORAGE    or
+                                                           5 Methodology
+android.permission.WRITE_EXTERNAL_STORAGE to ac-
+                                                           In this section, we present our methodology for gather-
+cess files that are stored on the device. This poses       ing data and measuring media leaks by Android apps.
+                                                           As shown in Figure 1, our methodology involves both
+another possible outlet for media leaks, as apps can ac-   static and dynamic analysis techniques. We begin by
+                                                           describing our process for gathering Android apps for
+cess and potentially leak photos, videos, or audio clips   analysis in § 5.1. Next, we discuss our approach for ex-
+                                                           tracting permissions and method usage from APKs us-
+stored on the device if granted either of these permis-    ing static analysis in § 5.2, and our dynamic testbed for
+                                                           automatically interacting with apps and inducing media
+sions. Note that in the Android permission model, the      exfiltration over the network in § 5.3. Finally, in § 5.4 we
+                                                           explain and validate our approach for detecting media
+permission to write to external storage implicitly grants  in network flows.
+
+read access.                                               5.1 Selection of Android Apps
+
+Users can accept or reject permission requests. Prior
+
+to Android API level 23, permission requests needed ap-
+
+proval at app install time, and rejection prevented in-
+
+stallation. Since API level 23, apps request permissions
+
+(and must handle rejection) at run time.
+
+Media APIs. Once an app has been granted media
+permissions, the following API objects become available:
+
+­ android.hardware.camera (API level <21)
+­ android.hardware.camera2 (API level 21+)
+­ android.media.AudioRecord
+­ android.media.MediaRecorder
+
+The camera and AudioRecord objects require the             Obtaining a broad understanding of media leaks re-
+CAMERA and RECORD_AUDIO permissions, respectively.         quires testing a large set of apps. However, the time
+The MediaRecorder object only requires RECORD_AUDIO        and resources necessary to dynamically analyze apps is
+if used solely for audio recording. Otherwise, to record   non-trivial (see § 5.3), and thus we must carefully choose
+video, both permissions are required.                      how to allocate our limited resources.
+
+Screenshots. Unlike the camera and audio APIs,                  To provide analytical results that are representa-
+the APIs for taking screenshots and recording video of     tive of apps in general, while also covering high-impact
+the screen are not protected by any permission. The An-    apps, we select popular and random apps from four app
+droid APIs for capturing the screen are:                   stores. Our set of apps is compiled from several preex-
+                                                           isting sources [27, 40, 64], and covers apps from Google
+­ android.view.View.getDrawingCache()                      Play, AppChina, Mi.com, and Anzhi. We chose these
+­ android.view.View.getRootView()                          three third-party app stores because they were the three
+                                                           largest markets (aside from the Google Play) in the An-
+This lack of access control is problematic, as apps can    droZoo dataset [27].
+potentially record users' screen interactions without
+their awareness. However, these two methods are multi-          From Google Play, we select 8,038 apps that request
+purpose and not solely designed for taking screenshots.    permissions for the camera and/or microphone from a
+For example, getDrawingCache() caches a bitmap,            set of 30,504 apps that are either part of the top 600
+which is useful for improving performance when ren-        popular free apps, top 600 popular apps for each cate-
+dering repeated UI elements between activities. The        gory, newest 600 overall, or newest 600 in each category
+method getRootView() finds the topmost view of the         as of April 2017 [40]. We further include 7,665 APKs col-
+UI's layout, which is a hierarchical tree structure con-   lected from a previous study [64] that were either part of
+sisting of ViewGroups (internal nodes) and Views (leaf     the top 600 popular free apps or the top 50 in each cat-
+                                                             Proceedings on Privacy Enhancing Technologies ; 2018 (4):38­50
+
+Static Analysis    Permissions                               Dynamic Analysis    Actual Media Leaks
+                 API References                                 Interaction +
+
+                                                             Traffic Collection
+
+                                                             Media Detection
+
+Fig. 1. Design of our experiments. We start with 17,260 apps collected from four app stores on the left. We statically analyze these
+apps to extract the media permissions and API references, which then informs our selection of apps to dynamically analyze. The final
+output, on the right, are the actual media leaks from apps over the network.
+
+egory as of January 2017. The final Google Play dataset      upload screen captures. As a result, our static analysis
+covers 15,627 unique APKs. From the third-party app          on permissions may have false positives and negatives,
+stores, we select the most popular apps as well as 1,000     which we control for with later dynamic analysis.
+apps selected uniformly at random from AndroZoo [27].
+Specifically, we collect the 510 most popular apps over-     API references. We decompile the apps in our
+all from AppChina, and the most popular apps from            dataset using dex-method-list [6] and locate references
+each category from Mi.com (528 apps) and Anzhi (285          to the camera, audio, and screen capture APIs listed
+apps). In total our dataset contains 17,260 unique apps.     in § 4. This allows us to identify apps that are over-
+                                                             privileged, as well as apps that may be capturing screen-
+5.2 Static Analysis                                          shots and screen video. However, the methods for cap-
+                                                             turing/recording the screen and reading data from de-
+The next step is statically analyzing the 17,260 apps in     vice storage may serve other purposes, meaning that
+our dataset. We use static analysis to determine:            the static analysis produces a high false positive rate
+                                                             for API references to screenshot functionality and read-
+1. Does the app request permissions for the camera,          ing from external storage. As a result, we also perform
+     microphone, and/or accessing external storage?          dynamic analysis on these apps, described in § 5.3.
+
+2. Does its bytecode contain references to the media         Third-party libraries. Android apps often include
+     APIs listed in § 4?                                     third-party libraries, some of which have been shown to
+                                                             be the root causes of privacy leaks (e.g., advertising and
+3. Are media API references in third-party library           tracking libraries [32]). Libraries are able to access sensi-
+     code, and if so, which library?                         tive information on mobile devices because they inherit
+                                                             the capabilities of the app itself. This raises the possi-
+We now discuss why each of these pieces of information       bility that library code may take actions that users, and
+is important for our analysis, and how we obtain them.       even first-party developers, are unaware of.
+
+Permissions. Examining permissions is the first                   In the context of this study, we are interested in
+step towards understanding which apps in our dataset         whether references to media APIs are within code from
+might leak images, audio, and video, since permissions       the first-party app developer or a third-party library.
+are required to access these sensors or files stored in the  This information is critical for correctly attributing the
+external storage. We use the standard Android SDK tool       source of media leaks. To identify the libraries within
+aapt to retrieve the AndroidManifest.xml file from all       apps, we rely on LibScout [30] and LibRadar [57]. Both
+of the apps in our dataset, and scan the results for apps    tools compare the signatures of bytecode against a pre-
+that request permissions to access the camera, micro-        defined database of known library code. Unfortunately,
+phone, or external storage.                                  because of bytecode obfuscation and the presence of
+                                                             previously unknown library versions, both tools may
+     However, an app that requests such permissions          produce false negatives. Furthermore, these tools may
+does not necessarily use the corresponding media APIs        produce false positives if an app includes a library, but
+or leak media over the network. This can occur when          never invokes its methods at run time.
+apps request permissions for functionality that is never
+used by the app, i.e., the apps are over-privileged [35].         To determine whether media API references oc-
+Further, apps that do not request these permissions may      cur in first or third-party code, we rely on package
+still potentially leak media, e.g., if they upload images    names. Typically, code from the first-party developer
+from the mobile device's internal storage, or gather and     resides in a package name that largely overlaps with
+                                                               Proceedings on Privacy Enhancing Technologies ; 2018 (4):39­50
+
+    Dataset     App Source   # of APKs       Selection Criteria
+method-call     Google Play            127   Apps that call camera and audio APIs
+                Google Play            187   Apps that covered the most popular set of third-party libraries
+        3p-lib  Google Play              33  Apps that include the AppSee library
+      appsee    Google Play                  Apps that request either camera and audio permission
+ permission     AppChina             8,038   Apps that request either camera or audio permission, or call screenshot methods
+   appchina     Mi.com                 335   Apps that request either camera or audio permission, or call screenshot methods
+       appmi    Anzhi                  331   Apps that request either camera or audio permission, or call screenshot methods
+                                       269
+        anzhi
+
+Table 1. Summary of the 9,100 apps we selected for dynamic analysis, and the criteria used for their selection. Some of our datasets
+(3p-lib and appsee) overlap with the rest of our dataset as we selected them for further testing after initial results.
+
+the application package name. We rely on this assump-          Automated interaction. Triggering media exfiltra-
+tion to distinguish code from first- and third-parties.        tion from mobile apps requires executing and interact-
+For example, all classes related to the main activity          ing with them. A natural way to accomplish this is via
+of the app air.com.myheritage.mobile are under the             human interaction; however, this does not scale to the
+same package name, yet it also includes packages cor-          size of our dataset. Instead, we use the UI/Application
+responding to third-party libraries like com.appsee and        Exerciser Monkey [26]. Each test consists of interacting
+com.google.android.gms.maps.                                   with an app using Monkey for 5,000 user events (lasting
+Privacy policies. Our definition of media leaks re-            for 16 minutes at most). We configured Monkey to ran-
+lies on app privacy policies (§ 3), so we manually inspect     domly select 10 activities in each app and send 500 in-
+the privacy policies of apps that share media over the         teractions to each activity. We use 5,000 events because
+internet. If this type of sharing is not explicitly disclosed  it allows us to test a large number of APKs in a reason-
+in the app's privacy policy, we call it a media leak.          able amount of time, and because previous work found
+                                                               that longer interaction times did not result in more PII
+5.3 Testbed for Dynamic Analysis                               leaks [55]. Note that we did not use pre-configured text
+                                                               inputs, which vary across apps and require substantial
+Static analysis provides useful guidance about which           manual effort; instead, we relied on random interactions.
+apps may potentially exfiltrate media. However, from           Accordingly, we miss some events that only human in-
+this data alone we cannot infer whether media permis-          teractions trigger, e.g., in apps that require login.
+sions will be used, or whether media APIs will be called
+at run time. Thus, results from static analysis alone may           During each test, we took screenshots from each de-
+exhibit high false positive rates. On the other hand,          vice at 1-second intervals. We use these screenshots to
+static analysis fails to detect obfuscated and dynami-         manually verify that observed media exfiltration was not
+cally loaded code, causing false negatives. To address         caused by an explicit interaction event (e.g., clicking the
+these issues, we conduct dynamic analysis by running           "upload image" button in an app).
+and interacting with apps. Due to resource constraints,1
+we are not able to dynamically analyze all 17,260 apps;        Test environment. We conduct experiments us-
+instead, as shown in Figure 1, we select apps that are         ing ten Android devices: two Nexus 6P phones and six
+more likely to leak media content based on their permis-       Nexus 5X phones with Android 6 (API level 23), and
+sions and media API references. We dynamically ana-            two Nexus 5 phones with Android 4.4.4 (API level 19).
+lyzed 9,100 apps (53% of our total dataset). Table 1           We use real Android devices instead of emulators to
+shows how these apps are distributed across app store          avoid scenarios where apps and third-party libraries be-
+sources, as well as the criteria for their selection.          have differently when they detect emulation. We ran-
+                                                               domly assigned apps to devices; 1,814 were ultimately
+     In the remainder of this section, we describe our         tested under Android 4.4.4.
+testbed for dynamically analyzing Android apps.
+                                                                    Each test was performed in a standardized environ-
+1 We conduct all dynamic tests on actual Android devices, and  ment. Before each test, we prepared the device by delet-
+each test takes on the order of minutes.                       ing all non-standard apps (i.e., everything except for
+                                                               the standard app suite provided by Google), clearing
+                                                               the internal user-accessible storage, and then preload-
+                                                               ing several media files (two decoy Grace Hopper images,
+                                                               a short video clip, and a short audio clip). These me-
+                                                                 Proceedings on Privacy Enhancing Technologies ; 2018 (4):40­50
+
+Category Supported                        Unsupported                 Table 2 shows the media file types that can be na-
+                                                                 tively produced by the Android APIs, as well as the file
+Audio 3gp, aac, id3v2, m4a, ogg, wav raw                         types supported by our augmented version of MediaEx-
+Image bmp, gif, jpg, png, webp                                   tract. We are able to detect all file formats that Android
+Video 3gp, mp4, webm                                             can natively produce, except for raw audio because it
+                                                                 does not have a distinguishable file header. Fortunately,
+Table 2. Media file types supported by our augmented version of  it is unlikely that apps will attempt to upload raw au-
+MediaExtract, based on encoders supported by the Android APIs    dio over the network because it is uncompressed, and
+(bolded) and common libraries we observe in practice.            the file sizes are large compared to other audio formats.
+
+dia files were placed in the standard locations within                As with all file carving tools, MediaExtract may
+the Android filesystem (e.g., /sdcard/Pictures). We              produce false positives, i.e., files that it incorrectly la-
+preloaded the test devices with media as a means to              bels as media. We verified that all extracted image files
+catch apps that exfiltrate media from the filesystem             were true positives by manually checking the media con-
+without recording any media themselves. Once the de-             tent, e.g., by opening an extracted image file. We then
+vice is cleaned and preloaded, we installed the target           repeated experiments manually to ensure observed leaks
+app and exercised it with Monkey.                                were repeatable. Further, we manually determined that
+Recording network traffic. During each test, we                  all extracted audio files 1KB in size were false posi-
+route network traffic through Meddle [62] using a VPN,           tives. We did not find any true positive audio files in
+and use Mitmproxy [16] to record the plaintext con-              our extracted dataset, i.e., no apps appeared to exfil-
+tent of HTTP and HTTPS flows. For apps that prevent              trate audio in our tests. We also verified the origin and
+TLS interception via certificate pinning, we use Just-           destination of the network flow carrying the media files
+TrustMe [13], which modifies Android to bypass cer-              to ensure that the traffic comes from the app itself, as
+tificate pinning for apps that leverage built-in Android         opposed to a background service or a stock app.
+networking APIs and popular libraries (e.g., OkHttp).
+                                                                 Other encodings. We noticed that some flows in
+5.4 Detection of Media in Network Traffic                        our dataset relied on specialized encoding formats. We
+                                                                 manually verified that MediaExtract was able to locate
+Our dynamic tests produce a large dataset of plaintext           media embedded in Protocol Buffer [22] and Thrift [1]
+network flows generated by apps. In this section, we dis-        RPC data structures. Similarly, we pre-processed flows
+cuss how we identified media embedded in these flows.            to decode base64-encoded data before running Media-
+                                                                 Extract.
+
+5.4.1 Media File Extraction and Decoding                         5.4.2 Validation
+
+We retrieved the raw byte streams of payload content             We use controlled tests and manual experiments to val-
+from each outgoing network flow (typically the payloads          idate our extraction of media files from network flows.
+of HTTP POST and PUT messages). We then scanned
+these byte streams with MediaExtract [15] to extract             Test app. We wrote a simple Android app that could
+embedded media files. MediaExtract identifies media              produce all supported types of images, video, and audio
+files by looking for the "magic numbers" that signify            files (see Table 2) and upload them to a web server. We
+the beginning of media file headers. For example, JPEG           ran this app through our data collection infrastructure
+files are always prefaced with the hexadecimal bytes "FF         (i.e., Meddle and Mitmproxy) and attempted to recover
+D8 FF". We modified MediaExtract to support two ad-              the files with MediaExtract. With the exception of raw
+ditional file types: WebP and WebM. We also evalu-               audio, we were able to recover all of the uploaded files.
+ated several other forensics tools (Autopsy [4], Test-
+Disk/PhotoRec [18], Foremost [9], Scalpel [23], tcpx-            Manual tests. We generated network traces with
+tract [24], LaZy_NT [14], PIL [20]), but these tools ei-         well-known apps that we knew would upload media,
+ther supported fewer file formats than MediaExtract,             such as Imgur and Giphy (images), SoundCloud (audio),
+identified fewer media files in our data than MediaEx-           and Sing! by Smule (audio & video). We were able to
+tract, or extracted incomplete and corrupted media files.        recover all images and videos, as well as audio files that
+                                                                 were uploaded in full. However, there were cases where
+                                                                 we could not recover audio data. For example, Shazam
+                                                            Proceedings on Privacy Enhancing Technologies ; 2018 (4):41­50
+
+        Store    # of Apps     Audio                   Camera  Screen Capture APIs  External Storage Access
+                                               Permission API                                 Permission
+        Anzhi             883  Permission API                  Screenshot Video                  23.4%
+  AppChina                468                     15.7% 11.7%                                    94.0%
+                          392  12.8%  9.7%        37.0% 28.6%  20.7%  1.5%                       97.4%
+      Mi.com          15,627                      61.0% 45.7%                                    92.7%
+Google Play           17,260   28.4% 22.9%        80.5% 75.1%  57.1%  2.4%                       89.9%
+                                                  75.6% 70.1%
+            All                55.9% 41.8%                     81.6%  5.6%
+
+                               45.7% 46.2%                     89.1%  10.6%
+
+                               43.8% 43.6%                     84.6%  9.8%
+
+Table 3. Media permission requests and media API references for the app stores in our study. Large fractions of apps request per-
+missions for media; in general, a smaller fraction actually call methods that use those permissions. A notable exception is the audio
+permission--many apps include code that calls audio APIs but do not request permissions for it (bold text in the table).
+
+interspersed small chunks that appear to be an audio        Google Play. Among the Chinese app stores, apps from
+signature, alongside metadata in JSON structures. In-       Mi.com have similar permissions requests compared to
+terestingly, voice assistants like Hound and Robin did      apps from Google Play; for the other two stores, the
+not upload audio at all; instead they transcribed it lo-    rates of permission requests are much lower.
+cally on the mobile device and uploaded the text.
+                                                                 A notable trend is that larger fractions of apps re-
+6 Aggregate Results                                         quest media permissions than actually call media APIs
+                                                            (on average), which means apps may declare the permis-
+In this section, we present aggregate statistics for our    sions but never actually use them. Such practices could
+analysis of media leaks. We begin by investigating the      impose additional risks, since third-party libraries can
+correlation between media permissions requested and         potentially load dynamic code to abuse the granted per-
+code references to media-related APIs (§ 6.1), then ana-    missions without developers or users knowing.
+lyze which libraries call these APIs (§ 6.2). Last, we use
+dynamic analysis to determine the media leaks detected           Note that method references do not necessarily
+in network traffic (§ 6.3).                                 mean that the method is called. Likewise, a third-party
+                                                            library may be included, but never used. We specu-
+6.1 Permissions and API References                          late that such practices explain the higher percentage
+                                                            of method references than permission requests for audio
+Our first step in understanding the potential for media     resources (bold text in Table 3).
+leaks is to analyze which media permissions each app
+requests, and which media APIs appear in the app's               Furthermore, APIs for taking screenshots and read-
+code. We summarize the fraction of apps that request        ing from device storage also serve other purposes,
+audio and camera permissions, and that call methods to      which produces a high false positive rate. For exam-
+capture media, in Table 3. Each row corresponds to a        ple, methods for reading from device storage are called
+different app store, and the Audio and Camera columns       in 96.1% of our app set, i.e., 16,580 apps call either
+specify the fraction of apps in each store that requests a  getExternalStorage or MediaStore.
+corresponding permission and that calls a corresponding
+API. The Screen Capture APIs columns refer to meth-              To summarize, significant fractions of apps request
+ods that are used for taking a screenshot or recording a    media permissions and include code that can use them.
+screen video, neither of which require permissions. The     Interestingly, there is a nontrivial amount of inconsis-
+rightmost column lists the fraction of apps that request    tency between permissions and API calls, and thus a
+read or write permission for external storage.              need for developers to more carefully consider how they
+                                                            request and use media functionality. We speculate the
+     The last row aggregates results over all apps in       reasons for over-provisioned permissions may come from
+our study. We find that among the popular and ran-          several sources. For one, an app may have required the
+domly selected apps, a significant fraction of apps re-     permission only in a previous version, but developers
+quests media permissions (43.8% for audio and 75.6%         failed to update requested permissions in the current
+for camera). However, this is biased towards apps from      version. Also, the mapping between Android permis-
+                                                            sions and their associated API is surprisingly poorly
+                                                            documented, potentially leading to developer confusion.
+                                                            Last, third-party SDKs provide copy-and-paste instruc-
+                                                            tions for integration that includes all potentially needed
+                                                            permissions even if the developer does not use library
+                                                            functionality that requires them.
+                                                              Proceedings on Privacy Enhancing Technologies ; 2018 (4):42­50
+
+                                                                           % of Apps Referencing API from the Library
+
+                                    Library    # of Apps      % of Apps    Audio Camera Screenshot  Video
+                           com.facebook               8,322       48.22%
+     com.google.android.gms.maps                      7,825       45.34%   0.04% 0.64%  4.54%       0.37%
+                                                      3,602       20.87%
+                                           rx         2,411       13.97%   0       0    0.01%                          0
+                              com.inmobi               1387         8.04%
+     com.google.android.gms.vision                    1,316         7.62%  0 0.03%      0.06%                          0
+                       com.tencent.mm                 1,272         7.37%
+                  com.millennialmedia                 1,175         6.81%  17.13%  0    26.59%                         0
+                              com.mopub               1,163         6.74%
+               uk.co.senab.photoview                    967         5.60%  0 87.60%     0                              0
+                net.hockeyapp.android                   853         4.94%
+                com.mixpanel.android                    621         3.60%  0       0    0.08%                          0
+                               com.tapjoy               396         2.29%
+              com.amazon.device.ads                     237         1.37%  0       0    31.29%                         0
+                      com.smaato.soma                   123         0.71%
+                                                        105         0.61%  0       0    45.87%                         0
+                                cn.domob                  58        0.34%
+                          com.adsdk.sdk                   51        0.30%  0       0    0.77%                          0
+                   com.mdotm.android                      39        0.23%
+                                                          31        0.18%  0       0    59.77%                         0
+                              com.heyzap                  11        0.06%
+             com.mapbox.mapboxsdk                         10        0.06%  0       0    71.51%                         0
+                                                           5        0.03%
+                       com.skplanet.tad                    3        0.02%  0       0    58.13%                         0
+                       com.fusepowered                     3        0.02%
+                                                                           0       0    62.12%                         0
+                                 com.tapit
+com.noqoush.adfalcon.android.sdk                                           0       0    97.47%                         0
+
+                           com.appflood                                    0       0    86.18%                         0
+                     com.vdopia.ads.lw
+                                                                           0       0    92.38%                         0
+
+                                                                           0       0    27.59%                         0
+
+                                                                           0       0    19.61%                         0
+
+                                                                           0       0    12.82%                         0
+
+                                                                           0       0    87.10%                         0
+
+                                                                           9.09%   0    100.00%                        0
+
+                                                                           0       0    100.00%                        0
+
+                                                                           0       0    60.00%                         0
+
+                                                                           0       0    33.33%                         0
+
+                                                                           0       0    100.00%                        0
+
+Table 4. Identified third-party libraries in our dataset, and the fraction of apps whose library version references media APIs. Of the 163
+libraries identified, only the above 25 reference media APIs. Libraries exhibit a diverse set of media API requests across apps, likely due
+to different versions of libraries and developer customization.
+
+6.2 Third-party Libraries                                     that call media API(s) in the third-party library path.
+                                                              We omitted Android libraries and third-party libraries
+It is common practice for apps to include third-party         that do not use media APIs (138/163) from the table,
+libraries for purposes such as utility functions, analytics,  which account for the majority of libraries.
+and advertising. In many cases, developers may have a
+limited (or no) understanding of the code contained in             Among the 25 libraries, we observe a diverse set of
+these libraries. As such, third-party libraries can be an     behaviors for permission requests and API calls. Only
+interesting vector for media leaks.                           com.facebook includes references to every category of
+                                                              media API. Few libraries include code that accesses the
+     We investigated the risks from third-party libraries     microphone: com.facebook, com.google.android.gms.
+by analyzing their code for references to media APIs.         maps, and com.tencent.mm. Only com.facebook, rx,
+Using LibScout, we identified 163 unique libraries based      and com.google.android.gms.vision reference camera
+on their signatures from 17,260 apps. We then matched         APIs, while only com.facebook references video APIs.
+these libraries with path names identified by dex-            Note that the video API (MediaRecorder) may also be
+method-list on the files. Note that our list of libraries is  used for audio recording. Almost all of the libraries refer-
+incomplete because both library package names and li-         ence the APIs that can be used to capture screenshots;
+brary method calls might be obfuscated at compile time,       however, we caution that these APIs have other uses
+preventing us from properly identifying the library. This     besides recording the screen.
+is a challenging and orthogonal research problem [74].
+Furthermore, LibScout can only identify libraries in its           Notably, references to media APIs for the same
+signature database, which does not include the libraries      third-party library can differ widely depending on which
+we discuss in detail in §7. For the libraries we could au-    app included the library. We believe this may be due to
+tomatically identify, we focus on any references in the       different versions of libraries providing different func-
+library path to media APIs. Table 4 shows the percent-        tionality, or developers who customize the code included
+age of apps that include third-party libraries and those      in their apps.
+                                                                                  Proceedings on Privacy Enhancing Technologies ; 2018 (4):43­50
+
+                                         App  Domain                              Request Method  Media Type  Description
+                  kr.kkh.image_search2        images.google.com                   POST (HTTPS)         png    expected, image search
+com.mnnapps.twinfinder_lookalike              www.google.com                      POST (HTTPS)          jpg   expected, image search
+                com.allintheloop.sahic        collector-10.testfairy.com          POST (HTTPS)          jpg   unexpected, screenshot image of app usage
+                                              artisto.smaper.com                  POST (HTTPS)          jpg   unexpected, photo editing
+                    com.smaper.artisto        paintlab.fotoable.net               POST (HTTP)           jpg   unexpected, photo editing
+             com.fotoable.fotobeauty          collector-7.testfairy.com           POST (HTTPS)          jpg   unexpected, screenshot image of app usage
+                                              babymanagerapp.com                  POST (HTTPS)          jpg   expected, sharing screenshot
+                com.allintheloop.sahic        log.umsns.com                       POST (HTTP)           jpg   expected, sharing screenshot of game score
+                  innmov.babymanager          api.facebook.com                    POST (HTTPS)          jpg   expected, photo upload
+                  com.umonistudio.tile        kodakmoments.kodakalaris.com        POST (HTTPS)          jpg   expected, photo upload
+                                              match-visualsearch.amazon.com       POST (HTTPS)          jpg   expected, image search
+               com.facebook.moments           c6e83853...0b.api.appsee.com        POST (HTTPS)         mp4    unexpected, screenshot video of app usage
+com.kodakalaris.kodakmomentsapp               api.picas.tech                      POST (HTTP)           jpg   unexpected, photo editing
+                                              node-03.faceapp.io                  POST (HTTPS)          jpg   unexpected, photo editing
+                           com.goodreads      api2.neuralprisma.com               POST (HTTPS)          jpg   unexpected, photo editing
+                        com.main.gopuff       anyline-tracking.azurewebsites.net  POST (HTTPS)          jpg   expected, photo-to-text scanner
+  com.picas.photo.artfilter.android           bh.houndify.com                     POST (HTTPS)          jpg   unexpected, screenshot image of app usage
+                                              api.camfindapp.com                  POST (HTTP)           jpg   expected, image search
+                                 io.faceapp   selfy.s3.amazonaws.com              PUT (HTTPS)           jpg   expected, photo upload
+                       com.neuralprisma       vcf.intsig.net                      POST (HTTPS)          jpg   expected, business card scanner
+              io.anyline.examples.store       up.zazzle.com                       POST (HTTP)           jpg   expected, photo upload
+               com.hound.android.app
+              com.msearcher.camfind
+                     com.momento.cam
+            com.intsig.BizCardReader
+
+                                com.zazzle
+
+Table 5. Summary of detected media in app-generated network traffic. Of the 21 cases, we find 12 to be leaks (bolded in the first col-
+umn): they are either unexpected media transmissions (noted in the last column) or sent in plaintext (bolded in the "Request Method"
+column), exposing potentially sensitive information to eavesdroppers.
+
+6.3 Media in Network Traffic                                                      6.4 Analysis of Large Network Flows
+
+Next, we analyze the network traffic generated by the                             The previous analysis relied on identifying known me-
+9,100 apps that we analyzed dynamically (as described                             dia types in network traffic, but could miss cases where
+in §5.3). Table 1 summarizes the apps we selected for                             the media encoding is non-standard, obfuscated, or en-
+dynamic analysis and the criteria we used to do so.                               crypted at the application layer. In this case, an alter-
+                                                                                  native approach to detect potential media content is to
+     Recall that our testbed gathers all the network traf-                        look at relatively large flows that could correspond to
+fic generated during automatic interactions with these                            images, audio recordings, or videos.
+apps, and we search network flows for media content.
+Table 5 shows the list of apps (identified by package                                  We begin by plotting the size of each network flow
+name in the first column) that transmitted media con-                             generated during dynamic analysis. We remove flows
+tent during our tests. The second column specifies the                            generated by Google Play Services from this analysis.
+destination domain that received the media content, fol-                          Although these flows are large and frequent, we do not
+lowed by the HTTP method and whether encryption                                   consider them to be a vector for media leaks. Figure 2
+was used. The fourth column specifies what type of me-                            shows the resulting CDF of the number of bytes per flow
+dia was transmitted, and the last column indicates our                            across all apps. The vast majority (99.81%) of requests
+analysis of whether the transmission was intentional                              are no larger than 100 KB and more than 80% contain
+(and thus expected) or not, and what kind of media                                fewer than 10 KB. By comparison, the size of extracted
+sharing was identified.                                                           images in our study ranges from 8.2 KB to 1.1 MB.
+
+     We use bold text in the last column to highlight nine                             We further investigated the content of the rela-
+cases that leak media. These include uploading photos,                            tively large flows (100 KB) in our dataset, which are
+screenshots, or even videos of screen interactions. The                           sent to 16 second-level domains (7 of which are third-
+bold rows in the third column highlight additional five                           party domains), and 12 of which have more than one
+cases in which the media content is sent in plaintext,                            large flow (see Table 6). Table 7 lists the apps re-
+meaning a network eavesdropper (e.g., on a public WiFi                            sponsible for those flows. A notable case is the do-
+access point or in the user's ISP) can also see the media                         main skyhookwireless.com that is contacted by mul-
+that is transmitted.                                                              tiple apps and provides services to locate devices (e.g.,
+                                                                                  IoT devices). The content of the large HTTP requests
+     Of the 21 cases of media leaks, just under half (9) are                      is an XML file with information about nearby access
+shared with third parties that the user may not be aware                          points (MAC, SSID, signal strength and age) that can
+of. Among the third-party domains, we observe third-                              be used to calculate fine-grained geolocations without
+party libraries and cloud services (AWS and Azure).
+                                                                        Proceedings on Privacy Enhancing Technologies ; 2018 (4):44­50
+
+              100                                                       Domain Package Name of App
+               80
+CDF of Flows   60                                                                   appsee.com   com.main.gopuff
+               40                                                            camfindapp.com      com.msearcher.camfind
+               20       10               100                1000              crittercism.com    com.usaa.mobile.android.usaa
+                 0                                                                               io.faceapp
+                     1                                                               faceapp.io  kr.kkh.image_search2
+                                                                                    google.com   com.mnnapps.twinfinder_lookalike
+                                         Payload Size (KB)                          google.com   com.midoapps.cartooneditor
+                                                                                    google.com   meemtech.flashlight
+Fig. 2. CDF of payload size per flow for data sent from the                         google.com   com.eosmobi.cleaner
+app to the internet. The vast majority of flows are small (as                  googleapis.com    org.becu.androidapp
+expected), but the minority of large flows indicates potentially                hockeyapp.net    com.hound.android.app
+significant data exfiltration.                                                   houndify.com    com.kodakalaris.kodakmomentsapp
+                                                                              kodakalaris.com    co.happybits.marcopolo
+                                Domain   Average Size (KB)  # of Flows          marcopolo.me     com.melodis.midomiMusicIdentifier.freemium
+                       radarstick.com             1,190           4                midomi.com    com.asurion.solutohome.walmart
+                     camfindapp.com               1,070           2             mysoluto.com     com.asurion.solutohome.gigspartner
+                     kodakalaris.com              1,069           2             mysoluto.com     com.traegergrills.app
+                      *hockeyapp.net               428            1               newrelic.com   com.radarworkx.radarspotter
+                                                   308            2            radarstick.com    air.air.com.EasyRandomVideoChat
+                             faceapp.io            289            7     skyhookwireless.com      app.local1285
+              *skyhookwireless.com                 224            5     skyhookwireless.com      appinventor.ai_malote1971.SpainParanormalKII
+                                                   200            24    skyhookwireless.com      app.qrcode
+                          midomi.com               170            52    skyhookwireless.com      com.abtnprojects.ambatana
+                        mysoluto.com               158            1     skyhookwireless.com      air.com.touchmultimedia.comicpuppetsfree
+                                                   131            2     skyhookwireless.com      a2z.Mobile.Event4164
+                          *google.com              118            3     skyhookwireless.com      com.smaper.artisto
+                         houndify.com              110            1                smaper.com
+                    *crittercism.com               102            1
+                                                   101            28    Table 7. Second-level domains receiving large requests of at least
+                          smaper.com               101            10
+                        *newrelic.com                                   100 KB and the apps that generated them.
+                     *googleapis.com
+                                                                        teresting media leaks in detail, identify their root causes,
+                          *appsee.com                                   and discuss their privacy implications.
+                        marcopolo.me
+
+Table 6. Second-level domains receiving large requests of at least
+100 KB. (*) indicates the domain belongs to a third party.
+
+                                                                        7.1 Appsee: Screen Recording
+
+needing to access GPS. Manual investigation of other                    Our first case study focuses on a video leak from
+large flows revealed that they generally contained de-                  the GoPuff app (com.main.gopuff) referenced in Ta-
+tailed information about the device and apps, at a                      ble 5. The app provides on-demand delivery for
+level that third-party domains can use to fingerprint                   users. The video was leaked to a third-party domain
+users [41, 53, 71]. While outside the scope of our study                api.appsee.com that is owned by Appsee [2], an app
+of media leaks, these large flows represent an additional               analytics platform provider. They offer the ability to
+privacy risk that users should be aware of. Further, such               "[w]atch every user action and understand exactly how
+large flows can potentially use substantial portions of a               they use your app, which problems they're experienc-
+cellular data plan's quota.                                             ing, and how to fix them. See the app through your
+                                                                        users' eyes to pinpoint usability, UX and performance
+     Crucially, manual analysis of all of these large flows             issues." [2] As we discuss below, this claim is--much to
+did not reveal any additional exfiltrated media files.                  the chagrin of user privacy--accurate.
+This is a positive sign, which suggests that the false neg-
+ative rate of our media-detection methodology is low.                        We began by decompiling the APK for GoPuff,
+                                                                        which revealed that GoPuff starts Appsee as soon
+7 Case Studies                                                          as the app launches (using the code in Figure 3).
+                                                                        Our dynamic analysis confirmed this: as soon as a
+The previous section focused on aggregate information                   user opens GoPuff, the app records the screen and
+about media leaks that we observed in our dataset. In                   sends a video of this interaction to the following do-
+this section, we use case studies to highlight several in-              main: https://c6e83853bc68d0b076811737cb58920b.
+                                                                        api.appsee.com/upload. Taking a recording of user in-
+                                                                                   Proceedings on Privacy Enhancing Technologies ; 2018 (4):45­50
+
+package                                                                            Appsee Method # of Apps # of Occurrences
+com . main . g o p u f f . p r e s e n t a t i o n . view . a c t i v i t i e s ;
+                                                                                   start                16  37
+public class SplashActivity extends BaseActivity
+implements SplashScreenView {                                                      addEvent             7   27
+
+    // The method onCreate i s c a l l e d when                                    setUserId            6   6
+    // SplashActivity i s created
+    public void onCreate ( Bundle paramBundle ) {                                  markViewAsSensitive  5   44
+
+        Appsee . s t a r t ( getString (2131296433));                              startScreen          4   9
+         ...
+    }                                                                              stop                 2   2
+}
+                                                                                   resume               1   6
+Fig. 3. Code snippet from GoPuff, which uses the Appsee library
+to recode the screen as a user interacts with the app. The record-                 pause                1   1
+ing starts immediately when the user opens the app, and in some
+cases include users' PII (which is shared with Appsee).                            set3rdPartyId        1   1
+
+                                                                                   Total                21  133
+
+                                                                                   Table 8. Number of apps using various methods of the Appsee
+                                                                                   library, and how often they called each method.
+
+teractions is not itself necessarily a privacy risk. How-                               Given the risks of screen recording, we disclosed this
+ever, even in this simple example we found that PII was                            behavior to Google's privacy team. Their response was
+exposed to Appsee--in this case the user's ZIP code.2                              that "Google constantly monitors apps and analytics
+                                                                                   providers to ensure they are policy-compliant. When no-
+     While this specific example exposes relatively low-                           tified of our findings, they reviewed GoPuff and AppSee
+risk PII, it is important to reiterate that Appsee re-                             and took the appropriate actions."
+quires no special permission to record the screen, nor
+does it notify the user that she is being recorded. In fact,                       7.2 TestFairy: Screenshots
+Appsee puts the burden on the app developer to protect
+sensitive information by calling markViewAsSensitive                               Our next case study focuses on a similar privacy risk:
+in the app's code, or using server-side configuration                              taking screenshots of the app while in use. TestFairy [25]
+through Appsee's dashboard [3].                                                    is a mobile beta-testing platform that records user
+                                                                                   interactions via screenshots. In our dataset, SAHIC
+     At first glance, this is good news: the developer is                          (com.allintheloop.sahic), which is a networking app
+in the position of knowing what views in their app are                             for two conferences ­ SAHIC Cuba and SAHIC South
+sensitive. However, our analysis indicates that many de-                           America 2017 ­ uses the library and sent 45 screenshots
+velopers either have no sensitive data input, or simply                            to testfairy.com. The screenshots, shown in Figure 4,
+did not bother to mark any view as sensitive: only five                            include (but are not limited to) information such as a
+out of 33 apps in our dataset that include Appsee even                             search for attendees, a message to a contact, and a re-
+call the markViewAsSensitive method. We show counts                                sponse to a survey. Attached with the screenshots is in-
+of other method calls in Table 8; most apps start record-                          formation that describes the current view and activity
+ing (16 start and four startScreen), but only a small                              name of the app as shown in the following request:
+fraction of apps made calls to the stop/pause actions.
+Thus, in many cases screen recording is started, never                                   https://collector-10.testfairy.com/services/
+stops, and no views are omitted from recording using                                        ?method=testfairy.session.addScreenshot\
+the client-side AppSee API. It is unknown how many                                          &timestamp=1504971161996\&seq=1\
+app developers use AppSee's dashboard to filter sensi-                                      &sessionToken=80775553-4252621-5418832-376287176
+tive views on the server-side.                                                              -bab9f09e42c3c2e13a083c070ca30ed203aa05b6\
+                                                                                            &lastScreenshotTime=349\&interval=2000\&type=0\
+     Screen recording, if adopted at scale and/or in apps                                   &activityName=com.allintheloop.sahic.MainActivity
+that handle sensitive data, could expose substantial
+amounts of users' PII, especially when the full burden                             While this feature is typically used during beta testing,
+of securing private information is placed on developers.                           the app was not labeled as a beta version in the Google
+Further, we argue that the recording of interactions with                          Play Store. The user is also not informed of the record-
+an app (without user knowledge) is itself a privacy vio-                           ing, nor is she offered the opportunity to consent to beta
+lation akin to recording audio or video of the user.                               testing upon opening the app. Thus, any reasonable user
+                                                                                   of these apps would likely never expect screenshots of
+2 We disclosed this to GoPuff, which in response pulled the                        her interactions.
+Appsee SDK from their iOS and Android apps and updated
+their privacy policy [12].
+                                                               Proceedings on Privacy Enhancing Technologies ; 2018 (4):46­50
+
+     To understand how pervasive this problem is, we ex-       ically include users' photos as "personal information"
+amine all the apps in our dataset that include the Test-       collected [7, 19, 21]. However, this disclosure is arguably
+Fairy library. Fortunately, we found only one (SAHIC)          misleading as the app does not indicate uploading of
+out of 16 apps calling any of the TestFairy API methods        a user's photo while they are editing it. In one app,
+for screenshots, and this is consistent with our network       Artisto - Video & Photo Editor (com.smaper.artisto),
+traffic analysis. Thus, despite a substantial privacy risk     the privacy policy does not even seem to apply to this
+from this feature, we find that nearly all apps we tested      app--rather, it appears to be a general privacy policy
+are properly removing TestFairy methods before releas-         for the developer's family of apps, and is focused on
+ing their apps in the Google Play Store.                       games [17]. Thus, it is reasonable to assume that users
+                                                               of these apps may not be aware of photo exfiltration and
+7.3 Photo Apps: Unexpected Sharing                             may not have consented to it.
+
+Many users regularly use the cameras on their phones           8 Limitations
+to take photos for personal use, then edit those photos
+using apps installed on their phones. In fact, both An-        We now discuss some important issues and limitations of
+droid and iOS already provide powerful built-in ways           our study. From a set of 17,260 apps, we uncovered few
+to edit photos directly on the phone. That said, there         instances of covert recording (i.e. apps taking pictures
+is also a marketplace of photography apps that provide         or videos without users intentionally doing so). On the
+photo-editing features (e.g., filters, adding text, etc.). It  one hand, this is good news: a very large fraction of
+is reasonable for most users to assume that such editing       apps are not abusing the ability to record media. On
+is performed on the device itself; however, we observed        the other hand, it could also indicate that our analysis
+that several photography apps send the photos to their         missed other cases of media leaks.
+servers for processing without explicitly notifying users.
+                                                               Dynamic analysis limitations. A number of fac-
+     An example of this behavior is Photo Cartoon Cam-         tors could lead to this result. First, our media extraction
+era - PaintLab (com.fotoable.paintlab), which up-              method is not perfect. For example, an app could trans-
+loads to their servers any photo that a user selects for       form an audio recording into a different format (e.g.,
+editing, as well as any photo taken from the app (even         a text transcript or musical features such as beat and
+before the user decides to edit the photo). Given that         notes) that our system does not detect. Similarly, our
+nothing else in the app indicates the need for an in-          approach does not stitch together a single media file
+ternet connection, the behavior is unexpected. Further,        transferred over multiple flows, or cases where a media
+uploading photos taken from within the app before users        file does not use a standard encoding format. Second, we
+decide to keep them exposes those users to further pri-        may miss cases where multiple apps collude to subvert
+vacy risks from unintentional photo sharing. This be-          the permission model, e.g., when an app uses an In-
+havior also appears in InstaBeauty - Makeup Selfie Cam         tent to launch another app [35]. Third, we do not detect
+(com.fotoable.fotobeauty), an app from the same de-            media that is intentionally obfuscated when it is sent
+veloper, and in five other photo-editing apps.                 over the network, or encrypted at the application-layer
+                                                               (Mitmproxy does enable us to bypass TLS encryption).
+     We crawled the categories of 8,689 unique apps in
+our dataset that were from the Google Play Store. Our               It is possible for automated interactions to trigger
+crawler was able to identify the categories of 7,022 apps.     a legitimate media exfiltration that could be mistak-
+Out of those 7,022 apps, 463 apps were part of the "Pho-       enly classified as a media leak. To mitigate this issue,
+tography" category. Our experiments detected 6 apps            we regularly captured screenshots during the automated
+exhibiting this uploading behavior.                            interactions, then manually verified that a media leak
+                                                               was not generated by an intentional trigger in the app,
+     The privacy disclosures for these apps are not            e.g., camera shutter or audio recording button.
+entirely clear. Fotoable, the developer of two afore-
+mentioned apps, has a privacy policy disclosure that           Static analysis limitations. We used static anal-
+makes only a general statement that personal infor-            ysis to identify apps that might record media, namely
+mation may be collected and used [10]. Three other             by identifying corresponding API calls. It is well known,
+apps, FaceApp (io.faceapp), Picas - Art Photo Filter,          however, that the existence of an API call in a piece of
+Picture Filter (com.picas.photo.artfilter.android),
+and Prisma Photo Editor (com.neuralprisma) specif-
+                                                            Proceedings on Privacy Enhancing Technologies ; 2018 (4):47­50
+
+Fig. 4. Example screenshots collected by TestFairy. Left: Contact info. Center: Messaging another user. Right: Responses to a survey.
+
+code does not guarantee it will ever be executed. To ad-    recorded from the camera and the screen over the in-
+dress this, we used dynamic analysis to filter out false    ternet, and in ways that are either undisclosed or un-
+positives. However, this does not address false negatives   expected given the purpose of the app. Importantly, we
+(where media API calls are reachable, but our auto-         find that third-party libraries record a video of a user's
+mated interaction tool does not trigger them).              interaction with an app, including at times sensitive in-
+                                                            put fields, without any permissions or notification to the
+     Further, our static analysis approach focuses on       user. Further, several apps share users' photos and other
+methods from the Android SDK and not native code,           media over the internet without explicitly indicating
+so we may miss cases of media leaks. Likewise, we may       this to the user. We also find that there is poor correla-
+miss leaks from dynamically loaded code.                    tion between the permissions that an app requests and
+                                                            the permissions that an app needs to successfully run its
+     We rely on LibRadar and LibScout to identify third-    code. This opens up the potential for unexpected expo-
+party libraries. However, these tools may not be able       sure to additional media exfiltration with the inclusion
+to detect obfuscated libraries, or new versions of previ-   of new libraries in future versions of the app. In ongo-
+ously identified libraries. Fortunately, these limitations  ing work, we are continuing to monitor how multimedia
+did not hinder our ability to identify the sources of me-   content leaks over the internet from mobile and IoT de-
+dia leaks in our study.                                     vices, and assess the implications of such behavior.
+
+Future work. There are several ways to address              Acknowledgments
+the above issues. More sophisticated static analysis ap-
+proaches could determine whether referenced methods         We thank the anonymous reviewers and our shepherd
+are reachable during normal interactions with an app. A     Joel Reardon for their valuable feedback.
+better understanding of how media may be sent over the
+network, and potentially transformed before transmis-            This material is based upon work supported by the
+sion, would reduce our false negative rate. Our analysis    DHS S&T contract FA8750-17-2-0145; the NSF under
+could also incorporate analysis of native code that leaks   Award No. CNS-1408632, IIS-1408345, and IIS-1553088;
+media recordings.                                           a Security, Privacy and Anti-Abuse award from Google;
+                                                            a Comcast Innovation Fund grant; and a Data Trans-
+     Lastly, while we focused our analysis on Android       parency Lab grant. Any opinions, findings, and conclu-
+apps, we will investigate in future work whether iOS        sions or recommendations expressed in this material are
+apps exhibit similar behavior, as e.g., AppSee and Test-    those of the authors and do not necessarily reflect the
+Fairy also provide iOS SDKs.                                views of our sponsors.
+
+9 Conclusion
+
+In this paper, we investigated the potential for, and spe-
+cific instances of, multimedia recordings being sent over
+the internet by 17,260 popular Android apps across mul-
+tiple app stores. We find that several apps leak content
+                                                                 Proceedings on Privacy Enhancing Technologies ; 2018 (4):48­50
+
+References                                                             nels on Mobile Devices. In Proc. of the IEEE European
+                                                                       Symposium on Security and Privacy (EuroS&P), 2017.
+[1] Apache Thrift. https://thrift.apache.org/.                   [29] Steven Arzt, Siegfried Rasthofer, Christian Fritz, Eric
+[2] Appsee Mobile App Analytics. https://www.appsee.com/.              Bodden, Alexandre Bartel, Jacques Klein, Yves Le Traon,
+[3] Appsee Tutorials: Protecting Users' Privacy. https:                Damien Octeau, and Patrick McDaniel. FlowDroid: Precise
+                                                                       Context, Flow, Field, Object-sensitive and Lifecycle-aware
+      //www.appsee.com/tutorials/privacy. (last accessed               Taint Analysis for Android Apps. In Proc. of the ACM
+      06/14/2018).                                                     SIGPLAN Conference on Programming Language Design
+[4] Autopsy. https://www.sleuthkit.org/autopsy/.                       and Implementation (PLDI), 2014.
+[5] CalOPPA Chapter 22: Internet Privacy Requirements.           [30] Michael Backes, Sven Bugiel, and Erik Derr. Reliable Third-
+      https://leginfo.legislature.ca.gov/faces/codes_                  Party Library Detection in Android and its Security Appli-
+      displayText.xhtml?lawCode=BPC&division=8.&title=                 cations. In Proc. of the ACM Conference on Computer and
+      &part=&chapter=22.&article=.                                     Communications Security (CCS), 2016.
+[6] dex-method-list. https://github.com/JakeWharton/dex-         [31] Rebecca Balebako, Jaeyeon Jung, Wei Lu, Lorrie Faith Cra-
+      method-list.                                                     nor, and Carolyn Nguyen. "Little Brothers Watching You:"
+[7] FaceApp Privacy Policy. http://archive.today/2018.                 Raising Awareness of Data Leaks on Smartphones. In Proc.
+      06.14-232005/https://www.faceapp.com/privacy. (last              of the Symposium on Usable Privacy and Security (SOUPS),
+      accessed 06/14/2018).                                            2013.
+[8] Fair Information Practice Principles (FIPPS). https:         [32] Theodore Book, Adam Pridgen, and Dan S. Wallach. Lon-
+      //www.dhs.gov/sites/default/files/publications/                  gitudinal Analysis of Android Ad Library Permissions. In
+      consolidated-powerpoint-final.pdf.                               Proc. of the IEEE Mobile Security Technologies Workshop
+[9] Foremost. http://foremost.sourceforge.net/.                        (MoST), 2013.
+[10] Fotoable Privacy Policy. http://archive.today/2018.         [33] Theodore Book and Dan S. Wallach. A Case of Collusion: A
+      06.14-230916/https://www.fotoable.com/privacy.html.              Study of the Interface Between Ad Libraries and Their Apps.
+      (last accessed 06/14/2018).                                      In Proc. of the ACM Workshop on Security and Privacy in
+[11] General Data Protection Regulation (GDPR). https://eur-           Smartphones and Mobile Devices (SPSM), 2013.
+      lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:        [34] Justin Brookman, Phoebe Rouge, Aaron Alva, and Christina
+      32016R0679&from=EN.                                              Yeung. Cross-Device Tracking: Measurement and Disclo-
+[12] GoPuff Privacy Agreement. https://gopuff.com/privacy-             sures. In Proc. of the Privacy Enhancing Technologies
+      agreement. (last accessed 06/14/2018).                           Symposium (PETS), 2017.
+[13] JustTrustMe. https://github.com/Fuzion24/JustTrustMe.       [35] Paolo Calciati and Alessandra Gorla. How do Apps Evolve
+[14] LaZy_NT. https://pypi.python.org/pypi/LaZy_NT.                    in Their Permission Requests? A Preliminary Study. In
+[15] Mediaextract. https://github.com/panzi/mediaextract.              Proc. of the International Conference on Mining Software
+[16] Mitmproxy. https://mitmproxy.org/.                                Repositories (MSR), 2017.
+[17] My.com Terms of Use. http://archive.today/2018.06.          [36] Yinzhi Cao, Yanick Fratantonio, Antonio Bianchi, Manuel
+      14-231903/https://legal.my.com/us/games/tou/. (last              Egele, Christopher Kruegel, Giovanni Vigna, and Yan Chen.
+      accessed 06/14/2018).                                            EdgeMiner: Automatically Detecting Implicit Control Flow
+[18] PhotoRec. https://www.cgsecurity.org/wiki/PhotoRec.               Transitions through the Android Framework. In Proc. of
+[19] Picas.tech Privacy Policy. http://archive.today/2018.             the Network and Distributed System Security Symposium
+      06.14-231220/https://www.picas.tech/privacyandroid.              (NDSS), 2015.
+      php. (last accessed 06/14/2018).                           [37] Patrick Carter, Collin Mulliner, Martina Lindorfer, William
+[20] PIL. https://pypi.python.org/pypi/PIL.                            Robertson, and Engin Kirda. CuriousDroid: Automated
+[21] Prisma Privacy Policy. http://archive.today/2018.06.              User Interface Interaction for Android Application Analysis
+      14-232142/http://prisma-ai.com/privacy.html. (last               Sandboxes. In Proc. of the International Conference on
+      accessed 06/14/2018).                                            Financial Cryptography and Data Security (FC), 2016.
+[22] Protocol Buffers. https://developers.google.com/            [38] Terence Chen, Imdad Ullah, Mohamed Ali Kaafar, and
+      protocol-buffers/.                                               Roksana Boreli. Information Leakage through Mobile An-
+[23] Scalpel. https://github.com/sleuthkit/scalpel.                    alytics Services. In Proc. of the ACM Workshop on Mobile
+[24] tcpxtract. http://tcpxtract.sourceforge.net/.                     Computing Systems and Applications (HotMobile), 2014.
+[25] TestFairy Mobile Testing Platform. https://www.             [39] Shauvik Roy Choudhary, Alessandra Gorla, and Alessandro
+      testfairy.com/.                                                  Orso. Automated Test Input Generation for Android: Are
+[26] UI/Application Exerciser Monkey. https://developer.               We There Yet? In Proc. of the IEEE/ACM International
+      android.com/tools/help/monkey.html.                              Conference on Automated Software Engineering (ASE),
+[27] Kevin Allix, Tegawendé F. Bissyandé, Jacques Klein, and           2015.
+      Yves Le Traon. AndroZoo: Collecting Millions of An-        [40] Andrea Continella, Yanick Fratantonio, Martina Lindorfer,
+      droid Apps for the Research Community. In Proc. of the           Alessandro Puccetti, Ali Zand, Christopher Kruegel, and
+      International Conference on Mining Software Repositories         Giovanni Vigna. Obfuscation-Resilient Privacy Leak Detec-
+      (MSR), 2016.                                                     tion for Mobile Apps Through Differential Analysis. In Proc.
+[28] Daniel Arp, Erwin Quiring, Christian Wressnegger, and Kon-        of the Network and Distributed System Security Symposium
+      rad Rieck. Privacy Threats through Ultrasonic Side Chan-         (NDSS), 2017.
+                                                                     Proceedings on Privacy Enhancing Technologies ; 2018 (4):49­50
+
+[41] Shuaifu Dai, Alok Tongaonkar, Xiaoyin Wang, Antonio                   of Big (Internet) Data (C2B(1)D), 2015.
+      Nucci, and Dawn Song. NetworkProfiler: Towards Auto-           [55] Christophe Leung, Jingjing Ren, David Choffnes, and
+      matic Fingerprinting of Android Apps. In Proc. of IEEE
+      International Conference on Computer Communications                  Christo Wilson. Should You Use the App for That?: Com-
+      (INFOCOM), 2013.                                                     paring the Privacy Implications of App- and Web-based
+                                                                           Online Services. In Proc. of the Internet Measurement
+[42] Anupam Das, Nikita Borisov, and Matthew Caesar. Do You                Conference (IMC), 2016.
+      Hear What I Hear?: Fingerprinting Smart Devices Through        [56] Martina Lindorfer, Matthias Neugschwandtner, Lukas We-
+      Embedded Acoustic Components. In Proc. of the ACM                    ichselbaum, Yanick Fratantonio, Victor van der Veen, and
+      Conference on Computer and Communications Security                   Christian Platzer. Andrubis - 1,000,000 Apps Later: A View
+      (CCS), 2014.                                                         on Current Android Malware Behaviors. In Proc. of the
+                                                                           International Workshop on Building Analysis Datasets and
+[43] William Enck, Peter Gilbert, Byung-Gon Chun, Landon P.                Gathering Experience Returns for Security (BADGERS),
+      Cox, Jaeyeon Jung, Patrick McDaniel, and Anmol N. Sheth.             2014.
+      TaintDroid: An Information-Flow Tracking System for Re-        [57] Ziang Ma, Haoyu Wang, Yao Guo, and Xiangqun Chen.
+      altime Privacy Monitoring on Smartphones. In Proc. of                LibRadar: Fast and Accurate Detection of Third-party Li-
+      the USENIX Symposium on Operating Systems Design and                 braries in Android Apps. In Proc. of the International
+      Implementation (OSDI), 2010.                                         Conference on Software Engineering (ICSE), 2016.
+                                                                     [58] Aravind Machiry, Rohan Tahiliani, and Mayur Naik. Dyn-
+[44] Steven Englehardt. No boundaries: Exfiltration of per-                odroid: An Input Generation System for Android Apps.
+      sonal data by session-replay scripts. https://freedom-to-            In Proc. of the Joint Meeting on Foundations of Software
+      tinker.com/2017/11/15/no-boundaries-exfiltration-                    Engineering (ESEC/FSE), 2013.
+      of-personal-data-by-session-replay-scripts/, Novem-            [59] Vasilios Mavroudis, Shuang Hao, Yanick Fratantonio, Fed-
+      ber 2017.                                                            erico Maggi, Giovanni Vigna, and Christopher Kruegel. On
+                                                                           the Privacy and Security of the Ultrasound Ecosystem. In
+[45] Tobias Fiebig, Jan Krissler, and Ronny Hänsch. Security               Proc. of the Privacy Enhancing Technologies Symposium
+      Impact of High Resolution Smartphone Cameras. In Proc. of            (PETS), 2017.
+      the USENIX Workshop on Offensive Technologies (WOOT),          [60] Giuseppe Petracca, Yuqiong Sun, Trent Jaeger, and Ahmad
+      2014.                                                                Atamli. AuDroid: Preventing Attacks on Audio Channels in
+                                                                           Mobile Devices. In Proc. of the Annual Computer Security
+[46] Jessica Fridrich. Sensor Defects in Digital Image Forensic. In        Applications Conference (ACSAC), 2015.
+      Digital Image Forensics, pages 179­218. Springer, 2013.        [61] Ashwin Rao, Arash Molavi Kakhki, Abbas Razaghpanah,
+                                                                           Anke Li, David Choffnes nad Arnaud Legout, Alan Mis-
+[47] Clint Gibler, Jonathan Crussell, Jeremy Erickson, and Hao             love, and Phillipa Gill. Meddle: Enabling Transparency and
+      Chen. AndroidLeaks: Automatically Detecting Potential                Control for Mobile Internet Traffic. Journal of Technology
+      Privacy Leaks in Android Applications on a Large Scale.              Science (JoTS), (2015103003), October 2015.
+      In Proc. of the International Conference on Trust and          [62] Ashwin Rao, Arash Molavi Kakhki, Abbas Razaghpanah,
+      Trustworthy Computing (TRUST), 2012.                                 Amy Tang, Shen Wang, Justine Sherry, Phillipa Gill, Arvind
+                                                                           Krishnamurthy, Arnaud Legout, Alan Mislove, and David
+[48] Lorenzo Gomez, Iulian Neamtiu, Tanzirul Azim, and Todd                Choffnes. Using the Middle to Meddle with Mobile. Tech-
+      Millstein. RERAN: Timing- and Touch-sensitive Record and             nical Report NEU-CCS-2013-12-10, Northeastern University,
+      Replay for Android. In Proc. of the International Conference         2013.
+      on Software Engineering (ICSE), 2013.                          [63] Abbas Razaghpanah, Rishab Nithyanand, Narseo Vallina-
+                                                                           Rodriguez, Srikanth Sundaresan, Mark Allman, Christian
+[49] Shuai Hao, Bin Liu, Suman Nath, William G.J. Halfond, and             Kreibich, and Phillipa Gill. Apps, Trackers, Privacy, and
+      Ramesh Govindan. PUMA: Programmable UI-Automation                    Regulators: A Global Study of the Mobile Tracking Ecosys-
+      for Large-Scale Dynamic Analysis of Mobile Apps. In                  tem. In Proc. of the Network and Distributed System
+      Proc. of the International Conference on Mobile Systems,             Security Symposium (NDSS), 2018.
+      Applications and Services (MobiSys), 2014.                     [64] Jingjing Ren, Martina Lindorfer, Daniel Dubois, Ashwin
+                                                                           Rao, David Choffnes, and Narseo Vallina-Rodriguez. Bug
+[50] Jinseong Jeon, Kristopher K. Micinski, and Jeffrey S. Foster.         Fixes, Improvements, ... and Privacy Leaks ­ A Longitudinal
+      SymDroid: Symbolic Execution for Dalvik Bytecode. Tech-              Study of PII Leaks Across Android App Versions. In Proc.
+      nical Report CS-TR-5022, University of Maryland, College             of the Network and Distributed System Security Symposium
+      Park, 2012.                                                          (NDSS), 2018.
+                                                                     [65] Jingjing Ren, Ashwin Rao, Martina Lindorfer, Arnaud
+[51] Michael Kassner. Take secret photos by exploiting Android's           Legout, and David Choffnes. ReCon: Revealing and Control-
+      camera app. https://www.techrepublic.com/article/                    ling Privacy Leaks in Mobile Network Traffic. In Proc. of the
+      take-secret-photos-by-exploiting-androids-camera-                    International Conference on Mobile Systems, Applications
+      app/, June 2014.                                                     and Services (MobiSys), 2016.
+                                                                     [66] Irwin Reyes, Primal Wiesekera, Joel Reardon, Amit
+[52] Jinyung Kim, Yongho Yoon, Kwangkeun Yi, and Junbum                    Elazari Bar On, Abbas Razaghpanah, Narseo Vallina-
+      Shin. SCANDAL: Static Analyzer for Detecting Privacy
+      Leaks in Android Applications. In Proc. of the IEEE Mobile
+      Security Technologies Workshop (MoST), 2012.
+
+[53] Tadayoshi Kohno, Andre Broido, and KC Claffy. Remote
+      Physical Device Fingerprinting. IEEE Transactions on
+      Dependable and Secure Computing, 2(2):93­108, 2005.
+
+[54] Anh Le, Janus Varmarken, Simon Langhoff, Anastasia
+      Shuba, Minas Gjoka, and Athina Markopoulou. AntMoni-
+      tor: A System for Monitoring from Mobile Devices. In Proc.
+      of the ACM Workshop on Crowdsourcing and Crowdsharing
+                                                                   Proceedings on Privacy Enhancing Technologies ; 2018 (4):50­50
+
+      Rodriguez, and Serge Egelman. "Won't Somebody Think                Data Transmission in Android for Privacy Leakage Detec-
+      of the Children?" Examining COPPA Compliance at Scale.             tion. In Proc. of the ACM Conference on Computer and
+      In Proc. of the Privacy Enhancing Technologies Symposium           Communications Security (CCS), 2013.
+      (PETS), 2018.                                                [79] Yuan Zhang, Min Yang, Bingquan Xu, Zhemin Yang, Guofei
+[67] Animesh Shrivastava, Puneet Jain, Soteris Demetriou, Lan-           Gu, Peng Ning, X. Sean Wang, and Binyu Zang. Vetting
+      don P. Cox, and Kyu-Han Kim. CamForensics: Under-                  Undesirable Behaviors in Android Apps with Permission Use
+      standing Visual Privacy Leaks in the Wild. In Proc. of the         Analysis. In Proc. of the ACM Conference on Computer and
+      ACM Conference on Embedded Networked Sensor Systems                Communications Security (CCS), 2013.
+      (SenSys), 2017.                                              [80] Zhe Zhou, Wenrui Diao, Xiangyu Liu, and Kehuan Zhang.
+[68] Szymon Sidor. Exploring limits of covert data collection on         Acoustic Fingerprinting Revisited: Generate Stable Device
+      Android: apps can take photos with your phone without you          ID Stealthily with Inaudible Sound. In Proc. of the ACM
+      knowing. http://www.ez.ai/2014/05/exploring-limits-                Conference on Computer and Communications Security
+      of-covert-data.html, May 2014.                                     (CCS), 2014.
+[69] Yihang Song and Urs Hengartner. PrivacyGuard: A VPN-          [81] Sebastian Zimmeck, Jie S. Li, Hyungtae Kim, Steven M.
+      based Platform to Detect Information Leakage on Android            Bellovin, and Tony Jebara. A Privacy Analysis of Cross-
+      Devices. In Proc. of the ACM Workshop on Security and              device Tracking. In Proc. of the USENIX Security
+      Privacy in Smartphones and Mobile Devices (SPSM), 2015.            Symposium, 2017.
+[70] Aatif Sulleyman. Facebook could secretly watch
+      users through webcams, patents reveal. http://www.
+      independent.co.uk/life-style/gadgets-and-tech/news/
+      facebook-plans-to-watch-users-through-webcams-spy-
+      patent-application-social-media-a7779711.html, June
+      2017.
+[71] Vincent F. Taylor, Riccardo Spolaor, Mauro Conti, and Ivan
+      Martinovic. AppScanner: Automatic Fingerprinting of Smart-
+      phone Apps from Encrypted Network Traffic. In Proc. of
+      the IEEE European Symposium on Security and Privacy
+      (EuroS&P), 2016.
+[72] Narseo Vallina-Rodriguez, Jay Shah, Alessandro Finamore,
+      Hamed Haddadi, Yan Grunenberger, Konstantina Papa-
+      giannaki, and Jon Crowcroft. Breaking for Commercials:
+      Characterizing Mobile Advertising. In Proc. of the Internet
+      Measurement Conference (IMC), 2012.
+[73] Narseo Vallina-Rodriguez, Srikanth Sundaresan, Abbas
+      Razaghpanah, Rishab Nithyanand, Mark Allman, Christian
+      Kreibich, and Phillipa Gill. Tracking the Trackers: Towards
+      Understanding the Mobile Advertising and Tracking Ecosys-
+      tem. In Proc. of the Workshop on Data and Algorithmic
+      Transparency (DAT), 2016.
+[74] Yan Wang, Haowei Wu, Hailong Zhang, and Atanas
+      Rountev. Orlis: Obfuscation-Resilient Library Detection
+      for Android. In Proc. of the IEEE/ACM International
+      Conference on Mobile Software Engineering and Systems
+      (MOBILESoft), 2018.
+[75] Mingyuan Xia, Lu Gong, Yuanhao Lyu, Zhengwei Qi, and
+      Xue Liu. Effective Real-time Android Application Auditing.
+      In Proc. of the IEEE Symposium on Security and Privacy
+      (S&P), 2015.
+[76] Ning Xia, Han Hee Song, Yong Liao, Marios Iliofotou, An-
+      tonio Nucci, Zhi-Li Zhang, and Aleksandar Kuzmanovic.
+      Mosaic: Quantifying Privacy Leakage in Mobile Networks.
+      In Proc. of the Conference on Applications, Technologies,
+      Architectures, and Protocols for Computer Communication
+      (SIGCOMM), 2013.
+[77] Lok Kwong Yan and Heng Yin. DroidScope: Seamlessly
+      Reconstructing the OS and Dalvik Semantic Views for Dy-
+      namic Android Malware Analysis. In Proc. of the USENIX
+      Security Symposium, 2012.
+[78] Zhemin Yang, Min Yang, Yuan Zhang, Guofei Gu, Peng
+      Ning, and X. Sean Wang. AppIntent: Analyzing Sensitive
+

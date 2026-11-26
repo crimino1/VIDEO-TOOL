@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lst{position:relative;width:560px;height:620px;flex:none}
+.lyr{position:absolute;left:0;width:420px;height:42px;border-radius:9px;background:#EDEDF0;border:1.5px solid #DADADF;font:600 19px "JetBrains Mono",monospace;color:var(--ink3);display:flex;align-items:center;padding-left:18px}
+.lyr.mid{background:#EFF4FF;border-color:#BFD0F5}
+.tok{position:absolute;left:446px;width:30px;height:30px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px rgba(29,78,216,.15)}
+.lbr{position:absolute;left:500px;font:600 20px "JetBrains Mono",monospace;color:var(--acc);white-space:nowrap}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="151.581" data-width="1920" data-height="1080">
+<div id="s6" class="clip scene" data-start="0.000" data-duration="7.860" data-track-index="2" style="z-index:11"><div id="w7" class="sc"><div class="head"><div class="kick">New model · November 23, 2026</div></div><div id="b8" class="body"><div class="col" style="gap:56px;justify-content:center;align-items:stretch"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i1" class="a lg" style=""><img src="assets/img/zai.svg" alt="" style="width:150px;height:150px;display:block"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:8px;justify-content:center;align-items:stretch"><div id="i2" class="a bg " style="font-size:190px;text-align:left">GLM-5.4</div><div id="i3" class="a tx ink2" style="font-size:36px;text-align:left">Z.ai · Zhipu AI · Beijing</div></div></div></div><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i4" class="a pill " style="">No launch event</div><div id="i5" class="a pill bad" style="">No benchmark chart</div></div></div></div></div></div>
+<div id="s12" class="clip scene" data-start="7.860" data-duration="5.220" data-track-index="2" style="z-index:12"><div id="w13" class="sc"><div class="head"><div class="kick">The launch</div><div class="ttl">It started with one post</div></div><div id="b14" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i9" class="a twc" style="width:900px"><img src="assets/img/tw_zixuan_100.png" alt="" style="width:900px;height:602px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i11" class="a stat hero" style="flex:1"><div class="slab">Views in hours</div><div id="v10" class="sval hero" style="font-size:120px">800K+</div><div class="ssub">Zixuan Li, Z.ai, on X</div></div></div></div></div></div><div class="srcl">@ZixuanLi_ on X, Nov 23, 2026</div></div></div>
+<div id="s19" class="clip scene" data-start="13.080" data-duration="7.491" data-track-index="2" style="z-index:13"><div id="w20" class="sc"><div id="b21" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i16" class="a chartc" style="width:900px"><div class="cbody" style="height:506px"><img id="k15" src="assets/raw/web/blog_cover.jpg" alt="" style="width:900px;height:506px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i17" class="a tx " style="font-size:44px;text-align:left">GLM-5.4</div><div id="i18" class="a hd" style="font-size:58px">It reads some of its own layers <b class='acc'>twice</b>.</div></div></div></div></div><div class="srcl">Z.ai, GLM-5.4 blog cover</div></div></div>
+<div id="s28" class="clip scene" data-start="20.571" data-duration="17.017" data-track-index="2" style="z-index:14"><div id="w29" class="sc"><div class="head"><div class="kick">Who made it</div></div><div id="b30" class="body"><div class="col" style="gap:56px;justify-content:center;align-items:stretch"><div class="row" style="gap:36px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i22" class="a lg" style=""><img src="assets/img/zai.svg" alt="" style="width:110px;height:110px;display:block"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:6px;justify-content:center;align-items:stretch"><div id="i23" class="a hd" style="font-size:64px;text-align:left">Zhipu AI, now Z.ai</div><div id="i24" class="a tx ink2" style="font-size:34px;text-align:left">Beijing, China</div></div></div></div><div class="tline"><div class="trule"></div><div class="tevs"><div id="i25" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Jan 2025</div><div class="tlab">On the US entity list</div></div><div id="i26" class="a tev " style=""><i class="tdot "></i><div class="tdate">Jan 2026</div><div class="tlab">Hong Kong IPO · 02513.HK</div></div><div id="i27" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">All along</div><div class="tlab">Open weights</div></div></div></div></div></div><div class="srcl">Federal Register, Jan 16 2025 · TechNode, Jan 8 2026</div></div></div>
+<div id="s37" class="clip scene" data-start="37.588" data-duration="12.012" data-track-index="2" style="z-index:15"><div id="w38" class="sc"><div class="head"><div class="kick">The pace</div><div class="ttl">GLM-5: the open model that hit 50</div></div><div id="b39" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i32" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai · Feb 2026</span></div><div class="wbody" style="height:282px"><img id="k31" src="assets/img/aa_glm5_5f165.jpg" alt="" style="width:900px;height:282px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i34" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/zai.svg" alt="" class="slogo">GLM-5 · Feb 2026</div><div id="v33" class="sval " style="font-size:96px">744B</div><div class="ssub">parameters, open weights</div></div><div id="i36" class="a stat hero" style="flex:1"><div class="slab">Intelligence Index</div><div id="v35" class="sval hero" style="font-size:96px">50</div><div class="ssub">first open-weights model to reach it</div></div></div></div></div></div><div class="srcl">Artificial Analysis, “GLM-5: Everything You Need to Know”</div></div></div>
+<div id="s45" class="clip scene" data-start="49.600" data-duration="12.755" data-track-index="2" style="z-index:16"><div id="w46" class="sc"><div class="head"><div class="kick">The pace</div><div class="ttl">A new GLM every two months</div></div><div id="b47" class="body"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i40" class="a tev " style=""><i class="tdot "></i><div class="tdate">Feb</div><div class="tlab">GLM-5 · 744B</div></div><div id="i41" class="a tev " style=""><i class="tdot "></i><div class="tdate">Apr</div><div class="tlab">5.1 · 8 hours solo</div></div><div id="i42" class="a tev " style=""><i class="tdot "></i><div class="tdate">Jun</div><div class="tlab">5.2 · 1M context</div></div><div id="i43" class="a tev " style=""><i class="tdot "></i><div class="tdate">Aug</div><div class="tlab">5.3 · all code</div></div><div id="i44" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Nov 23</div><div class="tlab">5.4</div></div></div><div class="tgap">Five releases since February.</div></div></div><div class="srcl">docs.z.ai release notes</div></div></div>
+<div id="s52" class="clip scene" data-start="62.355" data-duration="8.845" data-track-index="2" style="z-index:17"><div id="w53" class="sc"><div class="head"><div class="kick">What's new</div><div class="ttl">New: it can see</div></div><div id="b54" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i48" class="a twc" style="width:760px"><img src="assets/img/tw_mileson_100.png" alt="" style="width:760px;height:478px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i49" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">GLM-5.3</div></div><div class="verd warn">TEXT ONLY</div></div><div id="i50" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">GLM-5.4</div></div><div class="verd good">SEES IMAGES</div></div><div id="i51" class="a tx ink3" style="font-size:28px;text-align:left">Translated: “Button out of place? Send it the screenshot.”</div></div></div></div></div><div class="srcl">@Mileson07 on X, Nov 23, 2026 (translated)</div></div></div>
+<div id="s61" class="clip scene" data-start="71.200" data-duration="11.671" data-track-index="2" style="z-index:18"><div id="w62" class="sc"><div class="head"><div class="kick">What's new</div><div class="ttl">And everything else</div></div><div id="b63" class="body"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i56" class="a stat " style="flex:1"><div class="slab">Context</div><div id="v55" class="sval " style="font-size:120px">1M</div><div class="ssub">tokens</div></div><div id="i58" class="a stat " style="flex:1"><div class="slab">Coding</div><div id="v57" class="sval " style="font-size:84px">Stronger</div><div class="ssub">“all-round”, says Z.ai</div></div><div id="i60" class="a stat hero" style="flex:1"><div class="slab">Weekly quota</div><div id="v59" class="sval hero" style="font-size:120px">+50%</div><div class="ssub">vs GLM-5.3, Coding Plan</div></div></div></div><div class="srcl">@ZixuanLi_ on X · TechNode</div></div></div>
+<div id="s72" class="clip scene" data-start="82.871" data-duration="20.175" data-track-index="2" style="z-index:19"><div id="w73" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">Same layers, twice</div></div><div id="b74" class="body"><div class="row" style="gap:64px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i67" class="a lst" style=""><div id="ls64l0" class="lyr" style="top:542px">layer 1</div><div id="ls64l1" class="lyr" style="top:484px">layer 2</div><div id="ls64l2" class="lyr" style="top:426px">layer 3</div><div id="ls64l3" class="lyr" style="top:368px">layer 4</div><div id="ls64l4" class="lyr" style="top:310px">layer 5</div><div id="ls64l5" class="lyr" style="top:252px">layer 6</div><div id="ls64l6" class="lyr" style="top:194px">layer 7</div><div id="ls64l7" class="lyr" style="top:136px">layer 8</div><div id="ls64l8" class="lyr" style="top:78px">layer 9</div><div id="ls64l9" class="lyr" style="top:20px">layer …</div><svg id="arc66" style="position:absolute;left:430px;top:0;opacity:0" width="130" height="620"><path d="M20 215 C 120 215, 120 389, 26 389" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-dasharray="10 8"/><path d="M26 389 l14 -9 l0 18 z" fill="#1D4ED8"/></svg><div id="tk65" class="tok" style="top:0;opacity:0"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i68" class="a hd " style="font-size:44px">A normal model: every word, every layer, <b class='acc'>once</b>.</div><div id="i69" class="a hd " style="font-size:44px">GLM-5.4: 28 layers, run <b class='acc'>twice</b> per word.</div><div id="i70" class="a hd ink3" style="font-size:44px">Like rereading a hard paragraph.</div><div id="i71" class="a hd " style="font-size:44px">Deeper. <b class='acc'>Not bigger.</b></div></div></div></div></div><div class="srcl">Simplified from Z.ai's architecture notes</div></div></div>
+<div id="s79" class="clip scene" data-start="103.046" data-duration="9.074" data-track-index="2" style="z-index:20"><div id="w80" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">Their first Loop Transformer</div></div><div id="b81" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i76" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>z.ai/blog/glm-5.4</span></div><div class="wbody" style="height:611px"><img id="k75" src="assets/img/blog_full_a42b5.jpg" alt="" style="width:760px;height:611px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i77" class="a tx ink3" style="font-size:32px;text-align:left">Z.ai's diagram: loop pass 1, loop pass 2, shared weights.</div><div id="i78" class="a hd" style="font-size:50px">Not trained from scratch: <b class='acc'>GLM-5, taught to loop</b>.</div></div></div></div></div><div class="srcl">z.ai/blog/glm-5.4</div></div></div>
+<div id="s88" class="clip scene" data-start="112.120" data-duration="10.960" data-track-index="2" style="z-index:21"><div id="w89" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">The numbers Z.ai gave</div></div><div id="b90" class="body"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i83" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/zai.svg" alt="" class="slogo">Size</div><div id="v82" class="sval " style="font-size:110px">750B</div><div class="ssub">parameters, per Z.ai</div></div><div id="i85" class="a stat " style="flex:1"><div class="slab">Claimed to think like</div><div id="v84" class="sval " style="font-size:110px">2–3T</div><div class="ssub">Z.ai's claim, no scores shown</div></div><div id="i87" class="a stat hero" style="flex:1"><div class="slab">Speed</div><div id="v86" class="sval hero" style="font-size:110px">200</div><div class="ssub">tokens/s off-peak · 70–80 at peak</div></div></div></div><div class="srcl">z.ai/blog/glm-5.4</div></div></div>
+<div id="s92" class="clip scene" data-start="123.080" data-duration="5.525" data-track-index="2" style="z-index:22"><div id="w93" class="sc"><div class="head"><div class="kick">The loop</div><div class="ttl">Its own flaw, in its own words</div></div><div id="b94" class="body"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i91" class="a quote " style=""><div class="qt">“it tends to get caught in overly long “marathon thinking” loops”</div><div class="qwho"><div><b>Z.ai</b><span>GLM-5.4 blog, Limitations</span></div></div></div></div></div><div class="srcl">z.ai/blog/glm-5.4</div></div></div>
+<div id="s104" class="clip scene" data-start="128.605" data-duration="5.255" data-track-index="2" style="z-index:23"><div id="w105" class="sc"><div class="head"><div class="kick">The evidence</div><div class="ttl">How they tested it</div></div><div id="b106" class="body"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div id="i95" class="a hd ink3" style="font-size:40px">The loop, tried at four sizes before the real thing:</div><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i97" class="a stat " style="flex:1"><div class="slab">Test model</div><div id="v96" class="sval " style="font-size:110px">1B</div><div class="ssub">parameters</div></div><div id="i99" class="a stat " style="flex:1"><div class="slab">Test model</div><div id="v98" class="sval " style="font-size:110px">4B</div><div class="ssub">parameters</div></div><div id="i101" class="a stat " style="flex:1"><div class="slab">Test model</div><div id="v100" class="sval " style="font-size:110px">30B</div><div class="ssub">parameters</div></div><div id="i103" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/zai.svg" alt="" class="slogo">GLM-5.4</div><div id="v102" class="sval hero" style="font-size:110px">750B</div><div class="ssub">parameters</div></div></div></div></div><div class="srcl">z.ai/blog/glm-5.4</div></div></div>
+<div id="s112" class="clip scene" data-start="133.860" data-duration="13.880" data-track-index="2" style="z-index:24"><div id="w113" class="sc"><div class="head"><div class="kick">The evidence</div><div class="ttl">Same size, looped: it won</div></div><div id="b114" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i108" class="a win" style="width:900px"><div class="wbar"><i></i><i></i><i></i><span>z.ai/blog/glm-5.4</span></div><div class="wbody" style="height:478px"><img id="k107" src="assets/img/blog_full_1be44.jpg" alt="" style="width:900px;height:478px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i110" class="a stat hero" style="flex:1"><div class="slab">AIME25 · 30B test model</div><div id="v109" class="sval hero" style="font-size:100px">+11.3</div><div class="ssub">19.17 → 30.42 with the loop</div></div><div id="i111" class="a tx " style="font-size:34px;text-align:left">Won all five tests, with shorter answers.</div></div></div></div></div><div class="srcl">z.ai/blog/glm-5.4 · 30B test model, ~10% more training compute</div></div></div>
+<div id="s117" class="clip scene" data-start="147.740" data-duration="3.841" data-track-index="2" style="z-index:25"><div id="w118" class="sc"><div id="b119" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i115" class="a verd warn" style="font-size:44px;padding:20px 35px;border-width:3px">30B TEST MODEL</div><div id="i116" class="a hd" style="font-size:88px">Not GLM-5.4.</div></div></div></div></div>
+
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#i1",{opacity:1,y:0},0.000);
+tl.set("#i2",{opacity:1,y:0},0.000);
+tl.set("#i3",{opacity:1,y:0},0.000);
+tl.fromTo("#i4",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},5.220);
+tl.fromTo("#i5",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},6.480);
+tl.set("#w7",{opacity:1},0.000);
+tl.to("#w7",{opacity:0,duration:0.25,ease:"power1.in"},7.610);
+tl.fromTo("#b8",{scale:1},{scale:1.015,duration:7.860,ease:"none"},0.000);
+tl.fromTo("#i9",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},7.960);
+count("#v10",10.240,0,800,0,"","K+",1.0);
+tl.fromTo("#i11",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},10.140);
+tl.fromTo("#w13",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},7.860);
+tl.to("#w13",{opacity:0,duration:0.25,ease:"power1.in"},12.830);
+tl.fromTo("#b14",{scale:1},{scale:1.015,duration:5.220,ease:"none"},7.860);
+tl.fromTo("#k15",{scale:1},{scale:1.03,duration:7.391,ease:"none"},13.180);
+tl.fromTo("#i16",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},13.180);
+tl.fromTo("#i17",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},13.480);
+tl.fromTo("#i18",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},17.700);
+tl.fromTo("#w20",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},13.080);
+tl.to("#w20",{opacity:0,duration:0.25,ease:"power1.in"},20.321);
+tl.fromTo("#b21",{scale:1},{scale:1.015,duration:7.491,ease:"none"},13.080);
+tl.fromTo("#i22",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},20.671);
+tl.fromTo("#i23",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},20.771);
+tl.fromTo("#i24",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.300);
+tl.fromTo("#i25",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},25.720);
+tl.fromTo("#i26",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},30.480);
+tl.fromTo("#i27",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},33.220);
+tl.fromTo("#w29",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},20.571);
+tl.to("#w29",{opacity:0,duration:0.25,ease:"power1.in"},37.338);
+tl.fromTo("#b30",{scale:1},{scale:1.015,duration:17.017,ease:"none"},20.571);
+tl.fromTo("#i32",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},37.788);
+tl.fromTo("#i34",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},42.180);
+count("#v35",45.000,0,50,0,"","",1.0);
+tl.fromTo("#i36",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},44.900);
+tl.fromTo("#w38",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},37.588);
+tl.to("#w38",{opacity:0,duration:0.25,ease:"power1.in"},49.350);
+tl.fromTo("#b39",{scale:1},{scale:1.015,duration:12.012,ease:"none"},37.588);
+tl.fromTo("#i40",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.700);
+tl.fromTo("#i41",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},49.600);
+tl.fromTo("#i42",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},52.460);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},54.480);
+tl.fromTo("#i44",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},59.740);
+tl.fromTo("#w46",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},49.600);
+tl.to("#w46",{opacity:0,duration:0.25,ease:"power1.in"},62.105);
+tl.fromTo("#b47",{scale:1},{scale:1.015,duration:12.755,ease:"none"},49.600);
+tl.fromTo("#i48",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},63.780);
+tl.fromTo("#i49",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},64.760);
+tl.fromTo("#i50",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},67.060);
+tl.fromTo("#i51",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},67.360);
+tl.fromTo("#w53",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},62.355);
+tl.to("#w53",{opacity:0,duration:0.25,ease:"power1.in"},70.950);
+tl.fromTo("#b54",{scale:1},{scale:1.015,duration:8.845,ease:"none"},62.355);
+tl.fromTo("#i56",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},71.300);
+tl.fromTo("#i58",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},73.980);
+count("#v59",78.440,0,50,0,"+","%",1.0);
+tl.fromTo("#i60",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},78.340);
+tl.fromTo("#w62",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},71.200);
+tl.to("#w62",{opacity:0,duration:0.25,ease:"power1.in"},82.621);
+tl.fromTo("#b63",{scale:1},{scale:1.015,duration:11.671,ease:"none"},71.200);
+tl.fromTo("#ls64l0",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},88.290);
+tl.fromTo("#ls64l1",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},88.490);
+tl.fromTo("#ls64l2",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},88.690);
+tl.fromTo("#ls64l3",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},88.890);
+tl.to("#ls64l3",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},92.380);
+tl.fromTo("#ls64l4",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},89.090);
+tl.to("#ls64l4",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},92.380);
+tl.fromTo("#ls64l5",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},89.290);
+tl.to("#ls64l5",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},92.380);
+tl.fromTo("#ls64l6",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},89.490);
+tl.to("#ls64l6",{backgroundColor:"#DBEAFE",borderColor:"#1D4ED8",color:"#1D4ED8",duration:.4},92.380);
+tl.fromTo("#ls64l7",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},89.690);
+tl.fromTo("#ls64l8",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},89.890);
+tl.fromTo("#ls64l9",{backgroundColor:"#DBEAFE"},{backgroundColor:"#EDEDF0",duration:.45},90.090);
+tl.fromTo("#tk65",{opacity:1,y:626},{opacity:1,y:-32,duration:2.2,ease:"none"},88.140);
+tl.to("#tk65",{opacity:0,duration:.2},90.340);
+tl.set("#tk65",{y:626,opacity:1},94.560);
+tl.to("#tk65",{y:200,duration:.9,ease:"none"},94.560);
+tl.fromTo("#arc66",{opacity:0},{opacity:1,duration:.3},95.460);
+tl.to("#tk65",{x:70,y:287,duration:.35,ease:"sine.out"},95.460);
+tl.to("#tk65",{x:0,y:374,duration:.35,ease:"sine.in"},95.810);
+tl.to("#tk65",{y:200,duration:.8,ease:"none"},96.160);
+tl.to("#tk65",{y:-32,duration:.7,ease:"none"},96.960);
+tl.to("#tk65",{opacity:0,duration:.25},97.660);
+tl.fromTo("#i67",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},86.320);
+tl.fromTo("#i68",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},85.420);
+tl.fromTo("#i69",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},92.380);
+tl.fromTo("#i70",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},96.840);
+tl.fromTo("#i71",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},100.060);
+tl.fromTo("#w73",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},82.871);
+tl.to("#w73",{opacity:0,duration:0.25,ease:"power1.in"},102.796);
+tl.fromTo("#k75",{scale:1},{scale:1.035,duration:8.974,ease:"none"},103.146);
+tl.fromTo("#i76",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},103.146);
+tl.fromTo("#i77",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},103.446);
+tl.fromTo("#i78",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},106.400);
+tl.fromTo("#w80",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},103.046);
+tl.to("#w80",{opacity:0,duration:0.25,ease:"power1.in"},111.870);
+tl.fromTo("#b81",{scale:1},{scale:1.015,duration:9.074,ease:"none"},103.046);
+tl.fromTo("#i83",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.220);
+tl.fromTo("#i85",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},115.080);
+count("#v86",118.380,0,200,0,"","",1.0);
+tl.fromTo("#i87",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},118.280);
+tl.fromTo("#w89",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},112.120);
+tl.to("#w89",{opacity:0,duration:0.25,ease:"power1.in"},122.830);
+tl.fromTo("#b90",{scale:1},{scale:1.015,duration:10.960,ease:"none"},112.120);
+tl.fromTo("#i91",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},125.200);
+tl.fromTo("#w93",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},123.080);
+tl.to("#w93",{opacity:0,duration:0.25,ease:"power1.in"},128.355);
+tl.fromTo("#b94",{scale:1},{scale:1.015,duration:5.525,ease:"none"},123.080);
+tl.fromTo("#i95",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},128.805);
+tl.fromTo("#i97",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},129.720);
+tl.fromTo("#i99",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},131.180);
+tl.fromTo("#i101",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},131.780);
+tl.fromTo("#i103",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},131.520);
+tl.fromTo("#w105",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},128.605);
+tl.to("#w105",{opacity:0,duration:0.25,ease:"power1.in"},133.610);
+tl.fromTo("#b106",{scale:1},{scale:1.015,duration:5.255,ease:"none"},128.605);
+tl.fromTo("#i108",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},133.960);
+count("#v109",142.600,0,11.3,1,"+","",1.0);
+tl.fromTo("#i110",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},142.500);
+tl.fromTo("#i111",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.640);
+tl.fromTo("#w113",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},133.860);
+tl.to("#w113",{opacity:0,duration:0.25,ease:"power1.in"},147.490);
+tl.fromTo("#b114",{scale:1},{scale:1.015,duration:13.880,ease:"none"},133.860);
+tl.fromTo("#i115",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},147.840);
+tl.fromTo("#i116",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},149.460);
+tl.fromTo("#w118",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},147.740);
+tl.to("#w118",{opacity:0,duration:0.25,ease:"power1.in"},151.331);
+tl.fromTo("#w124",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},151.581);
+tl.fromTo("#b125",{scale:1},{scale:1.015,duration:13.379,ease:"none"},151.581);
+tl.set({}, {}, 151.581);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

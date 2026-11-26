@@ -1,0 +1,202 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=block">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/flat.js"></script><script src="assets/js/shark.js"></script><script src="assets/js/world.js"></script><script src="assets/js/story.js"></script><script src="assets/js/res.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"League Gothic",sans-serif;color:#f2f6f8}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.bg2{position:absolute;inset:0}
+.snow{position:absolute;left:-140px;top:-160px;width:2200px;height:1400px}
+.black{position:absolute;inset:0;background:#000}
+.dim{position:absolute;inset:0;background:#000}
+.row{position:absolute}
+.stamp{display:inline-block;font-family:"League Gothic";color:#fff;letter-spacing:1px;-webkit-text-stroke:7px #000;paint-order:stroke fill;text-shadow:0 0 30px rgba(0,0,0,.8);opacity:0;white-space:nowrap}
+.stamp2{position:absolute;font-family:"League Gothic";font-size:74px;color:#ffb39e;text-align:left}
+.label{position:absolute;display:flex;align-items:center;gap:16px;font-family:"League Gothic";color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap}
+.label .tri{display:block;width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent}
+.label.left .tri{border-right:34px solid #e0322b}
+.label.right .tri{border-left:34px solid #e0322b}
+.chap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";color:#fff;line-height:1;text-shadow:0 0 50px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.9);opacity:0}
+.chapsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:58px;letter-spacing:6px;color:#d6e2e8;text-shadow:0 0 30px rgba(0,0,0,.95);opacity:0}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:230px;line-height:1;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.bigsub{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:66px;letter-spacing:3px;color:#c9d6dc}
+.latin{position:absolute;left:0;right:0;text-align:center;font-family:"EB Garamond";font-style:italic;font-size:150px;color:#f4e6cf}
+.credit{position:absolute;left:40px;bottom:30px;font-family:"EB Garamond";font-size:30px;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.card{position:absolute;overflow:hidden;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.12)}
+.card img{display:block}
+.fcard{position:absolute;background:#0e161b;border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.14)}
+.fcard img{display:block}
+.fcap{font-family:"League Gothic";font-size:40px;letter-spacing:1px;color:#f2f6f8;padding:12px 18px;text-align:center}
+.spectrum{position:absolute;left:70px;top:250px}
+.band{display:flex;align-items:center;gap:18px;margin-bottom:22px;opacity:0}
+.band i{display:block;width:90px;height:44px;border-radius:6px}
+.band span{font-family:"League Gothic";font-size:52px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill}
+.depthbox{position:absolute;right:80px;top:80px;text-align:right}
+.dl{font-family:"Inter";font-weight:700;font-size:30px;letter-spacing:4px;color:#c9d6dc}
+.dv{font-family:"League Gothic";font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0}
+.recap{position:absolute;left:0;right:0;text-align:center;font-family:"League Gothic";font-size:120px;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.subbtn{position:absolute;left:760px;top:640px;width:400px;height:110px;line-height:110px;border-radius:14px;background:#e0322b;text-align:center;font-family:"League Gothic";font-size:72px;letter-spacing:3px;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+.top{z-index:5000 !important}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.hid{display:none}
+.stepnum{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"League Gothic";font-size:90px;letter-spacing:10px;color:#ffd27a;text-shadow:0 0 30px rgba(0,0,0,.9)}
+.steptxt{position:absolute;left:0;right:0;top:430px;text-align:center;font-family:"League Gothic";font-size:190px;color:#fff;text-shadow:0 0 50px rgba(0,0,0,.95)}
+.acard{position:absolute;top:330px;width:380px;height:380px;border-radius:16px;background:rgba(10,24,32,.85);box-shadow:0 0 0 2px rgba(127,224,255,.35),0 30px 70px rgba(0,0,0,.7);padding:40px 26px;text-align:center}
+.an{font-family:"League Gothic";font-size:84px;color:#fff;line-height:1.05;margin-top:70px}
+.as{font-family:"Inter";font-weight:700;font-size:30px;color:#9fd8f0;margin-top:26px;line-height:1.3}
+/* ---- flat cartoon look (Unseen By Eye, 2026-11) ---- */
+#root{font-family:"Fredoka",sans-serif}
+.stamp{font-family:"Fredoka";font-weight:700;color:#173a55;background:#fffdf6;-webkit-text-stroke:0;text-shadow:none;padding:.16em .62em .22em;border-radius:999px;box-shadow:0 .14em 0 rgba(10,40,70,.28);letter-spacing:0}
+.label{font-family:"Fredoka";font-weight:700;color:#173a55;-webkit-text-stroke:0;gap:10px}
+.label span{background:#fffdf6;padding:.12em .55em .18em;border-radius:999px;box-shadow:0 .12em 0 rgba(10,40,70,.28)}
+.label.left .tri{border-right:30px solid #ff6b5b}
+.label.right .tri{border-left:30px solid #ff6b5b}
+.chap{font-family:"Fredoka";font-weight:700;color:#fff;line-height:1.02;text-shadow:0 .07em 0 #0d5f96,0 0 40px rgba(0,30,60,.35)}
+.chapsub{font-family:"Fredoka";font-weight:600;letter-spacing:2px;color:#ffe27a;text-shadow:0 .08em 0 #0d5f96}
+.credit{font-family:"Fredoka";font-weight:600;font-size:24px;color:rgba(255,255,255,.9);text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.endname{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:"Fredoka";font-weight:700;font-size:150px;color:#fff;text-shadow:0 10px 0 #0d5f96}
+.endbtn{position:absolute;left:760px;top:560px;width:400px;height:110px;line-height:106px;border-radius:999px;background:#ff5b4f;text-align:center;font-family:"Fredoka";font-weight:700;font-size:62px;color:#fff;box-shadow:0 10px 0 #b8342b}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="218.167" data-width="1920" data-height="1080">
+<canvas id="cv1" class="clip" width="1920" height="1080" data-start="0.000" data-duration="3.420" data-track-index="1" style="z-index:11"></canvas>
+<div id="s3" class="clip scene " data-start="0.000" data-duration="3.420" data-track-index="2" style="z-index:12" data-layout-allow-overflow data-layout-allow-overlap><div id="k2" class="black"></div></div>
+<canvas id="cv4" class="clip" width="1920" height="1080" data-start="3.420" data-duration="5.960" data-track-index="1" style="z-index:13"></canvas>
+<div id="s5" class="clip scene " data-start="3.420" data-duration="5.960" data-track-index="2" style="z-index:14" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv6" class="clip" width="1920" height="1080" data-start="9.380" data-duration="5.620" data-track-index="1" style="z-index:15"></canvas>
+<div id="s7" class="clip scene " data-start="9.380" data-duration="5.620" data-track-index="2" style="z-index:16" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv8" class="clip" width="1920" height="1080" data-start="15.000" data-duration="4.980" data-track-index="1" style="z-index:17"></canvas>
+<div id="s9" class="clip scene " data-start="15.000" data-duration="4.980" data-track-index="2" style="z-index:18" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv10" class="clip" width="1920" height="1080" data-start="19.980" data-duration="1.480" data-track-index="1" style="z-index:19"></canvas>
+<div id="s11" class="clip scene " data-start="19.980" data-duration="1.480" data-track-index="2" style="z-index:20" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s13" class="clip scene " data-start="21.460" data-duration="7.280" data-track-index="2" style="z-index:21" data-layout-allow-overflow data-layout-allow-overlap><img id="ph12" class="fill" src="assets/gen/transient_3_6e6add.jpg" alt="transient_3" style="transform-origin:50% 50%"><div class="credit">Photo: Rennett Stowe from USA / Wikimedia Commons</div></div>
+<canvas id="cv14" class="clip" width="1920" height="1080" data-start="28.740" data-duration="2.380" data-track-index="1" style="z-index:22"></canvas>
+<div id="s15" class="clip scene " data-start="28.740" data-duration="2.380" data-track-index="2" style="z-index:23" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv16" class="clip" width="1920" height="1080" data-start="31.120" data-duration="2.680" data-track-index="1" style="z-index:24"></canvas>
+<div id="s17" class="clip scene " data-start="31.120" data-duration="2.680" data-track-index="2" style="z-index:25" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w19" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:26;"><video id="v18" class="clip fit" src="assets/clips/orcau_0_ea8dbc02.mp4" muted playsinline data-start="33.800" data-duration="4.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s20" class="clip scene " data-start="33.800" data-duration="4.520" data-track-index="2" style="z-index:27" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w22" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:28;"><video id="v21" class="clip fit" src="assets/clips/pod_0_ef8cc4bc.mp4" muted playsinline data-start="38.320" data-duration="2.440" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s23" class="clip scene " data-start="38.320" data-duration="2.440" data-track-index="2" style="z-index:29" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w25" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:30;"><video id="v24" class="clip fit" src="assets/clips/orcau_1_1e8f28fe.mp4" muted playsinline data-start="40.760" data-duration="3.220" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s26" class="clip scene " data-start="40.760" data-duration="3.220" data-track-index="2" style="z-index:31" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w28" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:32;"><video id="v27" class="clip fit" src="assets/clips/boat_0_304e4459.mp4" muted playsinline data-start="43.980" data-duration="2.760" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s29" class="clip scene " data-start="43.980" data-duration="2.760" data-track-index="2" style="z-index:33" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv30" class="clip" width="1920" height="1080" data-start="46.740" data-duration="7.060" data-track-index="1" style="z-index:34"></canvas>
+<div id="s31" class="clip scene " data-start="46.740" data-duration="7.060" data-track-index="2" style="z-index:35" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv32" class="clip" width="1920" height="1080" data-start="53.800" data-duration="6.060" data-track-index="1" style="z-index:36"></canvas>
+<div id="s33" class="clip scene " data-start="53.800" data-duration="6.060" data-track-index="2" style="z-index:37" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv34" class="clip" width="1920" height="1080" data-start="59.860" data-duration="3.380" data-track-index="1" style="z-index:38"></canvas>
+<div id="s35" class="clip scene " data-start="59.860" data-duration="3.380" data-track-index="2" style="z-index:39" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s37" class="clip scene " data-start="63.240" data-duration="6.440" data-track-index="2" style="z-index:40" data-layout-allow-overflow data-layout-allow-overlap><img id="ph36" class="fill" src="assets/gen/hporp_0_fefdaf.jpg" alt="hporp_0" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<canvas id="cv38" class="clip" width="1920" height="1080" data-start="69.680" data-duration="8.100" data-track-index="1" style="z-index:41"></canvas>
+<div id="s39" class="clip scene " data-start="69.680" data-duration="8.100" data-track-index="2" style="z-index:42" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv40" class="clip" width="1920" height="1080" data-start="77.780" data-duration="5.780" data-track-index="1" style="z-index:43"></canvas>
+<div id="s41" class="clip scene " data-start="77.780" data-duration="5.780" data-track-index="2" style="z-index:44" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv42" class="clip" width="1920" height="1080" data-start="83.560" data-duration="4.680" data-track-index="1" style="z-index:45"></canvas>
+<div id="s43" class="clip scene " data-start="83.560" data-duration="4.680" data-track-index="2" style="z-index:46" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv44" class="clip" width="1920" height="1080" data-start="88.240" data-duration="6.060" data-track-index="1" style="z-index:47"></canvas>
+<div id="s45" class="clip scene " data-start="88.240" data-duration="6.060" data-track-index="2" style="z-index:48" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv46" class="clip" width="1920" height="1080" data-start="94.300" data-duration="1.560" data-track-index="1" style="z-index:49"></canvas>
+<div id="s47" class="clip scene " data-start="94.300" data-duration="1.560" data-track-index="2" style="z-index:50" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s49" class="clip scene " data-start="95.860" data-duration="5.300" data-track-index="2" style="z-index:51" data-layout-allow-overflow data-layout-allow-overlap><img id="ph48" class="fill" src="assets/gen/sanjuan_3_04805e.jpg" alt="sanjuan_3" style="transform-origin:50% 50%"><div class="credit">Photo: Jeff Gunn from Atlanta, USA / Wikimedia Commons</div></div>
+<canvas id="cv50" class="clip" width="1920" height="1080" data-start="101.160" data-duration="2.440" data-track-index="1" style="z-index:52"></canvas>
+<div id="s52" class="clip scene " data-start="101.160" data-duration="2.440" data-track-index="2" style="z-index:53" data-layout-allow-overflow data-layout-allow-overlap><div id="h51" class="chap" style="top:90px;font-size:110px">WHAT ON EARTH<br>IS HAPPENING?</div></div>
+<div id="s54" class="clip scene " data-start="103.600" data-duration="3.480" data-track-index="2" style="z-index:54" data-layout-allow-overflow data-layout-allow-overlap><img id="ph53" class="fill" src="assets/gen/whalewatch_7_6a24a2.jpg" alt="whalewatch_7" style="transform-origin:50% 50%"><div class="credit">Photo: Bureau of Land Management Oregon and Washington from Portlan / Wikimedia Commons</div></div>
+<canvas id="cv55" class="clip" width="1920" height="1080" data-start="107.080" data-duration="11.800" data-track-index="1" style="z-index:55"></canvas>
+<div id="s56" class="clip scene " data-start="107.080" data-duration="11.800" data-track-index="2" style="z-index:56" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv57" class="clip" width="1920" height="1080" data-start="118.880" data-duration="12.280" data-track-index="1" style="z-index:57"></canvas>
+<div id="s58" class="clip scene " data-start="118.880" data-duration="12.280" data-track-index="2" style="z-index:58" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s60" class="clip scene " data-start="131.160" data-duration="2.360" data-track-index="2" style="z-index:59" data-layout-allow-overflow data-layout-allow-overlap><img id="ph59" class="fill" src="assets/gen/hporp_1_9e8c86.jpg" alt="hporp_1" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<canvas id="cv61" class="clip" width="1920" height="1080" data-start="133.520" data-duration="7.260" data-track-index="1" style="z-index:60"></canvas>
+<div id="s62" class="clip scene " data-start="133.520" data-duration="7.260" data-track-index="2" style="z-index:61" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s64" class="clip scene " data-start="140.780" data-duration="3.480" data-track-index="2" style="z-index:62" data-layout-allow-overflow data-layout-allow-overlap><img id="ph63" class="fill" src="assets/gen/dall_0_0a147d.jpg" alt="dall_0" style="transform-origin:50% 50%"><div class="credit">Photo: Susan E Adams (https://www.flickr.com/photos/susanad813/) / Wikimedia Commons</div></div>
+<canvas id="cv65" class="clip" width="1920" height="1080" data-start="144.260" data-duration="5.840" data-track-index="1" style="z-index:63"></canvas>
+<div id="s66" class="clip scene " data-start="144.260" data-duration="5.840" data-track-index="2" style="z-index:64" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv67" class="clip" width="1920" height="1080" data-start="150.100" data-duration="5.820" data-track-index="1" style="z-index:65"></canvas>
+<div id="s70" class="clip scene " data-start="150.100" data-duration="5.820" data-track-index="2" style="z-index:66" data-layout-allow-overflow data-layout-allow-overlap><div id="h68" class="chap" style="top:330px;font-size:130px">PHOCOENICIDE</div><div id="h69" class="chapsub" style="top:457px">PORPOISE KILLING</div></div>
+<div id="w72" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:67;"><video id="v71" class="clip fit" src="assets/clips/orcau_1_da512de2.mp4" muted playsinline data-start="155.920" data-duration="5.840" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s73" class="clip scene " data-start="155.920" data-duration="5.840" data-track-index="2" style="z-index:68" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s75" class="clip scene " data-start="161.760" data-duration="5.780" data-track-index="2" style="z-index:69" data-layout-allow-overflow data-layout-allow-overlap><img id="ph74" class="fill" src="assets/gen/srkw_0_dac2f6.jpg" alt="srkw_0" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<canvas id="cv76" class="clip" width="1920" height="1080" data-start="167.540" data-duration="2.540" data-track-index="1" style="z-index:70"></canvas>
+<div id="s77" class="clip scene " data-start="167.540" data-duration="2.540" data-track-index="2" style="z-index:71" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv78" class="clip" width="1920" height="1080" data-start="170.080" data-duration="5.020" data-track-index="1" style="z-index:72"></canvas>
+<div id="s79" class="clip scene " data-start="170.080" data-duration="5.020" data-track-index="2" style="z-index:73" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s81" class="clip scene " data-start="175.100" data-duration="8.440" data-track-index="2" style="z-index:74" data-layout-allow-overflow data-layout-allow-overlap><img id="ph80" class="fill" src="assets/gen/salish_2_dae587.jpg" alt="salish_2" style="transform-origin:50% 50%"><div class="credit">Photo: Gerry Thomasen from Nanaimo, Canada / Wikimedia Commons</div></div>
+<div id="s83" class="clip scene " data-start="183.540" data-duration="5.980" data-track-index="2" style="z-index:75" data-layout-allow-overflow data-layout-allow-overlap><img id="ph82" class="fill" src="assets/gen/srkw_1_3e0032.jpg" alt="srkw_1" style="transform-origin:50% 50%"><div class="credit">Photo: NOAA Fisheries / Wikimedia Commons</div></div>
+<canvas id="cv84" class="clip" width="1920" height="1080" data-start="189.520" data-duration="4.800" data-track-index="1" style="z-index:76"></canvas>
+<div id="s85" class="clip scene " data-start="189.520" data-duration="4.800" data-track-index="2" style="z-index:77" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="s87" class="clip scene " data-start="194.320" data-duration="3.320" data-track-index="2" style="z-index:78" data-layout-allow-overflow data-layout-allow-overlap><img id="ph86" class="fill" src="assets/gen/chinook_7_ac5a06.jpg" alt="chinook_7" style="transform-origin:50% 50%"><div class="credit">Photo: Te Papa / Wikimedia Commons</div></div>
+<canvas id="cv88" class="clip" width="1920" height="1080" data-start="197.640" data-duration="3.580" data-track-index="1" style="z-index:79"></canvas>
+<div id="s89" class="clip scene " data-start="197.640" data-duration="3.580" data-track-index="2" style="z-index:80" data-layout-allow-overflow data-layout-allow-overlap></div>
+<div id="w91" class="vw" style="left:0px;top:0px;width:1920px;height:1080px;z-index:81;"><video id="v90" class="clip fit" src="assets/clips/orcau_2_3b9c1022.mp4" muted playsinline data-start="201.220" data-duration="3.660" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s92" class="clip scene " data-start="201.220" data-duration="3.660" data-track-index="2" style="z-index:82" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv93" class="clip" width="1920" height="1080" data-start="204.880" data-duration="7.180" data-track-index="1" style="z-index:83"></canvas>
+<div id="s94" class="clip scene " data-start="204.880" data-duration="7.180" data-track-index="2" style="z-index:84" data-layout-allow-overflow data-layout-allow-overlap></div>
+<canvas id="cv95" class="clip" width="1920" height="1080" data-start="212.060" data-duration="6.120" data-track-index="1" style="z-index:85"></canvas>
+<div id="s96" class="clip scene " data-start="212.060" data-duration="6.120" data-track-index="2" style="z-index:86" data-layout-allow-overflow data-layout-allow-overlap></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+{const c=document.getElementById("cv1").getContext("2d");tl.to({},{duration:3.420,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "dusk", "actors": [{"k": "orca", "path": [[0, -300, 510], [3.4, 900, 516]], "len": 820, "beat": 0.45, "amp": 0.025}, {"k": "orca", "path": [[0, -700, 530], [3.4, 500, 536]], "len": 600, "beat": 0.45, "amp": 0.025, "ph0": 2}], "blow": [[1.0, 0]], "cam": {"z0": 1.0, "z1": 1.08}, "d": 3.42});}},0.000);}
+tl.fromTo("#k2",{opacity:1},{opacity:0,duration:1.2,ease:"power1.inOut"},0.000);
+{const c=document.getElementById("cv4").getContext("2d");tl.to({},{duration:5.960,ease:"none",onUpdate:function(){SC.dronemeasure(c,this.time(),{"cam": {"z0": 1.0, "z1": 1.06, "hand": true}, "d": 5.96});}},3.420);}
+{const c=document.getElementById("cv6").getContext("2d");tl.to({},{duration:5.620,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 700, 530], [5.6, 1900, 510]], "len": 300, "beat": 2.4}, {"k": "orca", "path": [[0, -200, 550], [5.6, 1400, 530]], "len": 800, "beat": 1.0}], "cam": {"z0": 1.0, "z1": 1.06, "x0": -40, "x1": 60}, "d": 5.62});}},9.380);}
+{const c=document.getElementById("cv8").getContext("2d");tl.to({},{duration:4.980,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "orca", "path": [[0, 600, 540], [4.98, 1300, 560]], "len": 820, "beat": 0.6}, {"k": "porpoise", "kind": "harbor", "path": [[2.8, 1180, 430], [4.98, 900, 630]], "len": 300, "heldBy": 0, "hold": [130, -96, -0.06, 480, 92], "heldOn": [[0, 1], [2.6, 1], [2.8, 0]], "roll": [[2.8, 0], [3.6, 3.14159]], "limp": 1}], "cam": {"z0": 1.0, "z1": 1.1}, "d": 4.98});}},15.000);}
+{const c=document.getElementById("cv10").getContext("2d");tl.to({},{duration:1.480,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 960, 520], [1.5, 970, 560]], "len": 520, "roll": 3.14159, "limp": 1}, {"k": "orca", "path": [[0, 1000, 300], [1.5, 1900, 260]], "len": 700, "fog": 0.4}], "cam": {"z0": 1.1, "z1": 1.16}, "d": 1.48});}},19.980);}
+tl.fromTo("#ph12",{scale:1.0},{scale:1.1,duration:7.28,ease:"none"},21.460);
+{const c=document.getElementById("cv14").getContext("2d");tl.to({},{duration:2.380,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "dark", "actors": [{"k": "orca", "path": [[0, -300, 540], [2.4, 900, 520]], "len": 900, "thin": 1, "beat": 0.4}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 2.38});}},28.740);}
+{const c=document.getElementById("cv16").getContext("2d");tl.to({},{duration:2.680,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "grey", "actors": [{"k": "orca", "path": [[0, 800, 540], [2.7, 900, 540]], "len": 800, "beat": 0.5}, {"k": "porpoise", "kind": "harbor", "path": null, "len": 280, "heldBy": 0, "hold": [-80, 30, 0.0, 480, 0], "wob": 0.15}], "cam": {"z0": 1.12, "z1": 1.2}, "d": 2.68});}},31.120);}
+tl.fromTo("#v18",{scale:1.0},{scale:1.06,duration:4.52,ease:"none"},33.800);
+tl.fromTo("#v21",{scale:1.0},{scale:1.06,duration:2.44,ease:"none"},38.320);
+tl.fromTo("#v24",{scale:1.0},{scale:1.06,duration:3.22,ease:"none"},40.760);
+tl.fromTo("#v27",{scale:1.0},{scale:1.06,duration:2.76,ease:"none"},43.980);
+{const c=document.getElementById("cv30").getContext("2d");tl.to({},{duration:7.060,ease:"none",onUpdate:function(){SC.salish(c,this.time(),{"pins": [[1100, 560, 0.8]], "cam": {"z0": 1.0, "z1": 1.1}, "d": 7.06});}},46.740);}
+{const c=document.getElementById("cv32").getContext("2d");tl.to({},{duration:6.060,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "boat": {"x": 380, "s": 0.6, "binoc": 0.6, "point": 3.5}, "actors": [{"k": "orca", "path": [[0, 600, 510], [6.1, 1300, 516]], "len": 800, "beat": 0.45, "amp": 0.025}, {"k": "orca", "path": [[0, 300, 560], [6.1, 1000, 566]], "len": 580, "beat": 0.5, "fog": 0.15}, {"k": "porpoise", "kind": "harbor", "path": null, "len": 220, "heldBy": 0, "hold": [-40, 80, 0.05, 480, 0]}], "blow": [[1.2, 0]], "cam": {"z0": 1.0, "z1": 1.06}, "d": 6.06});}},53.800);}
+{const c=document.getElementById("cv34").getContext("2d");tl.to({},{duration:3.380,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "orca", "path": [[0, 900, 510], [3.4, 1050, 516]], "len": 900, "beat": 0.45, "amp": 0.025}, {"k": "porpoise", "kind": "harbor", "path": null, "len": 260, "heldBy": 0, "hold": [-40, 80, 0.05, 480, 0]}], "cam": {"z0": 1.25, "z1": 1.45, "x0": -320, "x1": -400, "y0": -40, "y1": -60}, "d": 3.38});}},59.860);}
+tl.fromTo("#ph36",{scale:1.0},{scale:1.12,duration:6.44,ease:"none"},63.240);
+{const c=document.getElementById("cv38").getContext("2d");tl.to({},{duration:8.100,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "orca", "path": [[0, 500, 540], [8.1, 1400, 540]], "len": 820, "beat": 0.6}, {"k": "porpoise", "kind": "harbor", "path": [[2.1, 1000, 540], [3.3, 1250, 450], [4.6, 1380, 550]], "len": 280, "heldBy": 0, "hold": [-80, 30, 0.0, 480, 0], "heldOn": [[0, 1], [2.0, 1], [2.1, 0], [4.6, 0], [4.7, 1]]}], "cam": {"z0": 1.0, "z1": 1.06, "x0": -60, "x1": 60}, "d": 8.1});}},69.680);}
+{const c=document.getElementById("cv40").getContext("2d");tl.to({},{duration:5.780,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 960, 500], [2, 1150, 420], [4, 820, 560], [5.78, 1000, 480]], "len": 300, "beat": 2.6}, {"k": "orca", "path": [[0, 400, 300], [5.78, 1500, 340]], "len": 760}, {"k": "orca", "path": [[0, 1600, 700], [5.78, 500, 680]], "len": 700, "ph0": 2}, {"k": "orca", "path": [[0, -200, 600], [5.78, 900, 620]], "len": 600, "fog": 0.25, "ph0": 4}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 5.78});}},77.780);}
+{const c=document.getElementById("cv42").getContext("2d");tl.to({},{duration:4.680,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "pnw", "actors": [{"k": "orca", "path": [[0, 600, 550], [4.7, 1200, 550]], "len": 820, "beat": 0.8}, {"k": "porpoise", "kind": "harbor", "path": [[0, 900, 550], [1.5, 1000, 570], [4.7, 2400, 530]], "len": 280, "beat": 3.0}], "cam": {"z0": 1.0, "z1": 1.05}, "d": 4.68});}},83.560);}
+{const c=document.getElementById("cv44").getContext("2d");tl.to({},{duration:6.060,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 960, 520], [6.06, 980, 580]], "len": 520, "roll": 3.14159, "limp": 1}, {"k": "orca", "path": [[0, 900, 300], [6.06, 2200, 240]], "len": 760, "fog": [[0, 0], [6, 0.5]]}, {"k": "orca", "path": [[0, 700, 760], [6.06, 2100, 800]], "len": 640, "fog": [[0, 0.1], [6, 0.6]], "ph0": 2}], "cam": {"z0": 1.05, "z1": 1.12}, "d": 6.06});}},88.240);}
+{const c=document.getElementById("cv46").getContext("2d");tl.to({},{duration:1.560,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "dark", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 960, 540], [1.56, 965, 560]], "len": 640, "roll": 3.14159, "limp": 1}], "cam": {"z0": 1.2, "z1": 1.26}, "d": 1.56});}},94.300);}
+tl.fromTo("#ph48",{scale:1.0},{scale:1.1,duration:5.3,ease:"none"},95.860);
+{const c=document.getElementById("cv50").getContext("2d");tl.to({},{duration:2.440,ease:"none",onUpdate:function(){SC.split(c,this.time(),{"sky": "grey", "actors": [{"k": "orca", "path": [[0, 900, 540], [2.44, 960, 540]], "len": 820, "beat": 0.5}, {"k": "porpoise", "kind": "harbor", "path": null, "len": 280, "heldBy": 0, "hold": [130, -96, -0.06, 480, 92]}], "cam": {"z0": 1.1, "z1": 1.16}, "d": 2.44});}},101.160);}
+tl.fromTo("#h51",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},101.200);
+tl.to("#h51",{opacity:0,duration:0.7,ease:"power1.in"},102.750);
+tl.fromTo("#ph53",{scale:1.0},{scale:1.1,duration:3.48,ease:"none"},103.600);
+{const c=document.getElementById("cv55").getContext("2d");tl.to({},{duration:11.800,ease:"none",onUpdate:function(){SC.records(c,this.time(),{"t0": 0.5, "dur": 11.0, "cam": {"z0": 1.06, "z1": 1.0}, "d": 11.8});}},107.080);}
+{const c=document.getElementById("cv57").getContext("2d");tl.to({},{duration:12.280,ease:"none",onUpdate:function(){SC.records(c,this.time(),{"t0": -20, "dur": 1, "red": 4.8, "cam": {"z0": 1.0, "z1": 1.06}, "d": 12.28});}},118.880);}
+tl.fromTo("#ph59",{scale:1.0},{scale:1.1,duration:2.36,ease:"none"},131.160);
+{const c=document.getElementById("cv61").getContext("2d");tl.to({},{duration:7.260,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "orca", "path": [[0, -200, 560], [7.26, 1300, 540]], "len": 860, "beat": 0.6}, {"k": "porpoise", "kind": "dall", "path": [[0, 300, 360], [7.26, 1700, 340]], "len": 340, "beat": 1.6}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 7.26});}},133.520);}
+tl.fromTo("#ph63",{scale:1.0},{scale:1.12,duration:3.48,ease:"none"},140.780);
+{const c=document.getElementById("cv65").getContext("2d");tl.to({},{duration:5.840,ease:"none",onUpdate:function(){SC.records(c,this.time(),{"t0": -20, "dur": 1, "red": -1, "eaten": 0.6, "cam": {"z0": 1.04, "z1": 1.1}, "d": 5.84});}},144.260);}
+{const c=document.getElementById("cv67").getContext("2d");tl.to({},{duration:5.820,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "dark", "actors": [{"k": "porpoise", "kind": "harbor", "path": [[0, 960, 560], [5.82, 980, 580]], "len": 700, "roll": 3.14159, "limp": 1, "fog": 0.1}], "cam": {"z0": 1.0, "z1": 1.08}, "d": 5.82});}},150.100);}
+tl.fromTo("#h68",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.9,ease:"power2.out"},150.400);
+tl.to("#h68",{opacity:0,duration:0.7,ease:"power1.in"},154.950);
+tl.fromTo("#h69",{opacity:0},{opacity:1,duration:0.7,ease:"power2.out"},151.400);
+tl.to("#h69",{opacity:0,duration:0.7,ease:"power2.out"},154.950);
+tl.fromTo("#v71",{scale:1.0},{scale:1.06,duration:5.84,ease:"none"},155.920);
+tl.fromTo("#ph74",{scale:1.0},{scale:1.1,duration:5.78,ease:"none"},161.760);
+{const c=document.getElementById("cv76").getContext("2d");tl.to({},{duration:2.540,ease:"none",onUpdate:function(){SC.salish(c,this.time(),{"pods": [[0.2, 600, 900, 70, -60, 9]], "cam": {"z0": 1.0, "z1": 1.08}, "d": 2.54});}},167.540);}
+{const c=document.getElementById("cv78").getContext("2d");tl.to({},{duration:5.020,ease:"none",onUpdate:function(){SC.pods(c,this.time(),{"cam": {"z0": 1.06, "z1": 1.0}, "d": 5.02});}},170.080);}
+tl.fromTo("#ph80",{scale:1.0},{scale:1.1,duration:8.44,ease:"none"},175.100);
+tl.fromTo("#ph82",{scale:1.0},{scale:1.12,duration:5.98,ease:"none"},183.540);
+{const c=document.getElementById("cv84").getContext("2d");tl.to({},{duration:4.800,ease:"none",onUpdate:function(){SC.deep(c,this.time(),{"tone": "blue", "actors": [{"k": "salmon", "path": [[0, 1300, 480], [4.8, 1900, 440]], "len": 240, "beat": 2.4, "dir": 1}, {"k": "orca", "path": [[0, -300, 560], [4.8, 1300, 500]], "len": 860, "beat": 1.0}], "cam": {"z0": 1.0, "z1": 1.06}, "d": 4.8});}},189.520);}
+tl.fromTo("#ph86",{scale:1.0},{scale:1.1,duration:3.32,ease:"none"},194.320);
+{const c=document.getElementById("cv88").getContext("2d");tl.to({},{duration:3.580,ease:"none",onUpdate:function(){SC.diet(c,this.time(),{"cam": {"z0": 1.0, "z1": 1.05}, "d": 3.58});}},197.640);}
+tl.fromTo("#v90",{scale:1.0},{scale:1.06,duration:3.66,ease:"none"},201.220);
+{const c=document.getElementById("cv93").getContext("2d");tl.to({},{duration:7.180,ease:"none",onUpdate:function(){SC.river(c,this.time(),{"dam": 1.2, "boats": 3.0, "town": 4.4, "cam": {"z0": 1.0, "z1": 1.05}, "d": 7.18});}},204.880);}
+{const c=document.getElementById("cv95").getContext("2d");tl.to({},{duration:6.120,ease:"none",onUpdate:function(){SC.line(c,this.time(),{"icon": "salmon", "cam": {"z0": 1.0, "z1": 1.04}, "d": 6.12});}},212.060);}
+tl.set({}, {}, 218.167);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

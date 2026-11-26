@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Bit mascot poses</title>
+<style>
+  body{margin:0;background:#05060A;color:#fff;font:700 22px "Arial Black",Arial,sans-serif;
+    background-image:radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 80%,#fff6,transparent),radial-gradient(1px 1px at 45% 60%,#fff5,transparent);background-size:220px 220px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:32px;max-width:1100px;margin:auto}
+  .cell{text-align:center}
+  .cell svg{width:100%;max-width:300px;height:auto}
+</style></head>
+<body><div class="grid" id="g"></div>
+<script src="mascot.js"></script>
+<script>
+  const g = document.getElementById('g');
+  BitMascot.POSES.forEach(p => {
+    const d = document.createElement('div'); d.className = 'cell';
+    d.innerHTML = BitMascot.mascotSVG(p) + `<div>${p}</div>`;
+    g.appendChild(d);
+  });
+  // blink demo on the first one
+  const first = g.firstChild; let open = true;
+  (function tick(){ open = !open; first.firstChild.outerHTML = BitMascot.mascotSVG('idle', {blink: !open}); setTimeout(tick, open ? 2600 : 140); })();
+</script></body></html>

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#111;
+  --ink2:#3F3F46;--ink3:#5F5F68;--line:#E4E4E7;--panel:#F6F6F7;--acc:#1D4ED8;--good:#15803D;--bad:#B91C1C;--warn:#A16207;--hl-acc:#DBEAFE;--hl-bad:#FEE2E2;--hl-warn:#FEF3C7}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;opacity:0}
+.a{opacity:0}
+.head{position:absolute;left:140px;right:140px;top:84px}
+.kick{font:600 22px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.ttl{font-size:66px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:14px;color:#111}
+.body{position:absolute;left:140px;right:140px;top:268px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.body.full{top:96px}
+.body.clipb{inset:0}
+.srcl{position:absolute;left:140px;right:140px;bottom:44px;font-size:23px;color:var(--ink3)}
+.row{display:flex;width:100%}
+.col{display:flex;flex-direction:column}
+.hrow{display:flex;width:100%}
+.hd{font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.tx{line-height:1.35}
+.ink2{color:var(--ink2)}.ink3{color:var(--ink3)}
+.bg{font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.acc{color:var(--acc);font-weight:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+.pill{display:inline-block;align-self:flex-start;font-size:34px;font-weight:600;padding:12px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111}
+.pill.acc{border-color:var(--acc);color:var(--acc)}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 40px;min-width:0}
+.stat.hero{background:#fff;border:2px solid var(--acc)}
+.slab{font-size:30px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:12px}
+.slogo{height:36px;width:36px;object-fit:contain}
+.sval{font-size:112px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.sval.hero{color:var(--acc)}
+.ssub{font-size:28px;color:var(--ink3);margin-top:8px;line-height:1.3}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:34px 40px}
+.quote.bad{border-left-color:var(--bad)}
+.quote.sm{padding:24px 34px}.quote.sm .qt{font-size:38px}.quote.sm .qwho{margin-top:12px}
+.qt{font-size:46px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.qwho{display:flex;align-items:center;gap:14px;margin-top:18px}
+.qwho b{display:block;font-size:28px}
+.qwho span{display:block;font-size:24px;color:var(--ink3)}
+.qav{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.fix{background:#FFF8EB;border:1.5px solid #E9B44C;border-radius:12px;padding:20px 26px}
+.fk{font:700 21px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#8A5300}
+.ft{font-size:31px;line-height:1.35;margin-top:8px;color:#2B2B2B}
+.win{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #D9D9DE;box-shadow:0 18px 50px rgba(17,17,17,.10)}
+.wbar{height:42px;background:#F3F3F5;border-bottom:1px solid #E4E4E7;position:relative}
+.wbar i{position:absolute;top:15px;width:12px;height:12px;border-radius:50%;background:#D4D4D8}
+.wbar i:nth-child(1){left:18px}.wbar i:nth-child(2){left:38px}.wbar i:nth-child(3){left:58px}
+.wbar span{position:absolute;left:50%;top:8px;transform:translateX(-50%);height:26px;padding:0 60px;background:#fff;border:1px solid #E4E4E7;border-radius:7px;font-size:15px;line-height:24px;color:#52525B;white-space:nowrap}
+.wbody{overflow:hidden}.wbody img{display:block}
+.twc img{display:block;border-radius:14px;border:1px solid #E1E1E6;box-shadow:0 14px 40px rgba(17,17,17,.08)}
+.chartc{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 40px rgba(17,17,17,.12)}
+.cbody{overflow:hidden}.cbody img{display:block}
+.ccap{background:#fff;font-size:21px;color:var(--ink3);padding:12px 4px 0}
+.pic img{display:block;border-radius:14px}
+.pn{font-size:34px;font-weight:700;margin-top:14px}.pr{font-size:25px;color:var(--ink3);margin-top:2px}
+.lg img{display:block}
+.bars{display:flex;flex-direction:column;width:100%}
+.brow{display:flex;align-items:center;gap:22px;min-height:68px}
+.blab{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600;flex:none}
+.blogo{width:40px;height:40px;object-fit:contain}
+.btrack{flex:1;background:#F1F1F3;border-radius:8px;overflow:hidden}
+.bfill{height:100%;background:#A1A1AA;border-radius:8px;transform-origin:0 50%}
+.bfill.hero{background:var(--acc)}
+.bval{flex:none;font-size:50px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.bsub{display:block;font-size:22px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-top:4px}
+.bnote{font-size:26px;color:var(--ink3);margin-top:22px}
+.vframe{position:absolute;left:192px;top:88px;width:1536px;height:864px;border-radius:14px;background:#F1F1F3;box-shadow:0 18px 50px rgba(17,17,17,.12)}
+.vlab{position:absolute;font-size:30px;font-weight:700;display:flex;align-items:center;gap:12px}
+.vlab img{height:34px}
+.vcred{position:absolute;left:192px;top:968px;font-size:21px;color:var(--ink3)}
+.vwrap{position:absolute;border-radius:14px;overflow:hidden;opacity:0}
+.caps{position:absolute;left:36px;bottom:36px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cap{background:#fff;color:#111;font-size:34px;font-weight:650;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap.acc{color:var(--acc)}.cap.bad{color:var(--bad)}
+.etile{background:#fff;border:1.5px solid #D4D4D8;border-radius:14px;padding:18px 22px 20px;position:relative}
+.etile.on{border:2.5px solid var(--acc)}
+.etile.dim{opacity:.45}
+.enum{font:600 24px "JetBrains Mono",monospace;color:var(--ink3)}
+.esym{font-size:110px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:4px}
+.etile.on .esym{color:var(--acc)}
+.ename{font-size:24px;font-weight:600;margin-top:10px;color:var(--ink2)}
+.esub{font-size:22px;color:var(--ink3);margin-top:4px}
+.tline{position:relative;width:100%;padding-top:30px}
+.trule{position:absolute;left:0;right:0;top:44px;height:3px;background:#E4E4E7;border-radius:2px}
+.tevs{display:flex;position:relative}
+.tev{flex:1;min-width:0;padding-right:16px}
+.tdot{display:block;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #A1A1AA}
+.tev.on .tdot{background:var(--acc);border-color:var(--acc)}
+.tev.bad .tdot{border-color:var(--bad)}
+.tdate{font:600 22px "JetBrains Mono",monospace;color:var(--ink3);margin-top:18px}
+.tlab{font-size:30px;font-weight:650;margin-top:6px;line-height:1.2}
+.tev.bad .tlab{color:var(--bad)}
+.tgap{font-size:24px;color:var(--ink3);margin-top:22px}
+.codep{background:#F8F8F9;border:1px solid #E4E4E7;border-radius:12px;overflow:hidden}
+.cpath{font:600 20px "JetBrains Mono",monospace;color:var(--ink3);padding:12px 20px;border-bottom:1px solid #E4E4E7;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody2{font-family:"JetBrains Mono",monospace;padding:12px 0;line-height:1.6}
+.cl{display:flex;padding:0 20px;white-space:pre}
+.ln{width:56px;flex:none;color:#A1A1AA;text-align:right;margin-right:22px}
+.lc{color:#27272A;overflow:hidden;text-overflow:ellipsis}
+.verd{flex:none;align-self:center;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 18px;border-radius:10px;border:2px solid var(--line);color:var(--ink2);white-space:nowrap}
+.verd.good{color:var(--good);border-color:var(--good);background:#F0FDF4}
+.verd.warn{color:var(--warn);border-color:#E9B44C;background:#FFFBEB}
+.verd.bad{color:var(--bad);border-color:var(--bad);background:#FEF2F2}
+.crow{display:flex;align-items:center;gap:28px;padding:16px 26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.mviz svg{display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.div{height:1px;background:var(--line);width:100%}
+.wpill{flex:none;display:flex;align-items:center;gap:12px;font:700 24px "JetBrains Mono",monospace;letter-spacing:.06em;padding:10px 20px;border-radius:999px;border:2px solid var(--line);color:var(--ink2)}
+.wpill img{height:30px;width:30px;object-fit:contain}
+.wpill.f{border-color:var(--acc);color:var(--acc);background:#EFF6FF}
+.wpill.o{border-color:#111;color:#111}
+.drow{display:flex;align-items:center;gap:12px;font-size:30px;font-weight:600;color:var(--ink2);margin-top:16px}
+.drow img{height:32px;width:32px;object-fit:contain}
+.drow b{margin-left:auto;font-size:56px;font-weight:800;letter-spacing:-.03em;color:#111;font-variant-numeric:tabular-nums}
+.drow.win b{color:var(--acc)}
+.lvl{display:flex;gap:10px}
+.lvl i{flex:1;height:70px;border-radius:10px;background:#E9E9EC;font:600 24px Inter,sans-serif;font-style:normal;color:var(--ink3);display:flex;align-items:center;justify-content:center}
+.lvl i.on{background:var(--acc);color:#fff}
+.lvl i.crit{background:var(--bad);color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="617.07" data-width="1920" data-height="1080">
+<div id="s6" class="clip scene" data-start="0.000" data-duration="4.640" data-track-index="2" style="z-index:11"><div id="w7" class="sc"><div class="head"><div class="kick">The solar system test</div><div class="ttl">One job: build our solar system</div></div><div id="b8" class="body"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i2" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Anthropic</div><div id="v1" class="sval hero" style="font-size:96px">Fable 5.2</div><div class="ssub">Claude</div></div><div id="i4" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">OpenAI</div><div id="v3" class="sval " style="font-size:96px">GPT-6.2 Astra</div><div class="ssub">ChatGPT · Codex</div></div></div><div id="i5" class="a tx " style="font-size:40px;text-align:left">Two of the smartest models in the world. One prompt.</div></div></div></div></div>
+<div id="s13" class="clip scene" data-start="4.640" data-duration="10.140" data-track-index="2" style="z-index:12"><div id="w14" class="sc"><div id="b15" class="body clipb"><div class="vframe"></div><div class="vcred">The prompt, in Notepad</div></div></div></div>
+<div id="vw10" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:13"><video id="v9" class="clip" src="assets/clips/r1_slow_cebddce7.mp4" muted playsinline data-start="4.640" data-duration="10.140" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i11" class="a cap " style="">6,194 characters</div><div id="i12" class="a cap acc" style="">one HTML file</div></div></div>
+<div id="s21" class="clip scene" data-start="14.780" data-duration="9.469" data-track-index="2" style="z-index:14"><div id="w22" class="sc"><div id="b23" class="body clipb"><div class="vframe" style="left:120px;top:300px;width:816px;height:459px"></div><div class="vlab" style="left:120px;top:244px"><img src="assets/img/claude.png" alt="">Claude Fable 5.2</div><div class="vframe" style="left:984px;top:300px;width:816px;height:459px"></div><div class="vlab" style="left:984px;top:244px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra</div><div id="i20" class="a hd" style="position:absolute;left:120px;top:830px;font-size:44px">Same words. Same settings. No help.</div></div></div></div>
+<div id="vw17" class="vwrap" style="left:120px;top:300px;width:816px;height:459px;z-index:15"><video id="v16" class="clip" src="assets/clips/r9_snapit_3678fef3.mp4" muted playsinline data-start="14.780" data-duration="9.469" data-track-index="1" style="width:816px;height:459px;object-fit:cover"></video></div>
+<div id="vw19" class="vwrap" style="left:984px;top:300px;width:816px;height:459px;z-index:16"><video id="v18" class="clip" src="assets/clips/r8_chatgpt_result_3e599312.mp4" muted playsinline data-start="14.780" data-duration="9.469" data-track-index="1" style="width:816px;height:459px;object-fit:cover"></video></div>
+<div id="s30" class="clip scene" data-start="24.249" data-duration="16.432" data-track-index="2" style="z-index:17"><div id="w31" class="sc"><div class="head"><div class="kick">The solar system test</div><div class="ttl">Two simulations, one winner</div></div><div id="b32" class="body"><div class="col" style="gap:36px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i25" class="a stat " style="flex:1"><div class="slab">One finished in</div><div id="v24" class="sval " style="font-size:110px">22m 26s</div></div><div id="i27" class="a stat " style="flex:1"><div class="slab">The other was still checking at</div><div id="v26" class="sval " style="font-size:110px">29m 36s</div></div></div><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i28" class="a pill " style="">One needed a reminder halfway through</div><div id="i29" class="a pill acc" style="">Which built the better universe?</div></div></div></div></div></div>
+<div id="s37" class="clip scene" data-start="40.681" data-duration="12.499" data-track-index="2" style="z-index:18"><div id="w38" class="sc"><div id="b39" class="body clipb"><div class="vframe"></div><div class="vcred">Anthropic launch film, Nov 9, 2026 (@claudeai on X)</div></div></div></div>
+<div id="vw34" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:19"><video id="v33" class="clip" src="assets/clips/x_fable_launch_6caa5d90.mp4" muted playsinline data-start="40.681" data-duration="12.499" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i35" class="a cap " style="">Claude Fable 5.2 · Anthropic · Nov 9</div><div id="i36" class="a cap " style="">Mythos 5.2 + extra safeguards (cyber, biology)</div></div></div>
+<div id="s44" class="clip scene" data-start="53.180" data-duration="8.279" data-track-index="2" style="z-index:20"><div id="w45" class="sc"><div class="head"><div class="kick">The contenders</div><div class="ttl">In one corner: Claude Fable 5.2</div></div><div id="b46" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i41" class="a win" style="width:1000px"><div class="wbar"><i></i><i></i><i></i><span>artificialanalysis.ai</span></div><div class="wbody" style="height:227px"><img id="k40" src="assets/img/aa_compare_b3ec5.jpg" alt="" style="width:1000px;height:227px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i43" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Intelligence Index</div><div id="v42" class="sval hero" style="font-size:150px">65</div><div class="ssub">#1 on Artificial Analysis right now</div></div></div></div></div></div><div class="srcl">artificialanalysis.ai · @claudeai on X, Nov 10, 2026</div></div></div>
+<div id="s51" class="clip scene" data-start="61.459" data-duration="9.641" data-track-index="2" style="z-index:21"><div id="w52" class="sc"><div id="b53" class="body clipb"><div class="vframe"></div><div class="vcred">OpenAI launch film, Nov 17, 2026 (@OpenAI on X)</div></div></div></div>
+<div id="vw48" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:22"><video id="v47" class="clip" src="assets/clips/x_astra_launch_abd1cf8a.mp4" muted playsinline data-start="61.459" data-duration="9.641" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i49" class="a cap " style="">GPT-6.2 Astra · OpenAI · Nov 17</div><div id="i50" class="a cap " style="">Intelligence Index: 62, second place</div></div></div>
+<div id="s64" class="clip scene" data-start="71.100" data-duration="12.636" data-track-index="2" style="z-index:23"><div id="w65" class="sc"><div class="head"><div class="kick">The contenders</div><div class="ttl">In the other corner: GPT-6.2 Astra</div></div><div id="b66" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i56" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf54" class="bfill" style="width:92.86%"></div></div><div class="bval" style="width:120px"><span id="bv55">0</span></div></div><div id="i59" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:56px"><div id="bf57" class="bfill" style="width:88.57%"></div></div><div class="bval" style="width:120px"><span id="bv58">0</span></div></div></div><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i61" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">OpenAI's pitch</div><div id="v60" class="sval " style="font-size:52px">Best for scientists</div></div><div id="i63" class="a stat hero" style="flex:1"><div class="slab">Agents' Last Exam (OpenAI's numbers)</div><div id="v62" class="sval hero" style="font-size:72px">+5.5 pts</div><div class="ssub">Astra over Fable · long professional tasks</div></div></div></div></div><div class="srcl">artificialanalysis.ai · OpenAI</div></div></div>
+<div id="s74" class="clip scene" data-start="83.736" data-duration="19.401" data-track-index="2" style="z-index:24"><div id="w75" class="sc"><div class="head"><div class="kick">Artificial Analysis · human-graded 3D test</div><div class="ttl">Real people judge interactive 3D builds</div></div><div id="b76" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="bars" style="gap:30px"><div id="i69" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:64px"><div id="bf67" class="bfill hero" style="width:94.14%"></div></div><div class="bval acc" style="width:170px"><span id="bv68">0</span><span class="bsub">#1</span></div></div><div id="i72" class="a brow" style=""><div class="blab" style="width:380px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Fable 5.2</span></div><div class="btrack" style="height:64px"><div id="bf70" class="bfill" style="width:90.79%"></div></div><div class="bval" style="width:170px"><span id="bv71">0</span></div></div></div><div id="i73" class="a tx " style="font-size:40px;text-align:left">So on paper, a 3D solar system is <b class='acc'>Astra's home turf</b>.</div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s83" class="clip scene" data-start="103.137" data-duration="9.723" data-track-index="2" style="z-index:25"><div id="w84" class="sc"><div class="head"><div class="kick">Price</div><div class="ttl">Same price per token</div></div><div id="b85" class="body"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i77" class="a twc" style="width:620px"><img src="assets/img/tw_fable_price_42.png" alt="" style="width:620px;height:454px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:28px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i79" class="a stat " style="flex:1"><div class="slab">Input, per 1M tokens</div><div id="v78" class="sval " style="font-size:110px">$8</div><div class="ssub">both models</div></div><div id="i81" class="a stat " style="flex:1"><div class="slab">Output, per 1M tokens</div><div id="v80" class="sval " style="font-size:110px">$40</div><div class="ssub">both models</div></div></div><div id="i82" class="a tx " style="font-size:36px;text-align:left">Fable just got cheaper: it was $10 / $50.</div></div></div></div></div><div class="srcl">@claudeai on X, Nov 10, 2026</div></div></div>
+<div id="s87" class="clip scene" data-start="112.860" data-duration="4.650" data-track-index="2" style="z-index:26"><div id="w88" class="sc"><div id="b89" class="body full"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i86" class="a hd" style="font-size:96px;text-align:center">What do they actually <b class='acc'>build</b>?</div></div></div></div></div>
+<div id="s97" class="clip scene" data-start="117.510" data-duration="21.827" data-track-index="2" style="z-index:27"><div id="w98" class="sc"><div id="b99" class="body clipb"><div class="vframe"></div><div class="vcred">The full prompt: 6,194 characters</div></div></div></div>
+<div id="vw91" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:28"><video id="v90" class="clip" src="assets/clips/r1_slow_09dfb7d4.mp4" muted playsinline data-start="117.510" data-duration="21.827" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i92" class="a cap " style="">A living Sun: plasma that boils and flares</div><div id="i93" class="a cap " style="">Mercury → Neptune, plus Pluto</div><div id="i94" class="a cap " style="">Saturn's rings, real shadows</div><div id="i95" class="a cap " style="">15,000 asteroids, each on its own orbit</div><div id="i96" class="a cap acc" style="">Comet tails point away from the Sun</div></div></div>
+<div id="s107" class="clip scene" data-start="139.337" data-duration="15.457" data-track-index="2" style="z-index:29"><div id="w108" class="sc"><div class="head"><div class="kick">The prompt</div><div class="ttl">Physics, not just pictures</div></div><div id="b109" class="body"><div class="row" style="gap:72px;align-items:center"><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i100" class="a hd mono acc" style="font-size:76px">M = E − e · sin E</div><div id="i101" class="a tx " style="font-size:36px;text-align:left">Kepler's equation: planets speed up as they swing close to the Sun.</div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i102" class="a hd " style="font-size:44px">Two scale modes</div><div id="i103" class="a hd " style="font-size:44px">A cinematic camera tour</div><div id="i104" class="a hd " style="font-size:44px">A time slider</div><div id="i105" class="a hd " style="font-size:44px">Keyboard shortcuts</div><div id="i106" class="a hd " style="font-size:44px">All of it in <b class='acc'>one HTML file</b></div></div></div></div></div></div></div>
+<div id="s114" class="clip scene" data-start="154.794" data-duration="7.426" data-track-index="2" style="z-index:30"><div id="w115" class="sc"><div id="b116" class="body clipb"><div class="vframe"></div><div class="vcred">Claude Code (desktop app)</div></div></div></div>
+<div id="vw111" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:31"><video id="v110" class="clip" src="assets/clips/r2_paste_claude_8cfdfb8c.mp4" muted playsinline data-start="154.794" data-duration="7.426" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i112" class="a cap " style="">Same prompt, word for word</div><div id="i113" class="a cap acc" style="">Claude Code · Fable 5.2 · High effort</div></div></div>
+<div id="s120" class="clip scene" data-start="162.220" data-duration="3.973" data-track-index="2" style="z-index:32"><div id="w121" class="sc"><div id="b122" class="body clipb"><div class="vframe"></div><div class="vcred">Codex (desktop app)</div></div></div></div>
+<div id="vw118" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:33"><video id="v117" class="clip" src="assets/clips/r3_paste_codex_b189c71e.mp4" muted playsinline data-start="162.220" data-duration="3.973" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i119" class="a cap acc" style="">Codex · GPT-6.2 Astra · High</div></div></div>
+<div id="s127" class="clip scene" data-start="166.193" data-duration="17.577" data-track-index="2" style="z-index:34"><div id="w128" class="sc"><div class="head"><div class="kick">Before we start</div><div class="ttl">One honest note</div></div><div id="b129" class="body"><div class="col" style="gap:40px;justify-content:center;align-items:stretch"><div class="tline"><div class="trule"></div><div class="tevs"><div id="i123" class="a tev bad" style=""><i class="tdot bad"></i><div class="tdate">Start</div><div class="tlab">The Codex run began on GPT-6.2 Sol: wrong model selected</div></div><div id="i124" class="a tev " style=""><i class="tdot "></i><div class="tdate">Partway</div><div class="tlab">Switched to GPT-6.2 Astra</div></div><div id="i125" class="a tev on" style=""><i class="tdot on"></i><div class="tdate">Final build</div><div class="tlab">Astra did the whole single-file rebuild</div></div></div></div><div id="i126" class="a tx " style="font-size:34px;text-align:left">Every Codex result you'll see is Astra's rebuild. No Sol footage is shown.</div></div></div></div></div>
+<div id="s134" class="clip scene" data-start="183.770" data-duration="10.890" data-track-index="2" style="z-index:35"><div id="w135" class="sc"><div id="b136" class="body clipb"><div class="vframe"></div><div class="vcred">Codex · GPT-6.2 Astra</div></div></div></div>
+<div id="vw131" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:36"><video id="v130" class="clip" src="assets/clips/r5_both_a_9411e384.mp4" muted playsinline data-start="183.770" data-duration="10.890" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i132" class="a cap " style="">First attempt: a whole project, build tool, separate files</div><div id="i133" class="a cap bad" style="">Not what the prompt asked for</div></div></div>
+<div id="s141" class="clip scene" data-start="194.660" data-duration="7.080" data-track-index="2" style="z-index:37"><div id="w142" class="sc"><div class="head"><div class="kick">Codex · GPT-6.2 Astra</div><div class="ttl">So I told it again</div></div><div id="b143" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i138" class="a chartc" style="width:900px"><div class="cbody" style="height:423px"><img id="k137" src="assets/raw/web/codex_done.png" alt="" style="width:900px;height:423px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i139" class="a tx " style="font-size:40px;text-align:left">“i say in single html file”</div><div id="i140" class="a tx ink3" style="font-size:36px;text-align:left">Astra rebuilt everything as one file.</div></div></div></div></div><div class="srcl">Codex conversation</div></div></div>
+<div id="s147" class="clip scene" data-start="201.740" data-duration="2.782" data-track-index="2" style="z-index:38"><div id="w148" class="sc"><div id="b149" class="body clipb"><div class="vframe"></div><div class="vcred">Codex · GPT-6.2 Astra</div></div></div></div>
+<div id="vw145" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:39"><video id="v144" class="clip" src="assets/clips/r5_both_a_abed4936.mp4" muted playsinline data-start="201.740" data-duration="2.782" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i146" class="a cap acc" style="">Astra checks screenshots of its own build</div></div></div>
+<div id="s152" class="clip scene" data-start="204.522" data-duration="15.575" data-track-index="2" style="z-index:40"><div id="w153" class="sc"><div id="b154" class="body clipb"><div class="vframe"></div><div class="vcred">Claude Code · Fable 5.2 · its own task list</div></div></div></div>
+<div id="vw151" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:41"><video id="v150" class="clip" src="assets/clips/r7_both_c_b1e20da0.mp4" muted playsinline data-start="204.522" data-duration="15.575" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s158" class="clip scene" data-start="220.097" data-duration="5.863" data-track-index="2" style="z-index:42"><div id="w159" class="sc"><div id="b160" class="body clipb"><div class="vframe"></div><div class="vcred">Claude Code · Fable 5.2</div></div></div></div>
+<div id="vw156" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:43"><video id="v155" class="clip" src="assets/clips/r7_both_c_109d093e.mp4" muted playsinline data-start="220.097" data-duration="5.863" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i157" class="a cap acc" style="">Fable opens its own build in a browser</div></div></div>
+<div id="s163" class="clip scene" data-start="225.960" data-duration="4.420" data-track-index="2" style="z-index:44"><div id="w164" class="sc"><div id="b165" class="body clipb"><div class="vframe"></div><div class="vcred">Fable's own words, mid-build</div></div></div></div>
+<div id="vw162" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:45"><video id="v161" class="clip" src="assets/clips/r7_both_c_80e9955b.mp4" muted playsinline data-start="225.960" data-duration="4.420" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s168" class="clip scene" data-start="230.380" data-duration="10.450" data-track-index="2" style="z-index:46"><div id="w169" class="sc"><div id="b170" class="body clipb"><div class="vframe"></div><div class="vcred">Then: realistic scale, clicking, the tour, the time controls</div></div></div></div>
+<div id="vw167" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:47"><video id="v166" class="clip" src="assets/clips/r7_both_c_9a257040.mp4" muted playsinline data-start="230.380" data-duration="10.450" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s182" class="clip scene" data-start="240.830" data-duration="17.875" data-track-index="2" style="z-index:48"><div id="w183" class="sc"><div class="head"><div class="kick">The build</div><div class="ttl">Time</div></div><div id="b184" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i172" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">Codex · GPT-6.2 Astra</div><div id="v171" class="sval " style="font-size:100px">22m 26s</div><div class="ssub">done, including the restart</div></div><div id="i174" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Claude Code · Fable 5.2</div><div id="v173" class="sval " style="font-size:100px">29m 36s</div><div class="ssub">and still checking its work</div></div></div><div id="i175" class="a tx ink3" style="font-size:30px;text-align:left">Output speed, tokens per second:</div><div class="bars" style="gap:16px"><div id="i178" class="a brow" style=""><div class="blab" style="width:330px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Fable 5.2</span></div><div class="btrack" style="height:44px"><div id="bf176" class="bfill hero" style="width:91.67%"></div></div><div class="bval acc" style="width:110px"><span id="bv177">0</span></div></div><div id="i181" class="a brow" style=""><div class="blab" style="width:330px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>GPT-6.2 Astra</span></div><div class="btrack" style="height:44px"><div id="bf179" class="bfill" style="width:40.83%"></div></div><div class="bval" style="width:110px"><span id="bv180">0</span></div></div></div></div></div><div class="srcl">Codex and Claude Code timers · output speed: Artificial Analysis</div></div></div>
+<div id="s187" class="clip scene" data-start="258.705" data-duration="3.936" data-track-index="2" style="z-index:49"><div id="w188" class="sc"><div id="b189" class="body full"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i185" class="a hd" style="font-size:84px;text-align:center">Speed: <b class='acc'>Codex</b>.</div><div id="i186" class="a hd ink3" style="font-size:56px;text-align:center">Now, the results.</div></div></div></div></div>
+<div id="s193" class="clip scene" data-start="262.641" data-duration="6.699" data-track-index="2" style="z-index:50"><div id="w194" class="sc"><div id="b195" class="body clipb"><div class="vframe"></div><div class="vcred">Codex · GPT-6.2 Astra</div></div></div></div>
+<div id="vw191" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:51"><video id="v190" class="clip" src="assets/clips/r8_chatgpt_result_90a9d7cd.mp4" muted playsinline data-start="262.641" data-duration="6.699" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i192" class="a cap " style="">“Built Solar Atlas as a single self-contained HTML file”</div></div></div>
+<div id="s200" class="clip scene" data-start="269.340" data-duration="5.360" data-track-index="2" style="z-index:52"><div id="w201" class="sc"><div id="b202" class="body clipb"><div class="vframe"></div><div class="vcred">Codex's built-in browser</div></div></div></div>
+<div id="vw197" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:53"><video id="v196" class="clip" src="assets/clips/r8_chatgpt_result_7ecde681.mp4" muted playsinline data-start="269.340" data-duration="5.360" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i198" class="a cap " style="">Loading screen while the shaders compile</div><div id="i199" class="a cap acc" style="">A planet bar along the top</div></div></div>
+<div id="s205" class="clip scene" data-start="274.700" data-duration="2.460" data-track-index="2" style="z-index:54"><div id="w206" class="sc"><div id="b207" class="body clipb"><div class="vframe" style="left:120px;top:190px;width:1680px;height:720px"></div><div class="vlab" style="left:120px;top:134px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra · Codex</div></div></div></div>
+<div id="vw204" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:55"><video id="v203" class="clip" src="assets/clips/r8_chatgpt_result_8b8b2088.mp4" muted playsinline data-start="274.700" data-duration="2.460" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="s211" class="clip scene" data-start="277.160" data-duration="8.766" data-track-index="2" style="z-index:56"><div id="w212" class="sc"><div id="b213" class="body clipb"><div class="vframe" style="left:120px;top:190px;width:1680px;height:720px"></div><div class="vlab" style="left:120px;top:134px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra · Codex</div></div></div></div>
+<div id="vw209" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:57"><video id="v208" class="clip" src="assets/clips/r8_chatgpt_result_0b05f50d.mp4" muted playsinline data-start="277.160" data-duration="8.766" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video><div class="caps"><div id="i210" class="a cap " style="">Size, mass, distance, day, year, moons, a fun fact</div></div></div>
+<div id="s234" class="clip scene" data-start="285.926" data-duration="24.104" data-track-index="2" style="z-index:58"><div id="w235" class="sc"><div id="b236" class="body clipb"><div class="vframe" style="left:120px;top:190px;width:1680px;height:720px"></div><div class="vlab" style="left:120px;top:134px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra · Codex</div></div></div></div>
+<div id="vw215" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:59"><video id="v214" class="clip" src="assets/clips/r8_chatgpt_result_660ec143.mp4" muted playsinline data-start="285.926" data-duration="2.134" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw217" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:60"><video id="v216" class="clip" src="assets/clips/r8_chatgpt_result_43ee6921.mp4" muted playsinline data-start="288.060" data-duration="2.800" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw219" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:61"><video id="v218" class="clip" src="assets/clips/r8_chatgpt_result_a7e0c2a5.mp4" muted playsinline data-start="290.860" data-duration="1.120" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw221" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:62"><video id="v220" class="clip" src="assets/clips/r8_chatgpt_result_beb4f5f1.mp4" muted playsinline data-start="291.980" data-duration="0.960" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw223" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:63"><video id="v222" class="clip" src="assets/clips/r8_chatgpt_result_c6f3a5a1.mp4" muted playsinline data-start="292.940" data-duration="0.980" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw225" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:64"><video id="v224" class="clip" src="assets/clips/r8_chatgpt_result_5f64aa96.mp4" muted playsinline data-start="293.920" data-duration="2.380" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw227" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:65"><video id="v226" class="clip" src="assets/clips/r8_chatgpt_result_9590182c.mp4" muted playsinline data-start="296.300" data-duration="2.460" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw229" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:66"><video id="v228" class="clip" src="assets/clips/r8_chatgpt_result_bb0e4352.mp4" muted playsinline data-start="298.760" data-duration="4.020" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw231" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:67"><video id="v230" class="clip" src="assets/clips/r8_chatgpt_result_b0ddbb79.mp4" muted playsinline data-start="302.780" data-duration="3.680" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="vw233" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:68"><video id="v232" class="clip" src="assets/clips/r8_chatgpt_result_dc7d0812.mp4" muted playsinline data-start="306.460" data-duration="3.570" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video></div>
+<div id="s241" class="clip scene" data-start="310.030" data-duration="7.030" data-track-index="2" style="z-index:69"><div id="w242" class="sc"><div id="b243" class="body clipb"><div class="vframe" style="left:120px;top:190px;width:1680px;height:720px"></div><div class="vlab" style="left:120px;top:134px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra · Codex</div></div></div></div>
+<div id="vw238" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:70"><video id="v237" class="clip" src="assets/clips/r8_chatgpt_result_c09b2c11.mp4" muted playsinline data-start="310.030" data-duration="7.030" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video><div class="caps"><div id="i239" class="a cap " style="">Pluto: a lovely info card…</div><div id="i240" class="a cap bad" style="">…and no Pluto</div></div></div>
+<div id="s247" class="clip scene" data-start="317.060" data-duration="6.380" data-track-index="2" style="z-index:71"><div id="w248" class="sc"><div id="b249" class="body clipb"><div class="vframe" style="left:120px;top:190px;width:1680px;height:720px"></div><div class="vlab" style="left:120px;top:134px"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra · Codex</div></div></div></div>
+<div id="vw245" class="vwrap" style="left:120px;top:190px;width:1680px;height:720px;z-index:72"><video id="v244" class="clip" src="assets/clips/r8_chatgpt_result_5f06b44e.mp4" muted playsinline data-start="317.060" data-duration="6.380" data-track-index="1" style="width:1680px;height:720px;object-fit:cover"></video><div class="caps"><div id="i246" class="a cap " style="">Full system view: the planets shrink to dots</div></div></div>
+<div id="s254" class="clip scene" data-start="323.440" data-duration="5.686" data-track-index="2" style="z-index:73"><div id="w255" class="sc"><div class="head"><div class="kick">GPT-6.2 Astra · Solar Atlas</div><div class="ttl">Codex admits a gap</div></div><div id="b256" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i251" class="a chartc" style="width:900px"><div class="cbody" style="height:423px"><img id="k250" src="assets/raw/web/codex_done.png" alt="" style="width:900px;height:423px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:18px;justify-content:center;align-items:stretch"><div id="i252" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">60 frames per second target</div></div><div class="verd warn">NEVER CHECKED</div></div><div id="i253" class="a tx " style="font-size:32px;text-align:left">Codex's own words: the target “remains unverified”.</div></div></div></div></div><div class="srcl">Codex conversation</div></div></div>
+<div id="s261" class="clip scene" data-start="329.126" data-duration="15.958" data-track-index="2" style="z-index:74"><div id="w262" class="sc"><div id="b263" class="body clipb"><div class="vframe" style="left:192px;top:120px;width:1536px;height:864px"></div><div class="vlab" style="left:192px;top:64px"><img src="assets/img/claude.png" alt="">Claude Fable 5.2</div></div></div></div>
+<div id="vw258" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:75"><video id="v257" class="clip" src="assets/clips/r9_snapit_4321fb2a.mp4" muted playsinline data-start="329.126" data-duration="15.958" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i259" class="a cap " style="">Info panel on the side</div><div id="i260" class="a cap acc" style="">The asteroid belt: real 3D rocks</div></div></div>
+<div id="s278" class="clip scene" data-start="345.084" data-duration="17.785" data-track-index="2" style="z-index:76"><div id="w279" class="sc"><div id="b280" class="body clipb"><div class="vframe" style="left:192px;top:120px;width:1536px;height:864px"></div><div class="vlab" style="left:192px;top:64px"><img src="assets/img/claude.png" alt="">Claude Fable 5.2</div></div></div></div>
+<div id="vw265" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:77"><video id="v264" class="clip" src="assets/clips/r9_snapit_2a918746.mp4" muted playsinline data-start="345.084" data-duration="3.316" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw267" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:78"><video id="v266" class="clip" src="assets/clips/r9_snapit_084fc9ad.mp4" muted playsinline data-start="348.400" data-duration="3.860" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw269" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:79"><video id="v268" class="clip" src="assets/clips/r9_snapit_c16dd508.mp4" muted playsinline data-start="352.260" data-duration="2.740" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw271" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:80"><video id="v270" class="clip" src="assets/clips/r9_snapit_ce7fff60.mp4" muted playsinline data-start="355.000" data-duration="1.760" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw273" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:81"><video id="v272" class="clip" src="assets/clips/r9_snapit_2e960097.mp4" muted playsinline data-start="356.760" data-duration="1.540" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw275" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:82"><video id="v274" class="clip" src="assets/clips/r9_snapit_e69505b4.mp4" muted playsinline data-start="358.300" data-duration="2.000" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="vw277" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:83"><video id="v276" class="clip" src="assets/clips/r9_snapit_9770efee.mp4" muted playsinline data-start="360.300" data-duration="2.569" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video></div>
+<div id="s284" class="clip scene" data-start="362.869" data-duration="12.747" data-track-index="2" style="z-index:84"><div id="w285" class="sc"><div id="b286" class="body clipb"><div class="vframe" style="left:192px;top:120px;width:1536px;height:864px"></div><div class="vlab" style="left:192px;top:64px"><img src="assets/img/claude.png" alt="">Claude Fable 5.2</div></div></div></div>
+<div id="vw282" class="vwrap" style="left:192px;top:120px;width:1536px;height:864px;z-index:85"><video id="v281" class="clip" src="assets/clips/r9_snapit_75ac9cd0.mp4" muted playsinline data-start="362.869" data-duration="12.747" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i283" class="a cap acc" style="">The Kuiper belt: a faint ring beyond Neptune</div></div></div>
+<div id="s293" class="clip scene" data-start="375.616" data-duration="21.663" data-track-index="2" style="z-index:86"><div id="w294" class="sc"><div class="head"><div class="kick">A detail I never asked for</div><div class="ttl">The sky, set to today's date</div></div><div id="b295" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i288" class="a chartc" style="width:470px"><div class="cbody" style="height:663px"><img id="k287" src="assets/raw/web/fable_notes_sky.png" alt="" style="width:470px;height:663px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i289" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Saturn's rings: nearly edge-on to the Sun</div></div><div class="verd ">NOTED</div></div><div id="i290" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Halley's comet: far end of its orbit, no tail</div></div><div class="verd ">NOTED</div></div><div id="i291" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Comet Encke: close to the Sun, both tails</div></div><div class="verd ">NOTED</div></div><div id="i292" class="a hd" style="font-size:48px">Not decoration. <b class='acc'>Physics, running.</b></div></div></div></div></div><div class="srcl">Fable 5.2's notes in Claude Code</div></div></div>
+<div id="s314" class="clip scene" data-start="397.279" data-duration="10.061" data-track-index="2" style="z-index:87"><div id="w315" class="sc"><div class="head"><div class="kick">Fable 5.2</div><div class="ttl">It measured its own speed</div></div><div id="b316" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i297" class="a chartc" style="width:470px"><div class="cbody" style="height:663px"><img id="k296" src="assets/raw/web/fable_notes_fps.png" alt="" style="width:470px;height:663px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:10px;justify-content:center;align-items:stretch"><div class="bars" style="gap:10px"><div id="i300" class="a brow" style=""><div class="blab" style="width:300px"><span>Full system</span></div><div class="btrack" style="height:40px"><div id="bf298" class="bfill" style="width:67.07%"></div></div><div class="bval" style="width:210px"><span id="bv299">0</span></div></div><div id="i303" class="a brow" style=""><div class="blab" style="width:300px"><span>Sun on screen</span></div><div class="btrack" style="height:40px"><div id="bf301" class="bfill" style="width:73.65%"></div></div><div class="bval" style="width:210px"><span id="bv302">0</span></div></div><div id="i306" class="a brow" style=""><div class="blab" style="width:300px"><span>Earth on screen</span></div><div class="btrack" style="height:40px"><div id="bf304" class="bfill" style="width:61.08%"></div></div><div class="bval" style="width:210px"><span id="bv305">0</span></div></div><div id="i309" class="a brow" style=""><div class="blab" style="width:300px"><span>Saturn on screen</span></div><div class="btrack" style="height:40px"><div id="bf307" class="bfill" style="width:48.50%"></div></div><div class="bval" style="width:210px"><span id="bv308">0</span></div></div><div id="i312" class="a brow" style=""><div class="blab" style="width:300px"><span>Jupiter on screen</span></div><div class="btrack" style="height:40px"><div id="bf310" class="bfill" style="width:41.32%"></div></div><div class="bval" style="width:210px"><span id="bv311">0</span></div></div></div><div class="bnote">Milliseconds per frame. Bar end = 16.7 ms = 60 frames per second.</div><div id="i313" class="a tx " style="font-size:34px;text-align:left">Every view under the line, on integrated graphics.</div></div></div></div></div><div class="srcl">Fable 5.2's notes in Claude Code</div></div></div>
+<div id="s321" class="clip scene" data-start="407.340" data-duration="17.138" data-track-index="2" style="z-index:88"><div id="w322" class="sc"><div class="head"><div class="kick">Fable 5.2 · what it told me</div><div class="ttl">Not perfect</div></div><div id="b323" class="body"><div class="col" style="gap:14px;justify-content:center;align-items:stretch"><div id="i317" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Ceres</div><div class="ssub" style="margin-top:4px">an optional extra, and it said so</div></div><div class="verd warn">SKIPPED</div></div><div id="i318" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Tiny ice particles in Saturn's rings</div><div class="ssub" style="margin-top:4px">also optional, also reported</div></div><div class="verd warn">SKIPPED</div></div><div id="i319" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Needs internet on first load: three.js comes from a CDN</div><div class="ssub" style="margin-top:4px">the prompt allowed it</div></div><div class="verd ">ALLOWED</div></div><div id="i320" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">It took longer</div></div><div class="verd warn">29½ MIN+</div></div></div></div></div></div>
+<div id="s330" class="clip scene" data-start="424.478" data-duration="25.249" data-track-index="2" style="z-index:89"><div id="w331" class="sc"><div class="head"><div class="kick">This test</div><div class="ttl">Scorecard</div></div><div id="b332" class="body"><div class="col" style="gap:12px;justify-content:center;align-items:stretch"><div id="i324" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Speed</div><div class="wpill o"><img src="assets/img/openai_k.png" alt="">ASTRA</div></div><div id="i325" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Interface design</div><div class="wpill o"><img src="assets/img/openai_k.png" alt="">ASTRA</div></div><div id="i326" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Following the brief the first time</div><div class="wpill f"><img src="assets/img/claude.png" alt="">FABLE 5.2</div></div><div id="i327" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">3D realism</div><div class="wpill f"><img src="assets/img/claude.png" alt="">FABLE 5.2</div></div><div id="i328" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Physics and accuracy</div><div class="wpill f"><img src="assets/img/claude.png" alt="">FABLE 5.2</div></div><div id="i329" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Honesty about what was skipped</div><div class="wpill ">TIE</div></div></div></div></div></div>
+<div id="s336" class="clip scene" data-start="449.727" data-duration="12.797" data-track-index="2" style="z-index:90"><div id="w337" class="sc"><div id="b338" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i333" class="a hd" style="font-size:68px">On this test, <b class='acc'>Fable 5.2</b> built the better universe.</div><div id="i334" class="a tx ink3" style="font-size:40px;text-align:left">But one test is one test.</div><div id="i335" class="a crow" style=""><div style="flex:1;min-width:0"><div class="hd" style="font-size:36px">Human-graded 3D benchmark: Astra 1318, Fable 1271</div></div><div class="verd ">ASTRA #1</div></div></div></div></div></div>
+<div id="s344" class="clip scene" data-start="462.524" data-duration="11.956" data-track-index="2" style="z-index:91"><div id="w345" class="sc"><div class="head"><div class="kick">What other people found</div><div class="ttl">Same prompt, other testers</div></div><div id="b346" class="body"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i339" class="a tx " style="font-size:40px;text-align:left">Their head-to-heads look a lot like mine.</div><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i341" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra · game test</div><div id="v340" class="sval " style="font-size:96px">~4 min</div><div class="ssub">but faked the 3D</div></div><div id="i343" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Fable 5.2 · game test</div><div id="v342" class="sval hero" style="font-size:96px">~10 min</div><div class="ssub">built the real thing</div></div></div></div></div><div class="srcl">dev.to/otterdev3, “We gave Claude Fable 5.2 and GPT-6.2 the same game prompt”</div></div></div>
+<div id="s351" class="clip scene" data-start="474.480" data-duration="4.540" data-track-index="2" style="z-index:92"><div id="w352" class="sc"><div id="b353" class="body clipb"><div class="vframe"></div><div class="vcred">@AmirMushich on X, Nov 18, 2026</div></div></div></div>
+<div id="vw348" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:93"><video id="v347" class="clip" src="assets/clips/x_blender_97faa253.mp4" muted playsinline data-start="474.480" data-duration="4.540" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i349" class="a cap " style="">Blender test: Astra modelled better</div><div id="i350" class="a cap acc" style="">at about a sixth of the cost</div></div></div>
+<div id="s361" class="clip scene" data-start="479.020" data-duration="8.191" data-track-index="2" style="z-index:94"><div id="w362" class="sc"><div class="head"><div class="kick">What other people found</div><div class="ttl">Nate Herk: 12 tasks</div></div><div id="b363" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i355" class="a win" style="width:820px"><div class="wbar"><i></i><i></i><i></i><span>geeky-gadgets.com · Nov 19, 2026</span></div><div class="wbody" style="height:257px"><img id="k354" src="assets/img/nateherk_3abf9.jpg" alt="" style="width:820px;height:257px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i357" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Fable 5.2 won</div><div id="v356" class="sval hero" style="font-size:120px">7</div></div><div id="i359" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">Astra won</div><div id="v358" class="sval " style="font-size:120px">5</div></div></div><div id="i360" class="a tx " style="font-size:36px;text-align:left">Astra was cheaper and faster on all 12.</div></div></div></div></div><div class="srcl">Nate Herk's test, via geeky-gadgets.com</div></div></div>
+<div id="s368" class="clip scene" data-start="487.211" data-duration="21.513" data-track-index="2" style="z-index:95"><div id="w369" class="sc"><div class="head"><div class="kick">Artificial Analysis · head-to-head</div><div class="ttl">The benchmarks split</div></div><div id="b370" class="body"><div class="hrow" style="gap:20px;justify-content:flex-start"><div id="i364" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">HLE · Diamond</div><div class="drow win"><img src="assets/img/claude.png" alt="">Fable 5.2<b>80.2</b></div><div class="drow"><img src="assets/img/openai_k.png" alt="">Astra<b>72.2</b></div></div><div id="i365" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">CritPt · physics</div><div class="drow win"><img src="assets/img/claude.png" alt="">Fable 5.2<b>76.5</b></div><div class="drow"><img src="assets/img/openai_k.png" alt="">Astra<b>71.5</b></div></div><div id="i366" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">Terminal-Bench · Science</div><div class="drow"><img src="assets/img/claude.png" alt="">Fable 5.2<b>73.3</b></div><div class="drow win"><img src="assets/img/openai_k.png" alt="">Astra<b>78.1</b></div></div><div id="i367" class="a stat" style="flex:1"><div class="slab" style="font-size:25px">Vals Science Index</div><div class="sval" style="font-size:72px">#1</div><div class="drow win"><img src="assets/img/openai_k.png" alt="">GPT-6.2 Astra</div></div></div></div><div class="srcl">artificialanalysis.ai · vals.ai</div></div></div>
+<div id="s376" class="clip scene" data-start="508.724" data-duration="16.652" data-track-index="2" style="z-index:96"><div id="w377" class="sc"><div class="head"><div class="kick">Artificial Analysis</div><div class="ttl">Cost per task</div></div><div id="b378" class="body"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div class="hrow" style="gap:24px;justify-content:flex-start"><div id="i372" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra · max effort</div><div id="v371" class="sval " style="font-size:96px">$4.00</div><div class="ssub">14.0 min per task</div></div><div id="i374" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Fable 5.2 · max effort</div><div id="v373" class="sval " style="font-size:96px">$26.54</div><div class="ssub">41.4 min per task</div></div></div><div id="i375" class="a tx " style="font-size:34px;text-align:left">Same price per token. Fable just uses far more tokens.</div></div></div><div class="srcl">artificialanalysis.ai</div></div></div>
+<div id="s388" class="clip scene" data-start="525.376" data-duration="12.604" data-track-index="2" style="z-index:97"><div id="w389" class="sc"><div class="head"><div class="kick">Real science</div><div class="ttl">Does it know real proteins?</div></div><div id="b390" class="body"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i380" class="a win" style="width:760px"><div class="wbar"><i></i><i></i><i></i><span>xinmingtu.cn · Nov 2026</span></div><div class="wbody" style="height:253px"><img id="k379" src="assets/img/protein_b8b1e.jpg" alt="" style="width:760px;height:253px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i381" class="a tx ink3" style="font-size:32px;text-align:left">Next amino acid, real protein sequences:</div><div class="bars" style="gap:30px"><div id="i384" class="a brow" style=""><div class="blab" style="width:260px"><img src="assets/img/claude.png" alt="" class="blogo"><span>Fable 5.2</span></div><div class="btrack" style="height:56px"><div id="bf382" class="bfill hero" style="width:54.00%"></div></div><div class="bval acc" style="width:200px"><span id="bv383">0</span></div></div><div id="i387" class="a brow" style=""><div class="blab" style="width:260px"><img src="assets/img/openai_k.png" alt="" class="blogo"><span>Astra</span></div><div class="btrack" style="height:56px"><div id="bf385" class="bfill" style="width:0.40%"></div></div><div class="bval" style="width:200px"><span id="bv386">0</span><span class="bsub">close to zero</span></div></div></div></div></div></div></div><div class="srcl">Xinming Tu, protein-sequence test</div></div></div>
+<div id="s394" class="clip scene" data-start="537.980" data-duration="6.880" data-track-index="2" style="z-index:98"><div id="w395" class="sc"><div id="b396" class="body full"><div class="row" style="gap:56px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i391" class="a twc" style="width:600px"><img src="assets/img/tw_sokrypton_42.png" alt="" style="width:600px;height:593px"></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:16px;justify-content:center;align-items:stretch"><div id="i392" class="a tx ink3" style="font-size:32px;text-align:left">Protein designer Sergey Ovchinnikov:</div><div id="i393" class="a hd" style="font-size:48px">Fable predicted a protein's fold correctly, from a simple prompt.</div></div></div></div></div><div class="srcl">@sokrypton on X, Nov 18, 2026</div></div></div>
+<div id="s401" class="clip scene" data-start="544.860" data-duration="7.329" data-track-index="2" style="z-index:99"><div id="w402" class="sc"><div id="b403" class="body full"><div class="row" style="gap:48px;align-items:center"><div class="col" style="flex:none;min-width:0"><div id="i398" class="a win" style="width:820px"><div class="wbar"><i></i><i></i><i></i><span>anthropic.com/research · Nov 17, 2026</span></div><div class="wbody" style="height:424px"><img id="k397" src="assets/img/blackhole_1f205.jpg" alt="" style="width:820px;height:424px"></div></div></div><div class="col" style="flex:1 1 0;min-width:0"><div class="col" style="gap:24px;justify-content:center;align-items:stretch"><div id="i399" class="a tx " style="font-size:38px;text-align:left">Anthropic: Fable helped solve two open problems in black-hole physics.</div><div id="i400" class="a verd warn" style="font-size:30px;padding:14px 24px;border-width:3px">NOT PEER-REVIEWED YET</div></div></div></div></div><div class="srcl">Anthropic, “Claude solves two open problems in the physics of black holes”</div></div></div>
+<div id="s405" class="clip scene" data-start="552.189" data-duration="2.511" data-track-index="2" style="z-index:100"><div id="w406" class="sc"><div id="b407" class="body full"><div class="col" style="gap:0px;justify-content:center;align-items:stretch"><div id="i404" class="a hd" style="font-size:72px;text-align:center">People are building wild things with both.</div></div></div></div></div>
+<div id="s411" class="clip scene" data-start="554.700" data-duration="2.800" data-track-index="2" style="z-index:101"><div id="w412" class="sc"><div id="b413" class="body clipb"><div class="vframe"></div><div class="vcred">@DilumSanjaya on X</div></div></div></div>
+<div id="vw409" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:102"><video id="v408" class="clip" src="assets/clips/x_rover_51241a66.mp4" muted playsinline data-start="554.700" data-duration="2.800" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i410" class="a cap acc" style="">Fable 5.2 · Mars rover suspension sim</div></div></div>
+<div id="s418" class="clip scene" data-start="557.500" data-duration="4.280" data-track-index="2" style="z-index:103"><div id="w419" class="sc"><div id="b420" class="body clipb"><div class="vframe" style="left:717px;top:88px;width:486px;height:864px"></div><div id="i417" class="a tx ink3" style="position:absolute;left:1240px;top:900px;font-size:22px">@HashemGhaili on X</div></div></div></div>
+<div id="vw415" class="vwrap" style="left:717px;top:88px;width:486px;height:864px;z-index:104"><video id="v414" class="clip" src="assets/clips/x_xray_3f4e6289.mp4" muted playsinline data-start="557.500" data-duration="4.280" data-track-index="1" style="width:486px;height:864px;object-fit:cover"></video><div class="caps"><div id="i416" class="a cap acc" style="">Fable · webcam X-ray mirror</div></div></div>
+<div id="s424" class="clip scene" data-start="561.780" data-duration="2.120" data-track-index="2" style="z-index:105"><div id="w425" class="sc"><div id="b426" class="body clipb"><div class="vframe"></div><div class="vcred">@mattshumer_ on X</div></div></div></div>
+<div id="vw422" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:106"><video id="v421" class="clip" src="assets/clips/x_weather_6d05e0c7.mp4" muted playsinline data-start="561.780" data-duration="2.120" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i423" class="a cap acc" style="">Fable · live weather globe</div></div></div>
+<div id="s430" class="clip scene" data-start="563.900" data-duration="4.040" data-track-index="2" style="z-index:107"><div id="w431" class="sc"><div id="b432" class="body clipb"><div class="vframe"></div><div class="vcred">Ethan Mollick (@emollick) on X</div></div></div></div>
+<div id="vw428" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:108"><video id="v427" class="clip" src="assets/clips/x_elevator_b249be8b.mp4" muted playsinline data-start="563.900" data-duration="4.040" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i429" class="a cap " style="">Astra · space elevator ride, Blender + Unity</div></div></div>
+<div id="s436" class="clip scene" data-start="567.940" data-duration="6.427" data-track-index="2" style="z-index:109"><div id="w437" class="sc"><div id="b438" class="body clipb"><div class="vframe"></div><div class="vcred">OpenAI demo, via @AngryTomtweets on X</div></div></div></div>
+<div id="vw434" class="vwrap" style="left:192px;top:88px;width:1536px;height:864px;z-index:110"><video id="v433" class="clip" src="assets/clips/x_carsolver_8f884416.mp4" muted playsinline data-start="567.940" data-duration="6.427" data-track-index="1" style="width:1536px;height:864px;object-fit:cover"></video><div class="caps"><div id="i435" class="a cap " style="">Astra writes a car physics solver, animated in Blender</div></div></div>
+<div id="s441" class="clip scene" data-start="574.367" data-duration="15.608" data-track-index="2" style="z-index:111"><div id="w442" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">The pattern</div></div><div id="b443" class="body"><div class="hrow" style="gap:28px;justify-content:flex-start"><div id="i439" class="a stat hero" style="flex:1"><div class="slab"><img src="assets/img/claude.png" alt="" class="slogo">Fable 5.2</div><div class="hd" style="font-size:38px;margin-top:16px">The deeper, careful builder</div><div class="hd" style="font-size:38px;margin-top:16px">Reads the whole brief</div><div class="hd" style="font-size:38px;margin-top:16px">Checks its own work</div><div class="hd" style="font-size:38px;margin-top:16px">Gets the details right</div></div><div id="i440" class="a stat " style="flex:1"><div class="slab"><img src="assets/img/openai_k.png" alt="" class="slogo">GPT-6.2 Astra</div><div class="hd" style="font-size:38px;margin-top:16px">The faster, cheaper one</div><div class="hd" style="font-size:38px;margin-top:16px">A great eye for design</div><div class="hd" style="font-size:38px;margin-top:16px">Surprisingly close</div></div></div></div></div></div>
+<div id="s447" class="clip scene" data-start="589.975" data-duration="17.601" data-track-index="2" style="z-index:112"><div id="w448" class="sc"><div class="head"><div class="kick">Verdict</div><div class="ttl">Which one should you use?</div></div><div id="b449" class="body"><div class="col" style="gap:20px;justify-content:center;align-items:stretch"><div id="i444" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Polished, fast, cheap per task</div><div class="wpill o"><img src="assets/img/openai_k.png" alt="">ASTRA</div></div><div id="i445" class="a crow" style=""><div class="hd" style="font-size:38px;flex:1;min-width:0">Follows a long brief, checks itself, gets the physics right</div><div class="wpill f"><img src="assets/img/claude.png" alt="">FABLE 5.2</div></div><div id="i446" class="a tx ink3" style="font-size:38px;text-align:left">The gap at the top is small, and it moves every few weeks.</div></div></div></div></div>
+<div id="s452" class="clip scene" data-start="607.576" data-duration="6.450" data-track-index="2" style="z-index:113"><div id="w453" class="sc"><div id="b454" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i450" class="a hd" style="font-size:72px;text-align:center">Which one would you trust with your next project?</div><div id="i451" class="a tx ink3" style="font-size:40px;text-align:center">And what should they build next?</div></div></div></div></div>
+<div id="s457" class="clip scene" data-start="614.026" data-duration="3.044" data-track-index="2" style="z-index:114"><div id="w458" class="sc"><div id="b459" class="body full"><div class="col" style="gap:30px;justify-content:center;align-items:stretch"><div id="i455" class="a " style=""><img src="assets/img/aiequator_k.png" alt="" style="width:300px;height:300px;display:block;margin:0 auto"></div><div id="i456" class="a tx ink3" style="font-size:32px;text-align:center">Subscribe for more AI news</div></div></div></div></div>
+<audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-duration="615.47" data-volume="1" data-track-index="10"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+function count(sel, t, a, b, dec, pre, suf, d) {
+  const el = document.querySelector(sel), o = { v: a };
+  const f = (v) => pre + Number(v).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+  el.textContent = f(a);
+  tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, t);
+}
+tl.set("#i2",{opacity:1,y:0},0);
+tl.set("#i4",{opacity:1,y:0},0);
+tl.fromTo("#i5",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},1.400);
+tl.set("#w7",{opacity:1},0);
+tl.to("#w7",{opacity:0,duration:0.25,ease:"power1.in"},4.390);
+tl.fromTo("#vw10",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},4.640);
+tl.fromTo("#i11",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},5.680);
+tl.fromTo("#i12",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},12.680);
+tl.fromTo("#w14",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},4.640);
+tl.to("#w14",{opacity:0,duration:0.25,ease:"power1.in"},14.530);
+tl.to("#vw10",{opacity:0,duration:0.25,ease:"power1.in"},14.530);
+tl.fromTo("#vw17",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},14.780);
+tl.fromTo("#vw19",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},14.780);
+tl.fromTo("#i20",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},21.040);
+tl.fromTo("#w22",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},14.780);
+tl.to("#w22",{opacity:0,duration:0.25,ease:"power1.in"},23.999);
+tl.to("#vw17",{opacity:0,duration:0.25,ease:"power1.in"},23.999);
+tl.to("#vw19",{opacity:0,duration:0.25,ease:"power1.in"},23.999);
+tl.fromTo("#i25",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},24.449);
+tl.fromTo("#i27",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},26.120);
+tl.fromTo("#i28",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},31.860);
+tl.fromTo("#i29",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},33.900);
+tl.fromTo("#w31",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},24.249);
+tl.to("#w31",{opacity:0,duration:0.25,ease:"power1.in"},40.431);
+tl.fromTo("#b32",{scale:1},{scale:1.015,duration:16.432,ease:"none"},24.249);
+tl.fromTo("#vw34",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},40.681);
+tl.fromTo("#i35",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},41.081);
+tl.fromTo("#i36",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},46.520);
+tl.fromTo("#w38",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},40.681);
+tl.to("#w38",{opacity:0,duration:0.25,ease:"power1.in"},52.930);
+tl.to("#vw34",{opacity:0,duration:0.25,ease:"power1.in"},52.930);
+tl.fromTo("#i41",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},53.280);
+count("#v42",53.580,0,65,0,"","",1.0);
+tl.fromTo("#i43",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},53.480);
+tl.fromTo("#w45",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},53.180);
+tl.to("#w45",{opacity:0,duration:0.25,ease:"power1.in"},61.209);
+tl.fromTo("#b46",{scale:1},{scale:1.015,duration:8.279,ease:"none"},53.180);
+tl.fromTo("#vw48",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},61.459);
+tl.fromTo("#i49",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},61.859);
+tl.fromTo("#i50",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},68.360);
+tl.fromTo("#w52",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},61.459);
+tl.to("#w52",{opacity:0,duration:0.25,ease:"power1.in"},70.850);
+tl.to("#vw48",{opacity:0,duration:0.25,ease:"power1.in"},70.850);
+tl.fromTo("#bf54",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},71.300);
+count("#bv55",71.300,0,65,0,"","",0.9);
+tl.fromTo("#i56",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},71.300);
+tl.fromTo("#bf57",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},71.600);
+count("#bv58",71.600,0,62,0,"","",0.9);
+tl.fromTo("#i59",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},71.600);
+tl.fromTo("#i61",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},72.280);
+tl.fromTo("#i63",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},74.940);
+tl.fromTo("#w65",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},71.100);
+tl.to("#w65",{opacity:0,duration:0.25,ease:"power1.in"},83.486);
+tl.fromTo("#b66",{scale:1},{scale:1.015,duration:12.636,ease:"none"},71.100);
+tl.fromTo("#bf67",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},93.080);
+count("#bv68",93.080,0,1318,0,"","",0.9);
+tl.fromTo("#i69",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},93.080);
+tl.fromTo("#bf70",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},96.940);
+count("#bv71",96.940,0,1271,0,"","",0.9);
+tl.fromTo("#i72",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},96.940);
+tl.fromTo("#i73",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},98.840);
+tl.fromTo("#w75",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},83.736);
+tl.to("#w75",{opacity:0,duration:0.25,ease:"power1.in"},102.887);
+tl.fromTo("#b76",{scale:1},{scale:1.015,duration:19.401,ease:"none"},83.736);
+tl.fromTo("#i77",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},103.237);
+tl.fromTo("#i79",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},103.437);
+tl.fromTo("#i81",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},103.737);
+tl.fromTo("#i82",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},109.240);
+tl.fromTo("#w84",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},103.137);
+tl.to("#w84",{opacity:0,duration:0.25,ease:"power1.in"},112.610);
+tl.fromTo("#b85",{scale:1},{scale:1.015,duration:9.723,ease:"none"},103.137);
+tl.fromTo("#i86",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},112.960);
+tl.fromTo("#w88",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},112.860);
+tl.to("#w88",{opacity:0,duration:0.25,ease:"power1.in"},117.260);
+tl.fromTo("#vw91",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},117.510);
+tl.fromTo("#i92",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},120.140);
+tl.fromTo("#i93",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},126.480);
+tl.fromTo("#i94",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},129.420);
+tl.fromTo("#i95",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},130.760);
+tl.fromTo("#i96",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},136.000);
+tl.fromTo("#w98",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},117.510);
+tl.to("#w98",{opacity:0,duration:0.25,ease:"power1.in"},139.087);
+tl.to("#vw91",{opacity:0,duration:0.25,ease:"power1.in"},139.087);
+tl.fromTo("#i100",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.537);
+tl.fromTo("#i101",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},139.837);
+tl.fromTo("#i102",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},145.540);
+tl.fromTo("#i103",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},146.960);
+tl.fromTo("#i104",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},148.520);
+tl.fromTo("#i105",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},149.780);
+tl.fromTo("#i106",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},151.220);
+tl.fromTo("#w108",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},139.337);
+tl.to("#w108",{opacity:0,duration:0.25,ease:"power1.in"},154.544);
+tl.fromTo("#b109",{scale:1},{scale:1.015,duration:15.457,ease:"none"},139.337);
+tl.fromTo("#vw111",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},154.794);
+tl.fromTo("#i112",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},155.194);
+tl.fromTo("#i113",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},158.240);
+tl.fromTo("#w115",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},154.794);
+tl.to("#w115",{opacity:0,duration:0.25,ease:"power1.in"},161.970);
+tl.to("#vw111",{opacity:0,duration:0.25,ease:"power1.in"},161.970);
+tl.fromTo("#vw118",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},162.220);
+tl.fromTo("#i119",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},162.520);
+tl.fromTo("#w121",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},162.220);
+tl.to("#w121",{opacity:0,duration:0.25,ease:"power1.in"},165.943);
+tl.to("#vw118",{opacity:0,duration:0.25,ease:"power1.in"},165.943);
+tl.fromTo("#i123",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},166.820);
+tl.fromTo("#i124",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},176.240);
+tl.fromTo("#i125",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},178.400);
+tl.fromTo("#i126",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},179.900);
+tl.fromTo("#w128",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},166.193);
+tl.to("#w128",{opacity:0,duration:0.25,ease:"power1.in"},183.520);
+tl.fromTo("#b129",{scale:1},{scale:1.015,duration:17.577,ease:"none"},166.193);
+tl.fromTo("#vw131",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},183.770);
+tl.fromTo("#i132",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},184.170);
+tl.fromTo("#i133",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},187.520);
+tl.fromTo("#w135",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},183.770);
+tl.to("#w135",{opacity:0,duration:0.25,ease:"power1.in"},194.410);
+tl.to("#vw131",{opacity:0,duration:0.25,ease:"power1.in"},194.410);
+tl.fromTo("#k137",{scale:1},{scale:1.03,duration:6.980,ease:"none"},194.760);
+tl.fromTo("#i138",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},194.760);
+tl.fromTo("#i139",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},195.940);
+tl.fromTo("#i140",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},198.060);
+tl.fromTo("#w142",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},194.660);
+tl.to("#w142",{opacity:0,duration:0.25,ease:"power1.in"},201.490);
+tl.fromTo("#b143",{scale:1},{scale:1.015,duration:7.080,ease:"none"},194.660);
+tl.fromTo("#vw145",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},201.740);
+tl.fromTo("#i146",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},202.040);
+tl.fromTo("#w148",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},201.740);
+tl.to("#w148",{opacity:0,duration:0.25,ease:"power1.in"},204.272);
+tl.to("#vw145",{opacity:0,duration:0.25,ease:"power1.in"},204.272);
+tl.fromTo("#vw151",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},204.522);
+tl.fromTo("#w153",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},204.522);
+tl.to("#w153",{opacity:0,duration:0.25,ease:"power1.in"},219.847);
+tl.to("#vw151",{opacity:0,duration:0.25,ease:"power1.in"},219.847);
+tl.fromTo("#vw156",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},220.097);
+tl.fromTo("#i157",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},222.060);
+tl.fromTo("#w159",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},220.097);
+tl.to("#w159",{opacity:0,duration:0.25,ease:"power1.in"},225.710);
+tl.to("#vw156",{opacity:0,duration:0.25,ease:"power1.in"},225.710);
+tl.fromTo("#vw162",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},225.960);
+tl.fromTo("#w164",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},225.960);
+tl.to("#w164",{opacity:0,duration:0.25,ease:"power1.in"},230.130);
+tl.to("#vw162",{opacity:0,duration:0.25,ease:"power1.in"},230.130);
+tl.fromTo("#vw167",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},230.380);
+tl.fromTo("#w169",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},230.380);
+tl.to("#w169",{opacity:0,duration:0.25,ease:"power1.in"},240.580);
+tl.to("#vw167",{opacity:0,duration:0.25,ease:"power1.in"},240.580);
+tl.fromTo("#i172",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},241.030);
+tl.fromTo("#i174",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},245.440);
+tl.fromTo("#i175",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},248.720);
+tl.fromTo("#bf176",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},249.020);
+count("#bv177",249.020,0,110,0,"","",0.9);
+tl.fromTo("#i178",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},249.020);
+tl.fromTo("#bf179",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},249.320);
+count("#bv180",249.320,0,49,0,"","",0.9);
+tl.fromTo("#i181",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},249.320);
+tl.fromTo("#w183",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},240.830);
+tl.to("#w183",{opacity:0,duration:0.25,ease:"power1.in"},258.455);
+tl.fromTo("#b184",{scale:1},{scale:1.015,duration:17.875,ease:"none"},240.830);
+tl.fromTo("#i185",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},258.805);
+tl.fromTo("#i186",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},260.380);
+tl.fromTo("#w188",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},258.705);
+tl.to("#w188",{opacity:0,duration:0.25,ease:"power1.in"},262.391);
+tl.fromTo("#vw191",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},262.641);
+tl.fromTo("#i192",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},263.041);
+tl.fromTo("#w194",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},262.641);
+tl.to("#w194",{opacity:0,duration:0.25,ease:"power1.in"},269.090);
+tl.to("#vw191",{opacity:0,duration:0.25,ease:"power1.in"},269.090);
+tl.fromTo("#vw197",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},269.340);
+tl.fromTo("#i198",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},269.540);
+tl.fromTo("#i199",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},272.800);
+tl.fromTo("#w201",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},269.340);
+tl.to("#w201",{opacity:0,duration:0.25,ease:"power1.in"},274.450);
+tl.to("#vw197",{opacity:0,duration:0.25,ease:"power1.in"},274.450);
+tl.fromTo("#vw204",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},274.700);
+tl.fromTo("#w206",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},274.700);
+tl.to("#w206",{opacity:0,duration:0.25,ease:"power1.in"},276.910);
+tl.to("#vw204",{opacity:0,duration:0.25,ease:"power1.in"},276.910);
+tl.fromTo("#vw209",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},277.160);
+tl.fromTo("#i210",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},277.940);
+tl.fromTo("#w212",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},277.160);
+tl.to("#w212",{opacity:0,duration:0.25,ease:"power1.in"},285.676);
+tl.to("#vw209",{opacity:0,duration:0.25,ease:"power1.in"},285.676);
+tl.fromTo("#vw215",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},285.926);
+tl.set("#vw217",{opacity:1},288.060);
+tl.set("#vw219",{opacity:1},290.860);
+tl.set("#vw221",{opacity:1},291.980);
+tl.set("#vw223",{opacity:1},292.940);
+tl.set("#vw225",{opacity:1},293.920);
+tl.set("#vw227",{opacity:1},296.300);
+tl.set("#vw229",{opacity:1},298.760);
+tl.set("#vw231",{opacity:1},302.780);
+tl.set("#vw233",{opacity:1},306.460);
+tl.fromTo("#w235",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},285.926);
+tl.to("#w235",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw215",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw217",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw219",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw221",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw223",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw225",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw227",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw229",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw231",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.to("#vw233",{opacity:0,duration:0.25,ease:"power1.in"},309.780);
+tl.fromTo("#vw238",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},310.030);
+tl.fromTo("#i239",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},311.340);
+tl.fromTo("#i240",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},314.380);
+tl.fromTo("#w242",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},310.030);
+tl.to("#w242",{opacity:0,duration:0.25,ease:"power1.in"},316.810);
+tl.to("#vw238",{opacity:0,duration:0.25,ease:"power1.in"},316.810);
+tl.fromTo("#vw245",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},317.060);
+tl.fromTo("#i246",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},317.560);
+tl.fromTo("#w248",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},317.060);
+tl.to("#w248",{opacity:0,duration:0.25,ease:"power1.in"},323.190);
+tl.to("#vw245",{opacity:0,duration:0.25,ease:"power1.in"},323.190);
+tl.fromTo("#k250",{scale:1},{scale:1.03,duration:5.586,ease:"none"},323.540);
+tl.fromTo("#i251",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},323.540);
+tl.fromTo("#i252",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},324.700);
+tl.fromTo("#i253",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},325.500);
+tl.fromTo("#w255",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},323.440);
+tl.to("#w255",{opacity:0,duration:0.25,ease:"power1.in"},328.876);
+tl.fromTo("#b256",{scale:1},{scale:1.015,duration:5.686,ease:"none"},323.440);
+tl.fromTo("#vw258",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},329.126);
+tl.fromTo("#i259",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},336.380);
+tl.fromTo("#i260",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},339.040);
+tl.fromTo("#w262",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},329.126);
+tl.to("#w262",{opacity:0,duration:0.25,ease:"power1.in"},344.834);
+tl.to("#vw258",{opacity:0,duration:0.25,ease:"power1.in"},344.834);
+tl.fromTo("#vw265",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},345.084);
+tl.set("#vw267",{opacity:1},348.400);
+tl.set("#vw269",{opacity:1},352.260);
+tl.set("#vw271",{opacity:1},355.000);
+tl.set("#vw273",{opacity:1},356.760);
+tl.set("#vw275",{opacity:1},358.300);
+tl.set("#vw277",{opacity:1},360.300);
+tl.fromTo("#w279",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},345.084);
+tl.to("#w279",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw265",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw267",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw269",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw271",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw273",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw275",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.to("#vw277",{opacity:0,duration:0.25,ease:"power1.in"},362.619);
+tl.fromTo("#vw282",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},362.869);
+tl.fromTo("#i283",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},369.720);
+tl.fromTo("#w285",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},362.869);
+tl.to("#w285",{opacity:0,duration:0.25,ease:"power1.in"},375.366);
+tl.to("#vw282",{opacity:0,duration:0.25,ease:"power1.in"},375.366);
+tl.fromTo("#k287",{scale:1},{scale:1.03,duration:21.563,ease:"none"},375.716);
+tl.fromTo("#i288",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},375.716);
+tl.fromTo("#i289",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},382.400);
+tl.fromTo("#i290",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},385.720);
+tl.fromTo("#i291",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},390.160);
+tl.fromTo("#i292",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},393.320);
+tl.fromTo("#w294",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},375.616);
+tl.to("#w294",{opacity:0,duration:0.25,ease:"power1.in"},397.029);
+tl.fromTo("#b295",{scale:1},{scale:1.015,duration:21.663,ease:"none"},375.616);
+tl.fromTo("#k296",{scale:1},{scale:1.03,duration:9.961,ease:"none"},397.379);
+tl.fromTo("#i297",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},397.379);
+tl.fromTo("#bf298",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},397.679);
+count("#bv299",397.679,0,11.2,1,""," ms",0.9);
+tl.fromTo("#i300",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},397.679);
+tl.fromTo("#bf301",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},397.879);
+count("#bv302",397.879,0,12.3,1,""," ms",0.9);
+tl.fromTo("#i303",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},397.879);
+tl.fromTo("#bf304",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},398.079);
+count("#bv305",398.079,0,10.2,1,""," ms",0.9);
+tl.fromTo("#i306",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},398.079);
+tl.fromTo("#bf307",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},398.279);
+count("#bv308",398.279,0,8.1,1,""," ms",0.9);
+tl.fromTo("#i309",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},398.279);
+tl.fromTo("#bf310",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},398.479);
+count("#bv311",398.479,0,6.9,1,""," ms",0.9);
+tl.fromTo("#i312",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},398.479);
+tl.fromTo("#i313",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},404.540);
+tl.fromTo("#w315",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},397.279);
+tl.to("#w315",{opacity:0,duration:0.25,ease:"power1.in"},407.090);
+tl.fromTo("#b316",{scale:1},{scale:1.015,duration:10.061,ease:"none"},397.279);
+tl.fromTo("#i317",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},411.080);
+tl.fromTo("#i318",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},412.020);
+tl.fromTo("#i319",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},415.880);
+tl.fromTo("#i320",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},422.580);
+tl.fromTo("#w322",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},407.340);
+tl.to("#w322",{opacity:0,duration:0.25,ease:"power1.in"},424.228);
+tl.fromTo("#b323",{scale:1},{scale:1.015,duration:17.138,ease:"none"},407.340);
+tl.fromTo("#i324",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},426.240);
+tl.fromTo("#i325",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},427.820);
+tl.fromTo("#i326",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},433.140);
+tl.fromTo("#i327",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},435.880);
+tl.fromTo("#i328",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},441.080);
+tl.fromTo("#i329",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},445.200);
+tl.fromTo("#w331",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},424.478);
+tl.to("#w331",{opacity:0,duration:0.25,ease:"power1.in"},449.477);
+tl.fromTo("#b332",{scale:1},{scale:1.015,duration:25.249,ease:"none"},424.478);
+tl.fromTo("#i333",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},449.827);
+tl.fromTo("#i334",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},453.300);
+tl.fromTo("#i335",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},455.280);
+tl.fromTo("#w337",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},449.727);
+tl.to("#w337",{opacity:0,duration:0.25,ease:"power1.in"},462.274);
+tl.fromTo("#b338",{scale:1},{scale:1.015,duration:12.797,ease:"none"},449.727);
+tl.fromTo("#i339",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},462.724);
+tl.fromTo("#i341",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},465.740);
+tl.fromTo("#i343",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},471.140);
+tl.fromTo("#w345",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},462.524);
+tl.to("#w345",{opacity:0,duration:0.25,ease:"power1.in"},474.230);
+tl.fromTo("#b346",{scale:1},{scale:1.015,duration:11.956,ease:"none"},462.524);
+tl.fromTo("#vw348",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},474.480);
+tl.fromTo("#i349",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},474.880);
+tl.fromTo("#i350",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},476.080);
+tl.fromTo("#w352",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},474.480);
+tl.to("#w352",{opacity:0,duration:0.25,ease:"power1.in"},478.770);
+tl.to("#vw348",{opacity:0,duration:0.25,ease:"power1.in"},478.770);
+tl.fromTo("#i355",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},479.220);
+tl.fromTo("#i357",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},480.260);
+tl.fromTo("#i359",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},480.660);
+tl.fromTo("#i360",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},483.940);
+tl.fromTo("#w362",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},479.020);
+tl.to("#w362",{opacity:0,duration:0.25,ease:"power1.in"},486.961);
+tl.fromTo("#b363",{scale:1},{scale:1.015,duration:8.191,ease:"none"},479.020);
+tl.fromTo("#i364",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},493.680);
+tl.fromTo("#i365",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},498.380);
+tl.fromTo("#i366",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},502.780);
+tl.fromTo("#i367",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},507.260);
+tl.fromTo("#w369",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},487.211);
+tl.to("#w369",{opacity:0,duration:0.25,ease:"power1.in"},508.474);
+tl.fromTo("#b370",{scale:1},{scale:1.015,duration:21.513,ease:"none"},487.211);
+tl.fromTo("#i372",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},511.900);
+tl.fromTo("#i374",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},513.900);
+tl.fromTo("#i375",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},520.720);
+tl.fromTo("#w377",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},508.724);
+tl.to("#w377",{opacity:0,duration:0.25,ease:"power1.in"},525.126);
+tl.fromTo("#b378",{scale:1},{scale:1.015,duration:16.652,ease:"none"},508.724);
+tl.fromTo("#i380",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},525.576);
+tl.fromTo("#i381",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},532.480);
+tl.fromTo("#bf382",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},534.020);
+count("#bv383",534.020,0,54,0,"","%",0.9);
+tl.fromTo("#i384",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},534.020);
+tl.fromTo("#bf385",{scaleX:0},{scaleX:1,duration:.9,ease:"power3.out"},534.420);
+count("#bv386",534.420,0,0.4,0,"","%",0.9);
+tl.fromTo("#i387",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},534.420);
+tl.fromTo("#w389",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},525.376);
+tl.to("#w389",{opacity:0,duration:0.25,ease:"power1.in"},537.730);
+tl.fromTo("#b390",{scale:1},{scale:1.015,duration:12.604,ease:"none"},525.376);
+tl.fromTo("#i391",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.080);
+tl.fromTo("#i392",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},538.380);
+tl.fromTo("#i393",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},542.080);
+tl.fromTo("#w395",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},537.980);
+tl.to("#w395",{opacity:0,duration:0.25,ease:"power1.in"},544.610);
+tl.fromTo("#b396",{scale:1},{scale:1.015,duration:6.880,ease:"none"},537.980);
+tl.fromTo("#i398",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},545.060);
+tl.fromTo("#i399",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},545.360);
+tl.fromTo("#i400",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},546.460);
+tl.fromTo("#w402",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},544.860);
+tl.to("#w402",{opacity:0,duration:0.25,ease:"power1.in"},551.939);
+tl.fromTo("#b403",{scale:1},{scale:1.015,duration:7.329,ease:"none"},544.860);
+tl.fromTo("#i404",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},552.289);
+tl.fromTo("#w406",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},552.189);
+tl.to("#w406",{opacity:0,duration:0.25,ease:"power1.in"},554.450);
+tl.fromTo("#vw409",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},554.700);
+tl.fromTo("#i410",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},554.700);
+tl.fromTo("#w412",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},554.700);
+tl.to("#w412",{opacity:0,duration:0.25,ease:"power1.in"},557.250);
+tl.to("#vw409",{opacity:0,duration:0.25,ease:"power1.in"},557.250);
+tl.fromTo("#vw415",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},557.500);
+tl.fromTo("#i416",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},557.500);
+tl.fromTo("#i417",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},557.800);
+tl.fromTo("#w419",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},557.500);
+tl.to("#w419",{opacity:0,duration:0.25,ease:"power1.in"},561.530);
+tl.to("#vw415",{opacity:0,duration:0.25,ease:"power1.in"},561.530);
+tl.fromTo("#vw422",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},561.780);
+tl.fromTo("#i423",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},561.780);
+tl.fromTo("#w425",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},561.780);
+tl.to("#w425",{opacity:0,duration:0.25,ease:"power1.in"},563.650);
+tl.to("#vw422",{opacity:0,duration:0.25,ease:"power1.in"},563.650);
+tl.fromTo("#vw428",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},563.900);
+tl.fromTo("#i429",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},564.200);
+tl.fromTo("#w431",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},563.900);
+tl.to("#w431",{opacity:0,duration:0.25,ease:"power1.in"},567.690);
+tl.to("#vw428",{opacity:0,duration:0.25,ease:"power1.in"},567.690);
+tl.fromTo("#vw434",{opacity:0,scale:.985},{opacity:1,scale:1,duration:.4,ease:"power2.out"},567.940);
+tl.fromTo("#i435",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},568.240);
+tl.fromTo("#w437",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},567.940);
+tl.to("#w437",{opacity:0,duration:0.25,ease:"power1.in"},574.117);
+tl.to("#vw434",{opacity:0,duration:0.25,ease:"power1.in"},574.117);
+tl.fromTo("#i439",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},576.300);
+tl.fromTo("#i440",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},583.520);
+tl.fromTo("#w442",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},574.367);
+tl.to("#w442",{opacity:0,duration:0.25,ease:"power1.in"},589.725);
+tl.fromTo("#b443",{scale:1},{scale:1.015,duration:15.608,ease:"none"},574.367);
+tl.fromTo("#i444",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},591.680);
+tl.fromTo("#i445",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},596.100);
+tl.fromTo("#i446",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},603.340);
+tl.fromTo("#w448",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},589.975);
+tl.to("#w448",{opacity:0,duration:0.25,ease:"power1.in"},607.326);
+tl.fromTo("#b449",{scale:1},{scale:1.015,duration:17.601,ease:"none"},589.975);
+tl.fromTo("#i450",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},607.676);
+tl.fromTo("#i451",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},611.746);
+tl.fromTo("#w453",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},607.576);
+tl.to("#w453",{opacity:0,duration:0.25,ease:"power1.in"},613.776);
+tl.fromTo("#i455",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},614.026);
+tl.fromTo("#i456",{opacity:0,y:10},{opacity:1,y:0,duration:0.4,ease:"power2.out"},614.026);
+tl.fromTo("#w458",{opacity:0},{opacity:1,duration:.3,ease:"power1.out"},614.026);
+tl.set({}, {}, 617.07);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

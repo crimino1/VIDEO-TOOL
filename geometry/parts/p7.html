@@ -1,0 +1,116 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>@font-face{font-family:"Press Start 2P";src:url("assets/fonts/PressStart2P-Regular.ttf")}
+@font-face{font-family:"VT323";src:url("assets/fonts/VT323-Regular.ttf")}
+@font-face{font-family:"Playfair";font-style:italic;src:url("assets/fonts/PlayfairDisplay-Italic.ttf")}
+@font-face{font-family:"Archivo";src:url("assets/fonts/Archivo.ttf")}
+@font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#05060a;color:#f1ebdd;font-family:"Archivo Black",sans-serif}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#crt{image-rendering:pixelated}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+/* keyword text: heavy white sans, soft dark shadow, hard-on per word */
+.kw{position:absolute;font-family:"Archivo Black";letter-spacing:-.5px;text-shadow:0 4px 0 rgba(0,0,0,.55),0 0 24px rgba(0,0,0,.75)}
+/* yellow section card */
+.sec{position:absolute;left:0;right:0;text-align:center;font-family:"Archivo Black";font-size:68px;line-height:1.18;color:#e0b23a;opacity:0;text-shadow:0 0 20px rgba(0,0,0,.6)}
+.sec div:first-child{font-size:60px}
+/* mascot sub-heading */
+.sub{position:absolute;font-family:"Archivo Black";text-shadow:0 3px 0 rgba(0,0,0,.5),0 0 20px rgba(0,0,0,.7)}
+.sub .h{font-size:78px;line-height:1.1}
+.sub .b{font-size:54px;line-height:1.22;margin-top:12px}
+/* mascot */
+.mascot{position:absolute}
+.mpose{position:absolute;inset:0}
+.msvg{width:100%;height:100%;overflow:visible}
+/* framed photo / screenshot */
+.frame{position:absolute;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.ss{background:#fff;border-radius:6px}
+.ssin{position:absolute;inset:0}
+.hl{position:absolute;border:6px solid #e0b23a;border-radius:6px;box-shadow:0 0 18px rgba(224,178,58,.35)}
+.pshade{position:absolute;inset:0;background:#000}
+/* pixel number box */
+.numw{position:absolute}
+.num{font-family:"Press Start 2P";padding:22px 30px 16px;border:5px solid;border-radius:14px;background:rgba(5,10,20,.85);white-space:nowrap;text-shadow:none}
+.credit{position:absolute;left:40px;bottom:24px;font-family:"VT323";font-size:30px;color:rgba(255,255,255,.55)}
+.vid{position:absolute;object-fit:cover}
+.kw.dark span{background:rgba(6,8,16,.84);padding:.02em .22em .08em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.scrim{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(4,6,14,.78) 0%,rgba(2,3,8,.95) 100%)}
+.tag{position:absolute;padding:18px 34px 20px 26px;border-left:4px solid #e0b23a;background:rgba(10,12,16,.80);border-radius:0 6px 6px 0}
+.tag .n{font-family:"Archivo Black";font-size:54px;line-height:1.05;color:#f1ebdd}
+.tag .r{font-family:"Archivo";font-weight:600;font-size:31px;letter-spacing:.5px;color:#d9b25c;margin-top:8px}
+.quote{position:absolute;background:#151b2b;border:2px solid #2b3550;border-radius:22px;padding:44px 56px 50px;box-shadow:0 30px 80px rgba(0,0,0,.75)}
+.qhd{font-family:"Archivo Black";font-size:34px;color:#fff;margin-bottom:22px}
+.qhd span{font-family:Arial,sans-serif;font-weight:400;font-size:28px;color:#8b98b8;margin-left:16px}
+.qb{font-family:Arial,sans-serif;line-height:1.42;color:#dfe5f2}
+.qh{color:#dfe5f2;background-image:linear-gradient(#e0b23a,#e0b23a);background-repeat:no-repeat;background-size:0% 100%;border-radius:4px;padding:0 4px}
+/* EP4 documentary layer */
+.chap{position:absolute;left:0;right:0;text-align:center;color:#f1ebdd;opacity:0}
+.chap .no{font-family:"Archivo";font-weight:600;font-size:30px;letter-spacing:9px;color:rgba(241,235,221,.72)}
+.chap .ti{font-family:"Archivo Black";font-size:84px;line-height:1.08;margin-top:20px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.chap .rule{height:3px;background:#e0b23a;margin:30px auto 0;width:0}
+.chap .sci{font-family:"Playfair";font-style:italic;font-size:46px;color:#e3d6b8;margin-top:22px}
+.place{position:absolute;left:110px;opacity:0;clip-path:inset(0 100% 0 0)}
+.place .ru{width:70px;height:3px;background:#e0b23a;margin-bottom:16px}
+.place .l1{font-family:"Archivo";font-weight:700;font-size:40px;letter-spacing:5px;color:#f1ebdd;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.place .l2{font-family:"Archivo";font-weight:500;font-size:32px;letter-spacing:4px;color:#d9b25c;margin-top:8px;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.refr{position:absolute;left:0;right:0;text-align:center}
+.refr .a{font-family:"Archivo Black";font-size:62px;color:#8f969e}
+.refr .a span{opacity:0;margin:0 .25em}
+.refr .b{font-family:"Archivo Black";font-size:104px;color:#e0b23a;margin-top:14px;opacity:0;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.portrait{position:absolute;overflow:hidden;border:3px solid rgba(241,235,221,.85);box-shadow:0 24px 70px rgba(0,0,0,.75);background:#000}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="110.020" data-width="1920" data-height="1080">
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="bbRough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+<filter id="bbGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.37  0 0 0 0 0.89  0 0 0 0 0.91  0 0 0 0.55 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+<canvas id="stars" width="1920" height="1080" style="z-index:0"></canvas>
+<canvas id="crt" width="1920" height="1080" style="z-index:1"></canvas>
+<video id="v254" class="clip vid" src="assets/clips/mn_Spacetime_775baa5d.mp4" muted playsinline data-start="0.000" data-duration="21.640" data-track-index="1" style="z-index:159;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s259" class="clip scene" data-start="0.000" data-duration="21.640" data-track-index="2" style="z-index:161" data-layout-allow-overflow data-layout-allow-overlap><div id="c258" class="scene"><div id="pf256" class="portrait" style="left:80px;top:220px;width:440px;height:560px;opacity:0"><img id="pt255" src="assets/gen/einstein_763033.jpg" alt="einstein"></div><div id="tg257" class="tag" style="left:80px;top:840px;opacity:0"><div class="n">Albert Einstein</div><div class="r">physicist</div></div><div class="credit">photo F. Schmutzer, 1921, public domain</div></div></div>
+<div id="s263" class="clip scene" data-start="21.640" data-duration="4.000" data-track-index="2" style="z-index:162" data-layout-allow-overflow data-layout-allow-overlap><div id="c262" class="scene"><div class="scrim" style="opacity:0.55"></div><div id="ch260" class="chap" style="top:330px"><div class="no">CHAPTER &nbsp;&middot;&nbsp; ELEVEN</div><div class="ti">Geometry in your pocket</div><div id="ru261" class="rule"></div></div></div></div>
+<video id="v264" class="clip vid" src="assets/clips/pxg_sat_9a4d71e0.mp4" muted playsinline data-start="25.640" data-duration="5.040" data-track-index="1" style="z-index:163;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s266" class="clip scene" data-start="25.640" data-duration="5.040" data-track-index="2" style="z-index:165" data-layout-allow-overflow data-layout-allow-overlap><div id="c265" class="scene"></div></div>
+<video id="v267" class="clip vid" src="assets/clips/mn_GPS_ccbea630.mp4" muted playsinline data-start="31.560" data-duration="27.980" data-track-index="1" style="z-index:166;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v268" class="clip vid" src="assets/clips/mn_Finale_4161603d.mp4" muted playsinline data-start="59.540" data-duration="30.000" data-track-index="1" style="z-index:168;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<video id="v269" class="clip vid" src="assets/clips/pxg_nile_3d589c00.mp4" muted playsinline data-start="89.540" data-duration="3.560" data-track-index="1" style="z-index:170;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s271" class="clip scene" data-start="89.540" data-duration="3.560" data-track-index="2" style="z-index:172" data-layout-allow-overflow data-layout-allow-overlap><div id="c270" class="scene"></div></div>
+<video id="v272" class="clip vid" src="assets/clips/pxg_earth_aa682ef8.mp4" muted playsinline data-start="93.100" data-duration="2.580" data-track-index="1" style="z-index:173;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s274" class="clip scene" data-start="93.100" data-duration="2.580" data-track-index="2" style="z-index:175" data-layout-allow-overflow data-layout-allow-overlap><div id="c273" class="scene"></div></div>
+<video id="v275" class="clip vid" src="assets/clips/pxg_bridge2_745c2537.mp4" muted playsinline data-start="95.680" data-duration="2.380" data-track-index="1" style="z-index:176;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s277" class="clip scene" data-start="95.680" data-duration="2.380" data-track-index="2" style="z-index:178" data-layout-allow-overflow data-layout-allow-overlap><div id="c276" class="scene"></div></div>
+<video id="v278" class="clip vid" src="assets/clips/pxg_pizza_57b3a2db.mp4" muted playsinline data-start="98.060" data-duration="3.340" data-track-index="1" style="z-index:179;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s280" class="clip scene" data-start="98.060" data-duration="3.340" data-track-index="2" style="z-index:181" data-layout-allow-overflow data-layout-allow-overlap><div id="c279" class="scene"></div></div>
+<video id="v281" class="clip vid" src="assets/clips/pxg_earth_5c5da98c.mp4" muted playsinline data-start="104.960" data-duration="5.060" data-track-index="1" style="z-index:182;transform-origin:50% 50%;left:0;top:0;width:1920px;height:1080px"></video>
+<div id="s283" class="clip scene" data-start="104.960" data-duration="5.060" data-track-index="2" style="z-index:184" data-layout-allow-overflow data-layout-allow-overlap><div id="c282" class="scene"></div></div>
+</div>
+<script>window.PXS = [[21.64, 25.64, "gps_street", {"sats": -9, "pin": -9, "tin": "fade", "tout": "fade"}], [30.68, 31.56, "gps_street", {"sats": 0.2, "pin": 99, "cam": {"z": [1.0, 1.08]}, "tin": "zoom", "tout": "zoom"}], [101.4, 104.96, "rope_stretchers", {"stretch": 0.2, "peg": 99, "mark": 99, "cam": {"z": [1.0, 1.06]}, "tin": "zoom", "tout": "zoom"}]];</script>
+<script src="assets/js/px.js"></script>
+<script src="assets/js/scenes/ancient.js"></script>
+<script src="assets/js/scenes/core.js"></script>
+<script src="assets/js/scenes/modern.js"></script>
+<script>PX.start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#pt255",{scale:1.0},{scale:1.04,duration:21.64,ease:"none"},0.000);
+tl.fromTo("#pf256",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power2.out"},0.000);
+tl.fromTo("#tg257",{x:-60,opacity:0},{x:0,opacity:1,duration:0.45,ease:"power3.out"},1.620);
+tl.fromTo("#ch260",{y:26,opacity:0},{y:0,opacity:1,duration:0.9,ease:"power2.out"},21.790);
+tl.fromTo("#ru261",{width:0},{width:420,duration:0.9,ease:"power2.inOut"},22.140);
+tl.fromTo("#v264",{scale:1.0},{scale:1.06,duration:5.04,ease:"none"},25.640);
+tl.fromTo("#v269",{scale:1.0},{scale:1.06,duration:3.56,ease:"none"},89.540);
+tl.fromTo("#v272",{scale:1.0},{scale:1.06,duration:2.58,ease:"none"},93.100);
+tl.fromTo("#v275",{scale:1.0},{scale:1.06,duration:2.38,ease:"none"},95.680);
+tl.fromTo("#v278",{scale:1.0},{scale:1.06,duration:3.34,ease:"none"},98.060);
+tl.fromTo("#v281",{scale:1.0},{scale:1.1,duration:5.06,ease:"none"},104.960);
+tl.set({}, {}, 110.020);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

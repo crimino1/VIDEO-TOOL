@@ -1,0 +1,108 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>@font-face{font-family:"Anton";src:url("assets/fonts/Anton-Regular.ttf")}
+@font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Regular.ttf")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url("assets/fonts/SpaceMono-Bold.ttf")}
+:root{--navy:#0a111d;--violet:#5d7398;--neon:#e4cd92;--pink:#d4826a;--orange:#d9a25f;--grey:#d9d6cf;--ring:#46505f;--ink:#eeebe4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;font-family:"Space Mono",monospace;color:var(--ink)}
+canvas{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.navy{position:absolute;inset:0;background:var(--navy)}
+.dust{position:absolute;left:-60px;top:-60px;width:2040px;height:1200px}
+.vw{position:absolute;overflow:hidden}
+.fit{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.black{position:absolute;inset:0;background:#000}
+svg.full{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* chapter header: neon, condensed, top-left */
+.hdr{position:absolute;left:64px;top:52px;font-family:"Anton";font-size:64px;line-height:1;letter-spacing:.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.hdr.c{left:0;right:0;text-align:center}
+.hdr.r{left:auto;right:64px;text-align:right}
+.shade{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+/* big number callout */
+.num{position:absolute;display:flex;align-items:baseline;gap:18px;font-family:"Anton";color:var(--neon);text-transform:uppercase;white-space:nowrap;opacity:0}
+.num b{font-weight:400;font-size:96px;line-height:1}
+.num span{font-size:34px;letter-spacing:.5px}
+/* statement line */
+.stmt{position:absolute;text-shadow:0 2px 14px rgba(0,0,0,.55);left:0;right:0;text-align:center;font-family:"Anton";font-size:76px;line-height:1.05;color:var(--neon);text-transform:uppercase;opacity:0}
+.stmt.w{color:var(--ink)}
+/* mono labels */
+.lab{position:absolute;font-family:"Space Mono";font-size:22px;letter-spacing:1.5px;color:var(--neon);text-transform:uppercase;white-space:nowrap}
+.lab.w{color:var(--ink)}
+.box{position:absolute;font-family:"Space Mono";font-size:21px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;background:rgba(238,235,228,.92);color:#151a22;padding:3px 12px;opacity:0}
+.box.v{background:var(--violet);color:#fff}
+.box.p{background:var(--pink);color:#fff}
+.lens{position:absolute;border-radius:50%;overflow:hidden;border:4px solid rgba(238,235,228,.9);background:#000;opacity:0}
+.lens img,.lens video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.credit{position:absolute;right:40px;bottom:26px;font-family:"Space Mono";font-size:17px;letter-spacing:1px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.card{position:absolute;overflow:hidden;border:3px solid rgba(238,235,228,.9);opacity:0}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+.hid{display:none}
+
+/* ---- v2 cinematic documentary ---- */
+.navy{background:radial-gradient(ellipse at 50% 45%,#121110 0%,#080807 60%,#030303 100%)}
+.card{border:none;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.title{position:absolute;font-family:"EB Garamond",serif;font-weight:500;line-height:1.08;letter-spacing:.01em;color:#ece6da;text-shadow:0 2px 24px rgba(0,0,0,.75)}
+.tcard{position:absolute;left:0;right:0;top:400px;text-align:center}
+.tk{font-family:"Inter",sans-serif;font-weight:500;font-size:22px;letter-spacing:.42em;color:rgba(236,230,218,.82);padding-left:.42em}
+.trule{width:120px;height:1px;background:rgba(236,230,218,.55);margin:26px auto 30px;transform-origin:50% 50%}
+.tn{font-family:"EB Garamond",serif;font-weight:500;font-size:104px;line-height:1.05;color:#ece6da}
+.vign{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.grain{position:absolute;inset:0;background:url("assets/gen/grain.png") repeat;opacity:.55}
+.lbx{position:absolute;left:0;width:1920px;height:104px;background:#000}
+.lbx.top{top:0}.lbx.bot{bottom:0}
+</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="76.540" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080" style="z-index:1"></canvas>
+<div id="s259" class="clip scene " data-start="0.000" data-duration="1.920" data-track-index="2" style="z-index:93" data-layout-allow-overflow data-layout-allow-overlap><div id="c258" class="scene"><div class="black"></div><div class="tcard"><div id="rk255" class="tk" style="opacity:0">PART TWO</div><div id="rk257" class="trule" style="transform:scaleX(0)"></div><div id="rk256" class="tn" style="opacity:0">Leaving Home</div></div></div></div>
+<div id="s262" class="clip scene " data-start="5.840" data-duration="8.040" data-track-index="2" style="z-index:94" data-layout-allow-overflow data-layout-allow-overlap><div id="c261" class="scene"><img id="ph260" class="fill" src="assets/gen/sun_sdo_8d2436.jpg" alt="sun_sdo" style="transform-origin:60% 40%"></div></div>
+<div id="s265" class="clip scene " data-start="16.720" data-duration="6.320" data-track-index="2" style="z-index:95" data-layout-allow-overflow data-layout-allow-overlap><div id="c264" class="scene"><div class="black"></div><div id="ph263" class="card" style="left:541px;top:140px;width:838px;height:800px;opacity:1"><img src="assets/gen/sun_sdo_46e3fc.jpg" alt="sun_sdo"></div></div></div>
+<div id="w266" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:96"><video id="v267" class="clip fit" src="assets/clips/nasa_sn_pulsar_ea86b905.mp4" muted playsinline data-start="23.040" data-duration="4.340" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w268" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:97"><video id="v269" class="clip fit" src="assets/clips/nasa_sn_pulsar_ced8dd2d.mp4" muted playsinline data-start="27.380" data-duration="4.860" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w270" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:98"><video id="v271" class="clip fit" src="assets/clips/nasa_neutron_star_b1c09087.mp4" muted playsinline data-start="32.240" data-duration="2.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w272" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:99"><video id="v273" class="clip fit" src="assets/clips/px_city_future_0_0cf73fdc.mp4" muted playsinline data-start="34.980" data-duration="1.740" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w274" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:100"><video id="v275" class="clip fit" src="assets/clips/nasa_magnetar_5efabcfb.mp4" muted playsinline data-start="36.720" data-duration="2.280" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w276" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:101"><video id="v277" class="clip fit" src="assets/clips/px_spoon_0_31ab291d.mp4" muted playsinline data-start="39.000" data-duration="3.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w278" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:102"><video id="v279" class="clip fit" src="assets/clips/nasa_ns_spots_1fec89ad.mp4" muted playsinline data-start="42.520" data-duration="8.320" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="w280" class="vw" style="left:0;top:0;width:1920px;height:1080px;z-index:103"><video id="v281" class="clip fit" src="assets/clips/px_friends_group_0_b18b7308.mp4" muted playsinline data-start="50.840" data-duration="5.520" data-track-index="1" style="transform-origin:50% 50%"></video></div>
+<div id="s284" class="clip scene " data-start="75.840" data-duration="0.700" data-track-index="2" style="z-index:9400" data-layout-allow-overflow data-layout-allow-overlap><div id="c283" class="scene"><div id="dip282" class="black" style="opacity:0"></div></div></div>
+<div id="s297" class="clip scene " data-start="0.000" data-duration="76.540" data-track-index="2" style="z-index:9800" data-layout-allow-overflow data-layout-allow-overlap><div id="c296" class="scene"><div class="vign"></div><div id="grain295" class="grain"></div><div class="lbx top"></div><div class="lbx bot"></div></div></div>
+</div>
+<script>
+window.SPS = [[1.92, 5.84, "sun", {"img": "assets/img/sun_sdo.jpg", "diskFrac": 0.86, "dist0": 820, "dist1": 700, "el": 3, "az0": -10, "az1": 4, "sx": -260, "earthAt": [-160, 0, 60]}], [13.88, 16.72, "sun", {"img": "assets/img/sun_sdo.jpg", "diskFrac": 0.86, "dist0": 420, "dist1": 380, "el": 2, "az0": 20, "az1": 26, "sx": 320}], [56.36, 59.4, "bh", {"disk": 0, "distK": [[0, 46], [3.0, 38]], "el": 4, "az0": 0, "az1": 8, "fov": 36, "shiftX": 260}], [59.4, 63.92, "bh", {"disk": 0, "dist0": 24, "dist1": 20, "el": 3, "az0": 20, "az1": 30, "fov": 40, "roll": -5}], [63.92, 71.26, "bh", {"disk": 0, "starDir": [0.02, 0.01, -1], "star": 28, "dist": 24, "el": 2, "az0": -3, "az1": 3, "fov": 30, "shiftX": -240}], [71.26, 76.54, "bh", {"dist0": 36, "dist1": 30, "el": 4, "az0": -14, "az1": -4, "shiftX": 300, "diskIn": 3.0, "diskOut": 14}]];
+</script>
+<script src="assets/js/space.js"></script>
+<script src="assets/js/kinds_ep2.js"></script>
+<script src="assets/js/kinds_ep3.js"></script>
+<script src="assets/js/kinds_ep4.js"></script>
+<script>SP_start();</script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#rk255",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},0.250);
+tl.fromTo("#rk256",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},0.550);
+tl.fromTo("#rk257",{scaleX:0},{scaleX:1,duration:1.2,ease:"power2.inOut"},0.400);
+tl.to("#rk255",{opacity:0,duration:0.45,ease:"power2.out"},1.420);
+tl.to("#rk256",{opacity:0,duration:0.45,ease:"power2.out"},1.420);
+tl.to("#rk257",{opacity:0,duration:0.45,ease:"power2.out"},1.420);
+tl.fromTo("#ph260",{scale:1.0},{scale:1.1,duration:8.04,ease:"none"},5.840);
+tl.fromTo("#ph263",{scale:1.05},{scale:1.0,duration:6.32,ease:"none"},16.720);
+tl.fromTo("#v267",{scale:1.0},{scale:1.06,duration:4.34,ease:"none"},23.040);
+tl.fromTo("#v269",{scale:1.0},{scale:1.06,duration:4.86,ease:"none"},27.380);
+tl.fromTo("#v271",{scale:1.0},{scale:1.06,duration:2.74,ease:"none"},32.240);
+tl.fromTo("#v273",{scale:1.0},{scale:1.06,duration:1.74,ease:"none"},34.980);
+tl.fromTo("#v275",{scale:1.0},{scale:1.06,duration:2.28,ease:"none"},36.720);
+tl.fromTo("#v277",{scale:1.0},{scale:1.06,duration:3.52,ease:"none"},39.000);
+tl.fromTo("#v279",{scale:1.0},{scale:1.06,duration:8.32,ease:"none"},42.520);
+tl.fromTo("#v281",{scale:1.0},{scale:1.06,duration:5.52,ease:"none"},50.840);
+tl.fromTo("#dip282",{opacity:0},{opacity:1,duration:0.7,ease:"power1.in"},75.840);
+tl.fromTo("#grain295",{backgroundPositionX:0,backgroundPositionY:0},{backgroundPositionX:67932,backgroundPositionY:97308,duration:76.54,ease:"steps(1836)"},0.000);
+tl.set({}, {}, 76.540);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body></html>

@@ -1,0 +1,15 @@
+S = [
+    ("3:39.40", "c", "K02_Part2", dict(label="Part 2", title="Graphs: Seeing a Function", doodle="wave")),
+    ("3:43.00", "m", "K02_Grid"),
+    ("4:08.90", "m", "K02_Plot"),
+    ("4:28.60", "m", "K02_VTest"),
+    ("4:51.70", "m", "K02_Shapes"),
+    ("5:09.30", "c", "K02_Part3", dict(label="Part 3", title="Domain and Range", doodle="circle")),
+    ("5:12.20", "m", "K02_Domain"),
+    ("5:42.90", "m", "K02_Divide"),
+    ("6:03.90", "m", "K02_Root"),
+    ("6:31.40", "m", "K02_Range"),
+    ("6:50.60", "q", "K02_Practice", dict()),
+    ("6:52.40", "m", "K02_Questions"),
+    ("7:04.10", "m", "K02_Answers"),
+]

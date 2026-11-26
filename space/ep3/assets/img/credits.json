@@ -1,0 +1,281 @@
+{
+ "gaia_spacecraft": {
+  "title": "The Gaia Spacecraft",
+  "license": "CC BY 4.0",
+  "artist": "ESA/ATG medialab; background image: ESO/S. Brunier",
+  "page": "https://www.eso.org/public/images/eso1908d/",
+  "size": "3076x2040",
+  "source_url": "https://cdn.eso.org/images/large/eso1908d.jpg",
+  "artist_concept": true,
+  "note": "spacecraft render composited on a real ESO Milky Way photo"
+ },
+ "gaia_bh1_art": {
+  "title": "Artist’s impression of the closest black hole to Earth and its Sun-like companion star",
+  "license": "CC BY 4.0",
+  "artist": "International Gemini Observatory/NOIRLab/NSF/AURA/J. da Silva/Spaceengine/M. Zamani",
+  "page": "https://noirlab.edu/public/images/noirlab2227a/",
+  "size": "4000x2250",
+  "source_url": "https://noirlab.edu/public/media/archives/images/large/noirlab2227a.jpg",
+  "artist_concept": true
+ },
+ "gaia_bh3_art": {
+  "title": "Artist’s impression of the system with the most massive stellar black hole in our galaxy",
+  "license": "CC BY 4.0",
+  "artist": "ESO/L. Calçada/Space Engine ( spaceengine.org )",
+  "page": "https://www.eso.org/public/images/eso2408a/",
+  "size": "4000x2752",
+  "source_url": "https://cdn.eso.org/images/large/eso2408a.jpg",
+  "artist_concept": true
+ },
+ "microlens_hubble": {
+  "title": "Microlensing Black Hole (OGLE-2011-BLG-0462 field, Hubble, clean version)",
+  "license": "Public domain (NASA) / CC BY 4.0 (ESA)",
+  "artist": "NASA, ESA, Kailash Sahu (STScI); Image Processing: Joseph DePasquale (STScI)",
+  "page": "https://science.nasa.gov/asset/hubble/microlensing-black-hole/",
+  "size": "1666x1332",
+  "source_url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2022/06/STScI-01FQHBG47R5CDE0ZZW1FBTGVAZ.tif/jcr:content/renditions/Clean.png",
+  "note": "real Hubble data but only 1666x1332 (max available); clean version, no labels"
+ },
+ "rogue_bh_art": {
+  "title": "Artist’s Impression of an Isolated Black Hole",
+  "license": "CC BY 4.0",
+  "artist": "ESA/Hubble, Digitized Sky Survey, Nick Risinger ( skysurvey.org ), N. Bartmann",
+  "page": "https://esahubble.org/images/heic2210a/",
+  "size": "3840x2160",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/heic2210a.jpg",
+  "artist_concept": true
+ },
+ "astronaut_eva": {
+  "title": "INFLIGHT (CREW ACTIVITY) - STS-11/41B",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/s84-27017",
+  "size": "3970x4000",
+  "source_url": "http://images-assets.nasa.gov/image/s84-27017/s84-27017~orig.jpg"
+ },
+ "astronaut_eva_b": {
+  "title": "INFLIGHT (CREW ACTIVITY) - STS-11/41B",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/S84-27018",
+  "size": "4000x4000",
+  "source_url": "http://images-assets.nasa.gov/image/S84-27018/S84-27018~orig.jpg"
+ },
+ "tde_art": {
+  "title": "Black Hole vs. Star: A Tidal Disruption Event (Artist's Concept)",
+  "license": "Credit: NRAO/AUI/NSF, S. Dagnello (used with credit)",
+  "artist": "NRAO/AUI/NSF/NASA",
+  "page": "https://images.nasa.gov/details/PIA22355",
+  "size": "3816x2160",
+  "source_url": "http://images-assets.nasa.gov/image/PIA22355/PIA22355~orig.jpg",
+  "artist_concept": true,
+  "note": "Photojournal lists as NASA but credit is NRAO/AUI/NSF (artist Sophia Dagnello); treat as credit-required"
+ },
+ "tde_art_b": {
+  "title": "Close-up of star near a supermassive black hole (artist’s impression)",
+  "license": "CC BY 4.0",
+  "artist": "ESA/Hubble, ESO, M. Kornmesser",
+  "page": "https://esahubble.org/images/heic1622a/",
+  "size": "4000x2667",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/heic1622a.jpg",
+  "artist_concept": true
+ },
+ "crab_nebula": {
+  "title": "Most detailed image of the Crab Nebula",
+  "license": "CC BY 4.0",
+  "artist": "NASA , ESA and Allison Loll/Jeff Hester (Arizona State University). Acknowledgement: Davide De Martin ( ESA / Hubble )",
+  "page": "https://esahubble.org/images/heic0515a/",
+  "size": "3864x3864",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/heic0515a.jpg"
+ },
+ "hawking_c": {
+  "title": "Stephen Hawking NASA 50th",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/Paul E. Alers",
+  "page": "https://images.nasa.gov/details/200804210001HQ",
+  "size": "1539x1920",
+  "source_url": "http://images-assets.nasa.gov/image/200804210001HQ/200804210001HQ~large.jpg"
+ },
+ "blazar_art": {
+  "title": "Blazar jet illustration (NASA's Fermi Links Cosmic Neutrino to Monster Black Hole, SVS 12994) - artist's concept",
+  "license": "Public domain (NASA)",
+  "artist": "NASA Goddard Space Flight Center Conceptual Image Lab",
+  "page": "https://svs.gsfc.nasa.gov/12994/",
+  "size": "3840x2160",
+  "source_url": "https://svs.gsfc.nasa.gov/vis/a010000/a012900/a012994/Blazar.00590.jpg",
+  "artist_concept": true
+ },
+ "icecube_lab": {
+  "title": "File:The ICL at Night.jpg",
+  "license": "CC BY 4.0",
+  "artist": "John Hardin",
+  "page": "https://commons.wikimedia.org/wiki/File:The_ICL_at_Night.jpg",
+  "size": "3840x2566",
+  "source_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/The_ICL_at_Night.jpg/3840px-The_ICL_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "note": "real photo, CC BY 4.0, credit John Hardin, IceCube/NSF"
+ },
+ "runaway_streak": {
+  "title": "Runaway Black Hole near RCP28 (Hubble, unannotated)",
+  "license": "Public domain (NASA) / CC BY 4.0 (ESA)",
+  "artist": "NASA, ESA, Pieter van Dokkum (Yale); Image Processing: Joseph DePasquale (STScI)",
+  "page": "https://science.nasa.gov/asset/hubble/runaway-black-hole-near-rcp28",
+  "size": "2866x1612",
+  "source_url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2023/04/STScI-01GWQ2HPVTHQM7T6PT2RHWCCSS.tif/jcr:content/renditions/Unannotated%20Full%20Res%20(For%20Display).png",
+  "note": "real Hubble image, unannotated; the streak is thin/faint (left of centre) - needs a slow push-in"
+ },
+ "runaway_streak_b": {
+  "title": "Hubble photographs stellar trail of runaway black hole",
+  "license": "CC BY 4.0",
+  "artist": "NASA, ESA, P. van Dokkum (Yale University)",
+  "page": "https://esahubble.org/images/opo23010a/",
+  "size": "2866x1612",
+  "source_url": "https://cdn.esahubble.org/archives/images/large/opo23010a.jpg",
+  "note": "ESA/Hubble version with a pull-out box (lines only, no text)"
+ },
+ "runaway_art": {
+  "title": "Runaway Supermassive Black Hole Illustration - artist's concept",
+  "license": "Public domain (NASA) / CC BY 4.0 (ESA)",
+  "artist": "NASA, ESA, Leah Hustak (STScI)",
+  "page": "https://science.nasa.gov/asset/hubble/runaway-supermassive-black-hole-illustration/",
+  "size": "3840x2160",
+  "source_url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2023/04/STScI-01GX6584JDCNAKDR7HSST2F5XX.tif/jcr:content/renditions/Full%20Res%20(For%20Display).png",
+  "artist_concept": true
+ },
+ "quasar_j0529_art": {
+  "title": "Artist’s impression of the record-breaking quasar J0529-4351",
+  "license": "CC BY 4.0",
+  "artist": "ESO/M. Kornmesser",
+  "page": "https://www.eso.org/public/images/eso2402a/",
+  "size": "4000x2484",
+  "source_url": "https://cdn.eso.org/images/large/eso2402a.jpg",
+  "artist_concept": true
+ },
+ "quasar_art_b": {
+  "title": "An artist’s rendering of the most distant quasar",
+  "license": "CC BY 4.0",
+  "artist": "ESO/M. Kornmesser",
+  "page": "https://www.eso.org/public/images/eso1122a/",
+  "size": "4000x2372",
+  "source_url": "https://cdn.eso.org/images/large/eso1122a.jpg",
+  "artist_concept": true
+ },
+ "jades_field": {
+  "title": "GOODS-S field (NIRCam image)",
+  "license": "CC BY 4.0",
+  "artist": "NASA, ESA, CSA, B. Robertson (UC Santa Cruz), B. Johnson (Center for Astrophysics, Harvard & Smithsonian), S. Tacchella (University of Cambridge, M. Rieke (Univ. of Arizona), D. Eisenstein (Center for",
+  "page": "https://esawebb.org/images/JADES2/",
+  "size": "4000x2805",
+  "source_url": "https://cdn.esawebb.org/archives/images/large/JADES2.jpg",
+  "note": "real JWST GOODS-S (JADES) NIRCam field, clean"
+ },
+ "milkyway_center": {
+  "title": "Great Observatories Unique Views of the Milky Way",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech/ESA/CXC/STScI",
+  "page": "https://images.nasa.gov/details/PIA12348",
+  "size": "4000x2000",
+  "source_url": "http://images-assets.nasa.gov/image/PIA12348/PIA12348~orig.jpg",
+  "note": "real Chandra+Hubble+Spitzer composite of galactic centre"
+ },
+ "milkyway_center_b": {
+  "title": "The Galactic Centre above the ESO 3.6-metre telescope",
+  "license": "CC BY 4.0",
+  "artist": "ESO/S. Brunier",
+  "page": "https://www.eso.org/public/images/lv_Brunier_hb-1/",
+  "size": "3927x2716",
+  "source_url": "https://cdn.eso.org/images/large/lv_Brunier_hb-1.jpg"
+ },
+ "cmb_planck": {
+  "title": "Best Map Ever of the Universe",
+  "license": "CC BY-SA 3.0 IGO (ESA image, also on NASA Photojournal)",
+  "artist": "ESA and the Planck Collaboration",
+  "page": "https://images.nasa.gov/details/PIA16873",
+  "size": "3600x1800",
+  "source_url": "http://images-assets.nasa.gov/image/PIA16873/PIA16873~orig.jpg"
+ },
+ "astronaut_cut": {
+  "title": "INFLIGHT (CREW ACTIVITY) - STS-11/41B",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JSC",
+  "page": "https://images.nasa.gov/details/s84-27017",
+  "size": "3970x4000",
+  "source_url": "http://images-assets.nasa.gov/image/s84-27017/s84-27017~orig.jpg",
+  "note": "cut-out"
+ },
+ "cmb_sphere": {
+  "title": "Best Map Ever of the Universe",
+  "license": "CC BY-SA 3.0 IGO (ESA image, also on NASA Photojournal)",
+  "artist": "ESA and the Planck Collaboration",
+  "page": "https://images.nasa.gov/details/PIA16873",
+  "size": "3600x1800",
+  "source_url": "http://images-assets.nasa.gov/image/PIA16873/PIA16873~orig.jpg"
+ },
+ "milkyway_art": {
+  "title": "Our Milky Way Gets a Makeover  Artist Concept",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/JPL-Caltech",
+  "page": "https://images.nasa.gov/details/PIA10748",
+  "size": "4000x4000",
+  "source_url": "http://images-assets.nasa.gov/image/PIA10748/PIA10748~orig.jpg"
+ },
+ "eht_m87": {
+  "title": "File:Black hole - Messier 87 crop max res.jpg",
+  "license": "CC BY 4.0",
+  "artist": "Event Horizon Telescope, uploader cropped and converted TIF to JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
+  "size": "1920x1920",
+  "note": "copied from blackholes/assets/img/m87.jpg"
+ },
+ "eht_sgra": {
+  "title": "File:Sag A*.jpg",
+  "license": "CC BY 4.0",
+  "artist": "EHT Collaboration",
+  "page": "https://commons.wikimedia.org/wiki/File:Sag_A*.jpg",
+  "size": "1920x1920",
+  "note": "copied from blackholes/assets/img/sgra.jpg; also ESO eso2208-eht-mwa, credit EHT Collaboration"
+ },
+ "hawking": {
+  "title": "File:Stephen hawking 2008 nasa cropped.jpg",
+  "license": "Public domain",
+  "artist": "NASA/Paul Alers",
+  "page": "https://commons.wikimedia.org/wiki/File:Stephen_hawking_2008_nasa_cropped.jpg",
+  "size": "2030x2030",
+  "note": "2008 NASA portrait used; the 2007 in-flight zero-g shot was not found in NASA archive (only KSC ground photos)"
+ },
+ "early_universe": {
+  "title": "Best Map Ever of the Universe",
+  "license": "CC BY-SA 3.0 IGO (ESA image, also on NASA Photojournal)",
+  "artist": "ESA and the Planck Collaboration",
+  "page": "https://images.nasa.gov/details/PIA16873",
+  "size": "3600x1800",
+  "source_url": "http://images-assets.nasa.gov/image/PIA16873/PIA16873~orig.jpg",
+  "note": "copied from space/ep2/assets/img/cmb_planck.jpg"
+ },
+ "early_universe_b": {
+  "title": "Webb’s First Deep Field (NIRCam Image)",
+  "license": "CC BY 4.0",
+  "artist": "NASA, ESA, CSA, and STScI",
+  "page": "https://esawebb.org/images/weic2209a/",
+  "size": "3920x4000",
+  "source_url": "https://cdn.esawebb.org/archives/images/large/weic2209a.jpg",
+  "note": "copied from space/ep2/assets/img/jwst_deep.jpg"
+ },
+ "hawking_b": {
+  "title": "File:Stephen hawking 2008 nasa cropped.jpg",
+  "license": "Public domain",
+  "artist": "NASA/Paul Alers",
+  "page": "https://commons.wikimedia.org/wiki/File:Stephen_hawking_2008_nasa_cropped.jpg",
+  "size": "2030x2030",
+  "note": "copied from blackholes/assets/img/hawking.jpg; duplicate of hawking.jpg"
+ },
+ "icecube_art": {
+  "title": "Fermi and IceCube illustration (SVS 12994) - artist's concept",
+  "license": "Public domain (NASA)",
+  "artist": "NASA/Fermi and Aurore Simonnet, Sonoma State University",
+  "page": "https://svs.gsfc.nasa.gov/12994/",
+  "size": "2700x3600",
+  "source_url": "https://svs.gsfc.nasa.gov/vis/a010000/a012900/a012994/FermiIceCube_AS.jpg",
+  "artist_concept": true,
+  "note": "artist's illustration (portrait 2700x3600) of a neutrino entering IceCube; not a real event display"
+ }
+}

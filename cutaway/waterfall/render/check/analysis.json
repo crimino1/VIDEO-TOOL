@@ -1,0 +1,47 @@
+{
+  "source": "render/picture_v1.mp4",
+  "duration": 52.1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "has_audio": false,
+  "shots": 3,
+  "avg_shot_sec": 17.37,
+  "median_shot_sec": 20.8,
+  "shortest_shot_sec": 0.03,
+  "longest_shot_sec": 31.27,
+  "cuts_per_minute": {
+    "first 30s": 0.0,
+    "30s-2m": 5.4
+  },
+  "loudness": {
+    "integrated_lufs": null,
+    "range_lu": null
+  },
+  "cuts": [
+    31.266667,
+    31.3
+  ],
+  "sheets": [
+    {
+      "file": "overview-1.jpg",
+      "first_frame_sec": 0.0,
+      "sec_between_frames": 1.1
+    },
+    {
+      "file": "overview-2.jpg",
+      "first_frame_sec": 17.4,
+      "sec_between_frames": 1.1
+    },
+    {
+      "file": "overview-3.jpg",
+      "first_frame_sec": 34.7,
+      "sec_between_frames": 1.1
+    },
+    {
+      "file": "hook.jpg",
+      "first_frame_sec": 0,
+      "sec_between_frames": 1
+    }
+  ]
+}

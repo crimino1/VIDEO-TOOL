@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/js/three.min.js"></script>
+<style>
+/* Documentary overlay type (style v2.1). Shared by the film parts and the test harness. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0c10}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0b0c10;font-family:"Inter",sans-serif;color:#f1efe9}
+#g3{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+#pins{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pin3{position:absolute;width:0;height:0;opacity:0}
+.pin3 div{position:absolute;left:0;bottom:0;padding:0 0 64px 14px;border-left:1px solid rgba(241,239,233,.55);font-size:24px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#dcd9d1;white-space:nowrap;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.fadeb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))}
+.line{position:absolute;left:120px;bottom:120px;max-width:1300px;font-family:"EB Garamond",serif;font-size:62px;line-height:1.14;color:#f1efe9;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.cap{position:absolute;left:120px;bottom:130px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-top:18px;border-top:1px solid rgba(241,239,233,.45);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.capt{position:absolute;left:120px;top:96px;font-size:28px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#dcd9d1;padding-bottom:16px;border-bottom:1px solid rgba(241,239,233,.45);white-space:nowrap}
+.eqw{position:absolute;left:0;right:0;bottom:110px;text-align:center}
+.eq{font-family:"EB Garamond",serif;font-style:italic;font-size:92px;display:inline-flex;align-items:center;gap:22px;color:#f1efe9;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.eq sup{font-size:.55em;vertical-align:.9em;font-style:normal}
+.frac{display:inline-flex;flex-direction:column;align-items:center;line-height:1.05}
+.frac>span:first-child{border-bottom:3px solid #f1efe9;padding:0 12px 4px}
+.frac>span:last-child{padding-top:4px}
+.eqs{font-family:"Inter",sans-serif;font-style:normal;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#b9b6ae;margin-top:20px}
+.big{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:"EB Garamond",serif;font-size:120px;line-height:1.05;color:#f1efe9}
+.big small{display:block;font-family:"Inter",sans-serif;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae;margin-top:26px}
+.black{position:absolute;inset:0;background:#0b0c10}
+.photo{position:absolute;inset:0;overflow:hidden;background:#0b0c10}
+.photo img{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.port{position:absolute;top:120px;height:840px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pname{position:absolute;font-family:"EB Garamond",serif;font-size:76px;line-height:1.05;color:#f1efe9}
+.pmeta{position:absolute;font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b9b6ae}
+.title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.title .t1{font-size:30px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:#cfccc4}
+.title .t2{font-family:"EB Garamond",serif;font-size:150px;line-height:1;margin-top:24px;color:#f1efe9}
+.title .t3{font-size:26px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9a69f;margin-top:30px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="199.320" data-width="1920" data-height="1080">
+<canvas id="g3" width="1920" height="1080"></canvas>
+<div id="pins"></div>
+<div id="s62" class="clip" data-start="0.000" data-duration="11.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s62k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o63" class="eqw" style="opacity:0"><div class="eq">E = mc<sup>2</sup></div><div class="eqs">Energy is mass</div></div></div>
+<div id="s64" class="clip" data-start="11.120" data-duration="10.140" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s64k"></div><div class="vig"></div></div>
+<div id="s65" class="clip" data-start="21.260" data-duration="9.340" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o66" class="big" style="opacity:0">Why did anyone believe it?<small>At first, almost nobody did</small></div></div>
+<div id="s67" class="clip" data-start="30.600" data-duration="9.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s67k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o68" class="cap" style="opacity:0">The strong force</div></div>
+<div id="s69" class="clip" data-start="39.720" data-duration="11.140" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="left:210px;top:150px;width:440px;height:560px"><img id="kb70" src="assets/img_s/nambu.jpg" alt="nambu"></div><div id="pn71" style="opacity:0"><div class="pname" style="left:210px;top:744px;width:440px;text-align:center;font-size:42px">Yoichiro Nambu</div><div class="pmeta" style="left:210px;top:804px;width:440px;text-align:center;font-size:22px">1921–2015</div></div><div class="port" style="left:740px;top:150px;width:440px;height:560px"><img id="kb72" src="assets/img_s/nielsen.jpg" alt="nielsen"></div><div id="pn73" style="opacity:0"><div class="pname" style="left:740px;top:744px;width:440px;text-align:center;font-size:42px">Holger Nielsen</div><div class="pmeta" style="left:740px;top:804px;width:440px;text-align:center;font-size:22px">b. 1941</div></div><div class="port" style="left:1270px;top:150px;width:440px;height:560px"><img id="kb74" src="assets/img_s/susskind.jpg" alt="susskind"></div><div id="pn75" style="opacity:0"><div class="pname" style="left:1270px;top:744px;width:440px;text-align:center;font-size:42px">Leonard Susskind</div><div class="pmeta" style="left:1270px;top:804px;width:440px;text-align:center;font-size:22px">b. 1940</div></div><div id="o76" class="capt" style="opacity:0">Around 1970</div></div>
+<div id="s77" class="clip" data-start="50.860" data-duration="3.020" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s77k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o78" class="line" style="opacity:0">It was the math of tiny strings.</div></div>
+<div id="s79" class="clip" data-start="53.880" data-duration="11.940" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s79k"></div><div class="vig"></div></div>
+<div id="s80" class="clip" data-start="65.820" data-duration="5.700" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s80k"></div><div class="vig"></div></div>
+<div id="s81" class="clip" data-start="71.520" data-duration="5.620" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb82" style="position:absolute;inset:0"><img src="assets/img_s/empty_hall.jpg" alt="empty_hall"></div><div class="fadeb"></div><div class="vig"></div></div><div id="o83" class="cap" style="opacity:0">By 1973, most physicists had walked away</div></div>
+<div id="s84" class="clip" data-start="77.140" data-duration="12.980" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="pn85" style="opacity:0"><div class="pname" style="left:160px;top:430px;width:720px;font-size:84px">John Schwarz</div><div class="pmeta" style="left:160px;top:540px">b. 1941</div></div><div style="position:absolute;left:920px;top:400px;width:1px;height:240px;background:rgba(241,239,233,.3)"></div><div id="pn86" style="opacity:0"><div class="pname" style="left:960px;top:430px;width:720px;font-size:84px">Joël Scherk</div><div class="pmeta" style="left:960px;top:540px">1946–1980</div></div><div id="o87" class="capt" style="opacity:0">1974</div></div>
+<div id="s88" class="clip" data-start="90.120" data-duration="14.640" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s88k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o89" class="line" style="opacity:0">It fit, line for line.</div></div>
+<div id="s90" class="clip" data-start="104.760" data-duration="12.220" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s90k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o91" class="line" style="opacity:0">Nobody put gravity into string theory.</div><div id="o92" class="line" style="opacity:0">The theory insisted.</div></div>
+<div id="s93" class="clip" data-start="116.980" data-duration="3.500" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s93k"></div><div class="vig"></div></div>
+<div id="s94" class="clip" data-start="120.480" data-duration="5.080" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="photo"><div id="kb95" style="position:absolute;inset:0"><img src="assets/img_s/drawer.jpg" alt="drawer"></div><div class="fadeb"></div><div class="vig"></div></div></div>
+<div id="s96" class="clip" data-start="125.560" data-duration="5.100" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div id="o97" class="big" style="opacity:0">For ten years, hardly anyone listened.</div></div>
+<div id="s98" class="clip" data-start="130.660" data-duration="26.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s98k"></div><div class="fadeb" style="opacity:.55"></div><div class="vig"></div><div id="o99" class="eqw" style="opacity:0"><div class="eq">P &lt; 0</div><div class="eqs">A probability below zero</div></div></div>
+<div id="s100" class="clip" data-start="156.780" data-duration="10.800" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:680px"><img id="kb101" src="assets/img_s/kaluza.jpg" alt="kaluza"></div><div id="pn102" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:780px">Theodor Kaluza</div><div class="pmeta" style="left:160px;top:530px">Mathematician · 1885–1954</div></div><div id="o103" class="capt" style="opacity:0">1919</div></div>
+<div id="s104" class="clip" data-start="167.580" data-duration="10.120" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s104k"></div><div class="vig"></div></div>
+<div id="s105" class="clip" data-start="177.700" data-duration="2.060" data-track-index="3" style="position:absolute;inset:0;z-index:6;opacity:0;" data-layout-allow-overflow data-layout-allow-overlap><div class="black"></div><div class="port" style="right:200px;width:639px"><img id="kb106" src="assets/img_s/einstein1915.jpg" alt="einstein1915"></div><div id="pn107" style="opacity:0"><div class="pname" style="left:160px;top:440px;max-width:821px">Albert Einstein</div><div class="pmeta" style="left:160px;top:530px">intrigued</div></div></div>
+<div id="s108" class="clip" data-start="179.760" data-duration="19.560" data-track-index="2" style="position:absolute;inset:0;z-index:3;" data-layout-allow-overflow data-layout-allow-overlap><div class="black" id="s108k"></div><div class="vig"></div></div>
+
+</div>
+<script>window.LAB = [[0.0, 11.12, "notes", {"mode": "energy", "FT0": 219.2}], [11.12, 21.26, "scale", {"mode": "full", "FT0": 230.32}], [30.6, 39.72, "fluxtube", {"mode": "glue", "FT0": 249.8}], [50.86, 53.88, "fluxtube", {"mode": "string", "FT0": 270.06}], [53.88, 65.82, "notes", {"mode": "ghost", "FT0": 273.08}], [65.82, 71.52, "fluxtube", {"mode": "quarks", "FT0": 285.02}], [90.12, 104.76, "graviton", {"mode": "fit", "FT0": 309.32}], [104.76, 116.98, "graviton", {"mode": "insist", "FT0": 323.96}], [116.98, 120.48, "fluxtube", {"mode": "glue", "FT0": 336.18}], [130.66, 156.78, "dims", {"mode": "count", "FT0": 349.86}], [167.58, 177.7, "dims", {"mode": "kaluza", "FT0": 386.78}], [179.76, 199.32, "hose", {"mode": "full", "FT0": 398.96}]];</script>
+<script src="assets/js/core3d.js"></script>
+<script src="assets/js/k_cosmos.js"></script>
+<script src="assets/js/k_dims.js"></script>
+<script src="assets/js/k_ideas.js"></script>
+<script src="assets/js/k_micro.js"></script>
+<script src="assets/js/boot3d.js"></script>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#s62k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},0.000);
+tl.fromTo("#o63",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},4.380);
+tl.to("#o63",{opacity:0,duration:0.5,ease:"power1.inOut"},6.800);
+tl.fromTo("#s64k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},11.120);
+tl.fromTo("#s65",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},21.260);
+tl.fromTo("#o66",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},23.100);
+tl.to("#o66",{opacity:0,duration:0.5,ease:"power1.inOut"},29.900);
+tl.fromTo("#s67k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},30.600);
+tl.fromTo("#o68",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},33.400);
+tl.fromTo("#kb70",{scale:1.0},{scale:1.05,duration:11.140,ease:"none"},39.720);
+tl.fromTo("#pn71",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},40.070);
+tl.fromTo("#kb72",{scale:1.0},{scale:1.05,duration:11.140,ease:"none"},39.720);
+tl.fromTo("#pn73",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},40.420);
+tl.fromTo("#kb74",{scale:1.0},{scale:1.05,duration:11.140,ease:"none"},39.720);
+tl.fromTo("#pn75",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},40.770);
+tl.fromTo("#s69",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},39.720);
+tl.fromTo("#o76",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},40.000);
+tl.fromTo("#s77k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},50.860);
+tl.fromTo("#o78",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},51.100);
+tl.fromTo("#s79k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},53.880);
+tl.fromTo("#s80k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},65.820);
+tl.fromTo("#kb82",{scale:1.0},{scale:1.06,duration:5.620,ease:"none"},71.520);
+tl.fromTo("#s81",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},71.520);
+tl.fromTo("#o83",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},71.800);
+tl.fromTo("#pn85",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},77.490);
+tl.fromTo("#pn86",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},77.940);
+tl.fromTo("#s84",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},77.140);
+tl.fromTo("#o87",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},80.100);
+tl.fromTo("#s88k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},90.120);
+tl.fromTo("#o89",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},98.180);
+tl.to("#o89",{opacity:0,duration:0.5,ease:"power1.inOut"},100.100);
+tl.fromTo("#s90k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},104.760);
+tl.fromTo("#o91",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},104.760);
+tl.to("#o91",{opacity:0,duration:0.5,ease:"power1.inOut"},110.200);
+tl.fromTo("#o92",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},112.160);
+tl.to("#o92",{opacity:0,duration:0.5,ease:"power1.inOut"},116.200);
+tl.fromTo("#s93k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},116.980);
+tl.fromTo("#kb95",{scale:1.0},{scale:1.06,duration:5.080,ease:"none"},120.480);
+tl.fromTo("#s94",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},120.480);
+tl.fromTo("#s96",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},125.560);
+tl.fromTo("#o97",{opacity:0},{opacity:1,duration:0.9,ease:"power1.inOut"},125.700);
+tl.to("#o97",{opacity:0,duration:0.5,ease:"power1.inOut"},129.900);
+tl.fromTo("#s98k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},130.660);
+tl.fromTo("#o99",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},152.000);
+tl.to("#o99",{opacity:0,duration:0.5,ease:"power1.inOut"},156.000);
+tl.fromTo("#kb101",{scale:1.0},{scale:1.05,duration:10.800,ease:"none"},156.780);
+tl.fromTo("#pn102",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},157.130);
+tl.fromTo("#s100",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},156.780);
+tl.fromTo("#o103",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},160.100);
+tl.fromTo("#s104k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},167.580);
+tl.fromTo("#kb106",{scale:1.0},{scale:1.05,duration:2.060,ease:"none"},177.700);
+tl.fromTo("#pn107",{opacity:0},{opacity:1,duration:0.8,ease:"power1.inOut"},178.050);
+tl.fromTo("#s105",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},177.700);
+tl.fromTo("#s108k",{opacity:1},{opacity:0,duration:0.45,ease:"power1.out"},179.760);
+tl.set({}, {}, 199.320);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

@@ -1,0 +1,807 @@
+A reprint from
+American Scientist
+the magazine of Sigma Xi, The Scientific Research Society
+This reprint is provided for personal and noncommercial use. For any other use, please send a request to Permissions, American Scientist
+P.O. Box 13975, Research Triangle Park, NC, 27709, U.S.A., or by electronic mail to perms@amsci.org. ©Sigma Xi, The Scientific Research
+Society and other rightsholders
+200   American Scientist, Volume 94
+Computing Science
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+Gauss’s Day of Reckoning
+Brian Hayes
+L
+et me tell you a story, although 
+it’s such a well-worn nugget of 
+mathematical lore that you’ve prob-
+ably heard it already:
+In the 1780s a provincial German 
+schoolmaster gave his class the te-
+dious assignment of summing the 
+first 100 integers. The teacher’s 
+aim was to keep the kids quiet for 
+half an hour, but one young pupil 
+almost immediately produced an 
+answer: 1+2+3+...+98+99+100
+= 5,050. The smart aleck was Carl 
+Friedrich Gauss, who would go 
+on to join the short list of candi-
+dates for greatest mathematician 
+ever. Gauss was not a calculating 
+prodigy who added up all those 
+numbers in his head. He had a 
+deeper insight: If you “fold” the 
+series of numbers in the middle 
+and add them in pairs—1+100, 
+2+99, 3+98, and so on—all the 
+pairs sum to 101. There are 50 
+such pairs, and so the grand total 
+is simply 50×101. The more gen-
+eral formula, for a list of consecu-
+tive numbers from 1 through n, is 
+n(n+1)/2.
+The paragraph above is my own ren-
+dition of this anecdote, written a few 
+months ago for another project. I say 
+it’s my own, and yet I make no claim of 
+originality. The same tale has been told 
+in much the same way by hundreds 
+of others before me. I’ve been hearing 
+about Gauss’s schoolboy triumph since 
+I was a schoolboy myself. 
+The story was familiar, but until I 
+wrote it out in my own words, I had 
+never thought carefully about the events 
+in that long-ago classroom. Now doubts 
+and questions began to nag at me. For 
+example: How did the teacher verify 
+that Gauss’s answer was correct? If the 
+schoolmaster already knew the formula 
+for summing an arithmetic series, that 
+would somewhat diminish the drama 
+of the moment. If the teacher didn’t 
+know, wouldn’t he be spending his in-
+terlude of peace and quiet doing the 
+same mindless exercise as his pupils?
+There are other ways to answer this 
+question, but there are other questions 
+too, and soon I was wondering about 
+the provenance and authenticity of 
+the whole story. Where did it come 
+from, and how was it handed down 
+to us? Do scholars take this anecdote 
+seriously as an event in the life of the 
+mathematician? Or does it belong to 
+the same genre as those stories about 
+Newton and the apple or Archimedes 
+in the bathtub, where literal truth is 
+not the main issue? If we treat the epi-
+sode as a myth or fable, then what is 
+the moral of the story?
+To satisfy my curiosity I began 
+searching libraries and online resourc-
+es for versions of the Gauss anecdote. 
+By now I have over a hundred exem-
+plars, in eight languages. The sources 
+range from scholarly histories and bi-
+ographies to textbooks and encyclope-
+dias, and on through children’s litera-
+ture, Web sites, lesson plans, student 
+papers, Usenet newsgroup postings 
+and even a novel. All of the retellings 
+describe what is recognizably the same 
+incident—indeed, I believe they all de-
+rive ultimately from a single source—
+and yet they also exhibit marvelous di-
+versity and creativity, as authors have 
+struggled to fill in gaps, explain moti-
+vations and construct a coherent narra-
+tive. (I soon realized that I had done a 
+bit of ad lib embroidery myself.)
+After reading all those variations on 
+the story, I still can’t answer the funda-
+mental factual question, “Did it really 
+happen that way?” I have nothing new 
+to add to our knowledge of Gauss. But 
+I think I have learned something about 
+the evolution and transmission of such 
+stories, and about their place in the 
+culture of science and mathematics. Fi-
+nally, I also have some thoughts about 
+how the rest of the kids in the class 
+might have approached their task. This 
+is a subject that’s not much discussed in 
+the literature, but for those of us whose 
+talents fall short of Gaussian genius, it 
+may be the most pertinent issue.
+Wunderkind
+I started my survey with five modern 
+biographies of Gauss: books by G. 
+Waldo Dunnington (1955), Tord Hall 
+(1970), Karin Reich (1977), W. K. Bühler 
+(1981) and a just-issued biography by 
+M. B. W. Tent (2006). The schoolroom 
+incident is related by all of these au-
+thors except Bühler. The versions differ 
+in a few details, such as Gauss’s age, but 
+they agree on the major points. They all 
+mention the summation of the same se-
+ries, namely the integers from 1 to 100, 
+and they all describe Gauss’s method in 
+terms of forming pairs that sum to 101.
+None of these writers express much 
+skepticism about the anecdote (unless 
+Bühler’s silence can be interpreted as 
+doubt). There is no extended discussion 
+of the story’s origin or the evidence sup-
+porting it. On the other hand, references 
+in some of the biographies did lead me 
+to the key document on which all sub-
+sequent accounts seem to depend. 
+This locus classicus of the Gauss 
+schoolroom story is a memorial vol-
+ume published in 1856, just a year after 
+Brian Hayes is Senior Writer for American Sci-
+entist. Additional material related to the “Comput-
+ing Science” column appears in Hayes’s Weblog at 
+http://bit-player.org. Address: 211 Dacian Avenue, 
+Durham, NC 27701. Internet: bhayes@amsci.org
+A famous story 
+about the boy wonder
+of mathematics
+ has taken on 
+a life of its own
+2006    May–June     201
+www.americanscientist.org
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+Gauss’s death. The author was Wolf-
+gang Sartorius, Baron von Waltershau-
+sen, professor of mineralogy and ge-
+ology at the University of Göttingen, 
+where Gauss spent his entire academic 
+career. As befits a funerary tribute, it is 
+affectionate and laudatory throughout.
+In the portrait Sartorius gives us, 
+Gauss was a wunderkind. He taught 
+himself to read, and by age three he 
+was correcting an error in his father’s 
+arithmetic. Here is the passage where 
+Sartorius describes Gauss’s early 
+schooling in the town of Braunschweig, 
+near Hanover. The translation, except 
+for two phrases in brackets, is by Hel-
+en Worthington Gauss, a great-grand-
+daughter of the mathematician.
+In 1784 after his seventh birth-
+day the little fellow entered the 
+public school where elementary 
+subjects were taught and which 
+was then under a man named 
+Büttner. It was a drab, low school-
+room with a worn, uneven floor.... 
+Here among some hundred pu-
+pils Büttner went back and forth, 
+in his hand the switch which was 
+then accepted by everyone as the 
+final argument of the teacher. 
+As occasion warranted he used 
+it. In this school—which seems 
+to have followed very much the 
+pattern of the Middle Ages—the 
+young Gauss remained two years 
+without special incident. By that 
+time he had reached the arith-
+metic class in which most boys re-
+mained up to their fifteenth year.
+Here occurred an incident 
+which he often related in old age 
+with amusement and relish. In 
+this class the pupil who first fin-
+ished his example in arithmetic 
+was to place his slate in the mid-
+dle of a large table. On top of this 
+the second placed his slate and 
+so on. The young Gauss had just 
+entered the class when Büttner 
+gave out for a problem [the sum-
+ming of an arithmetic series]. The 
+problem was barely stated before 
+Gauss threw his slate on the table 
+with the words (in the low Braun-
+schweig dialect): “There it lies.” 
+While the other pupils contin-
+ued [counting, multiplying and 
+adding], Büttner, with conscious 
+dignity, walked back and forth, 
+occasionally throwing an ironi-
+cal, pitying glance toward this the 
+youngest of the pupils. The boy 
+sat quietly with his task ended, as 
+fully aware as he always was on 
+finishing a task that the problem 
+had been correctly solved and that 
+there could be no other result.
+At the end of the hour the slates 
+were turned bottom up. That of 
+the young Gauss with one solitary 
+figure lay on top. When Büttner 
+read out the answer, to the surprise 
+of all present that of young Gauss 
+was found to be correct, whereas 
+many of the others were wrong.
+Incidental details from this account 
+reappear over and over in later tell-
+ings of the story. The ritual of piling up 
+the slates is one such feature. (It must 
+have been quite a teetering heap by the 
+time the hundredth slate was added!) 
+Büttner’s switch (or cane, or whip) also 
+made frequent appearances until the 
+1970s but is less common now; we have 
+grown squeamish about mentioning 
+such barbarities.
+What’s most remarkable about the 
+Sartorius telling of the story is not 
+what’s there but what’s absent. There 
+is no mention of the numbers from 1 
+to 100, or any other specific arithmetic 
+progression. And there is no hint of 
+the trick or technique that Gauss in-
+vented to solve the problem; the idea 
+of combining the numbers in pairs is 
+not discussed, nor is the formula for 
+summing a series. Perhaps Sartorius 
+thought the procedure was so obvious 
+it needed no explanation.
+A word about the bracketed phras-
+es: Strange to report, the Worthington 
+Gauss translation does mention the first 
+100 integers. Where Sartorius writes 
+simply “eine arithmetischen Reihe,” 
+Worthington Gauss inserts “a series of 
+numbers from 1 to 100.” I cannot ac-
+count for this interpolation. I can only 
+guess that Worthington Gauss, under 
+the influence of later works that discuss 
+the 1-to-100 example, was trying to help 
+out Sartorius by filling in an omission. 
+The second bracketed passage marks 
+an elision in the translation: Where Sar-
+torius has the pupils “rechnen, multi-
+plizieren und addieren,” Worthington 
+Gauss writes just “adding.” I’ll have 
+more to say on this point below.
+Making History
+If Sartorius did not specify a series run-
+ning from 1 to 100, where did those 
+numbers come from? Could there be 
+some other document from Gauss’s era 
+that supplies the missing details? Per-
+haps someone to whom Gauss told the 
+story “with amusement and relish” left 
+a record of the occasion. The existence 
+of such a corroborating document can-
+not be ruled out, but at present there is 
+no evidence for it. None of the works 
+I have seen makes any allusion to an-
+other early source. If an account from 
+Gauss’s lifetime exists, it remains so ob-
+scure that it can’t have had much influ-
+ence on other tellers of the tale.
+In the literature I have surveyed, the 
+1–100 series makes its first appearance 
+in 1938, some 80 years after Sartorius 
+wrote his memoir. The 1–100 example 
+is introduced in a biography of Gauss 
+by Ludwig Bieberbach (a mathemati-
+cian notorious as the principal instru-
+ment of Nazi anti-Semitism in the 
+German mathematical community). 
+Bieberbach’s telling of the story is 
+In a fanciful drawing done in the manner of a woodcut, the young Carl Friedrich Gauss re-
+ceives instruction in arithmetic from the schoolmaster J. G. Büttner. As the story goes, Gauss 
+was about to give Büttner a lesson in mathematical creativity. (Illustration by Theoni Pappas, 
+reprinted from Pappas 1993 by permission.)
+202   American Scientist, Volume 94
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+AUTHOR DATE  LANG SERIES METHOD FORMULA
+3ARTORIUS   DE   #ANTOR   DE (ANSELMANN   DE   3CRIPTURE   EN   'ALLE   DE   0RASAD   EN   3CHLESINGER   DE   "ELL   EN      "IEBERBACH   DE       PAIRS $UNNINGTON   EN       PAIRS  7ORBS   DE       PAIRS NAZ	
+-UIR   EN       PAIRS  NN	
+0OLYA   EN       PAIRS NN		
+3CHAAF   EN       PAIRS NAB	
+/GILVY   EN        PAIRS   3ARTORIUS BY (7'	   EN       "OYER   EN       NN	
+%VES   EN       PAIRS (ALL   EN      TWO ROWS -AY   EN       "URTON   EN      TWO ROWS NN		
+(OLLINGDALE   EN   2EICH   EN       PAIRS 3TEWART   EN       "OS   EN       'OWAR   EN  TWO ROWS NN		
+'OLDSTEIN   EN       NAB		
+&ADIMAN   EN   &RIENDLY   EN       :IMMER   DE       PAIRS 'RAHAM ET AL P    EN     N TWO ROWS NN	
+'RAHAM ET AL P    EN AnB AVERAGE A BN	N	
+7UING   DE       PAIRS -AOR   EN      TWO ROWS *ACOBS   EN      TWO ROWS NN	
++ING   EN       PAIRS .ORE¶A   ES       PAIRS #HOI   EN       PAIRS     0APPAS   EN       PAIRS 3WETZ   EN      TWO ROWS
+2OSS   EN     AVERAGE +RNER   EN     PAIRS NA NNn	D
+,OZANSKY   EN AnB AVERAGE NAB		
+-AC4UTOR   EN       PAIRS 6AKIL   EN      FOLDING $EHAENE   EN      FOLDING $EVLIN   EN      TWO ROWS NN	
+*OHNS   EN       (OFFMAN   EN      TWO ROWS NN	
+/MNES   EN       PAIRS NN	
+0ARK   EN      TWO ROWS NN	
+'OSSELIN  FR       PAIRS NN	
+0OSAMENTIER   EN       PAIRS NANn	D	
+2YAN *ORDAN -ATTHEW    EN       PAIRS %STEP   EN       PAIRS   NN	
+'OLDMAN   EN       (EIN   EN      TWO ROWS NAB	
+$ERBYSHIRE   EN      TWO ROWS $U 3AUTOY   EN      TRIANGLES  NN	
+/LSON   EN       "OUTICHE  FR       PAIRS     +EHLMAN   DE       PAIRS +RANTZ   EN     AVERAGE 2OBELLEDO   ES       PAIRS 4ENT   EN       PAIRS %LTA  RO       PAIRS -AXINT  IT      TWO ROWS 0EREIRA  PT       7IKIPEDIA  EN       PAIRS
+7IKIPEDIADE  DE      TRIANGLES NN	
+YOUNGEST
+BUSYWORK
+WHIP
+h,IGGET SEv
+SLATES
+ONLY 'AUSS
+TEACHER KNEW
+COUNT  TALK
+CORRECT DAD
+KEY             YES             NO            UNKNOWN
+2006    May–June     203
+www.americanscientist.org
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+also the earliest I have seen to specify 
+Gauss’s strategy for calculating the 
+sum—the method of forming pairs that 
+add to 101. Should Bieberbach there-
+fore be regarded as the source from 
+whom scores of later authors have bor-
+rowed these “facts”? Or is this a case of 
+multiple independent invention?
+If you think it utterly implausible 
+that two or more authors would come 
+up with the same example and the 
+same method, then Bieberbach himself 
+is disqualified as the source. A full mil-
+lennium before Gauss and Büttner had 
+their classroom confrontation, essen-
+tially the same problem and solution 
+appeared in an eighth-century manu-
+script attributed to Alcuin of York.
+Furthermore, in the years since 
+Bieberbach wrote, there is unmistak-
+able evidence of independent inven-
+tion. Not all versions agree that the 
+sequence of numbers was the set of 
+consecutive integers from 1 through 
+100. Although that series is the over-
+whelming favorite, many others have 
+been proposed. Some are slight varia-
+tions: 0–100 or 1–99. Several authors 
+seem to feel that adding up 100 num-
+bers is too big a job for primary-school 
+students, and so they trim the scope 
+of the assignment, suggesting 1–80, or 
+1–50, or 1–40, or 1–20, or 1–10. A few 
+others apparently think that 1–100 is 
+too easy, and so they give 1–1,000 or 
+else a series in which the difference 
+between successive terms is a constant 
+other than 1, such as the sequence 3, 7, 
+11, 15, 19, 23, 27.
+Perhaps the most influential version 
+of the story after that of Sartorius is the 
+one told by Eric Temple Bell in Men of 
+Mathematics, first published in 1937. Bell 
+has a reputation as a highly inventive 
+writer (a trait not always considered a 
+virtue in a biographer or historian). He 
+turns the Braunschweig schoolhouse 
+into a scene of gothic horror: “a squalid 
+relic of the Middle Ages run by a vir-
+ile brute, one Büttner, whose idea of 
+teaching the hundred or so boys in his 
+charge was to thrash them into such a 
+state of terrified stupidity that they for-
+got their own names.” Very cinematic! 
+When it comes to the arithmetic, how-
+ever, Bell is one of the few writers who 
+scruple to distinguish between fact and 
+conjecture. He doesn’t claim to know 
+the actual numerical series, but writes: 
+“The problem was of the following sort, 
+81297 + 81495 + 81693 + ... + 100899, 
+where the step from one number to the 
+next is the same all along (here 198), 
+and a given number of terms (here 100) 
+are to be added.” (Personally, I’d have a 
+hard time even writing that problem on 
+a small slate, much less solving it.)
+The Narrative Urge
+It’s a challenge to sort out patterns of in-
+fluence and transmission in such a col-
+lection of stories. When a later author 
+mentions the series 81297 + 81495 + ..., 
+we can be pretty sure those numbers 
+came from Bell. When the example giv-
+en is 1–100, however, it’s not so easy to 
+trace the line of inheritance—if there 
+is one. And the dozen or so other se-
+quences that appear in the literature 
+argue for a high rate of mutation; every 
+one of those examples had to be invent-
+ed at least once.
+Tellers of a tale like this one seem 
+to work under a special dispensation 
+from the usual rules of history-writ-
+ing. Authors who would not dare to 
+alter a fact such as Gauss’s place of 
+birth or details of his mathematical 
+proofs don’t hesitate to embellish this 
+anecdote, just to make it a better story. 
+They pick and choose from the ma-
+terials available to them, taking what 
+they need and leaving the rest—and 
+if nothing at hand suits the purpose, 
+then they invent! For example, several 
+authors show a familiarity with Bell’s 
+version of the story, quoting or bor-
+rowing distinctive phrases from it, but 
+they decline to go along with Bell’s 
+choice of a series beginning 81297, 
+falling back instead on the old reli-
+able 1–100 or inserting something else 
+entirely. Thus it appears that what is 
+driving the evolution of this story is 
+not just the accumulation of errors of 
+transmission, as in the children’s game 
+“whisper down the lane”; authors are 
+deliberately choosing to “improve” the 
+story, to make it a better narrative.
+For the most part, I would not criti-
+cize this practice. Effective storytelling 
+is surely a legitimate goal, and outside 
+of formal scholarly works, a bit of em-
+broidery on the bare fabric of the plot 
+does no harm. A case in point is the 
+theme of “busywork” found in most 
+recent tellings of the story (including 
+mine). It seems we feel a need to ex-
+plain why Büttner would give his pu-
+pils such a long and dreary exercise. 
+But Sartorius says nothing at all about 
+Büttner’s motivation, nor do any of the 
+other 19th-century works I’ve consult-
+ed. The idea that he wanted to keep the 
+kids quiet while he took a break is en-
+tirely a modern inference. It’s probably 
+wrong—at best it’s unattested—and 
+yet it answers a need of readers today.
+In the same spirit, many authors con-
+front the question that got me started 
+on this quest: How did Büttner do the 
+math? Bell is adamant that Büttner knew 
+the formula beforehand; others say he 
+learned the trick only when Gauss ex-
+plained it to him. An example of the 
+latter position is the following account 
+written in 2001 by three fifth-grade stu-
+dents, Ryan, Jordan and Matthew:
+When Gauss was in elementary 
+school his teacher Master Bütt-
+ner did not really like math so he 
+did not spend a lot of time on the 
+subject. One of the problems his 
+teacher gave the class was “add all 
+the whole numbers from 1 to 100”. 
+His teacher Master Büttner was 
+amazed that Gauss could add all 
+the whole numbers 1 to 100 in his 
+head. Master Büttner didn’t believe 
+Gauss could do it, so he made him 
+show the class how he did it. Gauss 
+showed Master Büttner how to do 
+it and Master Büttner was amazed 
+at what Gauss just did.
+Am I being unfair in matching up Eric 
+Temple Bell against three fifth-grad-
+ers? Unfair to which party? Both offer 
+interpretations that can’t be supported 
+by historical evidence, but Ryan, Jor-
+dan and Matthew are closer to the ex-
+perience of classroom life.
+Summing Up
+As with the identity of the series, the 
+details of how Gauss solved the prob-
+lem remain a matter of conjecture. The 
+A catalog of stories (opposite page) records features of some 70 tellings of the Gauss anecdote. 
+(Additional versions and bibliographic details are available on the American Scientist Web site.) 
+The rightmost columns of the table indicate the following features that may or may not be pres-
+ent in a given version: whether Gauss is identified as the youngest member of his class, whether 
+the assignment is explained as busywork, whether Büttner’s whip is mentioned, whether Gauss 
+declares “Ligget se!” (“There it lies!”), whether the classroom procedure of piling up slates is 
+described, whether Gauss is said to be the only student who got the right answer, whether Bütt-
+ner is assumed to know a method for summing the series, and finally whether two other items 
+of Gauss lore are mentioned—that he learned to count before he learned to talk, and that at age 
+three he corrected his father’s arithmetic. Some of these features, such as the busy-work theme, 
+were not present in the original versions but are now commonplace.
+204   American Scientist, Volume 94
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+algorithm that I suggested—folding 
+the sequence in half, then adding the 
+first and last elements, the second and 
+next-to-last, etc.—is not the only pos-
+sibility. A related but subtly different 
+algorithm is mentioned by many au-
+thors. The idea is to write down the 
+series twice, once forward and once 
+backward, and then add correspond-
+ing elements. For the familiar series 
+1–100 this procedure yields 100 pairs 
+of 101, for a total of 10,100; then, since 
+the original series was duplicated, we 
+need to divide by 2, arriving at the cor-
+rect answer 5,050. The advantage of 
+this scheme is that it works the same 
+whether the length of the sequence is 
+odd or even, whereas the folding algo-
+rithm requires some fussy adjustments 
+to deal with an odd-length series.
+A third approach to the summa-
+tion problem strikes me as better still. 
+The root idea is that for any finite set 
+of numbers, whether or not the num-
+bers form an arithmetic progression, 
+the sum is equal to the average of all the 
+elements multiplied by the number of 
+elements. Thus if you know the aver-
+age, you can easily find the sum. For 
+most sets of numbers, this fact is not 
+very useful, because the only way to 
+calculate the average is first to calculate 
+the sum and then divide by the number 
+of elements. For an arithmetic progres-
+sion, however, there is a shortcut: The 
+average over the entire series is equal 
+to the average of the first and last ele-
+ments (or the average of any other ele-
+ments symmetrically arrayed around 
+the midpoint). If this was Gauss’s secret 
+weapon, then his mental multiplication 
+was not 50×101 but 100×50½.
+All three of these ideas—and a few 
+more besides—have been presented by 
+one author or another as the method that 
+Gauss discovered during his first arith-
+metic lesson. Expressed as formulas for 
+summing consecutive integers from 1 
+through n, the three rules (folding, dou-
+ble rows, average) look like this:
+N	
+N
+
+N	
+N
+
+N	
+N
+
+Mathematically, it’s obvious they are 
+equivalent: For the same value of n, 
+they produce the same answer. But the 
+computational details are different and, 
+more important, so are the reasoning 
+processes that lead to these formulas.
+There is yet another way of think-
+ing about the summation process: 
+n(n+1)/2 has been known since an-
+tiquity as the formula for the triangular 
+numbers, those in the sequence 1, 3, 6, 
+10, 15, 21.... Thus some authors suggest 
+that Gauss was thinking geometrically, 
+forming an n-by-n+1 rectangle and cut-
+ting it along the diagonal.
+Doing It the Hard Way
+So much for how the prodigious Carl 
+Friedrich Gauss solved the problem. 
+What about the rest of the students in 
+the class? Let me invite you to take a 
+sheet of paper and actually try adding 
+the numbers from 1 to 100.
+Finished? Already?
+What I discovered when I tried this 
+experiment is that it’s really hard to 
+do it the hard way. You may set out 
+to plod dutifully through all the ad-
+dition operations, but shortcuts pres-
+ent themselves even when you’re not 
+looking for them. Suppose you adopt 
+the standard primary-school algo-
+rithm, writing down all 100 numbers 
+in a tall column and then starting work 
+on the units digits. After the first 10 
+digits, the partial sum is 45; the next 
+10 digits add another increment of 45, 
+bringing the partial sum to 90; then 45 
+more makes 135, and so on. How far 
+would a student get in this process be-
+fore recognizing a repetitive pattern? 
+On turning to the tens digits, the pat-
+tern is even harder to miss: There are 
+ten 1s followed by ten 2s, then ten 3s, 
+etc. Surely any student who has the 
+skills to complete this task at all would 
+not add those repeated numbers one 
+by one. A more likely strategy would 
+be the one Sartorius implied when he 
+wrote “count, multiply and add”—the 
+phrase that Helen Worthington Gauss 
+reduced to mere “adding.”
+On a small slate or a sheet of paper, 
+it’s difficult to write 100 numbers in a 
+column, and so students would likely 
+break the task down into subproblems. 
+Suppose you start by adding the num-
+bers from 1 to 10, for a sum of 55. Then 
+the sum of 11 through 20 is 155, and 21 
+through 30 yields 255. Again, how far 
+would you continue before spotting 
+the trend? 
+Admittedly, these shortcuts can’t 
+match the elegance and ingenuity of 
+Gauss’s method. They are tied to the 
+decimal representation of numbers, 
+     
+        
+                       ¾ 	    
+          
+             
+                                           ¾ 	    
+          
+  FOLDING
+TWO ROWS
+AVERAGE
+TRIANGLES
+3  
+3  
+3      ¿     
+3      ¾     
+  
+
+
+3         ¾ 	    
+
+Young Gauss’s “trick” for finding the sum of an arithmetic progression is usually explained 
+in terms of adding pairs of elements from opposite ends of the sequence, so that all the pairs 
+have the same sum. One way to envision this process is to fold the series in half with a hairpin 
+bend. Another approach is to write the series twice, once in ascending and once in descending 
+order. A third method selects just a single pair of elements, typically the first and last, in order 
+the calculate the average. Finally, some tellers of the story point out that the formula for sum-
+ming the first n natural numbers also generates the nth triangular number; in effect, the sum 
+is half the area of an n-by-n+1 rectangle.
+2006    May–June     205
+www.americanscientist.org
+© 2006 Sigma Xi, The Scientific Research Society. Reproduction 
+with permission only. Contact perms@amsci.org.
+and they also don’t generalize as well 
+to arithmetic progressions other than 
+lists of consecutive integers. But they 
+do remind us that there’s usually more 
+than one good way to solve a problem.
+I suspect that only one kind of stu-
+dent would ever be likely to add the 
+numbers from 1 through 100 by per-
+forming 99 successive additions—
+namely, a student using a computer or 
+a programmable calculator. And for that 
+student, the simplest strategy might in 
+fact be the best one.
+We can hope that a modern Bütt-
+ner—deprived of his whip, of course, 
+and teaching in a classroom where com-
+puters have replaced slates—would not 
+be drilling students on skills of such du-
+bious utility as adding up a long series 
+of numbers by hand. But the new Bütt-
+ner just might ask his pupils to write 
+a program to calculate the sum of any 
+arithmetic progression. A new Gauss, 
+with the same keen insight, could cre-
+ate a very efficient program based on 
+the pairing idea—and that feat still de-
+serves the highest admiration. But the 
+modern Gauss might not be the first to 
+fling his or her laptop on the table and 
+cry “There it lies!” Writing that clever 
+program—and testing and debugging 
+it, and proving its correctness—would 
+be no quicker than writing the straight-
+forward step-by-step version. In this 
+respect, technology may be something 
+of an equalizer.
+The Moral of the Tale
+The story of Gauss and his conquest 
+of the arithmetic series has a natural 
+appeal to young people. After all, the 
+hero is a child—a child who outwits a 
+“virile brute.” For many students, that 
+is surely an inspiration. But I worry 
+a little that the constant repetition of 
+stories like this one may leave the im-
+pression that mathematics is a game 
+suited only to those who go through 
+life continually throwing off sparks of 
+brilliance.
+On first hearing this fable, most stu-
+dents surely want to imagine them-
+selves in the role of Gauss. Sooner or 
+later, however, most of us discover we 
+are one of the less-distinguished class-
+mates; if we eventually get the right an-
+swer, it’s by hard work rather than na-
+tive genius. I would hope that the story 
+could be told in a way that encourages 
+those students to keep going. And per-
+haps it can be balanced by other stories 
+showing there’s a place in mathematics 
+for more than one kind of mind.
+Acknowledgments
+In collecting versions of the Gauss anecdote 
+I’ve been helped by dozens of librarians as 
+well as friends and others. I particularly want 
+to thank Johannes Berg of the University of 
+Cologne; Caroline Grey of the Johns Hopkins 
+University libraries; Stephan Mertens of the 
+University of Magdeburg; Ivo Schneider of 
+the Bundeswehr University, Munich; Mar-
+garet Tent of the Altamont School in Bir-
+mingham, Alabama, and Mary Linn Wernet 
+of the Northwestern State University librar-
+ies in Natchitoches, Louisiana.
+Bibliography
+Listed here are only a few of the principal works con-
+sulted. A complete bibliography, along with excerpts 
+from versions of the story, accompanies the Web 
+version of the article.
+Bell, E. T. 1937. Men of Mathematics. New York: 
+Simon and Schuster.
+Bieberbach, Ludwig. 1938. Carl Friedrich Gauß: Ein 
+Deutsches Gelehrtenleben. Berlin: Keil Verlag.
+Bühler, W. K. 1981. Gauss: A Biographical Study. 
+New York: Springer-Verlag.
+Dunnington, G. Waldo. 1955, 2004. Carl Fried-
+rich Gauss: Titan of Science. With additional 
+material by Jeremy Gray and Fritz-Egbert 
+Dohse. Washington, D.C.: Mathematical As-
+sociation of America.
+Hall, Tord. 1970. Carl Friedrich Gauss: A Bi-
+ography. Translated by Albert Froderberg. 
+Cambridge: MIT Press.
+Hänselmann, Ludwig. 1878. Karl Fried-
+rich Gauß: Zwolf Kapitel aus Seinem Leben. 
+Leipzig: Duncker and Humblot.
+Pappas, Theoni. 1993. Fractals, Googols and other 
+Mathematical Tales. San Carlos, Calif.: Wide 
+World Publishing/Tetra.
+Peterson, Ivars. 2004. Young Gauss. Science 
+News Online http://www.sciencenews.org/
+articles/20041023/mathtrek.asp
+Reich, Karin. 1977. Carl Friedrich Gauss: 1777–
+1977. Translated by Patricia Crampton. 
+Bonn-Bad Godesberg: Inter Nationes.
+Ryan, Jordan and Matthew. Math Mania: Jo-
+hann Carl Friedrich Gauss. http://library.
+thinkquest.org/J0110961/gauss.htm
+Sartorius von Waltershausen, W. 1856. Gauss: 
+zum Gedächtnis. Leipzig: S. Hirzel.
+Sartorius von Waltershausen, W. 1856, 1966. 
+Carl Friedrich Gauss: A Memorial. Translated 
+by Helen Worthington Gauss. Colorado 
+Springs, Colo.
+Tent, M. B. W. 2005. The Prince of Mathematics: 
+Carl Friedrich Gauss. Wellesley, Mass.: A K 
+Peters.
+Wußing, Hans. 1989. Carl Friedrich Gauss. 
+Leipzig: B. G. Teubner Verlagsgesellschaft.
+For additional materials related to this column, 
+including excerpts from the works discussed, 
+consult American Scientist Online:
+http://www.americanscientist.org/ 
+AssetDetail/50686
